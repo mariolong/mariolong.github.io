@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 04:45:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 08:52:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 掙扎了許久，還是先用&lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
 
@@ -159,205 +159,7 @@ change &lt;kbd&gt;verbatim&lt;/kbd&gt; to &lt;kbd&gt;kbd&lt;/kbd&gt;
 &lt;p&gt;
 不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
 &lt;/p&gt;
-
-&lt;p&gt;
-上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，經過一番折騰，程式結構幾乎相同，代碼行數也差不多。但是，比起先前用
-Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 clojure, 先把安裝的過程記錄下來。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 安裝&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
-archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版 haskell
-用的是 dynamic-link, 問題多多。另外也不用 ArchHaskell repository, 原因是其中 Application 的版本比較舊。
-&lt;/p&gt;
-
-&lt;p&gt;
-但我要用的 taffybar，新版看起來還不好用，所以只好退回 taffybar-0.4.6。而 0.4.6 版又不能用 ghc-8.2.2 編譯，只能回到 ghc-8.0.2。如此一來，就不能用新的 haskell 和 intero，真困擾。
-&lt;/p&gt;
-
-&lt;p&gt;
-問題還是能解決，用 stack 就可以完美克服。
-&lt;/p&gt;
-
-&lt;p&gt;
-但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
-&lt;/p&gt;
-
-&lt;p&gt;
-如果要用 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
-&lt;/p&gt;
-
-&lt;p&gt;
-最後決定的方法是：
-1.安裝 ghc-8.2.2 的 static 版。
-2.安裝 stack-bin，是 stack 的 static 版。
-2.taffybar-0.4.6，自行用 ghc-8.0.2 編譯
-3.pandoc 先用 cabal 裝。
-&lt;/p&gt;
-
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack setup --system-ghc
-stack install cabal-install --system-ghc
-cabal update
-cabal install pandoc
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
-&lt;h3 id="sec-2-1"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; install ghc, stack&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-1"&gt;
-&lt;p&gt;
-&lt;a href="https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux"&gt;https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S ghc
-yaourt -S stack
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-決定用 static link
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
-&lt;h3 id="sec-2-2"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; install cabal&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-2"&gt;
-&lt;p&gt;
-&lt;a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29"&gt;Building statically linked packages with Cabal (without using shared libraries)&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;stack&lt;/span&gt; &lt;span class="nv"&gt;setup&lt;/span&gt; &lt;span class="nv"&gt;--system-ghc&lt;/span&gt;
-&lt;span class="nv"&gt;stack&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="nv"&gt;--system-ghc&lt;/span&gt; &lt;span class="nv"&gt;cabal-install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
-&lt;h3 id="sec-2-3"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; install pandoc&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal update
-cabal install pandoc
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
-&lt;h3 id="sec-2-4"&gt;&lt;span class="section-number-3"&gt;2.4&lt;/span&gt; taffybar, xmonad, xomnad-contrib&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-4"&gt;
-&lt;p&gt;
-taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯。即使硬上，taffybar 的顯示高度也不對。因此暫時不用，等 ghc 8.4.2 release
-了再試 taffybar-2.x.x。
-&lt;/p&gt;
-
-&lt;p&gt;
-目前用 taffybar-0.4.6，也就換維護者前的最後版本，比較穩定。
-&lt;/p&gt;
-
-&lt;p&gt;
-有三種做法
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-0-1" name="sec-2-4-0-1"&gt;&lt;/a&gt;自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib&lt;br&gt;&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-0-1-1" name="sec-2-4-0-1-1"&gt;&lt;/a&gt;download taffybar from github&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a id="sec-2-4-0-1-2" name="sec-2-4-0-1-2"&gt;&lt;/a&gt;adding stack.yaml and setup stack project&lt;br&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="sec-2-4-0-1-3" name="sec-2-4-0-1-3"&gt;&lt;/a&gt;config file of taffybar/xmonad must put them to this directory&lt;br&gt;&lt;div class="outline-text-6" id="text-2-4-0-1-3"&gt;
-&lt;p&gt;
-否則 recompile config file 時，會找不到需要的模組。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="sec-2-4-0-1-4" name="sec-2-4-0-1-4"&gt;&lt;/a&gt;stack build/install taffybar&lt;br&gt;&lt;div class="outline-text-6" id="text-2-4-0-1-4"&gt;
-&lt;p&gt;
-自動安裝 taffybar 和 xomnad 和 xmonad-contrib
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="sec-2-4-0-1-5" name="sec-2-4-0-1-5"&gt;&lt;/a&gt;執行&lt;br&gt;&lt;div class="outline-text-6" id="text-2-4-0-1-5"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- taffybar
-stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- xmonad --recompile
-stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- xmonad --restart
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;&lt;/ol&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="sec-2-4-0-2" name="sec-2-4-0-2"&gt;&lt;/a&gt;haskell-taffybar at ArchHaskell&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-0-2"&gt;
-&lt;p&gt;
-用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="sec-2-4-0-3" name="sec-2-4-0-3"&gt;&lt;/a&gt;cabal install taffybar-0.4.6&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-0-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal update
-cabal install happy alex haddock c2hs
-cabal install taffybar-0.4.6
-cabal install pandoc
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; emacs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;p&gt;
-using &lt;a href="https://commercialhaskell.github.io/intero/"&gt;intero&lt;/a&gt; and haskell-mode
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;intero&lt;/span&gt;
-  &lt;span class="nv"&gt;:ensure&lt;/span&gt; &lt;span class="nv"&gt;haskell-mode&lt;/span&gt;
-  &lt;span class="nv"&gt;:config&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'haskell-mode-hook&lt;/span&gt; &lt;span class="ss"&gt;'intero-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
-&lt;h3 id="sec-3-1"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; &lt;span class="todo TODO"&gt;TODO&lt;/span&gt; hindent&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install hindent
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;hindent&lt;/span&gt;
-  &lt;span class="nv"&gt;:config&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'haskell-mode-hook&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="ss"&gt;'hindent-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; Dynamic Link Issue&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
-&lt;p&gt;
-read &lt;a href="https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking"&gt;https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-You can also set these flags in ~/.cabal/config so that it applies to all projects by default.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;kbd&gt;~/.cabal/config&lt;/kbd&gt;
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;library-vanilla: False
-shared: True
-executable-dynamic: True
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>haskell</category><category>pandoc</category><category>xmonad</category><guid>https://mariolong.github.io/posts/install-haskell-applications/</guid><pubDate>Sun, 29 Apr 2018 03:16:44 GMT</pubDate></item><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;閱讀更多…&lt;/a&gt; (尚餘 1 分鐘)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>haskell</category><category>pandoc</category><category>xmonad</category><guid>https://mariolong.github.io/posts/install-haskell-applications/</guid><pubDate>Sun, 29 Apr 2018 03:16:44 GMT</pubDate></item><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
 Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced Linux Sound Architecture&lt;/a&gt;已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
@@ -2234,123 +2036,44 @@ iVT enable @ bios
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>汪汪財經</category><guid>https://mariolong.github.io/posts/30/</guid><pubDate>Tue, 29 Aug 2017 08:54:00 GMT</pubDate></item><item><title>水果戰勝癌症</title><link>https://mariolong.github.io/posts/fruit-win-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-&lt;a href="http://health.businessweekly.com.tw/AArticleM.aspx?id=ARTL000093890"&gt;20 年戰勝 3 癌！醫師每天早上喝一杯「抗癌五彩蔬果汁」，常保體質弱鹼性&lt;/a&gt;
+來源：&lt;a href="http://health.businessweekly.com.tw/AArticleM.aspx?id=ARTL000093890"&gt;20 年戰勝 3 癌！醫師每天早上喝一杯「抗癌五彩蔬果汁」，常保體質弱鹼性&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;
-身為心臟內科醫師，從小又是運動健將的我，照理應當是身強體壯。從沒想過有一天自己會罹患癌症，而且還接連三種癌症！
-&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;人：心臟內科醫師，從小又是運動健將，但罹患癌症，而且還接連三種癌症！巨大細胞癌（骨癌）、腎臟癌與甲狀腺癌。
+&lt;/li&gt;
+&lt;li&gt;時：抗癌 20 年
+&lt;/li&gt;
+&lt;li&gt;法：CAM 整合療法，
+&lt;/li&gt;
+&lt;li&gt;早餐前，我會先喝一杯抗癌蔬果汁
+&lt;/li&gt;
+&lt;li&gt;早餐，多半是三明治加牛奶，或是清粥小菜等簡單的食物，常保體質弱鹼性。
+&lt;/li&gt;
+&lt;li&gt;鹼性食物多以青菜類為主；酸性食物是魚、肉、蛋和甜食等
+&lt;/li&gt;
+&lt;li&gt;不必太過勉強進行全素的飲食。
+&lt;/li&gt;
+
+&lt;li&gt;每天在吃早餐前，我會先喝一杯蔬果汁來增加維他命 C、消化酵素，以及攝取植化素。
+&lt;/li&gt;
+&lt;li&gt;所以我並未特別去買有機品，而是換個方式，設法將蔬菜、水果的殘留農藥去掉。
+&lt;/li&gt;
+&lt;li&gt;我特別喜歡在黃昏市場採買，而且一定挑當季盛產的蔬果
+&lt;/li&gt;
+&lt;li&gt;「抗癌五彩蔬果汁」，組合比例是 3 種蔬菜＋2 種水果，或是 3 種水果＋2 種蔬菜。蔬果種類主要有：花椰菜、高麗菜、蕃茄、蘋果與鳳梨等。
+&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;
-從 32 歲那年開始，三種癌症陸續找上我─巨大細胞癌（骨癌）、腎臟癌與甲狀腺癌，抗癌期間長達十年，開刀無數次，忍受著一般人所無法忍受的痛苦。但在經歷了這十年的痛苦經歷之後，我卻又奇蹟式的康復，而且身體狀況比罹患癌症之前更年輕、健康。
-&lt;/p&gt;
-
-&lt;p&gt;
-回首前塵，這一段抗癌歲月就好像是老天送給我的一樣禮物：讓我從煉獄般的痛苦裡重生，又毫髮無傷地還給我更健康的身心靈。抗癌
-20 年間，為了活下去，窮盡各種抗癌方法，從正統的西醫治療，以至食物營養、天然植物複方、心靈療癒、氣功鍛鍊、藝術治療等，我也有了抗癌心得，整合成一套癌症康復的方程式—CAM 整合療法。
-&lt;/p&gt;
-
-&lt;p&gt;
-CAM 整合療法讓我的身體得以通過三個癌症的歷練，獲得重生。這其中有許多不可思議的奇蹟。
-&lt;/p&gt;
-
-&lt;p&gt;
-色彩越多營養越高──多飲抗癌蔬果汁
-&lt;/p&gt;
-
-&lt;p&gt;
-每天在吃早餐前，我會先喝一杯蔬果汁來增加維他命 C、消化酵素，以及攝取植化素。從最新的營養學來看，五顏六色的蔬菜、水果裡，具有被營養界熱烈推崇的「植化素」，可以消除人體的自由基，發揮抗氧化、增強免疫力、調節荷爾蒙的功能。每天只要能吃到五顏六色的蔬菜、水果，就能攝取到充分且多元化的植化素，如胡蘿蔔素、茄紅素、兒茶素等。
-&lt;/p&gt;
-
-&lt;p&gt;
-植化素，就是植物所含的天然化學成分。它與維生素的特性不同，而且在蔬果的皮、根、莖、籽等部位含量最高。
-&lt;/p&gt;
-
-&lt;p&gt;
-每一種不同顏色的蔬果，都有獨特的植化素種類與功能，像是「花青素」和「阿 魏酸」含有抗老化的植化素；「檞皮素」含有高抗氧化力的植化素，遠勝維生素 E、C；「楊梅素」則含有可以降血糖、趕走膽固醇的植化素；「綠原酸」含有可以幫人 體減重的植化素。
-&lt;/p&gt;
-
-&lt;p&gt;
-一般飲食療法所提倡的蔬果汁，都強調要使用無農藥的有機蔬果，以避免吃進農藥。但是有機蔬果價格昂貴，長期下來所費不貲。所以我並未特別去買有機品，而是換個方式，設法將蔬菜、水果的殘留農藥去掉。
-&lt;/p&gt;
-
-&lt;p&gt;
-我特別喜歡在黃昏市場採買，而且一定挑當季盛產的蔬果，因為當季盛產的蔬果所含的營養成分最高，人體可以從中獲得最大好處，而且價格上也比較經濟實惠。
-&lt;/p&gt;
-
-&lt;p&gt;
-我常喝的「抗癌五彩蔬果汁」，組合比例是 3 種蔬菜＋2 種水果，或是 3 種水果＋2 種蔬菜。蔬果種類主要有：花椰菜、高麗菜、蕃茄、蘋果與鳳梨等。
-&lt;/p&gt;
-
-&lt;p&gt;
-切記， 花椰菜與高麗菜要連梗一起打汁。以花椰菜梗來說， 植化素高達 143 種，有類胡蘿蔔素、香豆素、生物類黃酮素、花青素等防癌抗老元素，而且青花椰菜的功效比白花椰菜更好。
-&lt;/p&gt;
-
-&lt;p&gt;
-高麗菜有幫助傷口癒合的特性，我在癌症開刀後，就是因為常喝高麗菜汁，傷口復原的格外迅速。
-&lt;/p&gt;
-
-&lt;p&gt;
-*
-&lt;/p&gt;
-
-&lt;p&gt;
-photos 放大顯示
-&lt;/p&gt;
-
-&lt;p&gt;
-【材料配方範例】
-&lt;/p&gt;
-
-&lt;p&gt;
-● 蘋果 25 克（含有花青素、檞皮素、阿魏酸、綠原酸）● 鳳梨 40 克（含有阿魏酸、綠原酸、鳳梨酵素）● 番薯葉 40 克（含有楊梅素、檞皮素）● 牛蒡 35 克（富含綠原酸）● 加州黑棗梅 16 克（富含花青素、綠原酸）
-&lt;/p&gt;
-
-&lt;p&gt;
-【製作步驟】
-&lt;/p&gt;
-
-&lt;p&gt;
-STEP1. 在前一天晚上將要打汁的蔬菜、水果先做清洗。
-&lt;/p&gt;
-
-&lt;p&gt;
-STEP2. 清洗之後，加水浸泡在盆子裡，滴 1～2 滴天然配方的「環保蔬果清潔劑」浸泡一個晚上。
-&lt;/p&gt;
-
-&lt;p&gt;
-STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後打成果菜汁飲用。
-&lt;/p&gt;
-
-&lt;p&gt;
-常保體質弱鹼性──吃出「3 鹼 1 酸」的飲食慣性
-&lt;/p&gt;
-
-&lt;p&gt;
-喝完抗癌五彩蔬果汁，接著我就會開始享用早餐，多半是三明治加牛奶，或是清粥小菜等簡單的食物，但是我一定遵守「3 鹼 1 酸」的原則，也就是鹼性食物與酸性食物的比例為 3：1，這樣能夠使身體一直維持在弱鹼性的健康狀態。
-&lt;/p&gt;
-
-&lt;p&gt;
-以日常食材來說，鹼性食物多以青菜類為主；酸性食物是魚、肉、蛋和甜食等。如果經常吃太多酸性食物，身體也會慢慢變成酸性。酸性體質是毒素的溫床，身體累積過多毒素，就會容易致癌。
-&lt;/p&gt;
-
-&lt;p&gt;
-如果完全不吃肉類，也容易造成蛋白質攝取不足的問題。因此，每餐維持 3 鹼 1 酸的飲食比例，最能讓身體活力充足，營養均衡，又「抗癌五彩蔬果汁」配方與製作法能保持在良好的弱鹼性狀態。
-&lt;/p&gt;
-
-&lt;p&gt;
-另外，如果能以植物蛋白，如豆類、豆漿等素食來取代肉類，也有助於減低身體的毒素。這可依照個人的飲食習慣適度調整，以能夠期適應和持之以恆為原則，不必太過勉強進行全素的飲食。
-&lt;/p&gt;
-
-&lt;p&gt;
-這篇&lt;a href="https://mariolong.github.io/posts/fruit-win-cancer/#la-empty-tummy"&gt;空腹吃水果勝癌症&lt;/a&gt;是從 line 直接轉出，來處不明，全文收錄於後。
+附錄一篇&lt;i&gt;空腹吃水果勝癌症&lt;/i&gt;，是從 line 直接轉出，來處不明，全文收錄於後。重點一句話：&lt;b&gt;常吃水果，空腹吃&lt;/b&gt;
 &lt;/p&gt;
 
 &lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 附錄&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; &lt;a id="la-empty-tummy" name="la-empty-tummy"&gt;&lt;/a&gt;空腹吃水果勝癌症&lt;/h3&gt;
+&lt;h3 id="sec-1-1"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; 空腹吃水果勝癌症&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;
 台大郭銘雄(璁錡)醫師-生死的智慧，演講非常精采
@@ -2358,7 +2081,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-1-1-1" class="outline-4"&gt;
-&lt;h4 id="sec-1-1-1"&gt;&lt;span class="section-number-4"&gt;1.1.1&lt;/span&gt; ※空腹吃水果……(尤其是蘋果)&lt;/h4&gt;
+&lt;h4 id="sec-1-1-1"&gt;&lt;span class="section-number-4"&gt;1.1.1&lt;/span&gt; 空腹吃水果……(尤其是蘋果)&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-1-1"&gt;
 &lt;p&gt;
 多虧了有關這個水果和果汁的電子郵件，它告訴了一個治癒癌症的戰略。我的成功率為 80%。 癌症病人死不了了，不管你信還是不信，治療方法終於找到了。對那些用常規療法治療癌症而死亡的患者，我深表遺憾。他們中沒幾個存活 5
@@ -2368,7 +2091,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-1-1-2" class="outline-4"&gt;
-&lt;h4 id="sec-1-1-2"&gt;&lt;span class="section-number-4"&gt;1.1.2&lt;/span&gt; ※常吃水果&lt;/h4&gt;
+&lt;h4 id="sec-1-1-2"&gt;&lt;span class="section-number-4"&gt;1.1.2&lt;/span&gt; 常吃水果&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-1-2"&gt;
 &lt;p&gt;
 一說到吃水果，我們就想到把水果 切成塊，大快朵頤。其實，沒那麼簡單。要講究吃水果的方法和時間。什麼是正確方法呢？千萬別再飯後吃水果，一定要空腹吃鮮果。這樣水果會起到身體殺毒作用，起到提供身體能量，消肥減瘦作用，以及參與生化活動的作用。鮮果是重要食物。試想，你在吃兩片麵包後，又吃了一片水果。本來水果是要透過胃壁進入腸子的，但被食物擋住了。與此同時，胃發酵，變酸，水果一接觸到它們, 配著胃酸，整個食物就壞了。你會聽到有人抱怨：我一吃西瓜就愛打嗝兒，我一吃榴槤就脹肚， 我一吃香蕉愛拉稀，等等。那是因為水果與胃中腐敗的食物混合後產生的氣體造成的。但是你空腹吃水果，就不會出像上述情況。白頭髮，禿頭謝頂，神經緊張，缺覺黑眼圈，在你空腹吃鮮果以後，以上症狀一概消失。
@@ -2412,7 +2135,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>癌</category><category>食</category><guid>https://mariolong.github.io/posts/fruit-win-cancer/</guid><pubDate>Thu, 10 Aug 2017 02:24:46 GMT</pubDate></item><item><title>咖啡致癌？防癌！</title><link>https://mariolong.github.io/posts/coffe-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>cancer</category><category>food</category><guid>https://mariolong.github.io/posts/fruit-win-cancer/</guid><pubDate>Thu, 10 Aug 2017 18:24:46 GMT</pubDate></item><item><title>咖啡致癌？防癌！</title><link>https://mariolong.github.io/posts/coffe-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 為了確認咖啡會不會致癌，特別花了點時間 google 一下，沒想到結論是真的出人意表。
 &lt;/p&gt;
 

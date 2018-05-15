@@ -118,7 +118,7 @@
 <p>
 不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
 </p>
-
+<!-- TEASER_END -->
 <p>
 上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，經過一番折騰，程式結構幾乎相同，代碼行數也差不多。但是，比起先前用
 Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 clojure, 先把安裝的過程記錄下來。
@@ -153,13 +153,17 @@ archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版
 
 <p>
 最後決定的方法是：
-1.安裝 ghc-8.2.2 的 static 版。
-2.安裝 stack-bin，是 stack 的 static 版。
-2.taffybar-0.4.6，自行用 ghc-8.0.2 編譯
-3.pandoc 先用 cabal 裝。
 </p>
-
-
+<ol class="org-ol">
+<li>安裝 ghc-8.2.2 的 static 版。
+</li>
+<li>安裝 stack-bin，是 stack 的 static 版。
+</li>
+<li>taffybar-0.4.6，自行用 ghc-8.0.2 編譯
+</li>
+<li>pandoc 先用 cabal 裝。
+</li>
+</ol>
 <div class="highlight"><pre><span></span>stack setup --system-ghc
 stack install cabal-install --system-ghc
 cabal update
@@ -229,18 +233,22 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 </p>
 </div>
 
+<div id="outline-container-sec-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1">
+<span class="section-number-4">2.4.1</span> 自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib</h4>
+<div class="outline-text-4" id="text-2-4-1">
+</div>
 <ol class="org-ol">
 <li>
-<a id="sec-2-4-0-1" name="sec-2-4-0-1"></a>自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib<br><ol class="org-ol">
-<li>
-<a id="sec-2-4-0-1-1" name="sec-2-4-0-1-1"></a>download taffybar from github<br>
-</li>
-<li>
-<a id="sec-2-4-0-1-2" name="sec-2-4-0-1-2"></a>adding stack.yaml and setup stack project<br>
+<a id="sec-2-4-1-1" name="sec-2-4-1-1"></a>fork and download taffybar from github<br>
 </li>
 
 <li>
-<a id="sec-2-4-0-1-3" name="sec-2-4-0-1-3"></a>config file of taffybar/xmonad must put them to this directory<br><div class="outline-text-6" id="text-2-4-0-1-3">
+<a id="sec-2-4-1-2" name="sec-2-4-1-2"></a>adding stack.yaml and setup stack project<br>
+</li>
+
+<li>
+<a id="sec-2-4-1-3" name="sec-2-4-1-3"></a>config file of taffybar/xmonad must put them to this directory<br><div class="outline-text-5" id="text-2-4-1-3">
 <p>
 否則 recompile config file 時，會找不到需要的模組。
 </p>
@@ -248,7 +256,7 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 </li>
 
 <li>
-<a id="sec-2-4-0-1-4" name="sec-2-4-0-1-4"></a>stack build/install taffybar<br><div class="outline-text-6" id="text-2-4-0-1-4">
+<a id="sec-2-4-1-4" name="sec-2-4-1-4"></a>stack build/install taffybar<br><div class="outline-text-5" id="text-2-4-1-4">
 <p>
 自動安裝 taffybar 和 xomnad 和 xmonad-contrib
 </p>
@@ -256,7 +264,7 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 </li>
 
 <li>
-<a id="sec-2-4-0-1-5" name="sec-2-4-0-1-5"></a>執行<br><div class="outline-text-6" id="text-2-4-0-1-5">
+<a id="sec-2-4-1-5" name="sec-2-4-1-5"></a>執行<br><div class="outline-text-5" id="text-2-4-1-5">
 <div class="highlight"><pre><span></span>stack <span class="nb">exec</span> -- taffybar
 stack <span class="nb">exec</span> -- xmonad --recompile
 stack <span class="nb">exec</span> -- xmonad --restart
@@ -264,26 +272,29 @@ stack <span class="nb">exec</span> -- xmonad --restart
 </div>
 </li>
 </ol>
-</li>
+</div>
 
-<li>
-<a id="sec-2-4-0-2" name="sec-2-4-0-2"></a>haskell-taffybar at ArchHaskell<br><div class="outline-text-5" id="text-2-4-0-2">
+<div id="outline-container-sec-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2">
+<span class="section-number-4">2.4.2</span> haskell-taffybar at ArchHaskell</h4>
+<div class="outline-text-4" id="text-2-4-2">
 <p>
 用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
 </p>
 </div>
-</li>
+</div>
 
-<li>
-<a id="sec-2-4-0-3" name="sec-2-4-0-3"></a>cabal install taffybar-0.4.6<br><div class="outline-text-5" id="text-2-4-0-3">
+<div id="outline-container-sec-2-4-3" class="outline-4">
+<h4 id="sec-2-4-3">
+<span class="section-number-4">2.4.3</span> cabal install taffybar-0.4.6</h4>
+<div class="outline-text-4" id="text-2-4-3">
 <div class="highlight"><pre><span></span>cabal update
 cabal install happy alex haddock c2hs
 cabal install taffybar-0.4.6
 cabal install pandoc
 </pre></div>
 </div>
-</li>
-</ol>
+</div>
 </div>
 </div>
 

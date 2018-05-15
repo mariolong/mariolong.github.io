@@ -87,7 +87,7 @@
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 掙扎了許久，還是先用<a href="https://getnikola.com/">nikola</a>記錄一些事，畢竟比較熟悉，能快一點上手。
 </p>
@@ -262,7 +262,7 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">
 <span class="section-number-2">1</span> 前言</h2>
@@ -274,225 +274,7 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 <p>
 不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
 </p>
-
-<p>
-上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，經過一番折騰，程式結構幾乎相同，代碼行數也差不多。但是，比起先前用
-Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 clojure, 先把安裝的過程記錄下來。
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">
-<span class="section-number-2">2</span> 安裝</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版 haskell
-用的是 dynamic-link, 問題多多。另外也不用 ArchHaskell repository, 原因是其中 Application 的版本比較舊。
-</p>
-
-<p>
-但我要用的 taffybar，新版看起來還不好用，所以只好退回 taffybar-0.4.6。而 0.4.6 版又不能用 ghc-8.2.2 編譯，只能回到 ghc-8.0.2。如此一來，就不能用新的 haskell 和 intero，真困擾。
-</p>
-
-<p>
-問題還是能解決，用 stack 就可以完美克服。
-</p>
-
-<p>
-但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
-</p>
-
-<p>
-如果要用 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
-</p>
-
-<p>
-最後決定的方法是：
-1.安裝 ghc-8.2.2 的 static 版。
-2.安裝 stack-bin，是 stack 的 static 版。
-2.taffybar-0.4.6，自行用 ghc-8.0.2 編譯
-3.pandoc 先用 cabal 裝。
-</p>
-
-
-<div class="highlight"><pre><span></span>stack setup --system-ghc
-stack install cabal-install --system-ghc
-cabal update
-cabal install pandoc
-</pre></div>
-</div>
-
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">
-<span class="section-number-3">2.1</span> install ghc, stack</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-<a href="https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux">https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux</a>
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S ghc
-yaourt -S stack
-</pre></div>
-
-<p>
-決定用 static link
-</p>
-<div class="highlight"><pre><span></span>yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2">
-<span class="section-number-3">2.2</span> install cabal</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-<a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29">Building statically linked packages with Cabal (without using shared libraries)</a>
-</p>
-
-<div class="highlight"><pre><span></span><span class="nv">stack</span> <span class="nv">setup</span> <span class="nv">--system-ghc</span>
-<span class="nv">stack</span> <span class="nv">install</span> <span class="nv">--system-ghc</span> <span class="nv">cabal-install</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3">
-<span class="section-number-3">2.3</span> install pandoc</h3>
-<div class="outline-text-3" id="text-2-3">
-<div class="highlight"><pre><span></span>cabal update
-cabal install pandoc
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-sec-2-4" class="outline-3">
-<h3 id="sec-2-4">
-<span class="section-number-3">2.4</span> taffybar, xmonad, xomnad-contrib</h3>
-<div class="outline-text-3" id="text-2-4">
-<p>
-taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯。即使硬上，taffybar 的顯示高度也不對。因此暫時不用，等 ghc 8.4.2 release
-了再試 taffybar-2.x.x。
-</p>
-
-<p>
-目前用 taffybar-0.4.6，也就換維護者前的最後版本，比較穩定。
-</p>
-
-<p>
-有三種做法
-</p>
-</div>
-
-<ol class="org-ol">
-<li>
-<a id="sec-2-4-0-1" name="sec-2-4-0-1"></a>自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib<br><ol class="org-ol">
-<li>
-<a id="sec-2-4-0-1-1" name="sec-2-4-0-1-1"></a>download taffybar from github<br>
-</li>
-<li>
-<a id="sec-2-4-0-1-2" name="sec-2-4-0-1-2"></a>adding stack.yaml and setup stack project<br>
-</li>
-
-<li>
-<a id="sec-2-4-0-1-3" name="sec-2-4-0-1-3"></a>config file of taffybar/xmonad must put them to this directory<br><div class="outline-text-6" id="text-2-4-0-1-3">
-<p>
-否則 recompile config file 時，會找不到需要的模組。
-</p>
-</div>
-</li>
-
-<li>
-<a id="sec-2-4-0-1-4" name="sec-2-4-0-1-4"></a>stack build/install taffybar<br><div class="outline-text-6" id="text-2-4-0-1-4">
-<p>
-自動安裝 taffybar 和 xomnad 和 xmonad-contrib
-</p>
-</div>
-</li>
-
-<li>
-<a id="sec-2-4-0-1-5" name="sec-2-4-0-1-5"></a>執行<br><div class="outline-text-6" id="text-2-4-0-1-5">
-<div class="highlight"><pre><span></span>stack <span class="nb">exec</span> -- taffybar
-stack <span class="nb">exec</span> -- xmonad --recompile
-stack <span class="nb">exec</span> -- xmonad --restart
-</pre></div>
-</div>
-</li>
-</ol>
-</li>
-
-<li>
-<a id="sec-2-4-0-2" name="sec-2-4-0-2"></a>haskell-taffybar at ArchHaskell<br><div class="outline-text-5" id="text-2-4-0-2">
-<p>
-用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
-</p>
-</div>
-</li>
-
-<li>
-<a id="sec-2-4-0-3" name="sec-2-4-0-3"></a>cabal install taffybar-0.4.6<br><div class="outline-text-5" id="text-2-4-0-3">
-<div class="highlight"><pre><span></span>cabal update
-cabal install happy alex haddock c2hs
-cabal install taffybar-0.4.6
-cabal install pandoc
-</pre></div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">
-<span class="section-number-2">3</span> emacs</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-using <a href="https://commercialhaskell.github.io/intero/">intero</a> and haskell-mode
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">use-package</span> <span class="nv">intero</span>
-  <span class="nv">:ensure</span> <span class="nv">haskell-mode</span>
-  <span class="nv">:config</span>
-  <span class="p">(</span><span class="nf">add-hook</span> <span class="ss">'haskell-mode-hook</span> <span class="ss">'intero-mode</span><span class="p">))</span>
-</pre></div>
-</div>
-
-
-<div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">
-<span class="section-number-3">3.1</span> <span class="todo TODO">TODO</span> hindent</h3>
-<div class="outline-text-3" id="text-3-1">
-<div class="highlight"><pre><span></span>stack install hindent
-</pre></div>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">use-package</span> <span class="nv">hindent</span>
-  <span class="nv">:config</span>
-  <span class="p">(</span><span class="nf">add-hook</span> <span class="ss">'haskell-mode-hook</span> <span class="o">#</span><span class="ss">'hindent-mode</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">
-<span class="section-number-2">4</span> Dynamic Link Issue</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-read <a href="https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking">https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking</a>.
-</p>
-
-<p>
-You can also set these flags in ~/.cabal/config so that it applies to all projects by default.
-</p>
-
-<p>
-<kbd>~/.cabal/config</kbd>
-</p>
-<div class="highlight"><pre><span></span>library-vanilla: False
-shared: True
-executable-dynamic: True
-</pre></div>
+<p class="more"><a href="posts/install-haskell-applications/">閱讀更多…</a></p>
 </div>
 </div>
     </div>
@@ -509,7 +291,7 @@ executable-dynamic: True
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 音響要好聲，空間才是王道<sup><a id="fnr.1" name="fnr.1" class="footref" href="posts/alsa-equaler/#fn.1">1</a></sup>，没有 DRC 前，先試試等化器<sup><a id="fnr.2" name="fnr.2" class="footref" href="posts/alsa-equaler/#fn.2">2</a></sup>，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
 Archlinux WIKI 的<a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture">Advanced Linux Sound Architecture</a>已說明等化器的安裝及設定，照做即可。
@@ -651,7 +433,7 @@ mpd 即可使用，瞎打誤撞。
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 htpc
 </p>
@@ -737,7 +519,7 @@ need_root_right = no
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 首先依<a href="posts/install-arch-linux-2017">install-arch-linux-2017</a>將基本系統裝好，接著參考
 <a href="https://wiki.archlinux.org/index.php/General_recommendations">https://wiki.archlinux.org/index.php/General_recommendations</a>
@@ -1137,7 +919,7 @@ opencc: using s2twp.json
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 原本的 Beginners' Guide 改成了<a href="https://wiki.archlinux.org/index.php/installation_guide">Installation guide</a>，文件結構比較清楚，但是保證不適合初次安裝 archlinux
 的人閱讀，也不適合一步步之執行。
@@ -2171,7 +1953,7 @@ iVT enable @ bios
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 來源：<a href="http://wawafinanceessais.blogspot.com/2017/08/30.html">汪汪財經：塞斯．卡拉曼：價值投資中的 30 個重要投資思想</a>
 </p>
@@ -2603,7 +2385,7 @@ iVT enable @ bios
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/fruit-win-cancer/" rel="bookmark"><time class="published dt-published" datetime="2017-08-10T10:24:46+08:00" title="2017-08-10 10:24">2017-08-10 10:24</time></a></p>
+            <p class="dateline"><a href="posts/fruit-win-cancer/" rel="bookmark"><time class="published dt-published" datetime="2017-08-10T10:24:46-08:00" title="2017-08-10 10:24">2017-08-10 10:24</time></a></p>
                 <p class="commentline">
         
     <a href="posts/fruit-win-cancer/#disqus_thread" data-disqus-identifier="cache/posts/fruit-win-cancer.html">Comments</a>
@@ -2611,118 +2393,38 @@ iVT enable @ bios
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
-<a href="http://health.businessweekly.com.tw/AArticleM.aspx?id=ARTL000093890">20 年戰勝 3 癌！醫師每天早上喝一杯「抗癌五彩蔬果汁」，常保體質弱鹼性</a>
+來源：<a href="http://health.businessweekly.com.tw/AArticleM.aspx?id=ARTL000093890">20 年戰勝 3 癌！醫師每天早上喝一杯「抗癌五彩蔬果汁」，常保體質弱鹼性</a>
 </p>
 
-<p>
-身為心臟內科醫師，從小又是運動健將的我，照理應當是身強體壯。從沒想過有一天自己會罹患癌症，而且還接連三種癌症！
-</p>
+<ul class="org-ul">
+<li>人：心臟內科醫師，從小又是運動健將，但罹患癌症，而且還接連三種癌症！巨大細胞癌（骨癌）、腎臟癌與甲狀腺癌。
+</li>
+<li>時：抗癌 20 年
+</li>
+<li>法：CAM 整合療法，
+</li>
+<li>早餐前，我會先喝一杯抗癌蔬果汁
+</li>
+<li>早餐，多半是三明治加牛奶，或是清粥小菜等簡單的食物，常保體質弱鹼性。
+</li>
+<li>鹼性食物多以青菜類為主；酸性食物是魚、肉、蛋和甜食等
+</li>
+<li>不必太過勉強進行全素的飲食。
+</li>
 
+<li>每天在吃早餐前，我會先喝一杯蔬果汁來增加維他命 C、消化酵素，以及攝取植化素。
+</li>
+<li>所以我並未特別去買有機品，而是換個方式，設法將蔬菜、水果的殘留農藥去掉。
+</li>
+<li>我特別喜歡在黃昏市場採買，而且一定挑當季盛產的蔬果
+</li>
+<li>「抗癌五彩蔬果汁」，組合比例是 3 種蔬菜＋2 種水果，或是 3 種水果＋2 種蔬菜。蔬果種類主要有：花椰菜、高麗菜、蕃茄、蘋果與鳳梨等。
+</li>
+</ul>
 <p>
-從 32 歲那年開始，三種癌症陸續找上我─巨大細胞癌（骨癌）、腎臟癌與甲狀腺癌，抗癌期間長達十年，開刀無數次，忍受著一般人所無法忍受的痛苦。但在經歷了這十年的痛苦經歷之後，我卻又奇蹟式的康復，而且身體狀況比罹患癌症之前更年輕、健康。
-</p>
-
-<p>
-回首前塵，這一段抗癌歲月就好像是老天送給我的一樣禮物：讓我從煉獄般的痛苦裡重生，又毫髮無傷地還給我更健康的身心靈。抗癌
-20 年間，為了活下去，窮盡各種抗癌方法，從正統的西醫治療，以至食物營養、天然植物複方、心靈療癒、氣功鍛鍊、藝術治療等，我也有了抗癌心得，整合成一套癌症康復的方程式—CAM 整合療法。
-</p>
-
-<p>
-CAM 整合療法讓我的身體得以通過三個癌症的歷練，獲得重生。這其中有許多不可思議的奇蹟。
-</p>
-
-<p>
-色彩越多營養越高──多飲抗癌蔬果汁
-</p>
-
-<p>
-每天在吃早餐前，我會先喝一杯蔬果汁來增加維他命 C、消化酵素，以及攝取植化素。從最新的營養學來看，五顏六色的蔬菜、水果裡，具有被營養界熱烈推崇的「植化素」，可以消除人體的自由基，發揮抗氧化、增強免疫力、調節荷爾蒙的功能。每天只要能吃到五顏六色的蔬菜、水果，就能攝取到充分且多元化的植化素，如胡蘿蔔素、茄紅素、兒茶素等。
-</p>
-
-<p>
-植化素，就是植物所含的天然化學成分。它與維生素的特性不同，而且在蔬果的皮、根、莖、籽等部位含量最高。
-</p>
-
-<p>
-每一種不同顏色的蔬果，都有獨特的植化素種類與功能，像是「花青素」和「阿 魏酸」含有抗老化的植化素；「檞皮素」含有高抗氧化力的植化素，遠勝維生素 E、C；「楊梅素」則含有可以降血糖、趕走膽固醇的植化素；「綠原酸」含有可以幫人 體減重的植化素。
-</p>
-
-<p>
-一般飲食療法所提倡的蔬果汁，都強調要使用無農藥的有機蔬果，以避免吃進農藥。但是有機蔬果價格昂貴，長期下來所費不貲。所以我並未特別去買有機品，而是換個方式，設法將蔬菜、水果的殘留農藥去掉。
-</p>
-
-<p>
-我特別喜歡在黃昏市場採買，而且一定挑當季盛產的蔬果，因為當季盛產的蔬果所含的營養成分最高，人體可以從中獲得最大好處，而且價格上也比較經濟實惠。
-</p>
-
-<p>
-我常喝的「抗癌五彩蔬果汁」，組合比例是 3 種蔬菜＋2 種水果，或是 3 種水果＋2 種蔬菜。蔬果種類主要有：花椰菜、高麗菜、蕃茄、蘋果與鳳梨等。
-</p>
-
-<p>
-切記， 花椰菜與高麗菜要連梗一起打汁。以花椰菜梗來說， 植化素高達 143 種，有類胡蘿蔔素、香豆素、生物類黃酮素、花青素等防癌抗老元素，而且青花椰菜的功效比白花椰菜更好。
-</p>
-
-<p>
-高麗菜有幫助傷口癒合的特性，我在癌症開刀後，就是因為常喝高麗菜汁，傷口復原的格外迅速。
-</p>
-
-<p>
-*
-</p>
-
-<p>
-photos 放大顯示
-</p>
-
-<p>
-【材料配方範例】
-</p>
-
-<p>
-● 蘋果 25 克（含有花青素、檞皮素、阿魏酸、綠原酸）● 鳳梨 40 克（含有阿魏酸、綠原酸、鳳梨酵素）● 番薯葉 40 克（含有楊梅素、檞皮素）● 牛蒡 35 克（富含綠原酸）● 加州黑棗梅 16 克（富含花青素、綠原酸）
-</p>
-
-<p>
-【製作步驟】
-</p>
-
-<p>
-STEP1. 在前一天晚上將要打汁的蔬菜、水果先做清洗。
-</p>
-
-<p>
-STEP2. 清洗之後，加水浸泡在盆子裡，滴 1～2 滴天然配方的「環保蔬果清潔劑」浸泡一個晚上。
-</p>
-
-<p>
-STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後打成果菜汁飲用。
-</p>
-
-<p>
-常保體質弱鹼性──吃出「3 鹼 1 酸」的飲食慣性
-</p>
-
-<p>
-喝完抗癌五彩蔬果汁，接著我就會開始享用早餐，多半是三明治加牛奶，或是清粥小菜等簡單的食物，但是我一定遵守「3 鹼 1 酸」的原則，也就是鹼性食物與酸性食物的比例為 3：1，這樣能夠使身體一直維持在弱鹼性的健康狀態。
-</p>
-
-<p>
-以日常食材來說，鹼性食物多以青菜類為主；酸性食物是魚、肉、蛋和甜食等。如果經常吃太多酸性食物，身體也會慢慢變成酸性。酸性體質是毒素的溫床，身體累積過多毒素，就會容易致癌。
-</p>
-
-<p>
-如果完全不吃肉類，也容易造成蛋白質攝取不足的問題。因此，每餐維持 3 鹼 1 酸的飲食比例，最能讓身體活力充足，營養均衡，又「抗癌五彩蔬果汁」配方與製作法能保持在良好的弱鹼性狀態。
-</p>
-
-<p>
-另外，如果能以植物蛋白，如豆類、豆漿等素食來取代肉類，也有助於減低身體的毒素。這可依照個人的飲食習慣適度調整，以能夠期適應和持之以恆為原則，不必太過勉強進行全素的飲食。
-</p>
-
-<p>
-這篇<a href="posts/fruit-win-cancer/#la-empty-tummy">空腹吃水果勝癌症</a>是從 line 直接轉出，來處不明，全文收錄於後。
+附錄一篇<i>空腹吃水果勝癌症</i>，是從 line 直接轉出，來處不明，全文收錄於後。重點一句話：<b>常吃水果，空腹吃</b>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -2732,7 +2434,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 </div>
 <div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1">
-<span class="section-number-3">1.1</span> <a id="la-empty-tummy" name="la-empty-tummy"></a>空腹吃水果勝癌症</h3>
+<span class="section-number-3">1.1</span> 空腹吃水果勝癌症</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 台大郭銘雄(璁錡)醫師-生死的智慧，演講非常精采
@@ -2741,7 +2443,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 
 <div id="outline-container-sec-1-1-1" class="outline-4">
 <h4 id="sec-1-1-1">
-<span class="section-number-4">1.1.1</span> ※空腹吃水果……(尤其是蘋果)</h4>
+<span class="section-number-4">1.1.1</span> 空腹吃水果……(尤其是蘋果)</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 多虧了有關這個水果和果汁的電子郵件，它告訴了一個治癒癌症的戰略。我的成功率為 80%。 癌症病人死不了了，不管你信還是不信，治療方法終於找到了。對那些用常規療法治療癌症而死亡的患者，我深表遺憾。他們中沒幾個存活 5
@@ -2752,7 +2454,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 
 <div id="outline-container-sec-1-1-2" class="outline-4">
 <h4 id="sec-1-1-2">
-<span class="section-number-4">1.1.2</span> ※常吃水果</h4>
+<span class="section-number-4">1.1.2</span> 常吃水果</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 一說到吃水果，我們就想到把水果 切成塊，大快朵頤。其實，沒那麼簡單。要講究吃水果的方法和時間。什麼是正確方法呢？千萬別再飯後吃水果，一定要空腹吃鮮果。這樣水果會起到身體殺毒作用，起到提供身體能量，消肥減瘦作用，以及參與生化活動的作用。鮮果是重要食物。試想，你在吃兩片麵包後，又吃了一片水果。本來水果是要透過胃壁進入腸子的，但被食物擋住了。與此同時，胃發酵，變酸，水果一接觸到它們, 配著胃酸，整個食物就壞了。你會聽到有人抱怨：我一吃西瓜就愛打嗝兒，我一吃榴槤就脹肚， 我一吃香蕉愛拉稀，等等。那是因為水果與胃中腐敗的食物混合後產生的氣體造成的。但是你空腹吃水果，就不會出像上述情況。白頭髮，禿頭謝頂，神經緊張，缺覺黑眼圈，在你空腹吃鮮果以後，以上症狀一概消失。
@@ -2811,7 +2513,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 為了確認咖啡會不會致癌，特別花了點時間 google 一下，沒想到結論是真的出人意表。
 </p>
@@ -3031,7 +2733,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
     <p>
 來源：<a href="http://www.businessweekly.com.tw/article.aspx?id=20446&amp;type=Blog&amp;p=0">你這一生中，做過最重要的事情是什麼？這個 80 歲指揮家的回答驚醒了許多人 (重要的事,指揮,回答,…)</a>
 </p>
