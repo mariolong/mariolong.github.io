@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Rime 中州韻輸入法引擎 | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/rime/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../convert-to-pdf-by-pandoc/" title="Convert to pdf by pandoc" type="text/html">
+<link rel="next" href="../gps/" title="gps" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="Rime 中州韻輸入法引擎">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/rime/">
+<meta property="og:description" content="緣起
+打字的時候，常常唸著要打的字，腦子裡想著那個字的寫法，再轉成「嘸蝦米」的碼，最後
+手指按下相對應的字母。要是有一種輸入法能瞭解我想到的字，透過拼音就能把字打出來，
+不就可以少了一個轉碼的動作？
+多年前就試過 rime 這個輸入法，當時用著用著就學會了拼音輸入法。因為不可避免地要選
+字，最後還是放棄了拼音法。不知道為了什麼，最近又想著要用拼音，也就隨緣地把這個中
+州韻輸入法拿來折騰吧。
+不過，">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-04-20T06:22:54Z">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Rime 中州韻輸入法引擎</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-04-20T06:22:54Z" itemprop="datePublished" title="2016-04-20 06:22">2016-04-20 06:22</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/rime.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="section" id="id1">
+<h2>緣起</h2>
+<p>打字的時候，常常唸著要打的字，腦子裡想著那個字的寫法，再轉成「嘸蝦米」的碼，最後
+手指按下相對應的字母。要是有一種輸入法能瞭解我想到的字，透過拼音就能把字打出來，
+不就可以少了一個轉碼的動作？</p>
+<p>多年前就試過 rime 這個輸入法，當時用著用著就學會了拼音輸入法。因為不可避免地要選
+字，最後還是放棄了拼音法。不知道為了什麼，最近又想著要用拼音，也就隨緣地把這個中
+州韻輸入法拿來折騰吧。</p>
+<p>不過，即便用了這種拼音輸入法，還是免不了需要「轉碼」。</p>
+</div>
+<div class="section" id="id2">
+<h2>安裝</h2>
+<p>fcitx-rime</p>
+</div>
+<div class="section" id="id3">
+<h2>配置</h2>
+<div class="section" id="id4">
+<h3>使用者目錄</h3>
+<p>因為用的是 fcitx，所以，使用者的配置檔放在 <tt class="docutils literal"><span class="pre">~/.config/fcitx/rime</span></tt>。</p>
+<p>windows 下的使用者文件可以在「開始-&gt;小狼毫」中找得到。</p>
+<p>基本上也不配置了，加上幾個小小的功能也就夠用。</p>
+</div>
+<div class="section" id="id5">
+<h3>自定義短語</h3>
+<p>自定義的片語放在 custom_phrase.txt 這個檔案中，直接拿作者的範例來看比較清楚。</p>
+<script src="https://gist.github.com/5440677.js"></script><noscript>
+<pre class="literal-block">
+# Rime table
+# coding: utf-8
+#@/db_name  custom_phrase.txt
+#@/db_type	tabledb
+#
+# 用於【朙月拼音】系列輸入方案
+# 【小狼毫】0.9.21 以上
+#
+# 請將該文件以UTF-8編碼保存爲
+# Rime用戶文件夾/custom_phrase.txt
+#
+# 碼表各字段以製表符（Tab）分隔
+# 順序爲：文字、編碼、權重（決定重碼的次序、可選）
+#
+# 雖然文本碼表編輯較爲方便，但不適合導入大量條目
+#
+# no comment
+
+中州韻輸入法引擎	rime	3
+Rime Input Method Engine	rime	2
+http://code.google.com/p/rimeime/	rime	1
+星際我爭霸	starcraft
+tassadar@protoss.net	email
+
+</pre>
+</noscript>
+<p>直接把這個檔案放到使用者目錄下即可，不必再做其他設定。</p>
+</div>
+<div class="section" id="id6">
+<h3>同步</h3>
+<p>windows 和 linux 使用者目錄下的 installation.yaml 分別中加入：</p>
+<pre class="literal-block">
+# windows
+sync_dir: D:\rime-sync
+
+# linux
+sync_dir: /mnt/win-data/rime-sync
+</pre>
+<p>注意事項：</p>
+<ol class="arabic simple">
+<li>
+<tt class="docutils literal">sync_dir:</tt> 後面的目錄名稱不可加上引號。</li>
+<li>執行同步後，在 <tt class="docutils literal">sync_dir</tt> 所指到的目錄中，會產生相對應於 <tt class="docutils literal">system_id</tt> 的目錄。</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h3>使用者詞典</h3>
+<p>常使用的詞，可以自己備份下來，以後用得著，不必從頭學起。</p>
+</div>
+<div class="section" id="id8">
+<h3>自行增加字詞</h3>
+<p>有些沒有的字詞，還是自己加上吧。</p>
+</div>
+<div class="section" id="id9">
+<h3>擴充詞庫</h3>
+<p>參考 <a class="reference external" href="https://github.com/rime-aca/dictionaries">Rime 擴充詞庫</a></p>
+</div>
+<div class="section" id="id10">
+<h3>表情符號</h3>
+</div>
+<div class="section" id="id11">
+<h3>加上嘸蝦米輸入法</h3>
+<p>原本已經找到有人實作出來 rime 的嘸蝦米輸入法，但是人的腦子還是不適合在形碼和拼音之
+間切換，先放棄嘸蝦米吧，一陣子。</p>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../convert-to-pdf-by-pandoc/" rel="prev" title="Convert to pdf by pandoc">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../gps/" rel="next" title="gps">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/rime/",
+        disqus_title="Rime \u4e2d\u5dde\u97fb\u8f38\u5165\u6cd5\u5f15\u64ce",
+        disqus_identifier="cache/posts/rime.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

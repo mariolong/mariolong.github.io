@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>lxqt | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/lxqt/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../ranger/" title="ranger: 文字模式下的檔案管理員" type="text/html">
+<link rel="next" href="../haskell-programs/" title="安裝 haskell 程式" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="lxqt">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/lxqt/">
+<meta property="og:description" content="update: 2016/9/19, 2015-5-25, 2014-10-27, 2014-10-15, 2014-10-13, 2014-6-6
+lxqt 就是 lxde 的 qt 版？！
+可能沒有這麼簡單吧。整個使用的感覺很不錯，比 lxde 容易，預設就好看得多。
+2015-5-25 這次完全改寫了，原來 lxqt-panel 拿掉，
+用 xmonad/taffybar 取代。
+
+Tabl">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-04-27T09:06:38+08:00">
+<meta property="article:tag" content="Linux">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">lxqt</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-04-27T09:06:38+08:00" itemprop="datePublished" title="2014-04-27 09:06">2014-04-27 09:06</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/lxqt.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p><strong>update</strong>: 2016/9/19, 2015-5-25, 2014-10-27, 2014-10-15, 2014-10-13, 2014-6-6</p>
+<p>lxqt 就是 lxde 的 qt 版？！</p>
+<p>可能沒有這麼簡單吧。整個使用的感覺很不錯，比 lxde 容易，預設就好看得多。</p>
+<p><strong>2015-5-25</strong> 這次完全改寫了，原來 lxqt-panel 拿掉，
+用 xmonad/taffybar 取代。</p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id8">安裝</a></li>
+<li>
+<a class="reference internal" href="#id2" id="id9">配置</a><ul>
+<li><a class="reference internal" href="#wm" id="id10">修改預設的 wm</a></li>
+<li><a class="reference internal" href="#id3" id="id11">外觀設定</a></li>
+</ul>
+</li>
+<li>
+<a class="reference internal" href="#id5" id="id12">其它工具</a><ul>
+<li><a class="reference internal" href="#lxqt-runner-lxqt-globalkeys" id="id13">lxqt-runner+lxqt-globalkeys</a></li>
+<li><a class="reference internal" href="#pcmanfm-qt" id="id14">pcmanfm-qt</a></li>
+<li><a class="reference internal" href="#file-roller" id="id15">file-roller</a></li>
+<li><a class="reference internal" href="#speedcrunch" id="id16">speedcrunch</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6" id="id17">結論</a></li>
+<li><a class="reference internal" href="#id7" id="id18">後記</a></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id8">安裝</a></h2>
+<pre class="literal-block">
+$ yaourt -S lxqt-common lxqt-config lxqt-session lxqt-policykit lxqt-globalkeys lxqt-runner lxqt-qtplugin
+</pre>
+<p>裝一些 lxqt 用的常用的軟體</p>
+<pre class="literal-block">
+$ yaourt -S pcmanfm-qt gvfs-mtp gvfs-gphoto2 file-roller speedcrunch screengrab gksu
+</pre>
+<p>wm 一般都是用 openbox，我喜歡的是 xmonad <a class="reference external" href="../lxqt%2Bxmonad%2Btaffybar/">我的桌面組合 lxqt+xmonad+taffybar</a></p>
+<pre class="literal-block">
+$ cabal install xmonad xmonad-contrib taffybar
+</pre>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">配置</a></h2>
+<div class="section" id="wm">
+<h3><a class="toc-backref" href="#id10">修改預設的 wm</a></h3>
+<p>執行 <tt class="docutils literal"><span class="pre">lxqt-config-session</span></tt> 修改「視窗管理員」。</p>
+<p>或修改 <tt class="docutils literal"><span class="pre">~/.config/lxqt/session.desktop</span></tt></p>
+<pre class="literal-block">
+window_manager=xmonad
+</pre>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id11">外觀設定</a></h3>
+<p>最重要的是讓 QT 和 GTK 的應用程式看起來很像。參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#oxygen-gtk">Archlinux Wiki</a></p>
+<div class="section" id="oxygen-gtk-gtk-qt">
+<h4>使用 oxygen-gtk 調和 gtk 和 qt 外觀</h4>
+<pre class="literal-block">
+$ yaourt -S oxygen oxygen-{gtk2,icons,cursors} ttf-oxygen
+</pre>
+<p>因為 GTK 3.16 之後的版本不再支援 non-CSS themes，所以 oxygen-gtk 的方法就不適用於 GTK3。arch 也把 <tt class="docutils literal"><span class="pre">oxygen-gtk3</span></tt> 拿掉了。
+不用只支援 GTK3 的主題應該就可以。</p>
+<p>依據 <a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#oxygen-gtk">Archlinux Wiki</a> 說明，</p>
+<pre class="literal-block">
+Note: Before KDE 4.10, you needed to create the file ~/.kde4/share/config/gtkrc-2.0,
+or let it automatically create like described below.
+But that is actually counter-productive with KDE 4.10’s oxygen-gtk,
+and you should delete this file after upgrading to prevent it from messing with your colors.
+Cleanup-removal of ~/.kde4/share/config/gtkrc might be necessary, too.
+</pre>
+<p>我把 gtkrc 與 gtkrc-2.0 這兩個檔砍了。</p>
+<div class="section" id="qt5">
+<h5>QT5</h5>
+<pre class="literal-block">
+$ export QT_STYLE_OVERRIDE=gtk
+$ lxqt-config-appearance
+</pre>
+</div>
+<div class="section" id="qt4">
+<h5>QT4</h5>
+<pre class="literal-block">
+$ export QTCHOOSER_RUNTOOL=qtconfig
+$ export QT_SELECT=4
+$ qtconfig
+</pre>
+<p>QT 的應用程式要用以上 2 個程式，修改主題為 GTK+，調整字型為自己喜歡的。</p>
+</div>
+<div class="section" id="gtk-theme">
+<h5>GTK theme</h5>
+<ol class="arabic">
+<li>
+<p class="first">安裝 lxappearance，用這個選擇要用的 gtk 主題。</p>
+</li>
+<li>
+<p class="first">布景主題用 numix archblue。</p>
+</li>
+<li>
+<p class="first">圖示主題用 faenza icon theme，這個看起來用的人挺多的。</p>
+<p>主題都改成扁平化設計，好看。</p>
+<pre class="literal-block">
+$ yaourt -S lxappearance numix-themes-archblue faenza-icon-theme
+</pre>
+</li>
+<li>
+<p class="first">google chrome 書籤列字型調整，原本的字實在太小。</p>
+<p>用 lxappearance 調整 gtk 2, 3 主題中的字型和大小。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="xcursor-icons">
+<h4>xcursor icons</h4>
+<p>以 xmonad 為視窗管理器時，剛開機時會顯示一個 x 的游標。在 <tt class="docutils literal">.xinitrc</tt> 加入:</p>
+<pre class="literal-block">
+xsetroot -cursor_name left_ptr &amp;
+</pre>
+<p>有時進入桌面後，會發現游標變成 X 預設醜醜的樣子，我還是喜歡 Oxgen Black 的游標主題。改回來！
+參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_themes#Getting_mouse_cursor_themes">https://wiki.archlinux.org/index.php/Cursor_themes#Getting_mouse_cursor_themes</a></p>
+<p>有三種做法：</p>
+</div>
+<div class="section" id="usr-share-icons-default-index-theme">
+<h4>1. 修改 <tt class="docutils literal">/usr/share/icons/default/index.theme</tt>
+</h4>
+<pre class="literal-block">
+[icon theme]
+Inherits=Oxgen_Black
+</pre>
+</div>
+<div class="section" id="icons-default">
+<h4>2. 也可以加個連結到 <tt class="docutils literal"><span class="pre">~/.icons/default</span></tt>
+</h4>
+<pre class="literal-block">
+$ ln -s /usr/share/icons/Oxgen_Black/ ~/.icons/default
+</pre>
+</div>
+<div class="section" id="lxqt-config-appearance">
+<h4>3. 使用 <tt class="docutils literal"><span class="pre">lxqt-config-appearance</span></tt>
+</h4>
+<p>執行「LXQt 外觀設定」，它會直接產生 <tt class="docutils literal"><span class="pre">~/.icons/default/index.theme</span></tt>。</p>
+<p><strong>注意</strong> 此程式會在 ~/.Xdefaults 中加入 Xcursor.theme=&lt;them_name&gt;</p>
+<p><strong>建議用這個就好了，原因是方便。</strong></p>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id12">其它工具</a></h2>
+<div class="section" id="lxqt-runner-lxqt-globalkeys">
+<h3><a class="toc-backref" href="#id13">lxqt-runner+lxqt-globalkeys</a></h3>
+<p>按下 Alt-F2 即可快速執行應用程式。
+試用過 synapse、kupfer，還是決定用 runner 就好了。</p>
+</div>
+<div class="section" id="pcmanfm-qt">
+<h3><a class="toc-backref" href="#id14">pcmanfm-qt</a></h3>
+<p>lxqt 預設的檔案管理器，目前可用了，但還是有些小問題，習慣它。
+例如：滑鼠單擊執行程式的功能要先取消，否則在選擇多文件/檔案後，不好拖放。</p>
+<pre class="literal-block">
+$ yaourt -S pcmanfm-qt gvfs-mtp
+</pre>
+</div>
+<div class="section" id="file-roller">
+<h3><a class="toc-backref" href="#id15">file-roller</a></h3>
+<p>安裝後，記得到 pcmanfm-qt 中設定預設的壓縮程式。</p>
+<pre class="literal-block">
+$ yaourt -S file-roller
+</pre>
+</div>
+<div class="section" id="speedcrunch">
+<h3><a class="toc-backref" href="#id16">speedcrunch</a></h3>
+<p>很好用的計算器，就像寫數學公式，很親切的感覺。</p>
+<pre class="literal-block">
+$ yaourt -S speedcrunch
+</pre>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id17">結論</a></h2>
+<p>以前用 lxde 就覺得很不錯，也用了一整年。轉到 kde 是因為 htc 的關係。現在，我又回來用 lxqt，感覺很好。
+只要能解決以下 3 個問題</p>
+<ol class="arabic">
+<li>
+<p class="first">mtp，解決與 htc 連線的需求。</p>
+<p><strong>解法</strong> ：用 pcmanfm-qt + gvfs-mtp。</p>
+</li>
+<li>
+<p class="first">usb automount，這個應該不難。archlinux wiki 中有一些描述，可以試試。</p>
+<p><strong>解法</strong> <a class="reference external" href="../udiskie-usb-storage-automount/">udiskie: usb storage automount</a> 。</p>
+</li>
+<li>
+<p class="first">qbittorrent 中，能正確地開啟檔案所在目錄。現在是時有時無。</p>
+<p><strong>解法</strong> 將 pcmanfm-qt 設為預設的檔案管理器</p>
+<pre class="literal-block">
+$ xdg-mime query default inode/directory
+$ xdg-mime default pcmanfm-qt.desktop inode/directory
+</pre>
+</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id18">後記</a></h2>
+<p>非常滿足地用著 lxqt，感謝這個 team 的努力，讓我有個不錯的桌面可用。</p>
+<p>在安裝 lxqt 的過程中，看到了一個看圖軟體 <tt class="docutils literal">nomacs</tt> ，看起來不錯用，先記錄下來吧，免得忘了。</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">Linux</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../ranger/" rel="prev" title="ranger: 文字模式下的檔案管理員">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../haskell-programs/" rel="next" title="安裝 haskell 程式">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/lxqt/",
+        disqus_title="lxqt",
+        disqus_identifier="cache/posts/lxqt.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

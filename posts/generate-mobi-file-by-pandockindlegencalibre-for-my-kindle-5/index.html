@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>generate mobi file by pandoc/kindlegen/calibre for my kindle 5 | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../zsh/" title="zsh" type="text/html">
+<link rel="next" href="../imagemagick/" title="imagemagick" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="generate mobi file by pandoc/kindlegen/calibre for my kindle 5">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/">
+<meta property="og:description" content="買了 kindle 5 看電子書。
+照慣例，思考著如何自動將網頁文章轉進我的電子書，讓我可以在閒暇時可以閱讀這些文章。
+
+工具：
+
+pandoc
+kindlegen
+calibre
+
+
+
+流程：
+pandoc 抓網頁資料
+
+
+說明：
+
+pandoc
+
+
+kindlegen
+從 官網 下載後，直接解壓縮到一個目錄。
+目錄下的 kindlegen 是可執行檔，所以建一個連結到我的 $PATH 中即可。">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-11-14T02:55:28Z">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">generate mobi file by pandoc/kindlegen/calibre for my kindle 5</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-11-14T02:55:28Z" itemprop="datePublished" title="2014-11-14 02:55">2014-11-14 02:55</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>買了 kindle 5 看電子書。</p>
+<p>照慣例，思考著如何自動將網頁文章轉進我的電子書，讓我可以在閒暇時可以閱讀這些文章。</p>
+<div class="section" id="id1">
+<h2>工具：</h2>
+<ol class="arabic simple">
+<li>pandoc</li>
+<li>kindlegen</li>
+<li>calibre</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>流程：</h2>
+<p>pandoc 抓網頁資料</p>
+</div>
+<div class="section" id="id3">
+<h2>說明：</h2>
+<div class="section" id="pandoc">
+<h3>pandoc</h3>
+</div>
+<div class="section" id="kindlegen">
+<h3>kindlegen</h3>
+<p>從 <a class="reference external" href="http://www.amazon.com/gp/feature.html?docId=1000765211">官網</a> 下載後，直接解壓縮到一個目錄。</p>
+<p>目錄下的 kindlegen 是可執行檔，所以建一個連結到我的 <tt class="docutils literal">$PATH</tt> 中即可。</p>
+<p>kindlegen 可以轉的檔案，我是選用 epub，也就是 pandoc 轉出來的那個檔。</p>
+</div>
+<div class="section" id="kindle">
+<h3>傳到 kindle 上</h3>
+<div class="section" id="usb">
+<h4>USB</h4>
+</div>
+<div class="section" id="transferring-using-dropbox">
+<h4>Transferring Using Dropbox</h4>
+<p><a class="reference external" href="http://google.about.com/od/kindlefire/a/How-To-Put-Non-Amazon-Books-On-Your-Kindle-Fire.htm">http://google.about.com/od/kindlefire/a/How-To-Put-Non-Amazon-Books-On-Your-Kindle-Fire.htm</a></p>
+<p>I usually don't like to fiddle with plugging my Kindle into my laptop,
+so I use Dropbox to both store my library and transfer my eBooks to my devices.</p>
+<p>If you use Dropbox, you'll want to navigate to your eBook file and rather than just tapping to open it,
+you'll want to select the triangle to the right of the file name.</p>
+<p>Next, tap Export.</p>
+<p>Choose Save to SD Card (your Kindle doesn't actually have an SD card, but this gets you to the internal storage space).</p>
+<p>Select either Books (for .mobi files) or Documents (for .pdf, .txt, .doc, and other files).
+Tap Export.</p>
+<p>Once you've done this, you should restart your Kindle Fire. Your books will appear after that.
+If your book does not appear, double check that you waited for the book to fully copy to your Kindle's hard drive and
+double check that you chose the correct folder for the file format.</p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../zsh/" rel="prev" title="zsh">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../imagemagick/" rel="next" title="imagemagick">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/",
+        disqus_title="generate mobi file by pandoc/kindlegen/calibre for my kindle 5",
+        disqus_identifier="cache/posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

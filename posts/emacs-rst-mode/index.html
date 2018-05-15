@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>emacs reStructureText mode | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/emacs-rst-mode/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../emacs-ido/" title="emacs-ido 設定" type="text/html">
+<link rel="next" href="../emacs-server-start/" title="emacs server start" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="emacs reStructureText mode">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/emacs-rst-mode/">
+<meta property="og:description" content="參考 http://docutils.sourceforge.net/docs/user/emacs.html
+
+install
+我用的是 emacs 24.3，預設已安裝 rst.el，檢查一下：
+
+M-x rst-mode
+
+在 OS 中安裝 sphinx
+
+pip inistall sphinx
+
+
+
+配置
+
+客製化標題符號
+…
+
+
+
+操作指令
+
+指令分類
+
+C-c C-a &lt;up&gt; or ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-05-15T09:10:54+08:00">
+<meta property="article:tag" content="emacs">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">emacs reStructureText mode</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-05-15T09:10:54+08:00" itemprop="datePublished" title="2014-05-15 09:10">2014-05-15 09:10</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/emacs-rst-mode.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>參考 <a class="reference external" href="http://docutils.sourceforge.net/docs/user/emacs.html">http://docutils.sourceforge.net/docs/user/emacs.html</a></p>
+<div class="section" id="install">
+<h2>install</h2>
+<p>我用的是 emacs 24.3，預設已安裝 rst.el，檢查一下：</p>
+<pre class="literal-block">
+M-x rst-mode
+</pre>
+<p>在 OS 中安裝 sphinx</p>
+<pre class="literal-block">
+pip inistall sphinx
+</pre>
+</div>
+<div class="section" id="id1">
+<h2>配置</h2>
+<ol class="arabic simple">
+<li>客製化標題符號</li>
+<li>…</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>操作指令</h2>
+<div class="section" id="id3">
+<h3>指令分類</h3>
+<dl class="docutils">
+<dt>C-c C-a &lt;up&gt; or &lt;down&gt;</dt>
+<dd>切換標題層次
+改用 C-c C-= 切換</dd>
+<dt>C-c C-c</dt>
+<dd>將目前檔案轉成 pdf 或 html 等目標檔</dd>
+<dt>C-c C-l</dt>
+<dd>建立表列</dd>
+<dt>C-c C-r</dt>
+<dd>處理目前的 region</dd>
+<dt>C-c C-t</dt>
+<dd>處理目錄 (table of contents)</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h3>標題</h3>
+<dl class="docutils">
+<dt>C-c C-a C-a, C-c C-=, and C-=</dt>
+<dd>
+<p class="first">rst-adjust</p>
+<ol class="last arabic simple">
+<li>如果所在行沒有標題符號，或不是完整的標題符號，則會建立標題符號，長度與本行文字等長，層次與上文中最近的一個標題相同。</li>
+<li>已有完整的標題符號，則會循環升級標題層次。</li>
+<li>可以先選定區域 (region)，區域內的標題可以一起切換。</li>
+</ol>
+</dd>
+<dt>C-- C-=</dt>
+<dd>
+<p class="first">降級標題</p>
+<p class="last">可以先選定區域 (region)，區域內的標題可以一起切換。</p>
+</dd>
+</dl>
+<div class="section" id="customizations-for-adornments">
+<h4>客製化標題符號 (Customizations for Adornments)</h4>
+<dl class="docutils">
+<dt>rst-preferred-adornments</dt>
+<dd>to a list of the adornments that you like to use for documents.</dd>
+<dt>rst-default-indent</dt>
+<dd>can be set to the number of indent spaces preferred for the over-and-under adornment style.</dd>
+<dt>C-c C-a C-d.</dt>
+<dd>
+<p class="first">rst-display-adornments-hierarchy</p>
+<p class="last">顯示目前的標題符號表</p>
+</dd>
+<dt>C-c C-a C-s</dt>
+<dd>
+<p class="first">rst-straighten-adornments</p>
+<p class="last">一次調整本文中所有的標題符號</p>
+</dd>
+<dt>C-M-a ??C-}</dt>
+<dd>
+<p class="first">rst-backward-section</p>
+<p class="last">游標移至下一章節</p>
+</dd>
+<dt>C-M-e ??C-{</dt>
+<dd>
+<p class="first">rst-forward-section</p>
+<p class="last">游標移至上一章節</p>
+</dd>
+<dt>C-M-h</dt>
+<dd>
+<p class="first">rst-mark-section</p>
+<p class="last">選取整個章節</p>
+</dd>
+<dt>M-}</dt>
+<dd>游標移至下一段</dd>
+<dt>M-{</dt>
+<dd>游標移至上一段</dd>
+<dt>C-c C-r TAB</dt>
+<dd>
+<p class="first">rst-shift-region</p>
+<p class="last">選取區域向右移動 1 個 TAB</p>
+</dd>
+<dt>M-- C-c C-r &lt;Tab&gt;</dt>
+<dd>選取區域向左移動 1 個 TAB</dd>
+<dt>M-2 or M-- 2 C-c C-r &lt;Tab&gt;</dt>
+<dd>左移 2 個 Tab</dd>
+<dt>M-0 C-c C-r &lt;Tab&gt;</dt>
+<dd>取消選取區域的所有縮排</dd>
+<dt>M-x customize-group&lt;RET&gt; rst-indent&lt;RET&gt;</dt>
+<dd>設定縮排風格</dd>
+<dt>Indenting Lines While Typing</dt>
+<dd>In Emacs the TAB key is often used for indenting the current line.
+rst-mode implements this for the sophisticated indentation rules of reStructuredText.
+Pressing TAB cycles through the possible tabs for the current line.
+In the same manner newline-and-indent (C-j) indents the new line properly.</dd>
+<dt>C-j, &lt;enter&gt;, &lt;Tab&gt;</dt>
+<dd>針對當行，調整縮排</dd>
+<dt>M-q</dt>
+<dd>
+<p class="first">fill-paragraph</p>
+<p class="last">重排段落</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>轉檔</h3>
+</div>
+<div class="section" id="id6">
+<h3>表列</h3>
+<p>If you have a couple of plain lines you want to turn into an enumerated list you can invoke</p>
+<dl class="docutils">
+<dt>C-c C-l C-e</dt>
+<dd>
+<p class="first">rst-enumerate-region</p>
+<p class="last">將一個選定的區域，轉成數字表列。</p>
+</dd>
+<dt>C-c C-l C-b</dt>
+<dd>
+<p class="first">rst-bullet-list-region</p>
+<p class="last">轉成表列</p>
+</dd>
+<dt>C-u</dt>
+<dd>如果要將連續的文字行轉成（數字）表列，則可在執行命令前加上 <tt class="docutils literal"><span class="pre">C-u</span></tt> 。</dd>
+<dt>rst-straighten-bullets-region (C-c C-l C-s),</dt>
+<dd>
+<p class="first">the existing bullets in the active region will be replaced to reflect their respective level.
+This does not make a difference in the document structure that reStructuredText defines,
+but looks better in,
+for example, if all of the top-level bullet items use the character -,
+and all of the 2nd level items use <a href="#id7"><span class="problematic" id="id8">*</span></a>, etc...</p>
+<div class="last system-message" id="id7">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 161); <em><a href="#id8">backlink</a></em></p>
+Inline emphasis start-string without end-string.</div>
+</dd>
+<dt>rst-insert-list (C-c C-l C-i)</dt>
+<dd>You may also invoke rst-insert-list at the end of a list item.
+In this case it inserts a new line containing the markup for the a list item on the same level.</dd>
+</dl>
+</div>
+<div class="section" id="id9">
+<h3>區域</h3>
+</div>
+<div class="section" id="id10">
+<h3>目錄</h3>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/emacs/" rel="tag">emacs</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../emacs-ido/" rel="prev" title="emacs-ido 設定">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../emacs-server-start/" rel="next" title="emacs server start">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/emacs-rst-mode/",
+        disqus_title="emacs reStructureText mode",
+        disqus_identifier="cache/posts/emacs-rst-mode.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="writing blogger using by nikola again.">
+<meta name="viewport" content="width=device-width">
+<title>部落格，重回 nikola+org-mode | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="writing blogger using by nikola again.">
+<meta name="author" content="Mario Long">
+<link rel="prev" href="../install-haskell-applications/" title="Install Haskell Applications" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="部落格，重回 nikola+org-mode">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/">
+<meta property="og:description" content="writing blogger using by nikola again.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-05-14T09:32:19+08:00">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="nikola">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">部落格，重回 nikola+org-mode</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2018-05-14T09:32:19+08:00" itemprop="datePublished" title="2018-05-14 09:32">2018-05-14 09:32</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/zhong-hui-nikola-xie-luo-ge.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+掙扎了許久，還是先用<a href="https://getnikola.com/">nikola</a>記錄一些事，畢竟比較熟悉，能快一點上手。
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">
+<span class="section-number-2">1</span> 安裝</h2>
+<div class="outline-text-2" id="text-1">
+<div class="highlight"><pre><span></span>pip nikola
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">
+<span class="section-number-2">2</span> 設定</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+執行<code>nikola init</code>後，依指示設定，比較省事。
+</p>
+
+<div class="highlight"><pre><span></span>nikola init &lt;blog-name&gt;
+<span class="nb">cd</span> &lt;blog-name&gt;
+</pre></div>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">
+<span class="section-number-3">2.1</span> configuration file</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+修改<code>conf.py</code>，慢慢改，內容很多，不必急於一時。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">
+<span class="section-number-3">2.2</span> theme</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="highlight"><pre><span></span>nikola theme install bootstrap
+</pre></div>
+</div>
+
+<div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">
+<span class="section-number-4">2.2.1</span> <span class="todo TODO">TODO</span> add local search</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+<a href="https://plugins.getnikola.com/v7/localsearch/">https://plugins.getnikola.com/v7/localsearch/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">
+<span class="section-number-3">2.3</span> org-mod</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+先安裝 plugin orgmode，再做一點點微調即可。
+</p>
+
+<div class="highlight"><pre><span></span>nikola plugin -i orgmode
+</pre></div>
+
+<p>
+開啟<code>&lt;blog-name&gt;/plugins/orgmode/init.el</code>，加上以下的程式碼。
+</p>
+</div>
+
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1">
+<span class="section-number-4">2.3.1</span> 刪除不必要的空白</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+換行時，在兩個字間會有一個空白，不好看。
+</p>
+
+<div class="highlight"><pre><span></span><span class="c1">;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org</span>
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">eh-org-clean-space</span> <span class="p">(</span><span class="nf">text</span> <span class="nv">backend</span> <span class="nv">info</span><span class="p">)</span>
+  <span class="s">"在 export 为 HTML 时，删除中文之间不必要的空格"</span>
+  <span class="p">(</span><span class="nf">when</span> <span class="p">(</span><span class="nf">org-export-derived-backend-p</span> <span class="nv">backend</span> <span class="ss">'html</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">regexp</span> <span class="s">"[[:multibyte:]]"</span><span class="p">)</span>
+	  <span class="p">(</span><span class="nb">string </span><span class="nv">text</span><span class="p">))</span>
+      <span class="c1">;; org 默认将一个换行符转换为空格，但中文不需要这个空格，删除。</span>
+      <span class="p">(</span><span class="nf">setq</span> <span class="nv">string</span>
+	    <span class="p">(</span><span class="nf">replace-regexp-in-string</span>
+	     <span class="p">(</span><span class="nf">format</span> <span class="s">"\\(%s\\) *\n *\\(%s\\)"</span> <span class="nv">regexp</span> <span class="nv">regexp</span><span class="p">)</span>
+	     <span class="s">"\\1\\2"</span> <span class="nv">string</span><span class="p">))</span>
+      <span class="c1">;; 删除粗体之前的空格</span>
+      <span class="p">(</span><span class="nf">setq</span> <span class="nv">string</span>
+	    <span class="p">(</span><span class="nf">replace-regexp-in-string</span>
+	     <span class="p">(</span><span class="nf">format</span> <span class="s">"\\(%s\\) +\\(&lt;\\)"</span> <span class="nv">regexp</span><span class="p">)</span>
+	     <span class="s">"\\1\\2"</span> <span class="nv">string</span><span class="p">))</span>
+      <span class="c1">;; 删除粗体之后的空格</span>
+      <span class="p">(</span><span class="nf">setq</span> <span class="nv">string</span>
+	    <span class="p">(</span><span class="nf">replace-regexp-in-string</span>
+	     <span class="p">(</span><span class="nf">format</span> <span class="s">"\\(&gt;\\) +\\(%s\\)"</span> <span class="nv">regexp</span><span class="p">)</span>
+	     <span class="s">"\\1\\2"</span> <span class="nv">string</span><span class="p">))</span>
+      <span class="nv">string</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nf">add-to-list</span> <span class="ss">'org-export-filter-paragraph-functions</span>
+	     <span class="ss">'eh-org-clean-space</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2">
+<span class="section-number-4">2.3.2</span> Convert inline verbatim to kbd when HTML export</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+ref: <a href="https://emacs-china.org/t/org-mode/1165">https://emacs-china.org/t/org-mode/1165</a>
+</p>
+
+<p>
+change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
+</p>
+
+<p>
+<code>code</code>
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span> <span class="nv">org-html-text-markup-alist</span>
+      <span class="o">'</span><span class="p">((</span><span class="nf">bold</span> <span class="o">.</span> <span class="s">"&lt;b&gt;%s&lt;/b&gt;"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">code</span> <span class="o">.</span> <span class="s">"&lt;code&gt;%s&lt;/code&gt;"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">italic</span> <span class="o">.</span> <span class="s">"&lt;i&gt;%s&lt;/i&gt;"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">strike-through</span> <span class="o">.</span> <span class="s">"&lt;del&gt;%s&lt;/del&gt;"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">underline</span> <span class="o">.</span> <span class="s">"&lt;span class=\"underline\"&gt;%s&lt;/span&gt;"</span><span class="p">)</span>
+	<span class="p">(</span><span class="nf">verbatim</span> <span class="o">.</span> <span class="s">"&lt;kbd&gt;%s&lt;/kbd&gt;"</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">
+<span class="section-number-2">3</span> 開始使用</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+建立新的文章，
+</p>
+
+<div class="highlight"><pre><span></span>nikola new-post -e -f orgmod
+</pre></div>
+
+<p>
+寫完就 build 吧！
+</p>
+
+<div class="highlight"><pre><span></span>nikola build
+</pre></div>
+
+<p>
+一切都就緒了，那就開始寫文章吧！
+</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">Linux</a></li>
+            <li><a class="tag p-category" href="../../categories/nikola/" rel="tag">nikola</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../install-haskell-applications/" rel="prev" title="Install Haskell Applications">上一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/",
+        disqus_title="\u90e8\u843d\u683c\uff0c\u91cd\u56de nikola+org-mode",
+        disqus_identifier="cache/posts/zhong-hui-nikola-xie-luo-ge.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

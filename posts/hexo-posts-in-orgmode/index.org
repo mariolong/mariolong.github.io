@@ -1,0 +1,501 @@
+#+BEGIN_COMMENT
+.. title: 用 hexo 和 org-mode 寫部落格
+.. date: 2017-1-10 17:00
+.. tags: emacs, orgmode, hexo
+.. slug: hexo-posts-in-orgmode
+#+END_COMMENT
+
+#+TITLE: 用 hexo 和 org-mode 寫部落格
+#+DATE: <2017-01-10 二 17:00>
+#+UPDATED: <2017-01-23>
+#+COMMENTS: true
+#+TAGS: emacs, orgmode, hexo
+#+LAYOUT: post
+#+CATEGORIES: org
+#+PERMALINK:
+#+OPTIONS: toc:nil ^:nil
+
+𠩤本用的是 python/nikola，看到 [[https://buzzorange.com/techorange/2016/09/30/legend-of-javascript/][JavaScript 傳奇：從跑龍套到挑大樑的程式語言]]，
+和 node.js 的火熱，也想學著用 javascript，反正作網頁用得上。
+又看到 [[https://hexo.io/zh-tw/][hexo]]，就想試試。它吸引我的原因是：
+
+1. 順便學 JavaScript, node.js, express... 為了下一個作品做準備。
+2. 主題比 nikola 多太多啦，用的人也多，也許有較多的資源。
+
+* install
+
+#+BEGIN_SRC sh
+$ npm install -g hexo hexo-cli
+#+END_SRC
+
+* setup website
+** create blog directoy
+
+#+BEGIN_SRC sh
+$ hexo init hexoblog
+$ cd hexoblog
+#+END_SRC
+
+** install necessary package
+
+執行 =npm install= 安裝必要的套件
+
+#+BEGIN_SRC sh
+$ npm install
+#+END_SRC
+
+此時即可執行 =hexo server= 看看預設主題 landscape 的效果。
+
+** 站點配置檔： _config.yml
+
+在 hexoblog 目錄下會有 =_config.yml= 檔，此為站點配置檔，
+可以設定部落格的行為。
+在設定主題 (theme) 時，主目錄下也會有個 =_config.yml= 檔，
+那是設定 theme 的行為，不要搞混了。
+
+*** DISQUS
+編輯 站點配置檔案， 新增 =disqus_shortname= 欄位，設定如下：
+
+#+BEGIN_SRC ini
+  disqus_shortname: your-disqus-shortname
+#+END_SRC
+
+*** hexo-renderer-org
+https://github.com/CodeFalling/hexo-renderer-org
+
+#+BEGIN_SRC sh
+npm install https://github.com/CodeFalling/hexo-renderer-org#emacs --save
+#+END_SRC
+
+**** You can configure this plugin in _config.yml.
+#+BEGIN_SRC ini
+org:
+  emacs: '/Applications/Emacs.app/Contents/MacOS/Emacs'
+  common: |
+          #+OPTIONS: toc:nil
+          #+BIND: org-html-postamble \"Last Updated %C.</br>Render by <a href='https://github.com/CodeFalling/hexo-renderer-org'>hexo-renderer-org</a> with %c\"
+  cachedir: './hexo-org-cache/'
+#+END_SRC
+**** _config.yml
+#+BEGIN_SRC
+  new_post_name: :title.org
+#+END_SRC
+
+*** hexo-generator-search
+站內搜尋
+
+#+BEGIN_SRC sh
+npm install hexo-generator-search --save
+#+END_SRC
+
+_config.yml 中的配置程式碼如下：
+
+#+BEGIN_SRC ini
+search:
+  path: search.xml
+  field: post
+#+END_SRC
+
+* theme
+Hexo 最吸引我的其實就是一堆可客製化的 theme，也試了一些 github 上 star
+多的，初期選定了 NexT，後來是 BlueLake，最後還是忍不住自己動手做。
+** [[http://theme-next.iissnan.com/getting-started.html][NexT]]
+
+#+BEGIN_SRC sh
+$ git clone https://github.com/iissnan/hexo-theme-next themes/next
+#+END_SRC
+
+http://theme-next.iissnan.com/faqs.html
+
+*** fonts setting
+參考[[http://prozhuchen.com/2015/10/05/Hexo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%94%B9%E5%AD%97%E4%BD%93/][Hexo部落格之改字型 | 朱琛的小屋]]修改，wiki中的目前不work。
+
+** [[https://github.com/chaooo/hexo-theme-BlueLake][BlueLake]]
+
+使用 jade 和 stylus，可以學習，因此就裝上，試試吧。
+[[http://chaoo.oschina.io/2016/12/29/BlueLake%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE.html][這裡]]有詳細的配置說明。
+
+** DIY
+
+最後還是忍不住自己動手做，打造出自己風格的部落格，反正都是練習。
+參考了以下文章和原始碼：
+- [[http://lyyourc.com/2016/01/27/Write-a-Hexo-Theme-From-Strach/][从零开始编写一个Hexo主题]]
+- [[https://www.haomwei.com/technology/maupassant-hexo.html][大道至简——Hexo简洁主题推荐]]
+- [[http://chaoo.oschina.io/2016/12/29/BlueLake%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE.html][BlueLake]]
+- [[https://github.com/hexojs/hexo-theme-landscape][landscape]]
+- [[https://hexo.io/zh-tw/docs/themes.html][文檔]]
+- [[https://www.google.com.tw/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B+Hexo%E4%B8%BB%E9%A1%8C&*][這裡]]也有一堆教學
+
+*** 坑
+因為想用 pug/stylus，決定用 maupassant 來改，過程中不免有些坑，記錄一下：
+- pug 大坑：不能以 ~layout.pug~ 當 base file，原因在[[https://github.com/hexojs/hexo/issues/2230][這篇討論]]中說明。
+- pug/stylus 檔，不要夾雜 space/tab 字元，會報看不懂的錯誤訊息，
+  hexo 的錯誤訊息還真的不易了解。
+- 不用 pure 和 jQuery，所以得花時間改，改到最後，還是得要自己重寫。
+  早知如此，一開始就用自己熟悉的寫法，可能會更快。
+
+*** 字型
+網頁好不好看，字型是個很重要的因素，http://fontcdn.org/ 可以提供一些想法。
+
+*** 用 javascript 做目錄
+put TOC in sidebar with fix position.
+
+*** 站內搜尋
+google 或 javascript?
+
+* org-mode 寫文章
+已經習慣用 emacs 的 org-mode 記錄心得、筆記，所以就用它來寫部落格文章是很順手的，
+參考
+- https://github.com/CodeFalling/hexo-renderer-org
+- [[https://github.com/CodeFalling/codefalling.com/blob/master/source/_posts/new-version-of-hexo-renderer-org.org][完整特性的 hexo-renderer-org]]
+將 Hexo 和 emacs 連接好。
+
+** 安裝 =hexo-renderer-org=
+
+#+BEGIN_SRC sh
+$ npm install https://github.com/CodeFalling/hexo-renderer-org#emacs --save
+#+END_SRC
+
+然後在設定檔加上：
+#+BEGIN_SRC ini
+org:
+  emacs: '/usr/bin/emacs'
+  common: |
+          #+OPTIONS: toc:nil num:nil
+  cachedir: './hexo-org-cache/'
+#+END_SRC
+
+當然，在完整的 orgmode 中，可以直接使用 #+OPTION: 配置需要的一切。
+上述的可以當成是預設值。
+
+另外，修改 =highlight= 設定，把 line_number 關了，否則 scroll bar 會一直顯示。
+#+BEGIN_SRC ini
+highlight:
+  enable: true
+  auto_detect: true
+  line_number: false
+  tab_replace:
+#+END_SRC
+
+** image
+文章中不免有圖片，依照目前的工作流程，還是直接用 google photos
+中的圖片，會比較方便。
+
+*** 利用 Google Photos 或 Google Drive
+
+依照 [[https://confluence.biola.edu/display/itservices/How+to+Embed+Images+from+Google+Drive+in+a+Web+Page][How to embed image from Google Drive in a Web page]] 這篇文章的方法，
+設定的步驟如下：
+
+1. 在 google photots 中開啟 google drive，在你的相片庫中顯示 Google 雲端硬碟中的相片和影片。
+2. 由 google drive 中選擇 google photos，取得欲分享的檔案共用連結，得到下面結果：
+
+  #+BEGIN_SRC ini
+    https://drive.google.com/open?id=1YOB0e4I_sXO-tCqkcKmj1RLOPbiHfx00Pw
+  #+END_SRC
+
+3. 把上述的 ~open?~ 改成 =uc?export=view&= ，並加上 <img> tags 即可。
+
+由以上 3 步驟可得到以下指令：
+
+#+BEGIN_SRC ini
+  #+HTML: <img src='https://drive.google.com/uc?export=view&id=1YOB0e4I_sXO-tCqkcKmj1RLOPbiHfx00Pw' width=320 alt="test picture"/>
+#+END_SRC
+
+將以上的指令寫到文章中，呈現的結果如下：
+
+#+HTML: <img src='https://drive.google.com/uc?export=view&id=1YOB0e4I_sXO-tCqkcKmj1RLOPbiHfx00Pw' width=320 alt="test picture"/>
+
+但這就不是 inline-image，所以在 emacs 中不能用 =org-display-inline-image= 顯示此圖，小小缺憾。
+
+*** 利用第三方網站
+
+參考 https://www.labnol.org/internet/embed-google-photos-in-website/29194/
+
+copy url of picture from google photos to [[https://ctrlq.org/google/photos/][this page]] to get the shared link, and copy this shared link.
+
+得到下面結果：
+
+#+BEGIN_SRC ini
+  <a href='https://photos.google.com/share/AF1QipPCxX4TH0ReqaMQ0sen2qC9KMXtry0w1_O_1_vJtjNgqDIDlN5LZPlb_q39tC8qVg?key=R3hmUVBtRjZpb2phMFB5cHB3N2dXbEljd3l1RVNR&source=ctrlq.org'>
+    <img src='https://lh3.googleusercontent.com/HF8J5-0stiHDhHBN5yWgjmoeR3kdf-DE1sVc2qnv4NF2Xld33Zo4xep4_rZ7Di7kndwM8En15TwMZGPQrR1P1t4MwADkl65Xpyoe8CE0AfVH5FRnnXnLwQMH3mtEhIrU7_xExhk' width=250/>
+  </a>
+#+END_SRC
+
+將以上的指令貼到文章中，可得如下效果：
+
+#+HTML: <a href='https://photos.google.com/share/AF1QipPCxX4TH0ReqaMQ0sen2qC9KMXtry0w1_O_1_vJtjNgqDIDlN5LZPlb_q39tC8qVg?key=R3hmUVBtRjZpb2phMFB5cHB3N2dXbEljd3l1RVNR&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/HF8J5-0stiHDhHBN5yWgjmoeR3kdf-DE1sVc2qnv4NF2Xld33Zo4xep4_rZ7Di7kndwM8En15TwMZGPQrR1P1t4MwADkl65Xpyoe8CE0AfVH5FRnnXnLwQMH3mtEhIrU7_xExhk' width=250/></a>
+
+但常常會連不上，不能顯示圖片。
+
+*** 用 hexo-asset-image
+
+#+BEGIN_SRC sh
+$ npm install hexo-asset-image --save
+#+END_SRC
+
+但在 Org-mode 中插入圖片，並不能得到預期結果，所以目前不用。
+
+** tags plugin
+
+參考 https://hexo.io/zh-tw/docs/tag-plugins.html 的說明。
+
+*** 引言
+
+在文章中插入引言，可包含作者、來源和標題，語法如下：
+#+BEGIN_SRC
+{% raw %}
+{% blockquote [author[, source]] [link] [source_link_title] %}
+content
+{% endblockquote %}
+{% endraw %}
+#+END_SRC
+
+**** 沒有提供參數，僅輸出普通的 blockquote
+
+#+BEGIN_SRC
+{% raw %}
+{% blockquote %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Pellentesque hendrerit lacus ut purus iaculis feugiat.
+Sed nec tempor elit, quis aliquam neque. Curabitur sed
+diam eget dolor fermentum semper at eu lorem.
+{% endblockquote %}
+{% endraw %}
+#+END_SRC
+
+{% blockquote %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
+{% endblockquote %}
+
+**** 引用書上的句子
+
+#+BEGIN_SRC
+{% raw %}
+{% blockquote David Levithan, Wide Awake %}
+Do not just seek happiness for yourself. Seek happiness for all.
+Through kindness. Through mercy.
+{% endblockquote %}
+{% endraw %}
+#+END_SRC
+
+{% blockquote David Levithan, Wide Awake %}
+Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
+{% endblockquote %}
+
+**** 引用 Twitter
+
+#+BEGIN_SRC
+{% raw %}
+{% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
+NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
+{% endblockquote %}
+{% endraw %}
+#+END_SRC
+
+結果：
+{% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
+NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
+{% endblockquote %}
+
+**** 引用網路上的文章
+
+#+BEGIN_SRC
+{% raw %}
+{% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
+Every interaction is both precious and an opportunity to delight.
+{% endblockquote %}
+{% endraw %}
+#+END_SRC
+
+結果：
+{% blockquote Seth Godin, http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
+Every interaction is both precious and an opportunity to delight.
+{% endblockquote %}
+
+**** pullquote
+#+BEGIN_SRC
+{% raw %}
+{% pullquote [class] %}
+content
+{% endpullquote %}
+{% endraw %}
+#+END_SRC
+
+{% pullquote Class%}
+content
+{% endpullquote %}
+
+*** 程式碼
+
+**** 普通的程式碼區塊
+#+BEGIN_SRC
+{% raw %}
+{% codeblock %}
+alert('Hello World!');
+{% endcodeblock %}
+{% endraw %}
+#+END_SRC
+
+結果：
+{% codeblock %}
+alert('Hello World!');
+{% endcodeblock %}
+
+**** 指定語言
+
+#+BEGIN_SRC
+{% raw %}
+{% codeblock lang:objc %}
+[rectangle setX: 10 y: 10 width: 20 height: 20];
+{% endcodeblock %}
+{% endraw %}
+#+END_SRC
+
+結果：
+{% codeblock lang:objc %}
+[rectangle setX: 10 y: 10 width: 20 height: 20];
+{% endcodeblock %}
+
+**** 加上說明
+
+#+BEGIN_SRC
+{% raw %}
+{% codeblock Array.map %}
+array.map(callback[, thisArg])
+{% endcodeblock %}
+{% endraw %}
+#+END_SRC
+
+結果：
+{% codeblock Array.map %}
+  array.map(callback[, thisArg])
+{% endcodeblock %}
+
+**** 加上說明和網址
+#+BEGIN_SRC
+{% raw %}
+{% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}
+_.compact([0, 1, false, 2, '', 3]);
+=> [1, 2, 3]
+{% endcodeblock %}
+{% endraw %}
+#+END_SRC
+
+結果：
+{% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}
+  _.compact([0, 1, false, 2, '', 3]);
+  => [1, 2, 3]
+{% endcodeblock %}
+
+*** youtube
+
+指令：
+#+BEGIN_SRC
+{% raw %}
+{% youtube tcamIHaYJHU %}
+{% endraw %}
+#+END_SRC
+
+{% youtube tcamIHaYJHU %}
+
+*** 引用其他文章的連結
+#+BEGIN_SRC
+{% raw %}
+{% post_path slug %}
+{% post_link slug [title] %}
+{% endraw %}
+#+END_SRC
+** code and verbatim
+
+from [[http://emacs.stackexchange.com/questions/13820/inline-verbatim-and-code-with-quotes-in-org-mode][discusion]] on Stack Exchange
+
+we can use ~~code~~ and ~=kbd=~ present code and kbd respectly
+
+~code~
+=kbd=
+
+#+BEGIN_SRC emacs-lisp
+  (eval-after-load 'ox-html
+    '(push '(verbatim . "<kbd>%s</kbd>") org-html-text-markup-alist))
+#+END_SRC
+
+{% codeblock emacs-lisp %}
+  (eval-after-load 'ox-html
+    '(push '(verbatim . "@@<kbd>%s</kbd>") org-html-text-markup-alist))
+{% endcodeblock %}
+
+** Inline verbatim and code
+
+
+#+BEGIN_EXAMPLE
+~hello~ hh
+=hello= hh
+*start* s
++中文+ 測試
+/中文/ 測試
+#+END_EXAMPLE
+
+~hello~ hh
+=hello= hh
+*start* s
++中文+ 測試
+/中文/ 測試
+
+
+#+BEGIN_EXAMPLE
+~hello~hh
+=hello=hh
+*start*s
+~中文~測試
+=中文=測試
+*中文*測試
++中文+測試
+/中文/測試
+#+END_EXAMPLE
+
+測試~code~測試
+測試=kbd=測試
+測試*start*測試
+~中文~測試
+=中文=測試
+*中文*測試
++中文+測試
+/中文/測試
+
+*** solution 1 -> NG
+
+#+BEGIN_SRC emacs-lisp
+(setq org-emphasis-regexp-components
+      '("     ('\"{“”"
+        "-   .,!?;''“”\")}/\\“”"
+        "    \r\n,"
+        "."
+        1))
+#+END_SRC
+
+*** solution 2  -> NG
+#+BEGIN_SRC emacs-lisp
+(setcar org-emphasis-regexp-components " \t('\"{[:alpha:]")
+(setcar (nthcdr 1 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
+(setcar (nthcdr 2 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
+(org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+#+END_SRC
+
+*** solution 3 -> NG
+#+BEGIN_SRC emacs-lisp
+(setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n,\"")
+(org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+#+END_SRC
+
+merge solution 2&3
+
+*** solution 4 -> NG
+#+BEGIN_SRC emacs-lisp
+(setcar (nthcdr 2 org-emphasis-regexp-components) " \t\n\r")
+(custom-set-variables `(org-emphasis-alist ',org-emphasis-alist))
+(org-element--set-regexps)
+#+END_SRC
+
+** description lists
+- key :: definition
+- c-1 :: other definition

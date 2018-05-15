@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>藍牙小鍵盤 | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/bluetooth-keyboard/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../what-i-live/" title="我為何而生" type="text/html">
+<link rel="next" href="../systemd-timesync/" title="用systemd-timesync同步時間" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="藍牙小鍵盤">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/bluetooth-keyboard/">
+<meta property="og:description" content="本文參考 archlinux wiki: Bluetooth Keyboard
+
+Install
+
+$ yaourt -S bluez bluez-utils
+
+
+
+配置
+配置的工作主要是配對和自動連上藍牙鍵盤。
+
+配對
+用 bluetoothctl -a 執行配對的工作，按照下列的指令，一步一步執行即可。
+
+$ bluetoothctl -a
+[bluetooth]# power on
+[blu">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-06-27T09:06:38+08:00">
+<meta property="article:tag" content="Linux">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">藍牙小鍵盤</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-06-27T09:06:38+08:00" itemprop="datePublished" title="2014-06-27 09:06">2014-06-27 09:06</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/bluetooth-keyboard.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>本文參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Bluetooth_Keyboard">archlinux wiki: Bluetooth Keyboard</a></p>
+<div class="section" id="install">
+<h2>Install</h2>
+<pre class="literal-block">
+$ yaourt -S bluez bluez-utils
+</pre>
+</div>
+<div class="section" id="id1">
+<h2>配置</h2>
+<p>配置的工作主要是配對和自動連上藍牙鍵盤。</p>
+<div class="section" id="id2">
+<h3>配對</h3>
+<p>用 <tt class="docutils literal">bluetoothctl <span class="pre">-a</span></tt> 執行配對的工作，按照下列的指令，一步一步執行即可。</p>
+<pre class="literal-block">
+$ bluetoothctl -a
+[bluetooth]# power on
+[bluetooth]# agent KeyboardOnly
+[bluetooth]# default-agent
+[bluetooth]# pairable on
+[bluetooth]# scan on
+[bluetooth]# pair 01:02:03:04:05:06
+[bluetooth]# trust 01:02:03:04:05:06
+[bluetooth]# connect 01:02:03:04:05:06
+[bluetooth]# quit
+</pre>
+<p>執行到 <tt class="docutils literal">scan</tt> 時，鍵盤必須是在可配對模式。</p>
+<p>執行到 <tt class="docutils literal">pair</tt> 時，會出現配對碼，這時候要在藍牙鍵盤上輸入配對碼，再按 &lt;enter&gt;。哈哈，配對完成。</p>
+<p>其它的步驟就簡單啦。</p>
+</div>
+<div class="section" id="id3">
+<h3>開機時自動連上藍牙鍵盤</h3>
+<p>為了能讓鍵盤開機後就可以使用，必須執行 2 個 systemd service： <tt class="docutils literal">bluetooth.service</tt> 和 <tt class="docutils literal">btkbd.service</tt> 。
+其中 <tt class="docutils literal">bluetooth.service</tt> 安裝 <tt class="docutils literal">bluez</tt> 時會產生， <tt class="docutils literal">btkbd.service</tt> 就得自己建立。</p>
+<div class="section" id="bluetooth-service">
+<h4>啟動 <tt class="docutils literal">bluetooth.service</tt>
+</h4>
+<pre class="literal-block">
+systemctl enable bluetooth.service
+</pre>
+<p>這個步驟很重要，因為它會自動建立 <tt class="docutils literal"><span class="pre">dbus-org.bluez.service</span></tt> 連結，而這個連結是 <tt class="docutils literal">btkbd.service</tt> 需要的程式。</p>
+</div>
+<div class="section" id="btkbd-service">
+<h4>建立 <tt class="docutils literal">btkbd.service</tt>
+</h4>
+<p>為了要建立這個 <tt class="docutils literal">service</tt> ，我們要知道鍵盤的 MAC 和 藍牙接收器的 id，分別用 <tt class="docutils literal">bluetoothctl</tt> 和 <tt class="docutils literal">hcitool</tt> 這 2 隻程式取得。</p>
+<div class="section" id="id">
+<h5>取得 id</h5>
+<pre class="literal-block">
+$ hcitool dev
+Devices:
+        hci0 00:15:83:43:C8:EA
+</pre>
+<p>此處的 <tt class="docutils literal">hci0</tt> 即為藍牙接收器的 id。</p>
+<p>另外鍵盤的 MAC，在用 <tt class="docutils literal">bluetoothctl</tt> 配對鍵盤時，就已經知道了，此時調出來看一下就好。</p>
+<pre class="literal-block">
+$ bluetoothctl
+[NEW] Controller 00:15:83:43:C8:EA arch-64 [default]
+[NEW] Device 20:13:50:00:1F:E2 Bluetooth Keyboard
+</pre>
+<p>第二行的那 6 個數字即是我們要的 MAC。</p>
+</div>
+<div class="section" id="etc-btkbd-conf">
+<h5>建立 <tt class="docutils literal">/etc/btkbd.conf</tt>
+</h5>
+<pre class="literal-block">
+# Config file for btkbd.service
+# change when required (e.g. keyboard hardware changes, more hci devices are connected)
+BTKBDMAC = 20:13:50:00:1F:E2
+HCIDEVICE = hci0
+</pre>
+</div>
+<div class="section" id="etc-systemd-system-btkbd-service">
+<h5>建立 <tt class="docutils literal">/etc/systemd/system/btkbd.service</tt>
+</h5>
+<pre class="literal-block">
+[Unit]
+Description=systemd Unit to automatically start a Bluetooth keyboard
+Documentation=https://wiki.archlinux.org/index.php/Bluetooth_Keyboard
+Requires=dbus-org.bluez.service
+After=dbus-bluez.org.service
+ConditionPathExists=/etc/btkbd.conf
+ConditionPathExists=/usr/bin/hcitool
+ConditionPathExists=/usr/bin/hciconfig
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/btkbd.conf
+ExecStart=
+ExecStart=/usr/bin/hciconfig ${HCIDEVICE} up
+# ignore errors on connect, spurious problems with bt? so start next command with -
+ExecStart=-/usr/bin/hcitool cc ${BTKBDMAC}
+</pre>
+</div>
+<div class="section" id="id4">
+<h5>啟動鍵盤服務</h5>
+<pre class="literal-block">
+$ sudo systemctl enable btkbd
+</pre>
+<p>至此，開機即可享受到藍牙鍵盤的無線魅力。如果，要省電，用完鍵盤後，即可關掉電源。
+等到要用時，再把電源打開，讓它自動連上主機，再為我們服務囉。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>結語</h2>
+<p>一個很有質感的藍牙鍵盤，放在客廳的 HTPC 邊，一點都不會覺得很奇怪。</p>
+<p>在配對時，一開始不知道要在鍵盤上輸入配對碼，只是一直等待，所以，一直沒辦法使用。
+在手冊上突然看到了一句話，就這樣連線成功。當我在藍牙鍵盤上按下按鍵，在螢幕上看到了相對應的字出現時，真是開心啊。</p>
+<p>Linux 就是這樣好玩。</p>
+<p><strong>update:2014-7-9</strong></p>
+<p>不知道什麼原因，用 systemd 的方法，第一次試是成功的，後來就不知何種原因，怎麼都無法啟動。
+算了，我也不想深究。</p>
+<p>直接用另一個方法，比較簡單，有 udev 即可。
+參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Bluetooth#Configuration_via_the_CLI">archlinux wiki</a></p>
+<p>先用 bluetoothctl 將藍牙鍵盤配對好，記住 hci device 的編號 (hci0)，再在 udev 增加一條規則：
+編輯 /etc/udev/rules.d/10-local.rules</p>
+<pre class="literal-block">
+# Set bluetooth power up
+ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
+</pre>
+<p>這樣子開機就會自動載入藍牙鍵盤。</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">Linux</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../what-i-live/" rel="prev" title="我為何而生">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../systemd-timesync/" rel="next" title="用systemd-timesync同步時間">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/bluetooth-keyboard/",
+        disqus_title="\u85cd\u7259\u5c0f\u9375\u76e4",
+        disqus_identifier="cache/posts/bluetooth-keyboard.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

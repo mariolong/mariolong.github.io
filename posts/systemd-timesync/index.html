@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>用systemd-timesync同步時間 | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/systemd-timesync/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../bluetooth-keyboard/" title="藍牙小鍵盤" type="text/html">
+<link rel="next" href="../phototonic/" title="phototonic: 另一個小巧的看圖程式" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="用systemd-timesync同步時間">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/systemd-timesync/">
+<meta property="og:description" content="先前用 ntpd，一直沒有成功對時。
+昨日看到這個systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
+我又不必設ntp server，用這個同步時間就好了。
+參考 https://wiki.archlinux.org/index.php/systemd-timesyncd
+
+安裝
+archlinux中已經安裝好了，執行：
+
+$ sudo timedatectl set-ntp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-10-13T02:59:47Z">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">用systemd-timesync同步時間</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-10-13T02:59:47Z" itemprop="datePublished" title="2014-10-13 02:59">2014-10-13 02:59</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/systemd-timesync.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>先前用 ntpd，一直沒有成功對時。
+昨日看到這個systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
+我又不必設ntp server，用這個同步時間就好了。</p>
+<p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/systemd-timesyncd">https://wiki.archlinux.org/index.php/systemd-timesyncd</a></p>
+<div class="section" id="id1">
+<h2>安裝</h2>
+<p>archlinux中已經安裝好了，執行：</p>
+<pre class="literal-block">
+$ sudo timedatectl set-ntp true
+$ sudo systemctl enable systemd-timesyncd.service
+$ sudo systemctl start systemd-timesyncd.service
+</pre>
+</div>
+<div class="section" id="id2">
+<h2>配置</h2>
+<p>配置檔：/etc/systemd/timesyncd.conf</p>
+<pre class="literal-block">
+[Time]
+NTP=tock.stdtime.gov.tw watch.stdtime.gov.tw time.stdtime.gov.tw clock.stdtime.gov.tw tick.stdtime.gov.tw
+FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.tw.ntp.pool.org
+</pre>
+<p>其中，NTP server用的是 <a class="reference external" href="http://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt">中華電信研究院國家時間與頻率標準實驗室</a>
+的 server。</p>
+<p>輕鬆完工。</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../bluetooth-keyboard/" rel="prev" title="藍牙小鍵盤">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../phototonic/" rel="next" title="phototonic: 另一個小巧的看圖程式">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/systemd-timesync/",
+        disqus_title="\u7528systemd-timesync\u540c\u6b65\u6642\u9593",
+        disqus_identifier="cache/posts/systemd-timesync.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

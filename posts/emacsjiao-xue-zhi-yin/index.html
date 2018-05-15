@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>emacs 教學指引 | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/emacsjiao-xue-zhi-yin/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../haskell-programs/" title="安裝 haskell 程式" type="text/html">
+<link rel="next" href="../emacs-ido/" title="emacs-ido 設定" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="emacs 教學指引">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/emacsjiao-xue-zhi-yin/">
+<meta property="og:description" content="程式寫多了，連個編輯器都想要折騰。
+vim 和 emacs 並稱兩大神器。上星期玩了 vim 後，不知道為何，突然就想玩 emacs。好像是裝了 emacs 後，發現它的畫面比較好看，用起來比較有魅力吧？其實背後最主要的原因是 lisp。看了這麼多年程式碼，從沒用過像 lisp 或 haskell 這程語言寫過程式，初步看起來應該不會太難？那就來試試吧。
+試了幾天，發現和 vim 比起來，Emac">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-04-30T08:10:54+08:00">
+<meta property="article:tag" content="emacs">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">emacs 教學指引</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-04-30T08:10:54+08:00" itemprop="datePublished" title="2014-04-30 08:10">2014-04-30 08:10</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/emacsjiao-xue-zhi-yin.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>程式寫多了，連個編輯器都想要折騰。</p>
+<p>vim 和 emacs 並稱兩大神器。上星期玩了 vim 後，不知道為何，突然就想玩 emacs。好像是裝了 emacs 後，發現它的畫面比較好看，用起來比較有魅力吧？其實背後最主要的原因是 lisp。看了這麼多年程式碼，從沒用過像 lisp 或 haskell 這程語言寫過程式，初步看起來應該不會太難？那就來試試吧。</p>
+<p>試了幾天，發現和 vim 比起來，Emacs 真的較不容易入門。上網找了半天，列出以下的參考資料：</p>
+<p><a class="reference external" href="http://docs.huihoo.com/homepage/shredderyin/emacs24/index.htm">Sams Teach Yourself Emacs in 24 Hours</a> 還有全書打包壓縮檔。</p>
+<p><a class="reference external" href="http://docs.huihoo.com/homepage/shredderyin/emacs_doc.html">某人筆記</a></p>
+<p><a class="reference external" href="http://www.masteringemacs.org/">Mastering EMACS</a></p>
+<p><a class="reference external" href="http://lifegoo.pluskid.org/wiki/Emacs.html">某人 wiki</a> ，這裡可以連到很多資源，我不再表列囉。</p>
+<p><a class="reference external" href="http://www.moolenaar.net/habits.html">Seven habits of effective text editing</a></p>
+<p><strong>Update (2014-5-14)</strong>:搞了 2 個星期，用別人的配置，總是覺得怪。最後還是決定慢慢建立自己的配置檔。
+其實這個也是 <a class="reference external" href="https://github.com/magnars/.emacs.d/blob/master/README.md">magnars</a> 的建議。</p>
+<pre class="literal-block">
+emacs 配置檔就像自己的孩子，好好照顧他，陪他一起成長。
+</pre>
+<p>這一篇記錄的是可以在 emacs 中存活下來的最基本操作。
+當然，按 C-h t 看 emacs 的教學也是一樣，只不過，我嫌它實在是寫得太囉嗦。</p>
+<div class="section" id="install">
+<h2>Install</h2>
+<pre class="literal-block">
+$ yaourt emacs
+</pre>
+</div>
+<div class="section" id="id2">
+<h2>基本操作</h2>
+<p>表列最基本可以存活下來的指令：</p>
+<dl class="docutils">
+<dt>C-x c-c</dt>
+<dd>離開 Emacs</dd>
+<dt>C-g</dt>
+<dd>quit 放棄剛才的命令</dd>
+</dl>
+<div class="section" id="id3">
+<h3>移動游標</h3>
+<dl class="docutils">
+<dt>C-p 或 &lt;up&gt;</dt>
+<dd>游標上移一行</dd>
+<dt>C-n 或 &lt;down&gt;</dt>
+<dd>游標下移下一行</dd>
+<dt>C-f 或 &lt;right&gt;</dt>
+<dd>游標前進一個字元</dd>
+<dt>C-b 或 &lt;left&gt;</dt>
+<dd>游標後退一個字元</dd>
+<dt>M-f 或 &lt;C-right&gt;</dt>
+<dd>游標前進一個字，中文會前進到下一個標點位置上。</dd>
+<dt>M-b 或 &lt;C-left&gt;</dt>
+<dd>游標後退一個字，中文會前進到上一個標點位置後.</dd>
+<dt>M-a</dt>
+<dd>游標後退到句首</dd>
+<dt>M-e</dt>
+<dd>游標前進到句尾</dd>
+<dt>C-a 或 &lt;home&gt;</dt>
+<dd>游標退到行首（有字或含空白，可切換）</dd>
+<dt>C-e 或 &lt;end&gt;</dt>
+<dd>游標前進到行尾</dd>
+<dt>C-&lt;home&gt;</dt>
+<dd>到 buffer 頭</dd>
+<dt>C-&lt;end&gt;</dt>
+<dd>到 buffer 尾</dd>
+<dt>未知</dt>
+<dd>回到上一次游標位置</dd>
+<dt>M-g M-g</dt>
+<dd>到指定的行號</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h3>捲動螢幕上的文字</h3>
+<dl class="docutils">
+<dt>C-l</dt>
+<dd>重畫螢幕。目前行會在視窗的中間、最上方、最下方三個地方切換。</dd>
+<dt>C-v 或 PgDn</dt>
+<dd>下一頁</dd>
+<dt>A-v 或 PgUp</dt>
+<dd>上一頁</dd>
+<dt>C-PgDn</dt>
+<dd>向右捲動一頁</dd>
+<dt>C-PgUp</dt>
+<dd>向左捲動一頁</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h3>視窗操作</h3>
+<dl class="docutils">
+<dt>C-x 0</dt>
+<dd>關閉目前視窗</dd>
+<dt>C-x 1</dt>
+<dd>關閉其它視窗</dd>
+<dt>C-x 2</dt>
+<dd>水平分割視窗</dd>
+<dt>C-x 3</dt>
+<dd>垂直分割視窗</dd>
+<dt>C-x o</dt>
+<dd>循環切換視窗</dd>
+<dt>S-&lt;方向鍵&gt;</dt>
+<dd>切換焦點視窗 (要設定 windmove-default-keybindings)</dd>
+<dt>C-x ^</dt>
+<dd>加高視窗</dd>
+<dt>C-x {</dt>
+<dd>視窗變窄</dd>
+<dt>C-x }</dt>
+<dd>加寬視窗</dd>
+</dl>
+</div>
+<div class="section" id="mark-region">
+<h3>選擇區域 (mark region)</h3>
+<ol class="arabic simple">
+<li>C-@</li>
+<li>移動游標</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3>文字操作</h3>
+<dl class="docutils">
+<dt>backspace</dt>
+<dd>刪除前一個字元</dd>
+<dt>C-x backspace</dt>
+<dd>很難理解。刪除到行首??刪除前面的空白</dd>
+<dt>C-d</dt>
+<dd>刪除一個字元</dd>
+<dt>A-backspace</dt>
+<dd>刪除到字首</dd>
+<dt>A-d</dt>
+<dd>刪除到字尾</dd>
+<dt>C-k</dt>
+<dd>刪除到行尾</dd>
+<dt>C-w</dt>
+<dd>？？刪除一行</dd>
+<dt>M-&lt;up&gt;</dt>
+<dd>？？整行或標示區上移</dd>
+<dt>M-&lt;down&gt;</dt>
+<dd>？？整行或標示區下移</dd>
+<dt>C-o</dt>
+<dd>行為類似 &lt;enter&gt;，只是游標留在原行</dd>
+<dt>C-_ 或 C-/</dt>
+<dd>undo</dd>
+<dt>移動一下游標 C-/</dt>
+<dd>redo</dd>
+</dl>
+</div>
+<div class="section" id="copy-cut-paste">
+<h3>copy, cut, paste</h3>
+<p>預設的區域是當行 (??)。如果沒有選擇區域，則會複製、剪下目前游標所在的那一行。</p>
+<dl class="docutils">
+<dt>M-w 或 C-&lt;ins&gt;</dt>
+<dd>copy</dd>
+<dt>C-w 或 S-&lt;del&gt;</dt>
+<dd>cut</dd>
+<dt>C-y 或 S-&lt;ins&gt;</dt>
+<dd>yang (paste)</dd>
+<dt>M-y</dt>
+<dd>yang-pop</dd>
+</dl>
+</div>
+<div class="section" id="id7">
+<h3>檔案操作</h3>
+<dl class="docutils">
+<dt>C-x C-f</dt>
+<dd>find file，會優先找目前檔案所在的目錄</dd>
+<dt>C-x C-v</dt>
+<dd>??find alternate file</dd>
+<dt>C-x C-s</dt>
+<dd>存檔</dd>
+<dt>C-x s</dt>
+<dd>存檔，會詢問是否存檔</dd>
+<dt>C-x C-w</dt>
+<dd>另存新檔</dd>
+</dl>
+<p>C-x i                   插入一個檔案</p>
+</div>
+<div class="section" id="buffer">
+<h3>buffer</h3>
+<dl class="docutils">
+<dt>C-x k</dt>
+<dd>kill buffer</dd>
+<dt>C-x b</dt>
+<dd>開啟 buffer</dd>
+<dt>C-x C-b</dt>
+<dd>list buffer</dd>
+<dt>C-x left/right</dt>
+<dd>切換 buffer</dd>
+</dl>
+</div>
+<div class="section" id="id8">
+<h3>字型大小切換</h3>
+<dl class="docutils">
+<dt>C-x C-0</dt>
+<dd>回復為預設大小</dd>
+<dt>C-x C-=</dt>
+<dd>加大字型</dd>
+<dt>C-x C--</dt>
+<dd>縮小字型</dd>
+</dl>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/emacs/" rel="tag">emacs</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../haskell-programs/" rel="prev" title="安裝 haskell 程式">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../emacs-ido/" rel="next" title="emacs-ido 設定">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/emacsjiao-xue-zhi-yin/",
+        disqus_title="emacs \u6559\u5b78\u6307\u5f15",
+        disqus_identifier="cache/posts/emacsjiao-xue-zhi-yin.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

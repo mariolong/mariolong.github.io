@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>hostapd | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/hostapd/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../phototonic/" title="phototonic: 另一個小巧的看圖程式" type="text/html">
+<link rel="next" href="../rectangle-edit/" title="rectange edit" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="hostapd">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/hostapd/">
+<meta property="og:description" content="先前寫過的 wireless AP 設定 （hostapd+netcfg/netctl） ，經過這些天的測試，我發現 netcfg/netctl 是沒有必要的。
+上一篇的 hostapd 和 dnsmasq 設定是可用的。但是用 netctl enable hostapd 是無法在開機時自動啟動「無線 AP」功能。
+我想是因為 netctl 和 iptables 不合吧？會出現 xtables l">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-10-23T02:18:55Z">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">hostapd</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-10-23T02:18:55Z" itemprop="datePublished" title="2014-10-23 02:18">2014-10-23 02:18</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/hostapd.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>先前寫過的 <a class="reference external" href="../archlinux-hostapd-netcfg/">wireless AP 設定 （hostapd+netcfg/netctl）</a> ，經過這些天的測試，我發現 netcfg/netctl 是沒有必要的。</p>
+<p>上一篇的 hostapd 和 dnsmasq 設定是可用的。但是用 <tt class="docutils literal">netctl enable hostapd</tt> 是無法在開機時自動啟動「無線 AP」功能。
+我想是因為 netctl 和 iptables 不合吧？會出現 xtables lock 的問題，不知道原因。</p>
+<p>後來仔細想想，我要做的不過是用 systemd 去設定 iptables，為何一定要用 netctl？
+不如自己寫一個 systemd 的 service，用來設定 iptables 就好了。</p>
+<p>結論是，成功。現在開機就可自動把無線 AP 開啟。記錄一下這幾個設定檔備查。</p>
+<div class="section" id="id1">
+<h2>安裝</h2>
+<pre class="literal-block">
+$ yaourt -S hostapd dnsmasq wpa_supplicant
+</pre>
+</div>
+<div class="section" id="id2">
+<h2>配置</h2>
+<div class="section" id="ip-link">
+<h3>ip link</h3>
+<p>先用 <tt class="docutils literal">ip link</tt> 查 wifi interface</p>
+<pre class="literal-block">
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    2: enp3s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 00:26:18:14:61:03 brd ff:ff:ff:ff:ff:ff
+    3: wlp0s18f2u3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+     link/ether 20:cf:30:a1:f9:f2 brd ff:ff:ff:ff:ff:ff
+</pre>
+<p>其中第 3 個 wlp0s18f2u3 即為我的 wifi 卡。</p>
+</div>
+<div class="section" id="hostapd">
+<h3>hostapd</h3>
+<p>就是這個程式，讓我的無線網卡，變身為無線 AP。</p>
+<p>配置檔 <tt class="docutils literal">/etc/hostapd/hostapd.conf</tt></p>
+<pre class="code text"><a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-1"></a>interface=wlp0s18f2u3
+<a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-2"></a>ssid=xxxxxxxx
+<a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-3"></a>hw_mode=g
+<a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-4"></a>channel=1
+<a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-5"></a>wpa=2
+<a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-6"></a>wpa_psk=b619ecf4c68e7d688e1a29cf2809ec3556a289eb655b859xxxxxxxxxx3296f18
+<a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-7"></a>wpa_key_mgmt=WPA-PSK
+<a name="rest_code_21f70d3ebe104d7992ce6d1cc38fdcb0-8"></a>rsn_pairwise=CCMP
+</pre>
+</div>
+<div class="section" id="dnsmasq">
+<h3>dnsmasq</h3>
+<p>配置檔 <tt class="docutils literal">/etc/dnsmasq.conf</tt></p>
+<pre class="code text"><a name="rest_code_1f3d739ea8624518b0a0d0d9eae360c7-1"></a>port=0
+<a name="rest_code_1f3d739ea8624518b0a0d0d9eae360c7-2"></a>interface=wlp0s18f2u3
+<a name="rest_code_1f3d739ea8624518b0a0d0d9eae360c7-3"></a>listen-address=192.168.199.254
+<a name="rest_code_1f3d739ea8624518b0a0d0d9eae360c7-4"></a>dhcp-range=192.168.199.101,192.168.199.150,12h
+<a name="rest_code_1f3d739ea8624518b0a0d0d9eae360c7-5"></a>dhcp-option=6,168.95.192.1,168.95.1.1
+</pre>
+</div>
+<div class="section" id="wifiip">
+<h3>wifiip</h3>
+<p>檔名： <tt class="docutils literal">/usr/bin/wifiip</tt></p>
+<p>設定 nat 和防火牆的 script，注意要用絕對路徑，不然開機時期，會找不到相對應的程式執行。</p>
+<pre class="code text"><a name="rest_code_7077ad71a3c2439cb0319081fab72038-1"></a>#!/bin/bash
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-2"></a>
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-3"></a>interface=wlp0s18f2u3
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-4"></a>
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-5"></a>iptables=/usr/bin/iptables
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-6"></a>ifconfig=/usr/bin/ifconfig
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-7"></a>sysctl=/usr/bin/sysctl
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-8"></a>
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-9"></a>wifi_on() {
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-10"></a>    ${iptables} -I FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-11"></a>    ${iptables} -I FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-12"></a>    ${iptables} -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-13"></a>    ${sysctl} -w net.ipv4.ip_forward=1
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-14"></a>    ${iptables} -I INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-15"></a>    ${ifconfig} ${interface} 192.168.199.1 netmask 255.255.255.0
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-16"></a>}
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-17"></a>
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-18"></a>wifi_off() {
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-19"></a>    ${iptables} -D FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-20"></a>    ${iptables} -D FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-21"></a>    ${iptables} -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-22"></a>    ${sysctl} -w net.ipv4.ip_forward=0
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-23"></a>    ${iptables} -D INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-24"></a>    ${ifconfig} ${interface} down
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-25"></a>}
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-26"></a>
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-27"></a>usage() {
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-28"></a>  echo "USAGE: wifiip [on|off]"
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-29"></a>}
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-30"></a>
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-31"></a>if (( $# &gt; 0 )); then
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-32"></a>  case "$1" in
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-33"></a>    "on")  wifi_on;;
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-34"></a>    "off") wifi_off;;
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-35"></a>    *)     usage
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-36"></a>           exit 64;;
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-37"></a>  esac
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-38"></a>  exit 0
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-39"></a>else
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-40"></a>  usage
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-41"></a>return 64
+<a name="rest_code_7077ad71a3c2439cb0319081fab72038-42"></a>fi
+</pre>
+</div>
+<div class="section" id="wifiip-service">
+<h3>wifiip.service</h3>
+<p>簡單地寫一下，可用就好。</p>
+<pre class="literal-block">
+[Unit]
+Description=wifi ap via usb dongle
+After=hostapd.service dnsmasq.service
+
+[Service]
+ExecStart=/usr/bin/wifiip on
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+</div>
+<div class="section" id="id3">
+<h3>命令別名</h3>
+<p>在 <tt class="docutils literal">.bashrc</tt> 中設定別名</p>
+<pre class="literal-block">
+alias wifion='sudo /bin/wifiip on; sudo systemctl start hostapd; sudo systemctl start dnsmasq'
+alias wifioff='sudo systemctl stop hostapd; sudo systemctl stop dnsmasq; sudo /bin/wifiip off'
+</pre>
+<p>只要在命令列中執行 <tt class="docutils literal">wifion/wifioff</tt> 隨時都可以開啟/關閉「無線 AP」。</p>
+</div>
+<div class="section" id="daemon">
+<h3>開機時自動啟動 daemon</h3>
+<p>執行：</p>
+<pre class="literal-block">
+$ sudo systemctl enable hostapd
+$ sudo systemctl enable dnsmasq
+$ sudo systemctl enable wifiip
+</pre>
+<p>分別開啟這幾個服務，重開機時就可以看到成果囉。</p>
+</div>
+</div>
+<div class="section" id="wpa">
+<h2>註：wpa 的取得</h2>
+<p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/WPA_supplicant">https://wiki.archlinux.org/index.php/WPA_supplicant</a></p>
+<div class="section" id="id4">
+<h3>安裝：</h3>
+<pre class="code text"><a name="rest_code_b81f680112184f688cea2a0f335fc77f-1"></a>yaourt -S wpa_supplicant
+</pre>
+</div>
+<div class="section" id="id5">
+<h3>執行：</h3>
+<pre class="code text"><a name="rest_code_05e4277ee25a41c0ab1553a676280bd9-1"></a>$ wpa_passphrase essid passphrase
+</pre>
+</div>
+<div class="section" id="id6">
+<h3>結果</h3>
+<pre class="code text"><a name="rest_code_8f49b3efc9c448438463ca60e863b810-1"></a>network={
+<a name="rest_code_8f49b3efc9c448438463ca60e863b810-2"></a>    ssid="essid"
+<a name="rest_code_8f49b3efc9c448438463ca60e863b810-3"></a>    #psk="passphrase"
+<a name="rest_code_8f49b3efc9c448438463ca60e863b810-4"></a>    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
+<a name="rest_code_8f49b3efc9c448438463ca60e863b810-5"></a>}
+</pre>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../phototonic/" rel="prev" title="phototonic: 另一個小巧的看圖程式">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../rectangle-edit/" rel="next" title="rectange edit">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/hostapd/",
+        disqus_title="hostapd",
+        disqus_identifier="cache/posts/hostapd.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

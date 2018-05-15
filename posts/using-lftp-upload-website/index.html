@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Using lftp upload website | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/using-lftp-upload-website/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../disable-low-level-screensaver/" title="Disable low-level screensaver and screen DPMS poweroff" type="text/html">
+<link rel="next" href="../enable-mpd-with-systemd/" title="enable mpd with systemd" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="Using lftp upload website">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/using-lftp-upload-website/">
+<meta property="og:description" content="為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。
+
+install lftp
+$ yaourt -S lftp
+
+
+create backup.lftp
+open &lt;host url&gt;
+user user-id user-pwd
+lcd local-dir/
+cd host-dir/
+mirro -Rnc
+exit
+
+
+execute backup.lftp
+$ lftp ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-11-14T11:35:13+08:00">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Using lftp upload website</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2013-11-14T11:35:13+08:00" itemprop="datePublished" title="2013-11-14 11:35">2013-11-14 11:35</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/using-lftp-upload-website.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。</p>
+<div class="section" id="install-lftp">
+<h2>install lftp</h2>
+<pre class="code text"><a name="rest_code_fed9b93ac0634eba9081a5d9946fac58-1"></a>$ yaourt -S lftp
+</pre>
+</div>
+<div class="section" id="create-backup-lftp">
+<h2>create backup.lftp</h2>
+<pre class="code text"><a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-1"></a>open &lt;host url&gt;
+<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-2"></a>user user-id user-pwd
+<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-3"></a>lcd local-dir/
+<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-4"></a>cd host-dir/
+<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-5"></a>mirro -Rnc
+<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-6"></a>exit
+</pre>
+</div>
+<div class="section" id="execute-backup-lftp">
+<h2>execute backup.lftp</h2>
+<pre class="code text"><a name="rest_code_e9244873cd814a7a9217a8e0ae3c66ac-1"></a>$ lftp -f backup.lftp
+</pre>
+</div>
+<div class="section" id="reference">
+<h2>reference:</h2>
+<pre class="code text"><a name="rest_code_158525240ceb47a280fc448341b56253-1"></a>mirror [OPTS] [source [target]]
+<a name="rest_code_158525240ceb47a280fc448341b56253-2"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-3"></a>       Mirror specified source directory to local target directory. If  the  target  directory  ends
+<a name="rest_code_158525240ceb47a280fc448341b56253-4"></a>       with  a  slash  (except the root), the source base name is appended to target directory name.
+<a name="rest_code_158525240ceb47a280fc448341b56253-5"></a>       Source and/or target can be URLs pointing to directories.
+<a name="rest_code_158525240ceb47a280fc448341b56253-6"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-7"></a>            -c,      --continue                continue a mirror job if possible
+<a name="rest_code_158525240ceb47a280fc448341b56253-8"></a>            -e,      --delete                  delete files not present at remote site
+<a name="rest_code_158525240ceb47a280fc448341b56253-9"></a>                     --delete-first            delete old files before transferring new ones
+<a name="rest_code_158525240ceb47a280fc448341b56253-10"></a>                     --depth-first             descend into subdirectories before transferring files
+<a name="rest_code_158525240ceb47a280fc448341b56253-11"></a>            -s,      --allow-suid              set suid/sgid bits according to remote site
+<a name="rest_code_158525240ceb47a280fc448341b56253-12"></a>                     --allow-chown             try to set owner and group on files
+<a name="rest_code_158525240ceb47a280fc448341b56253-13"></a>                     --ascii                   use ascii mode transfers (implies --ignore-size)
+<a name="rest_code_158525240ceb47a280fc448341b56253-14"></a>                     --ignore-time             ignore time when deciding whether to download
+<a name="rest_code_158525240ceb47a280fc448341b56253-15"></a>                     --ignore-size             ignore size when deciding whether to download
+<a name="rest_code_158525240ceb47a280fc448341b56253-16"></a>                     --only-missing            download only missing files
+<a name="rest_code_158525240ceb47a280fc448341b56253-17"></a>                     --only-existing           download only files already existing at target
+<a name="rest_code_158525240ceb47a280fc448341b56253-18"></a>            -n,      --only-newer              download only newer files (-c won't work)
+<a name="rest_code_158525240ceb47a280fc448341b56253-19"></a>                     --no-empty-dirs           don't    create    empty     directories     (implies
+<a name="rest_code_158525240ceb47a280fc448341b56253-20"></a>                                               --depth-first)
+<a name="rest_code_158525240ceb47a280fc448341b56253-21"></a>            -r,      --no-recursion            don't go to subdirectories
+<a name="rest_code_158525240ceb47a280fc448341b56253-22"></a>                     --no-symlinks             don't create symbolic links
+<a name="rest_code_158525240ceb47a280fc448341b56253-23"></a>            -p,      --no-perms                don't set file permissions
+<a name="rest_code_158525240ceb47a280fc448341b56253-24"></a>                     --no-umask                don't apply umask to file modes
+<a name="rest_code_158525240ceb47a280fc448341b56253-25"></a>            -R,      --reverse                 reverse mirror (put files)
+<a name="rest_code_158525240ceb47a280fc448341b56253-26"></a>            -L,      --dereference             download symbolic links as files
+<a name="rest_code_158525240ceb47a280fc448341b56253-27"></a>            -N,      --newer-than=SPEC         download only files newer than specified time
+<a name="rest_code_158525240ceb47a280fc448341b56253-28"></a>                     --older-than=SPEC         download only files older than specified time
+<a name="rest_code_158525240ceb47a280fc448341b56253-29"></a>                     --size-range=RANGE        download only files with size in specified range
+<a name="rest_code_158525240ceb47a280fc448341b56253-30"></a>            -P,      --parallel[=N]            download N files in parallel
+<a name="rest_code_158525240ceb47a280fc448341b56253-31"></a>                     --use-pget[-n=N]          use pget to transfer every single file
+<a name="rest_code_158525240ceb47a280fc448341b56253-32"></a>                     --on-change=CMD           execute the command if anything has been changed
+<a name="rest_code_158525240ceb47a280fc448341b56253-33"></a>                     --loop                    repeat mirror until no changes found
+<a name="rest_code_158525240ceb47a280fc448341b56253-34"></a>            -i RX,   --include=RX              include matching files
+<a name="rest_code_158525240ceb47a280fc448341b56253-35"></a>            -x RX,   --exclude=RX              exclude matching files
+<a name="rest_code_158525240ceb47a280fc448341b56253-36"></a>            -I GP,   --include-glob=GP         include matching files
+<a name="rest_code_158525240ceb47a280fc448341b56253-37"></a>            -X GP,   --exclude-glob=GP         exclude matching files
+<a name="rest_code_158525240ceb47a280fc448341b56253-38"></a>            -f FILE, --file=FILE               mirror   a   single   file  or  globbed  group  (e.g.
+<a name="rest_code_158525240ceb47a280fc448341b56253-39"></a>                                               /path/to/*.txt)
+<a name="rest_code_158525240ceb47a280fc448341b56253-40"></a>            -O DIR,  --target-directory=DIR    target base path or URL
+<a name="rest_code_158525240ceb47a280fc448341b56253-41"></a>            -v,      --verbose[=level]         verbose operation
+<a name="rest_code_158525240ceb47a280fc448341b56253-42"></a>                     --log=FILE                write lftp commands being executed to FILE
+<a name="rest_code_158525240ceb47a280fc448341b56253-43"></a>                     --script=FILE             write lftp commands to FILE, but don't execute them
+<a name="rest_code_158525240ceb47a280fc448341b56253-44"></a>                     --just-print, --dry-run   same as --script=-
+<a name="rest_code_158525240ceb47a280fc448341b56253-45"></a>                     --use-cache               use cached directory listings
+<a name="rest_code_158525240ceb47a280fc448341b56253-46"></a>                     --Remove-source-files     remove files after transfer (use with caution)
+<a name="rest_code_158525240ceb47a280fc448341b56253-47"></a>            -a                                 same as --allow-chown --allow-suid --no-umask
+<a name="rest_code_158525240ceb47a280fc448341b56253-48"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-49"></a>       When using -R, the source directory is local and the target is remote.  If the target  direc‐
+<a name="rest_code_158525240ceb47a280fc448341b56253-50"></a>       tory is omitted, base name of the source directory is used.  If both directories are omitted,
+<a name="rest_code_158525240ceb47a280fc448341b56253-51"></a>       current local and remote directories are used.  If the target directory  ends  with  a  slash
+<a name="rest_code_158525240ceb47a280fc448341b56253-52"></a>       (except the root directory) then base name of the source directory is appended.
+<a name="rest_code_158525240ceb47a280fc448341b56253-53"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-54"></a>       RX is an extended regular expression, just like in egrep(1).
+<a name="rest_code_158525240ceb47a280fc448341b56253-55"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-56"></a>       GP is a glob pattern, e.g. `*.zip'.
+<a name="rest_code_158525240ceb47a280fc448341b56253-57"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-58"></a>       Include  and  exclude options can be specified multiple times. It means that a file or direc‐
+<a name="rest_code_158525240ceb47a280fc448341b56253-59"></a>       tory would be mirrored if it matches an include and does not  match  to  excludes  after  the
+<a name="rest_code_158525240ceb47a280fc448341b56253-60"></a>       include,  or  does not match anything and the first check is exclude. Directories are matched
+<a name="rest_code_158525240ceb47a280fc448341b56253-61"></a>       with a slash appended.
+<a name="rest_code_158525240ceb47a280fc448341b56253-62"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-63"></a>       Note that symbolic links are not created when uploading to remote server, because ftp  proto‐
+<a name="rest_code_158525240ceb47a280fc448341b56253-64"></a>       col  cannot  do  it. To upload files the links refer to, use `mirror -RL' command (treat sym‐
+<a name="rest_code_158525240ceb47a280fc448341b56253-65"></a>       bolic links as files).
+<a name="rest_code_158525240ceb47a280fc448341b56253-66"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-67"></a>       For options --newer-than and --older-than you can either specify a file or time specification
+<a name="rest_code_158525240ceb47a280fc448341b56253-68"></a>       like that used by at(1) command, e.g.  `now-7days' or `week ago'. If you specify a file, then
+<a name="rest_code_158525240ceb47a280fc448341b56253-69"></a>       modification time of that file will be used.
+<a name="rest_code_158525240ceb47a280fc448341b56253-70"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-71"></a>       Verbosity level can be selected using --verbose=level option or by several -v  options,  e.g.
+<a name="rest_code_158525240ceb47a280fc448341b56253-72"></a>       -vvv. Levels are:
+<a name="rest_code_158525240ceb47a280fc448341b56253-73"></a>            0 - no output (default)
+<a name="rest_code_158525240ceb47a280fc448341b56253-74"></a>            1 - print actions
+<a name="rest_code_158525240ceb47a280fc448341b56253-75"></a>            2 - +print not deleted file names (when -e is not specified)
+<a name="rest_code_158525240ceb47a280fc448341b56253-76"></a>            3 - +print directory names which are mirrored
+<a name="rest_code_158525240ceb47a280fc448341b56253-77"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-78"></a>       --only-newer  turns  off  file size comparison and uploads/downloads only newer files even if
+<a name="rest_code_158525240ceb47a280fc448341b56253-79"></a>       size is different. By default older files are transferred and replace newer ones.
+<a name="rest_code_158525240ceb47a280fc448341b56253-80"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-81"></a>       You can mirror between two servers if you specify URLs instead of directories.  FXP  is  used
+<a name="rest_code_158525240ceb47a280fc448341b56253-82"></a>       automatically for transfers between ftp servers, if possible.
+<a name="rest_code_158525240ceb47a280fc448341b56253-83"></a>
+<a name="rest_code_158525240ceb47a280fc448341b56253-84"></a>       Some  ftp  servers  hide  dot-files by default (e.g. .htaccess), and show them only when LIST
+<a name="rest_code_158525240ceb47a280fc448341b56253-85"></a>       command is used with -a option. In such case try to use `set ftp:list-options -a'.
+</pre>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../disable-low-level-screensaver/" rel="prev" title="Disable low-level screensaver and screen DPMS poweroff">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../enable-mpd-with-systemd/" rel="next" title="enable mpd with systemd">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/using-lftp-upload-website/",
+        disqus_title="Using lftp upload website",
+        disqus_identifier="cache/posts/using-lftp-upload-website.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

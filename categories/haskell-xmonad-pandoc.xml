@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：haskell xmonad pandoc)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/haskell-xmonad-pandoc.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 01:22:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Haskell Applications</title><link>https://github.com/mariolong/mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+終於把 haskell 的開發環境設好，也順利完成了第一支小程式，去抓網頁上目前最新的電影表列，並以 gmail 通知。
+&lt;/p&gt;
+
+&lt;p&gt;
+上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，經過一番折騰，程式結構幾乎相同，代碼行數也差不多。比起先前用 Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 clojure, 先把安裝的過程記錄下來。
+&lt;/p&gt;
+
+&lt;p&gt;
+archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，haskell 用的是
+dynamic-link, 問題多多。另外也不用 ArchHaskell repository, 原因是其中 Application
+的版本比較舊。
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+archlinux
+&lt;/p&gt;
+
+&lt;p&gt;
+yaourt -S ghc ghc-static stack-bin
+&lt;/p&gt;
+
+&lt;p&gt;
+stack setup –system-ghc
+&lt;/p&gt;
+
+&lt;p&gt;
+stack install cabal-install –system-ghc
+&lt;/p&gt;
+
+&lt;p&gt;
+cabal update
+&lt;/p&gt;
+
+&lt;p&gt;
+cabal install pandoc
+&lt;/p&gt;
+
+&lt;p&gt;
+因為 cabal 的 pandoc 版本比較新，所以用 cabal 安裝。如果要用 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安裝 pandoc，排列組合還真多樣化。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 安裝&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
+&lt;h3 id="sec-2-1"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; install ghc, stack&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;p&gt;
+&lt;a href="https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux"&gt;https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S ghc
+yaourt -S stack
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+決定用 static link
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
+&lt;h3 id="sec-2-2"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; install cabal&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;p&gt;
+&lt;a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29"&gt;Building statically linked packages with Cabal (without using shared libraries)&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;stack&lt;/span&gt; &lt;span class="nv"&gt;setup&lt;/span&gt; &lt;span class="nv"&gt;--system-ghc&lt;/span&gt;
+&lt;span class="nv"&gt;stack&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="nv"&gt;--system-ghc&lt;/span&gt; &lt;span class="nv"&gt;cabal-install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
+&lt;h3 id="sec-2-3"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; install applications&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;p&gt;
+xmonad, taffybar, pandoc
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-3-1" class="outline-4"&gt;
+&lt;h4 id="sec-2-3-1"&gt;&lt;span class="section-number-4"&gt;2.3.1&lt;/span&gt; taffybar/xmonad/xmonad-contrib&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-2-3-1"&gt;
+&lt;p&gt;
+taffybar 1.x.x 以上的，會用到 haskell-gi ghc 8.2.2 會報錯，即使硬上，
+taffybar 的高度也不對。所以暫時不用，等 ghc 8.4.2 release 了再試。
+&lt;/p&gt;
+
+&lt;p&gt;
+目前用 taffybar-0.4.6，也就換維護者前的最後版本，比較穩定。
+&lt;/p&gt;
+
+&lt;p&gt;
+有三種做法
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-3-1-1" name="sec-2-3-1-1"&gt;&lt;/a&gt;自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib&lt;br&gt;&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-3-1-1-1" name="sec-2-3-1-1-1"&gt;&lt;/a&gt;download taffybar from github&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a id="sec-2-3-1-1-2" name="sec-2-3-1-1-2"&gt;&lt;/a&gt;adding stack.yaml and setup stack project&lt;br&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-3-1-1-3" name="sec-2-3-1-1-3"&gt;&lt;/a&gt;config file of taffybar/xmonad must put them to this directory&lt;br&gt;&lt;div class="outline-text-6" id="text-2-3-1-1-3"&gt;
+&lt;p&gt;
+否則 recompile config file 時，會找不到需要的模組。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-3-1-1-4" name="sec-2-3-1-1-4"&gt;&lt;/a&gt;stack build/install taffybar&lt;br&gt;&lt;div class="outline-text-6" id="text-2-3-1-1-4"&gt;
+&lt;p&gt;
+自動安裝 taffybar 和 xomnad 和 xmonad-contrib
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-3-1-1-5" name="sec-2-3-1-1-5"&gt;&lt;/a&gt;執行&lt;br&gt;&lt;div class="outline-text-6" id="text-2-3-1-1-5"&gt;
+&lt;p&gt;
+stack exec – taffybar
+stack exec – xmonad –recompile
+stack exec – xmonad –restart
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-3-1-2" name="sec-2-3-1-2"&gt;&lt;/a&gt;haskell-taffybar&lt;br&gt;&lt;div class="outline-text-5" id="text-2-3-1-2"&gt;
+&lt;p&gt;
+用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-3-1-3" name="sec-2-3-1-3"&gt;&lt;/a&gt;cabal install taffybar-0.4.6&lt;br&gt;&lt;div class="outline-text-5" id="text-2-3-1-3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal update
+cabal install happy alex haddock c2hs
+cabal install taffybar-0.4.6
+cabal install pandoc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-3-2" class="outline-4"&gt;
+&lt;h4 id="sec-2-3-2"&gt;&lt;span class="section-number-4"&gt;2.3.2&lt;/span&gt; taffybar, status bar for xmonad&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-2-3-2"&gt;
+&lt;p&gt;
+&lt;a href="https://github.com/haskell-gi/haskell-gi"&gt;https://github.com/haskell-gi/haskell-gi&lt;/a&gt;
+haskell-gi
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S gobject-introspection gobject-introspection-runtime gtksourceview3 webkit2gtk
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; emacs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+using &lt;a href="https://commercialhaskell.github.io/intero/"&gt;intero&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;intero&lt;/span&gt;
+    &lt;span class="nv"&gt;:config&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'haskell-mode-hook&lt;/span&gt; &lt;span class="ss"&gt;'intero-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack config &lt;span class="nb"&gt;set&lt;/span&gt; system-ghc --global &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
+&lt;h3 id="sec-3-1"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; hindent&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install hindent
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;hindent&lt;/span&gt;
+  &lt;span class="nv"&gt;:config&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-hook&lt;/span&gt; &lt;span class="ss"&gt;'haskell-mode-hook&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="ss"&gt;'hindent-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; Building statically linked packages with Cabal (without using shared libraries)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;p&gt;
+&lt;a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29"&gt;here&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This section explains how to install cabal-install but from Hackage
+instead of the official cabal-install package from the
+repositories. This cabal-install will build Haskell packages without
+using shared libraries unlike the official cabal-install which
+requires you to link dynamically.
+&lt;/p&gt;
+
+&lt;p&gt;
+In theory with any cabal-install you could choose between both
+methods, static and dynamic, for linking your Haskell code. In
+practice because in Arch some basic Haskell libraries (haskell-*
+packages) are provided as shared objects (.so files) and those
+libraries are globally registered in Cabal, it has trouble using the
+same libraries for static linking. To avoid linking errors, it's also
+especially important to not to mix statically and dynamically Haskell
+packages installed on the same system, as Cabal doesn't fetch a
+required package once it has been globally registered (check them with
+the command ghc-pkg list) in one of its forms and not the other
+(independently of the linking type of the package that it's needed).
+&lt;/p&gt;
+
+&lt;p&gt;
+For these reasons, you have to make sure that the only two related
+Haskell packages you have installed are ghc, the compiler, and
+ghc-static, the boot libraries on its static form, (not stack,
+cabal-helper, cabal-install and none of the haskell-* dynamic
+libraries available in the official repositories).
+&lt;/p&gt;
+
+&lt;p&gt;
+You can also use Stack as an alternative build tool for Haskell
+packages, which will link statically by default. But if you still want
+to use Cabal to build using static linking, follow the next steps of
+this section to install your own compiled cabal-install from
+Hackage. For this purpose we are going to use the tool Stack that will
+help us fetching all the dependencies required and building your own
+cabal-install.
+&lt;/p&gt;
+
+&lt;p&gt;
+First you have to install stack-binAUR because you'll use it to
+bootstrap the compilation of your own Cabal and you don't want to pull
+as dependencies those packages from the official Arch repositories
+containing the haskell-* dynamic libraries.
+&lt;/p&gt;
+
+&lt;p&gt;
+Then prepare Stack downloading the package index. Stack will be used
+with the only purpose of bootstrapping the compilation of your own
+cabal-install but using the already installed ghc compiler:
+&lt;/p&gt;
+
+&lt;p&gt;
+$ stack setup –system-ghc
+&lt;/p&gt;
+
+&lt;p&gt;
+Now install your own cabal-install:
+&lt;/p&gt;
+
+&lt;p&gt;
+$ stack install –system-ghc cabal-install
+&lt;/p&gt;
+
+&lt;p&gt;
+This newly installed cabal-install has been compiled without shared
+libraries and won't use them when building packages by default. Also,
+this cabal-install will use the installed ghc compiler.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-5" class="outline-2"&gt;
+&lt;h2 id="sec-5"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 解決 dynamic link 的問題&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;p&gt;
+&lt;a href="https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking"&gt;https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking&lt;/a&gt;
+You can also set these flags in ~/.cabal/config so that it applies to all projects by default.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;kbd&gt;~/.cabal/config&lt;/kbd&gt;
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;library-vanilla: False
+shared: True
+executable-dynamic: True
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>haskell xmonad pandoc</category><guid>https://github.com/mariolong/mariolong.github.io/posts/install-haskell-applications/</guid><pubDate>Sun, 29 Apr 2018 03:16:44 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：backup)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/backup.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 01:22:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>DVD backup</title><link>https://github.com/mariolong/mariolong.github.io/posts/dvd-backup/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;手邊一堆 DVD，不保存到電腦裡，不安心啦。
+為了保存這些 DVD，大約的流程如下：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;先將 DVD 轉成 ISO。&lt;/li&gt;
+&lt;li&gt;把 ISO 裡的 VIDEO 目錄抓出來。&lt;/li&gt;
+&lt;li&gt;VIDEO 中的 *.VOB 轉成 *.mkv 保存。&lt;/li&gt;
+&lt;li&gt;有必要時，可以將 mkv 轉成自己想要的格式。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="section" id="dvd-to-iso"&gt;
+&lt;h2&gt;DVD to ISO&lt;/h2&gt;
+&lt;p&gt;爲了保存有價值的影片，儘量用比較高品質的壓縮方法。&lt;/p&gt;
+&lt;p&gt;參考 &lt;a class="reference external" href="http://www.cmdln.org/2010/01/22/backing-up-disney-dvds/"&gt;BACKING UP DISNEY DVDS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需要安裝的軟體：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S ddrescue dvdbackup libdvdcss
+&lt;/pre&gt;
+&lt;p&gt;使用流程：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ddrescue -n -b 2048 /dev/cdrom dvd.iso
+dvdbackup -M -i dvd.iso -o dvd-dir
+&lt;/pre&gt;
+&lt;p&gt;如此就把整片 DVD 備份到 dvd-dir 中了。
+接下來，再針對 dvd-dir 中的影片處理。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="dvd-to-mkv"&gt;
+&lt;h2&gt;DVD to MKV&lt;/h2&gt;
+&lt;p&gt;參考 &lt;cite&gt;ffmpeg-xin-de&lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;先將 ISO 轉成 MKV&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cat VTS_01_[1234].VOB | ffmpeg -probesize 214748000 -analyzeduration 214748000 -i - \
+-map 0:0 -map 0:1 -map 0:2 \
+-crf 18 -preset veryslow -tune help\
+-filter:v yadif \
+-c:a copy -c:s copy -y a.mkv
+&lt;/pre&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-probesize&lt;/span&gt; 214748000 &lt;span class="pre"&gt;-analyzeduration&lt;/span&gt; 214748000&lt;/tt&gt; 有時會因爲音軌或字幕軌太晚出現，ffmpeg 會偵測不到，這時就加長偵測的時間和大小。&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-map&lt;/span&gt; 0:0 &lt;span class="pre"&gt;-map&lt;/span&gt; 0:1 &lt;span class="pre"&gt;-map&lt;/span&gt; 0:2&lt;/tt&gt; 是要封裝到 mkv 的軌道。&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-crf&lt;/span&gt; 18 &lt;span class="pre"&gt;-preset&lt;/span&gt; veryslow&lt;/tt&gt; 用這個參數大概就好了，眼睛看不出來與原始有何差異。有必要時可以再加上 -tune。&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-filter:v&lt;/span&gt; yadif&lt;/tt&gt; 就是 deinterlace。&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-c:a&lt;/span&gt; copy &lt;span class="pre"&gt;-c:s&lt;/span&gt; copy&lt;/tt&gt; 音軌和字幕軌都不重新編碼。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果沒有字幕，可以先取得字幕檔，再保存到 mkv 中，如下：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ cat VTS_01_[1234].VOB | ffmpeg -i - -i a.ssa \
+-map 0:0 -map 0:2 -map 1 \
+-crf 18 -preset veryslow -tune zerolatency \
+-filter:v yadif \
+-c:a copy -c:s copy \
+-y a.mkv
+&lt;/pre&gt;
+&lt;p&gt;重點是 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-i&lt;/span&gt; a.ssa &lt;span class="pre"&gt;-map&lt;/span&gt; 1 &lt;span class="pre"&gt;-c:s&lt;/span&gt; copy&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="color-of-dvd-subtitle"&gt;
+&lt;h2&gt;color of dvd subtitle&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options"&gt;https://en.wikibooks.org/wiki/FFMPEG_An_Intermediate_Guide/subtitle_options&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;$ ffmpeg -palette "551A8B,551A8B,ffffff,000000,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff" -i candy-001.mkv -c:a copy -filter_complex "[0:v][0:s]overlay" a.mkv&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;字框&lt;/li&gt;
+&lt;li&gt;外框&lt;/li&gt;
+&lt;li&gt;不知&lt;/li&gt;
+&lt;li&gt;字本身&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>backup</category><category>dvd</category><guid>https://github.com/mariolong/mariolong.github.io/posts/dvd-backup/</guid><pubDate>Fri, 25 Oct 2013 00:16:10 GMT</pubDate></item></channel></rss>

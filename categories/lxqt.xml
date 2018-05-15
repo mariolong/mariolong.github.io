@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：lxqt)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/lxqt.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 01:22:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>udiskie: usb storage automount</title><link>https://github.com/mariolong/mariolong.github.io/posts/udiskie-usb-storage-automount/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;這陣子用了一些方便想自動掛載「移動裝置」，最後決定用 udiskie，小小地記錄下來，備查。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;upadte&lt;/strong&gt; 2014-10-24: 用 lxqt-panel + removable meida/device manager plugin + libfm，即可自動掛載。
+一定要裝 libfm 才能在 removable media/devices meanger 中看到 usb 移動裝置。&lt;/p&gt;
+&lt;p&gt;它會使用 udisk2 執行掛載，應該是配合 KF5 吧。&lt;/p&gt;
+&lt;p&gt;lxqt 愈來愈好用了，真是名符其實的「台灣之光」，加油。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pip install udiskie
+$ yaourt -S python-gobject libfm
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;執行&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ udiskie &amp;amp;
+&lt;/pre&gt;
+&lt;p&gt;測試 OK，可以放進 .xinitrc&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;結論&lt;/h2&gt;
+&lt;p&gt;最後決定的方式是：在 lxqt-panel 上加上 removable media/devices manager 外掛，
+讓 panel 可以顯示是否有移動裝置插入 usb。
+如果要卸載，也是使用這個外掛，按一下即可。&lt;/p&gt;
+&lt;p&gt;如果有移動裝置插入 usb 時，要自動掛載。
+則可在 ~/.xinitrc 中加上 &lt;tt class="docutils literal"&gt;udiskie &amp;amp;&lt;/tt&gt; 讓它在背景執行。&lt;/p&gt;
+&lt;p&gt;如此就方便了，可以自動掛載，也可以手自動卸載。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>desktop</category><category>Linux</category><category>lxqt</category><guid>https://github.com/mariolong/mariolong.github.io/posts/udiskie-usb-storage-automount/</guid><pubDate>Thu, 23 Oct 2014 13:48:57 GMT</pubDate></item></channel></rss>

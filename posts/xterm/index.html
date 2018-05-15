@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>xterm | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/xterm/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../lxqt%2Bxmonad%2Btaffybar/" title="我的桌面組合 lxqt+xmonad+taffybar" type="text/html">
+<link rel="next" href="../midnight-commander/" title="Midnight Commander" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="xterm">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/xterm/">
+<meta property="og:description" content="因為要用 synapse，又不知如何讓 urxvt 和 synapse 合作，所以裝上了 xterm。
+用了之後，發現比起 urxvt，不僅速度快，而且佔用的記憶體也少得多，字體顯示也比較漂亮。
+urxvt 會突然不能顯示的問題，也許就迎刃而解了吧？再觀察幾天看看。
+參考 https://wiki.archlinux.org/index.php/Xterm
+
+安裝
+
+$ yaourt -S xte">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-12-11T14:21:22Z">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">xterm</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-12-11T14:21:22Z" itemprop="datePublished" title="2014-12-11 14:21">2014-12-11 14:21</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/xterm.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>因為要用 synapse，又不知如何讓 urxvt 和 synapse 合作，所以裝上了 xterm。</p>
+<p>用了之後，發現比起 urxvt，不僅速度快，而且佔用的記憶體也少得多，字體顯示也比較漂亮。</p>
+<p>urxvt 會突然不能顯示的問題，也許就迎刃而解了吧？再觀察幾天看看。</p>
+<p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Xterm">https://wiki.archlinux.org/index.php/Xterm</a></p>
+<div class="section" id="id1">
+<h2>安裝</h2>
+<pre class="literal-block">
+$ yaourt -S xterm
+</pre>
+<p>就這個，沒別的。</p>
+</div>
+<div class="section" id="id2">
+<h2>配置</h2>
+<p>與 urxvt 一樣，xterm 的設定也放在 ~/.Xresource 中。</p>
+<p>有了配置 urxvt 的經驗後，這次配置 xterm 就快得多了，幾乎都是用 urxvt 的設定。</p>
+<div class="section" id="id3">
+<h3>256 色</h3>
+<p>不要設定環境變數 TERM，讓 xterm 去自動設定。不然 MC 會以為 term 不是 256 色的終端模擬器。</p>
+<pre class="literal-block">
+XTerm*termName: xterm-256color
+</pre>
+</div>
+<div class="section" id="utf-8">
+<h3>編碼改為 utf-8</h3>
+<pre class="literal-block">
+XTerm*locale: true
+XTerm*utf8Title: true
+</pre>
+</div>
+<div class="section" id="id4">
+<h3>中英文字型</h3>
+<p>安裝固定字寬和中文字型</p>
+<pre class="literal-block">
+$ yaourt -S adobe-source-code-pro-fonts adobe-source-han-sans-otc-fonts
+</pre>
+<p>設定字型</p>
+<pre class="literal-block">
+XTerm*faceName: Source Code Pro
+XTerm*faceNameDoublesize: xft:Source Hans Sans:style=Regular
+XTerm*faceSize: 16
+</pre>
+</div>
+<div class="section" id="id5">
+<h3>透明背景</h3>
+<p>~/.xinitrc 中加上</p>
+<pre class="literal-block">
+compton &amp;
+</pre>
+<p>在 ~/.bashrc 中加上</p>
+<pre class="literal-block">
+[ -n "$XTERM_VERSION" ] &amp;&amp; transset-df -a 0.97 &gt;/dev/null
+</pre>
+</div>
+<div class="section" id="id6">
+<h3>不捲動</h3>
+<p>有時要觀看輸出的內容，可是程式還是一直在執行，也一直在底部列印訊息。
+這時就想要把資料停在目前觀看的範圍，不會隨著程式輸出，一直跳到輸出列。</p>
+<pre class="literal-block">
+XTerm*scrollTtyOutput: false
+XTerm*scrollKey: true
+</pre>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../lxqt%2Bxmonad%2Btaffybar/" rel="prev" title="我的桌面組合 lxqt+xmonad+taffybar">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../midnight-commander/" rel="next" title="Midnight Commander">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/xterm/",
+        disqus_title="xterm",
+        disqus_identifier="cache/posts/xterm.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

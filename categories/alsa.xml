@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：alsa)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/alsa.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 01:22:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>alsa equaler</title><link>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
+Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced Linux Sound Architecture&lt;/a&gt;已說明等化器的安裝及設定，照做即可。
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsaequal
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; config&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+在&lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt;加上以下設定：
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+ctl.equal {
+    type equal;
+}
+
+pcm.plugequal {
+    type equal;
+    # Modify the line below if you do not
+    # want to use sound card 0.
+    #slave.pcm "plughw:0,0";
+    # by default we want to play from more sources at time:
+    slave.pcm "plug:dmix";
+}
+
+# pcm.equal {
+# If you do not want the equalizer to be your
+# default soundcard comment the following
+# line and uncomment the above line. (You can
+# choose it as the output device by addressing
+# it with specific apps,eg mpg123 -a equal 06.Back_In_Black.mp3)
+pcm.!default {
+    type plug;
+    slave.pcm plugequal;
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; reboot&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+讓 alsa 可用等化器
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 調整等化器&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;p&gt;
+執行
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;alsamixer -D equal
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+PS. 用 Q,W,E,Z,X,C 可分別調整左右聲道的音量。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-5" class="outline-2"&gt;
+&lt;h2 id="sec-5"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; mpd issue&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;p&gt;
+總是會連不上 mpd server，後來在 WIKI 中讀到一段話：
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Note that configuration file is different for each user (until not
+specified else) it is saved in ~/.alsaequal.bin. so if you want to use
+ALSAEqual with mpd or another software running under different user,
+you can configure it using
+&lt;/p&gt;
+
+&lt;p&gt;
+$ su mpd -c 'alsamixer -D equal'
+&lt;/p&gt;
+
+&lt;p&gt;
+or for example, you can make a symlink to your .alsaequal.bin in his
+home…
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+我在&lt;kbd&gt;/root&lt;/kbd&gt;目錄下，建一個連到主目錄&lt;kbd&gt;.alsaequal.bin&lt;/kbd&gt;的連結，
+mpd 即可使用，瞎打誤撞。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/"&gt;音樂再生首要難題 – 空間&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/whats/DRC-vs-others/"&gt;等化器(EQ)&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>alsa</category><category>Linux</category><category>mpd</category><category>music</category><guid>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Mon, 15 Jan 2018 14:20:29 GMT</pubDate></item></channel></rss>

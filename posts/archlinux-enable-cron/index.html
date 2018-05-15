@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>archlinux enable cron | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/archlinux-enable-cron/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../bottlebeaker-session-management/" title="bottle+beaker session management" type="text/html">
+<link rel="next" href="../archlinux-hostapd-netcfg/" title="wireless AP 設定 （hostapd+netcfg/netctl）" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="archlinux enable cron">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/archlinux-enable-cron/">
+<meta property="og:description" content="&lt;https://wiki.archlinux.org/index.php/cron&gt;
+
+Installation
+cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparison">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-03-02T16:31:27+08:00">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">archlinux enable cron</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-03-02T16:31:27+08:00" itemprop="datePublished" title="2014-03-02 16:31">2014-03-02 16:31</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/archlinux-enable-cron.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<blockquote>
+&lt;<a class="reference external" href="https://wiki.archlinux.org/index.php/cron">https://wiki.archlinux.org/index.php/cron</a>&gt;</blockquote>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch Linux until May 2011.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration</h2>
+<p>Activation and autostart</p>
+<p>cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:</p>
+<pre class="code text"><a name="rest_code_a8fba4b6d3124ee9b2ea4d862d9886a6-1"></a>$ systemctl is-enabled cronie
+</pre>
+<p>Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:</p>
+<pre class="code text"><a name="rest_code_6440a068188d4206a5d378e730695316-1"></a># systemctl start cronie
+<a name="rest_code_6440a068188d4206a5d378e730695316-2"></a># systemctl enable cronie
+</pre>
+</div>
+<div class="section" id="default-editor">
+<h2>Default editor</h2>
+<p>To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:</p>
+<pre class="code text"><a name="rest_code_2dc485521dff45f98934f138efcb3661-1"></a># /etc/profile.d/nano-default-editor
+</pre>
+<p>加上：</p>
+<pre class="code text"><a name="rest_code_f107f5d91d0840be9679b734d91c7118-1"></a>#!/bin/sh
+<a name="rest_code_f107f5d91d0840be9679b734d91c7118-2"></a>export EDITOR=/usr/bin/nano
+</pre>
+<p>修改權限：</p>
+<pre class="code text"><a name="rest_code_e3a95faaaa7d4045a0fa0ab8a4c77520-1"></a>#chmod +x /etc/profile.d/nano-default-editor
+</pre>
+</div>
+<div class="section" id="crontab-format">
+<h2>Crontab format</h2>
+<p>The basic format for a crontab is:
+minute hour day_of_month month day_of_week command
+minute values can be from 0 to 59.
+hour values can be from 0 to 23.
+day_of_month values can be from 1 to 31.
+month values can be from 1 to 12.
+day_of_week values can be from 0 to 6, with 0 denoting Sunday.
+Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
+<a href="#id1"><span class="problematic" id="id2">*</span></a>0,*5 9-16 * 1-5,9-12 1-5 ~/bin/i_love_cron.sh
+Will execute the script i_love_cron.sh at five minute intervals from 9 AM to 4:55 PM on weekdays except during the summer months (June, July, and August). More examples and advanced configuration techniques can be found below.</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 54); <em><a href="#id2">backlink</a></em></p>
+Inline emphasis start-string without end-string.</div>
+<div class="section" id="basic-commands">
+<h3>Basic commands</h3>
+<p>Crontabs should never be edited directly; instead, users should use the crontab program to work with their crontabs. To be granted access to this command, user must be a member of the users group (see the gpasswd command).
+To view their crontabs, users should issue the command:
+$ crontab -l
+To edit their crontabs, they may use:
+$ crontab -e
+To remove their crontabs, they should use:
+$ crontab -r
+If a user has a saved crontab and would like to completely overwrite their old crontab, he or she should use:
+$ crontab saved_crontab_filename
+To overwrite a crontab from the command line (Wikipedia:stdin), use
+$ crontab -
+To edit somebody else's crontab, issue the following command as root:
+# crontab -u username -e
+This same format (appending -u username to a command) works for listing and deleting crontabs as well.</p>
+</div>
+<div class="section" id="examples">
+<h3>Examples</h3>
+<p>The entry:</p>
+<pre class="literal-block">
+01 * * * * /bin/echo Hello, world!
+</pre>
+<p>runs the command /bin/echo Hello, world! on the first minute of every hour of every day of every month (i.e. at 12:01, 1:01, 2:01, etc.).
+Similarly:</p>
+<pre class="literal-block">
+*/5 * * jan mon-fri /bin/echo Hello, world!
+</pre>
+<p>runs the same job every five minutes on weekdays during the month of January (i.e. at 12:00, 12:05, 12:10, etc.).</p>
+<p>The line (as noted in "man 5 crontab"):</p>
+<pre class="literal-block">
+*0,*5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
+    0-35/5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
+</pre>
+<p>will execute the script i_love_cron.sh at five minute intervals from 9 AM to 5 PM (excluding 5 PM itself) every weekday (Mon-Fri) of every month except during the summer (June, July, and August).
+Periodical settings can also be entered as in this crontab template:
+# Chronological table of program loadings
+# Edit with "crontab" for proper functionality, "man 5 crontab" for formatting
+# User: johndoe</p>
+<dl class="docutils">
+<dt># mm  hh  DD  MM  W /path/progam [--option]...  ( W = weekday: 0-6 [Sun=0] )</dt>
+<dd>21  01  *   *   * /usr/bin/systemctl hibernate
+@weekly           $HOME/.local/bin/trash-empty</dd>
+</dl>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../bottlebeaker-session-management/" rel="prev" title="bottle+beaker session management">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../archlinux-hostapd-netcfg/" rel="next" title="wireless AP 設定 （hostapd+netcfg/netctl）">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/archlinux-enable-cron/",
+        disqus_title="archlinux enable cron",
+        disqus_identifier="cache/posts/archlinux-enable-cron.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

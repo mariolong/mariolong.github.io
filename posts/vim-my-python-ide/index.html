@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>vim: my python IDE | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/vim-my-python-ide/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../autojump/" title="autojump" type="text/html">
+<link rel="next" href="../ranger/" title="ranger: 文字模式下的檔案管理員" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="vim: my python IDE">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/vim-my-python-ide/">
+<meta property="og:description" content="參考
+
+Turning vim into a modern python ide
+用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用vim。
+
+
+
+Install
+在裝 vim 前，先改 /etc/pacman.conf，加入
+
+[herecura-stable]
+Server = http://repo.herecura.be/herecu">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-04-22T10:18:52+08:00">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">vim: my python IDE</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-04-22T10:18:52+08:00" itemprop="datePublished" title="2014-04-22 10:18">2014-04-22 10:18</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/vim-my-python-ide.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="section" id="id1">
+<h2>參考</h2>
+<blockquote>
+<p><a class="reference external" href="http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide">Turning vim into a modern python ide</a></p>
+<p>用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用vim。</p>
+</blockquote>
+</div>
+<div class="section" id="install">
+<h2>Install</h2>
+<p>在裝 vim 前，先改 /etc/pacman.conf，加入</p>
+<pre class="literal-block">
+[herecura-stable]
+Server = http://repo.herecura.be/herecura-stable/$arch
+</pre>
+<p>然後再裝這個 qt 版本。</p>
+<pre class="literal-block">
+yaourt -Syua
+yaourt vim-gvim-qt
+</pre>
+<p>為何我裝這個 qt 版？因為我現在用的是 KDE。</p>
+<div class="section" id="python">
+<h3>python 摺疊</h3>
+<p><tt class="docutils literal"><span class="pre">~/.vimrc</span></tt> 加上</p>
+<pre class="literal-block">
+set foldmethod=indent
+set foldlevel=99
+</pre>
+</div>
+<div class="section" id="id2">
+<h3>文法檢查與高亮</h3>
+<pre class="literal-block">
+sudo pip install pyflakes pep8
+</pre>
+<p><tt class="docutils literal"><span class="pre">~/.vimrc</span></tt> 加上</p>
+<blockquote>
+let g:pyflakes_use_quickfix = 0
+let g:pep8_map='&lt;leader&gt;8'</blockquote>
+</div>
+<div class="section" id="id3">
+<h3>補完</h3>
+<pre class="literal-block">
+Bundle ''
+</pre>
+</div>
+<div class="section" id="id4">
+<h3>註解</h3>
+<pre class="literal-block">
+Bundle 'scrooloose/nerdcommenter'
+
+Usage
+The following key mappings are provided by default (there is also a menu provided that contains menu items corresponding to all the below mappings):
+
+Most of the following mappings are for normal/visual mode only. The |NERDComInsertComment| mapping is for insert mode only.
+
+[count]&lt;leader&gt;cc |NERDComComment|
+Comment out the current line or text selected in visual mode.
+
+[count]&lt;leader&gt;cn |NERDComNestedComment|
+    Same as &lt;leader&gt;cc but forces nesting.
+....\
+
+Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+
+[count]&lt;leader&gt;cm |NERDComMinimalComment|
+Comments the given lines using only one set of multipart delimiters.
+
+[count]&lt;leader&gt;ci |NERDComInvertComment|
+Toggles the comment state of the selected line(s) individually.
+
+[count]&lt;leader&gt;cs |NERDComSexyComment|
+Comments out the selected lines ``sexily``
+
+[count]&lt;leader&gt;cy |NERDComYankComment|
+Same as &lt;leader&gt;cc except that the commented line(s) are yanked first.
+
+&lt;leader&gt;c$ |NERDComEOLComment|
+Comments the current line from the cursor to the end of line.
+
+&lt;leader&gt;cA |NERDComAppendComment|
+Adds comment delimiters to the end of line and goes into insert mode between them.
+
+|NERDComInsertComment|
+Adds comment delimiters at the current cursor position and inserts between. Disabled by default.
+
+&lt;leader&gt;ca |NERDComAltDelim|
+Switches to the alternative set of delimiters.
+
+[count]&lt;leader&gt;cl
+[count]&lt;leader&gt;cb |NERDComAlignedComment|
+Same as |NERDComComment| except that the delimiters are aligned down the left side (&lt;leader&gt;cl) or both sides (&lt;leader&gt;cb).
+
+取消註解
+[count]&lt;leader&gt;cu |NERDComUncommentLine|
+</pre>
+</div>
+<div class="section" id="git">
+<h3>整合 git</h3>
+<p><tt class="docutils literal"><span class="pre">~/.vimrc</span></tt> 加上</p>
+<pre class="literal-block">
+%{fugitive#statusline()}
+</pre>
+</div>
+<div class="section" id="file-browser">
+<h3>檔案系統瀏覽器file browser</h3>
+<pre class="literal-block">
+" NERDTree (better file browser) toggle
+map &lt;F3&gt; :NERDTreeToggle&lt;CR&gt;
+</pre>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../autojump/" rel="prev" title="autojump">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../ranger/" rel="next" title="ranger: 文字模式下的檔案管理員">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/vim-my-python-ide/",
+        disqus_title="vim: my python IDE",
+        disqus_identifier="cache/posts/vim-my-python-ide.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

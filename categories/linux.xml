@@ -1,0 +1,1651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：Linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 03:34:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://github.com/mariolong/mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+掙扎了許久，還是先用&lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;記錄一些事，畢竟比較熟悉，能快一點上手。
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 安裝&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip nikola
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 設定&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+執行&lt;code&gt;nikola init&lt;/code&gt;後，依指示設定，比較省事。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola init &amp;lt;blog-name&amp;gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;blog-name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
+&lt;h3 id="sec-2-1"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; configuration file&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;p&gt;
+修改&lt;code&gt;conf.py&lt;/code&gt;，慢慢改，內容很多，不必急於一時。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
+&lt;h3 id="sec-2-2"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; theme&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme install bootstrap
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-2-1" class="outline-4"&gt;
+&lt;h4 id="sec-2-2-1"&gt;&lt;span class="section-number-4"&gt;2.2.1&lt;/span&gt; &lt;span class="todo TODO"&gt;TODO&lt;/span&gt; add local search&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-2-2-1"&gt;
+&lt;p&gt;
+&lt;a href="https://plugins.getnikola.com/v7/localsearch/"&gt;https://plugins.getnikola.com/v7/localsearch/&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
+&lt;h3 id="sec-2-3"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; org-mod&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;p&gt;
+先安裝 plugin orgmode，再做一點點微調即可。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola plugin -i orgmode
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+開啟&lt;code&gt;&amp;lt;blog-name&amp;gt;/plugins/orgmode/init.el&lt;/code&gt;，加上以下的程式碼。
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-3-1" class="outline-4"&gt;
+&lt;h4 id="sec-2-3-1"&gt;&lt;span class="section-number-4"&gt;2.3.1&lt;/span&gt; 刪除不必要的空白&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-2-3-1"&gt;
+&lt;p&gt;
+換行時，在兩個字間會有一個空白，不好看。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;eh-org-clean-space&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;text&lt;/span&gt; &lt;span class="nv"&gt;backend&lt;/span&gt; &lt;span class="nv"&gt;info&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s"&gt;"在 export 为 HTML 时，删除中文之间不必要的空格"&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;org-export-derived-backend-p&lt;/span&gt; &lt;span class="nv"&gt;backend&lt;/span&gt; &lt;span class="ss"&gt;'html&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;regexp&lt;/span&gt; &lt;span class="s"&gt;"[[:multibyte:]]"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;string &lt;/span&gt;&lt;span class="nv"&gt;text&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="c1"&gt;;; org 默认将一个换行符转换为空格，但中文不需要这个空格，删除。&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;string&lt;/span&gt;
+	    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;replace-regexp-in-string&lt;/span&gt;
+	     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"\\(%s\\) *\n *\\(%s\\)"&lt;/span&gt; &lt;span class="nv"&gt;regexp&lt;/span&gt; &lt;span class="nv"&gt;regexp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	     &lt;span class="s"&gt;"\\1\\2"&lt;/span&gt; &lt;span class="nv"&gt;string&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="c1"&gt;;; 删除粗体之前的空格&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;string&lt;/span&gt;
+	    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;replace-regexp-in-string&lt;/span&gt;
+	     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"\\(%s\\) +\\(&amp;lt;\\)"&lt;/span&gt; &lt;span class="nv"&gt;regexp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	     &lt;span class="s"&gt;"\\1\\2"&lt;/span&gt; &lt;span class="nv"&gt;string&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="c1"&gt;;; 删除粗体之后的空格&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;string&lt;/span&gt;
+	    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;replace-regexp-in-string&lt;/span&gt;
+	     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"\\(&amp;gt;\\) +\\(%s\\)"&lt;/span&gt; &lt;span class="nv"&gt;regexp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	     &lt;span class="s"&gt;"\\1\\2"&lt;/span&gt; &lt;span class="nv"&gt;string&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="nv"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt; &lt;span class="ss"&gt;'org-export-filter-paragraph-functions&lt;/span&gt;
+	     &lt;span class="ss"&gt;'eh-org-clean-space&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2-3-2" class="outline-4"&gt;
+&lt;h4 id="sec-2-3-2"&gt;&lt;span class="section-number-4"&gt;2.3.2&lt;/span&gt; Convert inline verbatim to kbd when HTML export&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-2-3-2"&gt;
+&lt;p&gt;
+ref: &lt;a href="https://emacs-china.org/t/org-mode/1165"&gt;https://emacs-china.org/t/org-mode/1165&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+change &lt;kbd&gt;verbatim&lt;/kbd&gt; to &lt;kbd&gt;kbd&lt;/kbd&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;code&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-html-text-markup-alist&lt;/span&gt;
+      &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;bold&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;b&amp;gt;%s&amp;lt;/b&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;code&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;code&amp;gt;%s&amp;lt;/code&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;italic&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;i&amp;gt;%s&amp;lt;/i&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;strike-through&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;del&amp;gt;%s&amp;lt;/del&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;underline&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;span class=\"underline\"&amp;gt;%s&amp;lt;/span&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;verbatim&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;kbd&amp;gt;%s&amp;lt;/kbd&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 開始使用&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+建立新的文章，
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new-post -e -f orgmod
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+寫完就 build 吧！
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola build
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+一切都就緒了，那就開始寫文章吧！
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>Linux</category><category>nikola</category><guid>https://github.com/mariolong/mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>alsa equaler</title><link>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
+Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced Linux Sound Architecture&lt;/a&gt;已說明等化器的安裝及設定，照做即可。
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsaequal
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; config&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+在&lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt;加上以下設定：
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+ctl.equal {
+    type equal;
+}
+
+pcm.plugequal {
+    type equal;
+    # Modify the line below if you do not
+    # want to use sound card 0.
+    #slave.pcm "plughw:0,0";
+    # by default we want to play from more sources at time:
+    slave.pcm "plug:dmix";
+}
+
+# pcm.equal {
+# If you do not want the equalizer to be your
+# default soundcard comment the following
+# line and uncomment the above line. (You can
+# choose it as the output device by addressing
+# it with specific apps,eg mpg123 -a equal 06.Back_In_Black.mp3)
+pcm.!default {
+    type plug;
+    slave.pcm plugequal;
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; reboot&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+讓 alsa 可用等化器
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 調整等化器&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;p&gt;
+執行
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;alsamixer -D equal
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+PS. 用 Q,W,E,Z,X,C 可分別調整左右聲道的音量。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-5" class="outline-2"&gt;
+&lt;h2 id="sec-5"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; mpd issue&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;p&gt;
+總是會連不上 mpd server，後來在 WIKI 中讀到一段話：
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Note that configuration file is different for each user (until not
+specified else) it is saved in ~/.alsaequal.bin. so if you want to use
+ALSAEqual with mpd or another software running under different user,
+you can configure it using
+&lt;/p&gt;
+
+&lt;p&gt;
+$ su mpd -c 'alsamixer -D equal'
+&lt;/p&gt;
+
+&lt;p&gt;
+or for example, you can make a symlink to your .alsaequal.bin in his
+home…
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+我在&lt;kbd&gt;/root&lt;/kbd&gt;目錄下，建一個連到主目錄&lt;kbd&gt;.alsaequal.bin&lt;/kbd&gt;的連結，
+mpd 即可使用，瞎打誤撞。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/"&gt;音樂再生首要難題 – 空間&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/whats/DRC-vs-others/"&gt;等化器(EQ)&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>alsa</category><category>Linux</category><category>mpd</category><category>music</category><guid>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Mon, 15 Jan 2018 14:20:29 GMT</pubDate></item><item><title>post install for htpc</title><link>https://github.com/mariolong/mariolong.github.io/posts/post-install-for-htpc/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+htpc
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; kodi&lt;/h2&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; wifi&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+wifi-menu
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S wpa_supplicant dialog
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+setup wifi using wifi-menu
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ip link
+&amp;lt;interface&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wifi-menu &amp;lt;interface&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;netctl start &amp;lt;wifi-service&amp;gt;
+netctl &lt;span class="nb"&gt;enable&lt;/span&gt; &amp;lt;wifi-service&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; auto mount removable device by udiskie&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S udiskie
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; issues&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
+&lt;h3 id="sec-4-1"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; alsa&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-1"&gt;
+&lt;pre class="example"&gt;
+snd_.._intel index = 1
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
+&lt;h3 id="sec-4-2"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; default.config&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-2"&gt;
+&lt;pre class="example"&gt;
+need_root_right = no
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/post-install-for-htpc/</guid><pubDate>Fri, 29 Dec 2017 09:14:13 GMT</pubDate></item><item><title>Install Arch Linux (2017)</title><link>https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+原本的 Beginners' Guide 改成了&lt;a href="https://wiki.archlinux.org/index.php/installation_guide"&gt;Installation guide&lt;/a&gt;，文件結構比較清楚，但是保證不適合初次安裝 archlinux
+的人閱讀，也不適合一步步之執行。
+&lt;/p&gt;
+
+&lt;p&gt;
+這次安裝，把目前系統應有的指令再記録下來，以備參閱。與上次安裝時所用的指令，差異不大。
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 製作開機片（CD、USB、硬碟）啓動&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+從&lt;a href="https://www.archlinux.org/download/"&gt;Arch Linux Downloads&lt;/a&gt;下載 archlinux.iso，建議用 bt 方式下載比較快。
+&lt;/p&gt;
+
+&lt;p&gt;
+參考&lt;a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media"&gt;USB flash installation media&lt;/a&gt;製作開機片 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress &amp;amp;&amp;amp; sync
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 啟動 ArchLinux 安裝程序&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+重新以 USB 開機，選擇從主選單中選擇 "Boot Arch Linux" 並按
+&amp;lt;enter&amp;gt;，系統將加載並給出登錄提示，自動以 'root' 登錄。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 建立網絡連接&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+ping 8.8.8.8 看看有没有網路，没有網路就啓動 dhcpcd:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# systemctl start dhcpcd&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+若要用 wifi 則用:
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# wifi-menu -o profile-name
+&lt;/pre&gt;
+
+&lt;p&gt;
+ping 一下看看網路連上了嗎？
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 準備磁碟機&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;p&gt;
+因為先安裝 windows 10，已經將磁碟分割好了。
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
+&lt;h3 id="sec-4-1"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; 檢查分區狀況&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-1"&gt;
+&lt;pre class="example"&gt;
+lsblk -f
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
+&lt;h3 id="sec-4-2"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; 格式化&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-2"&gt;
+&lt;p&gt;
+格式化目標 partition，免得有不可預期的狀況
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkfs.ext4 -L LABLE /dev/sdax
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-3" class="outline-3"&gt;
+&lt;h3 id="sec-4-3"&gt;&lt;span class="section-number-3"&gt;4.3&lt;/span&gt; 掛載分區&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-3"&gt;
+&lt;p&gt;
+先掛載 root 區 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# mount /dev/sdaX /mnt
+&lt;/pre&gt;
+
+&lt;p&gt;
+再掛載其他分區，/home 最好獨立分區。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# mkdir /mnt/home
+# mount /dev/sda1 /mnt/home
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-4" class="outline-3"&gt;
+&lt;h3 id="sec-4-4"&gt;&lt;span class="section-number-3"&gt;4.4&lt;/span&gt; 建立 swap&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-4"&gt;
+&lt;p&gt;
+現在的 RAM 都很大，這個可以不用裝了。目前安裝了 16G 的 RAM。
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-4-1" class="outline-4"&gt;
+&lt;h4 id="sec-4-4-1"&gt;&lt;span class="section-number-4"&gt;4.4.1&lt;/span&gt; 建立 swap file&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-4-4-1"&gt;
+&lt;p&gt;
+如果真的要裝 swap，可用檔案取代，方便好管理。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# fallocate -l 16G /swapfile
+# sudo chmod 600 /swapfile
+# mkswap /swapfile
+# sudo mkswap /swapfile
+# swapon /swpfile
+# sudo swapon /swapfile
+# sudo nano /etc/fstab
+&lt;/pre&gt;
+
+&lt;p&gt;
+在 fstab 中加入 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+/swapfile none swap defaults 0 0
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-4-2" class="outline-4"&gt;
+&lt;h4 id="sec-4-4-2"&gt;&lt;span class="section-number-4"&gt;4.4.2&lt;/span&gt; Remove swap file&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-4-4-2"&gt;
+&lt;p&gt;
+如果不用 swap，刪了就是。
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Warning:&lt;/b&gt; swap is managed by systemd and will be reenabled by it after
+some time. To remove a swap file, the current swap file must be turned
+off. :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# swapoff -a
+# rm -f /swapfile
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-5" class="outline-2"&gt;
+&lt;h2 id="sec-5"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 配置安裝的環境&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-5-1" class="outline-3"&gt;
+&lt;h3 id="sec-5-1"&gt;&lt;span class="section-number-3"&gt;5.1&lt;/span&gt; DNS setup (可不做)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-5-1"&gt;
+&lt;pre class="example"&gt;
+# nano /etc/resolv.conf
+
+nameserver 168.95.1.1
+nameserver 8.8.8.8
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-5-2" class="outline-3"&gt;
+&lt;h3 id="sec-5-2"&gt;&lt;span class="section-number-3"&gt;5.2&lt;/span&gt; 選擇安裝鏡像&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-5-2"&gt;
+&lt;p&gt;
+安裝前需要編輯 /etc/pacman.d/mirrorlist，將最想使用的鏡像放到前面。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# nano /etc/pacman.d/mirrorlist
+&lt;/pre&gt;
+
+&lt;p&gt;
+nano 簡單指令 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+Alt-6: copy line
+C-u:   paste
+C-x:   exit
+&lt;/pre&gt;
+
+&lt;p&gt;
+原則上，改過 mirrorlist 就執行以下指令(可不做)： :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# pacman -Syy
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6" class="outline-2"&gt;
+&lt;h2 id="sec-6"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; 安裝基本系統&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;pre class="example"&gt;
+# pacstrap -i /mnt base base-devel
+&lt;/pre&gt;
+
+&lt;p&gt;
+if pacman complains that error: :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+failed to commit transaction (invalid or corrupted package)
+&lt;/pre&gt;
+
+&lt;p&gt;
+run the following command: :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# pacman-key --init &amp;amp;&amp;amp; pacman-key --populate archlinux
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-1" class="outline-3"&gt;
+&lt;h3 id="sec-6-1"&gt;&lt;span class="section-number-3"&gt;6.1&lt;/span&gt; 生成 fstab&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-1"&gt;
+&lt;p&gt;
+這個一定要做，不然後頭會很麻煩。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# genfstab -U -p /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
+# nano /mnt/etc/fstab   # 檢查一下 fstab
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-2" class="outline-3"&gt;
+&lt;h3 id="sec-6-2"&gt;&lt;span class="section-number-3"&gt;6.2&lt;/span&gt; Chroot 到新系統，並作基本配置&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-2"&gt;
+&lt;pre class="example"&gt;
+$ arch-chroot /mnt /bin/bash
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-3" class="outline-3"&gt;
+&lt;h3 id="sec-6-3"&gt;&lt;span class="section-number-3"&gt;6.3&lt;/span&gt; 配置 pacman&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-3"&gt;
+&lt;pre class="example"&gt;
+# nano /etc/pacman.conf
+&lt;/pre&gt;
+
+&lt;p&gt;
+爲了安裝 yaourt，到最後空白處加上： :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+[archlinuxfr]
+SigLevel = Never    # add: 2013/04/28
+Server = http://repo.archlinux.fr/$arch
+&lt;/pre&gt;
+
+&lt;p&gt;
+一般使用者用 [core], [extra] 與 [community]。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-4" class="outline-3"&gt;
+&lt;h3 id="sec-6-4"&gt;&lt;span class="section-number-3"&gt;6.4&lt;/span&gt; 更新系統，並安裝 yaourt&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-4"&gt;
+&lt;pre class="example"&gt;
+# pacman -Syu
+# pacman -S yaourt
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-5" class="outline-3"&gt;
+&lt;h3 id="sec-6-5"&gt;&lt;span class="section-number-3"&gt;6.5&lt;/span&gt; 配置系統 Locale&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-5"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ nano /etc/locale.gen
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-5-1" class="outline-4"&gt;
+&lt;h4 id="sec-6-5-1"&gt;&lt;span class="section-number-4"&gt;6.5.1&lt;/span&gt; 找到&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-6-5-1"&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+en&lt;sub&gt;US&lt;/sub&gt;.UTF-8 UTF-8
+zh&lt;sub&gt;TW&lt;/sub&gt;.UTF-8 UTF-8
+zh&lt;sub&gt;CN&lt;/sub&gt;.UTF-8 UTF-8
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+把以上全部打開。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-5-2" class="outline-4"&gt;
+&lt;h4 id="sec-6-5-2"&gt;&lt;span class="section-number-4"&gt;6.5.2&lt;/span&gt; 使 locale 生效&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-6-5-2"&gt;
+&lt;pre class="example"&gt;
+$ locale-gen    #使更改生效運行
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-5-3" class="outline-4"&gt;
+&lt;h4 id="sec-6-5-3"&gt;&lt;span class="section-number-4"&gt;6.5.3&lt;/span&gt; 確認一下 locale&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-6-5-3"&gt;
+&lt;pre class="example"&gt;
+$ locale -a     #確認一下開啟的 locale
+$ locale        #目前的 locale
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-5-4" class="outline-4"&gt;
+&lt;h4 id="sec-6-5-4"&gt;&lt;span class="section-number-4"&gt;6.5.4&lt;/span&gt; 全域 locale 設定：對整個系統有效&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-6-5-4"&gt;
+&lt;pre class="example"&gt;
+$ nano /etc/locale.conf
+
+LANG=en_US.UTF-8
+&lt;/pre&gt;
+
+&lt;p&gt;
+主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-6" class="outline-3"&gt;
+&lt;h3 id="sec-6-6"&gt;&lt;span class="section-number-3"&gt;6.6&lt;/span&gt; 更改 console 字型&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-6"&gt;
+&lt;p&gt;
+把字改大一點，眼睛比較不吃力。先安裝字型，再設定字型。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S terminus-font
+setconsolefont ter-128n
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The FONT variable in &lt;kbd&gt;/etc/vconsole.conf&lt;/kbd&gt; is used to set the font at boot, persistently for all consoles.&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/vconsole.conf
+...
+&lt;span class="nv"&gt;FONT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ter-128n
+&lt;span class="nv"&gt;FONT_MAP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8859&lt;/span&gt;-1
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐語言」&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-7" class="outline-3"&gt;
+&lt;h3 id="sec-6-7"&gt;&lt;span class="section-number-3"&gt;6.7&lt;/span&gt; 配置系統時區&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-7"&gt;
+&lt;p&gt;
+可用的時區位於目錄&lt;i&gt;usr/share/zoneinfo&lt;/i&gt;下，可以 ls 一下。用以下指令配置系統時區：
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-8" class="outline-3"&gt;
+&lt;h3 id="sec-6-8"&gt;&lt;span class="section-number-3"&gt;6.8&lt;/span&gt; 時間調整&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-8"&gt;
+&lt;p&gt;
+為了與 windows 雙重開機 (dual boot)，最好做以下動作：
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;修改 windows 的登錄檔，用 regedit 加上一個 DWORD(32 bits) 的機碼
+RealTimeIsUniversal，將其值設為 1，位置如下:
+
+&lt;pre class="example"&gt;
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal
+&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;在 windows 中關掉「網路自動對時」的功能。
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+當然，以上的動作要回到 windows 才能執行。
+&lt;/p&gt;
+
+&lt;p&gt;
+在 linux 中，只需執行： :
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;timedatectl set-local-rtc &lt;span class="nb"&gt;false&lt;/span&gt;
+timedatectl set-ntp &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+並將 utc 時間寫入 BIOS 中即可。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hwclock --systohc --utc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-9" class="outline-3"&gt;
+&lt;h3 id="sec-6-9"&gt;&lt;span class="section-number-3"&gt;6.9&lt;/span&gt; 設置主機名稱&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-9"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/hostname
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+加入
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+hostname
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-7" class="outline-2"&gt;
+&lt;h2 id="sec-7"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 再一次設定網路&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;p&gt;
+簡單啓動 dhcpcd :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# systemctl enable dhcpcd
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-7-1" class="outline-3"&gt;
+&lt;h3 id="sec-7-1"&gt;&lt;span class="section-number-3"&gt;7.1&lt;/span&gt; WIFI&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-1"&gt;
+&lt;p&gt;
+用 netctl 啓動 wifi
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-7-2" class="outline-3"&gt;
+&lt;h3 id="sec-7-2"&gt;&lt;span class="section-number-3"&gt;7.2&lt;/span&gt; ADSL&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-2"&gt;
+&lt;p&gt;
+如果要用 ADSL，則這個很重要，不然重開機時，就會沒網路可用。
+&lt;/p&gt;
+
+&lt;p&gt;
+install the network card that is supposed to be connected to the
+DSL-Modem into your computer. After adding your newly installed
+network card to the modules.conf/modprobe.conf install therp-pppoe
+package :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ pacman -S rp-pppoe
+$ pppoe-setup
+&lt;/pre&gt;
+
+&lt;p&gt;
+run the pppoe-setup script to configure your connection After you have
+entered all the data, you can connect and disconnect your line with :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ systemctl start adsl
+&lt;/pre&gt;
+
+&lt;p&gt;
+and :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ systemctl stop adsl
+&lt;/pre&gt;
+
+&lt;p&gt;
+respectively. The setup is usually easy and straightforward, but feel
+free to read the manpages for hints. If you want to automatically 'dial
+in' at boot, issue command :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ systemctl enable adsl
+
+or
+
+$ systemctl disable adsl
+&lt;/pre&gt;
+
+&lt;p&gt;
+to remove auto 'dial in' at boot.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-8" class="outline-2"&gt;
+&lt;h2 id="sec-8"&gt;&lt;span class="section-number-2"&gt;8&lt;/span&gt; mkinitcpio&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;p&gt;
+增加 lvm2 到 hooks 後，執行&lt;kbd&gt;mkinitcpio&lt;/kbd&gt; :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# nano /etc/mkinitcpio.conf
+
+HOOKS=(... udev ... block lvm2 filesystems ...)
+
+# mkinitcpio -p linux
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-9" class="outline-2"&gt;
+&lt;h2 id="sec-9"&gt;&lt;span class="section-number-2"&gt;9&lt;/span&gt; Install and configure a bootloader&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-9"&gt;
+&lt;p&gt;
+Install the grub-bios package and then run grub-install: :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# pacman -S grub-bios                       ## 安裝 grub-bios
+# grub-install --target=i386-pc --recheck /dev/sda  ## 安裝到 boot 區
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-9-1" class="outline-3"&gt;
+&lt;h3 id="sec-9-1"&gt;&lt;span class="section-number-3"&gt;9.1&lt;/span&gt; 自動尋找其它的 OS&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-1"&gt;
+&lt;p&gt;
+如果有其他的 OS，這個就很重要。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# pacman -S os-prober
+&lt;/pre&gt;
+
+&lt;p&gt;
+或是直接在 /etc/grub.d/40\&lt;sub&gt;custom&lt;/sub&gt;加上以下指令 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+menuentry "Windows 10" --class windows --class os {
+  insmod ntfs
+  search --no-floppy --set=root --fs-uuid $your_uuid_here$
+  ntldr /bootmgr
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-9-2" class="outline-3"&gt;
+&lt;h3 id="sec-9-2"&gt;&lt;span class="section-number-3"&gt;9.2&lt;/span&gt; 安裝 microcode&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-2"&gt;
+&lt;p&gt;
+這步要在 grub-mkconfig 之前做 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# pacman -S intel-ucode
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-9-3" class="outline-3"&gt;
+&lt;h3 id="sec-9-3"&gt;&lt;span class="section-number-3"&gt;9.3&lt;/span&gt; 自動產生 grub.cfg&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-3"&gt;
+&lt;p&gt;
+這個一定要做，不然重開機時，就等著進 grub shell，很麻煩。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-10" class="outline-2"&gt;
+&lt;h2 id="sec-10"&gt;&lt;span class="section-number-2"&gt;10&lt;/span&gt; 重啓&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-10"&gt;
+&lt;pre class="example"&gt;
+# exit
+# umount /mnt
+# reboot
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-10-1" class="outline-3"&gt;
+&lt;h3 id="sec-10-1"&gt;&lt;span class="section-number-3"&gt;10.1&lt;/span&gt; 確認網路連線&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10-1"&gt;
+&lt;p&gt;
+root 重啓後，ping 一下看看網路連上了嗎？如果沒有，手動連線。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+  # ping 8.8.8.8
+  # systemctl start dhcpcd
+或
+  # netctl start &amp;lt;wifi-profile-name&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-10-2" class="outline-3"&gt;
+&lt;h3 id="sec-10-2"&gt;&lt;span class="section-number-3"&gt;10.2&lt;/span&gt; update system（可不做）&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10-2"&gt;
+&lt;pre class="example"&gt;
+# pacman -Syu
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11" class="outline-2"&gt;
+&lt;h2 id="sec-11"&gt;&lt;span class="section-number-2"&gt;11&lt;/span&gt; post-installation&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-11"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-11-1" class="outline-3"&gt;
+&lt;h3 id="sec-11-1"&gt;&lt;span class="section-number-3"&gt;11.1&lt;/span&gt; 設置 Root 密碼並創建一般用戶&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-1"&gt;
+&lt;pre class="example"&gt;
+$ passwd
+$ useradd -m -s /bin/bash  -g users -G video,storage,optical,lp,scanner,games,wheel username
+$ passwd username
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-2" class="outline-3"&gt;
+&lt;h3 id="sec-11-2"&gt;&lt;span class="section-number-3"&gt;11.2&lt;/span&gt; 安裝 Sudo&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-2"&gt;
+&lt;pre class="example"&gt;
+$ pacman -S sudo
+$ EDITOR=nano visudo
+&lt;/pre&gt;
+
+&lt;p&gt;
+允許 wheel 用戶組成員無密碼使用 sudo： :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ visudo
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-11-2-0-1" name="sec-11-2-0-1"&gt;&lt;/a&gt;輸入&lt;br&gt;&lt;div class="outline-text-5" id="text-11-2-0-1"&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+%wheel ALL=(ALL) NOPASSWD:ALL
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+再來是設定 sudo，隨便找一個空白行加上： :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+username ALL=(ALL) ALL
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/li&gt;&lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-3" class="outline-3"&gt;
+&lt;h3 id="sec-11-3"&gt;&lt;span class="section-number-3"&gt;11.3&lt;/span&gt; 登出，並以新的用戶名稱登入&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-11-4" class="outline-3"&gt;
+&lt;h3 id="sec-11-4"&gt;&lt;span class="section-number-3"&gt;11.4&lt;/span&gt; 設定聲音 alas&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-4"&gt;
+&lt;p&gt;
+安裝音效驅動，直接用 alas，不要考慮太多。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ yaourt -S alsa-utils
+&lt;/pre&gt;
+
+&lt;p&gt;
+將帳號加入音效使用權： :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ sudo gpasswd -a username audio
+&lt;/pre&gt;
+
+&lt;p&gt;
+alsa 預設是靜音，以 alsamixer 手動打開聲音 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ alsamixer
+&lt;/pre&gt;
+
+&lt;p&gt;
+或者命令列直接開啓 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ amixer sset Master unmute
+&lt;/pre&gt;
+
+&lt;p&gt;
+測試一下有沒有聲音 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ speaker-test -c 2
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-5" class="outline-3"&gt;
+&lt;h3 id="sec-11-5"&gt;&lt;span class="section-number-3"&gt;11.5&lt;/span&gt; 安裝 x11&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-5"&gt;
+&lt;pre class="example"&gt;
+# pacman -S xorg-{server,apps} mesa
+&lt;/pre&gt;
+
+&lt;p&gt;
+因為要用 xlogin，所以&lt;kbd&gt;xorg-xinit&lt;/kbd&gt;可以不用裝了。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-6" class="outline-3"&gt;
+&lt;h3 id="sec-11-6"&gt;&lt;span class="section-number-3"&gt;11.6&lt;/span&gt; 裝顯卡驅動&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-6"&gt;
+&lt;p&gt;
+ATi 用戶：
+&lt;/p&gt;
+
+&lt;p&gt;
+直接裝開源驅動
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ pacman -S xf86-video-amdgpu
+&lt;/pre&gt;
+
+&lt;p&gt;
+或是用舊的
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ pacman -S xf86-video-ati
+&lt;/pre&gt;
+
+&lt;p&gt;
+intel 用戶：
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ pacman -S xf86-video-intel libav-intel-driver
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-7" class="outline-3"&gt;
+&lt;h3 id="sec-11-7"&gt;&lt;span class="section-number-3"&gt;11.7&lt;/span&gt; 安裝字體&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-7"&gt;
+&lt;p&gt;
+加上 ttf-liberation 修正部份 PDF 字型，此為 google-chrome 新的依賴。
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ yaourt -S ttf-tw ttf-dejavu ttf-liberation
+$ yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,serif}-{cn,jp,kr,otc,tw}-fonts
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-8" class="outline-3"&gt;
+&lt;h3 id="sec-11-8"&gt;&lt;span class="section-number-3"&gt;11.8&lt;/span&gt; 讓 X 可以顯示中文&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-8"&gt;
+&lt;pre class="example"&gt;
+$ nano ~/.xinitrc
+
+ export LANG=zh_TW.UTF-8
+ export LC_ALL="zh_TW.UTF-8"
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-9" class="outline-3"&gt;
+&lt;h3 id="sec-11-9"&gt;&lt;span class="section-number-3"&gt;11.9&lt;/span&gt; 將右邊的數字鍵盤預設爲方向鍵&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-9"&gt;
+&lt;pre class="example"&gt;
+$ yaourt -S numlockx
+
+$ nano ~/.xinitrc
+
+numlockx &amp;amp;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-10" class="outline-3"&gt;
+&lt;h3 id="sec-11-10"&gt;&lt;span class="section-number-3"&gt;11.10&lt;/span&gt; 安裝桌面&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-10"&gt;
+&lt;p&gt;
+目前使用 lxqt + xmonad。lxqt
+&lt;/p&gt;
+
+&lt;p&gt;
+安裝 lxqt:
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+yaourt -S lxqt
+&lt;/pre&gt;
+
+&lt;p&gt;
+先修改&lt;kbd&gt;pacman.conf&lt;/kbd&gt;:
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+# nano /etc/pacman.conf
+&lt;/pre&gt;
+
+&lt;p&gt;
+然後在&lt;kbd&gt;[community]&lt;/kbd&gt;之前加上:
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+[haskell-core]
+Server = http://xsounds.org/~haskell/core/$arch
+&lt;/pre&gt;
+
+&lt;p&gt;
+接著才可安裝 xmonad 和 taffybar:
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+yaourt -S haskell-xmonad haskell-xmonad-contrib haskell-taffybar
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-11" class="outline-3"&gt;
+&lt;h3 id="sec-11-11"&gt;&lt;span class="section-number-3"&gt;11.11&lt;/span&gt; theme&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-11"&gt;
+&lt;p&gt;
+Using Breeze theme and Flat Remix icon theme:
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+yaourt -S breeze{,-kde4,-gtk} flat-remix-git lxappearance
+&lt;/pre&gt;
+
+&lt;p&gt;
+進 lxappearance 設定 theme and icon theme
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-12" class="outline-3"&gt;
+&lt;h3 id="sec-11-12"&gt;&lt;span class="section-number-3"&gt;11.12&lt;/span&gt; 安裝中文輸入法&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-12"&gt;
+&lt;p&gt;
+沒有其它選擇，就用 fcitx。ibusfcitxshu-ru-fa-she-ding :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+yaourt -S fcitx-im fcitx-configtool fcitx-chewing
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-13" class="outline-3"&gt;
+&lt;h3 id="sec-11-13"&gt;&lt;span class="section-number-3"&gt;11.13&lt;/span&gt; install google chrome&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-13"&gt;
+&lt;pre class="example"&gt;
+$ yaourt -S google-chrome
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-11-14" class="outline-3"&gt;
+&lt;h3 id="sec-11-14"&gt;&lt;span class="section-number-3"&gt;11.14&lt;/span&gt; 安裝文字編輯器&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-14"&gt;
+&lt;p&gt;
+現在已經沒有別的選擇了，只能用 emacs
+這個神的編輯器，因為她實在是太強大了， 讓我不忍放棄她。 :
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+$ yaourt -S emacs
+&lt;/pre&gt;
+
+&lt;p&gt;
+可用的系統成型了，但是， 後面&amp;lt;post-installation-of-archlinux&amp;gt;
+還有許多需要再調整的。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-12" class="outline-2"&gt;
+&lt;h2 id="sec-12"&gt;&lt;span class="section-number-2"&gt;12&lt;/span&gt; issues&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-12"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-12-1" class="outline-3"&gt;
+&lt;h3 id="sec-12-1"&gt;&lt;span class="section-number-3"&gt;12.1&lt;/span&gt; kvm:disable by bios&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-12-1"&gt;
+&lt;p&gt;
+iVT enable @ bios
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="https://wiki.archlinux.org/index.php/Fonts#Console_fonts"&gt;https://wiki.archlinux.org/index.php/Fonts#Console_fonts&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859-1"&gt;https://zh.wikipedia.org/wiki/ISO/IEC_8859-1&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item><item><title>My Linux</title><link>https://github.com/mariolong/mariolong.github.io/posts/my-linux/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;first write: 2015-5-23
+update: 2016-5-13&lt;/p&gt;
+&lt;p&gt;這一年，幾乎沒有大的改變。&lt;/p&gt;
+&lt;div class="section" id="linux"&gt;
+&lt;h2&gt;我的 Linux 平台&lt;/h2&gt;
+&lt;p&gt;整理一下目前在 Linux 下，目前還在用的工具。試過後，不用的就不必放進來。&lt;/p&gt;
+&lt;p&gt;目的是，如果有一天要重新安裝系統時，能快速完成，回到可工作狀態。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;作業系統&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux/"&gt;Install Arch Linux&lt;/a&gt; : 接觸 linux 後，就只用過這個發行版。喜歡它的 rolling update，一直是用最新版。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/xterm/"&gt;xterm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/zsh/"&gt;zsh&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;桌面&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/lxqt/"&gt;lxqt&lt;/a&gt; : 簡單好用的「台灣之光」&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/lxqt%2Bxmonad%2Btaffybar/"&gt;我的桌面組合 lxqt+xmonad+taffybar&lt;/a&gt; ，著重於工作效率的平舖式視窗管理&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/show-volume-icon-on-systray/"&gt;Show volume icon on systray&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/fonts/"&gt;字型相關&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/rime/"&gt;Rime 中州韻輸入法引擎&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;網路工具&lt;/h3&gt;
+&lt;p&gt;google-chrome&lt;/p&gt;
+&lt;p&gt;youtube-dl: 超強的 youtube downloader&lt;/p&gt;
+&lt;p&gt;qbittorrent: BT client&lt;/p&gt;
+&lt;p&gt;wifi-ap: &lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/archlinux-hostapd-netcfg/"&gt;wireless AP 設定 （hostapd+netcfg/netctl）&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;影音平台&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/mpv/"&gt;mpv&lt;/a&gt; 好用的影音播放器&lt;/p&gt;
+&lt;p&gt;kodi: 家庭劇院&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/ffmpeg-xin-de/"&gt;ffmpeg 使用心得與整理&lt;/a&gt; ，有了這個，可以應付影音轉檔的需求。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/dvd-backup/"&gt;DVD backup&lt;/a&gt; ，備份 DVD 吧！現在都是看 BD，實用性已經不高。&lt;/p&gt;
+&lt;p&gt;aegisub: 字幕處理。&lt;/p&gt;
+&lt;p&gt;mpd+mpc+ncmpcpp: 聽音樂的好朋友。 &lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/enable-mpd-with-systemd/"&gt;enable mpd with systemd&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;kid3: 修改音樂檔的 tags&lt;/p&gt;
+&lt;p&gt;lightworks: 非線性影音剪輯系統&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;生活回憶&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/feh/"&gt;feh 小巧好用的圖片閱覽器&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;mm=mpv+feh: 自己寫吧，找不到真正喜歡的。比較接近需求的是 gwenview，又有無法解決的問題，且太過笨重。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;程式撰寫&lt;/h3&gt;
+&lt;p&gt;emacs&lt;/p&gt;
+&lt;p&gt;python&lt;/p&gt;
+&lt;p&gt;stock&lt;/p&gt;
+&lt;p&gt;nginx&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;其它&lt;/h3&gt;
+&lt;p&gt;rsync: 備份&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/mariolong/mariolong.github.io/posts/systemd-timesync/"&gt;用systemd-timesync同步時間&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;speedcrunch: 計算器&lt;/p&gt;
+&lt;p&gt;eject:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/my-linux/</guid><pubDate>Thu, 12 May 2016 09:55:41 GMT</pubDate></item><item><title>replace hd on LVM</title><link>https://github.com/mariolong/mariolong.github.io/posts/replace-hd-on-lvm/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;lvm 上的一顆硬碟壞了，要換掉。&lt;/p&gt;
+&lt;p&gt;整個過程並不像網上查到的那麼順利，所以，還是記錄下來，以備不時之需。&lt;/p&gt;
+&lt;p&gt;參考 &lt;a class="reference external" href="http://www.microhowto.info/howto/replace_one_of_the_physical_volumes_in_an_lvm_volume_group.html"&gt;Replace one of the physical volumes in an LVM volume group&lt;/a&gt;
+，鳥哥的 LINUX 私房菜，
+和 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/LVM"&gt;Archlinux Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;為了行文方便，先做以下說明：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/dev/sdd 是壞掉的硬碟
+/dev/sdb 是新的硬碟
+&lt;/pre&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;步驟&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;準備好要加入 LVM 的硬碟，並用 gparted 設定為 lvm pv。
+有人是用 &lt;tt class="docutils literal"&gt;pvcreate&lt;/tt&gt; ，反正功能是一樣的，就不必想太多，能完成工作就好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;將新硬碟加入 VG:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo vgextend VG01 /dev/sdb1
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;資料移到新硬碟:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvmove /dev/sdd1 /dev/sdb1
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;檢查是否移動完成&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvs
+
+PV         VG   Fmt  Attr PSize   PFree
+/dev/sdb1  VG01 lvm2 a--    1.36t      0
+/dev/sdd1  VG01 lvm2 a--  931.51g 931.51g
+
+$ sudo pvdisplay
+
+--- Physical volume ---
+PV Name               /dev/sdd1
+VG Name               VG01
+PV Size               931.51 GiB / not usable 4.00 MiB
+Allocatable           yes
+PE Size               4.00 MiB
+Total PE              238466
+Free PE               238466
+Allocated PE          0
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;縮小 lv&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo resize2fs -M /dev/VG01/LV00
+$ sudo lvresize -l -238466 /dev/VG01/LV00
+$ sudo resize2fs /dev/VG01/LV00
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;移除舊硬碟&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo vgreduce VG01 /dev/sdd1
+Removed "/dev/sdd1" from volume group "VG01"
+
+$ sudo pvremove /dev/sdd1
+Labels on physical volume "/dev/sdd1" successfully wiped
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="issue"&gt;
+&lt;h2&gt;ISSUE&lt;/h2&gt;
+&lt;div class="section" id="lv"&gt;
+&lt;h3&gt;縮小 lv&lt;/h3&gt;
+&lt;p&gt;要縮小 lv 時，先要將 file system 縮小，否則開機時，會報錯。&lt;/p&gt;
+&lt;p&gt;我的作法是將 file system 降至最低，就不必去計算要留多少。&lt;/p&gt;
+&lt;p&gt;然後，縮小 lv。&lt;/p&gt;
+&lt;p&gt;最後，再把 file system 放到最大即可。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo resize2fs -M /dev/VG01/LV00
+$ sudo lvresize -l -238466 /dev/VG01/LV00
+$ sudo resize2fs /dev/VG01/LV00
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pvmove"&gt;
+&lt;h3&gt;pvmove&lt;/h3&gt;
+&lt;p&gt;pvmove 時，不知為何沒將所有的 PE 都移動到新的硬碟，結果重做一次後就好了。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvdisplay
+$ sudo lvresize -l -238466 /dev/VG01/LV00
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;後記&lt;/h2&gt;
+&lt;p&gt;這次的工作一直卡在縮小 lv 的地方，因為沒有先縮小 file system，造成 fsck 會報錯，然後就無法開機。&lt;/p&gt;
+&lt;p&gt;雖然在試誤的過程中，一直擔心硬碟中的資料會毀損，最後的結果是好的，沒有任何資料毀損。&lt;/p&gt;
+&lt;p&gt;真是慶幸。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/replace-hd-on-lvm/</guid><pubDate>Thu, 11 Jun 2015 23:52:30 GMT</pubDate></item><item><title>字型相關</title><link>https://github.com/mariolong/mariolong.github.io/posts/fonts/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;系統看起來要好看，最重要的其實是字型，字型沒調好看起來就是怪怪的，不舒服。&lt;/p&gt;
+&lt;p&gt;目前我的解法是參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Infinality"&gt;https://wiki.archlinux.org/index.php/Infinality&lt;/a&gt; 設定整個系統的字型。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;p&gt;1. 增加公鑰&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pacman-key -r 962DDE58
+$ sudo pacman-key --lsign-key 962DDE58
+&lt;/pre&gt;
+&lt;p&gt;2. 編輯 &lt;tt class="docutils literal"&gt;/etc/pacman.conf&lt;/tt&gt; ，加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[infinality-bundle]
+Server = http://bohoomil.com/repo/$arch
+&lt;/pre&gt;
+&lt;p&gt;3. 更新資料庫，並安裝 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;infinality-bundle&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -Syy
+$ yaourt -S infinality-bundle
+&lt;/pre&gt;
+&lt;ol class="arabic" start="4"&gt;
+&lt;li&gt;&lt;p class="first"&gt;安裝字體，可以挑選 &lt;a class="reference external" href="http://bohoomil.com/doc/05-fonts/"&gt;這裡&lt;/a&gt; 有的。&lt;/p&gt;
+&lt;p&gt;例如，想用 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;adobe-source-code-pro-fonts&lt;/span&gt;&lt;/tt&gt; ，查到有 ttf-source-code-pro-ibx，
+那就可以安裝。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S adobe-source-code-pro-fonts
+&lt;/pre&gt;
+&lt;p&gt;目前我安裝的是以下字型：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S ttf-tw ttf-dejavu ttf-oxygen ttf-liberation
+$ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts adobe-source-code-pro-fonts
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;用 lxqt-config-apperance 調整字體渲染方式。&lt;/p&gt;
+&lt;p&gt;自動產生 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/fontconfig/fonts.conf&lt;/span&gt;&lt;/tt&gt; 和 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/fonts.conf&lt;/span&gt;&lt;/tt&gt; 一樣的檔案。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;微調 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/X11/xinit/xinitrc.d/infinality-settings.sh&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;設定 USE_STYLE="3"&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;重啟 X 看結果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;結論&lt;/h2&gt;
+&lt;p&gt;暫時就先這樣，有空再來調整吧。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/fonts/</guid><pubDate>Wed, 27 May 2015 13:48:41 GMT</pubDate></item><item><title>zsh</title><link>https://github.com/mariolong/mariolong.github.io/posts/zsh/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div class="section" id="install"&gt;
+&lt;h2&gt;install&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class="section" id="plugin"&gt;
+&lt;h2&gt;plugin&lt;/h2&gt;
+&lt;div class="section" id="history-substring-search"&gt;
+&lt;h3&gt;history-substring-search&lt;/h3&gt;
+&lt;p&gt;直接加入 plugins 中。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="zsh-syntax-highlighting"&gt;
+&lt;h3&gt;zsh-syntax-highlighting&lt;/h3&gt;
+&lt;p&gt;來源：&lt;a class="reference external" href="https://github.com/zsh-users/zsh-syntax-highlighting"&gt;https://github.com/zsh-users/zsh-syntax-highlighting&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S zsh-syntax-highlighting-git
+&lt;/pre&gt;
+&lt;p&gt;在 .zshrc 中加入下列一行：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+plugins=(... zsh-syntax-highlighting)
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/zsh/</guid><pubDate>Tue, 28 Oct 2014 07:50:23 GMT</pubDate></item><item><title>udiskie: usb storage automount</title><link>https://github.com/mariolong/mariolong.github.io/posts/udiskie-usb-storage-automount/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;這陣子用了一些方便想自動掛載「移動裝置」，最後決定用 udiskie，小小地記錄下來，備查。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;upadte&lt;/strong&gt; 2014-10-24: 用 lxqt-panel + removable meida/device manager plugin + libfm，即可自動掛載。
+一定要裝 libfm 才能在 removable media/devices meanger 中看到 usb 移動裝置。&lt;/p&gt;
+&lt;p&gt;它會使用 udisk2 執行掛載，應該是配合 KF5 吧。&lt;/p&gt;
+&lt;p&gt;lxqt 愈來愈好用了，真是名符其實的「台灣之光」，加油。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pip install udiskie
+$ yaourt -S python-gobject libfm
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;執行&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ udiskie &amp;amp;
+&lt;/pre&gt;
+&lt;p&gt;測試 OK，可以放進 .xinitrc&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;結論&lt;/h2&gt;
+&lt;p&gt;最後決定的方式是：在 lxqt-panel 上加上 removable media/devices manager 外掛，
+讓 panel 可以顯示是否有移動裝置插入 usb。
+如果要卸載，也是使用這個外掛，按一下即可。&lt;/p&gt;
+&lt;p&gt;如果有移動裝置插入 usb 時，要自動掛載。
+則可在 ~/.xinitrc 中加上 &lt;tt class="docutils literal"&gt;udiskie &amp;amp;&lt;/tt&gt; 讓它在背景執行。&lt;/p&gt;
+&lt;p&gt;如此就方便了，可以自動掛載，也可以手自動卸載。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>desktop</category><category>Linux</category><category>lxqt</category><guid>https://github.com/mariolong/mariolong.github.io/posts/udiskie-usb-storage-automount/</guid><pubDate>Thu, 23 Oct 2014 13:48:57 GMT</pubDate></item><item><title>藍牙小鍵盤</title><link>https://github.com/mariolong/mariolong.github.io/posts/bluetooth-keyboard/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;本文參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Bluetooth_Keyboard"&gt;archlinux wiki: Bluetooth Keyboard&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S bluez bluez-utils
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;p&gt;配置的工作主要是配對和自動連上藍牙鍵盤。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;配對&lt;/h3&gt;
+&lt;p&gt;用 &lt;tt class="docutils literal"&gt;bluetoothctl &lt;span class="pre"&gt;-a&lt;/span&gt;&lt;/tt&gt; 執行配對的工作，按照下列的指令，一步一步執行即可。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ bluetoothctl -a
+[bluetooth]# power on
+[bluetooth]# agent KeyboardOnly
+[bluetooth]# default-agent
+[bluetooth]# pairable on
+[bluetooth]# scan on
+[bluetooth]# pair 01:02:03:04:05:06
+[bluetooth]# trust 01:02:03:04:05:06
+[bluetooth]# connect 01:02:03:04:05:06
+[bluetooth]# quit
+&lt;/pre&gt;
+&lt;p&gt;執行到 &lt;tt class="docutils literal"&gt;scan&lt;/tt&gt; 時，鍵盤必須是在可配對模式。&lt;/p&gt;
+&lt;p&gt;執行到 &lt;tt class="docutils literal"&gt;pair&lt;/tt&gt; 時，會出現配對碼，這時候要在藍牙鍵盤上輸入配對碼，再按 &amp;lt;enter&amp;gt;。哈哈，配對完成。&lt;/p&gt;
+&lt;p&gt;其它的步驟就簡單啦。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;開機時自動連上藍牙鍵盤&lt;/h3&gt;
+&lt;p&gt;為了能讓鍵盤開機後就可以使用，必須執行 2 個 systemd service： &lt;tt class="docutils literal"&gt;bluetooth.service&lt;/tt&gt; 和 &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt; 。
+其中 &lt;tt class="docutils literal"&gt;bluetooth.service&lt;/tt&gt; 安裝 &lt;tt class="docutils literal"&gt;bluez&lt;/tt&gt; 時會產生， &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt; 就得自己建立。&lt;/p&gt;
+&lt;div class="section" id="bluetooth-service"&gt;
+&lt;h4&gt;啟動 &lt;tt class="docutils literal"&gt;bluetooth.service&lt;/tt&gt;&lt;/h4&gt;
+&lt;pre class="literal-block"&gt;
+systemctl enable bluetooth.service
+&lt;/pre&gt;
+&lt;p&gt;這個步驟很重要，因為它會自動建立 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;dbus-org.bluez.service&lt;/span&gt;&lt;/tt&gt; 連結，而這個連結是 &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt; 需要的程式。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="btkbd-service"&gt;
+&lt;h4&gt;建立 &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt;&lt;/h4&gt;
+&lt;p&gt;為了要建立這個 &lt;tt class="docutils literal"&gt;service&lt;/tt&gt; ，我們要知道鍵盤的 MAC 和 藍牙接收器的 id，分別用 &lt;tt class="docutils literal"&gt;bluetoothctl&lt;/tt&gt; 和 &lt;tt class="docutils literal"&gt;hcitool&lt;/tt&gt; 這 2 隻程式取得。&lt;/p&gt;
+&lt;div class="section" id="id"&gt;
+&lt;h5&gt;取得 id&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+$ hcitool dev
+Devices:
+        hci0 00:15:83:43:C8:EA
+&lt;/pre&gt;
+&lt;p&gt;此處的 &lt;tt class="docutils literal"&gt;hci0&lt;/tt&gt; 即為藍牙接收器的 id。&lt;/p&gt;
+&lt;p&gt;另外鍵盤的 MAC，在用 &lt;tt class="docutils literal"&gt;bluetoothctl&lt;/tt&gt; 配對鍵盤時，就已經知道了，此時調出來看一下就好。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ bluetoothctl
+[NEW] Controller 00:15:83:43:C8:EA arch-64 [default]
+[NEW] Device 20:13:50:00:1F:E2 Bluetooth Keyboard
+&lt;/pre&gt;
+&lt;p&gt;第二行的那 6 個數字即是我們要的 MAC。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="etc-btkbd-conf"&gt;
+&lt;h5&gt;建立 &lt;tt class="docutils literal"&gt;/etc/btkbd.conf&lt;/tt&gt;&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+# Config file for btkbd.service
+# change when required (e.g. keyboard hardware changes, more hci devices are connected)
+BTKBDMAC = 20:13:50:00:1F:E2
+HCIDEVICE = hci0
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="etc-systemd-system-btkbd-service"&gt;
+&lt;h5&gt;建立 &lt;tt class="docutils literal"&gt;/etc/systemd/system/btkbd.service&lt;/tt&gt;&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+[Unit]
+Description=systemd Unit to automatically start a Bluetooth keyboard
+Documentation=https://wiki.archlinux.org/index.php/Bluetooth_Keyboard
+Requires=dbus-org.bluez.service
+After=dbus-bluez.org.service
+ConditionPathExists=/etc/btkbd.conf
+ConditionPathExists=/usr/bin/hcitool
+ConditionPathExists=/usr/bin/hciconfig
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/btkbd.conf
+ExecStart=
+ExecStart=/usr/bin/hciconfig ${HCIDEVICE} up
+# ignore errors on connect, spurious problems with bt? so start next command with -
+ExecStart=-/usr/bin/hcitool cc ${BTKBDMAC}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h5&gt;啟動鍵盤服務&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo systemctl enable btkbd
+&lt;/pre&gt;
+&lt;p&gt;至此，開機即可享受到藍牙鍵盤的無線魅力。如果，要省電，用完鍵盤後，即可關掉電源。
+等到要用時，再把電源打開，讓它自動連上主機，再為我們服務囉。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;結語&lt;/h2&gt;
+&lt;p&gt;一個很有質感的藍牙鍵盤，放在客廳的 HTPC 邊，一點都不會覺得很奇怪。&lt;/p&gt;
+&lt;p&gt;在配對時，一開始不知道要在鍵盤上輸入配對碼，只是一直等待，所以，一直沒辦法使用。
+在手冊上突然看到了一句話，就這樣連線成功。當我在藍牙鍵盤上按下按鍵，在螢幕上看到了相對應的字出現時，真是開心啊。&lt;/p&gt;
+&lt;p&gt;Linux 就是這樣好玩。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;update:2014-7-9&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不知道什麼原因，用 systemd 的方法，第一次試是成功的，後來就不知何種原因，怎麼都無法啟動。
+算了，我也不想深究。&lt;/p&gt;
+&lt;p&gt;直接用另一個方法，比較簡單，有 udev 即可。
+參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Bluetooth#Configuration_via_the_CLI"&gt;archlinux wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;先用 bluetoothctl 將藍牙鍵盤配對好，記住 hci device 的編號 (hci0)，再在 udev 增加一條規則：
+編輯 /etc/udev/rules.d/10-local.rules&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# Set bluetooth power up
+ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
+&lt;/pre&gt;
+&lt;p&gt;這樣子開機就會自動載入藍牙鍵盤。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/bluetooth-keyboard/</guid><pubDate>Fri, 27 Jun 2014 01:06:38 GMT</pubDate></item></channel></rss>

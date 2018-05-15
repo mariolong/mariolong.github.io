@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：emacs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 01:22:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rectange edit</title><link>https://github.com/mariolong/mariolong.github.io/posts/rectangle-edit/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;emacs中有個矩形編輯功能。&lt;/p&gt;
+&lt;p&gt;以前在PE2時代就常用，到了windows時代後，就沒有用過，是因為windows的編輯器沒有提供這樣的功能，剛開始時還真的不習慣。
+寫程式時，這是個很常用的功能。&lt;/p&gt;
+&lt;p&gt;功能鍵表列於下：&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="14%"&gt;
+&lt;col width="86%"&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;按鍵&lt;/td&gt;
+&lt;td&gt;說明&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x SPC&lt;/td&gt;
+&lt;td&gt;啟動矩形編輯&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r k&lt;/td&gt;
+&lt;td&gt;kill-rectangle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r t&lt;/td&gt;
+&lt;td&gt;replace-rectangle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r y&lt;/td&gt;
+&lt;td&gt;yank-rectangle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r N&lt;/td&gt;
+&lt;td&gt;rectangle-number-lines, 按C-u可輸入啟始數字。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r y&lt;/td&gt;
+&lt;td&gt;yank-rectangle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r d&lt;/td&gt;
+&lt;td&gt;delete-rectangle: 類似kill，只是不能 yank&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r c&lt;/td&gt;
+&lt;td&gt;clear-rectangle: 填入空白&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;C-x r o&lt;/td&gt;
+&lt;td&gt;open-rectangle: 插入空白，文字向右移&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td&gt;string-insert-rectangle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td&gt;delete-whitespace-rectangle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td&gt;delimit-columns-rectangle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://github.com/mariolong/mariolong.github.io/posts/rectangle-edit/</guid><pubDate>Thu, 23 Oct 2014 06:11:12 GMT</pubDate></item><item><title>emacs python 環境設定</title><link>https://github.com/mariolong/mariolong.github.io/posts/emacs-python/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;平時是用 python 寫些程式，網路上很多將 emacs 配置成 python IDE 的文章。參考後，決定用 elpy，jedi 為後端。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;p&gt;elpy 的安裝分為 emacs 和 python 端。&lt;/p&gt;
+&lt;p&gt;emacs&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(require 'elpy)
+&lt;/pre&gt;
+&lt;p&gt;python&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip install elpy jedi
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;問題記錄&lt;/h2&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;版本不符&lt;/h3&gt;
+&lt;p&gt;elpy 報下列的錯誤訊息：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+You are not using the same version of Elpy in Emacs Lisp
+compared to Python. This can cause random problems. Please
+do make sure to use compatible versions.
+
+Elpy Emacs Lisp version: 1.4.1
+Elpy Python version....: 1.4.0
+&lt;/pre&gt;
+&lt;p&gt;這個是 emacs 和 python 中的 elpy 版本不同所致，更新 python 中的版本即可。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip install --upgrade elpy
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://github.com/mariolong/mariolong.github.io/posts/emacs-python/</guid><pubDate>Sat, 24 May 2014 04:10:54 GMT</pubDate></item><item><title>emacs server start</title><link>https://github.com/mariolong/mariolong.github.io/posts/emacs-server-start/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;很想用下面的指令開啟 emacs。但是以此法開啟 emacs 後，不是字型找不到，就是找不到 fcitx。
+有時還真的想用 vim 算了，可以少掉很多的麻煩。
+可是，看到 emacs 就有一股衝動，想用。
+進了 vim 倒是沒有什麼用的動力，真是很奇怪的心情。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+emacs --daemon
+&lt;/pre&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;設定&lt;/h2&gt;
+&lt;p&gt;在 init.el 中加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(unless (server-running-p) (server-start))
+&lt;/pre&gt;
+&lt;p&gt;如果已開啟 server 模式，就不用再開一次。&lt;/p&gt;
+&lt;p&gt;現在的問題只剩下如何由 shell 中執行 emacs 指令。
+可以用 id | sed 取出 uid，再看看 /tmp/emacs$uid/server 是否存在？
+如果存在就用 &lt;tt class="docutils literal"&gt;emacsclient &lt;span class="pre"&gt;-t&lt;/span&gt;&lt;/tt&gt; 開啟，否則就用 &lt;tt class="docutils literal"&gt;emacs&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+USERID=`id | sed 's/^.*uid=//g' | sed 's/(.*$//g'`
+echo $USERID
+ls /tmp/emacs$USERID/
+if test -e /tmp/emacs$USERID/server
+then
+    echo "Server is already running."
+    emacsclient -c "$@"
+else
+    echo "Starting server."
+    emacs "$@"
+fi
+&lt;/pre&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://github.com/mariolong/mariolong.github.io/posts/emacs-server-start/</guid><pubDate>Thu, 22 May 2014 03:39:39 GMT</pubDate></item><item><title>emacs reStructureText mode</title><link>https://github.com/mariolong/mariolong.github.io/posts/emacs-rst-mode/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;參考 &lt;a class="reference external" href="http://docutils.sourceforge.net/docs/user/emacs.html"&gt;http://docutils.sourceforge.net/docs/user/emacs.html&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;install&lt;/h2&gt;
+&lt;p&gt;我用的是 emacs 24.3，預設已安裝 rst.el，檢查一下：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+M-x rst-mode
+&lt;/pre&gt;
+&lt;p&gt;在 OS 中安裝 sphinx&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip inistall sphinx
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;客製化標題符號&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;操作指令&lt;/h2&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;指令分類&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-c C-a &amp;lt;up&amp;gt; or &amp;lt;down&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;切換標題層次
+改用 C-c C-= 切換&lt;/dd&gt;
+&lt;dt&gt;C-c C-c&lt;/dt&gt;
+&lt;dd&gt;將目前檔案轉成 pdf 或 html 等目標檔&lt;/dd&gt;
+&lt;dt&gt;C-c C-l&lt;/dt&gt;
+&lt;dd&gt;建立表列&lt;/dd&gt;
+&lt;dt&gt;C-c C-r&lt;/dt&gt;
+&lt;dd&gt;處理目前的 region&lt;/dd&gt;
+&lt;dt&gt;C-c C-t&lt;/dt&gt;
+&lt;dd&gt;處理目錄 (table of contents)&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;標題&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-c C-a C-a, C-c C-=, and C-=&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-adjust&lt;/p&gt;
+&lt;ol class="last arabic simple"&gt;
+&lt;li&gt;如果所在行沒有標題符號，或不是完整的標題符號，則會建立標題符號，長度與本行文字等長，層次與上文中最近的一個標題相同。&lt;/li&gt;
+&lt;li&gt;已有完整的標題符號，則會循環升級標題層次。&lt;/li&gt;
+&lt;li&gt;可以先選定區域 (region)，區域內的標題可以一起切換。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-- C-=&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;降級標題&lt;/p&gt;
+&lt;p class="last"&gt;可以先選定區域 (region)，區域內的標題可以一起切換。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="section" id="customizations-for-adornments"&gt;
+&lt;h4&gt;客製化標題符號 (Customizations for Adornments)&lt;/h4&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;rst-preferred-adornments&lt;/dt&gt;
+&lt;dd&gt;to a list of the adornments that you like to use for documents.&lt;/dd&gt;
+&lt;dt&gt;rst-default-indent&lt;/dt&gt;
+&lt;dd&gt;can be set to the number of indent spaces preferred for the over-and-under adornment style.&lt;/dd&gt;
+&lt;dt&gt;C-c C-a C-d.&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-display-adornments-hierarchy&lt;/p&gt;
+&lt;p class="last"&gt;顯示目前的標題符號表&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-c C-a C-s&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-straighten-adornments&lt;/p&gt;
+&lt;p class="last"&gt;一次調整本文中所有的標題符號&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-M-a ??C-}&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-backward-section&lt;/p&gt;
+&lt;p class="last"&gt;游標移至下一章節&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-M-e ??C-{&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-forward-section&lt;/p&gt;
+&lt;p class="last"&gt;游標移至上一章節&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-M-h&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-mark-section&lt;/p&gt;
+&lt;p class="last"&gt;選取整個章節&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;M-}&lt;/dt&gt;
+&lt;dd&gt;游標移至下一段&lt;/dd&gt;
+&lt;dt&gt;M-{&lt;/dt&gt;
+&lt;dd&gt;游標移至上一段&lt;/dd&gt;
+&lt;dt&gt;C-c C-r TAB&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-shift-region&lt;/p&gt;
+&lt;p class="last"&gt;選取區域向右移動 1 個 TAB&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;M-- C-c C-r &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;選取區域向左移動 1 個 TAB&lt;/dd&gt;
+&lt;dt&gt;M-2 or M-- 2 C-c C-r &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;左移 2 個 Tab&lt;/dd&gt;
+&lt;dt&gt;M-0 C-c C-r &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;取消選取區域的所有縮排&lt;/dd&gt;
+&lt;dt&gt;M-x customize-group&amp;lt;RET&amp;gt; rst-indent&amp;lt;RET&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;設定縮排風格&lt;/dd&gt;
+&lt;dt&gt;Indenting Lines While Typing&lt;/dt&gt;
+&lt;dd&gt;In Emacs the TAB key is often used for indenting the current line.
+rst-mode implements this for the sophisticated indentation rules of reStructuredText.
+Pressing TAB cycles through the possible tabs for the current line.
+In the same manner newline-and-indent (C-j) indents the new line properly.&lt;/dd&gt;
+&lt;dt&gt;C-j, &amp;lt;enter&amp;gt;, &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;針對當行，調整縮排&lt;/dd&gt;
+&lt;dt&gt;M-q&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;fill-paragraph&lt;/p&gt;
+&lt;p class="last"&gt;重排段落&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;轉檔&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;表列&lt;/h3&gt;
+&lt;p&gt;If you have a couple of plain lines you want to turn into an enumerated list you can invoke&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-c C-l C-e&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-enumerate-region&lt;/p&gt;
+&lt;p class="last"&gt;將一個選定的區域，轉成數字表列。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-c C-l C-b&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-bullet-list-region&lt;/p&gt;
+&lt;p class="last"&gt;轉成表列&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-u&lt;/dt&gt;
+&lt;dd&gt;如果要將連續的文字行轉成（數字）表列，則可在執行命令前加上 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C-u&lt;/span&gt;&lt;/tt&gt; 。&lt;/dd&gt;
+&lt;dt&gt;rst-straighten-bullets-region (C-c C-l C-s),&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;the existing bullets in the active region will be replaced to reflect their respective level.
+This does not make a difference in the document structure that reStructuredText defines,
+but looks better in,
+for example, if all of the top-level bullet items use the character -,
+and all of the 2nd level items use &lt;a href="https://github.com/mariolong/mariolong.github.io/posts/emacs-rst-mode/#id7"&gt;&lt;span class="problematic" id="id8"&gt;*&lt;/span&gt;&lt;/a&gt;, etc...&lt;/p&gt;
+&lt;div class="last system-message" id="id7"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 161); &lt;em&gt;&lt;a href="https://github.com/mariolong/mariolong.github.io/posts/emacs-rst-mode/#id8"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline emphasis start-string without end-string.&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt&gt;rst-insert-list (C-c C-l C-i)&lt;/dt&gt;
+&lt;dd&gt;You may also invoke rst-insert-list at the end of a list item.
+In this case it inserts a new line containing the markup for the a list item on the same level.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id9"&gt;
+&lt;h3&gt;區域&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id10"&gt;
+&lt;h3&gt;目錄&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://github.com/mariolong/mariolong.github.io/posts/emacs-rst-mode/</guid><pubDate>Thu, 15 May 2014 01:10:54 GMT</pubDate></item><item><title>emacs-ido 設定</title><link>https://github.com/mariolong/mariolong.github.io/posts/emacs-ido/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;廢棄不用了，我現在先只用 helm&lt;/p&gt;
+&lt;p&gt;ido&lt;/p&gt;
+&lt;p&gt;ido-ubiquitous&lt;/p&gt;
+&lt;p&gt;ido-vertical-mode&lt;/p&gt;
+&lt;p&gt;(setq ido-everywhere t)&lt;/p&gt;
+&lt;div class="section" id="ido-vertical-mode"&gt;
+&lt;h2&gt;ido-vertical-mode&lt;/h2&gt;
+&lt;div class="section" id="turn-it-on"&gt;
+&lt;h3&gt;Turn it on&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+(require 'ido-vertical-mode)
+(ido-mode 1)
+(ido-vertical-mode 1)
+&lt;/pre&gt;
+&lt;p&gt;Or you can use M-x ido-vertical-mode to toggle it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;快速鍵&lt;/h3&gt;
+&lt;p&gt;Since the prospects are listed vertically, it makes sense to use C-n/C-p to navigate through the options. These are added to the ido-completion-map by default (and ido-toggle-prefix, previously on C-p, is moved to M-p).&lt;/p&gt;
+&lt;p&gt;You also have the option to rebind some or all of the arrow keys with ido-vertical-define-keys:&lt;/p&gt;
+&lt;p&gt;(setq ido-vertical-define-keys 'C-n-C-p-up-down)
+to use up and down to navigate the options, or&lt;/p&gt;
+&lt;p&gt;(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+to use left and right to move through the history/directories.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="semx"&gt;
+&lt;h2&gt;Semx&lt;/h2&gt;
+&lt;p&gt;Smex is a M-x enhancement for Emacs. Built on top of Ido, it provides a convenient interface to your recently and most frequently used commands. And to all the other commands, too.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://sachachua.com/blog/2014/03/emacs-basics-call-commands-name-m-x-tips-better-completion-using-ido-helm/"&gt;http://sachachua.com/blog/2014/03/emacs-basics-call-commands-name-m-x-tips-better-completion-using-ido-helm/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ido, ido-hacks, smex, ido-vertical-mode, and flx-ido&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://ergoemacs.org/emacs/emacs_name_completion.html"&gt;http://ergoemacs.org/emacs/emacs_name_completion.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://github.com/mariolong/mariolong.github.io/posts/emacs-ido/</guid><pubDate>Thu, 15 May 2014 00:10:54 GMT</pubDate></item><item><title>emacs 教學指引</title><link>https://github.com/mariolong/mariolong.github.io/posts/emacsjiao-xue-zhi-yin/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;程式寫多了，連個編輯器都想要折騰。&lt;/p&gt;
+&lt;p&gt;vim 和 emacs 並稱兩大神器。上星期玩了 vim 後，不知道為何，突然就想玩 emacs。好像是裝了 emacs 後，發現它的畫面比較好看，用起來比較有魅力吧？其實背後最主要的原因是 lisp。看了這麼多年程式碼，從沒用過像 lisp 或 haskell 這程語言寫過程式，初步看起來應該不會太難？那就來試試吧。&lt;/p&gt;
+&lt;p&gt;試了幾天，發現和 vim 比起來，Emacs 真的較不容易入門。上網找了半天，列出以下的參考資料：&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://docs.huihoo.com/homepage/shredderyin/emacs24/index.htm"&gt;Sams Teach Yourself Emacs in 24 Hours&lt;/a&gt; 還有全書打包壓縮檔。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://docs.huihoo.com/homepage/shredderyin/emacs_doc.html"&gt;某人筆記&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.masteringemacs.org/"&gt;Mastering EMACS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://lifegoo.pluskid.org/wiki/Emacs.html"&gt;某人 wiki&lt;/a&gt; ，這裡可以連到很多資源，我不再表列囉。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.moolenaar.net/habits.html"&gt;Seven habits of effective text editing&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update (2014-5-14)&lt;/strong&gt;:搞了 2 個星期，用別人的配置，總是覺得怪。最後還是決定慢慢建立自己的配置檔。
+其實這個也是 &lt;a class="reference external" href="https://github.com/magnars/.emacs.d/blob/master/README.md"&gt;magnars&lt;/a&gt; 的建議。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+emacs 配置檔就像自己的孩子，好好照顧他，陪他一起成長。
+&lt;/pre&gt;
+&lt;p&gt;這一篇記錄的是可以在 emacs 中存活下來的最基本操作。
+當然，按 C-h t 看 emacs 的教學也是一樣，只不過，我嫌它實在是寫得太囉嗦。&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt emacs
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;基本操作&lt;/h2&gt;
+&lt;p&gt;表列最基本可以存活下來的指令：&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-x c-c&lt;/dt&gt;
+&lt;dd&gt;離開 Emacs&lt;/dd&gt;
+&lt;dt&gt;C-g&lt;/dt&gt;
+&lt;dd&gt;quit 放棄剛才的命令&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;移動游標&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-p 或 &amp;lt;up&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標上移一行&lt;/dd&gt;
+&lt;dt&gt;C-n 或 &amp;lt;down&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標下移下一行&lt;/dd&gt;
+&lt;dt&gt;C-f 或 &amp;lt;right&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標前進一個字元&lt;/dd&gt;
+&lt;dt&gt;C-b 或 &amp;lt;left&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標後退一個字元&lt;/dd&gt;
+&lt;dt&gt;M-f 或 &amp;lt;C-right&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標前進一個字，中文會前進到下一個標點位置上。&lt;/dd&gt;
+&lt;dt&gt;M-b 或 &amp;lt;C-left&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標後退一個字，中文會前進到上一個標點位置後.&lt;/dd&gt;
+&lt;dt&gt;M-a&lt;/dt&gt;
+&lt;dd&gt;游標後退到句首&lt;/dd&gt;
+&lt;dt&gt;M-e&lt;/dt&gt;
+&lt;dd&gt;游標前進到句尾&lt;/dd&gt;
+&lt;dt&gt;C-a 或 &amp;lt;home&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標退到行首（有字或含空白，可切換）&lt;/dd&gt;
+&lt;dt&gt;C-e 或 &amp;lt;end&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;游標前進到行尾&lt;/dd&gt;
+&lt;dt&gt;C-&amp;lt;home&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;到 buffer 頭&lt;/dd&gt;
+&lt;dt&gt;C-&amp;lt;end&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;到 buffer 尾&lt;/dd&gt;
+&lt;dt&gt;未知&lt;/dt&gt;
+&lt;dd&gt;回到上一次游標位置&lt;/dd&gt;
+&lt;dt&gt;M-g M-g&lt;/dt&gt;
+&lt;dd&gt;到指定的行號&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;捲動螢幕上的文字&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-l&lt;/dt&gt;
+&lt;dd&gt;重畫螢幕。目前行會在視窗的中間、最上方、最下方三個地方切換。&lt;/dd&gt;
+&lt;dt&gt;C-v 或 PgDn&lt;/dt&gt;
+&lt;dd&gt;下一頁&lt;/dd&gt;
+&lt;dt&gt;A-v 或 PgUp&lt;/dt&gt;
+&lt;dd&gt;上一頁&lt;/dd&gt;
+&lt;dt&gt;C-PgDn&lt;/dt&gt;
+&lt;dd&gt;向右捲動一頁&lt;/dd&gt;
+&lt;dt&gt;C-PgUp&lt;/dt&gt;
+&lt;dd&gt;向左捲動一頁&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;視窗操作&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-x 0&lt;/dt&gt;
+&lt;dd&gt;關閉目前視窗&lt;/dd&gt;
+&lt;dt&gt;C-x 1&lt;/dt&gt;
+&lt;dd&gt;關閉其它視窗&lt;/dd&gt;
+&lt;dt&gt;C-x 2&lt;/dt&gt;
+&lt;dd&gt;水平分割視窗&lt;/dd&gt;
+&lt;dt&gt;C-x 3&lt;/dt&gt;
+&lt;dd&gt;垂直分割視窗&lt;/dd&gt;
+&lt;dt&gt;C-x o&lt;/dt&gt;
+&lt;dd&gt;循環切換視窗&lt;/dd&gt;
+&lt;dt&gt;S-&amp;lt;方向鍵&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;切換焦點視窗 (要設定 windmove-default-keybindings)&lt;/dd&gt;
+&lt;dt&gt;C-x ^&lt;/dt&gt;
+&lt;dd&gt;加高視窗&lt;/dd&gt;
+&lt;dt&gt;C-x {&lt;/dt&gt;
+&lt;dd&gt;視窗變窄&lt;/dd&gt;
+&lt;dt&gt;C-x }&lt;/dt&gt;
+&lt;dd&gt;加寬視窗&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mark-region"&gt;
+&lt;h3&gt;選擇區域 (mark region)&lt;/h3&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;C-@&lt;/li&gt;
+&lt;li&gt;移動游標&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;文字操作&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;backspace&lt;/dt&gt;
+&lt;dd&gt;刪除前一個字元&lt;/dd&gt;
+&lt;dt&gt;C-x backspace&lt;/dt&gt;
+&lt;dd&gt;很難理解。刪除到行首??刪除前面的空白&lt;/dd&gt;
+&lt;dt&gt;C-d&lt;/dt&gt;
+&lt;dd&gt;刪除一個字元&lt;/dd&gt;
+&lt;dt&gt;A-backspace&lt;/dt&gt;
+&lt;dd&gt;刪除到字首&lt;/dd&gt;
+&lt;dt&gt;A-d&lt;/dt&gt;
+&lt;dd&gt;刪除到字尾&lt;/dd&gt;
+&lt;dt&gt;C-k&lt;/dt&gt;
+&lt;dd&gt;刪除到行尾&lt;/dd&gt;
+&lt;dt&gt;C-w&lt;/dt&gt;
+&lt;dd&gt;？？刪除一行&lt;/dd&gt;
+&lt;dt&gt;M-&amp;lt;up&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;？？整行或標示區上移&lt;/dd&gt;
+&lt;dt&gt;M-&amp;lt;down&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;？？整行或標示區下移&lt;/dd&gt;
+&lt;dt&gt;C-o&lt;/dt&gt;
+&lt;dd&gt;行為類似 &amp;lt;enter&amp;gt;，只是游標留在原行&lt;/dd&gt;
+&lt;dt&gt;C-_ 或 C-/&lt;/dt&gt;
+&lt;dd&gt;undo&lt;/dd&gt;
+&lt;dt&gt;移動一下游標 C-/&lt;/dt&gt;
+&lt;dd&gt;redo&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="copy-cut-paste"&gt;
+&lt;h3&gt;copy, cut, paste&lt;/h3&gt;
+&lt;p&gt;預設的區域是當行 (??)。如果沒有選擇區域，則會複製、剪下目前游標所在的那一行。&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;M-w 或 C-&amp;lt;ins&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;copy&lt;/dd&gt;
+&lt;dt&gt;C-w 或 S-&amp;lt;del&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;cut&lt;/dd&gt;
+&lt;dt&gt;C-y 或 S-&amp;lt;ins&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;yang (paste)&lt;/dd&gt;
+&lt;dt&gt;M-y&lt;/dt&gt;
+&lt;dd&gt;yang-pop&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;檔案操作&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-x C-f&lt;/dt&gt;
+&lt;dd&gt;find file，會優先找目前檔案所在的目錄&lt;/dd&gt;
+&lt;dt&gt;C-x C-v&lt;/dt&gt;
+&lt;dd&gt;??find alternate file&lt;/dd&gt;
+&lt;dt&gt;C-x C-s&lt;/dt&gt;
+&lt;dd&gt;存檔&lt;/dd&gt;
+&lt;dt&gt;C-x s&lt;/dt&gt;
+&lt;dd&gt;存檔，會詢問是否存檔&lt;/dd&gt;
+&lt;dt&gt;C-x C-w&lt;/dt&gt;
+&lt;dd&gt;另存新檔&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;C-x i                   插入一個檔案&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="buffer"&gt;
+&lt;h3&gt;buffer&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-x k&lt;/dt&gt;
+&lt;dd&gt;kill buffer&lt;/dd&gt;
+&lt;dt&gt;C-x b&lt;/dt&gt;
+&lt;dd&gt;開啟 buffer&lt;/dd&gt;
+&lt;dt&gt;C-x C-b&lt;/dt&gt;
+&lt;dd&gt;list buffer&lt;/dd&gt;
+&lt;dt&gt;C-x left/right&lt;/dt&gt;
+&lt;dd&gt;切換 buffer&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id8"&gt;
+&lt;h3&gt;字型大小切換&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-x C-0&lt;/dt&gt;
+&lt;dd&gt;回復為預設大小&lt;/dd&gt;
+&lt;dt&gt;C-x C-=&lt;/dt&gt;
+&lt;dd&gt;加大字型&lt;/dd&gt;
+&lt;dt&gt;C-x C--&lt;/dt&gt;
+&lt;dd&gt;縮小字型&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://github.com/mariolong/mariolong.github.io/posts/emacsjiao-xue-zhi-yin/</guid><pubDate>Wed, 30 Apr 2014 00:10:54 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>gnome 安裝記錄 | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/gnomean-zhuang-ji-lu/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../lilyterm/" title="lilyterm 使用心得與整理" type="text/html">
+<link rel="next" href="../dvd-backup/" title="DVD backup" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="gnome 安裝記錄">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/gnomean-zhuang-ji-lu/">
+<meta property="og:description" content="安裝了 GNOME 3.10，使用的感覺很不錯，特別記錄一下安裝時碰到的困難，以利未來查詢可用。
+
+安裝
+
+$ yaourt -S gnome gnome-extra ibus-rime ibus-chewing
+
+
+
+配置
+
+選擇字型
+個人喜好，我選擇的是 DejaVu 系列。字型要設好，不然，gnome-terminal 的字會擠在一起。
+要不然就要再設定：編輯-&gt;設定編輯組合偏好設定-&gt;一般">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-10-24T12:57:19+08:00">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">gnome 安裝記錄</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2013-10-24T12:57:19+08:00" itemprop="datePublished" title="2013-10-24 12:57">2013-10-24 12:57</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/gnomean-zhuang-ji-lu.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>安裝了 GNOME 3.10，使用的感覺很不錯，特別記錄一下安裝時碰到的困難，以利未來查詢可用。</p>
+<div class="section" id="id1">
+<h2>安裝</h2>
+<pre class="literal-block">
+$ yaourt -S gnome gnome-extra ibus-rime ibus-chewing
+</pre>
+</div>
+<div class="section" id="id2">
+<h2>配置</h2>
+<div class="section" id="id3">
+<h3>選擇字型</h3>
+<p>個人喜好，我選擇的是 DejaVu 系列。字型要設好，不然，gnome-terminal 的字會擠在一起。
+要不然就要再設定：<em>編輯-&gt;設定編輯組合偏好設定-&gt;一般-&gt;字型</em></p>
+</div>
+<div class="section" id="ibus">
+<h3>調整 ibus 字型大小</h3>
+<p>我目前覺得 gnome 3.10 和 IBus 整合的不錯，使用上沒有什麼問題。
+但是，預設的字型實在是太小了，不改不行。
+目前只能直接改 gnome-shell 的 css 檔：</p>
+<pre class="code text"><a name="rest_code_21681e0cbf45485f8f6a2bb722a7e16e-1"></a>$ sudo nano /usr/share/gnome-shell/theme/gnome-shell.css
+</pre>
+<p>找到</p>
+<pre class="code text"><a name="rest_code_284525bbeafa4d7a948c9dd89f8ede9f-1"></a>/* default text style */
+<a name="rest_code_284525bbeafa4d7a948c9dd89f8ede9f-2"></a>stage {
+<a name="rest_code_284525bbeafa4d7a948c9dd89f8ede9f-3"></a>font-family: sans-serif;
+<a name="rest_code_284525bbeafa4d7a948c9dd89f8ede9f-4"></a>font-size: 11pt;
+<a name="rest_code_284525bbeafa4d7a948c9dd89f8ede9f-5"></a>color: white;
+<a name="rest_code_284525bbeafa4d7a948c9dd89f8ede9f-6"></a>}
+</pre>
+<p>和</p>
+<pre class="code text"><a name="rest_code_b073fe6a297b46cdb635802ac2c83347-1"></a>/* IBus Candidate Popup */
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-2"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-3"></a>.candidate-popup-content {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-4"></a>padding: 0.2em;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-5"></a>spacing: 0.2em;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-6"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-7"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-8"></a>.candidate-popup-text {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-9"></a>font-size: 18pt;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-10"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-11"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-12"></a>.candidate-index {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-13"></a>font-size: 14pt;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-14"></a>padding: 0 0.5em 0 0;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-15"></a>color: #cccccc;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-16"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-17"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-18"></a>.candidate-label {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-19"></a>font-size:22px;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-20"></a>letter-spacing: 1px;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-21"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-22"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-23"></a>.candidate-box {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-24"></a>padding: 0.2em 0.5em 0.2em 0.5em;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-25"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-26"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-27"></a>.candidate-box:selected {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-28"></a>border-radius: 4px;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-29"></a>background-color: rgba(255,255,255,0.2);
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-30"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-31"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-32"></a>.candidate-box:hover {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-33"></a>border-radius: 4px;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-34"></a>background-color: rgba(255,255,255,0.1);
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-35"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-36"></a>.candidate-page-button-box {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-37"></a>height: 2em;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-38"></a>width: 80px;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-39"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-40"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-41"></a>.vertical .candidate-page-button-box {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-42"></a>padding-top: 0.5em;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-43"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-44"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-45"></a>.horizontal .candidate-page-button-box {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-46"></a>padding-left: 0.5em;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-47"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-48"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-49"></a>.candidate-page-button-previous {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-50"></a>border-radius: 4px 0px 0px 4px;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-51"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-52"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-53"></a>.candidate-page-button-next {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-54"></a>border-radius: 0px 4px 4px 0px;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-55"></a>}
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-56"></a>
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-57"></a>.candidate-page-button-icon {
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-58"></a>icon-size: 1em;
+<a name="rest_code_b073fe6a297b46cdb635802ac2c83347-59"></a>}
+</pre>
+<p>重啟 gnome shell，OK。</p>
+</div>
+<div class="section" id="id4">
+<h3>聲音</h3>
+<p>gnome 的聲音也不好搞，預設用的是 PulseAudio，理論上是不用配置。
+但它和 ALSA 配合不好，會找不到 sound device，當然就無法發聲。</p>
+<p>參考 <a class="reference external" href="http://nelson.pixnet.net/blog/post/22615924-%5B%E7%AD%86%E8%A8%98%5D-%E8%AE%93-alsa-%E8%B7%9F-pulseaudio-%E5%AE%8C%E7%BE%8E%E5%85%B1%E5%AD%98">[1]</a> 和 <a class="reference external" href="http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&amp;type=&amp;topic_id=10102&amp;forum=10">[2]</a> ，節錄解決步驟如下：</p>
+<pre class="literal-block">
+$ sudo gedit /etc/pulse/default.pa
+</pre>
+<p>找到 <tt class="docutils literal"><span class="pre">#load-module</span> <span class="pre">module-alsa-sink</span></tt>，改成 <tt class="docutils literal"><span class="pre">load-module</span> <span class="pre">module-alsa-sink</span> device=dmix</tt>。</p>
+<p>找到 <tt class="docutils literal"><span class="pre">load-module</span> <span class="pre">module-suspend-on-idle</span></tt>，改成 <tt class="docutils literal"><span class="pre">#load-module</span> <span class="pre">module-suspend-on-idle</span></tt></p>
+<p>找到 <tt class="docutils literal"><span class="pre">load-module</span> <span class="pre">module-hal-detect</span></tt>，改成 <tt class="docutils literal"><span class="pre">#load-module</span> <span class="pre">module-hal-detect</span></tt></p>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../lilyterm/" rel="prev" title="lilyterm 使用心得與整理">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../dvd-backup/" rel="next" title="DVD backup">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/gnomean-zhuang-ji-lu/",
+        disqus_title="gnome \u5b89\u88dd\u8a18\u9304",
+        disqus_identifier="cache/posts/gnomean-zhuang-ji-lu.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

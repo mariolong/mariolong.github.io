@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：lvm)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/cat_lvm.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 14 May 2018 08:15:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>replace hd on LVM</title><link>https://github.com/mariolong/mariolong.github.io/posts/replace-hd-on-lvm/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;lvm 上的一顆硬碟壞了，要換掉。&lt;/p&gt;
+&lt;p&gt;整個過程並不像網上查到的那麼順利，所以，還是記錄下來，以備不時之需。&lt;/p&gt;
+&lt;p&gt;參考 &lt;a class="reference external" href="http://www.microhowto.info/howto/replace_one_of_the_physical_volumes_in_an_lvm_volume_group.html"&gt;Replace one of the physical volumes in an LVM volume group&lt;/a&gt;
+，鳥哥的 LINUX 私房菜，
+和 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/LVM"&gt;Archlinux Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;為了行文方便，先做以下說明：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/dev/sdd 是壞掉的硬碟
+/dev/sdb 是新的硬碟
+&lt;/pre&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;步驟&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;準備好要加入 LVM 的硬碟，並用 gparted 設定為 lvm pv。
+有人是用 &lt;tt class="docutils literal"&gt;pvcreate&lt;/tt&gt; ，反正功能是一樣的，就不必想太多，能完成工作就好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;將新硬碟加入 VG:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo vgextend VG01 /dev/sdb1
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;資料移到新硬碟:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvmove /dev/sdd1 /dev/sdb1
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;檢查是否移動完成&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvs
+
+PV         VG   Fmt  Attr PSize   PFree
+/dev/sdb1  VG01 lvm2 a--    1.36t      0
+/dev/sdd1  VG01 lvm2 a--  931.51g 931.51g
+
+$ sudo pvdisplay
+
+--- Physical volume ---
+PV Name               /dev/sdd1
+VG Name               VG01
+PV Size               931.51 GiB / not usable 4.00 MiB
+Allocatable           yes
+PE Size               4.00 MiB
+Total PE              238466
+Free PE               238466
+Allocated PE          0
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;縮小 lv&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo resize2fs -M /dev/VG01/LV00
+$ sudo lvresize -l -238466 /dev/VG01/LV00
+$ sudo resize2fs /dev/VG01/LV00
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;移除舊硬碟&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo vgreduce VG01 /dev/sdd1
+Removed "/dev/sdd1" from volume group "VG01"
+
+$ sudo pvremove /dev/sdd1
+Labels on physical volume "/dev/sdd1" successfully wiped
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="issue"&gt;
+&lt;h2&gt;ISSUE&lt;/h2&gt;
+&lt;div class="section" id="lv"&gt;
+&lt;h3&gt;縮小 lv&lt;/h3&gt;
+&lt;p&gt;要縮小 lv 時，先要將 file system 縮小，否則開機時，會報錯。&lt;/p&gt;
+&lt;p&gt;我的作法是將 file system 降至最低，就不必去計算要留多少。&lt;/p&gt;
+&lt;p&gt;然後，縮小 lv。&lt;/p&gt;
+&lt;p&gt;最後，再把 file system 放到最大即可。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo resize2fs -M /dev/VG01/LV00
+$ sudo lvresize -l -238466 /dev/VG01/LV00
+$ sudo resize2fs /dev/VG01/LV00
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pvmove"&gt;
+&lt;h3&gt;pvmove&lt;/h3&gt;
+&lt;p&gt;pvmove 時，不知為何沒將所有的 PE 都移動到新的硬碟，結果重做一次後就好了。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvdisplay
+$ sudo lvresize -l -238466 /dev/VG01/LV00
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;後記&lt;/h2&gt;
+&lt;p&gt;這次的工作一直卡在縮小 lv 的地方，因為沒有先縮小 file system，造成 fsck 會報錯，然後就無法開機。&lt;/p&gt;
+&lt;p&gt;雖然在試誤的過程中，一直擔心硬碟中的資料會毀損，最後的結果是好的，沒有任何資料毀損。&lt;/p&gt;
+&lt;p&gt;真是慶幸。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/replace-hd-on-lvm/</guid><pubDate>Thu, 11 Jun 2015 23:52:30 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：nginx)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/nginx.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 01:22:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>在 Archlinux 安裝 nginx</title><link>https://github.com/mariolong/mariolong.github.io/posts/an-zhuang-nginx/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;用 nikola 寫了些 blog，裝上 nginx 只是為了能在 localhost 看看這些文章。
+很大材小用吧。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_92076b0a167641b7bd9f4713e6318b35-1"&gt;&lt;/a&gt;yaourt -S nginx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_cbb6ecb979114df6bd89fc7a01501dcf-1"&gt;&lt;/a&gt;sudo nano /etc/nginx/nginx.conf
+&lt;/pre&gt;&lt;p&gt;預設的 nginx.conf 的結構很單純。&lt;tt class="docutils literal"&gt;$ grep &lt;span class="pre"&gt;-v&lt;/span&gt; '#' /etc/nginx/nginx.conf&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-1"&gt;&lt;/a&gt;worker_processes  1;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-3"&gt;&lt;/a&gt;events {
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-4"&gt;&lt;/a&gt;    worker_connections  1024;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-5"&gt;&lt;/a&gt;}
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-8"&gt;&lt;/a&gt;http {
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-9"&gt;&lt;/a&gt;    include       mime.types;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-10"&gt;&lt;/a&gt;    default_type  application/octet-stream;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-12"&gt;&lt;/a&gt;    sendfile        on;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-14"&gt;&lt;/a&gt;    keepalive_timeout  65;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-15"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-16"&gt;&lt;/a&gt;    server {
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-17"&gt;&lt;/a&gt;        listen       80;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-18"&gt;&lt;/a&gt;        server_name  localhost;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-19"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-20"&gt;&lt;/a&gt;        location / {
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-21"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-22"&gt;&lt;/a&gt;            index  index.html index.htm;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-23"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-24"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-25"&gt;&lt;/a&gt;        error_page   500 502 503 504  /50x.html;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-26"&gt;&lt;/a&gt;        location = /50x.html {
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-27"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-28"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-29"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_4f2c3280bd4e4069bf854b7680826fe5-30"&gt;&lt;/a&gt;}
+&lt;/pre&gt;&lt;p&gt;以下是我的設定&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-1"&gt;&lt;/a&gt;worker_processes  1;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-3"&gt;&lt;/a&gt;events {
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-4"&gt;&lt;/a&gt;    worker_connections  1024;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-5"&gt;&lt;/a&gt;}
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-7"&gt;&lt;/a&gt;http {
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-8"&gt;&lt;/a&gt;    include       mime.types;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-9"&gt;&lt;/a&gt;    default_type  application/octet-stream;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-11"&gt;&lt;/a&gt;    sendfile        on;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-12"&gt;&lt;/a&gt;    keepalive_timeout  65;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-14"&gt;&lt;/a&gt;    server {
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-15"&gt;&lt;/a&gt;        listen       8000;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-16"&gt;&lt;/a&gt;        server_name  localhost;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-17"&gt;&lt;/a&gt;        location / {
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-18"&gt;&lt;/a&gt;            root   /home/mariolong/Programing/wen-de-www/www/output;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-19"&gt;&lt;/a&gt;            index  index.html index.htm;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-20"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-21"&gt;&lt;/a&gt;        error_page   500 502 503 504  /50x.html;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-22"&gt;&lt;/a&gt;        location = /50x.html {
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-23"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-24"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-25"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-26"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-27"&gt;&lt;/a&gt;    server {
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-28"&gt;&lt;/a&gt;        listen       8088;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-29"&gt;&lt;/a&gt;        server_name  localhost;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-30"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-31"&gt;&lt;/a&gt;        location / {
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-32"&gt;&lt;/a&gt;            root /home/mariolong/Documents/myBlog/output;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-33"&gt;&lt;/a&gt;            index  index.html index.htm;
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-34"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-35"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_0c73adb2a88d491c83ba24b56a2618f1-36"&gt;&lt;/a&gt;}
+&lt;/pre&gt;&lt;p&gt;如此配置好，文章寫好後，只要 &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt; 即可，不必再 &lt;tt class="docutils literal"&gt;nikola serve&lt;/tt&gt;。&lt;/p&gt;
+&lt;p&gt;回到 browser 中，直接訪問文章就好，方便多了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;啟動&lt;/h2&gt;
+&lt;p&gt;以下分別為啟動、重啟、停止、開機啟動&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_fa6d2b83e1fc469d95ab8c091c7e22b4-1"&gt;&lt;/a&gt;sudo systemctl start nginx
+&lt;a name="rest_code_fa6d2b83e1fc469d95ab8c091c7e22b4-2"&gt;&lt;/a&gt;sudo systemctl restart nginx
+&lt;a name="rest_code_fa6d2b83e1fc469d95ab8c091c7e22b4-3"&gt;&lt;/a&gt;sudo systemctl stop nginx
+&lt;a name="rest_code_fa6d2b83e1fc469d95ab8c091c7e22b4-4"&gt;&lt;/a&gt;sudo systemctl enable nginx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;結論&lt;/h2&gt;
+&lt;p&gt;在 archlinux 中用 nginx 真是容易。
+當然，這個只是我玩玩而已，可不能當成生產環境。&lt;/p&gt;
+&lt;p&gt;下一個要處理的是 bottle 和 nginx 合作的網頁程式。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>nginx</category><category>nikola</category><guid>https://github.com/mariolong/mariolong.github.io/posts/an-zhuang-nginx/</guid><pubDate>Fri, 07 Feb 2014 03:13:56 GMT</pubDate></item></channel></rss>

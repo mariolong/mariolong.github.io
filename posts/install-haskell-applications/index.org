@@ -1,0 +1,158 @@
+#+BEGIN_COMMENT
+.. title: Install Haskell Applications
+.. slug: install-haskell-applications
+.. date: 2018-04-28 19:16:44 UTC-08:00
+.. tags: haskell, xmonad, pandoc
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+
+* 前言
+
+在 archlinux 上想用 haskell 真不是一件容易的事，因為選擇太多。
+
+不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可
+以抓網頁上目前最新的電影表列，並以 gmail 通知。
+
+上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，
+經過一番折騰，程式結構幾乎相同，代碼行數也差不多。但是，比起先前用
+Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 clojure, 先
+把安裝的過程記錄下來。
+
+* 安裝
+
+archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版 haskell
+用的是 dynamic-link, 問題多多。另外也不用 ArchHaskell repository, 原因
+是其中 Application 的版本比較舊。
+
+但我要用的 taffybar，新版看起來還不好用，所以只好退回 taffybar-0.4.6。
+而 0.4.6 版又不能用 ghc-8.2.2 編譯，只能回到 ghc-8.0.2。如此一來，就不
+能用新的 haskell 和 intero，真困擾。
+
+問題還是能解決，用 stack 就可以完美克服。
+
+但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
+
+如果要用 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安
+裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
+
+最後決定的方法是：
+1.安裝 ghc-8.2.2 的 static 版。
+2.安裝 stack-bin，是 stack 的 static 版。
+2.taffybar-0.4.6，自行用 ghc-8.0.2 編譯
+3.pandoc 先用 cabal 裝。
+
+
+#+BEGIN_SRC sh
+stack setup --system-ghc
+stack install cabal-install --system-ghc
+cabal update
+cabal install pandoc
+#+END_SRC
+
+** install ghc, stack
+
+https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux
+
+#+BEGIN_SRC sh
+yaourt -S ghc
+yaourt -S stack
+#+END_SRC
+
+決定用 static link
+#+BEGIN_SRC sh
+yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
+#+END_SRC
+
+** install cabal
+
+[[https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29][Building statically linked packages with Cabal (without using shared libraries)]]
+
+#+BEGIN_SRC emacs-lisp
+stack setup --system-ghc
+stack install --system-ghc cabal-install
+#+END_SRC
+
+** install pandoc
+
+#+BEGIN_SRC sh
+cabal update
+cabal install pandoc
+#+END_SRC
+
+** taffybar, xmonad, xomnad-contrib
+
+taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯。即
+使硬上，taffybar 的顯示高度也不對。因此暫時不用，等 ghc 8.4.2 release
+了再試 taffybar-2.x.x。
+
+目前用 taffybar-0.4.6，也就換維護者前的最後版本，比較穩定。
+
+有三種做法
+
+**** 自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib
+***** download taffybar from github
+***** adding stack.yaml and setup stack project
+
+***** config file of taffybar/xmonad must put them to this directory
+否則 recompile config file 時，會找不到需要的模組。
+
+***** stack build/install taffybar
+自動安裝 taffybar 和 xomnad 和 xmonad-contrib
+
+***** 執行
+
+#+BEGIN_SRC sh
+stack exec -- taffybar
+stack exec -- xmonad --recompile
+stack exec -- xmonad --restart
+#+END_SRC
+
+**** haskell-taffybar at ArchHaskell
+用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，
+其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
+
+**** cabal install taffybar-0.4.6
+#+BEGIN_SRC sh
+cabal update
+cabal install happy alex haddock c2hs
+cabal install taffybar-0.4.6
+cabal install pandoc
+#+END_SRC
+
+* emacs
+
+using [[https://commercialhaskell.github.io/intero/][intero]]
+
+#+BEGIN_SRC emacs-lisp
+  (use-package intero
+    :ensure haskell-mode
+    :config
+    (add-hook 'haskell-mode-hook 'intero-mode))
+#+END_SRC
+
+
+** TODO hindent
+
+#+BEGIN_SRC sh
+stack install hindent
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (use-package hindent
+    :config
+    (add-hook 'haskell-mode-hook #'hindent-mode))
+#+END_SRC
+
+* Dynamic Link Issue
+read https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking.
+You can also set these flags in ~/.cabal/config so that it applies to all projects by default.
+
+=~/.cabal/config=
+#+BEGIN_SRC conf
+library-vanilla: False
+shared: True
+executable-dynamic: True
+#+END_SRC

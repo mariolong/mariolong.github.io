@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>autojump | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://github.com/mariolong/mariolong.github.io/posts/autojump/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../vim/" title="vim" type="text/html">
+<link rel="next" href="../vim-my-python-ide/" title="vim: my python IDE" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="autojump">
+<meta property="og:url" content="https://github.com/mariolong/mariolong.github.io/posts/autojump/">
+<meta property="og:description" content="這兩天開始用 vim，發現她真的是「神器」，喜歡雙手不用離開鍵盤的感覺。
+所以，命令列的指令就用得多了，常在目錄間換來換去。今天在找資料時，不小心看到了這個小東西，原不在意，突然看到 github 上的「星星」，2000 多，嚇了一跳。那就裝上來用用吧。
+
+Install
+
+yaourt autojump-git
+
+編輯 ~/.bashrc, 加入下列指令：
+
+#autojump
+[[ -s /e">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-04-22T09:06:38+08:00">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://github.com/mariolong/mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">autojump</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-04-22T09:06:38+08:00" itemprop="datePublished" title="2014-04-22 09:06">2014-04-22 09:06</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/autojump.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>這兩天開始用 vim，發現她真的是「神器」，喜歡雙手不用離開鍵盤的感覺。</p>
+<p>所以，命令列的指令就用得多了，常在目錄間換來換去。今天在找資料時，不小心看到了這個小東西，原不在意，突然看到 github 上的「星星」，2000 多，嚇了一跳。那就裝上來用用吧。</p>
+<div class="section" id="install">
+<h2>Install</h2>
+<pre class="literal-block">
+yaourt autojump-git
+</pre>
+<p>編輯 ~/.bashrc, 加入下列指令：</p>
+<pre class="literal-block">
+#autojump
+[[ -s /etc/profile.d/autojump.bash ]] &amp;&amp; . /etc/profile.d/autojump.bash
+</pre>
+<p>執行：</p>
+<pre class="literal-block">
+. ~/.bashrc
+</pre>
+<p>即可享用 <tt class="docutils literal">autojump</tt> 。</p>
+</div>
+<div class="section" id="id1">
+<h2>配置</h2>
+<p>參考 <a class="reference external" href="http://github.com/joelthelion/autojump">github</a> 上的說明。</p>
+<p>這個小東西好像也不用配置吧。剛開始用的時候，怎麼只會留在目前目錄下，都跳不出去。man 一下，看到了這句話:</p>
+<p>「autojump is a faster way to navigate your filesystem....  <strong>Directories  must be visited first before they can be jumped to.</strong></p>
+<p>這就是重點了，要先進去過一次，以後他就會記得。不過，用久了會不會我也不記得曾經進過那些目錄？</p>
+<p>先用看看吧！</p>
+</div>
+<div class="section" id="id2">
+<h2>後記</h2>
+<p>會找到這個小工具，實在是因為想知道，如何在執行 bash shell 後，可以切換到另一個目錄。
+方法很簡單：</p>
+<pre class="literal-block">
+source xxx.sh
+</pre>
+<p>或是用</p>
+<pre class="literal-block">
+. xxx.sh
+</pre>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../vim/" rel="prev" title="vim">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../vim-my-python-ide/" rel="next" title="vim: my python IDE">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://github.com/mariolong/mariolong.github.io/posts/autojump/",
+        disqus_title="autojump",
+        disqus_identifier="cache/posts/autojump.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>
