@@ -1,4 +1,4 @@
-Sitemap: https://github.com/mariolong/mariolong.github.io/sitemapindex.xml
+Sitemap: https://mariolong.github.io/sitemapindex.xml
 
 User-Agent: *
-Host: github.com
+Host: mariolong.github.io

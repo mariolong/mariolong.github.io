@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://github.com/mariolong/mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 03:34:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://github.com/mariolong/mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 04:45:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 掙扎了許久，還是先用&lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
 
@@ -149,7 +149,7 @@ change &lt;kbd&gt;verbatim&lt;/kbd&gt; to &lt;kbd&gt;kbd&lt;/kbd&gt;
 一切都就緒了，那就開始寫文章吧！
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>Linux</category><category>nikola</category><guid>https://github.com/mariolong/mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://github.com/mariolong/mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;/div&gt;</description><category>Linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
@@ -357,8 +357,8 @@ shared: True
 executable-dynamic: True
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>haskell</category><category>pandoc</category><category>xmonad</category><guid>https://github.com/mariolong/mariolong.github.io/posts/install-haskell-applications/</guid><pubDate>Sun, 29 Apr 2018 03:16:44 GMT</pubDate></item><item><title>alsa equaler</title><link>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
+&lt;/div&gt;</description><category>haskell</category><category>pandoc</category><category>xmonad</category><guid>https://mariolong.github.io/posts/install-haskell-applications/</guid><pubDate>Sun, 29 Apr 2018 03:16:44 GMT</pubDate></item><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
 Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced Linux Sound Architecture&lt;/a&gt;已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
 
@@ -464,17 +464,17 @@ mpd 即可使用，瞎打誤撞。
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://mariolong.github.io/posts/alsa-equaler/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/"&gt;音樂再生首要難題 – 空間&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://mariolong.github.io/posts/alsa-equaler/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/whats/DRC-vs-others/"&gt;等化器(EQ)&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alsa</category><category>Linux</category><category>mpd</category><category>music</category><guid>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Mon, 15 Jan 2018 14:20:29 GMT</pubDate></item><item><title>post install for htpc</title><link>https://github.com/mariolong/mariolong.github.io/posts/post-install-for-htpc/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>alsa</category><category>Linux</category><category>mpd</category><category>music</category><guid>https://mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Mon, 15 Jan 2018 14:20:29 GMT</pubDate></item><item><title>post install for htpc</title><link>https://mariolong.github.io/posts/post-install-for-htpc/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 htpc
 &lt;/p&gt;
 
@@ -537,8 +537,8 @@ need_root_right = no
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/post-install-for-htpc/</guid><pubDate>Fri, 29 Dec 2017 09:14:13 GMT</pubDate></item><item><title>Post-installation of Archlinux</title><link>https://github.com/mariolong/mariolong.github.io/posts/post-installation-of-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-首先依&lt;a href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017"&gt;install-arch-linux-2017&lt;/a&gt;將基本系統裝好，接著參考
+&lt;/div&gt;</description><category>Linux</category><guid>https://mariolong.github.io/posts/post-install-for-htpc/</guid><pubDate>Fri, 29 Dec 2017 09:14:13 GMT</pubDate></item><item><title>Post-installation of Archlinux</title><link>https://mariolong.github.io/posts/post-installation-of-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+首先依&lt;a href="https://mariolong.github.io/posts/install-arch-linux-2017"&gt;install-arch-linux-2017&lt;/a&gt;將基本系統裝好，接著參考
 &lt;a href="https://wiki.archlinux.org/index.php/General_recommendations"&gt;https://wiki.archlinux.org/index.php/General_recommendations&lt;/a&gt;
 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
 &lt;/p&gt;
@@ -883,7 +883,7 @@ opencc: using s2twp.json
 &lt;div id="outline-container-sec-8-2" class="outline-3"&gt;
 &lt;h3 id="sec-8-2"&gt;&lt;span class="section-number-3"&gt;8.2&lt;/span&gt; systemd timers&lt;/h3&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://github.com/mariolong/mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item><item><title>Install Arch Linux (2017)</title><link>https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><guid>https://mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item><item><title>Install Arch Linux (2017)</title><link>https://mariolong.github.io/posts/install-arch-linux-2017/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 原本的 Beginners' Guide 改成了&lt;a href="https://wiki.archlinux.org/index.php/installation_guide"&gt;Installation guide&lt;/a&gt;，文件結構比較清楚，但是保證不適合初次安裝 archlinux
 的人閱讀，也不適合一步步之執行。
 &lt;/p&gt;
@@ -1249,7 +1249,7 @@ setconsolefont ter-128n
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
-The FONT variable in &lt;kbd&gt;/etc/vconsole.conf&lt;/kbd&gt; is used to set the font at boot, persistently for all consoles.&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
+The FONT variable in &lt;kbd&gt;/etc/vconsole.conf&lt;/kbd&gt; is used to set the font at boot, persistently for all consoles.&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/vconsole.conf
@@ -1259,7 +1259,7 @@ The FONT variable in &lt;kbd&gt;/etc/vconsole.conf&lt;/kbd&gt; is used to set th
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
-ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐語言」&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;
+ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐語言」&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1831,17 +1831,17 @@ iVT enable @ bios
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="https://wiki.archlinux.org/index.php/Fonts#Console_fonts"&gt;https://wiki.archlinux.org/index.php/Fonts#Console_fonts&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859-1"&gt;https://zh.wikipedia.org/wiki/ISO/IEC_8859-1&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>Linux</category><guid>https://github.com/mariolong/mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item><item><title>塞斯．卡拉曼：價值投資中的 30 個重要投資思想</title><link>https://github.com/mariolong/mariolong.github.io/posts/30/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>Linux</category><guid>https://mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item><item><title>塞斯．卡拉曼：價值投資中的 30 個重要投資思想</title><link>https://mariolong.github.io/posts/30/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 來源：&lt;a href="http://wawafinanceessais.blogspot.com/2017/08/30.html"&gt;汪汪財經：塞斯．卡拉曼：價值投資中的 30 個重要投資思想&lt;/a&gt;
 &lt;/p&gt;
 
@@ -2233,7 +2233,7 @@ iVT enable @ bios
 對於投資者來說，華爾街可以是很危險的。你只能在那兒做生意，但你一定要時刻戒備。華爾街人的標準行為就是追求最大化的個人利益。這個導嚮往往是短期的。你要承認這一點，接受它，與它共事。如果你能在和華爾街精英們做生意時牢記這一點，你就可以成長。但如果你指著華爾街來幫你，你就永遠別想著能投資成功了。
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>汪汪財經</category><guid>https://github.com/mariolong/mariolong.github.io/posts/30/</guid><pubDate>Tue, 29 Aug 2017 08:54:00 GMT</pubDate></item><item><title>水果戰勝癌症</title><link>https://github.com/mariolong/mariolong.github.io/posts/fruit-win-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>汪汪財經</category><guid>https://mariolong.github.io/posts/30/</guid><pubDate>Tue, 29 Aug 2017 08:54:00 GMT</pubDate></item><item><title>水果戰勝癌症</title><link>https://mariolong.github.io/posts/fruit-win-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 &lt;a href="http://health.businessweekly.com.tw/AArticleM.aspx?id=ARTL000093890"&gt;20 年戰勝 3 癌！醫師每天早上喝一杯「抗癌五彩蔬果汁」，常保體質弱鹼性&lt;/a&gt;
 &lt;/p&gt;
 
@@ -2343,7 +2343,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 &lt;/p&gt;
 
 &lt;p&gt;
-這篇&lt;a href="https://github.com/mariolong/mariolong.github.io/posts/fruit-win-cancer/#la-empty-tummy"&gt;空腹吃水果勝癌症&lt;/a&gt;是從 line 直接轉出，來處不明，全文收錄於後。
+這篇&lt;a href="https://mariolong.github.io/posts/fruit-win-cancer/#la-empty-tummy"&gt;空腹吃水果勝癌症&lt;/a&gt;是從 line 直接轉出，來處不明，全文收錄於後。
 &lt;/p&gt;
 
 &lt;div id="outline-container-sec-1" class="outline-2"&gt;
@@ -2412,7 +2412,7 @@ STEP3. 等第二天再洗一洗，就可以把大部份的農藥去掉，然後�
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>癌</category><category>食</category><guid>https://github.com/mariolong/mariolong.github.io/posts/fruit-win-cancer/</guid><pubDate>Thu, 10 Aug 2017 02:24:46 GMT</pubDate></item><item><title>咖啡致癌？防癌！</title><link>https://github.com/mariolong/mariolong.github.io/posts/coffe-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>癌</category><category>食</category><guid>https://mariolong.github.io/posts/fruit-win-cancer/</guid><pubDate>Thu, 10 Aug 2017 02:24:46 GMT</pubDate></item><item><title>咖啡致癌？防癌！</title><link>https://mariolong.github.io/posts/coffe-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 為了確認咖啡會不會致癌，特別花了點時間 google 一下，沒想到結論是真的出人意表。
 &lt;/p&gt;
 
@@ -2622,7 +2622,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 
 &lt;p&gt;
 國際癌症研究機構的專家發現，過熱飲品可能會引發食管癌。「過熱」指的是飲品溫度在 65°C 以上。世衛：非常熱的飲料被列入 2A 致癌物
-&lt;/p&gt;</description><category>癌</category><category>食</category><guid>https://github.com/mariolong/mariolong.github.io/posts/coffe-cancer/</guid><pubDate>Wed, 09 Aug 2017 07:29:47 GMT</pubDate></item><item><title>生命中最重要的事</title><link>https://github.com/mariolong/mariolong.github.io/posts/sheng-ming-zhong-zui-zhong-yao-de-shi/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>癌</category><category>食</category><guid>https://mariolong.github.io/posts/coffe-cancer/</guid><pubDate>Wed, 09 Aug 2017 07:29:47 GMT</pubDate></item><item><title>生命中最重要的事</title><link>https://mariolong.github.io/posts/sheng-ming-zhong-zui-zhong-yao-de-shi/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 來源：&lt;a href="http://www.businessweekly.com.tw/article.aspx?id=20446&amp;amp;type=Blog&amp;amp;p=0"&gt;你這一生中，做過最重要的事情是什麼？這個 80 歲指揮家的回答驚醒了許多人 (重要的事,指揮,回答,…)&lt;/a&gt;
 &lt;/p&gt;
 
@@ -2654,4 +2654,4 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 
 &lt;p&gt;
 把自己全然地融入你眼前，這個人、這件事，這個地方。去享受、去欣賞、去參與，這就對了！有什麼好比的。
-&lt;/p&gt;</description><category>life</category><category>moon</category><guid>https://github.com/mariolong/mariolong.github.io/posts/sheng-ming-zhong-zui-zhong-yao-de-shi/</guid><pubDate>Tue, 08 Aug 2017 09:39:03 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>life</category><category>moon</category><guid>https://mariolong.github.io/posts/sheng-ming-zhong-zui-zhong-yao-de-shi/</guid><pubDate>Tue, 08 Aug 2017 09:39:03 GMT</pubDate></item></channel></rss>

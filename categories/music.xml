@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：music)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://github.com/mariolong/mariolong.github.io/categories/music.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 01:22:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>alsa equaler</title><link>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：music)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/music.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 04:45:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
 Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced Linux Sound Architecture&lt;/a&gt;已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
 
@@ -106,14 +106,14 @@ mpd 即可使用，瞎打誤撞。
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://mariolong.github.io/posts/alsa-equaler/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/"&gt;音樂再生首要難題 – 空間&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" name="fn.2" class="footnum" href="https://mariolong.github.io/posts/alsa-equaler/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
 &lt;a href="http://www.miaofoundry.url.tw/products-and-services/DRC/whats/DRC-vs-others/"&gt;等化器(EQ)&lt;/a&gt;
 &lt;/p&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alsa</category><category>Linux</category><category>mpd</category><category>music</category><guid>https://github.com/mariolong/mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Mon, 15 Jan 2018 14:20:29 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>alsa</category><category>Linux</category><category>mpd</category><category>music</category><guid>https://mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Mon, 15 Jan 2018 14:20:29 GMT</pubDate></item></channel></rss>
