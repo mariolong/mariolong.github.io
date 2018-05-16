@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-05-15T04:45:00Z</lastmod>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-05-15T08:42:00Z</lastmod>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -96,6 +96,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/food/</loc>
   <lastmod>2018-05-15T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/fruit/</loc>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/haskell/</loc>
@@ -215,7 +219,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-05-15T05:49:00Z</lastmod>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/listings/</loc>
@@ -304,6 +308,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/dvd-backup/</loc>
   <lastmod>2018-05-15T05:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/eat-fruit-as-empty-stomach/</loc>
+  <lastmod>2018-05-16T09:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/emacs-ido/</loc>

@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cancer.xml</loc>
-  <lastmod>2018-05-15T08:42:00Z</lastmod>
+  <lastmod>2018-05-15T08:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_computer.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_life.xml</loc>
-  <lastmod>2018-05-15T08:42:00Z</lastmod>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_linux.xml</loc>
@@ -59,7 +59,11 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/food.xml</loc>
-  <lastmod>2018-05-15T08:42:00Z</lastmod>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariolong.github.io/categories/fruit.xml</loc>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/haskell.xml</loc>
@@ -147,10 +151,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/rss.xml</loc>
-  <lastmod>2018-05-15T08:42:00Z</lastmod>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/sitemap.xml</loc>
-  <lastmod>2018-05-15T08:42:00Z</lastmod>
+  <lastmod>2018-05-16T09:34:00Z</lastmod>
  </sitemap>
 </sitemapindex>

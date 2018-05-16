@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 15 May 2018 08:52:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 16 May 2018 09:34:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>「没想到是謠言」：愛惜大腸，空腹吃水果</title><link>https://mariolong.github.io/posts/eat-fruit-as-empty-stomach/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+網路上常會有一些「善心人士」轉傳他們認的好文，我想大家的初衷也是想幫忙人，只是未經查證或没有能力查證，只能直接轉傳，可也造成了困擾。如果重症患者誤信了没有根據的方法，後果不堪設想。
+&lt;/p&gt;
+
+&lt;p&gt;
+今天看到這篇&lt;a href="https://emo.nidbox.com/diary/read/7697859"&gt;愛惜大腸，空腹吃水果(台大醫院胃腸科王正一醫師的忠告)&lt;/a&gt;覺得不錯，想留個記錄，再一次 google，發現了下面這篇&lt;a href="https://www.mygopen.com/2016/03/blog-post_1.html"&gt;【假知識】空腹吃水果會抗癌？王正一醫師說他從沒寫過這種東西！ ~ MyGoPen｜這是假消息&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+哈哈，直接把結論拷貝如後：
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+闢謠網站 Snopes.com 報告指出，這則「空腹吃水果抗癌」，最早在 2001 年出現，來自新加坡廚藝作家 Devagi Sanmugam 在 1998 年的著作《吃水果的正確方法（The Correct Way of Eating Fruits）》，之後文章出現變種版，在
+2002 年以後流傳的版本，才又多了後面水果功效的部份。甚至轉到中文版，亂出現其他台大醫生的說詞，原信中提到的「赫伯博士( Dr. Herbert Shelton)」，並沒有醫學學位，還曾因為無照行醫被逮捕了好幾次；而這位赫伯博士，在
+1985 年已逝世。真的純屬謠言一則，請不要再傳這種假消息了！
+&lt;/p&gt;
+&lt;/blockquote&gt;</description><category>food</category><category>fruit</category><guid>https://mariolong.github.io/posts/eat-fruit-as-empty-stomach/</guid><pubDate>Wed, 16 May 2018 08:44:08 GMT</pubDate></item><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 掙扎了許久，還是先用&lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
 
@@ -2345,36 +2363,4 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 
 &lt;p&gt;
 國際癌症研究機構的專家發現，過熱飲品可能會引發食管癌。「過熱」指的是飲品溫度在 65°C 以上。世衛：非常熱的飲料被列入 2A 致癌物
-&lt;/p&gt;</description><category>癌</category><category>食</category><guid>https://mariolong.github.io/posts/coffe-cancer/</guid><pubDate>Wed, 09 Aug 2017 07:29:47 GMT</pubDate></item><item><title>生命中最重要的事</title><link>https://mariolong.github.io/posts/sheng-ming-zhong-zui-zhong-yao-de-shi/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-來源：&lt;a href="http://www.businessweekly.com.tw/article.aspx?id=20446&amp;amp;type=Blog&amp;amp;p=0"&gt;你這一生中，做過最重要的事情是什麼？這個 80 歲指揮家的回答驚醒了許多人 (重要的事,指揮,回答,…)&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-我現在正在做的事，就是我生命中最重要的事 – 托斯卡尼尼
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-托斯卡尼尼是舉世聞名的指揮家。人生的閱歷豐富，他到過很多地方，指揮過無數的樂團，也見過無數的達官顯要。
-&lt;/p&gt;
-
-&lt;p&gt;
-當他八十歲時，他兒子有一天好奇地問他：「在您一生中，一定有過很多重大的事，您覺得您做過最重要的事是什麼？」
-&lt;/p&gt;
-
-&lt;p&gt;
-托斯卡尼尼回答說：「我現在正在做的事，就是我一生中最重大的事，不管是在指揮一個交響樂團，或是在剝一顆橘子。」
-&lt;/p&gt;
-
-&lt;p&gt;
-有人問梵谷：「你的畫裡面那一張最好？」
-&lt;/p&gt;
-
-&lt;p&gt;
-他說：「就是我現正在畫的這一張。」
-&lt;/p&gt;
-
-&lt;p&gt;
-把自己全然地融入你眼前，這個人、這件事，這個地方。去享受、去欣賞、去參與，這就對了！有什麼好比的。
-&lt;/p&gt;</description><category>life</category><category>moon</category><guid>https://mariolong.github.io/posts/sheng-ming-zhong-zui-zhong-yao-de-shi/</guid><pubDate>Tue, 08 Aug 2017 09:39:03 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>癌</category><category>食</category><guid>https://mariolong.github.io/posts/coffe-cancer/</guid><pubDate>Wed, 09 Aug 2017 07:29:47 GMT</pubDate></item></channel></rss>
