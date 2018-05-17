@@ -95,6 +95,37 @@ change =verbatim= to =kbd=
           (verbatim . "<kbd>%s</kbd>")))
 #+END_SRC
 
+** nikola github_deploy
+
+REF: https://getnikola.com/handbook.html#deploying-to-github
+
+*** ghp_import2
+*** ssh
+install openssh
+
+follow github help page to add ssh connect to github
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+fix ~.git/config~
+
+https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository
+
+
+
+#+BEGIN_QUOTE
+I was facing same issue a while ago...
+my .git/config had
+
+url = git@github.com:manishnakar/polymer-demo.git
+
+I replaced it with
+
+url = https://github.com/manishnakar/polymer-demo.git
+
+and it works now:)
+#+END_QUOTE
+
 * 開始使用
 
 建立新的文章，
