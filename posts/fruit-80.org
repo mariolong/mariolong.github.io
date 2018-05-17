@@ -1,0 +1,31 @@
+#+BEGIN_COMMENT
+.. title: 「没想到是謠言」：愛惜大腸，空腹吃水果
+.. slug: eat-fruit-as-empty-stomach
+.. date: 2018-05-16 16:44:08
+.. tags: food, fruit
+.. category: life
+.. link:
+.. description:
+.. type: text
+.. options: toc:nil ^:{}
+#+END_COMMENT
+
+網路上常會有一些「善心人士」轉傳他們認的好文，我想大家的初衷也是想幫忙
+人，只是未經查證或没有能力查證，只能直接轉傳，可也造成了困擾。如果重症
+患者誤信了没有根據的方法，後果不堪設想。
+
+今天看到這篇 [[https://emo.nidbox.com/diary/read/7697859][愛惜大腸，空腹吃水果(台大醫院胃腸科王正一醫師的忠告)]] 覺得
+不錯，想留個記錄，再一次 google，發現了下面這篇 [[https://www.mygopen.com/2016/03/blog-post_1.html][【假知識】空腹吃水果會
+抗癌？王正一醫師說他從沒寫過這種東西！ ~ MyGoPen｜這是假消息]]
+
+哈哈，直接把結論拷貝如後：
+
+#+BEGIN_QUOTE
+闢謠網站 Snopes.com 報告指出，這則「空腹吃水果抗癌」，最早在 2001 年出
+現，來自新加坡廚藝作家 Devagi Sanmugam 在 1998 年的著作《吃水果的正確
+方法（The Correct Way of Eating Fruits）》，之後文章出現變種版，在
+2002 年以後流傳的版本，才又多了後面水果功效的部份。甚至轉到中文版，亂
+出現其他台大醫生的說詞，原信中提到的「赫伯博士( Dr. Herbert Shelton)」，
+並沒有醫學學位，還曾因為無照行醫被逮捕了好幾次；而這位赫伯博士，在
+1985 年已逝世。真的純屬謠言一則，請不要再傳這種假消息了！
+#+END_QUOTE

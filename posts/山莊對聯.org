@@ -1,0 +1,65 @@
+#+BEGIN_COMMENT
+.. title:山莊對聯
+.. date: 2017-08-07 14:00:00
+.. updated:
+.. comments: true
+.. tags: 太極拳
+.. layout: post
+.. category: life
+.. permalink:
+.. options: toc:nil ^:{}
+#+END_COMMENT
+雲房
+
+#+BEGIN_EXAMPLE
+太上忘我獨尊無
+極下萬象眾皆虛
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+龍神入凡立足五湖平常人做平常事
+神龍㿻水雲遊四海傳道統播授太極
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+神龍四喜元亨利貞
+太極六合東西南北
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+學道學禪學劍道禪劍合一
+問理問炁問象理氣象同歸
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+劍氣非關月
+書香不是花
+#+END_EXAMPLE
+
+咖啡廳
+#+BEGIN_EXAMPLE
+神居雲霄佑太極
+龍遊四海施雲雨
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+山前眺望巒七層
+莊內花草數不䀆
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+交誼以誠信為先
+𠊙情須先讓七分
+#+END_EXAMPLE
+
+三清閣
+
+#+BEGIN_EXAMPLE
+練在實習我實用
+悟要清明尋清源
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+隨心同自然而然
+修真問原來本來
+#+END_EXAMPLE

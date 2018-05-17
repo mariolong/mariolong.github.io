@@ -1,0 +1,12 @@
+body {
+  font-size: 16pt;
+}
+
+.brand #blog-title {
+  font-size: 2em;
+}
+
+header {
+  /* margin-bottom: 1em; */
+  border-bottom: 2px solid #aaa;
+}
