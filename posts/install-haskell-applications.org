@@ -1,7 +1,7 @@
 #+BEGIN_COMMENT
 .. title: Install Haskell Applications
 .. slug: install-haskell-applications
-.. date: 2018-04-28 19:16:44 UTC-08:00
+.. date: 2018-04-28 19:16:44 UTC+08:00
 .. tags: haskell, xmonad, pandoc
 .. category: computer
 .. link:
