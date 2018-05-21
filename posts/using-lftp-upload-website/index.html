@@ -113,111 +113,111 @@ $ lftp ">
 <p>為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。</p>
 <div class="section" id="install-lftp">
 <h2>install lftp</h2>
-<pre class="code text"><a name="rest_code_fed9b93ac0634eba9081a5d9946fac58-1"></a>$ yaourt -S lftp
+<pre class="code text"><a name="rest_code_1d0fadd0e0bc4de2a49282bf3ac42d27-1"></a>$ yaourt -S lftp
 </pre>
 </div>
 <div class="section" id="create-backup-lftp">
 <h2>create backup.lftp</h2>
-<pre class="code text"><a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-1"></a>open &lt;host url&gt;
-<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-2"></a>user user-id user-pwd
-<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-3"></a>lcd local-dir/
-<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-4"></a>cd host-dir/
-<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-5"></a>mirro -Rnc
-<a name="rest_code_2753e5dcc99f4ec4a129f1f45fb35f3f-6"></a>exit
+<pre class="code text"><a name="rest_code_17f4b3f75a5847809b746b7a13f7bd64-1"></a>open &lt;host url&gt;
+<a name="rest_code_17f4b3f75a5847809b746b7a13f7bd64-2"></a>user user-id user-pwd
+<a name="rest_code_17f4b3f75a5847809b746b7a13f7bd64-3"></a>lcd local-dir/
+<a name="rest_code_17f4b3f75a5847809b746b7a13f7bd64-4"></a>cd host-dir/
+<a name="rest_code_17f4b3f75a5847809b746b7a13f7bd64-5"></a>mirro -Rnc
+<a name="rest_code_17f4b3f75a5847809b746b7a13f7bd64-6"></a>exit
 </pre>
 </div>
 <div class="section" id="execute-backup-lftp">
 <h2>execute backup.lftp</h2>
-<pre class="code text"><a name="rest_code_e9244873cd814a7a9217a8e0ae3c66ac-1"></a>$ lftp -f backup.lftp
+<pre class="code text"><a name="rest_code_9de10c5ef4624cb994d3d8b650e47206-1"></a>$ lftp -f backup.lftp
 </pre>
 </div>
 <div class="section" id="reference">
 <h2>reference:</h2>
-<pre class="code text"><a name="rest_code_158525240ceb47a280fc448341b56253-1"></a>mirror [OPTS] [source [target]]
-<a name="rest_code_158525240ceb47a280fc448341b56253-2"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-3"></a>       Mirror specified source directory to local target directory. If  the  target  directory  ends
-<a name="rest_code_158525240ceb47a280fc448341b56253-4"></a>       with  a  slash  (except the root), the source base name is appended to target directory name.
-<a name="rest_code_158525240ceb47a280fc448341b56253-5"></a>       Source and/or target can be URLs pointing to directories.
-<a name="rest_code_158525240ceb47a280fc448341b56253-6"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-7"></a>            -c,      --continue                continue a mirror job if possible
-<a name="rest_code_158525240ceb47a280fc448341b56253-8"></a>            -e,      --delete                  delete files not present at remote site
-<a name="rest_code_158525240ceb47a280fc448341b56253-9"></a>                     --delete-first            delete old files before transferring new ones
-<a name="rest_code_158525240ceb47a280fc448341b56253-10"></a>                     --depth-first             descend into subdirectories before transferring files
-<a name="rest_code_158525240ceb47a280fc448341b56253-11"></a>            -s,      --allow-suid              set suid/sgid bits according to remote site
-<a name="rest_code_158525240ceb47a280fc448341b56253-12"></a>                     --allow-chown             try to set owner and group on files
-<a name="rest_code_158525240ceb47a280fc448341b56253-13"></a>                     --ascii                   use ascii mode transfers (implies --ignore-size)
-<a name="rest_code_158525240ceb47a280fc448341b56253-14"></a>                     --ignore-time             ignore time when deciding whether to download
-<a name="rest_code_158525240ceb47a280fc448341b56253-15"></a>                     --ignore-size             ignore size when deciding whether to download
-<a name="rest_code_158525240ceb47a280fc448341b56253-16"></a>                     --only-missing            download only missing files
-<a name="rest_code_158525240ceb47a280fc448341b56253-17"></a>                     --only-existing           download only files already existing at target
-<a name="rest_code_158525240ceb47a280fc448341b56253-18"></a>            -n,      --only-newer              download only newer files (-c won't work)
-<a name="rest_code_158525240ceb47a280fc448341b56253-19"></a>                     --no-empty-dirs           don't    create    empty     directories     (implies
-<a name="rest_code_158525240ceb47a280fc448341b56253-20"></a>                                               --depth-first)
-<a name="rest_code_158525240ceb47a280fc448341b56253-21"></a>            -r,      --no-recursion            don't go to subdirectories
-<a name="rest_code_158525240ceb47a280fc448341b56253-22"></a>                     --no-symlinks             don't create symbolic links
-<a name="rest_code_158525240ceb47a280fc448341b56253-23"></a>            -p,      --no-perms                don't set file permissions
-<a name="rest_code_158525240ceb47a280fc448341b56253-24"></a>                     --no-umask                don't apply umask to file modes
-<a name="rest_code_158525240ceb47a280fc448341b56253-25"></a>            -R,      --reverse                 reverse mirror (put files)
-<a name="rest_code_158525240ceb47a280fc448341b56253-26"></a>            -L,      --dereference             download symbolic links as files
-<a name="rest_code_158525240ceb47a280fc448341b56253-27"></a>            -N,      --newer-than=SPEC         download only files newer than specified time
-<a name="rest_code_158525240ceb47a280fc448341b56253-28"></a>                     --older-than=SPEC         download only files older than specified time
-<a name="rest_code_158525240ceb47a280fc448341b56253-29"></a>                     --size-range=RANGE        download only files with size in specified range
-<a name="rest_code_158525240ceb47a280fc448341b56253-30"></a>            -P,      --parallel[=N]            download N files in parallel
-<a name="rest_code_158525240ceb47a280fc448341b56253-31"></a>                     --use-pget[-n=N]          use pget to transfer every single file
-<a name="rest_code_158525240ceb47a280fc448341b56253-32"></a>                     --on-change=CMD           execute the command if anything has been changed
-<a name="rest_code_158525240ceb47a280fc448341b56253-33"></a>                     --loop                    repeat mirror until no changes found
-<a name="rest_code_158525240ceb47a280fc448341b56253-34"></a>            -i RX,   --include=RX              include matching files
-<a name="rest_code_158525240ceb47a280fc448341b56253-35"></a>            -x RX,   --exclude=RX              exclude matching files
-<a name="rest_code_158525240ceb47a280fc448341b56253-36"></a>            -I GP,   --include-glob=GP         include matching files
-<a name="rest_code_158525240ceb47a280fc448341b56253-37"></a>            -X GP,   --exclude-glob=GP         exclude matching files
-<a name="rest_code_158525240ceb47a280fc448341b56253-38"></a>            -f FILE, --file=FILE               mirror   a   single   file  or  globbed  group  (e.g.
-<a name="rest_code_158525240ceb47a280fc448341b56253-39"></a>                                               /path/to/*.txt)
-<a name="rest_code_158525240ceb47a280fc448341b56253-40"></a>            -O DIR,  --target-directory=DIR    target base path or URL
-<a name="rest_code_158525240ceb47a280fc448341b56253-41"></a>            -v,      --verbose[=level]         verbose operation
-<a name="rest_code_158525240ceb47a280fc448341b56253-42"></a>                     --log=FILE                write lftp commands being executed to FILE
-<a name="rest_code_158525240ceb47a280fc448341b56253-43"></a>                     --script=FILE             write lftp commands to FILE, but don't execute them
-<a name="rest_code_158525240ceb47a280fc448341b56253-44"></a>                     --just-print, --dry-run   same as --script=-
-<a name="rest_code_158525240ceb47a280fc448341b56253-45"></a>                     --use-cache               use cached directory listings
-<a name="rest_code_158525240ceb47a280fc448341b56253-46"></a>                     --Remove-source-files     remove files after transfer (use with caution)
-<a name="rest_code_158525240ceb47a280fc448341b56253-47"></a>            -a                                 same as --allow-chown --allow-suid --no-umask
-<a name="rest_code_158525240ceb47a280fc448341b56253-48"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-49"></a>       When using -R, the source directory is local and the target is remote.  If the target  direc‐
-<a name="rest_code_158525240ceb47a280fc448341b56253-50"></a>       tory is omitted, base name of the source directory is used.  If both directories are omitted,
-<a name="rest_code_158525240ceb47a280fc448341b56253-51"></a>       current local and remote directories are used.  If the target directory  ends  with  a  slash
-<a name="rest_code_158525240ceb47a280fc448341b56253-52"></a>       (except the root directory) then base name of the source directory is appended.
-<a name="rest_code_158525240ceb47a280fc448341b56253-53"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-54"></a>       RX is an extended regular expression, just like in egrep(1).
-<a name="rest_code_158525240ceb47a280fc448341b56253-55"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-56"></a>       GP is a glob pattern, e.g. `*.zip'.
-<a name="rest_code_158525240ceb47a280fc448341b56253-57"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-58"></a>       Include  and  exclude options can be specified multiple times. It means that a file or direc‐
-<a name="rest_code_158525240ceb47a280fc448341b56253-59"></a>       tory would be mirrored if it matches an include and does not  match  to  excludes  after  the
-<a name="rest_code_158525240ceb47a280fc448341b56253-60"></a>       include,  or  does not match anything and the first check is exclude. Directories are matched
-<a name="rest_code_158525240ceb47a280fc448341b56253-61"></a>       with a slash appended.
-<a name="rest_code_158525240ceb47a280fc448341b56253-62"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-63"></a>       Note that symbolic links are not created when uploading to remote server, because ftp  proto‐
-<a name="rest_code_158525240ceb47a280fc448341b56253-64"></a>       col  cannot  do  it. To upload files the links refer to, use `mirror -RL' command (treat sym‐
-<a name="rest_code_158525240ceb47a280fc448341b56253-65"></a>       bolic links as files).
-<a name="rest_code_158525240ceb47a280fc448341b56253-66"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-67"></a>       For options --newer-than and --older-than you can either specify a file or time specification
-<a name="rest_code_158525240ceb47a280fc448341b56253-68"></a>       like that used by at(1) command, e.g.  `now-7days' or `week ago'. If you specify a file, then
-<a name="rest_code_158525240ceb47a280fc448341b56253-69"></a>       modification time of that file will be used.
-<a name="rest_code_158525240ceb47a280fc448341b56253-70"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-71"></a>       Verbosity level can be selected using --verbose=level option or by several -v  options,  e.g.
-<a name="rest_code_158525240ceb47a280fc448341b56253-72"></a>       -vvv. Levels are:
-<a name="rest_code_158525240ceb47a280fc448341b56253-73"></a>            0 - no output (default)
-<a name="rest_code_158525240ceb47a280fc448341b56253-74"></a>            1 - print actions
-<a name="rest_code_158525240ceb47a280fc448341b56253-75"></a>            2 - +print not deleted file names (when -e is not specified)
-<a name="rest_code_158525240ceb47a280fc448341b56253-76"></a>            3 - +print directory names which are mirrored
-<a name="rest_code_158525240ceb47a280fc448341b56253-77"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-78"></a>       --only-newer  turns  off  file size comparison and uploads/downloads only newer files even if
-<a name="rest_code_158525240ceb47a280fc448341b56253-79"></a>       size is different. By default older files are transferred and replace newer ones.
-<a name="rest_code_158525240ceb47a280fc448341b56253-80"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-81"></a>       You can mirror between two servers if you specify URLs instead of directories.  FXP  is  used
-<a name="rest_code_158525240ceb47a280fc448341b56253-82"></a>       automatically for transfers between ftp servers, if possible.
-<a name="rest_code_158525240ceb47a280fc448341b56253-83"></a>
-<a name="rest_code_158525240ceb47a280fc448341b56253-84"></a>       Some  ftp  servers  hide  dot-files by default (e.g. .htaccess), and show them only when LIST
-<a name="rest_code_158525240ceb47a280fc448341b56253-85"></a>       command is used with -a option. In such case try to use `set ftp:list-options -a'.
+<pre class="code text"><a name="rest_code_3c9cf1bcbcc44556a75d418859786802-1"></a>mirror [OPTS] [source [target]]
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-2"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-3"></a>       Mirror specified source directory to local target directory. If  the  target  directory  ends
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-4"></a>       with  a  slash  (except the root), the source base name is appended to target directory name.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-5"></a>       Source and/or target can be URLs pointing to directories.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-6"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-7"></a>            -c,      --continue                continue a mirror job if possible
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-8"></a>            -e,      --delete                  delete files not present at remote site
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-9"></a>                     --delete-first            delete old files before transferring new ones
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-10"></a>                     --depth-first             descend into subdirectories before transferring files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-11"></a>            -s,      --allow-suid              set suid/sgid bits according to remote site
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-12"></a>                     --allow-chown             try to set owner and group on files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-13"></a>                     --ascii                   use ascii mode transfers (implies --ignore-size)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-14"></a>                     --ignore-time             ignore time when deciding whether to download
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-15"></a>                     --ignore-size             ignore size when deciding whether to download
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-16"></a>                     --only-missing            download only missing files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-17"></a>                     --only-existing           download only files already existing at target
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-18"></a>            -n,      --only-newer              download only newer files (-c won't work)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-19"></a>                     --no-empty-dirs           don't    create    empty     directories     (implies
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-20"></a>                                               --depth-first)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-21"></a>            -r,      --no-recursion            don't go to subdirectories
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-22"></a>                     --no-symlinks             don't create symbolic links
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-23"></a>            -p,      --no-perms                don't set file permissions
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-24"></a>                     --no-umask                don't apply umask to file modes
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-25"></a>            -R,      --reverse                 reverse mirror (put files)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-26"></a>            -L,      --dereference             download symbolic links as files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-27"></a>            -N,      --newer-than=SPEC         download only files newer than specified time
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-28"></a>                     --older-than=SPEC         download only files older than specified time
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-29"></a>                     --size-range=RANGE        download only files with size in specified range
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-30"></a>            -P,      --parallel[=N]            download N files in parallel
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-31"></a>                     --use-pget[-n=N]          use pget to transfer every single file
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-32"></a>                     --on-change=CMD           execute the command if anything has been changed
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-33"></a>                     --loop                    repeat mirror until no changes found
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-34"></a>            -i RX,   --include=RX              include matching files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-35"></a>            -x RX,   --exclude=RX              exclude matching files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-36"></a>            -I GP,   --include-glob=GP         include matching files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-37"></a>            -X GP,   --exclude-glob=GP         exclude matching files
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-38"></a>            -f FILE, --file=FILE               mirror   a   single   file  or  globbed  group  (e.g.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-39"></a>                                               /path/to/*.txt)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-40"></a>            -O DIR,  --target-directory=DIR    target base path or URL
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-41"></a>            -v,      --verbose[=level]         verbose operation
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-42"></a>                     --log=FILE                write lftp commands being executed to FILE
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-43"></a>                     --script=FILE             write lftp commands to FILE, but don't execute them
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-44"></a>                     --just-print, --dry-run   same as --script=-
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-45"></a>                     --use-cache               use cached directory listings
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-46"></a>                     --Remove-source-files     remove files after transfer (use with caution)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-47"></a>            -a                                 same as --allow-chown --allow-suid --no-umask
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-48"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-49"></a>       When using -R, the source directory is local and the target is remote.  If the target  direc‐
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-50"></a>       tory is omitted, base name of the source directory is used.  If both directories are omitted,
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-51"></a>       current local and remote directories are used.  If the target directory  ends  with  a  slash
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-52"></a>       (except the root directory) then base name of the source directory is appended.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-53"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-54"></a>       RX is an extended regular expression, just like in egrep(1).
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-55"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-56"></a>       GP is a glob pattern, e.g. `*.zip'.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-57"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-58"></a>       Include  and  exclude options can be specified multiple times. It means that a file or direc‐
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-59"></a>       tory would be mirrored if it matches an include and does not  match  to  excludes  after  the
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-60"></a>       include,  or  does not match anything and the first check is exclude. Directories are matched
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-61"></a>       with a slash appended.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-62"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-63"></a>       Note that symbolic links are not created when uploading to remote server, because ftp  proto‐
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-64"></a>       col  cannot  do  it. To upload files the links refer to, use `mirror -RL' command (treat sym‐
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-65"></a>       bolic links as files).
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-66"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-67"></a>       For options --newer-than and --older-than you can either specify a file or time specification
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-68"></a>       like that used by at(1) command, e.g.  `now-7days' or `week ago'. If you specify a file, then
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-69"></a>       modification time of that file will be used.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-70"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-71"></a>       Verbosity level can be selected using --verbose=level option or by several -v  options,  e.g.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-72"></a>       -vvv. Levels are:
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-73"></a>            0 - no output (default)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-74"></a>            1 - print actions
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-75"></a>            2 - +print not deleted file names (when -e is not specified)
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-76"></a>            3 - +print directory names which are mirrored
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-77"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-78"></a>       --only-newer  turns  off  file size comparison and uploads/downloads only newer files even if
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-79"></a>       size is different. By default older files are transferred and replace newer ones.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-80"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-81"></a>       You can mirror between two servers if you specify URLs instead of directories.  FXP  is  used
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-82"></a>       automatically for transfers between ftp servers, if possible.
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-83"></a>
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-84"></a>       Some  ftp  servers  hide  dot-files by default (e.g. .htaccess), and show them only when LIST
+<a name="rest_code_3c9cf1bcbcc44556a75d418859786802-85"></a>       command is used with -a option. In such case try to use `set ftp:list-options -a'.
 </pre>
 </div>
 </div>

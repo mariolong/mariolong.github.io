@@ -235,42 +235,103 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 
 <div id="outline-container-sec-2-4" class="outline-3">
 <h3 id="sec-2-4">
-<span class="section-number-3">2.4</span> nikola github<sub>deploy</sub>
-</h3>
+<span class="section-number-3">2.4</span> nikola github_deploy</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 REF: <a href="https://getnikola.com/handbook.html#deploying-to-github">https://getnikola.com/handbook.html#deploying-to-github</a>
+</p>
+
+<ul class="org-ul">
+<li>Initialize a Nikola site, if you haven’t already.
+</li>
+
+<li>Initialize a git repository in your Nikola source directory by running:
+</li>
+</ul>
+<div class="highlight"><pre><span></span>git init .
+git remote add origin git@github.com:user/repository.git
+</pre></div>
+
+<p>
+Setup branches and remotes in <code>conf.py</code>:
+</p>
+
+<ul class="org-ul">
+<li>GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files will be deployed. It should be gh-pages for project pages and master for user pages (user.github.io).
+</li>
+<li>GITHUB_SOURCE_BRANCH is the branch where your Nikola site source will be deployed. We recommend and default to src.
+</li>
+<li>GITHUB_REMOTE_NAME is the remote to which changes are pushed.
+</li>
+<li>GITHUB_COMMIT_SOURCE controls whether or not the source branch is automatically committed to and pushed. We recommend setting it to True, unless you are automating builds with Travis CI.
+</li>
+</ul>
+<p>
+Create a <code>.gitignore</code> file. We recommend adding at least the following entries:
+</p>
+
+<div class="highlight"><pre><span></span>cache
+.doit.db
+__pycache__
+output
+</pre></div>
+
+<p>
+If you set GITHUB_COMMIT_SOURCE to False, you must switch to your source branch and commit to it. Otherwise, this is done for you.
+</p>
+
+<p>
+Run <code>nikola github_deploy</code>. This will <b>build</b> the site, <b>commit</b> the
+output folder to your deploy branch, and <b>push</b> to GitHub. Your website
+should be up and running within a few minutes.
 </p>
 </div>
 
 <div id="outline-container-sec-2-4-1" class="outline-4">
 <h4 id="sec-2-4-1">
-<span class="section-number-4">2.4.1</span> ghp<sub>import2</sub>
-</h4>
+<span class="section-number-4">2.4.1</span> install ghp_import2</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<div class="highlight"><pre><span></span>sudo pip install ghp_import2
+</pre></div>
 </div>
+</div>
+
 <div id="outline-container-sec-2-4-2" class="outline-4">
 <h4 id="sec-2-4-2">
 <span class="section-number-4">2.4.2</span> ssh</h4>
 <div class="outline-text-4" id="text-2-4-2">
-<p>
-install openssh
-</p>
+</div>
+<ol class="org-ol">
+<li>
+<a id="sec-2-4-2-1" name="sec-2-4-2-1"></a>install openssh<br><div class="outline-text-5" id="text-2-4-2-1">
+<div class="highlight"><pre><span></span>yaourt -S openssh
+</pre></div>
+</div>
+</li>
 
-<p>
-follow github help page to add ssh connect to github
-<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/</a>
-<a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/</a>
-</p>
+<li>
+<a id="sec-2-4-2-2" name="sec-2-4-2-2"></a>follow github help page to add ssh connect to github<br><div class="outline-text-5" id="text-2-4-2-2">
+<ul class="org-ul">
+<li>
+<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generating a new SSH key and adding it to the ssh-agent - User Documentation</a>
+</li>
+<li>
+<a href="https://help.github.com/articles/working-with-ssh-key-passphrases/">Working with SSH key passphrases - User Documentation</a>
+</li>
+<li>
+<a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Adding a new SSH key to your GitHub account - User Documentation</a>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>ssh-keygen -p
+</pre></div>
+</div>
+</li>
 
-<p>
-fix <code>.git/config</code>
-</p>
-
+<li>
+<a id="sec-2-4-2-3" name="sec-2-4-2-3"></a>fix <code>.git/config</code><br><div class="outline-text-5" id="text-2-4-2-3">
 <p>
 <a href="https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository">https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository</a>
 </p>
-
-
 
 <blockquote>
 <p>
@@ -295,6 +356,12 @@ and it works now:)
 </p>
 </blockquote>
 </div>
+</li>
+
+<li>
+<a id="sec-2-4-2-4" name="sec-2-4-2-4"></a><span class="todo TODO">TODO</span> i don't want to input password twice<br>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -311,14 +378,21 @@ and it works now:)
 </pre></div>
 
 <p>
-寫完就 build 吧！
+寫完就 build
 </p>
 
 <div class="highlight"><pre><span></span>nikola build
 </pre></div>
 
 <p>
-一切都就緒了，那就開始寫文章吧！
+或發佈吧！
+</p>
+
+<div class="highlight"><pre><span></span>nikola github_deploy
+</pre></div>
+
+<p>
+一切都就緒了，那就開始專心寫文章吧！
 </p>
 </div>
 </div>

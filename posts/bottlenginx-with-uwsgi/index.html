@@ -109,22 +109,22 @@ uws">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>安裝 uwsgi</p>
-<pre class="code text"><a name="rest_code_e0a8a05312f6465daafc19b21c14681b-1"></a>sudo pip uwsgi
+<pre class="code text"><a name="rest_code_b8bb0a5b93cc42b2ae09dde256719e9b-1"></a>sudo pip uwsgi
 </pre>
 <p>先寫一個小小的程式，測試一下。</p>
-<pre class="code python"><a name="rest_code_bd236ba0f81f421183be238d306b30b2-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-3"></a>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-5"></a>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-9"></a>
-<a name="rest_code_bd236ba0f81f421183be238d306b30b2-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-3"></a>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-5"></a>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-9"></a>
+<a name="rest_code_0fbfc182be554cd7b58cb47ddc39b4ac-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
 </pre>
 <p>啟動 uwsgi</p>
-<pre class="code text"><a name="rest_code_727e6ba8ff474d5c9455931b246a5ed3-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
+<pre class="code text"><a name="rest_code_d5d2d6a32c704fc39962ad8b4940404b-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
 </pre>
 <p>進 browser 看看成功否？目前成功。</p>
 <p>接下來試 nginx 中啟動 uwsgi。</p>
