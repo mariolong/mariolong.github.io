@@ -8,6 +8,7 @@
 .. description: writing blogger using by nikola again.
 .. type: text
 #+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
 
 掙扎了許久，還是先用 [[https://getnikola.com/][nikola]] 記錄一些事，畢竟比較熟悉，能快一點上手。
 
@@ -99,19 +100,62 @@ change =verbatim= to =kbd=
 
 REF: https://getnikola.com/handbook.html#deploying-to-github
 
-*** ghp_import2
+- Initialize a Nikola site, if you haven’t already.
+
+- Initialize a git repository in your Nikola source directory by running:
+
+#+BEGIN_SRC sh
+git init .
+git remote add origin git@github.com:user/repository.git
+#+END_SRC
+
+Setup branches and remotes in ~conf.py~:
+
+- GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files will be deployed. It should be gh-pages for project pages and master for user pages (user.github.io).
+- GITHUB_SOURCE_BRANCH is the branch where your Nikola site source will be deployed. We recommend and default to src.
+- GITHUB_REMOTE_NAME is the remote to which changes are pushed.
+- GITHUB_COMMIT_SOURCE controls whether or not the source branch is automatically committed to and pushed. We recommend setting it to True, unless you are automating builds with Travis CI.
+
+Create a ~.gitignore~ file. We recommend adding at least the following entries:
+
+#+BEGIN_SRC sh
+cache
+.doit.db
+__pycache__
+output
+#+END_SRC
+
+If you set GITHUB_COMMIT_SOURCE to False, you must switch to your source branch and commit to it. Otherwise, this is done for you.
+
+Run ~nikola github_deploy~. This will *build* the site, *commit* the
+output folder to your deploy branch, and *push* to GitHub. Your website
+should be up and running within a few minutes.
+
+*** install ghp_import2
+
+#+BEGIN_SRC sh
+sudo pip install ghp_import2
+#+END_SRC
+
 *** ssh
-install openssh
+**** install openssh
 
-follow github help page to add ssh connect to github
-https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+#+BEGIN_SRC sh
+yaourt -S openssh
+#+END_SRC
 
-fix ~.git/config~
+**** follow github help page to add ssh connect to github
+- [[https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/][Generating a new SSH key and adding it to the ssh-agent - User Documentation]]
+- [[https://help.github.com/articles/working-with-ssh-key-passphrases/][Working with SSH key passphrases - User Documentation]]
+- [[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/][Adding a new SSH key to your GitHub account - User Documentation]]
+
+#+BEGIN_SRC sh
+ssh-keygen -p
+#+END_SRC
+
+**** fix ~.git/config~
 
 https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository
-
-
 
 #+BEGIN_QUOTE
 I was facing same issue a while ago...
@@ -126,6 +170,8 @@ url = https://github.com/manishnakar/polymer-demo.git
 and it works now:)
 #+END_QUOTE
 
+**** TODO i don't want to input password twice
+
 * 開始使用
 
 建立新的文章，
@@ -134,10 +180,16 @@ and it works now:)
 nikola new-post -e -f orgmod
 #+END_SRC
 
-寫完就 build 吧！
+寫完就 build
 
 #+BEGIN_SRC sh
 nikola build
 #+END_SRC
 
-一切都就緒了，那就開始寫文章吧！
+或發佈吧！
+
+#+BEGIN_SRC sh
+nikola github_deploy
+#+END_SRC
+
+一切都就緒了，那就開始專心寫文章吧！

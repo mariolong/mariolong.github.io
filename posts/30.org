@@ -7,8 +7,8 @@
 .. layout: post
 .. category: investment
 .. permalink:
-.. options: toc:nil ^:{}
-#+end_COMMENT
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
 
 來源：[[http://wawafinanceessais.blogspot.com/2017/08/30.html][汪汪財經：塞斯．卡拉曼：價值投資中的 30 個重要投資思想]]
 
