@@ -19,6 +19,8 @@ Installation
 cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparison">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-03-02T16:31:27+08:00">
+<meta property="article:tag" content="cron">
+<meta property="article:tag" content="linux">
 </head>
 <body>
 
@@ -101,47 +103,55 @@ cronie is installed by default as part of the base group. Other cron implementat
 &lt;<a class="reference external" href="https://wiki.archlinux.org/index.php/cron">https://wiki.archlinux.org/index.php/cron</a>&gt;</blockquote>
 <div class="section" id="installation">
 <h2>Installation</h2>
-<p>cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch Linux until May 2011.</p>
+<p>cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch linux until May 2011.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration</h2>
 <p>Activation and autostart</p>
 <p>cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:</p>
-<pre class="code text"><a name="rest_code_052170fb13c548ca99789dff0cdee6a3-1"></a>$ systemctl is-enabled cronie
+<pre class="code text"><a name="rest_code_ecda5174e0914ce3be4ca4a4dbfa49e3-1"></a>$ systemctl is-enabled cronie
 </pre>
 <p>Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:</p>
-<pre class="code text"><a name="rest_code_6a5e095f7ea643619ad095ec6c45696c-1"></a># systemctl start cronie
-<a name="rest_code_6a5e095f7ea643619ad095ec6c45696c-2"></a># systemctl enable cronie
+<pre class="code text"><a name="rest_code_252e2ea9cf0946e798221c560bf61dbb-1"></a># systemctl start cronie
+<a name="rest_code_252e2ea9cf0946e798221c560bf61dbb-2"></a># systemctl enable cronie
 </pre>
 </div>
 <div class="section" id="default-editor">
 <h2>Default editor</h2>
 <p>To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:</p>
-<pre class="code text"><a name="rest_code_4750fa0b17fc42f48a1dab5d61ed9102-1"></a># /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_7e6c4f85add94a4e892e00c789eaed83-1"></a># /etc/profile.d/nano-default-editor
 </pre>
 <p>加上：</p>
-<pre class="code text"><a name="rest_code_1b412ba98a594d4a9f3540c337bfce60-1"></a>#!/bin/sh
-<a name="rest_code_1b412ba98a594d4a9f3540c337bfce60-2"></a>export EDITOR=/usr/bin/nano
+<pre class="code text"><a name="rest_code_8faf02396f7e4946a0d64a8299552b4f-1"></a>#!/bin/sh
+<a name="rest_code_8faf02396f7e4946a0d64a8299552b4f-2"></a>export EDITOR=/usr/bin/nano
 </pre>
 <p>修改權限：</p>
-<pre class="code text"><a name="rest_code_8785b930c5bf46c5a8c8ee47d45097dd-1"></a>#chmod +x /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_6a28acb956574686acd09cb8d108f0ca-1"></a>#chmod +x /etc/profile.d/nano-default-editor
 </pre>
 </div>
 <div class="section" id="crontab-format">
 <h2>Crontab format</h2>
-<p>The basic format for a crontab is:
+<p>The basic format for a crontab is:</p>
+<pre class="literal-block">
 minute hour day_of_month month day_of_week command
 minute values can be from 0 to 59.
 hour values can be from 0 to 23.
 day_of_month values can be from 1 to 31.
 month values can be from 1 to 12.
 day_of_week values can be from 0 to 6, with 0 denoting Sunday.
-Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
-<a href="#id1"><span class="problematic" id="id2">*</span></a>0,*5 9-16 * 1-5,9-12 1-5 ~/bin/i_love_cron.sh
-Will execute the script i_love_cron.sh at five minute intervals from 9 AM to 4:55 PM on weekdays except during the summer months (June, July, and August). More examples and advanced configuration techniques can be found below.</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 54); <em><a href="#id2">backlink</a></em></p>
-Inline emphasis start-string without end-string.</div>
+
+Multiple times may be specified with a comma, a range can be given
+with a hyphen, and the asterisk symbol is a wildcard
+character. Spaces are used to separate fields. For example, the
+line: *0,*5 9-16 * 1-5,9-12 1-5
+
+~/bin/i_love_cron.sh Will execute the script i_love_cron.sh at five
+minute intervals from 9 AM to 4:55 PM on weekdays except during the
+summer months (June, July, and August).
+
+More examples and advanced configuration techniques can be found
+below.
+</pre>
 <div class="section" id="basic-commands">
 <h3>Basic commands</h3>
 <p>Crontabs should never be edited directly; instead, users should use the crontab program to work with their crontabs. To be granted access to this command, user must be a member of the users group (see the gpasswd command).
@@ -190,7 +200,11 @@ Periodical settings can also be entered as in this crontab template:
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cron/" rel="tag">cron</a></li>
+            <li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../bottlebeaker-session-management/" rel="prev" title="bottle+beaker session management">上一篇</a>
             </li>

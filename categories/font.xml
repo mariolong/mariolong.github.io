@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：font)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/font.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 May 2018 07:19:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>字型相關</title><link>https://mariolong.github.io/posts/fonts/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;系統看起來要好看，最重要的其實是字型，字型沒調好看起來就是怪怪的，不舒服。&lt;/p&gt;
+&lt;p&gt;目前我的解法是參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Infinality"&gt;https://wiki.archlinux.org/index.php/Infinality&lt;/a&gt; 設定整個系統的字型。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;p&gt;1. 增加公鑰&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pacman-key -r 962DDE58
+$ sudo pacman-key --lsign-key 962DDE58
+&lt;/pre&gt;
+&lt;p&gt;2. 編輯 &lt;tt class="docutils literal"&gt;/etc/pacman.conf&lt;/tt&gt; ，加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[infinality-bundle]
+Server = http://bohoomil.com/repo/$arch
+&lt;/pre&gt;
+&lt;p&gt;3. 更新資料庫，並安裝 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;infinality-bundle&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -Syy
+$ yaourt -S infinality-bundle
+&lt;/pre&gt;
+&lt;ol class="arabic" start="4"&gt;
+&lt;li&gt;&lt;p class="first"&gt;安裝字體，可以挑選 &lt;a class="reference external" href="http://bohoomil.com/doc/05-fonts/"&gt;這裡&lt;/a&gt; 有的。&lt;/p&gt;
+&lt;p&gt;例如，想用 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;adobe-source-code-pro-fonts&lt;/span&gt;&lt;/tt&gt; ，查到有 ttf-source-code-pro-ibx，
+那就可以安裝。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S adobe-source-code-pro-fonts
+&lt;/pre&gt;
+&lt;p&gt;目前我安裝的是以下字型：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S ttf-tw ttf-dejavu ttf-oxygen ttf-liberation
+$ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts adobe-source-code-pro-fonts
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;用 lxqt-config-apperance 調整字體渲染方式。&lt;/p&gt;
+&lt;p&gt;自動產生 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/fontconfig/fonts.conf&lt;/span&gt;&lt;/tt&gt; 和 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/fonts.conf&lt;/span&gt;&lt;/tt&gt; 一樣的檔案。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;微調 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/X11/xinit/xinitrc.d/infinality-settings.sh&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;設定 USE_STYLE="3"&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;重啟 X 看結果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;結論&lt;/h2&gt;
+&lt;p&gt;暫時就先這樣，有空再來調整吧。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>font</category><category>linux</category><guid>https://mariolong.github.io/posts/fonts/</guid><pubDate>Wed, 27 May 2015 13:48:41 GMT</pubDate></item></channel></rss>

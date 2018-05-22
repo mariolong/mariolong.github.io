@@ -39,7 +39,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-05-22T04:58:00Z</lastmod>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -48,6 +48,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/backup/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/bluetooth/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/buffett/</loc>
@@ -78,6 +82,10 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/cron/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/desktop/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
@@ -92,6 +100,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/ffmpeg/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/font/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/food/</loc>
@@ -122,12 +134,24 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/lightwork/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/linux/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/lxde/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/lxqt/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/mc/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/moon/</loc>
@@ -158,6 +182,10 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/programming/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/python/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
@@ -182,6 +210,14 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/terminal/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/urxvt/</loc>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/walking/</loc>
   <lastmod>2018-05-22T04:44:00Z</lastmod>
  </url>
@@ -199,31 +235,31 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-1.html</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-2.html</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-3.html</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T07:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-4.html</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-5.html</loc>
-  <lastmod>2018-05-22T05:26:00Z</lastmod>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-6.html</loc>
-  <lastmod>2018-05-22T05:26:00Z</lastmod>
+  <lastmod>2018-05-22T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-7.html</loc>
-  <lastmod>2018-05-22T05:26:00Z</lastmod>
+  <lastmod>2018-05-22T07:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-8.html</loc>

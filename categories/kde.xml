@@ -1,5 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：KDE)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/kde.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 May 2018 03:55:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Kate, KDE Advance Text Editor</title><link>https://mariolong.github.io/posts/kate-KDE-Advance-Text-Edit/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;最近，無意間看到 KWrite，覺得它的介面很不錯，研究一下，發現還有個更「高級」的兄弟 - KATE，
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：kde)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/kde.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 May 2018 07:19:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>KDE</title><link>https://mariolong.github.io/posts/kde/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;大約 2012 年 11 月，正式開始了 linux 之旅。一開始用的是 Archlinux，到現在還是用它。&lt;/p&gt;
+&lt;p&gt;桌面，一直用的是 LXDE，後來換成 GNOME 3.10 約 2 個星期，又換到 KDE。
+到了 KDE 才發現 linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。&lt;/p&gt;
+&lt;p&gt;記錄一下我的 KDE 系統。&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;上一次是為了 digikam，這次為了這個什麼電子書都可以看的 kdegraphics-okular，還是把 kde 裝上了。
+digikam 就不用了，因為用起來實在是太笨重，還是選擇其它的方式：dophine + gwenview，具有管理和看圖的功能。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+yaourt -S --needed --noconfirm kdebase kdebase-workspace kde-l10n-zh_tw oxygen-gtk{2,3} kde-gtk-config yakuake kdegraphics-ksnapshot kdegraphics-okular kdeutils-ark p7zip zip unzip unrar kio-mtp fcitx-im fcitx-table-extra fcitx-chewing kdeplasma-addons-applets-kimpanel kcm-fcitx fcitx-qt5 kdegraphics-gwenview kdemultimedia-kmix kdemultimedia-ffmpegthumbs kid3 cantata cdparanoia
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="configuration"&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;div class="section" id="qt-gtk"&gt;
+&lt;h3&gt;讓 qt 和 gtk 程式看起來一致&lt;/h3&gt;
+&lt;p&gt;在 kde 下執行 gtk 程式，真是太醜了，不改不行。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications"&gt;Archlinux Wiki&lt;/a&gt; 中,
+提到了 qtcurve，gtk-qt-engine 可惜都不適用。&lt;/p&gt;
+&lt;p&gt;qtcurve 的樣子看起來是不錯，可惜，不支援 gtk3。造成 gtk3 的程式還是醜。&lt;/p&gt;
+&lt;p&gt;最後，選用了 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B"&gt;oxygen-gtk&lt;/a&gt; 的解決方案。&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_90271e4021ea4e07adceb42b5d254d4e-1"&gt;&lt;/a&gt;$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="qt4"&gt;
+&lt;h3&gt;設定 qt4 程式外觀&lt;/h3&gt;
+&lt;p&gt;執行&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+qtconfig-qt4
+&lt;/pre&gt;
+&lt;p&gt;修改 appearance 和 fonts，vlc 和 qbittorrent 顯示才看起來正常。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="stop-akonadi"&gt;
+&lt;h3&gt;stop akonadi&lt;/h3&gt;
+&lt;p&gt;參考 &lt;a class="reference external" href="http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable"&gt;http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-1"&gt;&lt;/a&gt;akonadictl stop
+&lt;a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-2"&gt;&lt;/a&gt;sudo systemctl stop mysqld
+&lt;a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-3"&gt;&lt;/a&gt;sudo systemctl disable mysqld
+&lt;/pre&gt;&lt;p&gt;修改 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/akonadi/akonadiserverrc&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_cb8f1fef76d24f1d8e92b0461c13b44a-1"&gt;&lt;/a&gt;StartServer=false
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="cursor-theme"&gt;
+&lt;h3&gt;cursor theme&lt;/h3&gt;
+&lt;p&gt;參考：&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_Themes"&gt;https://wiki.archlinux.org/index.php/Cursor_Themes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不知道什麼原因，滑鼠游標的型狀，老是會變成 x 的游標主題，做個小小的軟連結，讓游標好看一點。
+但我相信這個不是正解，只是 google 了好久，總找不到根本解法，先治標吧。&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-1"&gt;&lt;/a&gt;$ mkdir ~/.icons
+&lt;a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-2"&gt;&lt;/a&gt;$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
+&lt;a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-3"&gt;&lt;/a&gt;# mkdir -p /usr/share/icons/default
+&lt;a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-4"&gt;&lt;/a&gt;# nano /usr/share/icons/default/index.theme
+&lt;a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-6"&gt;&lt;/a&gt;[icon theme]
+&lt;a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-7"&gt;&lt;/a&gt;Inherits=Oxygen_Black
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;中文輸入法：嘸蝦米&lt;/h3&gt;
+&lt;p&gt;參看 &lt;a class="reference external" href="https://mariolong.github.io/posts/ibusfcitxshu-ru-fa-she-ding/"&gt;ibus,fcitx輸入法設定&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;字型設定:&lt;/h3&gt;
+&lt;p&gt;先 copy windows 下的字型檔，我選擇的是微軟雅黑和中黑，比較好看。&lt;tt class="docutils literal"&gt;msjh.ttf msjhbd.ttf&lt;/tt&gt;。
+再安裝其它字型相關的程式與字型。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S {freetype2, fontconfig}-infinality-git ttf-tw ttf-dejavu ttf-google-fonts-git ttf-liberation ttf-arphic-{ukai,uming} qy-zenhei
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="panel"&gt;
+&lt;h3&gt;設定 panel&lt;/h3&gt;
+&lt;p&gt;自行調整 panel 的位置、大小、內容。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="kde"&gt;
+&lt;h3&gt;設定 kde 的快速鍵：&lt;/h3&gt;
+&lt;p&gt;全域捷徑&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;C-A-T: terminal (konsole)&lt;/li&gt;
+&lt;li&gt;C-A-B: browser (google-chrome-stable)&lt;/li&gt;
+&lt;li&gt;C-A-F: file manager (dophine)&lt;/li&gt;
+&lt;li&gt;C-A-E: editor:kate or geany, now I use kate for text editing.&lt;/li&gt;
+&lt;li&gt;C-A-M: music player (cantata)&lt;/li&gt;
+&lt;li&gt;M-{1,2,3,4}：切換到桌面 n&lt;/li&gt;
+&lt;li&gt;M-S-{1,2,3,4}：移動目前工作視窗到桌面 n&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;常用軟體說明&lt;/h2&gt;
+&lt;p&gt;kde 有表列一些應用程式, 參看 &lt;a class="reference external" href="http://www.kde.org/applications/"&gt;這裡&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;yakuake: 下拉式的終端機，酷。設定&amp;gt;一般&amp;gt;指令，要設定： &lt;tt class="docutils literal"&gt;/bin/bash&lt;/tt&gt;。&lt;/p&gt;
+&lt;p&gt;digikam kipi-plugins：就是這個「相片管理」程式，讓我第一次安裝了 kde。不過現在不用了，因為太大、太笨重的感覺。&lt;/p&gt;
+&lt;p&gt;kdegraphics-gwenview：比較快速的 viewer，搭配 dolphine 就很好用了。&lt;/p&gt;
+&lt;p&gt;kdegraphics-kolourpaint：KDE 下的小畫家&lt;/p&gt;
+&lt;p&gt;kdegraphics-ksnapshot：KDE 的螢幕擷取程式&lt;/p&gt;
+&lt;p&gt;kdeutils-ark p7zip zip unzip unrar：解壓縮檔。&lt;/p&gt;
+&lt;p&gt;kdegraphics-okular：kde 預設的文件閱讀器，功能強大，可以看 epub 和 pdf 的軟體，就是這個讓我繼續用 KDE。&lt;/p&gt;
+&lt;p&gt;kdemultimedia-kmix: 音量控控器，配合 mpdris2 可以控制 mpd 的音量和播放。&lt;/p&gt;
+&lt;p&gt;kdemultimedia-ffmpegthumbs: 讓影片檔也有縮圖。&lt;/p&gt;
+&lt;p&gt;kio-mtp: HTC android mobile-phone support on KDE Dolphin&lt;/p&gt;
+&lt;p&gt;kdeplasma-applets-yawp: 看天氣的小東西。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="systemd-user-session-management"&gt;
+&lt;h2&gt;systemd user session management&lt;/h2&gt;
+&lt;p&gt;使用 xlogin-git，參看 &lt;a class="reference external" href="https://mariolong.github.io/posts/autologin-without-dm/"&gt;Autologin without DM&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上次裝的時候，為了要自動 login，加了 &lt;a class="reference external" href="mailto:getty@tty1.service"&gt;getty@tty1.service&lt;/a&gt;，這個記得要刪掉，不然會衝突到不知如何除錯，
+如果不是這次要重裝，也不會發現原來還有這個問題&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+systemctl disable getty@tty1.service
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;問題與解法&lt;/h2&gt;
+&lt;div class="section" id="login"&gt;
+&lt;h3&gt;每次 login 都會重新建立一個「新活動」&lt;/h3&gt;
+&lt;p&gt;找到下面 2 個檔，刪掉，讓 KDE 重建：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+~/.kde4/share/config/activitymanager-pluginsrc
+~/.kde4/share/config/activitymanagerrc
+&lt;/pre&gt;
+&lt;p&gt;開啟以下的檔案，&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+~/.kde4/share/config/plasma-desktoprc
+&lt;/pre&gt;
+&lt;p&gt;找到
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/usr/share/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js,&lt;/span&gt;&lt;/tt&gt;
+，刪掉。&lt;/p&gt;
+&lt;p&gt;這樣子還是不會好。後來是重裝 kde 才好。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>kde</category><category>linux</category><guid>https://mariolong.github.io/posts/kde/</guid><pubDate>Tue, 08 Apr 2014 00:34:18 GMT</pubDate></item><item><title>Kate, KDE Advance Text Editor</title><link>https://mariolong.github.io/posts/kate-KDE-Advance-Text-Edit/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;最近，無意間看到 KWrite，覺得它的介面很不錯，研究一下，發現還有個更「高級」的兄弟 - KATE，
 經不起折騰的慾望，就玩下去了。發現真的比 geany 還強。記錄一下吧。&lt;/p&gt;
 &lt;div class="section" id="install"&gt;
 &lt;h2&gt;Install&lt;/h2&gt;
@@ -32,4 +157,4 @@ yaourt -S kdesdk-kate
 想通了這一點，就上網查，只發現了一個可用的字型：Yahei-consolas-hybird，大陸人搞出來的，專門用來寫程式用的字型。
 裝上了之後，果然問題就解決了。可是，也許會有版權的問題。管他的，反正是自已在家用的，將就點吧 。&lt;/p&gt;
 &lt;p&gt;其實不是行距太小，是字型不對，沒有專為程式寫作的字型。&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>KDE</category><category>Linux</category><guid>https://mariolong.github.io/posts/kate-KDE-Advance-Text-Edit/</guid><pubDate>Wed, 02 Apr 2014 18:29:35 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>kde</category><category>linux</category><guid>https://mariolong.github.io/posts/kate-KDE-Advance-Text-Edit/</guid><pubDate>Wed, 02 Apr 2014 18:29:35 GMT</pubDate></item></channel></rss>

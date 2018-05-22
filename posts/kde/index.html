@@ -13,15 +13,17 @@
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="KDE">
 <meta property="og:url" content="https://mariolong.github.io/posts/kde/">
-<meta property="og:description" content="大約 2012 年 11 月，正式開始了 Linux 之旅。一開始用的是 Archlinux，到現在還是用它。
+<meta property="og:description" content="大約 2012 年 11 月，正式開始了 linux 之旅。一開始用的是 Archlinux，到現在還是用它。
 桌面，一直用的是 LXDE，後來換成 GNOME 3.10 約 2 個星期，又換到 KDE。
-到了 KDE 才發現 Linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。
+到了 KDE 才發現 linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。
 記錄一下我的 KDE 系統。
 
 Install
 上一次是為了 digik">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-04-08T08:34:18+08:00">
+<meta property="article:tag" content="kde">
+<meta property="article:tag" content="linux">
 </head>
 <body>
 
@@ -100,9 +102,9 @@ Install
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>大約 2012 年 11 月，正式開始了 Linux 之旅。一開始用的是 Archlinux，到現在還是用它。</p>
+<p>大約 2012 年 11 月，正式開始了 linux 之旅。一開始用的是 Archlinux，到現在還是用它。</p>
 <p>桌面，一直用的是 LXDE，後來換成 GNOME 3.10 約 2 個星期，又換到 KDE。
-到了 KDE 才發現 Linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。</p>
+到了 KDE 才發現 linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。</p>
 <p>記錄一下我的 KDE 系統。</p>
 <div class="section" id="install">
 <h2>Install</h2>
@@ -121,7 +123,7 @@ yaourt -S --needed --noconfirm kdebase kdebase-workspace kde-l10n-zh_tw oxygen-g
 提到了 qtcurve，gtk-qt-engine 可惜都不適用。</p>
 <p>qtcurve 的樣子看起來是不錯，可惜，不支援 gtk3。造成 gtk3 的程式還是醜。</p>
 <p>最後，選用了 <a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B">oxygen-gtk</a> 的解決方案。</p>
-<pre class="code text"><a name="rest_code_af6a158f7b7f434c9c777a62b4ae5e7d-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
+<pre class="code text"><a name="rest_code_90271e4021ea4e07adceb42b5d254d4e-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
 </pre>
 </div>
 <div class="section" id="qt4">
@@ -135,12 +137,12 @@ qtconfig-qt4
 <div class="section" id="stop-akonadi">
 <h3>stop akonadi</h3>
 <p>參考 <a class="reference external" href="http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable">http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable</a></p>
-<pre class="code text"><a name="rest_code_3ae3a70e4e66472faff75f089101ad36-1"></a>akonadictl stop
-<a name="rest_code_3ae3a70e4e66472faff75f089101ad36-2"></a>sudo systemctl stop mysqld
-<a name="rest_code_3ae3a70e4e66472faff75f089101ad36-3"></a>sudo systemctl disable mysqld
+<pre class="code text"><a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-1"></a>akonadictl stop
+<a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-2"></a>sudo systemctl stop mysqld
+<a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-3"></a>sudo systemctl disable mysqld
 </pre>
 <p>修改 <tt class="docutils literal"><span class="pre">~/.config/akonadi/akonadiserverrc</span></tt></p>
-<pre class="code text"><a name="rest_code_82df2b9fe3ba4e2c820d4648179e7587-1"></a>StartServer=false
+<pre class="code text"><a name="rest_code_cb8f1fef76d24f1d8e92b0461c13b44a-1"></a>StartServer=false
 </pre>
 </div>
 <div class="section" id="cursor-theme">
@@ -148,13 +150,13 @@ qtconfig-qt4
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_Themes">https://wiki.archlinux.org/index.php/Cursor_Themes</a></p>
 <p>不知道什麼原因，滑鼠游標的型狀，老是會變成 x 的游標主題，做個小小的軟連結，讓游標好看一點。
 但我相信這個不是正解，只是 google 了好久，總找不到根本解法，先治標吧。</p>
-<pre class="code text"><a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-1"></a>$ mkdir ~/.icons
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-3"></a># mkdir -p /usr/share/icons/default
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-4"></a># nano /usr/share/icons/default/index.theme
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-5"></a>
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-6"></a>[icon theme]
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-7"></a>Inherits=Oxygen_Black
+<pre class="code text"><a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-1"></a>$ mkdir ~/.icons
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-3"></a># mkdir -p /usr/share/icons/default
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-4"></a># nano /usr/share/icons/default/index.theme
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-5"></a>
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-6"></a>[icon theme]
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-7"></a>Inherits=Oxygen_Black
 </pre>
 </div>
 <div class="section" id="id1">
@@ -232,7 +234,11 @@ systemctl disable getty@tty1.service
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/kde/" rel="tag">kde</a></li>
+            <li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../kate-KDE-Advance-Text-Edit/" rel="prev" title="Kate, KDE Advance Text Editor">上一篇</a>
             </li>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mc)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mc.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 May 2018 07:19:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Midnight Commander</title><link>https://mariolong.github.io/posts/midnight-commander/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S mc
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;p&gt;編輯 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/mc/mc.ext&lt;/span&gt;&lt;/tt&gt; 或 &amp;lt;F9&amp;gt; -&amp;gt; Command -&amp;gt; 編緝擴充檔，調出配置檔。
+然後，在此檔中找相對應的副檔名，做些修改。&lt;/p&gt;
+&lt;div class="section" id="epub-viewer"&gt;
+&lt;h3&gt;epub viewer&lt;/h3&gt;
+&lt;p&gt;用 python 寫個小程式，可以顯示 epub 的內容。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# Epub
+shell/i/.epub
+    Open=/usr/lib/mc/ext.d/doc.sh open epub
+    # View=%view{ascii} /usr/lib/mc/ext.d/doc.sh view epub
+    View=%view{ascii} /usr/bin/python /mnt/lvm-data/Programing/epub/epubinfo.py %f
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mpv"&gt;
+&lt;h3&gt;以 mpv 開啟影像檔&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+include/video
+    Open=(mpv %f &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;)   # for mpv
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;鍵盤操作&lt;/h2&gt;
+&lt;p&gt;mc 的鍵盤操作，有點類似 emacs。&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Ctrl-g&lt;/dt&gt;
+&lt;dd&gt;中斷目前作業，如果有作業花了太久的時間，按下 C-g 吧。&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="section" id="miscellaneous-keys"&gt;
+&lt;h3&gt;Miscellaneous Keys&lt;/h3&gt;
+&lt;p&gt;類似 lynx 的方向鍵用法，很好用。要先去 Options &amp;gt; panel options 中設定&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name"&gt;
+&lt;col class="field-body"&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;left:&lt;/th&gt;&lt;td class="field-body"&gt;回到上一層目錄&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;right,return:&lt;/th&gt;&lt;td class="field-body"&gt;進目錄或開檔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Enter:&lt;/th&gt;&lt;td class="field-body"&gt;if there is some text in the command line (the one at the bottom of the panels), then that command is executed.
+If there is no text in the command line then if the selection bar is over a directory
+the Midnight Commander does a chdir(2) to the selected directory and reloads the information on the panel;
+if the selection is an executable file then it is executed.
+Finally, if the extension of the selected file name matches one of the extensions in the extensions file
+then the corresponding command is executed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-l:&lt;/th&gt;&lt;td class="field-body"&gt;重畫 MC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x c:&lt;/th&gt;&lt;td class="field-body"&gt;run the &lt;tt class="docutils literal"&gt;Chmod&lt;/tt&gt; command on a file or on the tagged files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x o:&lt;/th&gt;&lt;td class="field-body"&gt;run the &lt;tt class="docutils literal"&gt;Chown&lt;/tt&gt; command on the current file or on the tagged files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x l:&lt;/th&gt;&lt;td class="field-body"&gt;run the link command.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x s:&lt;/th&gt;&lt;td class="field-body"&gt;run the symbolic link command.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x i:&lt;/th&gt;&lt;td class="field-body"&gt;set the other panel display mode to information.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x q:&lt;/th&gt;&lt;td class="field-body"&gt;set the other panel display mode to quick view.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x !:&lt;/th&gt;&lt;td class="field-body"&gt;execute the External panelize command.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x h:&lt;/th&gt;&lt;td class="field-body"&gt;run the add directory to hotlist command.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-!:&lt;/th&gt;&lt;td class="field-body"&gt;executes the Filtered view command, described in the view command.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-?:&lt;/th&gt;&lt;td class="field-body"&gt;executes the Find file command.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-c:&lt;/th&gt;&lt;td class="field-body"&gt;快速切換目錄。必須知道完整的目錄名稱，實務上可能並不好用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-o:&lt;/th&gt;&lt;td class="field-body"&gt;when the program is being run in the linux or FreeBSD console or under an xterm, it will show you the output of the previous command. When ran on the linux console, the Midnight Commander uses an external program (cons.saver) to handle saving and restoring of information on the screen.
+When the subshell support is compiled in, you can type C-o at any time and you will be taken back to the Midnight Commander main screen, to return to your application just type C-o. If you have an application suspended by using this trick, you won't be able to execute other programs from the Midnight Commander until you terminate the suspended application.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="directory-panels"&gt;
+&lt;h3&gt;directory panels&lt;/h3&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name"&gt;
+&lt;col class="field-body"&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Tab, C-i:&lt;/th&gt;&lt;td class="field-body"&gt;切換 panel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Insert, C-t:&lt;/th&gt;&lt;td class="field-body"&gt;to tag files you may use the Insert key (the kich1 terminfo sequence). To untag files, just retag a tagged file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;M-e:&lt;/th&gt;&lt;td class="field-body"&gt;選擇編碼&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name" colspan="2"&gt;Alt-g, Alt-r, Alt-j:&lt;/th&gt;&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;td&gt; &lt;/td&gt;&lt;td class="field-body"&gt;used to select the top file in a panel, the middle file and the bottom one, respectively.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-s, Alt-s:&lt;/th&gt;&lt;td class="field-body"&gt;尋找目前目錄下的檔案。可連續按 C-s 連續尋找。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-t:&lt;/th&gt;&lt;td class="field-body"&gt;切換表列模式。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;:C-: 書籤&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name"&gt;
+&lt;col class="field-body"&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;+:&lt;/th&gt;&lt;td class="field-body"&gt;(plus) this is used to select (tag) a group of files.
+The Midnight Commander will prompt for a selection options.
+When Files only checkbox is on, only files will be selected.
+If Files only is off, as files as directories will be selected.
+When Shell Patterns checkbox is on, the regular expression is much like the filename globbing
+in the shell (* standing for zero or more characters and ? standing for one character).
+If Shell Patterns is off, then the tagging of files is done with normal regular expressions (see ed (1)).
+When Case sensitive checkbox is on, the selection will be case sensitive characters.
+If Case sensitive is off, the case will be ignored.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;:: (backslash) use the "" key to unselect a group of files. This is the opposite of the Plus key.&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name"&gt;
+&lt;col class="field-body"&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;up-key, C-p:&lt;/th&gt;&lt;td class="field-body"&gt;move the selection bar to the previous entry in the panel.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;down-key, C-n:&lt;/th&gt;&lt;td class="field-body"&gt;move the selection bar to the next entry in the panel.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name" colspan="2"&gt;home, a1, Alt-&amp;lt;:&lt;/th&gt;&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;td&gt; &lt;/td&gt;&lt;td class="field-body"&gt;move the selection bar to the first entry in the panel.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;end, c1, Alt-&amp;gt;:&lt;/th&gt;&lt;td class="field-body"&gt;move the selection bar to the last entry in the panel.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;next-page, C-v:&lt;/th&gt;&lt;td class="field-body"&gt;move the selection bar one page down.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name" colspan="2"&gt;prev-page, Alt-v:&lt;/th&gt;&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;td&gt; &lt;/td&gt;&lt;td class="field-body"&gt;move the selection bar one page up.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-o:&lt;/th&gt;&lt;td class="field-body"&gt;If the currently selected file is a directory, load that directory on the other panel
+and moves the selection to the next file.
+If the currently selected file is not a directory, load the parent directory on the other panel
+and moves the selection to the next file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-i:&lt;/th&gt;&lt;td class="field-body"&gt;在另一個 panel 中，開啟目前 panel 的目錄&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name" colspan="2"&gt;C-PageUp, C-PageDown:&lt;/th&gt;&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;td&gt; &lt;/td&gt;&lt;td class="field-body"&gt;only when supported by the terminal:
+change to ".." and to the currently selected directory respectively.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-y:&lt;/th&gt;&lt;td class="field-body"&gt;moves to the previous directory in the history, equivalent to clicking the &amp;lt; with the mouse.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-u:&lt;/th&gt;&lt;td class="field-body"&gt;moves to the next directory in the history, equivalent to clicking the &amp;gt; with the mouse.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name" colspan="2"&gt;Alt-Shift-h, Alt-H:&lt;/th&gt;&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;td&gt; &lt;/td&gt;&lt;td class="field-body"&gt;displays the directory history, equivalent to depressing the 'v' with the mouse.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="shell-command-line"&gt;
+&lt;h3&gt;Shell Command Line&lt;/h3&gt;
+&lt;p&gt;This section lists keys which are useful to avoid excessive typing when entering shell commands.&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name"&gt;
+&lt;col class="field-body"&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-Enter:&lt;/th&gt;&lt;td class="field-body"&gt;copy the currently selected file name to the command line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-Enter:&lt;/th&gt;&lt;td class="field-body"&gt;same a Alt-Enter. May not work on remote systems and some terminals.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-Shift-Enter:&lt;/th&gt;&lt;td class="field-body"&gt;copy the full path name of the currently selected file to the command line.
+May not work on remote systems and some terminals.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-Tab:&lt;/th&gt;&lt;td class="field-body"&gt;does the filename, command, variable, username and hostname completion for you.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x t, C-x C-t:&lt;/th&gt;&lt;td class="field-body"&gt;copy the tagged files (or if there are no tagged files, the selected file) of the current panel (C-x t)
+or of the other panel (C-x C-t) to the command line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-x p, C-x C-p:&lt;/th&gt;&lt;td class="field-body"&gt;the first key sequence copies the current path name to the command line,
+and the second one copies the unselected panel's path name to the command line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-q:&lt;/th&gt;&lt;td class="field-body"&gt;the quote command can be used to insert characters that are otherwise interpreted by the Midnight Commander
+(like the '+' symbol)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-p, Alt-n:&lt;/th&gt;&lt;td class="field-body"&gt;use these keys to browse through the command history.
+Alt-p takes you to the last entry, Alt-n takes you to the next one.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-h:&lt;/th&gt;&lt;td class="field-body"&gt;displays the history for the current input line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="general-movement-keys"&gt;
+&lt;h3&gt;General Movement Keys&lt;/h3&gt;
+&lt;p&gt;The help viewer, the file viewer and the directory tree use common code to handle moving. Therefore they accept exactly the same keys. Each of them also accepts some keys of its own.&lt;/p&gt;
+&lt;p&gt;Other parts of the Midnight Commander use some of the same movement keys, so this section may be of use for those parts too.&lt;/p&gt;
+&lt;p&gt;Up, C-p
+moves one line backward.
+Down, C-n
+moves one line forward.
+Prev Page, Page Up, Alt-v
+moves one page up.
+Next Page, Page Down, C-v
+moves one page down.
+Home, A1
+moves to the beginning.
+End, C1
+move to the end.
+The help viewer and the file viewer accept the following keys in addition the to ones mentioned above:
+b, C-b, C-h, Backspace, Delete
+moves one page up.
+Space bar
+moves one page down.
+u, d
+moves one half of a page up or down.&lt;/p&gt;
+&lt;p&gt;g, G&lt;/p&gt;
+&lt;p&gt;moves to the beginning or to the end.&lt;/p&gt;
+&lt;p&gt;Input Line Keys&lt;/p&gt;
+&lt;p&gt;The input lines (they are used for the command line and for the query dialogs in the program) accept these keys:&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name"&gt;
+&lt;col class="field-body"&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-a:&lt;/th&gt;&lt;td class="field-body"&gt;puts the cursor at the beginning of line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-e:&lt;/th&gt;&lt;td class="field-body"&gt;puts the cursor at the end of the line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-b, move-left:&lt;/th&gt;&lt;td class="field-body"&gt;move the cursor one position left.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name" colspan="2"&gt;C-f, move-right:&lt;/th&gt;&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;td&gt; &lt;/td&gt;&lt;td class="field-body"&gt;move the cursor one position right.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-f:&lt;/th&gt;&lt;td class="field-body"&gt;moves one word forward.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-b:&lt;/th&gt;&lt;td class="field-body"&gt;moves one word backward.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-h, backspace:&lt;/th&gt;&lt;td class="field-body"&gt;delete the previous character.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-d, Delete:&lt;/th&gt;&lt;td class="field-body"&gt;delete the character in the point (over the cursor).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-@:&lt;/th&gt;&lt;td class="field-body"&gt;sets the mark for cutting.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-w:&lt;/th&gt;&lt;td class="field-body"&gt;copies the text between the cursor and the mark to a kill buffer and removes the text from the input line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-w:&lt;/th&gt;&lt;td class="field-body"&gt;copies the text between the cursor and the mark to a kill buffer.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-y:&lt;/th&gt;&lt;td class="field-body"&gt;yanks back the contents of the kill buffer.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;C-k:&lt;/th&gt;&lt;td class="field-body"&gt;kills the text from the cursor to the end of the line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-p, Alt-n:&lt;/th&gt;&lt;td class="field-body"&gt;Use these keys to browse through the command history.
+Alt-p takes you to the last entry, Alt-n takes you to the next one.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name" colspan="2"&gt;Alt-C-h, Alt-Backspace:&lt;/th&gt;&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;td&gt; &lt;/td&gt;&lt;td class="field-body"&gt;delete one word backward.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;Alt-Tab:&lt;/th&gt;&lt;td class="field-body"&gt;does the filename, command, variable, username and hostname completion for you.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>linux</category><category>mc</category><guid>https://mariolong.github.io/posts/midnight-commander/</guid><pubDate>Wed, 17 Dec 2014 06:23:00 GMT</pubDate></item></channel></rss>

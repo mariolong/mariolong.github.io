@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：cron)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cron.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 May 2018 07:25:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>archlinux enable cron</title><link>https://mariolong.github.io/posts/archlinux-enable-cron/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
+&amp;lt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/cron"&gt;https://wiki.archlinux.org/index.php/cron&lt;/a&gt;&amp;gt;&lt;/blockquote&gt;
+&lt;div class="section" id="installation"&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch linux until May 2011.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="configuration"&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;Activation and autostart&lt;/p&gt;
+&lt;p&gt;cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_ecda5174e0914ce3be4ca4a4dbfa49e3-1"&gt;&lt;/a&gt;$ systemctl is-enabled cronie
+&lt;/pre&gt;&lt;p&gt;Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_252e2ea9cf0946e798221c560bf61dbb-1"&gt;&lt;/a&gt;# systemctl start cronie
+&lt;a name="rest_code_252e2ea9cf0946e798221c560bf61dbb-2"&gt;&lt;/a&gt;# systemctl enable cronie
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="default-editor"&gt;
+&lt;h2&gt;Default editor&lt;/h2&gt;
+&lt;p&gt;To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_7e6c4f85add94a4e892e00c789eaed83-1"&gt;&lt;/a&gt;# /etc/profile.d/nano-default-editor
+&lt;/pre&gt;&lt;p&gt;加上：&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_8faf02396f7e4946a0d64a8299552b4f-1"&gt;&lt;/a&gt;#!/bin/sh
+&lt;a name="rest_code_8faf02396f7e4946a0d64a8299552b4f-2"&gt;&lt;/a&gt;export EDITOR=/usr/bin/nano
+&lt;/pre&gt;&lt;p&gt;修改權限：&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_6a28acb956574686acd09cb8d108f0ca-1"&gt;&lt;/a&gt;#chmod +x /etc/profile.d/nano-default-editor
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="crontab-format"&gt;
+&lt;h2&gt;Crontab format&lt;/h2&gt;
+&lt;p&gt;The basic format for a crontab is:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+minute hour day_of_month month day_of_week command
+minute values can be from 0 to 59.
+hour values can be from 0 to 23.
+day_of_month values can be from 1 to 31.
+month values can be from 1 to 12.
+day_of_week values can be from 0 to 6, with 0 denoting Sunday.
+
+Multiple times may be specified with a comma, a range can be given
+with a hyphen, and the asterisk symbol is a wildcard
+character. Spaces are used to separate fields. For example, the
+line: *0,*5 9-16 * 1-5,9-12 1-5
+
+~/bin/i_love_cron.sh Will execute the script i_love_cron.sh at five
+minute intervals from 9 AM to 4:55 PM on weekdays except during the
+summer months (June, July, and August).
+
+More examples and advanced configuration techniques can be found
+below.
+&lt;/pre&gt;
+&lt;div class="section" id="basic-commands"&gt;
+&lt;h3&gt;Basic commands&lt;/h3&gt;
+&lt;p&gt;Crontabs should never be edited directly; instead, users should use the crontab program to work with their crontabs. To be granted access to this command, user must be a member of the users group (see the gpasswd command).
+To view their crontabs, users should issue the command:
+$ crontab -l
+To edit their crontabs, they may use:
+$ crontab -e
+To remove their crontabs, they should use:
+$ crontab -r
+If a user has a saved crontab and would like to completely overwrite their old crontab, he or she should use:
+$ crontab saved_crontab_filename
+To overwrite a crontab from the command line (Wikipedia:stdin), use
+$ crontab -
+To edit somebody else's crontab, issue the following command as root:
+# crontab -u username -e
+This same format (appending -u username to a command) works for listing and deleting crontabs as well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="examples"&gt;
+&lt;h3&gt;Examples&lt;/h3&gt;
+&lt;p&gt;The entry:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+01 * * * * /bin/echo Hello, world!
+&lt;/pre&gt;
+&lt;p&gt;runs the command /bin/echo Hello, world! on the first minute of every hour of every day of every month (i.e. at 12:01, 1:01, 2:01, etc.).
+Similarly:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+*/5 * * jan mon-fri /bin/echo Hello, world!
+&lt;/pre&gt;
+&lt;p&gt;runs the same job every five minutes on weekdays during the month of January (i.e. at 12:00, 12:05, 12:10, etc.).&lt;/p&gt;
+&lt;p&gt;The line (as noted in "man 5 crontab"):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+*0,*5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
+    0-35/5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
+&lt;/pre&gt;
+&lt;p&gt;will execute the script i_love_cron.sh at five minute intervals from 9 AM to 5 PM (excluding 5 PM itself) every weekday (Mon-Fri) of every month except during the summer (June, July, and August).
+Periodical settings can also be entered as in this crontab template:
+# Chronological table of program loadings
+# Edit with "crontab" for proper functionality, "man 5 crontab" for formatting
+# User: johndoe&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;# mm  hh  DD  MM  W /path/progam [--option]...  ( W = weekday: 0-6 [Sun=0] )&lt;/dt&gt;
+&lt;dd&gt;21  01  *   *   * /usr/bin/systemctl hibernate
+@weekly           $HOME/.local/bin/trash-empty&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>cron</category><category>linux</category><guid>https://mariolong.github.io/posts/archlinux-enable-cron/</guid><pubDate>Sun, 02 Mar 2014 08:31:27 GMT</pubDate></item></channel></rss>

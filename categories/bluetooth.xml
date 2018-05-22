@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：bluetooth)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/bluetooth.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 May 2018 07:19:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>藍牙小鍵盤</title><link>https://mariolong.github.io/posts/bluetooth-keyboard/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;本文參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Bluetooth_Keyboard"&gt;archlinux wiki: Bluetooth Keyboard&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S bluez bluez-utils
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;p&gt;配置的工作主要是配對和自動連上藍牙鍵盤。&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;配對&lt;/h3&gt;
+&lt;p&gt;用 &lt;tt class="docutils literal"&gt;bluetoothctl &lt;span class="pre"&gt;-a&lt;/span&gt;&lt;/tt&gt; 執行配對的工作，按照下列的指令，一步一步執行即可。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ bluetoothctl -a
+[bluetooth]# power on
+[bluetooth]# agent KeyboardOnly
+[bluetooth]# default-agent
+[bluetooth]# pairable on
+[bluetooth]# scan on
+[bluetooth]# pair 01:02:03:04:05:06
+[bluetooth]# trust 01:02:03:04:05:06
+[bluetooth]# connect 01:02:03:04:05:06
+[bluetooth]# quit
+&lt;/pre&gt;
+&lt;p&gt;執行到 &lt;tt class="docutils literal"&gt;scan&lt;/tt&gt; 時，鍵盤必須是在可配對模式。&lt;/p&gt;
+&lt;p&gt;執行到 &lt;tt class="docutils literal"&gt;pair&lt;/tt&gt; 時，會出現配對碼，這時候要在藍牙鍵盤上輸入配對碼，再按 &amp;lt;enter&amp;gt;。哈哈，配對完成。&lt;/p&gt;
+&lt;p&gt;其它的步驟就簡單啦。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;開機時自動連上藍牙鍵盤&lt;/h3&gt;
+&lt;p&gt;為了能讓鍵盤開機後就可以使用，必須執行 2 個 systemd service： &lt;tt class="docutils literal"&gt;bluetooth.service&lt;/tt&gt; 和 &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt; 。
+其中 &lt;tt class="docutils literal"&gt;bluetooth.service&lt;/tt&gt; 安裝 &lt;tt class="docutils literal"&gt;bluez&lt;/tt&gt; 時會產生， &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt; 就得自己建立。&lt;/p&gt;
+&lt;div class="section" id="bluetooth-service"&gt;
+&lt;h4&gt;啟動 &lt;tt class="docutils literal"&gt;bluetooth.service&lt;/tt&gt;&lt;/h4&gt;
+&lt;pre class="literal-block"&gt;
+systemctl enable bluetooth.service
+&lt;/pre&gt;
+&lt;p&gt;這個步驟很重要，因為它會自動建立 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;dbus-org.bluez.service&lt;/span&gt;&lt;/tt&gt; 連結，而這個連結是 &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt; 需要的程式。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="btkbd-service"&gt;
+&lt;h4&gt;建立 &lt;tt class="docutils literal"&gt;btkbd.service&lt;/tt&gt;&lt;/h4&gt;
+&lt;p&gt;為了要建立這個 &lt;tt class="docutils literal"&gt;service&lt;/tt&gt; ，我們要知道鍵盤的 MAC 和 藍牙接收器的 id，分別用 &lt;tt class="docutils literal"&gt;bluetoothctl&lt;/tt&gt; 和 &lt;tt class="docutils literal"&gt;hcitool&lt;/tt&gt; 這 2 隻程式取得。&lt;/p&gt;
+&lt;div class="section" id="id"&gt;
+&lt;h5&gt;取得 id&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+$ hcitool dev
+Devices:
+        hci0 00:15:83:43:C8:EA
+&lt;/pre&gt;
+&lt;p&gt;此處的 &lt;tt class="docutils literal"&gt;hci0&lt;/tt&gt; 即為藍牙接收器的 id。&lt;/p&gt;
+&lt;p&gt;另外鍵盤的 MAC，在用 &lt;tt class="docutils literal"&gt;bluetoothctl&lt;/tt&gt; 配對鍵盤時，就已經知道了，此時調出來看一下就好。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ bluetoothctl
+[NEW] Controller 00:15:83:43:C8:EA arch-64 [default]
+[NEW] Device 20:13:50:00:1F:E2 Bluetooth Keyboard
+&lt;/pre&gt;
+&lt;p&gt;第二行的那 6 個數字即是我們要的 MAC。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="etc-btkbd-conf"&gt;
+&lt;h5&gt;建立 &lt;tt class="docutils literal"&gt;/etc/btkbd.conf&lt;/tt&gt;&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+# Config file for btkbd.service
+# change when required (e.g. keyboard hardware changes, more hci devices are connected)
+BTKBDMAC = 20:13:50:00:1F:E2
+HCIDEVICE = hci0
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="etc-systemd-system-btkbd-service"&gt;
+&lt;h5&gt;建立 &lt;tt class="docutils literal"&gt;/etc/systemd/system/btkbd.service&lt;/tt&gt;&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+[Unit]
+Description=systemd Unit to automatically start a Bluetooth keyboard
+Documentation=https://wiki.archlinux.org/index.php/Bluetooth_Keyboard
+Requires=dbus-org.bluez.service
+After=dbus-bluez.org.service
+ConditionPathExists=/etc/btkbd.conf
+ConditionPathExists=/usr/bin/hcitool
+ConditionPathExists=/usr/bin/hciconfig
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/btkbd.conf
+ExecStart=
+ExecStart=/usr/bin/hciconfig ${HCIDEVICE} up
+# ignore errors on connect, spurious problems with bt? so start next command with -
+ExecStart=-/usr/bin/hcitool cc ${BTKBDMAC}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h5&gt;啟動鍵盤服務&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo systemctl enable btkbd
+&lt;/pre&gt;
+&lt;p&gt;至此，開機即可享受到藍牙鍵盤的無線魅力。如果，要省電，用完鍵盤後，即可關掉電源。
+等到要用時，再把電源打開，讓它自動連上主機，再為我們服務囉。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;結語&lt;/h2&gt;
+&lt;p&gt;一個很有質感的藍牙鍵盤，放在客廳的 HTPC 邊，一點都不會覺得很奇怪。&lt;/p&gt;
+&lt;p&gt;在配對時，一開始不知道要在鍵盤上輸入配對碼，只是一直等待，所以，一直沒辦法使用。
+在手冊上突然看到了一句話，就這樣連線成功。當我在藍牙鍵盤上按下按鍵，在螢幕上看到了相對應的字出現時，真是開心啊。&lt;/p&gt;
+&lt;p&gt;linux 就是這樣好玩。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;update:2014-7-9&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不知道什麼原因，用 systemd 的方法，第一次試是成功的，後來就不知何種原因，怎麼都無法啟動。
+算了，我也不想深究。&lt;/p&gt;
+&lt;p&gt;直接用另一個方法，比較簡單，有 udev 即可。
+參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Bluetooth#Configuration_via_the_CLI"&gt;archlinux wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;先用 bluetoothctl 將藍牙鍵盤配對好，記住 hci device 的編號 (hci0)，再在 udev 增加一條規則：
+編輯 /etc/udev/rules.d/10-local.rules&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# Set bluetooth power up
+ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
+&lt;/pre&gt;
+&lt;p&gt;這樣子開機就會自動載入藍牙鍵盤。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>bluetooth</category><category>linux</category><guid>https://mariolong.github.io/posts/bluetooth-keyboard/</guid><pubDate>Fri, 27 Jun 2014 01:06:38 GMT</pubDate></item></channel></rss>

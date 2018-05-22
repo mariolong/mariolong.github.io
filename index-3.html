@@ -155,9 +155,9 @@ $ yaourt -S pacpl
 </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>大約 2012 年 11 月，正式開始了 Linux 之旅。一開始用的是 Archlinux，到現在還是用它。</p>
+<p>大約 2012 年 11 月，正式開始了 linux 之旅。一開始用的是 Archlinux，到現在還是用它。</p>
 <p>桌面，一直用的是 LXDE，後來換成 GNOME 3.10 約 2 個星期，又換到 KDE。
-到了 KDE 才發現 Linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。</p>
+到了 KDE 才發現 linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。</p>
 <p>記錄一下我的 KDE 系統。</p>
 <div class="section" id="install">
 <h2>Install</h2>
@@ -176,7 +176,7 @@ yaourt -S --needed --noconfirm kdebase kdebase-workspace kde-l10n-zh_tw oxygen-g
 提到了 qtcurve，gtk-qt-engine 可惜都不適用。</p>
 <p>qtcurve 的樣子看起來是不錯，可惜，不支援 gtk3。造成 gtk3 的程式還是醜。</p>
 <p>最後，選用了 <a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B">oxygen-gtk</a> 的解決方案。</p>
-<pre class="code text"><a name="rest_code_af6a158f7b7f434c9c777a62b4ae5e7d-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
+<pre class="code text"><a name="rest_code_90271e4021ea4e07adceb42b5d254d4e-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
 </pre>
 </div>
 <div class="section" id="qt4">
@@ -190,12 +190,12 @@ qtconfig-qt4
 <div class="section" id="stop-akonadi">
 <h3>stop akonadi</h3>
 <p>參考 <a class="reference external" href="http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable">http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable</a></p>
-<pre class="code text"><a name="rest_code_3ae3a70e4e66472faff75f089101ad36-1"></a>akonadictl stop
-<a name="rest_code_3ae3a70e4e66472faff75f089101ad36-2"></a>sudo systemctl stop mysqld
-<a name="rest_code_3ae3a70e4e66472faff75f089101ad36-3"></a>sudo systemctl disable mysqld
+<pre class="code text"><a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-1"></a>akonadictl stop
+<a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-2"></a>sudo systemctl stop mysqld
+<a name="rest_code_a5fe667f6a674195ac31cd96c25ab599-3"></a>sudo systemctl disable mysqld
 </pre>
 <p>修改 <tt class="docutils literal"><span class="pre">~/.config/akonadi/akonadiserverrc</span></tt></p>
-<pre class="code text"><a name="rest_code_82df2b9fe3ba4e2c820d4648179e7587-1"></a>StartServer=false
+<pre class="code text"><a name="rest_code_cb8f1fef76d24f1d8e92b0461c13b44a-1"></a>StartServer=false
 </pre>
 </div>
 <div class="section" id="cursor-theme">
@@ -203,13 +203,13 @@ qtconfig-qt4
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_Themes">https://wiki.archlinux.org/index.php/Cursor_Themes</a></p>
 <p>不知道什麼原因，滑鼠游標的型狀，老是會變成 x 的游標主題，做個小小的軟連結，讓游標好看一點。
 但我相信這個不是正解，只是 google 了好久，總找不到根本解法，先治標吧。</p>
-<pre class="code text"><a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-1"></a>$ mkdir ~/.icons
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-3"></a># mkdir -p /usr/share/icons/default
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-4"></a># nano /usr/share/icons/default/index.theme
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-5"></a>
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-6"></a>[icon theme]
-<a name="rest_code_f2c48744e5774638ad99da1d3bb4afbb-7"></a>Inherits=Oxygen_Black
+<pre class="code text"><a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-1"></a>$ mkdir ~/.icons
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-3"></a># mkdir -p /usr/share/icons/default
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-4"></a># nano /usr/share/icons/default/index.theme
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-5"></a>
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-6"></a>[icon theme]
+<a name="rest_code_c98171ef68fa4daaa6c282ea28b8bffa-7"></a>Inherits=Oxygen_Black
 </pre>
 </div>
 <div class="section" id="id1">
@@ -355,14 +355,14 @@ yaourt -S kdesdk-kate
     <div>
 <div class="section" id="ide">
 <h2>文字編輯 IDE</h2>
-<p>Geany <a class="reference external" href="posts/geany-xin-de/">Geany使用心得</a></p>
+<p>Geany <a class="reference external" href="posts/geany-xin-de/">Geany 使用心得</a></p>
 <p>Kate <a class="reference external" href="posts/kate-KDE-Advance-Text-Edit/">Kate, KDE Advance Text Editor</a></p>
 </div>
 <div class="section" id="id1">
 <h2>版本控管</h2>
 <div class="section" id="id2">
 <h3>安裝</h3>
-<pre class="code text"><a name="rest_code_f2cdce3f416846aabe34fa5e806ffb25-1"></a>yaourt -S git qgit meld
+<pre class="code text"><a name="rest_code_980f4fef4a534ad0ac8fbe358028cb29-1"></a>yaourt -S git qgit meld
 </pre>
 <p>qgit 可直接使用 meld 做文件比對。
 進 qgit，選擇工能表 Edit&gt;Setting&gt;General&gt;External diff tool，將此填入 meld 即可使用。</p>
@@ -679,47 +679,55 @@ $ systemctl enable dnsmasq
 &lt;<a class="reference external" href="https://wiki.archlinux.org/index.php/cron">https://wiki.archlinux.org/index.php/cron</a>&gt;</blockquote>
 <div class="section" id="installation">
 <h2>Installation</h2>
-<p>cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch Linux until May 2011.</p>
+<p>cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch linux until May 2011.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration</h2>
 <p>Activation and autostart</p>
 <p>cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:</p>
-<pre class="code text"><a name="rest_code_052170fb13c548ca99789dff0cdee6a3-1"></a>$ systemctl is-enabled cronie
+<pre class="code text"><a name="rest_code_ecda5174e0914ce3be4ca4a4dbfa49e3-1"></a>$ systemctl is-enabled cronie
 </pre>
 <p>Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:</p>
-<pre class="code text"><a name="rest_code_6a5e095f7ea643619ad095ec6c45696c-1"></a># systemctl start cronie
-<a name="rest_code_6a5e095f7ea643619ad095ec6c45696c-2"></a># systemctl enable cronie
+<pre class="code text"><a name="rest_code_252e2ea9cf0946e798221c560bf61dbb-1"></a># systemctl start cronie
+<a name="rest_code_252e2ea9cf0946e798221c560bf61dbb-2"></a># systemctl enable cronie
 </pre>
 </div>
 <div class="section" id="default-editor">
 <h2>Default editor</h2>
 <p>To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:</p>
-<pre class="code text"><a name="rest_code_4750fa0b17fc42f48a1dab5d61ed9102-1"></a># /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_7e6c4f85add94a4e892e00c789eaed83-1"></a># /etc/profile.d/nano-default-editor
 </pre>
 <p>加上：</p>
-<pre class="code text"><a name="rest_code_1b412ba98a594d4a9f3540c337bfce60-1"></a>#!/bin/sh
-<a name="rest_code_1b412ba98a594d4a9f3540c337bfce60-2"></a>export EDITOR=/usr/bin/nano
+<pre class="code text"><a name="rest_code_8faf02396f7e4946a0d64a8299552b4f-1"></a>#!/bin/sh
+<a name="rest_code_8faf02396f7e4946a0d64a8299552b4f-2"></a>export EDITOR=/usr/bin/nano
 </pre>
 <p>修改權限：</p>
-<pre class="code text"><a name="rest_code_8785b930c5bf46c5a8c8ee47d45097dd-1"></a>#chmod +x /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_6a28acb956574686acd09cb8d108f0ca-1"></a>#chmod +x /etc/profile.d/nano-default-editor
 </pre>
 </div>
 <div class="section" id="crontab-format">
 <h2>Crontab format</h2>
-<p>The basic format for a crontab is:
+<p>The basic format for a crontab is:</p>
+<pre class="literal-block">
 minute hour day_of_month month day_of_week command
 minute values can be from 0 to 59.
 hour values can be from 0 to 23.
 day_of_month values can be from 1 to 31.
 month values can be from 1 to 12.
 day_of_week values can be from 0 to 6, with 0 denoting Sunday.
-Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
-<a href="posts/archlinux-enable-cron/#id1"><span class="problematic" id="id2">*</span></a>0,*5 9-16 * 1-5,9-12 1-5 ~/bin/i_love_cron.sh
-Will execute the script i_love_cron.sh at five minute intervals from 9 AM to 4:55 PM on weekdays except during the summer months (June, July, and August). More examples and advanced configuration techniques can be found below.</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 54); <em><a href="posts/archlinux-enable-cron/#id2">backlink</a></em></p>
-Inline emphasis start-string without end-string.</div>
+
+Multiple times may be specified with a comma, a range can be given
+with a hyphen, and the asterisk symbol is a wildcard
+character. Spaces are used to separate fields. For example, the
+line: *0,*5 9-16 * 1-5,9-12 1-5
+
+~/bin/i_love_cron.sh Will execute the script i_love_cron.sh at five
+minute intervals from 9 AM to 4:55 PM on weekdays except during the
+summer months (June, July, and August).
+
+More examples and advanced configuration techniques can be found
+below.
+</pre>
 <div class="section" id="basic-commands">
 <h3>Basic commands</h3>
 <p>Crontabs should never be edited directly; instead, users should use the crontab program to work with their crontabs. To be granted access to this command, user must be a member of the users group (see the gpasswd command).

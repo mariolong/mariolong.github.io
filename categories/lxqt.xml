@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：lxqt)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/lxqt.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 May 2018 03:55:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>udiskie: usb storage automount</title><link>https://mariolong.github.io/posts/udiskie-usb-storage-automount/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;這陣子用了一些方便想自動掛載「移動裝置」，最後決定用 udiskie，小小地記錄下來，備查。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：lxqt)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/lxqt.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 May 2018 07:19:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>udiskie: usb storage automount</title><link>https://mariolong.github.io/posts/udiskie-usb-storage-automount/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;這陣子用了一些方便想自動掛載「移動裝置」，最後決定用 udiskie，小小地記錄下來，備查。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;upadte&lt;/strong&gt; 2014-10-24: 用 lxqt-panel + removable meida/device manager plugin + libfm，即可自動掛載。
 一定要裝 libfm 才能在 removable media/devices meanger 中看到 usb 移動裝置。&lt;/p&gt;
 &lt;p&gt;它會使用 udisk2 執行掛載，應該是配合 KF5 吧。&lt;/p&gt;
@@ -26,4 +26,192 @@ $ udiskie &amp;amp;
 &lt;p&gt;如果有移動裝置插入 usb 時，要自動掛載。
 則可在 ~/.xinitrc 中加上 &lt;tt class="docutils literal"&gt;udiskie &amp;amp;&lt;/tt&gt; 讓它在背景執行。&lt;/p&gt;
 &lt;p&gt;如此就方便了，可以自動掛載，也可以手自動卸載。&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>desktop</category><category>Linux</category><category>lxqt</category><guid>https://mariolong.github.io/posts/udiskie-usb-storage-automount/</guid><pubDate>Thu, 23 Oct 2014 13:48:57 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>desktop</category><category>linux</category><category>lxqt</category><guid>https://mariolong.github.io/posts/udiskie-usb-storage-automount/</guid><pubDate>Thu, 23 Oct 2014 13:48:57 GMT</pubDate></item><item><title>lxqt</title><link>https://mariolong.github.io/posts/lxqt/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;update&lt;/strong&gt;: 2016/9/19, 2015-5-25, 2014-10-27, 2014-10-15, 2014-10-13, 2014-6-6&lt;/p&gt;
+&lt;p&gt;lxqt 就是 lxde 的 qt 版？！&lt;/p&gt;
+&lt;p&gt;可能沒有這麼簡單吧。整個使用的感覺很不錯，比 lxde 容易，預設就好看得多。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2015-5-25&lt;/strong&gt; 這次完全改寫了，原來 lxqt-panel 拿掉，
+用 xmonad/taffybar 取代。&lt;/p&gt;
+&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title first"&gt;Table of Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#id1" id="id8"&gt;安裝&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#id2" id="id9"&gt;配置&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#wm" id="id10"&gt;修改預設的 wm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#id3" id="id11"&gt;外觀設定&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#id5" id="id12"&gt;其它工具&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#lxqt-runner-lxqt-globalkeys" id="id13"&gt;lxqt-runner+lxqt-globalkeys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#pcmanfm-qt" id="id14"&gt;pcmanfm-qt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#file-roller" id="id15"&gt;file-roller&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#speedcrunch" id="id16"&gt;speedcrunch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#id6" id="id17"&gt;結論&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="https://mariolong.github.io/posts/lxqt/#id7" id="id18"&gt;後記&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id8"&gt;安裝&lt;/a&gt;&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S lxqt-common lxqt-config lxqt-session lxqt-policykit lxqt-globalkeys lxqt-runner lxqt-qtplugin
+&lt;/pre&gt;
+&lt;p&gt;裝一些 lxqt 用的常用的軟體&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S pcmanfm-qt gvfs-mtp gvfs-gphoto2 file-roller speedcrunch screengrab gksu
+&lt;/pre&gt;
+&lt;p&gt;wm 一般都是用 openbox，我喜歡的是 xmonad &lt;a class="reference external" href="https://mariolong.github.io/posts/lxqt%2Bxmonad%2Btaffybar/"&gt;我的桌面組合 lxqt+xmonad+taffybar&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ cabal install xmonad xmonad-contrib taffybar
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id9"&gt;配置&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="wm"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id10"&gt;修改預設的 wm&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;執行 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lxqt-config-session&lt;/span&gt;&lt;/tt&gt; 修改「視窗管理員」。&lt;/p&gt;
+&lt;p&gt;或修改 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/lxqt/session.desktop&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+window_manager=xmonad
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id11"&gt;外觀設定&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;最重要的是讓 QT 和 GTK 的應用程式看起來很像。參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#oxygen-gtk"&gt;Archlinux Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="oxygen-gtk-gtk-qt"&gt;
+&lt;h4&gt;使用 oxygen-gtk 調和 gtk 和 qt 外觀&lt;/h4&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S oxygen oxygen-{gtk2,icons,cursors} ttf-oxygen
+&lt;/pre&gt;
+&lt;p&gt;因為 GTK 3.16 之後的版本不再支援 non-CSS themes，所以 oxygen-gtk 的方法就不適用於 GTK3。arch 也把 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;oxygen-gtk3&lt;/span&gt;&lt;/tt&gt; 拿掉了。
+不用只支援 GTK3 的主題應該就可以。&lt;/p&gt;
+&lt;p&gt;依據 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#oxygen-gtk"&gt;Archlinux Wiki&lt;/a&gt; 說明，&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Note: Before KDE 4.10, you needed to create the file ~/.kde4/share/config/gtkrc-2.0,
+or let it automatically create like described below.
+But that is actually counter-productive with KDE 4.10’s oxygen-gtk,
+and you should delete this file after upgrading to prevent it from messing with your colors.
+Cleanup-removal of ~/.kde4/share/config/gtkrc might be necessary, too.
+&lt;/pre&gt;
+&lt;p&gt;我把 gtkrc 與 gtkrc-2.0 這兩個檔砍了。&lt;/p&gt;
+&lt;div class="section" id="qt5"&gt;
+&lt;h5&gt;QT5&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+$ export QT_STYLE_OVERRIDE=gtk
+$ lxqt-config-appearance
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt4"&gt;
+&lt;h5&gt;QT4&lt;/h5&gt;
+&lt;pre class="literal-block"&gt;
+$ export QTCHOOSER_RUNTOOL=qtconfig
+$ export QT_SELECT=4
+$ qtconfig
+&lt;/pre&gt;
+&lt;p&gt;QT 的應用程式要用以上 2 個程式，修改主題為 GTK+，調整字型為自己喜歡的。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gtk-theme"&gt;
+&lt;h5&gt;GTK theme&lt;/h5&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;安裝 lxappearance，用這個選擇要用的 gtk 主題。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;布景主題用 numix archblue。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;圖示主題用 faenza icon theme，這個看起來用的人挺多的。&lt;/p&gt;
+&lt;p&gt;主題都改成扁平化設計，好看。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S lxappearance numix-themes-archblue faenza-icon-theme
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;google chrome 書籤列字型調整，原本的字實在太小。&lt;/p&gt;
+&lt;p&gt;用 lxappearance 調整 gtk 2, 3 主題中的字型和大小。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="xcursor-icons"&gt;
+&lt;h4&gt;xcursor icons&lt;/h4&gt;
+&lt;p&gt;以 xmonad 為視窗管理器時，剛開機時會顯示一個 x 的游標。在 &lt;tt class="docutils literal"&gt;.xinitrc&lt;/tt&gt; 加入:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+xsetroot -cursor_name left_ptr &amp;amp;
+&lt;/pre&gt;
+&lt;p&gt;有時進入桌面後，會發現游標變成 X 預設醜醜的樣子，我還是喜歡 Oxgen Black 的游標主題。改回來！
+參考：&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_themes#Getting_mouse_cursor_themes"&gt;https://wiki.archlinux.org/index.php/Cursor_themes#Getting_mouse_cursor_themes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有三種做法：&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="usr-share-icons-default-index-theme"&gt;
+&lt;h4&gt;1. 修改 &lt;tt class="docutils literal"&gt;/usr/share/icons/default/index.theme&lt;/tt&gt;&lt;/h4&gt;
+&lt;pre class="literal-block"&gt;
+[icon theme]
+Inherits=Oxgen_Black
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="icons-default"&gt;
+&lt;h4&gt;2. 也可以加個連結到 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.icons/default&lt;/span&gt;&lt;/tt&gt;&lt;/h4&gt;
+&lt;pre class="literal-block"&gt;
+$ ln -s /usr/share/icons/Oxgen_Black/ ~/.icons/default
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lxqt-config-appearance"&gt;
+&lt;h4&gt;3. 使用 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lxqt-config-appearance&lt;/span&gt;&lt;/tt&gt;&lt;/h4&gt;
+&lt;p&gt;執行「LXQt 外觀設定」，它會直接產生 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.icons/default/index.theme&lt;/span&gt;&lt;/tt&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; 此程式會在 ~/.Xdefaults 中加入 Xcursor.theme=&amp;lt;them_name&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建議用這個就好了，原因是方便。&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id12"&gt;其它工具&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="lxqt-runner-lxqt-globalkeys"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id13"&gt;lxqt-runner+lxqt-globalkeys&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;按下 Alt-F2 即可快速執行應用程式。
+試用過 synapse、kupfer，還是決定用 runner 就好了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pcmanfm-qt"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id14"&gt;pcmanfm-qt&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;lxqt 預設的檔案管理器，目前可用了，但還是有些小問題，習慣它。
+例如：滑鼠單擊執行程式的功能要先取消，否則在選擇多文件/檔案後，不好拖放。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S pcmanfm-qt gvfs-mtp
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="file-roller"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id15"&gt;file-roller&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;安裝後，記得到 pcmanfm-qt 中設定預設的壓縮程式。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S file-roller
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="speedcrunch"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id16"&gt;speedcrunch&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;很好用的計算器，就像寫數學公式，很親切的感覺。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S speedcrunch
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id17"&gt;結論&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;以前用 lxde 就覺得很不錯，也用了一整年。轉到 kde 是因為 htc 的關係。現在，我又回來用 lxqt，感覺很好。
+只要能解決以下 3 個問題&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;mtp，解決與 htc 連線的需求。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解法&lt;/strong&gt; ：用 pcmanfm-qt + gvfs-mtp。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;usb automount，這個應該不難。archlinux wiki 中有一些描述，可以試試。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解法&lt;/strong&gt; &lt;a class="reference external" href="https://mariolong.github.io/posts/udiskie-usb-storage-automount/"&gt;udiskie: usb storage automount&lt;/a&gt; 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;qbittorrent 中，能正確地開啟檔案所在目錄。現在是時有時無。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解法&lt;/strong&gt; 將 pcmanfm-qt 設為預設的檔案管理器&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ xdg-mime query default inode/directory
+$ xdg-mime default pcmanfm-qt.desktop inode/directory
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://mariolong.github.io/posts/lxqt/#id18"&gt;後記&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;非常滿足地用著 lxqt，感謝這個 team 的努力，讓我有個不錯的桌面可用。&lt;/p&gt;
+&lt;p&gt;在安裝 lxqt 的過程中，看到了一個看圖軟體 &lt;tt class="docutils literal"&gt;nomacs&lt;/tt&gt; ，看起來不錯用，先記錄下來吧，免得忘了。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>linux</category><category>lxde</category><category>lxqt</category><guid>https://mariolong.github.io/posts/lxqt/</guid><pubDate>Sun, 27 Apr 2014 01:06:38 GMT</pubDate></item></channel></rss>
