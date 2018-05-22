@@ -1,12 +1,12 @@
 #+BEGIN_COMMENT
 .. title: 塞斯．卡拉曼：價值投資中的 30 個重要投資思想
+.. slug: 30-thinkings
 .. date: 2017-08-29 16:54:00 UTC+08:00
-.. updated:
-.. comments: true
 .. tags: 汪汪財經
-.. layout: post
 .. category: investment
-.. permalink:
+.. link:
+.. description:
+.. type: text
 #+END_COMMENT
 #+OPTIONS: toc:nil ^:{}
 

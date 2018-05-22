@@ -1,7 +1,7 @@
 #+BEGIN_COMMENT
 .. title: alsa equaler
 .. slug: alsa-equaler
-.. date: 2018-01-15 06:20:29 UTC-08:00
+.. date: 2018-01-15 06:20:29 UTC+08:00
 .. tags: Linux, alsa, mpd, music
 .. category: computer
 .. link:

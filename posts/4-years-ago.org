@@ -1,12 +1,9 @@
 #+BEGIN_COMMENT
-.. title:注意！癌症發作前 2 年身體會出現的「徵兆」
+.. title: 注意！癌症發作前 2 年身體會出現的「徵兆」
+.. slug: 4-years-ago
 .. date: 2017-08-03 19:00:00
-.. updated:
-.. comments: true
 .. tags: 癌
-.. layout: post
 .. category: life
-.. permalink:
 .. options: toc:nil ^:{}
 #+END_COMMENT
 
