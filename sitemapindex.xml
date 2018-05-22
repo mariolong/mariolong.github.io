@@ -23,7 +23,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_computer.xml</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-21T10:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_investment.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_life.xml</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T04:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_linux.xml</loc>
@@ -67,7 +67,11 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/haskell.xml</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-21T10:13:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariolong.github.io/categories/health.xml</loc>
+  <lastmod>2018-05-22T04:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/kde.xml</loc>
@@ -111,7 +115,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/pandoc.xml</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-21T10:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/python.xml</loc>
@@ -124,6 +128,10 @@
  <sitemap>
   <loc>https://mariolong.github.io/categories/shi.xml</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariolong.github.io/categories/sleep.xml</loc>
+  <lastmod>2018-05-22T04:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/starbucks.xml</loc>
@@ -139,7 +147,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/xmonad.xml</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-21T10:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/yan.xml</loc>
@@ -147,10 +155,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/rss.xml</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T04:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/sitemap.xml</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T04:25:00Z</lastmod>
  </sitemap>
 </sitemapindex>

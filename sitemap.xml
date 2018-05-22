@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T04:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T04:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -106,6 +106,10 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/health/</loc>
+  <lastmod>2018-05-22T04:24:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/kde/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
@@ -162,6 +166,10 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/sleep/</loc>
+  <lastmod>2018-05-22T04:24:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/starbucks/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
@@ -215,7 +223,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
+  <lastmod>2018-05-22T04:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/30/</loc>
@@ -580,6 +588,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/what-i-live/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/wrong-time-go-to-bed/</loc>
+  <lastmod>2018-05-22T04:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/xterm/</loc>
