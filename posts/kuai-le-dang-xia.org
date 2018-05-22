@@ -1,0 +1,33 @@
+#+BEGIN_COMMENT
+.. title: 快樂，當下
+.. slug: kuai-le-dang-xia
+.. date: 2018-05-22 12:49:49 UTC+08:00
+.. tags: happy
+.. category: life
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+
+SOURCE: [[https://www.playpcesor.com/2017/09/time-Secrets-to-a-Happier-Life.html][來自 TIME 的快樂科學秘密：投入時間當下]] 電腦玩物原創作者 esor huang 異塵行者
+
+REF: [[http://time.com/4856944/secrets-happier-life/][6 Secrets to a Happier Life | Time]]
+
+#+BEGIN_QUOTE
+「專注且投入當下」才是真正的高效率定義，無論這段時間我做了什麼，只要我能進入忘我狀態，感覺自己 100% 投入時間中，我
+都覺得有高效率的產出。
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+「如果你的頭腦永遠在想下一個任務、下一個成就、下一個你需要談話的人。在
+這個過程中，你犧牲了現在的個人幸福，你就會持續累積負面情緒和巨大的壓
+力。」 - 6 Secrets to a Happier Life | Time
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+而我們永遠都會有目標還沒完成！永遠都會在成功之後還有下一個成功可以追求！那不就永遠都不會快樂了？
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+專注且投入到當下。
+#+END_QUOTE

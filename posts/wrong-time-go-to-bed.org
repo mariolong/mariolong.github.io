@@ -1,7 +1,7 @@
 #+BEGIN_COMMENT
 .. title: 錯誤時間睡覺，傷神又耗氣！
 .. slug: wrong-time-go-to-bed
-.. date: 2018-05-22 12:07:58 UTC-8:00
+.. date: 2018-05-22 12:07:58 UTC+08:00
 .. tags: sleep, health
 .. category: life
 .. link:
