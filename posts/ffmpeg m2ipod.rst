@@ -1,7 +1,8 @@
 .. slug: ffmpeg-xin-de
 .. link:
 .. title: ffmpeg 使用心得與整理
-.. tags: Linux
+.. tags: linux, ffmpeg
+.. category: computer
 .. description:
 .. date: 2013/05/02 10:45:30
 

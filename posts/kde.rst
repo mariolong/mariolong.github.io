@@ -2,13 +2,14 @@
 .. slug: kde
 .. date: 2014/04/08 08:34:18
 .. description:
-.. tags:
+.. category: computer
+.. tags: linux, kde
 .. link:
 
-大約 2012 年 11 月，正式開始了 Linux 之旅。一開始用的是 Archlinux，到現在還是用它。
+大約 2012 年 11 月，正式開始了 linux 之旅。一開始用的是 Archlinux，到現在還是用它。
 
 桌面，一直用的是 LXDE，後來換成 GNOME 3.10 約 2 個星期，又換到 KDE。
-到了 KDE 才發現 Linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。
+到了 KDE 才發現 linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。
 
 記錄一下我的 KDE 系統。
 

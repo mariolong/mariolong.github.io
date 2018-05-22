@@ -2,7 +2,7 @@
 .. title: post install for htpc
 .. slug: post-install-for-htpc
 .. date: 2017-12-29 01:14:13 UTC-08:00
-.. tags: Linux
+.. tags: linux
 .. category:
 .. link:
 .. description:

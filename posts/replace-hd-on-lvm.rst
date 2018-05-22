@@ -1,7 +1,7 @@
 .. title: replace hd on LVM
 .. slug: replace-hd-on-lvm
 .. date: 2015-06-11 23:52:30 UTC
-.. tags: Linux
+.. tags: linux
 .. category: computer
 .. link:
 .. description:

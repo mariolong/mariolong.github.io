@@ -1,7 +1,8 @@
 .. slug: geany-xin-de
 .. link:
-.. title: Geany使用心得
-.. tags: Linux
+.. title: Geany 使用心得
+.. tags: linux
+.. category: computer
 .. description:
 .. date: 2013/04/26 15:19:26
 

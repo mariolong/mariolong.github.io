@@ -1,7 +1,8 @@
 .. title: lxqt
 .. slug: lxqt
 .. date: 2014/04/27 09:06:38
-.. tags: Linux
+.. tags: linux, lxqt, lxde
+.. category: computer
 .. link:
 .. description:
 .. type: text

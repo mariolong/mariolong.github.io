@@ -1,7 +1,8 @@
 .. slug: lxde-pei-zhi
 .. link:
 .. title: lxde 配置
-.. tags: Linux
+.. tags: linux
+.. category: computer
 .. description:
 .. date: 2013/04/29 12:43:24
 
@@ -36,7 +37,7 @@ Install LXDE
 
     yaourt -S pcmanfm-git
 
-terminal改成 lilyterm
+terminal 改成 lilyterm
 -----------------------------------------------------------
 
 參考 `lilyterm 使用心得與整理 <./lilyterm.html>`_

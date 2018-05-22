@@ -1,8 +1,9 @@
-.. tags:
+.. title: linux 好好玩
+.. tags: linux
+.. category: computer
 .. link:
 .. slug: linuxhao-hao-wan
 .. date: 2013/11/12 14:22:09
-.. title: Linux 好好玩
 .. description:
 
 為什麼要用 linux？ 剛開始是不想再被 windows 綁架，windows 慢啊。
@@ -16,7 +17,7 @@
 既然要學 linux，就學得深入點兒，搞清楚 linux 內部是如何運作的。
 
 2013-5-13 update：從內核 3.6 開始用，到現在 3.9.2，只有一個感覺：快啊。
-Linux 的內核進步越來越快，用的資源反而變少了。
+linux 的內核進步越來越快，用的資源反而變少了。
 程式軟體執行的速度也越來越快，只有一個「爽」字可以形容。
 
 安裝

@@ -1,7 +1,8 @@
 .. slug: lilyterm
 .. link:
 .. title: lilyterm 使用心得與整理
-.. tags: Linux
+.. tags: linux
+.. category: computer
 .. description:
 .. date: 2013/05/13 10:45:30
 

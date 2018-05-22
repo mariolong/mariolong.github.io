@@ -1,7 +1,8 @@
 .. title: 程式開發工具
 .. slug: cheng-shi-kai-fa-gong
 .. date: 2014/03/19 05:29:35
-.. tags: Linux
+.. tags: linux, programming
+.. category: computer
 .. link:
 .. description:
 .. type: text
@@ -25,4 +26,3 @@ Kate :doc:`kate-KDE-Advance-Text-Edit`
 
 qgit 可直接使用 meld 做文件比對。
 進 qgit，選擇工能表 Edit>Setting>General>External diff tool，將此填入 meld 即可使用。
-

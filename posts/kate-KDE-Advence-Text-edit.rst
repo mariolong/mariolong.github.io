@@ -1,7 +1,8 @@
 .. title: Kate, KDE Advance Text Editor
 .. slug: kate-KDE-Advance-Text-Edit
 .. date: 2014/04/03 02:29:35
-.. tags: Linux,KDE
+.. tags: linux, kde
+.. category: computer
 .. link:
 .. description:
 .. type: text

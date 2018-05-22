@@ -1,7 +1,8 @@
 .. slug: LVM-on-archlinux
 .. link:
 .. title: LVM on Archlinux
-.. tags: Linux
+.. tags: linux
+.. category : computer
 .. description:
 .. date: 2013/04/30 12:41:30
 
@@ -160,20 +161,20 @@ auto mount by /etc/fstab
 ::
 
 	$ lsblk -f
-	
+
 做好 partition，
 將那顆硬碟設為 lvm pv
 ::
-	
+
 	$ gparted
 	$ lsblk -f
-	
+
 	NAME          FSTYPE                        LABEL    UUID                                   MOUNTPOINT
-	sdd                                                                                         
-	└─sdd1        LVM2_member                            hr0IbE-tO9I-vm9d-1x8f-iJwq-mrHj-bT0Pth 
+	sdd
+	└─sdd1        LVM2_member                            hr0IbE-tO9I-vm9d-1x8f-iJwq-mrHj-bT0Pth
 	  └─VG01-LV00 ext4                                   86068ca8-289d-480a-87db-2680b13d00e3   /mnt/data-lvm
-	sde           promise_fasttrack_raid_member                                                 
-	└─sde1        LVM2_member                            CGrblY-v1n3-Lzil-iwym-3Wyk-wPQS-Gqztrn 
+	sde           promise_fasttrack_raid_member
+	└─sde1        LVM2_member                            CGrblY-v1n3-Lzil-iwym-3Wyk-wPQS-Gqztrn
 
 
 pvcreate
@@ -181,11 +182,11 @@ pvcreate
 
 	$ sudo pvcreate /dev/sde1
 	Physical volume "/dev/sde1" successfully created
-	
+
 	$ sudo vgdisplay
 	  --- Volume group ---
 	  VG Name               VG01
-	  System ID             
+	  System ID
 	  Format                lvm2
 	  Metadata Areas        3
 	  Metadata Sequence No  3
@@ -203,10 +204,10 @@ pvcreate
 	  Alloc PE / Size       476932 / 1.82 TiB
 	  Free  PE / Size       357699 / 1.36 TiB
 	  VG UUID               8uHaKD-23zK-W5by-EJPE-5hpN-3PmN-6yY1Wl
-	
+
 vgextend
 ::
-	
+
 	$ sudo vgextend VG01 /dev/sde1
 	Volume group "VG01" successfully extended
 
@@ -253,16 +254,16 @@ df 看一下，發現 lv 容量增加囉
 	/dev/mapper/VG01-LV00 3364872816 1798895476 1409685920   57% /mnt/data-lvm
 
 
-What is the maximum size of a single LV? 
+What is the maximum size of a single LV?
 ========================================================================
 
 ref: http://www.tldp.org/HOWTO/LVM-HOWTO/lvm2faq.html
 
 The answer to this question depends upon the CPU architecture of your computer and the kernel you are a running:
 
-For 2.4 based kernels, the maximum LV size is 2TB. For some older kernels, 
-however, the limit was 1TB due to signedness problems in the block layer. 
-Red Hat Enterprise Linux 3 Update 5 has fixes to allow the full 2TB LVs. 
+For 2.4 based kernels, the maximum LV size is 2TB. For some older kernels,
+however, the limit was 1TB due to signedness problems in the block layer.
+Red Hat Enterprise linux 3 Update 5 has fixes to allow the full 2TB LVs.
 Consult your distribution for more information in this regard.
 
 For 32-bit CPUs on 2.6 kernels, the maximum LV size is 16TB.

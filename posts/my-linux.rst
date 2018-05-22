@@ -1,8 +1,8 @@
-.. title: My Linux
+.. title: My linux
 .. slug: my-linux
 .. date: 2016-05-12 09:55:41 UTC
-.. tags: Linux
-.. category:
+.. tags: linux
+.. category: computer
 .. link:
 .. description: setup my linux platform
 .. type: text
@@ -13,10 +13,10 @@ update: 2016-5-13
 這一年，幾乎沒有大的改變。
 
 ===============
-我的 Linux 平台
+我的 linux 平台
 ===============
 
-整理一下目前在 Linux 下，目前還在用的工具。試過後，不用的就不必放進來。
+整理一下目前在 linux 下，目前還在用的工具。試過後，不用的就不必放進來。
 
 目的是，如果有一天要重新安裝系統時，能快速完成，回到可工作狀態。
 
@@ -27,7 +27,7 @@ update: 2016-5-13
 
 :doc:`xterm`
 
-:doc:`zsh`
+fish: current shell
 
 桌面
 ====

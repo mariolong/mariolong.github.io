@@ -1,7 +1,8 @@
 .. title: 音樂檔案管理
 .. slug: rip-cd-flow
 .. date: 2014/05/22 15:06:00
-.. tags:
+.. tags: linux
+.. category: computer
 .. link:
 .. description:
 .. type: text
@@ -24,17 +25,17 @@ EAC (Windows)
 ~~~~~~~~~~~~
 這個重要，只要不與其的 cd 重複，將來轉入 itunes 時就方便識別。
 
-pacpl (Linux) --> 不用了
+pacpl (linux) --> 不用了
 ------------------------
 自動將 wav 轉為 aiff。
 
 執行 ``pacpl -t aiff *.wav`` ，將所有的 wav 轉成 aiff。
 
-sox (Linux)
+sox (linux)
 -----------
 改用 sox 的原因很簡單，因為 pacpl 也是 call sox 而已。
 
-kid3 (Linux)
+kid3 (linux)
 ------------
 有 2 個原因讓我不得不用 kid3 來編 tags。
 
@@ -45,7 +46,7 @@ kid3 (Linux)
 就這個原因，一定得用 kid3 囉。
 
 
-puddletag (Linux)
+puddletag (linux)
 -----------------
 比 kid3 輸入更快的 tag editor
 
@@ -66,11 +67,11 @@ itunes (Windows)
 這裡有個重點，現在的 itunes，在顯示曲風時，會用中文顯示。例如，jazz 顯示為「爵士樂」，真是多此一舉。
 還好的是，在檔案中還是儲存為 jazz。
 
-rsync (Linux)
+rsync (linux)
 -------------
 將轉入 itunes 的音樂備份到 linux。
 
-mpd (Linux)
+mpd (linux)
 -----------
 回到 linux 後可以用 mpd 來聽音樂。
 

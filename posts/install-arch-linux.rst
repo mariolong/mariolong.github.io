@@ -1,7 +1,8 @@
 .. link:
 .. title: Install Arch Linux
 .. slug: install-arch-linux
-.. tags: Linux
+.. tags: linux
+.. category : computer
 .. date: 2013/11/01 09:31:11
 .. description:
 
@@ -13,7 +14,7 @@
 製作開機片（CD、USB、硬碟）啓動
 ========================================================================
 
-從 Arch Linux Downloads 下載 archlinux.iso，建議用 bt.
+從 Arch linux Downloads 下載 archlinux.iso，建議用 bt.
 
 參考 https://wiki.archlinux.org/index.php/USB_flash_installation_media 製作開機片
 ::
@@ -24,7 +25,7 @@
 啟動 ArchLinux 安裝程序
 ========================================================================
 
-選擇從主菜單選擇 "Boot Arch Linux" 並按<enter>，系統將加載並給出登錄提示，自動以 'root' 登錄。
+選擇從主菜單選擇 "Boot Arch linux" 並按<enter>，系統將加載並給出登錄提示，自動以 'root' 登錄。
 
 建立網絡連接
 ========================================================================
@@ -159,13 +160,13 @@ DNS setup
 
     # nano /etc/pacman.d/mirrorlist
 
-Arch Linux 官方網站提供 `pacman mirrorlist generator <http://www.archlinux.org/mirrorlist/>`_ 可供使用者查詢。
+Arch linux 官方網站提供 `pacman mirrorlist generator <http://www.archlinux.org/mirrorlist/>`_ 可供使用者查詢。
 
 台灣目前的 server 如下
 
 ::
 
-    ## ## Arch Linux repository mirrorlist ## Generated on 2012-11-17 #
+    ## ## Arch linux repository mirrorlist ## Generated on 2012-11-17 #
     # ## Taiwan, Province of China
     #Server = http://archlinux.cs.nctu.edu.tw/$repo/os/$arch
     #Server = http://shadow.ind.ntou.edu.tw/archlinux/$repo/os/$arch
@@ -229,7 +230,7 @@ Chroot 到新系統，並作基本配置
     Server = http://repo.archlinux.fr/$arch
 
 一般使用者用 [core], [extra] 與 [community]。
-如果安裝 Arch Linux x86_64，建議也把 [multilib] 打開，就可以執行 32 bit 和 64 bit 的程式。
+如果安裝 Arch linux x86_64，建議也把 [multilib] 打開，就可以執行 32 bit 和 64 bit 的程式。
 （不用 32bits 程式就不必做了）
 ::
 

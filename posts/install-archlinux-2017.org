@@ -1,8 +1,9 @@
 #+BEGIN_COMMENT
 .. link:
-.. title: Install Arch Linux (2017)
+.. title: Install Arch linux (2017)
 .. slug: install-arch-linux-2017
-.. tags: Linux
+.. tags: linux
+.. category: computer
 .. date: 2017/11/20 17:00:00
 .. description:
 #+END_COMMENT
@@ -14,7 +15,7 @@
 
 * 製作開機片（CD、USB、硬碟）啓動
 
-從 [[https://www.archlinux.org/download/][Arch Linux Downloads]] 下載 archlinux.iso，建議用 bt 方式下載比較快。
+從 [[https://www.archlinux.org/download/][Arch linux Downloads]] 下載 archlinux.iso，建議用 bt 方式下載比較快。
 
 參考 [[https://wiki.archlinux.org/index.php/USB_flash_installation_media][USB flash installation media]] 製作開機片 :
 
@@ -24,7 +25,7 @@
 
 * 啟動 ArchLinux 安裝程序
 
-重新以 USB 開機，選擇從主選單中選擇 "Boot Arch Linux" 並按
+重新以 USB 開機，選擇從主選單中選擇 "Boot Arch linux" 並按
 <enter>，系統將加載並給出登錄提示，自動以 'root' 登錄。
 
 * 建立網絡連接

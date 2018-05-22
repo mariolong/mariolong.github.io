@@ -1,14 +1,15 @@
 .. slug: lightworks-on-archlinux
 .. date: 2014/02/02 18:51:39
 .. title: lightworks on Archlinux
-.. tags: 
-.. link: 
-.. description: 
+.. tags: lightwork, linux
+.. category: computer
+.. link:
+.. description:
 
-`lightworks連結 <http://sourceforge.net/projects/lwks-arch/>`_
+`lightworks 連結 <http://sourceforge.net/projects/lwks-arch/>`_
 
 Description
-This is a Lightworks PKGBUILD for Arch Linux.
+This is a Lightworks PKGBUILD for Arch linux.
 
 Howto:
 

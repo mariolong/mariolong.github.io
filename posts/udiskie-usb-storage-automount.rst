@@ -1,7 +1,8 @@
 .. title: udiskie: usb storage automount
 .. slug: udiskie-usb-storage-automount
 .. date: 2014-10-23 13:48:57 UTC
-.. tags: Linux, lxqt, desktop
+.. tags: linux, lxqt, desktop
+.. category: computer
 .. link:
 .. description:
 .. type: text

@@ -1,7 +1,8 @@
 .. title: Midnight Commander
 .. slug: midnight-commander
 .. date: 2014-12-17 06:23:00 UTC
-.. tags:
+.. tags: mc, linux
+.. category: computer
 .. link:
 .. description:
 .. type: text
@@ -87,7 +88,7 @@ Miscellaneous Keys
 
 :Alt-c: 快速切換目錄。必須知道完整的目錄名稱，實務上可能並不好用。
 
-:C-o: when the program is being run in the Linux or FreeBSD console or under an xterm, it will show you the output of the previous command. When ran on the Linux console, the Midnight Commander uses an external program (cons.saver) to handle saving and restoring of information on the screen.
+:C-o: when the program is being run in the linux or FreeBSD console or under an xterm, it will show you the output of the previous command. When ran on the linux console, the Midnight Commander uses an external program (cons.saver) to handle saving and restoring of information on the screen.
       When the subshell support is compiled in, you can type C-o at any time and you will be taken back to the Midnight Commander main screen, to return to your application just type C-o. If you have an application suspended by using this trick, you won't be able to execute other programs from the Midnight Commander until you terminate the suspended application.
 
 directory panels

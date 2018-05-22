@@ -1,7 +1,8 @@
 .. slug: urxvt
 .. link:
 .. title: urxvt 使用心得與整理
-.. tags: Linux
+.. tags: linux, urxvt, terminal, xmonad
+.. category: computer
 .. description:
 .. date: 2014/05/27 10:45:30
 
@@ -152,7 +153,7 @@ Pass the username when starting the service:
 後記
 ====
 
-Linux 真是個好玩的工具，只是要有足夠的時間、體力和興趣。用了一年之後，還是回來用這個 urxvt。
+linux 真是個好玩的工具，只是要有足夠的時間、體力和興趣。用了一年之後，還是回來用這個 urxvt。
 
 
 參考

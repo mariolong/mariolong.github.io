@@ -1,7 +1,8 @@
 .. title: archlinux enable cron
 .. slug: archlinux-enable-cron
 .. date: 2014/03/02 16:31:27
-.. tags:
+.. tags: linux, cron
+.. category: computer
 .. link:
 .. description:
 .. type: text
@@ -13,7 +14,7 @@
 Installation
 =========================================================================
 
-cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch Linux until May 2011.
+cronie is installed by default as part of the base group. Other cron implementations exist if preferred, Gentoo's cron guide offers comparisons. For example, fcron, bcron or vixie-cron are other alternatives. dcron used to be the default cron implementation in Arch linux until May 2011.
 
 Configuration
 ====================================================================
@@ -59,16 +60,26 @@ To use an alternate default editor, define the EDITOR environment variablee it i
 Crontab format
 =======================================================================
 
-The basic format for a crontab is:
-minute hour day_of_month month day_of_week command
-minute values can be from 0 to 59.
-hour values can be from 0 to 23.
-day_of_month values can be from 1 to 31.
-month values can be from 1 to 12.
-day_of_week values can be from 0 to 6, with 0 denoting Sunday.
-Multiple times may be specified with a comma, a range can be given with a hyphen, and the asterisk symbol is a wildcard character. Spaces are used to separate fields. For example, the line:
-*0,*5 9-16 * 1-5,9-12 1-5 ~/bin/i_love_cron.sh
-Will execute the script i_love_cron.sh at five minute intervals from 9 AM to 4:55 PM on weekdays except during the summer months (June, July, and August). More examples and advanced configuration techniques can be found below.
+The basic format for a crontab is::
+
+  minute hour day_of_month month day_of_week command
+  minute values can be from 0 to 59.
+  hour values can be from 0 to 23.
+  day_of_month values can be from 1 to 31.
+  month values can be from 1 to 12.
+  day_of_week values can be from 0 to 6, with 0 denoting Sunday.
+
+  Multiple times may be specified with a comma, a range can be given
+  with a hyphen, and the asterisk symbol is a wildcard
+  character. Spaces are used to separate fields. For example, the
+  line: *0,*5 9-16 * 1-5,9-12 1-5
+
+  ~/bin/i_love_cron.sh Will execute the script i_love_cron.sh at five
+  minute intervals from 9 AM to 4:55 PM on weekdays except during the
+  summer months (June, July, and August).
+
+  More examples and advanced configuration techniques can be found
+  below.
 
 Basic commands
 -----------------------------------------------

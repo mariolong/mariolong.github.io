@@ -1,7 +1,8 @@
 .. title: 藍牙小鍵盤
 .. slug: bluetooth-keyboard
 .. date: 2014/06/27 09:06:38
-.. tags: Linux
+.. tags: linux, bluetooth
+.. category: computer
 .. link:
 .. description:
 .. type: text
@@ -127,7 +128,7 @@ Install
 在配對時，一開始不知道要在鍵盤上輸入配對碼，只是一直等待，所以，一直沒辦法使用。
 在手冊上突然看到了一句話，就這樣連線成功。當我在藍牙鍵盤上按下按鍵，在螢幕上看到了相對應的字出現時，真是開心啊。
 
-Linux 就是這樣好玩。
+linux 就是這樣好玩。
 
 **update:2014-7-9**
 

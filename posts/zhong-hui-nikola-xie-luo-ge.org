@@ -2,7 +2,7 @@
 .. title: 部落格，重回 nikola+org-mode
 .. slug: zhong-hui-nikola-xie-luo-ge
 .. date: 2018-05-14 09:32:19 UTC+08:00
-.. tags: Linux, nikola
+.. tags: linux, nikola
 .. category: computer
 .. link:
 .. description: writing blogger using by nikola again.

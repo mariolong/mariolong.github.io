@@ -1,8 +1,8 @@
 .. title: 字型相關
 .. slug: fonts
 .. date: 2015-05-27 13:48:41 UTC
-.. tags: Linux
-.. category:
+.. tags: linux, font
+.. category: computer
 .. link:
 .. description:
 .. type: text

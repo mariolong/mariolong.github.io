@@ -1,7 +1,8 @@
 .. date: 2013/12/02 09:10:51
 .. slug: tiling-window-manager-xmonad-with-kde
 .. title: Tiling window manager - Xmonad with KDE
-.. tags:
+.. tags: linux, xmonad, haskell
+.. category: computer
 .. description:
 .. link:
 
