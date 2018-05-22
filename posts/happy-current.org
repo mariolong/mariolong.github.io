@@ -1,6 +1,6 @@
 #+BEGIN_COMMENT
 .. title: 快樂，當下
-.. slug: kuai-le-dang-xia
+.. slug: happy-current
 .. date: 2018-05-22 12:49:49 UTC+08:00
 .. tags: happy
 .. category: life
@@ -21,7 +21,7 @@ REF: [[http://time.com/4856944/secrets-happier-life/][6 Secrets to a Happier Lif
 #+BEGIN_QUOTE
 「如果你的頭腦永遠在想下一個任務、下一個成就、下一個你需要談話的人。在
 這個過程中，你犧牲了現在的個人幸福，你就會持續累積負面情緒和巨大的壓
-力。」 - 6 Secrets to a Happier Life | Time
+力。」 --- 6 Secrets to a Happier Life | Time
 #+END_QUOTE
 
 #+BEGIN_QUOTE
