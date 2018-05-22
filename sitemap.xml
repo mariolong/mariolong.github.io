@@ -238,10 +238,6 @@
   <lastmod>2018-05-22T05:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariolong.github.io/posts/30/</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
- </url>
- <url>
   <loc>https://mariolong.github.io/posts/4-years-ago/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
@@ -404,6 +400,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/hangups%2Bemacs/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/happy-current/</loc>
+  <lastmod>2018-05-22T05:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/haskell-programs/</loc>
@@ -619,10 +619,6 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</loc>
-  <lastmod>2018-05-18T03:55:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariolong.github.io/posts/zsh/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
 </urlset>
