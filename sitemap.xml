@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-05-22T04:25:00Z</lastmod>
+  <lastmod>2018-05-22T05:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-05-22T04:24:00Z</lastmod>
+  <lastmod>2018-05-22T04:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -100,6 +100,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/fruit/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/happy/</loc>
+  <lastmod>2018-05-22T04:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/haskell/</loc>
@@ -178,6 +182,10 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/walking/</loc>
+  <lastmod>2018-05-22T04:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/wang-wang-cai-jing/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
@@ -223,7 +231,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-05-22T04:25:00Z</lastmod>
+  <lastmod>2018-05-22T05:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/30/</loc>
@@ -434,6 +442,10 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/posts/kuai-le-dang-xia/</loc>
+  <lastmod>2018-05-22T04:58:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/posts/lightworks-on-archlinux/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </url>
@@ -584,6 +596,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/vim/</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/walking/</loc>
+  <lastmod>2018-05-22T04:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/what-i-live/</loc>

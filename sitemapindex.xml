@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_life.xml</loc>
-  <lastmod>2018-05-22T04:25:00Z</lastmod>
+  <lastmod>2018-05-22T05:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_linux.xml</loc>
@@ -66,12 +66,16 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://mariolong.github.io/categories/happy.xml</loc>
+  <lastmod>2018-05-22T05:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariolong.github.io/categories/haskell.xml</loc>
   <lastmod>2018-05-21T10:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/health.xml</loc>
-  <lastmod>2018-05-22T04:24:00Z</lastmod>
+  <lastmod>2018-05-22T04:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/kde.xml</loc>
@@ -142,6 +146,10 @@
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://mariolong.github.io/categories/walking.xml</loc>
+  <lastmod>2018-05-22T04:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariolong.github.io/categories/wang-wang-cai-jing.xml</loc>
   <lastmod>2018-05-18T03:55:00Z</lastmod>
  </sitemap>
@@ -155,10 +163,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/rss.xml</loc>
-  <lastmod>2018-05-22T04:25:00Z</lastmod>
+  <lastmod>2018-05-22T05:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/sitemap.xml</loc>
-  <lastmod>2018-05-22T04:25:00Z</lastmod>
+  <lastmod>2018-05-22T05:00:00Z</lastmod>
  </sitemap>
 </sitemapindex>
