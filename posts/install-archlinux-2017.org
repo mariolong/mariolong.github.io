@@ -535,20 +535,21 @@ intel 用戶：
 
 ** 安裝字體
 
-加上 ttf-liberation 修正部份 PDF 字型，此為 google-chrome 新的依賴。
+加上 ~ttf-liberation~ 修正部份 PDF 字型，此為 google-chrome 新的依賴。
+為了罕見字，加裝 ~ttf-hanazono~
 
 #+BEGIN_EXAMPLE
-    $ yaourt -S ttf-tw ttf-dejavu ttf-liberation
-    $ yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,serif}-{cn,jp,kr,otc,tw}-fonts
+  $ yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono
+  $ yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,serif}-{cn,jp,kr,otc,tw}-fonts
 #+END_EXAMPLE
 
 ** 讓 X 可以顯示中文
 
 #+BEGIN_EXAMPLE
-    $ nano ~/.xinitrc
+$ nano ~/.xinitrc
 
-     export LANG=zh_TW.UTF-8
-     export LC_ALL="zh_TW.UTF-8"
+export LANG=zh_TW.UTF-8
+export LC_ALL="zh_TW.UTF-8"
 #+END_EXAMPLE
 
 ** 將右邊的數字鍵盤預設爲方向鍵
@@ -602,7 +603,7 @@ Using Breeze theme and Flat Remix icon theme:
 
 ** 安裝中文輸入法
 
-沒有其它選擇，就用 fcitx。ibusfcitxshu-ru-fa-she-ding :
+沒有其它選擇，就用 fcitx。
 
 #+BEGIN_EXAMPLE
     yaourt -S fcitx-im fcitx-configtool fcitx-chewing
