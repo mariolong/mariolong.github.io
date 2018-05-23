@@ -441,16 +441,6 @@ SOURCE: <a href="https://health.businessweekly.com.tw/AArticle.aspx?ID=ARTL00009
 <div class="highlight"><pre><span></span>nikola theme install bootstrap
 </pre></div>
 </div>
-
-<div id="outline-container-sec-2-2-1" class="outline-4">
-<h4 id="sec-2-2-1">
-<span class="section-number-4">2.2.1</span> <span class="todo TODO">TODO</span> add local search</h4>
-<div class="outline-text-4" id="text-2-2-1">
-<p>
-<a href="https://plugins.getnikola.com/v7/localsearch/">https://plugins.getnikola.com/v7/localsearch/</a>
-</p>
-</div>
-</div>
 </div>
 
 <div id="outline-container-sec-2-3" class="outline-3">
@@ -474,7 +464,7 @@ SOURCE: <a href="https://health.businessweekly.com.tw/AArticle.aspx?ID=ARTL00009
 <span class="section-number-4">2.3.1</span> 刪除不必要的空白</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
-換行時，在兩個字間會有一個空白，不好看。
+換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
 </p>
 
 <div class="highlight"><pre><span></span><span class="c1">;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org</span>
@@ -536,7 +526,7 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 
 <div id="outline-container-sec-2-4" class="outline-3">
 <h3 id="sec-2-4">
-<span class="section-number-3">2.4</span> nikola github_deploy</h3>
+<span class="section-number-3">2.4</span> 用 <code>nikola github_deploy</code> 快速發佈文章</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 REF: <a href="https://getnikola.com/handbook.html#deploying-to-github">https://getnikola.com/handbook.html#deploying-to-github</a>
@@ -553,8 +543,12 @@ REF: <a href="https://getnikola.com/handbook.html#deploying-to-github">https://g
 <span class="section-number-4">2.4.2</span> Initialize a git repository in your Nikola source directory by running:</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <div class="highlight"><pre><span></span>git init .
-git remote add origin git@github.com:user/repository.git
+git remote add origin git@github.com:user/user.github.io
 </pre></div>
+
+<p>
+url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
+</p>
 </div>
 </div>
 
@@ -565,11 +559,11 @@ git remote add origin git@github.com:user/repository.git
 <ul class="org-ul">
 <li>GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
 will be deployed. It should be gh-pages for project pages and master
-for user pages (user.github.io).
+for user pages (<b>user.github.io</b>).
 </li>
 
 <li>GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-will be deployed. We recommend and default to src.
+will be deployed. We recommend and default to <b>src</b>.
 </li>
 
 <li>GITHUB_REMOTE_NAME is the remote to which changes are pushed.
@@ -577,7 +571,7 @@ will be deployed. We recommend and default to src.
 
 <li>GITHUB_COMMIT_SOURCE controls whether or not the source branch is
 automatically committed to and pushed. We recommend setting it to
-True, unless you are automating builds with Travis CI.
+<b>True</b>, unless you are automating builds with Travis CI.
 </li>
 </ul>
 </div>
@@ -594,7 +588,7 @@ output
 </pre></div>
 
 <p>
-If you set GITHUB_COMMIT_SOURCE to False, you must switch to your
+If you set GITHUB_COMMIT_SOURCE to <b>False</b>, you must switch to your
 source branch and commit to it. Otherwise, this is done for you.
 </p>
 </div>
@@ -614,28 +608,38 @@ within a few minutes.
 
 <div id="outline-container-sec-2-4-6" class="outline-4">
 <h4 id="sec-2-4-6">
-<span class="section-number-4">2.4.6</span> install ghp_import2</h4>
+<span class="section-number-4">2.4.6</span> 在 nikola github_deploy 之前</h4>
 <div class="outline-text-4" id="text-2-4-6">
+<p>
+為了要能用<code>nikola github_deploy</code>指令，有以下的準備工作：
+</p>
+</div>
+
+<ol class="org-ol">
+<li>
+<a id="sec-2-4-6-1" name="sec-2-4-6-1"></a>install ghp_import2<br><div class="outline-text-5" id="text-2-4-6-1">
 <div class="highlight"><pre><span></span>sudo pip install ghp_import2
 </pre></div>
 </div>
+</li>
+
+<li>
+<a id="sec-2-4-6-2" name="sec-2-4-6-2"></a>install and setup ssh<br><div class="outline-text-5" id="text-2-4-6-2">
+<p>
+為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
+</p>
 </div>
 
-<div id="outline-container-sec-2-4-7" class="outline-4">
-<h4 id="sec-2-4-7">
-<span class="section-number-4">2.4.7</span> ssh</h4>
-<div class="outline-text-4" id="text-2-4-7">
-</div>
 <ol class="org-ol">
 <li>
-<a id="sec-2-4-7-1" name="sec-2-4-7-1"></a>install openssh<br><div class="outline-text-5" id="text-2-4-7-1">
+<a id="sec-2-4-6-2-1" name="sec-2-4-6-2-1"></a>install openssh<br><div class="outline-text-6" id="text-2-4-6-2-1">
 <div class="highlight"><pre><span></span>yaourt -S openssh
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="sec-2-4-7-2" name="sec-2-4-7-2"></a>follow github help page to add ssh connect to github<br><div class="outline-text-5" id="text-2-4-7-2">
+<a id="sec-2-4-6-2-2" name="sec-2-4-6-2-2"></a>follow github help page to add ssh connect to github<br><div class="outline-text-6" id="text-2-4-6-2-2">
 <ul class="org-ul">
 <li>
 <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generating a new SSH key and adding it to the ssh-agent - User Documentation</a>
@@ -647,44 +651,52 @@ within a few minutes.
 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Adding a new SSH key to your GitHub account - User Documentation</a>
 </li>
 </ul>
-<div class="highlight"><pre><span></span>ssh-keygen -p
+</div>
+
+<ol class="org-ol">
+<li>
+<a id="sec-2-4-6-2-2-1" name="sec-2-4-6-2-2-1"></a>產生 ssh key<br><div class="outline-text-7" id="text-2-4-6-2-2-1">
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">"your_email@example.com"</span>
+</pre></div>
+
+<p>
+螢幕上會出現
+</p>
+<div class="highlight"><pre><span></span>Enter passphrase <span class="k">for</span> key <span class="s1">'/home/USERNAME/.ssh/id_rsa'</span>
+</pre></div>
+
+<p>
+此時不要輸入密碼，直接按<kbd>Enter</kbd>，否則未來<code>nikola github_deploy</code>時，就要每次輸入密碼。
+</p>
+</div>
+</li>
+
+<li>
+<a id="sec-2-4-6-2-2-2" name="sec-2-4-6-2-2-2"></a>將 ssh key 加到 github 中<br><div class="outline-text-7" id="text-2-4-6-2-2-2">
+<p>
+依<a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Adding a new SSH key to your GitHub account - User Documentation</a>執行
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+
+<li>
+<a id="sec-2-4-6-3" name="sec-2-4-6-3"></a>確定以 ssh 連上 github (不能是 https)<br><div class="outline-text-5" id="text-2-4-6-3">
+<div class="highlight"><pre><span></span>$ git remote -v
+origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>fetch<span class="o">)</span>
+origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+
+<p>
+如果不是，要用以下指令修正。
+</p>
+
+<div class="highlight"><pre><span></span>git remote set-url origin git@github.com:mariolong/mariolong.github.io
 </pre></div>
 </div>
-</li>
-
-<li>
-<a id="sec-2-4-7-3" name="sec-2-4-7-3"></a>fix <code>.git/config</code><br><div class="outline-text-5" id="text-2-4-7-3">
-<p>
-<a href="https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository">https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository</a>
-</p>
-
-<blockquote>
-<p>
-I was facing same issue a while ago…
-my .git/config had
-</p>
-
-<p>
-url = git@github.com:manishnakar/polymer-demo.git
-</p>
-
-<p>
-I replaced it with
-</p>
-
-<p>
-url = <a href="https://github.com/manishnakar/polymer-demo.git">https://github.com/manishnakar/polymer-demo.git</a>
-</p>
-
-<p>
-and it works now:)
-</p>
-</blockquote>
-</div>
-</li>
-
-<li>
-<a id="sec-2-4-7-4" name="sec-2-4-7-4"></a><span class="todo TODO">TODO</span> i don't want to input password twice<br>
 </li>
 </ol>
 </div>

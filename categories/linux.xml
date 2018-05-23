@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 05:24:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 06:14:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 掙扎了許久，還是先用&lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
 
@@ -38,15 +38,6 @@
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme install bootstrap
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-2-1" class="outline-4"&gt;
-&lt;h4 id="sec-2-2-1"&gt;&lt;span class="section-number-4"&gt;2.2.1&lt;/span&gt; &lt;span class="todo TODO"&gt;TODO&lt;/span&gt; add local search&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-2-1"&gt;
-&lt;p&gt;
-&lt;a href="https://plugins.getnikola.com/v7/localsearch/"&gt;https://plugins.getnikola.com/v7/localsearch/&lt;/a&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
@@ -68,7 +59,7 @@
 &lt;h4 id="sec-2-3-1"&gt;&lt;span class="section-number-4"&gt;2.3.1&lt;/span&gt; 刪除不必要的空白&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-3-1"&gt;
 &lt;p&gt;
-換行時，在兩個字間會有一個空白，不好看。
+換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org&lt;/span&gt;
@@ -128,7 +119,7 @@ change &lt;kbd&gt;verbatim&lt;/kbd&gt; to &lt;kbd&gt;kbd&lt;/kbd&gt;
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
-&lt;h3 id="sec-2-4"&gt;&lt;span class="section-number-3"&gt;2.4&lt;/span&gt; nikola github_deploy&lt;/h3&gt;
+&lt;h3 id="sec-2-4"&gt;&lt;span class="section-number-3"&gt;2.4&lt;/span&gt; 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-4"&gt;
 &lt;p&gt;
 REF: &lt;a href="https://getnikola.com/handbook.html#deploying-to-github"&gt;https://getnikola.com/handbook.html#deploying-to-github&lt;/a&gt;
@@ -143,8 +134,12 @@ REF: &lt;a href="https://getnikola.com/handbook.html#deploying-to-github"&gt;htt
 &lt;h4 id="sec-2-4-2"&gt;&lt;span class="section-number-4"&gt;2.4.2&lt;/span&gt; Initialize a git repository in your Nikola source directory by running:&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-4-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
-git remote add origin git@github.com:user/repository.git
+git remote add origin git@github.com:user/user.github.io
 &lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -154,11 +149,11 @@ git remote add origin git@github.com:user/repository.git
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
 will be deployed. It should be gh-pages for project pages and master
-for user pages (user.github.io).
+for user pages (&lt;b&gt;user.github.io&lt;/b&gt;).
 &lt;/li&gt;
 
 &lt;li&gt;GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-will be deployed. We recommend and default to src.
+will be deployed. We recommend and default to &lt;b&gt;src&lt;/b&gt;.
 &lt;/li&gt;
 
 &lt;li&gt;GITHUB_REMOTE_NAME is the remote to which changes are pushed.
@@ -166,7 +161,7 @@ will be deployed. We recommend and default to src.
 
 &lt;li&gt;GITHUB_COMMIT_SOURCE controls whether or not the source branch is
 automatically committed to and pushed. We recommend setting it to
-True, unless you are automating builds with Travis CI.
+&lt;b&gt;True&lt;/b&gt;, unless you are automating builds with Travis CI.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -182,7 +177,7 @@ output
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
-If you set GITHUB_COMMIT_SOURCE to False, you must switch to your
+If you set GITHUB_COMMIT_SOURCE to &lt;b&gt;False&lt;/b&gt;, you must switch to your
 source branch and commit to it. Otherwise, this is done for you.
 &lt;/p&gt;
 &lt;/div&gt;
@@ -200,23 +195,32 @@ within a few minutes.
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-2-4-6" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-6"&gt;&lt;span class="section-number-4"&gt;2.4.6&lt;/span&gt; install ghp_import2&lt;/h4&gt;
+&lt;h4 id="sec-2-4-6"&gt;&lt;span class="section-number-4"&gt;2.4.6&lt;/span&gt; 在 nikola github_deploy 之前&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-4-6"&gt;
+&lt;p&gt;
+為了要能用&lt;code&gt;nikola github_deploy&lt;/code&gt;指令，有以下的準備工作：
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-6-1" name="sec-2-4-6-1"&gt;&lt;/a&gt;install ghp_import2&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-6-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pip install ghp_import2
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-4-6-2" name="sec-2-4-6-2"&gt;&lt;/a&gt;install and setup ssh&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-6-2"&gt;
+&lt;p&gt;
+為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
+&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4-7" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-7"&gt;&lt;span class="section-number-4"&gt;2.4.7&lt;/span&gt; ssh&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-7"&gt;
-&lt;/div&gt;&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-7-1" name="sec-2-4-7-1"&gt;&lt;/a&gt;install openssh&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-7-1"&gt;
+&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-6-2-1" name="sec-2-4-6-2-1"&gt;&lt;/a&gt;install openssh&lt;br&gt;&lt;div class="outline-text-6" id="text-2-4-6-2-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S openssh
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="sec-2-4-7-2" name="sec-2-4-7-2"&gt;&lt;/a&gt;follow github help page to add ssh connect to github&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-7-2"&gt;
+&lt;li&gt;&lt;a id="sec-2-4-6-2-2" name="sec-2-4-6-2-2"&gt;&lt;/a&gt;follow github help page to add ssh connect to github&lt;br&gt;&lt;div class="outline-text-6" id="text-2-4-6-2-2"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"&gt;Generating a new SSH key and adding it to the ssh-agent - User Documentation&lt;/a&gt;
 &lt;/li&gt;
@@ -225,43 +229,47 @@ within a few minutes.
 &lt;li&gt;&lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -p
+&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-6-2-2-1" name="sec-2-4-6-2-2-1"&gt;&lt;/a&gt;產生 ssh key&lt;br&gt;&lt;div class="outline-text-7" id="text-2-4-6-2-2-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b &lt;span class="m"&gt;4096&lt;/span&gt; -C &lt;span class="s2"&gt;"your_email@example.com"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+螢幕上會出現
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase &lt;span class="k"&gt;for&lt;/span&gt; key &lt;span class="s1"&gt;'/home/USERNAME/.ssh/id_rsa'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+此時不要輸入密碼，直接按&lt;kbd&gt;Enter&lt;/kbd&gt;，否則未來&lt;code&gt;nikola github_deploy&lt;/code&gt;時，就要每次輸入密碼。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-4-6-2-2-2" name="sec-2-4-6-2-2-2"&gt;&lt;/a&gt;將 ssh key 加到 github 中&lt;br&gt;&lt;div class="outline-text-7" id="text-2-4-6-2-2-2"&gt;
+&lt;p&gt;
+依&lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt;執行
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;&lt;/ol&gt;
+&lt;/li&gt;&lt;/ol&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="sec-2-4-6-3" name="sec-2-4-6-3"&gt;&lt;/a&gt;確定以 ssh 連上 github (不能是 https)&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-6-3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git remote -v
+origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;fetch&lt;span class="o"&gt;)&lt;/span&gt;
+origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;push&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+如果不是，要用以下指令修正。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote set-url origin git@github.com:mariolong/mariolong.github.io
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="sec-2-4-7-3" name="sec-2-4-7-3"&gt;&lt;/a&gt;fix &lt;code&gt;.git/config&lt;/code&gt;&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-7-3"&gt;
-&lt;p&gt;
-&lt;a href="https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository"&gt;https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-I was facing same issue a while ago…
-my .git/config had
-&lt;/p&gt;
-
-&lt;p&gt;
-url = git@github.com:manishnakar/polymer-demo.git
-&lt;/p&gt;
-
-&lt;p&gt;
-I replaced it with
-&lt;/p&gt;
-
-&lt;p&gt;
-url = &lt;a href="https://github.com/manishnakar/polymer-demo.git"&gt;https://github.com/manishnakar/polymer-demo.git&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-and it works now:)
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="sec-2-4-7-4" name="sec-2-4-7-4"&gt;&lt;/a&gt;&lt;span class="todo TODO"&gt;TODO&lt;/span&gt; i don't want to input password twice&lt;br&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;/li&gt;&lt;/ol&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
