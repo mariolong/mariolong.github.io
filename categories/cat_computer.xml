@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 09:14:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 09:55:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 掙扎了許久，還是先用&lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
 
@@ -784,8 +784,7 @@ opencc: using s2twp.json
 &lt;h3 id="sec-8-2"&gt;&lt;span class="section-number-3"&gt;8.2&lt;/span&gt; systemd timers&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>haskell</category><category>linux</category><category>taffybar</category><category>xmonad</category><guid>https://mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item><item><title>Install Arch linux (2017)</title><link>https://mariolong.github.io/posts/install-arch-linux-2017/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-原本的 Beginners' Guide 改成了&lt;a href="https://wiki.archlinux.org/index.php/installation_guide"&gt;Installation guide&lt;/a&gt;，文件結構比較清楚，但是保證不適合初次安裝 archlinux
-的人閱讀，也不適合一步步之執行。
+原本的 Beginners' Guide 改成了 &lt;a href="https://wiki.archlinux.org/index.php/installation_guide"&gt;Installation guide&lt;/a&gt; ，文件結構比較清楚，但是保證不適合初次安裝 archlinux 的人閱讀，也不適合一步步之執行。
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -796,11 +795,11 @@ opencc: using s2twp.json
 &lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 製作開機片（CD、USB、硬碟）啓動&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
-從&lt;a href="https://www.archlinux.org/download/"&gt;Arch linux Downloads&lt;/a&gt;下載 archlinux.iso，建議用 bt 方式下載比較快。
+從 &lt;a href="https://www.archlinux.org/download/"&gt;Arch linux Downloads&lt;/a&gt; 下載 archlinux.iso，建議用 bt 方式下載比較快。
 &lt;/p&gt;
 
 &lt;p&gt;
-參考&lt;a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media"&gt;USB flash installation media&lt;/a&gt;製作開機片 :
+參考 &lt;a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media"&gt;USB flash installation media&lt;/a&gt; 製作開機片 :
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
@@ -1168,7 +1167,7 @@ ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐�
 &lt;h3 id="sec-6-7"&gt;&lt;span class="section-number-3"&gt;6.7&lt;/span&gt; 配置系統時區&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-7"&gt;
 &lt;p&gt;
-可用的時區位於目錄&lt;i&gt;usr/share/zoneinfo&lt;/i&gt;下，可以 ls 一下。用以下指令配置系統時區：
+可用的時區位於目錄 &lt;i&gt;usr/share/zoneinfo&lt;/i&gt; 下，可以 ls 一下。用以下指令配置系統時區：
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
@@ -1318,7 +1317,7 @@ to remove auto 'dial in' at boot.
 &lt;h2 id="sec-8"&gt;&lt;span class="section-number-2"&gt;8&lt;/span&gt; mkinitcpio&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-8"&gt;
 &lt;p&gt;
-增加 lvm2 到 hooks 後，執行&lt;kbd&gt;mkinitcpio&lt;/kbd&gt; :
+增加 lvm2 到 hooks 後，執行 &lt;kbd&gt;mkinitcpio&lt;/kbd&gt; :
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
@@ -1356,7 +1355,7 @@ Install the grub-bios package and then run grub-install: :
 &lt;/pre&gt;
 
 &lt;p&gt;
-或是直接在 /etc/grub.d/40\&lt;sub&gt;custom&lt;/sub&gt;加上以下指令 :
+或是直接在 /etc/grub.d/40\&lt;sub&gt;custom&lt;/sub&gt; 加上以下指令 :
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
@@ -1537,7 +1536,7 @@ $ speaker-test -c 2
 &lt;/pre&gt;
 
 &lt;p&gt;
-因為要用 xlogin，所以&lt;kbd&gt;xorg-xinit&lt;/kbd&gt;可以不用裝了。
+因為要用 xlogin，所以 &lt;kbd&gt;xorg-xinit&lt;/kbd&gt; 可以不用裝了。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1579,7 +1578,7 @@ $ pacman -S xf86-video-intel libav-intel-driver
 &lt;h3 id="sec-11-7"&gt;&lt;span class="section-number-3"&gt;11.7&lt;/span&gt; 安裝字體&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-7"&gt;
 &lt;p&gt;
-加上&lt;code&gt;ttf-liberation&lt;/code&gt;修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝&lt;code&gt;ttf-hanazono&lt;/code&gt;
+加上 &lt;code&gt;ttf-liberation&lt;/code&gt; 修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝 &lt;code&gt;ttf-hanazono&lt;/code&gt;
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
@@ -1630,7 +1629,7 @@ yaourt -S lxqt
 &lt;/pre&gt;
 
 &lt;p&gt;
-先修改&lt;kbd&gt;pacman.conf&lt;/kbd&gt;:
+先修改 &lt;kbd&gt;pacman.conf&lt;/kbd&gt;:
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
@@ -1638,7 +1637,7 @@ yaourt -S lxqt
 &lt;/pre&gt;
 
 &lt;p&gt;
-然後在&lt;kbd&gt;[community]&lt;/kbd&gt;之前加上:
+然後在 &lt;kbd&gt;[community]&lt;/kbd&gt; 之前加上:
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;

@@ -1416,8 +1416,7 @@ opencc: using s2twp.json
 </div>
     </header><div class="p-summary entry-summary">
     <p>
-原本的 Beginners' Guide 改成了<a href="https://wiki.archlinux.org/index.php/installation_guide">Installation guide</a>，文件結構比較清楚，但是保證不適合初次安裝 archlinux
-的人閱讀，也不適合一步步之執行。
+原本的 Beginners' Guide 改成了 <a href="https://wiki.archlinux.org/index.php/installation_guide">Installation guide</a> ，文件結構比較清楚，但是保證不適合初次安裝 archlinux 的人閱讀，也不適合一步步之執行。
 </p>
 
 <p>
@@ -1429,11 +1428,11 @@ opencc: using s2twp.json
 <span class="section-number-2">1</span> 製作開機片（CD、USB、硬碟）啓動</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-從<a href="https://www.archlinux.org/download/">Arch linux Downloads</a>下載 archlinux.iso，建議用 bt 方式下載比較快。
+從 <a href="https://www.archlinux.org/download/">Arch linux Downloads</a> 下載 archlinux.iso，建議用 bt 方式下載比較快。
 </p>
 
 <p>
-參考<a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media">USB flash installation media</a>製作開機片 :
+參考 <a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media">USB flash installation media</a> 製作開機片 :
 </p>
 
 <pre class="example">
@@ -1824,7 +1823,7 @@ ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐�
 <span class="section-number-3">6.7</span> 配置系統時區</h3>
 <div class="outline-text-3" id="text-6-7">
 <p>
-可用的時區位於目錄<i>usr/share/zoneinfo</i>下，可以 ls 一下。用以下指令配置系統時區：
+可用的時區位於目錄 <i>usr/share/zoneinfo</i> 下，可以 ls 一下。用以下指令配置系統時區：
 </p>
 
 <div class="highlight"><pre><span></span>ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
@@ -1979,7 +1978,7 @@ to remove auto 'dial in' at boot.
 <span class="section-number-2">8</span> mkinitcpio</h2>
 <div class="outline-text-2" id="text-8">
 <p>
-增加 lvm2 到 hooks 後，執行<kbd>mkinitcpio</kbd> :
+增加 lvm2 到 hooks 後，執行 <kbd>mkinitcpio</kbd> :
 </p>
 
 <pre class="example">
@@ -2019,7 +2018,7 @@ Install the grub-bios package and then run grub-install: :
 </pre>
 
 <p>
-或是直接在 /etc/grub.d/40\<sub>custom</sub>加上以下指令 :
+或是直接在 /etc/grub.d/40\<sub>custom</sub> 加上以下指令 :
 </p>
 
 <pre class="example">
@@ -2213,7 +2212,7 @@ $ speaker-test -c 2
 </pre>
 
 <p>
-因為要用 xlogin，所以<kbd>xorg-xinit</kbd>可以不用裝了。
+因為要用 xlogin，所以 <kbd>xorg-xinit</kbd> 可以不用裝了。
 </p>
 </div>
 </div>
@@ -2257,7 +2256,7 @@ $ pacman -S xf86-video-intel libav-intel-driver
 <span class="section-number-3">11.7</span> 安裝字體</h3>
 <div class="outline-text-3" id="text-11-7">
 <p>
-加上<code>ttf-liberation</code>修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝<code>ttf-hanazono</code>
+加上 <code>ttf-liberation</code> 修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝 <code>ttf-hanazono</code>
 </p>
 
 <pre class="example">
@@ -2311,7 +2310,7 @@ yaourt -S lxqt
 </pre>
 
 <p>
-先修改<kbd>pacman.conf</kbd>:
+先修改 <kbd>pacman.conf</kbd>:
 </p>
 
 <pre class="example">
@@ -2319,7 +2318,7 @@ yaourt -S lxqt
 </pre>
 
 <p>
-然後在<kbd>[community]</kbd>之前加上:
+然後在 <kbd>[community]</kbd> 之前加上:
 </p>
 
 <pre class="example">
