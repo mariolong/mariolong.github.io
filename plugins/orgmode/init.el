@@ -125,6 +125,20 @@ specified location."
     (org-html-export-as-html nil nil t t)
     (write-file outfile nil)))
 
+;; https://coldnew.github.io/a1ed40e3/
+(defadvice org-html-paragraph (before org-html-paragraph-advice
+                                      (paragraph contents info) activate)
+  "Join consecutive Chinese lines into a single long line without
+unwanted space when exporting org-mode to html."
+  (let* ((origin-contents (ad-get-arg 1))
+         (fix-regexp "[[:multibyte:]]")
+         (fixed-contents
+          (replace-regexp-in-string
+           (concat
+            "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" origin-contents)))
+
+    (ad-set-arg 1 fixed-contents)))
+
 
 ;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org
 (defun eh-org-clean-space (text backend info)
@@ -149,8 +163,8 @@ specified location."
              "\\1\\2" string))
       string)))
 
-(add-to-list 'org-export-filter-paragraph-functions
-             'eh-org-clean-space)
+;; (add-to-list 'org-export-filter-paragraph-functions
+;; 'eh-org-clean-space)
 
 (setq org-html-text-markup-alist '((bold . "<b>%s</b>")
 								   (code . "<code>%s</code>")
