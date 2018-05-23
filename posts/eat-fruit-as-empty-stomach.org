@@ -1,5 +1,5 @@
 #+BEGIN_COMMENT
-.. title: 「没想到是謠言」：愛惜大腸，空腹吃水果
+.. title: 【謠言】愛惜大腸，空腹吃水果
 .. slug: eat-fruit-as-empty-stomach
 .. date: 2018-05-16 16:44:08
 .. tags: food, fruit
@@ -7,15 +7,16 @@
 .. link:
 .. description:
 .. type: text
-.. options: toc:nil ^:{}
 #+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
 
 網路上常會有一些「善心人士」轉傳他們認的好文，我想大家的初衷也是想幫忙
 人，只是未經查證或没有能力查證，只能直接轉傳，可也造成了困擾。如果重症
 患者誤信了没有根據的方法，後果不堪設想。
 
 今天看到這篇 [[https://emo.nidbox.com/diary/read/7697859][愛惜大腸，空腹吃水果(台大醫院胃腸科王正一醫師的忠告)]] 覺得
-不錯，想留個記錄，再一次 google，發現了下面這篇 [[https://www.mygopen.com/2016/03/blog-post_1.html][【假知識】空腹吃水果會抗癌？王正一醫師說他從沒寫過這種東西！ ~ MyGoPen｜這是假消息]]
+不錯，想留個記錄，再一次 google，發現了下面這篇
+ [[https://www.mygopen.com/2016/03/blog-post_1.html][【假知識】空腹吃水果會抗癌？王正一醫師說他從沒寫過這種東西！ ~ MyGoPen｜這是假消息]]
 
 哈哈，直接把結論節錄如後：
 
