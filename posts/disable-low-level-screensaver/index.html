@@ -8,7 +8,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/disable-low-level-screensaver/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
-<link rel="prev" href="../linuxhao-hao-wan/" title="Linux 好好玩" type="text/html">
+<link rel="prev" href="../linuxhao-hao-wan/" title="linux 好好玩" type="text/html">
 <link rel="next" href="../using-lftp-upload-website/" title="Using lftp upload website" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Disable low-level screensaver and screen DPMS poweroff">
@@ -103,22 +103,22 @@ create a file in /etc/X11/xorg.conf.d called custom.conf with this code:
 <p>To disable blank screen after 10 minutes of inactivity,
 create a file in /etc/X11/xorg.conf.d called custom.conf with this code:</p>
 <p>快建立這個檔案試試。</p>
-<pre class="code text"><a name="rest_code_2617b94218ca421dad69904ccbc77e2f-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-2"></a>
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-3"></a>Section "ServerFlags"
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-4"></a>    # disable low-level screensaver and screen DPMS poweroff
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-5"></a>    Option "BlankTime"  "0"
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-6"></a>    Option "StandbyTime" "0"
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-7"></a>    Option "SuspendTime" "0"
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-8"></a>    Option "OffTime"  "0"
-<a name="rest_code_2617b94218ca421dad69904ccbc77e2f-9"></a>EndSection
+<pre class="code text"><a name="rest_code_40e106d71cdd4b22bea664e744124d21-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-2"></a>
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-3"></a>Section "ServerFlags"
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-4"></a>    # disable low-level screensaver and screen DPMS poweroff
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-5"></a>    Option "BlankTime"  "0"
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-6"></a>    Option "StandbyTime" "0"
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-7"></a>    Option "SuspendTime" "0"
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-8"></a>    Option "OffTime"  "0"
+<a name="rest_code_40e106d71cdd4b22bea664e744124d21-9"></a>EndSection
 </pre>
 <p>趕快記下來，試試看。</p>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="../linuxhao-hao-wan/" rel="prev" title="Linux 好好玩">上一篇</a>
+                <a href="../linuxhao-hao-wan/" rel="prev" title="linux 好好玩">上一篇</a>
             </li>
             <li class="next">
                 <a href="../using-lftp-upload-website/" rel="next" title="Using lftp upload website">下一篇</a>
