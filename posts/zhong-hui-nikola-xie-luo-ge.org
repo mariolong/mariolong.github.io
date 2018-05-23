@@ -8,7 +8,7 @@
 .. description: writing blogger using by nikola again.
 .. type: text
 #+END_COMMENT
-#+OPTIONS: toc:nil ^:{}
+#+OPTIONS: toc:nil num:t ^:{}
 
 掙扎了許久，還是先用 [[https://getnikola.com/][nikola]] 記錄一些事，畢竟比較熟悉，能快一點上手。
 
@@ -34,9 +34,6 @@ cd <blog-name>
 nikola theme install bootstrap
 #+END_SRC
 
-*** TODO add local search
-https://plugins.getnikola.com/v7/localsearch/
-
 ** org-mod
 先安裝 plugin orgmode，再做一點點微調即可。
 
@@ -48,7 +45,7 @@ nikola plugin -i orgmode
 
 *** 刪除不必要的空白
 
-換行時，在兩個字間會有一個空白，不好看。
+換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
 
 #+BEGIN_SRC emacs-lisp
   ;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org
@@ -96,7 +93,7 @@ change =verbatim= to =kbd=
           (verbatim . "<kbd>%s</kbd>")))
 #+END_SRC
 
-** nikola github_deploy
+** 用 ~nikola github_deploy~ 快速發佈文章
 
 REF: https://getnikola.com/handbook.html#deploying-to-github
 
@@ -106,23 +103,25 @@ REF: https://getnikola.com/handbook.html#deploying-to-github
 
 #+BEGIN_SRC sh
 git init .
-git remote add origin git@github.com:user/repository.git
+git remote add origin git@github.com:user/user.github.io
 #+END_SRC
+
+url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
 
 *** Setup branches and remotes in ~conf.py~:
 
 - GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
   will be deployed. It should be gh-pages for project pages and master
-  for user pages (user.github.io).
+  for user pages (*user.github.io*).
 
 - GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-  will be deployed. We recommend and default to src.
+  will be deployed. We recommend and default to *src*.
 
 - GITHUB_REMOTE_NAME is the remote to which changes are pushed.
 
 - GITHUB_COMMIT_SOURCE controls whether or not the source branch is
   automatically committed to and pushed. We recommend setting it to
-  True, unless you are automating builds with Travis CI.
+  *True*, unless you are automating builds with Travis CI.
 
 *** Create a ~.gitignore~ file. We recommend adding at least the following entries:
 
@@ -133,7 +132,7 @@ __pycache__
 output
 #+END_SRC
 
-If you set GITHUB_COMMIT_SOURCE to False, you must switch to your
+If you set GITHUB_COMMIT_SOURCE to *False*, you must switch to your
 source branch and commit to it. Otherwise, this is done for you.
 
 *** Run ~nikola github_deploy~.
@@ -141,46 +140,58 @@ This will *build* the site, *commit* the output folder to your deploy
 branch, and *push* to GitHub.  Your website should be up and running
 within a few minutes.
 
-*** install ghp_import2
+*** 在 nikola github_deploy 之前
+為了要能用 ~nikola github_deploy~ 指令，有以下的準備工作：
+
+**** install ghp_import2
 
 #+BEGIN_SRC sh
 sudo pip install ghp_import2
 #+END_SRC
 
-*** ssh
-**** install openssh
+**** install and setup ssh
+為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
+
+***** install openssh
 
 #+BEGIN_SRC sh
 yaourt -S openssh
 #+END_SRC
 
-**** follow github help page to add ssh connect to github
+***** follow github help page to add ssh connect to github
 - [[https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/][Generating a new SSH key and adding it to the ssh-agent - User Documentation]]
 - [[https://help.github.com/articles/working-with-ssh-key-passphrases/][Working with SSH key passphrases - User Documentation]]
 - [[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/][Adding a new SSH key to your GitHub account - User Documentation]]
 
+****** 產生 ssh key
 #+BEGIN_SRC sh
-ssh-keygen -p
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 #+END_SRC
 
-**** fix ~.git/config~
+螢幕上會出現
+#+BEGIN_SRC sh
+Enter passphrase for key '/home/USERNAME/.ssh/id_rsa'
+#+END_SRC
 
-https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository
+此時不要輸入密碼，直接按 =Enter= ，否則未來 ~nikola github_deploy~ 時，
+就要每次輸入密碼。
 
-#+BEGIN_QUOTE
-I was facing same issue a while ago...
-my .git/config had
+****** 將 ssh key 加到 github 中
+依 [[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/][Adding a new SSH key to your GitHub account - User Documentation]] 執行
 
-url = git@github.com:manishnakar/polymer-demo.git
+**** 確定以 ssh 連上 github (不能是 https)
 
-I replaced it with
+#+BEGIN_SRC sh
+$ git remote -v
+origin  git@github.com:mariolong/mariolong.github.io (fetch)
+origin  git@github.com:mariolong/mariolong.github.io (push)
+#+END_SRC
 
-url = https://github.com/manishnakar/polymer-demo.git
+如果不是，要用以下指令修正。
 
-and it works now:)
-#+END_QUOTE
-
-**** TODO i don't want to input password twice
+#+BEGIN_SRC sh
+git remote set-url origin git@github.com:mariolong/mariolong.github.io
+#+END_SRC
 
 * 開始使用
 
