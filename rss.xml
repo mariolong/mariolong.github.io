@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 06:14:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>快樂，當下</title><link>https://mariolong.github.io/posts/happy-current/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 06:25:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>快樂，當下</title><link>https://mariolong.github.io/posts/happy-current/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 SOURCE: &lt;a href="https://www.playpcesor.com/2017/09/time-Secrets-to-a-Happier-Life.html"&gt;來自 TIME 的快樂科學秘密：投入時間當下&lt;/a&gt;電腦玩物原創作者 esor huang 異塵行者
 &lt;/p&gt;
 
@@ -1881,11 +1881,11 @@ $ pacman -S xf86-video-intel libav-intel-driver
 &lt;h3 id="sec-11-7"&gt;&lt;span class="section-number-3"&gt;11.7&lt;/span&gt; 安裝字體&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-7"&gt;
 &lt;p&gt;
-加上 ttf-liberation 修正部份 PDF 字型，此為 google-chrome 新的依賴。
+加上&lt;code&gt;ttf-liberation&lt;/code&gt;修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝&lt;code&gt;ttf-hanazono&lt;/code&gt;
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
-$ yaourt -S ttf-tw ttf-dejavu ttf-liberation
+$ yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono
 $ yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,serif}-{cn,jp,kr,otc,tw}-fonts
 &lt;/pre&gt;
 &lt;/div&gt;
@@ -1897,8 +1897,8 @@ $ yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,seri
 &lt;pre class="example"&gt;
 $ nano ~/.xinitrc
 
- export LANG=zh_TW.UTF-8
- export LC_ALL="zh_TW.UTF-8"
+export LANG=zh_TW.UTF-8
+export LC_ALL="zh_TW.UTF-8"
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1979,7 +1979,7 @@ yaourt -S breeze{,-kde4,-gtk} flat-remix-git lxappearance
 &lt;h3 id="sec-11-12"&gt;&lt;span class="section-number-3"&gt;11.12&lt;/span&gt; 安裝中文輸入法&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-12"&gt;
 &lt;p&gt;
-沒有其它選擇，就用 fcitx。ibusfcitxshu-ru-fa-she-ding :
+沒有其它選擇，就用 fcitx。
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;

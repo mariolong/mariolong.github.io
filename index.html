@@ -2247,11 +2247,11 @@ $ pacman -S xf86-video-intel libav-intel-driver
 <span class="section-number-3">11.7</span> 安裝字體</h3>
 <div class="outline-text-3" id="text-11-7">
 <p>
-加上 ttf-liberation 修正部份 PDF 字型，此為 google-chrome 新的依賴。
+加上<code>ttf-liberation</code>修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝<code>ttf-hanazono</code>
 </p>
 
 <pre class="example">
-$ yaourt -S ttf-tw ttf-dejavu ttf-liberation
+$ yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono
 $ yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,serif}-{cn,jp,kr,otc,tw}-fonts
 </pre>
 </div>
@@ -2264,8 +2264,8 @@ $ yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,seri
 <pre class="example">
 $ nano ~/.xinitrc
 
- export LANG=zh_TW.UTF-8
- export LC_ALL="zh_TW.UTF-8"
+export LANG=zh_TW.UTF-8
+export LC_ALL="zh_TW.UTF-8"
 </pre>
 </div>
 </div>
@@ -2350,7 +2350,7 @@ yaourt -S breeze{,-kde4,-gtk} flat-remix-git lxappearance
 <span class="section-number-3">11.12</span> 安裝中文輸入法</h3>
 <div class="outline-text-3" id="text-11-12">
 <p>
-沒有其它選擇，就用 fcitx。ibusfcitxshu-ru-fa-she-ding :
+沒有其它選擇，就用 fcitx。
 </p>
 
 <pre class="example">
