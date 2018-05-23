@@ -240,36 +240,52 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 <p>
 REF: <a href="https://getnikola.com/handbook.html#deploying-to-github">https://getnikola.com/handbook.html#deploying-to-github</a>
 </p>
+</div>
 
-<ul class="org-ul">
-<li>Initialize a Nikola site, if you haven’t already.
-</li>
+<div id="outline-container-sec-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1">
+<span class="section-number-4">2.4.1</span> Initialize a Nikola site, if you haven’t already.</h4>
+</div>
 
-<li>Initialize a git repository in your Nikola source directory by running:
-</li>
-</ul>
+<div id="outline-container-sec-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2">
+<span class="section-number-4">2.4.2</span> Initialize a git repository in your Nikola source directory by running:</h4>
+<div class="outline-text-4" id="text-2-4-2">
 <div class="highlight"><pre><span></span>git init .
 git remote add origin git@github.com:user/repository.git
 </pre></div>
+</div>
+</div>
 
-<p>
-Setup branches and remotes in <code>conf.py</code>:
-</p>
-
+<div id="outline-container-sec-2-4-3" class="outline-4">
+<h4 id="sec-2-4-3">
+<span class="section-number-4">2.4.3</span> Setup branches and remotes in <code>conf.py</code>:</h4>
+<div class="outline-text-4" id="text-2-4-3">
 <ul class="org-ul">
-<li>GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files will be deployed. It should be gh-pages for project pages and master for user pages (user.github.io).
+<li>GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
+will be deployed. It should be gh-pages for project pages and master
+for user pages (user.github.io).
 </li>
-<li>GITHUB_SOURCE_BRANCH is the branch where your Nikola site source will be deployed. We recommend and default to src.
+
+<li>GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
+will be deployed. We recommend and default to src.
 </li>
+
 <li>GITHUB_REMOTE_NAME is the remote to which changes are pushed.
 </li>
-<li>GITHUB_COMMIT_SOURCE controls whether or not the source branch is automatically committed to and pushed. We recommend setting it to True, unless you are automating builds with Travis CI.
+
+<li>GITHUB_COMMIT_SOURCE controls whether or not the source branch is
+automatically committed to and pushed. We recommend setting it to
+True, unless you are automating builds with Travis CI.
 </li>
 </ul>
-<p>
-Create a <code>.gitignore</code> file. We recommend adding at least the following entries:
-</p>
+</div>
+</div>
 
+<div id="outline-container-sec-2-4-4" class="outline-4">
+<h4 id="sec-2-4-4">
+<span class="section-number-4">2.4.4</span> Create a <code>.gitignore</code> file. We recommend adding at least the following entries:</h4>
+<div class="outline-text-4" id="text-2-4-4">
 <div class="highlight"><pre><span></span>cache
 .doit.db
 __pycache__
@@ -277,40 +293,48 @@ output
 </pre></div>
 
 <p>
-If you set GITHUB_COMMIT_SOURCE to False, you must switch to your source branch and commit to it. Otherwise, this is done for you.
-</p>
-
-<p>
-Run <code>nikola github_deploy</code>. This will <b>build</b> the site, <b>commit</b> the
-output folder to your deploy branch, and <b>push</b> to GitHub. Your website
-should be up and running within a few minutes.
+If you set GITHUB_COMMIT_SOURCE to False, you must switch to your
+source branch and commit to it. Otherwise, this is done for you.
 </p>
 </div>
+</div>
 
-<div id="outline-container-sec-2-4-1" class="outline-4">
-<h4 id="sec-2-4-1">
-<span class="section-number-4">2.4.1</span> install ghp_import2</h4>
-<div class="outline-text-4" id="text-2-4-1">
+<div id="outline-container-sec-2-4-5" class="outline-4">
+<h4 id="sec-2-4-5">
+<span class="section-number-4">2.4.5</span> Run <code>nikola github_deploy</code>.</h4>
+<div class="outline-text-4" id="text-2-4-5">
+<p>
+This will <b>build</b> the site, <b>commit</b> the output folder to your deploy
+branch, and <b>push</b> to GitHub.  Your website should be up and running
+within a few minutes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4-6" class="outline-4">
+<h4 id="sec-2-4-6">
+<span class="section-number-4">2.4.6</span> install ghp_import2</h4>
+<div class="outline-text-4" id="text-2-4-6">
 <div class="highlight"><pre><span></span>sudo pip install ghp_import2
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-sec-2-4-2" class="outline-4">
-<h4 id="sec-2-4-2">
-<span class="section-number-4">2.4.2</span> ssh</h4>
-<div class="outline-text-4" id="text-2-4-2">
+<div id="outline-container-sec-2-4-7" class="outline-4">
+<h4 id="sec-2-4-7">
+<span class="section-number-4">2.4.7</span> ssh</h4>
+<div class="outline-text-4" id="text-2-4-7">
 </div>
 <ol class="org-ol">
 <li>
-<a id="sec-2-4-2-1" name="sec-2-4-2-1"></a>install openssh<br><div class="outline-text-5" id="text-2-4-2-1">
+<a id="sec-2-4-7-1" name="sec-2-4-7-1"></a>install openssh<br><div class="outline-text-5" id="text-2-4-7-1">
 <div class="highlight"><pre><span></span>yaourt -S openssh
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="sec-2-4-2-2" name="sec-2-4-2-2"></a>follow github help page to add ssh connect to github<br><div class="outline-text-5" id="text-2-4-2-2">
+<a id="sec-2-4-7-2" name="sec-2-4-7-2"></a>follow github help page to add ssh connect to github<br><div class="outline-text-5" id="text-2-4-7-2">
 <ul class="org-ul">
 <li>
 <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generating a new SSH key and adding it to the ssh-agent - User Documentation</a>
@@ -328,7 +352,7 @@ should be up and running within a few minutes.
 </li>
 
 <li>
-<a id="sec-2-4-2-3" name="sec-2-4-2-3"></a>fix <code>.git/config</code><br><div class="outline-text-5" id="text-2-4-2-3">
+<a id="sec-2-4-7-3" name="sec-2-4-7-3"></a>fix <code>.git/config</code><br><div class="outline-text-5" id="text-2-4-7-3">
 <p>
 <a href="https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository">https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository</a>
 </p>
@@ -359,7 +383,7 @@ and it works now:)
 </li>
 
 <li>
-<a id="sec-2-4-2-4" name="sec-2-4-2-4"></a><span class="todo TODO">TODO</span> i don't want to input password twice<br>
+<a id="sec-2-4-7-4" name="sec-2-4-7-4"></a><span class="todo TODO">TODO</span> i don't want to input password twice<br>
 </li>
 </ol>
 </div>
