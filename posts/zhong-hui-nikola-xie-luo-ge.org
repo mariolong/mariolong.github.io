@@ -48,31 +48,19 @@ nikola plugin -i orgmode
 換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
 
 #+BEGIN_SRC emacs-lisp
-  ;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org
-  (defun eh-org-clean-space (text backend info)
-    "在 export 为 HTML 时，删除中文之间不必要的空格"
-    (when (org-export-derived-backend-p backend 'html)
-      (let ((regexp "[[:multibyte:]]")
-            (string text))
-        ;; org 默认将一个换行符转换为空格，但中文不需要这个空格，删除。
-        (setq string
-              (replace-regexp-in-string
-               (format "\\(%s\\) *\n *\\(%s\\)" regexp regexp)
-               "\\1\\2" string))
-        ;; 删除粗体之前的空格
-        (setq string
-              (replace-regexp-in-string
-               (format "\\(%s\\) +\\(<\\)" regexp)
-               "\\1\\2" string))
-        ;; 删除粗体之后的空格
-        (setq string
-              (replace-regexp-in-string
-               (format "\\(>\\) +\\(%s\\)" regexp)
-               "\\1\\2" string))
-        string)))
+  ;; https://coldnew.github.io/a1ed40e3/
+  (defadvice org-html-paragraph (before org-html-paragraph-advice
+                                        (paragraph contents info) activate)
+    "Join consecutive Chinese lines into a single long line without
+  unwanted space when exporting org-mode to html."
+    (let* ((origin-contents (ad-get-arg 1))
+           (fix-regexp "[[:multibyte:]]")
+           (fixed-contents
+            (replace-regexp-in-string
+             (concat
+              "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" origin-contents)))
 
-  (add-to-list 'org-export-filter-paragraph-functions
-               'eh-org-clean-space)
+      (ad-set-arg 1 fixed-contents)))
 #+END_SRC
 
 *** Convert inline verbatim to kbd when HTML export
@@ -91,6 +79,13 @@ change =verbatim= to =kbd=
           (strike-through . "<del>%s</del>")
           (underline . "<span class=\"underline\">%s</span>")
           (verbatim . "<kbd>%s</kbd>")))
+#+END_SRC
+
+*** 用 pygment 幫程式碼著色
+
+#+BEGIN_SRC sh
+$ cd themes/your-theme-name/assets/css
+$ pygmentize -S emacs -a .highlight -f html > pygment.css
 #+END_SRC
 
 ** 用 ~nikola github_deploy~ 快速發佈文章
