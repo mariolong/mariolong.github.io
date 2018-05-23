@@ -111,12 +111,21 @@ git remote add origin git@github.com:user/repository.git
 
 Setup branches and remotes in ~conf.py~:
 
-- GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files will be deployed. It should be gh-pages for project pages and master for user pages (user.github.io).
-- GITHUB_SOURCE_BRANCH is the branch where your Nikola site source will be deployed. We recommend and default to src.
-- GITHUB_REMOTE_NAME is the remote to which changes are pushed.
-- GITHUB_COMMIT_SOURCE controls whether or not the source branch is automatically committed to and pushed. We recommend setting it to True, unless you are automating builds with Travis CI.
+- GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
+  will be deployed. It should be gh-pages for project pages and master
+  for user pages (user.github.io).
 
-Create a ~.gitignore~ file. We recommend adding at least the following entries:
+- GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
+  will be deployed. We recommend and default to src.
+
+- GITHUB_REMOTE_NAME is the remote to which changes are pushed.
+
+- GITHUB_COMMIT_SOURCE controls whether or not the source branch is
+  automatically committed to and pushed. We recommend setting it to
+  True, unless you are automating builds with Travis CI.
+
+Create a ~.gitignore~ file. We recommend adding at least the following
+entries:
 
 #+BEGIN_SRC sh
 cache
@@ -125,11 +134,12 @@ __pycache__
 output
 #+END_SRC
 
-If you set GITHUB_COMMIT_SOURCE to False, you must switch to your source branch and commit to it. Otherwise, this is done for you.
+If you set GITHUB_COMMIT_SOURCE to False, you must switch to your
+source branch and commit to it. Otherwise, this is done for you.
 
 Run ~nikola github_deploy~. This will *build* the site, *commit* the
-output folder to your deploy branch, and *push* to GitHub. Your website
-should be up and running within a few minutes.
+output folder to your deploy branch, and *push* to GitHub.  Your
+website should be up and running within a few minutes.
 
 *** install ghp_import2
 
