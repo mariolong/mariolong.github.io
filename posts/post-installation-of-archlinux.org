@@ -2,34 +2,36 @@
 .. title: Post-installation of Archlinux
 .. slug: post-installation-of-archlinux
 .. date: 2017-11-26 23:28:36 UTC-08:00
-.. tags:
-.. category: linux
+.. tags: linux, haskell, xmonad, taffybar
+.. category: computer
 .. link:
 .. description:
 .. type: text
 #+END_COMMENT
 
-首先依 [[../install-arch-linux-2017][install-arch-linux-2017]] 將基本系統裝好，接著參考
-https://wiki.archlinux.org/index.php/General_recommendations
-記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
+首先依 [[../install-arch-linux-2017][Install Arch linux (2017)]] 將基本系統裝好，接著參考 [[https://wiki.archlinux.org/index.php/General_recommendations][General
+recommendations - ArchWiki]] 記錄下對我而言必要的軟體及簡單設定，讓日常
+進入可工作狀態。
 
 * haskell
-xmonad taffybar pandoc
-
-* system
-DPMS: display power manpage system
-slock:
+安裝的方法參看 [[../install-haskell-applications][Install Haskell Applications]]
 
 * 桌面及外觀
 
 ** theme
-Using Breeze theme and Flat Remix icon theme
-
-用 lxappearance 修改 gtk 程式的外觀。
 
 #+BEGIN_SRC sh
 yaourt -S breeze{,-kde4,-gtk} flat-remix-git lxappearance
 #+END_SRC
+
+Using Breeze theme and Flat Remix icon theme
+
+** lxappearance
+
+用 lxappearance 修改 gtk 程式的外觀。
+
+尤其是 google chrome 書籤列的字體，可能太小。這時即可用 lxappearance 調整
+字型和大小。
 
 ** oblogout and screen lock
 
@@ -71,6 +73,10 @@ lock = K
 [commands]
 lock = slock
 #+END_EXAMPLE
+
+* system
+DPMS: display power manpage system
+slock:
 
 * 網路
 ** dropbox
