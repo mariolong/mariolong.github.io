@@ -100,16 +100,16 @@ change =verbatim= to =kbd=
 
 REF: https://getnikola.com/handbook.html#deploying-to-github
 
-- Initialize a Nikola site, if you haven’t already.
+*** Initialize a Nikola site, if you haven’t already.
 
-- Initialize a git repository in your Nikola source directory by running:
+*** Initialize a git repository in your Nikola source directory by running:
 
 #+BEGIN_SRC sh
 git init .
 git remote add origin git@github.com:user/repository.git
 #+END_SRC
 
-Setup branches and remotes in ~conf.py~:
+*** Setup branches and remotes in ~conf.py~:
 
 - GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
   will be deployed. It should be gh-pages for project pages and master
@@ -124,8 +124,7 @@ Setup branches and remotes in ~conf.py~:
   automatically committed to and pushed. We recommend setting it to
   True, unless you are automating builds with Travis CI.
 
-Create a ~.gitignore~ file. We recommend adding at least the following
-entries:
+*** Create a ~.gitignore~ file. We recommend adding at least the following entries:
 
 #+BEGIN_SRC sh
 cache
@@ -137,9 +136,10 @@ output
 If you set GITHUB_COMMIT_SOURCE to False, you must switch to your
 source branch and commit to it. Otherwise, this is done for you.
 
-Run ~nikola github_deploy~. This will *build* the site, *commit* the
-output folder to your deploy branch, and *push* to GitHub.  Your
-website should be up and running within a few minutes.
+*** Run ~nikola github_deploy~.
+This will *build* the site, *commit* the output folder to your deploy
+branch, and *push* to GitHub.  Your website should be up and running
+within a few minutes.
 
 *** install ghp_import2
 
