@@ -8,7 +8,8 @@
 .. description: writing blogger using by nikola again.
 .. type: text
 #+END_COMMENT
-#+OPTIONS: toc:nil num:t ^:{}
+#+LANGUAGE: zh-TW
+#+OPTIONS: toc:3 num:t ^:{}
 
 掙扎了許久，還是先用 [[https://getnikola.com/][nikola]] 記錄一些事，畢竟比較熟悉，能快一點上手。
 
