@@ -1,0 +1,19 @@
+#+BEGIN_COMMENT
+.. title: Windows 10 中，隱藏磁碟機
+.. slug: hide-driver-on-windows
+.. date: 2018-05-24 15:49:19 UTC+08:00
+.. tags: disk, windows
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+
+記錄一下，在 Windows 10 中，如何隱藏磁碟機？
+
+1. windows 系統管理
+2. 磁碟管理
+3. 點要隱藏的 partition，按右鍵
+4. 變更磁碟機代號及路徑
+5. 新增，變更，移除，三選一

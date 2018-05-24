@@ -7,6 +7,8 @@
 .. description:
 .. type: text
 
+**己經没有 [infinality-bundle] 了，這篇留作紀念。**
+
 系統看起來要好看，最重要的其實是字型，字型沒調好看起來就是怪怪的，不舒服。
 
 目前我的解法是參考 https://wiki.archlinux.org/index.php/Infinality 設定整個系統的字型。
