@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：WD)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/wd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 24 May 2018 09:29:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>為 windows 10，換一顆硬碟</title><link>https://mariolong.github.io/posts/replace-new-hard-disk/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+昨晚，開啓 windows 10 時，速度變得很慢，等了好久，好不容易才進入
+windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
+&lt;/p&gt;
+
+&lt;p&gt;
+這硬碟的一般資訊如下：
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   016    Pre-fail  Always       -       0
+  2 Throughput_Performance  0x0005   140   140   054    Pre-fail  Offline      -       69
+  3 Spin_Up_Time            0x0007   129   129   024    Pre-fail  Always       -       294 (Average 294)
+  4 Start_Stop_Count        0x0012   100   100   000    Old_age   Always       -       2302
+  5 Reallocated_Sector_Ct   0x0033   100   100   005    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   100   100   067    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0005   124   124   020    Pre-fail  Offline      -       33
+  9 Power_On_Hours          0x0012   099   099   000    Old_age   Always       -       12850
+ 10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       1815
+192 Power-Off_Retract_Count 0x0032   099   099   000    Old_age   Always       -       2392
+193 Load_Cycle_Count        0x0012   099   099   000    Old_age   Always       -       2392
+194 Temperature_Celsius     0x0002   120   120   000    Old_age   Always       -       50 (Min/Max 12/61)
+196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0008   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x000a   200   200   000    Old_age   Always       -       171
+&lt;/pre&gt;
+
+&lt;p&gt;
+其它硬碟都没有錯誤訊息，就是這顆 toshiba 2TB 的錯誤訊息如下：
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+Error 171 occurred at disk power-on lifetime: 12844 hours (535 days + 4 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 01 2f 36 5a 00  Error: ICRC, ABRT 1 sectors at LBA = 0x005a362f = 5912111
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  35 00 00 2f 36 5a e0 ff      00:42:51.858  WRITE DMA EXT
+  35 00 08 28 36 5a e0 00      00:42:51.857  WRITE DMA EXT
+  ef 90 03 00 00 00 a0 00      00:42:50.877  SET FEATURES [Disable SATA feature]
+  ef 02 00 00 00 00 a0 00      00:42:50.877  SET FEATURES [Enable write cache]
+  35 00 00 2f 36 5a e0 ff      00:42:50.851  WRITE DMA EXT
+&lt;/pre&gt;
+
+&lt;p&gt;
+到 PCHOME 24hr，選了一顆 WD 紅標 3TB，接著就要等它來。當然不會再選
+Toshiba 的，主要的原因是 Power_On_Hours 的時數不到其它 WD 的 1/3，卻先掛點，MTBF 差了點。
+&lt;/p&gt;
+
+&lt;p&gt;
+Google &lt;code&gt;Error: ICRC, ABRT&lt;/code&gt; 的意義如下：
+&lt;/p&gt;
+&lt;pre class="example"&gt;
+Interface CRC error during Ultra DMA transfer - often either a bad
+cable or power problem, though possibly an incorrect Ultra DMA mode
+setting by the driver. Command aborted - either command not supported,
+unable to complete, or interface CRC (with ICRC).
+&lt;/pre&gt;
+
+&lt;p&gt;
+好像是要確認接線的狀況。
+&lt;/p&gt;
+
+&lt;p&gt;
+没關係，反正也想換硬碟，趁此機會，順便整理電腦。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+過程如下：
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; setup HD: connect to computer
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; gparted: create partition and format it in NTFS
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; SMART check both old and new HD
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; mount to linux
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; sync from old to new HD: rsync -a &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; disconnet old HD, reboot to windows 10
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; set new HD to disk D:
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+要加到 lvm 就看 &lt;a href="https://mariolong.github.io/posts/replace-hd-on-lvm"&gt;replace hd on LVM&lt;/a&gt; 這篇記錄，有經驗，不會太難。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>WD</category><category>windows</category><guid>https://mariolong.github.io/posts/replace-new-hard-disk/</guid><pubDate>Thu, 24 May 2018 05:43:24 GMT</pubDate></item></channel></rss>

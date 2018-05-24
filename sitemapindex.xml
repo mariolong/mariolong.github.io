@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_computer.xml</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_investment.xml</loc>
@@ -54,6 +54,10 @@
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://mariolong.github.io/categories/disk.xml</loc>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariolong.github.io/categories/dvd.xml</loc>
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </sitemap>
@@ -67,7 +71,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/font.xml</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/food.xml</loc>
@@ -83,11 +87,15 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/haskell.xml</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-23T09:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/health.xml</loc>
   <lastmod>2018-05-23T00:20:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariolong.github.io/categories/hide.xml</loc>
+  <lastmod>2018-05-24T08:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/kde.xml</loc>
@@ -103,7 +111,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/linux.xml</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/lxde.xml</loc>
@@ -139,7 +147,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/nikola.xml</loc>
-  <lastmod>2018-05-23T06:14:00Z</lastmod>
+  <lastmod>2018-05-23T10:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/pandoc.xml</loc>
@@ -171,7 +179,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/taffybar.xml</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-23T09:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/tai-ji-quan.xml</loc>
@@ -194,8 +202,16 @@
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://mariolong.github.io/categories/wd.xml</loc>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariolong.github.io/categories/windows.xml</loc>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariolong.github.io/categories/xmonad.xml</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-23T09:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/yan.xml</loc>
@@ -203,10 +219,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/rss.xml</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/sitemap.xml</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
  </sitemap>
 </sitemapindex>

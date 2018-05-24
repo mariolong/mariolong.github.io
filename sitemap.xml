@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
+  <lastmod>2018-05-24T08:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-05-23T09:02:00Z</lastmod>
+  <lastmod>2018-05-24T08:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -90,6 +90,10 @@
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/disk/</loc>
+  <lastmod>2018-05-24T08:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/dvd/</loc>
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
@@ -124,6 +128,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/health/</loc>
   <lastmod>2018-05-23T00:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/hide/</loc>
+  <lastmod>2018-05-24T08:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/kde/</loc>
@@ -230,6 +238,14 @@
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/wd/</loc>
+  <lastmod>2018-05-24T06:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/windows/</loc>
+  <lastmod>2018-05-24T06:35:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/xmonad/</loc>
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
@@ -259,7 +275,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-6.html</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
+  <lastmod>2018-05-24T09:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-7.html</loc>
@@ -271,7 +287,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
+  <lastmod>2018-05-24T08:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/30-thinkings/</loc>
@@ -450,6 +466,10 @@
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/posts/hide-driver-on-windows/</loc>
+  <lastmod>2018-05-24T08:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/posts/hostapd/</loc>
   <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
@@ -572,6 +592,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/replace-hd-on-lvm/</loc>
   <lastmod>2018-05-23T00:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/replace-new-hard-disk/</loc>
+  <lastmod>2018-05-24T06:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/resurrection-of-taffybar-and-lxqt-globalkeyd/</loc>

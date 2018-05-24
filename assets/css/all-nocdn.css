@@ -7951,3 +7951,20 @@ header {
   /* margin-bottom: 1em; */
   border-bottom: 2px solid #aaa;
 }
+
+span[class^="section-number-"] {
+  padding-right: 0.35em;
+}
+
+span.section-number-2::after {
+  content: ".";
+}
+
+time.listdate {
+  padding-right: 0.75em;
+}
+
+ul.postlist>li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
