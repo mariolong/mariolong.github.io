@@ -1,9 +1,346 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：python)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 00:20:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip: python library</title><link>https://mariolong.github.io/posts/pip-python-library/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;全部重新安裝已安裝的 python 程式&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：python)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip: python library</title><link>https://mariolong.github.io/posts/pip-python-library/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;全部重新安裝已安裝的 python 程式&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U
 &lt;/pre&gt;
 &lt;p&gt;安裝特定版本的套件&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ sudo pip install "pep8==1.5.7"
-&lt;/pre&gt;&lt;/div&gt;</description><category>python</category><guid>https://mariolong.github.io/posts/pip-python-library/</guid><pubDate>Mon, 26 Jan 2015 12:51:50 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><category>python</category><guid>https://mariolong.github.io/posts/pip-python-library/</guid><pubDate>Mon, 26 Jan 2015 12:51:50 GMT</pubDate></item><item><title>emacs python 環境設定</title><link>https://mariolong.github.io/posts/emacs-python/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;平時是用 python 寫些程式，網路上很多將 emacs 配置成 python IDE 的文章。參考後，決定用 elpy，jedi 為後端。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;p&gt;elpy 的安裝分為 emacs 和 python 端。&lt;/p&gt;
+&lt;p&gt;emacs&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+(require 'elpy)
+&lt;/pre&gt;
+&lt;p&gt;python&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip install elpy jedi
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;問題記錄&lt;/h2&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;版本不符&lt;/h3&gt;
+&lt;p&gt;elpy 報下列的錯誤訊息：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+You are not using the same version of Elpy in Emacs Lisp
+compared to Python. This can cause random problems. Please
+do make sure to use compatible versions.
+
+Elpy Emacs Lisp version: 1.4.1
+Elpy Python version....: 1.4.0
+&lt;/pre&gt;
+&lt;p&gt;這個是 emacs 和 python 中的 elpy 版本不同所致，更新 python 中的版本即可。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip install --upgrade elpy
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>python</category><guid>https://mariolong.github.io/posts/emacs-python/</guid><pubDate>Sat, 24 May 2014 04:10:54 GMT</pubDate></item><item><title>emacs reStructureText mode</title><link>https://mariolong.github.io/posts/emacs-rst-mode/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;參考 &lt;a class="reference external" href="http://docutils.sourceforge.net/docs/user/emacs.html"&gt;http://docutils.sourceforge.net/docs/user/emacs.html&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;install&lt;/h2&gt;
+&lt;p&gt;我用的是 emacs 24.3，預設已安裝 rst.el，檢查一下：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+M-x rst-mode
+&lt;/pre&gt;
+&lt;p&gt;在 OS 中安裝 sphinx&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip inistall sphinx
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;客製化標題符號&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;操作指令&lt;/h2&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;指令分類&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-c C-a &amp;lt;up&amp;gt; or &amp;lt;down&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;切換標題層次
+改用 C-c C-= 切換&lt;/dd&gt;
+&lt;dt&gt;C-c C-c&lt;/dt&gt;
+&lt;dd&gt;將目前檔案轉成 pdf 或 html 等目標檔&lt;/dd&gt;
+&lt;dt&gt;C-c C-l&lt;/dt&gt;
+&lt;dd&gt;建立表列&lt;/dd&gt;
+&lt;dt&gt;C-c C-r&lt;/dt&gt;
+&lt;dd&gt;處理目前的 region&lt;/dd&gt;
+&lt;dt&gt;C-c C-t&lt;/dt&gt;
+&lt;dd&gt;處理目錄 (table of contents)&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;標題&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-c C-a C-a, C-c C-=, and C-=&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-adjust&lt;/p&gt;
+&lt;ol class="last arabic simple"&gt;
+&lt;li&gt;如果所在行沒有標題符號，或不是完整的標題符號，則會建立標題符號，長度與本行文字等長，層次與上文中最近的一個標題相同。&lt;/li&gt;
+&lt;li&gt;已有完整的標題符號，則會循環升級標題層次。&lt;/li&gt;
+&lt;li&gt;可以先選定區域 (region)，區域內的標題可以一起切換。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-- C-=&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;降級標題&lt;/p&gt;
+&lt;p class="last"&gt;可以先選定區域 (region)，區域內的標題可以一起切換。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="section" id="customizations-for-adornments"&gt;
+&lt;h4&gt;客製化標題符號 (Customizations for Adornments)&lt;/h4&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;rst-preferred-adornments&lt;/dt&gt;
+&lt;dd&gt;to a list of the adornments that you like to use for documents.&lt;/dd&gt;
+&lt;dt&gt;rst-default-indent&lt;/dt&gt;
+&lt;dd&gt;can be set to the number of indent spaces preferred for the over-and-under adornment style.&lt;/dd&gt;
+&lt;dt&gt;C-c C-a C-d.&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-display-adornments-hierarchy&lt;/p&gt;
+&lt;p class="last"&gt;顯示目前的標題符號表&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-c C-a C-s&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-straighten-adornments&lt;/p&gt;
+&lt;p class="last"&gt;一次調整本文中所有的標題符號&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-M-a ??C-}&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-backward-section&lt;/p&gt;
+&lt;p class="last"&gt;游標移至下一章節&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-M-e ??C-{&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-forward-section&lt;/p&gt;
+&lt;p class="last"&gt;游標移至上一章節&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-M-h&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-mark-section&lt;/p&gt;
+&lt;p class="last"&gt;選取整個章節&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;M-}&lt;/dt&gt;
+&lt;dd&gt;游標移至下一段&lt;/dd&gt;
+&lt;dt&gt;M-{&lt;/dt&gt;
+&lt;dd&gt;游標移至上一段&lt;/dd&gt;
+&lt;dt&gt;C-c C-r TAB&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-shift-region&lt;/p&gt;
+&lt;p class="last"&gt;選取區域向右移動 1 個 TAB&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;M-- C-c C-r &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;選取區域向左移動 1 個 TAB&lt;/dd&gt;
+&lt;dt&gt;M-2 or M-- 2 C-c C-r &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;左移 2 個 Tab&lt;/dd&gt;
+&lt;dt&gt;M-0 C-c C-r &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;取消選取區域的所有縮排&lt;/dd&gt;
+&lt;dt&gt;M-x customize-group&amp;lt;RET&amp;gt; rst-indent&amp;lt;RET&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;設定縮排風格&lt;/dd&gt;
+&lt;dt&gt;Indenting Lines While Typing&lt;/dt&gt;
+&lt;dd&gt;In Emacs the TAB key is often used for indenting the current line.
+rst-mode implements this for the sophisticated indentation rules of reStructuredText.
+Pressing TAB cycles through the possible tabs for the current line.
+In the same manner newline-and-indent (C-j) indents the new line properly.&lt;/dd&gt;
+&lt;dt&gt;C-j, &amp;lt;enter&amp;gt;, &amp;lt;Tab&amp;gt;&lt;/dt&gt;
+&lt;dd&gt;針對當行，調整縮排&lt;/dd&gt;
+&lt;dt&gt;M-q&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;fill-paragraph&lt;/p&gt;
+&lt;p class="last"&gt;重排段落&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;轉檔&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;表列&lt;/h3&gt;
+&lt;p&gt;If you have a couple of plain lines you want to turn into an enumerated list you can invoke&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;C-c C-l C-e&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-enumerate-region&lt;/p&gt;
+&lt;p class="last"&gt;將一個選定的區域，轉成數字表列。&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-c C-l C-b&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;rst-bullet-list-region&lt;/p&gt;
+&lt;p class="last"&gt;轉成表列&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;C-u&lt;/dt&gt;
+&lt;dd&gt;如果要將連續的文字行轉成（數字）表列，則可在執行命令前加上 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C-u&lt;/span&gt;&lt;/tt&gt; 。&lt;/dd&gt;
+&lt;dt&gt;rst-straighten-bullets-region (C-c C-l C-s),&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;the existing bullets in the active region will be replaced to reflect their respective level.
+This does not make a difference in the document structure that reStructuredText defines,
+but looks better in,
+for example, if all of the top-level bullet items use the character -,
+and all of the 2nd level items use &lt;a href="https://mariolong.github.io/posts/emacs-rst-mode/#id7"&gt;&lt;span class="problematic" id="id8"&gt;*&lt;/span&gt;&lt;/a&gt;, etc...&lt;/p&gt;
+&lt;div class="last system-message" id="id7"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 161); &lt;em&gt;&lt;a href="https://mariolong.github.io/posts/emacs-rst-mode/#id8"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Inline emphasis start-string without end-string.&lt;/div&gt;
+&lt;/dd&gt;
+&lt;dt&gt;rst-insert-list (C-c C-l C-i)&lt;/dt&gt;
+&lt;dd&gt;You may also invoke rst-insert-list at the end of a list item.
+In this case it inserts a new line containing the markup for the a list item on the same level.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id9"&gt;
+&lt;h3&gt;區域&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id10"&gt;
+&lt;h3&gt;目錄&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>python</category><category>rst</category><guid>https://mariolong.github.io/posts/emacs-rst-mode/</guid><pubDate>Thu, 15 May 2014 01:10:54 GMT</pubDate></item><item><title>vim: my python IDE</title><link>https://mariolong.github.io/posts/vim-my-python-ide/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;參考&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide"&gt;Turning vim into a modern python ide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用 vim。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;在裝 vim 前，先改 /etc/pacman.conf，加入&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[herecura-stable]
+Server = http://repo.herecura.be/herecura-stable/$arch
+&lt;/pre&gt;
+&lt;p&gt;然後再裝這個 qt 版本。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+yaourt -Syua
+yaourt vim-gvim-qt
+&lt;/pre&gt;
+&lt;p&gt;為何我裝這個 qt 版？因為我現在用的是 KDE。&lt;/p&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h3&gt;python 摺疊&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.vimrc&lt;/span&gt;&lt;/tt&gt; 加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+set foldmethod=indent
+set foldlevel=99
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;文法檢查與高亮&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+sudo pip install pyflakes pep8
+&lt;/pre&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.vimrc&lt;/span&gt;&lt;/tt&gt; 加上&lt;/p&gt;
+&lt;blockquote&gt;
+let g:pyflakes_use_quickfix = 0
+let g:pep8_map='&amp;lt;leader&amp;gt;8'&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;補完&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+Bundle ''
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;註解&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+Bundle 'scrooloose/nerdcommenter'
+
+Usage
+The following key mappings are provided by default (there is also a menu provided that contains menu items corresponding to all the below mappings):
+
+Most of the following mappings are for normal/visual mode only. The |NERDComInsertComment| mapping is for insert mode only.
+
+[count]&amp;lt;leader&amp;gt;cc |NERDComComment|
+Comment out the current line or text selected in visual mode.
+
+[count]&amp;lt;leader&amp;gt;cn |NERDComNestedComment|
+    Same as &amp;lt;leader&amp;gt;cc but forces nesting.
+....\
+
+Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+
+[count]&amp;lt;leader&amp;gt;cm |NERDComMinimalComment|
+Comments the given lines using only one set of multipart delimiters.
+
+[count]&amp;lt;leader&amp;gt;ci |NERDComInvertComment|
+Toggles the comment state of the selected line(s) individually.
+
+[count]&amp;lt;leader&amp;gt;cs |NERDComSexyComment|
+Comments out the selected lines ``sexily``
+
+[count]&amp;lt;leader&amp;gt;cy |NERDComYankComment|
+Same as &amp;lt;leader&amp;gt;cc except that the commented line(s) are yanked first.
+
+&amp;lt;leader&amp;gt;c$ |NERDComEOLComment|
+Comments the current line from the cursor to the end of line.
+
+&amp;lt;leader&amp;gt;cA |NERDComAppendComment|
+Adds comment delimiters to the end of line and goes into insert mode between them.
+
+|NERDComInsertComment|
+Adds comment delimiters at the current cursor position and inserts between. Disabled by default.
+
+&amp;lt;leader&amp;gt;ca |NERDComAltDelim|
+Switches to the alternative set of delimiters.
+
+[count]&amp;lt;leader&amp;gt;cl
+[count]&amp;lt;leader&amp;gt;cb |NERDComAlignedComment|
+Same as |NERDComComment| except that the delimiters are aligned down the left side (&amp;lt;leader&amp;gt;cl) or both sides (&amp;lt;leader&amp;gt;cb).
+
+取消註解
+[count]&amp;lt;leader&amp;gt;cu |NERDComUncommentLine|
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="git"&gt;
+&lt;h3&gt;整合 git&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.vimrc&lt;/span&gt;&lt;/tt&gt; 加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+%{fugitive#statusline()}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="file-browser"&gt;
+&lt;h3&gt;檔案系統瀏覽器 file browser&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+" NERDTree (better file browser) toggle
+map &amp;lt;F3&amp;gt; :NERDTreeToggle&amp;lt;CR&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>vim</category><guid>https://mariolong.github.io/posts/vim-my-python-ide/</guid><pubDate>Tue, 22 Apr 2014 02:18:52 GMT</pubDate></item><item><title>bottle+beaker session management</title><link>https://mariolong.github.io/posts/bottlebeaker-session-management/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;直接看程式碼：&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;beaker.middleware&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;mako_view&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mako_template&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;template&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hook&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;static_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;## Beaker middleware&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-7"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# set up beaker session state middleware&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;_session_opts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'session.type'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'memory'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-9"&gt;&lt;/a&gt;                                 &lt;span class="s1"&gt;'session.auto'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-11"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# wrap the bottle app in a beaker&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;_app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;beaker&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;middleware&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SessionMiddleware&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bottle&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;_session_opts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-14"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# hook request to make the beaker session easier to get to&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-15"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@hook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'before_request'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-16"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_setup_request&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-17"&gt;&lt;/a&gt;        &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'beaker.session'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-18"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-19"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_init_root&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-20"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;'user_session'&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-21"&gt;&lt;/a&gt;                &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'user_session'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Something&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-22"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'user_session'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-23"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-24"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-25"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@view&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'market.tmpl'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-26"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;market&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-27"&gt;&lt;/a&gt;        &lt;span class="n"&gt;_us&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_init_root&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_ca555b2b0ebe432685962d23b4462175-28"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_us&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;其中 hook 這一段，設定只要有 request，就會先執行下面的程式：&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_3306546f068b489b880fda7a33f1d2d8-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# hook request to make the beaker session easier to get to&lt;/span&gt;
+&lt;a name="rest_code_3306546f068b489b880fda7a33f1d2d8-2"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@hook&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'before_request'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_3306546f068b489b880fda7a33f1d2d8-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_setup_request&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_3306546f068b489b880fda7a33f1d2d8-4"&gt;&lt;/a&gt;                &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'beaker.session'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;在 route 中可以用下列方法取得 session 資料：&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_0b9b666e273d45a287bfbf939ab07284-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# web server start here&lt;/span&gt;
+&lt;a name="rest_code_0b9b666e273d45a287bfbf939ab07284-2"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/stk/&amp;lt;sid&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0b9b666e273d45a287bfbf939ab07284-3"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@view&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'stkinfo.tmpl'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0b9b666e273d45a287bfbf939ab07284-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;stkinfo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_0b9b666e273d45a287bfbf939ab07284-5"&gt;&lt;/a&gt;        &lt;span class="n"&gt;_us&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'user_session'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_0b9b666e273d45a287bfbf939ab07284-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_us&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;在程式檔的最後加上讓程式可以執行：&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-2"&gt;&lt;/a&gt;        &lt;span class="n"&gt;bottle&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;_app&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-4"&gt;&lt;/a&gt;        &lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;_app&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;其中 &lt;tt class="docutils literal"&gt;application&lt;/tt&gt; 是 python 和 uwsgi 溝通的物件，和 beaker 沒有關係。&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>https://mariolong.github.io/posts/bottlebeaker-session-management/</guid><pubDate>Sat, 22 Feb 2014 01:39:50 GMT</pubDate></item></channel></rss>

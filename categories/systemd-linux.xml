@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：systemd. linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/systemd-linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>systemctl status --user: Failed to connect to bus</title><link>https://mariolong.github.io/posts/systemctl-status-user-no-bus/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;最近在整理 systemd，玩著著就出包了。想看一下 service 的狀態，結果出來錯誤訊息：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ systemctl status --user
+Failed to connect to bus: No such file or directory
+&lt;/pre&gt;
+&lt;p&gt;google 了半天，終於在 archlinux 的 &lt;a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=203647"&gt;wiki&lt;/a&gt; 中看到一句話：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+I had a systemd unit file for emacs as described in
+https://wiki.archlinux.org/index.php/Em … stemd_unit located in
+~/.config/systemd/user/emacs.service When I removed it and rebooted
+the problem with startx and systemctl --user was gone.
+&lt;/pre&gt;
+&lt;p&gt;想來是有寫不好的 user service，於是把還沒用到的 user service 隔離後，
+問題立刻就迎刃而解啦。&lt;/p&gt;
+&lt;p&gt;記錄備查。&lt;/p&gt;&lt;/div&gt;</description><category>systemd. linux</category><guid>https://mariolong.github.io/posts/systemctl-status-user-no-bus/</guid><pubDate>Tue, 30 Aug 2016 01:32:42 GMT</pubDate></item></channel></rss>

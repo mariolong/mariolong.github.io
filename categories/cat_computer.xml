@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 24 May 2018 10:56:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 06:06:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 記錄一下，在 Windows 10 中，如何隱藏磁碟機？
 &lt;/p&gt;
 
@@ -109,21 +109,21 @@ unable to complete, or interface CRC (with ICRC).
 &lt;/p&gt;
 
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; setup HD: connect to computer
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; setup HD: connect to computer
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; gparted: create partition and format it in NTFS
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; gparted: create partition and format it in NTFS. &lt;b&gt;結果是在 windows 10 中做 partition 和 format.&lt;/b&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; SMART check both old and new HD
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; SMART check both old and new HD
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; mount to linux
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; mount to linux
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; sync from old to new HD: rsync -a &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; sync from old to new HD: &lt;code&gt;rsync -av &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;&lt;/code&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; disconnet old HD, reboot to windows 10
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; disconnet old HD, reboot to windows 10
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; set new HD to disk D:
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; set new HD to disk D:
 &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -468,13 +468,9 @@ origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;
 &lt;p&gt;
 在 archlinux 上想用 haskell 真不是一件容易的事，因為選擇太多。
 &lt;/p&gt;
-
-&lt;p&gt;
-不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
-&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;閱讀更多…&lt;/a&gt; (尚餘 1 分鐘)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>haskell</category><category>pandoc</category><category>xmonad</category><guid>https://mariolong.github.io/posts/install-haskell-applications/</guid><pubDate>Sat, 28 Apr 2018 11:16:44 GMT</pubDate></item><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
-Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced linux Sound Architecture&lt;/a&gt;已說明等化器的安裝及設定，照做即可。
+Archlinux WIKI 的 &lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced linux Sound Architecture&lt;/a&gt; 已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
 
 &lt;div id="outline-container-sec-1" class="outline-2"&gt;
@@ -489,7 +485,7 @@ Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linu
 &lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; config&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
-在&lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt;加上以下設定：
+在 &lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt; 加上以下設定：
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
@@ -570,7 +566,7 @@ home…
 &lt;/blockquote&gt;
 
 &lt;p&gt;
-我在&lt;kbd&gt;/root&lt;/kbd&gt;目錄下，建一個連到主目錄&lt;kbd&gt;.alsaequal.bin&lt;/kbd&gt;的連結，
+我在 &lt;kbd&gt;/root&lt;/kbd&gt; 目錄下，建一個連到主目錄 &lt;kbd&gt;.alsaequal.bin&lt;/kbd&gt; 的連結，
 mpd 即可使用，瞎打誤撞。
 &lt;/p&gt;
 &lt;/div&gt;
@@ -590,15 +586,15 @@ mpd 即可使用，瞎打誤撞。
 
 &lt;/div&gt;
 &lt;/div&gt;</description><category>alsa</category><category>linux</category><category>mpd</category><category>music</category><guid>https://mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Sun, 14 Jan 2018 22:20:29 GMT</pubDate></item><item><title>Post-installation of Archlinux</title><link>https://mariolong.github.io/posts/post-installation-of-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-首先依&lt;a href="https://mariolong.github.io/posts/install-arch-linux-2017"&gt;Install Arch linux (2017)&lt;/a&gt;將基本系統裝好，接著參考&lt;a href="https://wiki.archlinux.org/index.php/General_recommendations"&gt;General
-recommendations - ArchWiki&lt;/a&gt;記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
+首先依 &lt;a href="https://mariolong.github.io/posts/install-arch-linux-2017"&gt;Install Arch linux (2017)&lt;/a&gt; 將基本系統裝好，接著參考 &lt;a href="https://wiki.archlinux.org/index.php/General_recommendations"&gt;General
+recommendations - ArchWiki&lt;/a&gt; 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
 &lt;/p&gt;
 
 &lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; haskell&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
-安裝的方法參看&lt;a href="https://mariolong.github.io/posts/install-haskell-applications"&gt;Install Haskell Applications&lt;/a&gt;
+安裝的方法參看 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications"&gt;Install Haskell Applications&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1900,201 +1896,112 @@ iVT enable @ bios
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item><item><title>My linux</title><link>https://mariolong.github.io/posts/my-linux/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;first write: 2015-5-23
-update: 2016-5-13&lt;/p&gt;
-&lt;p&gt;這一年，幾乎沒有大的改變。&lt;/p&gt;
-&lt;div class="section" id="linux"&gt;
-&lt;h2&gt;我的 linux 平台&lt;/h2&gt;
-&lt;p&gt;整理一下目前在 linux 下，目前還在用的工具。試過後，不用的就不必放進來。&lt;/p&gt;
-&lt;p&gt;目的是，如果有一天要重新安裝系統時，能快速完成，回到可工作狀態。&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h3&gt;作業系統&lt;/h3&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/install-arch-linux/"&gt;Install Arch Linux&lt;/a&gt; : 接觸 linux 後，就只用過這個發行版。喜歡它的 rolling update，一直是用最新版。&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/xterm/"&gt;xterm&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;fish: current shell&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h3&gt;桌面&lt;/h3&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/lxqt/"&gt;lxqt&lt;/a&gt; : 簡單好用的「台灣之光」&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/lxqt%2Bxmonad%2Btaffybar/"&gt;我的桌面組合 lxqt+xmonad+taffybar&lt;/a&gt; ，著重於工作效率的平舖式視窗管理&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/show-volume-icon-on-systray/"&gt;Show volume icon on systray&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/fonts/"&gt;字型相關&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/rime/"&gt;Rime 中州韻輸入法引擎&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h3&gt;網路工具&lt;/h3&gt;
-&lt;p&gt;google-chrome&lt;/p&gt;
-&lt;p&gt;youtube-dl: 超強的 youtube downloader&lt;/p&gt;
-&lt;p&gt;qbittorrent: BT client&lt;/p&gt;
-&lt;p&gt;wifi-ap: &lt;a class="reference external" href="https://mariolong.github.io/posts/archlinux-hostapd-netcfg/"&gt;wireless AP 設定 （hostapd+netcfg/netctl）&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h3&gt;影音平台&lt;/h3&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/mpv/"&gt;mpv&lt;/a&gt; 好用的影音播放器&lt;/p&gt;
-&lt;p&gt;kodi: 家庭劇院&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/ffmpeg-xin-de/"&gt;ffmpeg 使用心得與整理&lt;/a&gt; ，有了這個，可以應付影音轉檔的需求。&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/dvd-backup/"&gt;DVD backup&lt;/a&gt; ，備份 DVD 吧！現在都是看 BD，實用性已經不高。&lt;/p&gt;
-&lt;p&gt;aegisub: 字幕處理。&lt;/p&gt;
-&lt;p&gt;mpd+mpc+ncmpcpp: 聽音樂的好朋友。 &lt;a class="reference external" href="https://mariolong.github.io/posts/enable-mpd-with-systemd/"&gt;enable mpd with systemd&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;kid3: 修改音樂檔的 tags&lt;/p&gt;
-&lt;p&gt;lightworks: 非線性影音剪輯系統&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h3&gt;生活回憶&lt;/h3&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/feh/"&gt;feh 小巧好用的圖片閱覽器&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;mm=mpv+feh: 自己寫吧，找不到真正喜歡的。比較接近需求的是 gwenview，又有無法解決的問題，且太過笨重。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
-&lt;h3&gt;程式撰寫&lt;/h3&gt;
-&lt;p&gt;emacs&lt;/p&gt;
-&lt;p&gt;python&lt;/p&gt;
-&lt;p&gt;stock&lt;/p&gt;
-&lt;p&gt;nginx&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id7"&gt;
-&lt;h3&gt;其它&lt;/h3&gt;
-&lt;p&gt;rsync: 備份&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/systemd-timesync/"&gt;用systemd-timesync同步時間&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;speedcrunch: 計算器&lt;/p&gt;
-&lt;p&gt;eject:&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/my-linux/</guid><pubDate>Thu, 12 May 2016 09:55:41 GMT</pubDate></item><item><title>replace hd on LVM</title><link>https://mariolong.github.io/posts/replace-hd-on-lvm/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;lvm 上的一顆硬碟壞了，要換掉。&lt;/p&gt;
-&lt;p&gt;整個過程並不像網上查到的那麼順利，所以，還是記錄下來，以備不時之需。&lt;/p&gt;
-&lt;p&gt;參考 &lt;a class="reference external" href="http://www.microhowto.info/howto/replace_one_of_the_physical_volumes_in_an_lvm_volume_group.html"&gt;Replace one of the physical volumes in an LVM volume group&lt;/a&gt;
-，鳥哥的 LINUX 私房菜，
-和 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/LVM"&gt;Archlinux Wiki&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;為了行文方便，先做以下說明：&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-/dev/sdd 是壞掉的硬碟
-/dev/sdb 是新的硬碟
-&lt;/pre&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;步驟&lt;/h2&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;準備好要加入 LVM 的硬碟，並用 gparted 設定為 lvm pv。
-有人是用 &lt;tt class="docutils literal"&gt;pvcreate&lt;/tt&gt; ，反正功能是一樣的，就不必想太多，能完成工作就好。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;將新硬碟加入 VG:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo vgextend VG01 /dev/sdb1
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;資料移到新硬碟:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo pvmove /dev/sdd1 /dev/sdb1
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;檢查是否移動完成&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo pvs
-
-PV         VG   Fmt  Attr PSize   PFree
-/dev/sdb1  VG01 lvm2 a--    1.36t      0
-/dev/sdd1  VG01 lvm2 a--  931.51g 931.51g
-
-$ sudo pvdisplay
-
---- Physical volume ---
-PV Name               /dev/sdd1
-VG Name               VG01
-PV Size               931.51 GiB / not usable 4.00 MiB
-Allocatable           yes
-PE Size               4.00 MiB
-Total PE              238466
-Free PE               238466
-Allocated PE          0
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;縮小 lv&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo resize2fs -M /dev/VG01/LV00
-$ sudo lvresize -l -238466 /dev/VG01/LV00
-$ sudo resize2fs /dev/VG01/LV00
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;移除舊硬碟&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ sudo vgreduce VG01 /dev/sdd1
-Removed "/dev/sdd1" from volume group "VG01"
-
-$ sudo pvremove /dev/sdd1
-Labels on physical volume "/dev/sdd1" successfully wiped
-&lt;/pre&gt;
-&lt;/li&gt;
+&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item><item><title>ffmpeg and x265</title><link>https://mariolong.github.io/posts/ffmpeg-and-x265/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://forum.doom9.org/showthread.php?t=172458"&gt;http://forum.doom9.org/showthread.php?t=172458&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Suggestion for x265's --tune film
+Several days ago we asked the x265's team how could we participate in the discussion, and they left me with e-mail address. When we finished writing the email, we are also glad to post it here so all of you are welcome to discuss about the topic: How to keep the film grain and details at higher quality when using x265?&lt;/p&gt;
+&lt;p&gt;We take several movie scenes with moderate level of film grain, rich details, and some dark scenes. Then we take out the tests between x264-10bit and x265-10bit:&lt;/p&gt;
+&lt;p&gt;(NOTE there are --input-depth 10 for both sets of parameters. Do NOT just copy and paste if you are not encoding 10-bit input)&lt;/p&gt;
+&lt;p&gt;x264: --preset veryslow --tune film --crf 19.0 --qcomp 0.75 --input-depth 10(a fairly trusted setting )&lt;/p&gt;
+&lt;p&gt;x265: --preset slower --ctu 32 --max-tu-size 16 --crf 20.0 --tu-intra-depth 2 --tu-inter-depth 2 --rdpenalty 2 --me 3 --subme 5 --merange 44 --b-intra --no-amp --ref 5 --weightb --keyint 360 --min-keyint 1 --bframes 8 --aq-mode 1 --aq-strength 1.0 --rd 5 --psy-rd 1.5 --psy-rdoq 5.0 --rdoq-level 1 --no-sao --no-open-gop --rc-lookahead 80 --scenecut 40 --max-merge 4 --qcomp 0.8 --no-strong-intra-smoothing --deblock -2:-2 --qg-size 16 --pbratio 1.2
+(We've tested hundreds of parameter combinations and we conclude this set is the best outcome)&lt;/p&gt;
+&lt;p&gt;We compare the quality with our eyes, NOT psnr/ssim, which favors blurriness over grain keeping.
+x264 gives an 118% size compared to x265, with nearly the same visual quality. We can also drop the bit-rate of x264 a bit, but then AVC outcome necessarily looks worse. At this point we believe x265 claims a victory, not at extremely low bit-rate cases where HEVC blurriness looks better than AVC blockiness, but rather a high-quality, near-transparent encoding.&lt;/p&gt;
+&lt;p&gt;Our test focus on several RC parameters: --ctu, --tu, --crf, --qcomp, --aq-mode, --aq-strength, --psy, --qcomp --qg-size...These parameters can alter RC behavior with minor impact on the speed. We took some iterative method with genetic algorithms to select the possibly best parameter sets out of infinite.&lt;/p&gt;
+&lt;p&gt;Here are some of our comments:
+--ctu, --max-tu-size: This two should be decreased in 1080p @ high-quality encoding. Keeping other parameters constant, tweaking --ctu 64-&amp;gt;32, --tu 32-&amp;gt;16 gives even better quality with nearly 15% of size-decrease, in crf mode. We assume that adopting larger CU and TU actually wastes the bit-rate by producing over-smoothed block, forcing bit-rate to rise in order to keep a "constant rate-factor". So we'd better just leave them smaller, at least under 1080p&lt;/p&gt;
+&lt;p&gt;--crf: x265 gives a default value 28. This is way too low to compete against x264's default value 23. Many users believe by tweaking crf they can choose between quality and size without other concerns, but they are wrong; sometimes, tweaking other parameters is more efficient. --crf need to be coupled with other parameters properly tuned.&lt;/p&gt;
+&lt;p&gt;--qcomp: the lower your crf, the higher the quality, and you should set --qcomp to be higher. This is also true for x264. Our test suggest --qcomp 0.8 is very essential when x265_crf&amp;lt;23.&lt;/p&gt;
+&lt;p&gt;--aq-mode: keep it at 1. aq-mode=3 gives wired bit-rate for nothing.&lt;/p&gt;
+&lt;p&gt;--aq-strength: default 1.0 is pretty good.&lt;/p&gt;
+&lt;p&gt;--psy: the primary weapon to fight blurriness. --psy-rd 1.5 --psy-rdoq 5.0 --rdoq-level 1 works better than --tune grain's settings, trust me.&lt;/p&gt;
+&lt;p&gt;--deblock -2:-2: This is also a rule of thumb since x264's era: using smaller numbers if you prioritize quality.&lt;/p&gt;
+&lt;p&gt;--qg-size 16: The larger number you set, the smaller file you get, but much worse quality for trade. Just change it to 16 instead of 64; this is worthy.&lt;/p&gt;
+&lt;p&gt;--no-sao: SAO smooths everything up. Do NOT use it unless you really want to.&lt;/p&gt;
+&lt;p&gt;--me_range 44: me_range has minor impact on speed when coupled with low level of me and subme; but that's not true for --me 3 --subme 5. Decrease it a bit in 1080p do you a favor with little sacrifice.&lt;/p&gt;
+&lt;p&gt;--no-rect --no-amp: They trade time for nothing. Do NOT enable them unless you really have time to waste.&lt;/p&gt;
+&lt;p&gt;So, here are our suggestions for x265 --tune film:&lt;/p&gt;
+&lt;p&gt;--ctu 32 --max-tu-size 16 --qcomp 0.8 --aq-mode 1 --aq-strength 1.0 --psy-rd 1.8 --psy-rdoq 5.0 --rdoq-level 1 --deblock -2:-2 --qg-size 16 --no-sao --me_range 44 --no-rect --no-amp&lt;/p&gt;
+&lt;p&gt;By setting these parameters, you can probably set your crf to be around 22~19, and it gives you considerably good output with small size. if you set crf=21~22, --qcomp 0.75 is recommended.
+We don't see any advantage for x265 if you are targeting at x264_crf&amp;lt;=16. At that point x265 requires even more bit-rate to keep the details.&lt;/p&gt;
+&lt;p&gt;Furthermore, here are some other recommendations:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Except for --tune and --preset, add another parameter "--expectation" and let user specify whether he wishes a high, medium or low quality(with respective size). This can also be derived if --crf is specified. Then use the input to change the rc behaviors. For example, if the user is expecting high quality rather than a crf=28 blurriness, increase --qcomp to 0.8.&lt;/li&gt;
+&lt;li&gt;Change RC behaviors and speed options based on resolution. 720p/1080p/1440p/4K don't optimally share a same set of parameters. For example, --max-tu-size --ctu --me_range.&lt;/li&gt;
+&lt;li&gt;Give less bias/more penalty to bigger CUs and TUs, especially at higher quality expectation and lower resolution. --rd-penalty 2 is a very useful parameter, but it only prohibits TU size of 32x32. Let's impose more penalties to similar cases.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="section" id="issue"&gt;
-&lt;h2&gt;ISSUE&lt;/h2&gt;
-&lt;div class="section" id="lv"&gt;
-&lt;h3&gt;縮小 lv&lt;/h3&gt;
-&lt;p&gt;要縮小 lv 時，先要將 file system 縮小，否則開機時，會報錯。&lt;/p&gt;
-&lt;p&gt;我的作法是將 file system 降至最低，就不必去計算要留多少。&lt;/p&gt;
-&lt;p&gt;然後，縮小 lv。&lt;/p&gt;
-&lt;p&gt;最後，再把 file system 放到最大即可。&lt;/p&gt;
+&lt;p&gt;Thank you for patiently reading this email, and I'm ready to conclude it:
+So far x265 team has done a fantastic job by offering the best encoder (at low bit-rate), but let us greedily urge more. We wish x265 to be best not only at low quality, but also best overall. At the same time, we are willing to help the team with our own effort.&lt;/p&gt;
+&lt;p&gt;Regards,
+LittlePox&lt;/p&gt;
+&lt;p&gt;2015/08/11&lt;/p&gt;&lt;/div&gt;</description><guid>https://mariolong.github.io/posts/ffmpeg-and-x265/</guid><pubDate>Mon, 21 Nov 2016 02:12:28 GMT</pubDate></item><item><title>Using systemd to manage user session</title><link>https://mariolong.github.io/posts/using-systemd-to-manage-user-session/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;create /etc/systemd/system/user@.service.d/dbus_env.conf&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-$ sudo resize2fs -M /dev/VG01/LV00
-$ sudo lvresize -l -238466 /dev/VG01/LV00
-$ sudo resize2fs /dev/VG01/LV00
+[Unit]
+Wants=dbus.service
+
+[Service]
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%I/bus
 &lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="pvmove"&gt;
-&lt;h3&gt;pvmove&lt;/h3&gt;
-&lt;p&gt;pvmove 時，不知為何沒將所有的 PE 都移動到新的硬碟，結果重做一次後就好了。&lt;/p&gt;
+&lt;p&gt;show environment variables&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-$ sudo pvdisplay
-$ sudo lvresize -l -238466 /dev/VG01/LV00
+$ systemctl --user show-environment|grep DBUS
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 &lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;後記&lt;/h2&gt;
-&lt;p&gt;這次的工作一直卡在縮小 lv 的地方，因為沒有先縮小 file system，造成 fsck 會報錯，然後就無法開機。&lt;/p&gt;
-&lt;p&gt;雖然在試誤的過程中，一直擔心硬碟中的資料會毀損，最後的結果是好的，沒有任何資料毀損。&lt;/p&gt;
-&lt;p&gt;真是慶幸。&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/replace-hd-on-lvm/</guid><pubDate>Thu, 11 Jun 2015 23:52:30 GMT</pubDate></item><item><title>字型相關</title><link>https://mariolong.github.io/posts/fonts/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;己經没有 [infinality-bundle] 了，這篇留作紀念。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;系統看起來要好看，最重要的其實是字型，字型沒調好看起來就是怪怪的，不舒服。&lt;/p&gt;
-&lt;p&gt;目前我的解法是參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Infinality"&gt;https://wiki.archlinux.org/index.php/Infinality&lt;/a&gt; 設定整個系統的字型。&lt;/p&gt;
+&lt;p&gt;create my_stuff.target&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[Unit]
+Description=My services
+Wants=dbus.service
+AllowIsolate=true
+
+[Install]
+Alias=default.target
+&lt;/pre&gt;
+&lt;p&gt;enable it&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+systemctl --user enable my_stuff_target
+&lt;/pre&gt;
+&lt;p&gt;create ~/.config/systemd/user/alsa-tray.service&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[Unit]
+Description=show volume icon on systray
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/python2 /usr/bin/alsa-tray
+
+[Install]
+WantedBy=my_stuff.target
+&lt;/pre&gt;
+&lt;p&gt;enable it:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ systemctl --user enable alsa-tray.service
+&lt;/pre&gt;
+&lt;p&gt;reboot and success&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
-&lt;h2&gt;安裝&lt;/h2&gt;
-&lt;p&gt;1. 增加公鑰&lt;/p&gt;
+&lt;h2&gt;參考文件&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://immae.eu/blog/2014/05/26/manage-your-session-with-systemd/"&gt;http://immae.eu/blog/2014/05/26/manage-your-session-with-systemd/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://mariolong.github.io/posts/using-systemd-to-manage-user-session/</guid><pubDate>Sat, 08 Oct 2016 08:36:16 GMT</pubDate></item><item><title>Show volume icon on systray</title><link>https://mariolong.github.io/posts/show-volume-icon-on-systray/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;試用了以下幾個可以在 linux systray 顯示音量 icon 的小程式：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;volti&lt;/li&gt;
+&lt;li&gt;volicon&lt;/li&gt;
+&lt;li&gt;volumeicon&lt;/li&gt;
+&lt;li&gt;alsa-tray&lt;/li&gt;
+&lt;li&gt;volwheel&lt;/li&gt;
+&lt;li&gt;pnmixer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後決定用 alsa-tray，原因是佔用的記憶體最少，而且操作模式不會很奇怪。&lt;/p&gt;
+&lt;p&gt;再寫個小小的 service，用 systemd 啟動就大功告成了。&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-$ sudo pacman-key -r 962DDE58
-$ sudo pacman-key --lsign-key 962DDE58
-&lt;/pre&gt;
-&lt;p&gt;2. 編輯 &lt;tt class="docutils literal"&gt;/etc/pacman.conf&lt;/tt&gt; ，加上&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[infinality-bundle]
-Server = http://bohoomil.com/repo/$arch
-&lt;/pre&gt;
-&lt;p&gt;3. 更新資料庫，並安裝 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;infinality-bundle&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ yaourt -Syy
-$ yaourt -S infinality-bundle
-&lt;/pre&gt;
-&lt;ol class="arabic" start="4"&gt;
-&lt;li&gt;&lt;p class="first"&gt;安裝字體，可以挑選 &lt;a class="reference external" href="http://bohoomil.com/doc/05-fonts/"&gt;這裡&lt;/a&gt; 有的。&lt;/p&gt;
-&lt;p&gt;例如，想用 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;adobe-source-code-pro-fonts&lt;/span&gt;&lt;/tt&gt; ，查到有 ttf-source-code-pro-ibx，
-那就可以安裝。&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ yaourt -S adobe-source-code-pro-fonts
-&lt;/pre&gt;
-&lt;p&gt;目前我安裝的是以下字型：&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ yaourt -S ttf-tw ttf-dejavu ttf-oxygen ttf-liberation
-$ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts adobe-source-code-pro-fonts
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;用 lxqt-config-apperance 調整字體渲染方式。&lt;/p&gt;
-&lt;p&gt;自動產生 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/fontconfig/fonts.conf&lt;/span&gt;&lt;/tt&gt; 和 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/fonts.conf&lt;/span&gt;&lt;/tt&gt; 一樣的檔案。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;微調 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/X11/xinit/xinitrc.d/infinality-settings.sh&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;設定 USE_STYLE="3"&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;重啟 X 看結果。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;結論&lt;/h2&gt;
-&lt;p&gt;暫時就先這樣，有空再來調整吧。&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>font</category><category>linux</category><guid>https://mariolong.github.io/posts/fonts/</guid><pubDate>Wed, 27 May 2015 13:48:41 GMT</pubDate></item></channel></rss>
+[Unit]
+Description=show volume icon on systray
+
+[Service]
+Type=simple
+
+ExecStart=/usr/bin/alsa-tray
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=default.target
+&lt;/pre&gt;&lt;/div&gt;</description><category>alsa</category><category>systray</category><guid>https://mariolong.github.io/posts/show-volume-icon-on-systray/</guid><pubDate>Tue, 13 Sep 2016 00:55:30 GMT</pubDate></item></channel></rss>

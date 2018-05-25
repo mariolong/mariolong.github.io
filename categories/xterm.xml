@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：xterm)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/xterm.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>xterm</title><link>https://mariolong.github.io/posts/xterm/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;因為要用 synapse，又不知如何讓 urxvt 和 synapse 合作，所以裝上了 xterm。&lt;/p&gt;
+&lt;p&gt;用了之後，發現比起 urxvt，不僅速度快，而且佔用的記憶體也少得多，字體顯示也比較漂亮。&lt;/p&gt;
+&lt;p&gt;urxvt 會突然不能顯示的問題，也許就迎刃而解了吧？再觀察幾天看看。&lt;/p&gt;
+&lt;p&gt;參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Xterm"&gt;https://wiki.archlinux.org/index.php/Xterm&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S xterm
+&lt;/pre&gt;
+&lt;p&gt;就這個，沒別的。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;p&gt;與 urxvt 一樣，xterm 的設定也放在 ~/.Xresource 中。&lt;/p&gt;
+&lt;p&gt;有了配置 urxvt 的經驗後，這次配置 xterm 就快得多了，幾乎都是用 urxvt 的設定。&lt;/p&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;256 色&lt;/h3&gt;
+&lt;p&gt;不要設定環境變數 TERM，讓 xterm 去自動設定。不然 MC 會以為 term 不是 256 色的終端模擬器。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+XTerm*termName: xterm-256color
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="utf-8"&gt;
+&lt;h3&gt;編碼改為 utf-8&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+XTerm*locale: true
+XTerm*utf8Title: true
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;中英文字型&lt;/h3&gt;
+&lt;p&gt;安裝固定字寬和中文字型&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S adobe-source-code-pro-fonts adobe-source-han-sans-otc-fonts
+&lt;/pre&gt;
+&lt;p&gt;設定字型&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+XTerm*faceName: Source Code Pro
+XTerm*faceNameDoublesize: xft:Source Hans Sans:style=Regular
+XTerm*faceSize: 16
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;透明背景&lt;/h3&gt;
+&lt;p&gt;~/.xinitrc 中加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+compton &amp;amp;
+&lt;/pre&gt;
+&lt;p&gt;在 ~/.bashrc 中加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[ -n "$XTERM_VERSION" ] &amp;amp;&amp;amp; transset-df -a 0.97 &amp;gt;/dev/null
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;不捲動&lt;/h3&gt;
+&lt;p&gt;有時要觀看輸出的內容，可是程式還是一直在執行，也一直在底部列印訊息。
+這時就想要把資料停在目前觀看的範圍，不會隨著程式輸出，一直跳到輸出列。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+XTerm*scrollTtyOutput: false
+XTerm*scrollKey: true
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>xterm</category><guid>https://mariolong.github.io/posts/xterm/</guid><pubDate>Thu, 11 Dec 2014 14:21:22 GMT</pubDate></item></channel></rss>

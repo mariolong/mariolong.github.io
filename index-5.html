@@ -199,8 +199,8 @@ $ udiskie &amp;
 </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>emacs中有個矩形編輯功能。</p>
-<p>以前在PE2時代就常用，到了windows時代後，就沒有用過，是因為windows的編輯器沒有提供這樣的功能，剛開始時還真的不習慣。
+<p>emacs 中有個矩形編輯功能。</p>
+<p>以前在 PE2 時代就常用，到了 windows 時代後，就沒有用過，是因為 windows 的編輯器沒有提供這樣的功能，剛開始時還真的不習慣。
 寫程式時，這是個很常用的功能。</p>
 <p>功能鍵表列於下：</p>
 <table border="1" class="docutils">
@@ -231,7 +231,7 @@ $ udiskie &amp;
 </tr>
 <tr>
 <td>C-x r N</td>
-<td>rectangle-number-lines, 按C-u可輸入啟始數字。</td>
+<td>rectangle-number-lines, 按 C-u 可輸入啟始數字。</td>
 </tr>
 <tr>
 <td>C-x r y</td>
@@ -239,7 +239,7 @@ $ udiskie &amp;
 </tr>
 <tr>
 <td>C-x r d</td>
-<td>delete-rectangle: 類似kill，只是不能 yank</td>
+<td>delete-rectangle: 類似 kill，只是不能 yank</td>
 </tr>
 <tr>
 <td>C-x r c</td>
@@ -314,72 +314,72 @@ $ yaourt -S hostapd dnsmasq wpa_supplicant
 <h3>hostapd</h3>
 <p>就是這個程式，讓我的無線網卡，變身為無線 AP。</p>
 <p>配置檔 <tt class="docutils literal">/etc/hostapd/hostapd.conf</tt></p>
-<pre class="code text"><a name="rest_code_f02e143e550745eca3045d66ad8e63da-1"></a>interface=wlp0s18f2u3
-<a name="rest_code_f02e143e550745eca3045d66ad8e63da-2"></a>ssid=xxxxxxxx
-<a name="rest_code_f02e143e550745eca3045d66ad8e63da-3"></a>hw_mode=g
-<a name="rest_code_f02e143e550745eca3045d66ad8e63da-4"></a>channel=1
-<a name="rest_code_f02e143e550745eca3045d66ad8e63da-5"></a>wpa=2
-<a name="rest_code_f02e143e550745eca3045d66ad8e63da-6"></a>wpa_psk=b619ecf4c68e7d688e1a29cf2809ec3556a289eb655b859xxxxxxxxxx3296f18
-<a name="rest_code_f02e143e550745eca3045d66ad8e63da-7"></a>wpa_key_mgmt=WPA-PSK
-<a name="rest_code_f02e143e550745eca3045d66ad8e63da-8"></a>rsn_pairwise=CCMP
+<pre class="code text"><a name="rest_code_05467288b85d4da7b98006621d1aac80-1"></a>interface=wlp0s18f2u3
+<a name="rest_code_05467288b85d4da7b98006621d1aac80-2"></a>ssid=xxxxxxxx
+<a name="rest_code_05467288b85d4da7b98006621d1aac80-3"></a>hw_mode=g
+<a name="rest_code_05467288b85d4da7b98006621d1aac80-4"></a>channel=1
+<a name="rest_code_05467288b85d4da7b98006621d1aac80-5"></a>wpa=2
+<a name="rest_code_05467288b85d4da7b98006621d1aac80-6"></a>wpa_psk=b619ecf4c68e7d688e1a29cf2809ec3556a289eb655b859xxxxxxxxxx3296f18
+<a name="rest_code_05467288b85d4da7b98006621d1aac80-7"></a>wpa_key_mgmt=WPA-PSK
+<a name="rest_code_05467288b85d4da7b98006621d1aac80-8"></a>rsn_pairwise=CCMP
 </pre>
 </div>
 <div class="section" id="dnsmasq">
 <h3>dnsmasq</h3>
 <p>配置檔 <tt class="docutils literal">/etc/dnsmasq.conf</tt></p>
-<pre class="code text"><a name="rest_code_c74b4c1b83b44592bb1192fb213694f2-1"></a>port=0
-<a name="rest_code_c74b4c1b83b44592bb1192fb213694f2-2"></a>interface=wlp0s18f2u3
-<a name="rest_code_c74b4c1b83b44592bb1192fb213694f2-3"></a>listen-address=192.168.199.254
-<a name="rest_code_c74b4c1b83b44592bb1192fb213694f2-4"></a>dhcp-range=192.168.199.101,192.168.199.150,12h
-<a name="rest_code_c74b4c1b83b44592bb1192fb213694f2-5"></a>dhcp-option=6,168.95.192.1,168.95.1.1
+<pre class="code text"><a name="rest_code_c0c3f53aaf8f4c6195629389211b4364-1"></a>port=0
+<a name="rest_code_c0c3f53aaf8f4c6195629389211b4364-2"></a>interface=wlp0s18f2u3
+<a name="rest_code_c0c3f53aaf8f4c6195629389211b4364-3"></a>listen-address=192.168.199.254
+<a name="rest_code_c0c3f53aaf8f4c6195629389211b4364-4"></a>dhcp-range=192.168.199.101,192.168.199.150,12h
+<a name="rest_code_c0c3f53aaf8f4c6195629389211b4364-5"></a>dhcp-option=6,168.95.192.1,168.95.1.1
 </pre>
 </div>
 <div class="section" id="wifiip">
 <h3>wifiip</h3>
 <p>檔名： <tt class="docutils literal">/usr/bin/wifiip</tt></p>
 <p>設定 nat 和防火牆的 script，注意要用絕對路徑，不然開機時期，會找不到相對應的程式執行。</p>
-<pre class="code text"><a name="rest_code_52f16e7c932d488599aeb26c230a2a34-1"></a>#!/bin/bash
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-2"></a>
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-3"></a>interface=wlp0s18f2u3
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-4"></a>
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-5"></a>iptables=/usr/bin/iptables
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-6"></a>ifconfig=/usr/bin/ifconfig
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-7"></a>sysctl=/usr/bin/sysctl
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-8"></a>
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-9"></a>wifi_on() {
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-10"></a>    ${iptables} -I FORWARD -s 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-11"></a>    ${iptables} -I FORWARD -d 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-12"></a>    ${iptables} -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-13"></a>    ${sysctl} -w net.ipv4.ip_forward=1
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-14"></a>    ${iptables} -I INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-15"></a>    ${ifconfig} ${interface} 192.168.199.1 netmask 255.255.255.0
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-16"></a>}
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-17"></a>
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-18"></a>wifi_off() {
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-19"></a>    ${iptables} -D FORWARD -s 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-20"></a>    ${iptables} -D FORWARD -d 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-21"></a>    ${iptables} -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-22"></a>    ${sysctl} -w net.ipv4.ip_forward=0
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-23"></a>    ${iptables} -D INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-24"></a>    ${ifconfig} ${interface} down
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-25"></a>}
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-26"></a>
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-27"></a>usage() {
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-28"></a>  echo "USAGE: wifiip [on|off]"
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-29"></a>}
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-30"></a>
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-31"></a>if (( $# &gt; 0 )); then
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-32"></a>  case "$1" in
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-33"></a>    "on")  wifi_on;;
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-34"></a>    "off") wifi_off;;
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-35"></a>    *)     usage
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-36"></a>           exit 64;;
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-37"></a>  esac
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-38"></a>  exit 0
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-39"></a>else
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-40"></a>  usage
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-41"></a>return 64
-<a name="rest_code_52f16e7c932d488599aeb26c230a2a34-42"></a>fi
+<pre class="code text"><a name="rest_code_1db2766335cf43ed845115ee6eb81074-1"></a>#!/bin/bash
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-2"></a>
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-3"></a>interface=wlp0s18f2u3
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-4"></a>
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-5"></a>iptables=/usr/bin/iptables
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-6"></a>ifconfig=/usr/bin/ifconfig
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-7"></a>sysctl=/usr/bin/sysctl
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-8"></a>
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-9"></a>wifi_on() {
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-10"></a>    ${iptables} -I FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-11"></a>    ${iptables} -I FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-12"></a>    ${iptables} -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-13"></a>    ${sysctl} -w net.ipv4.ip_forward=1
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-14"></a>    ${iptables} -I INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-15"></a>    ${ifconfig} ${interface} 192.168.199.1 netmask 255.255.255.0
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-16"></a>}
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-17"></a>
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-18"></a>wifi_off() {
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-19"></a>    ${iptables} -D FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-20"></a>    ${iptables} -D FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-21"></a>    ${iptables} -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-22"></a>    ${sysctl} -w net.ipv4.ip_forward=0
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-23"></a>    ${iptables} -D INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-24"></a>    ${ifconfig} ${interface} down
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-25"></a>}
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-26"></a>
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-27"></a>usage() {
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-28"></a>  echo "USAGE: wifiip [on|off]"
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-29"></a>}
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-30"></a>
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-31"></a>if (( $# &gt; 0 )); then
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-32"></a>  case "$1" in
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-33"></a>    "on")  wifi_on;;
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-34"></a>    "off") wifi_off;;
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-35"></a>    *)     usage
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-36"></a>           exit 64;;
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-37"></a>  esac
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-38"></a>  exit 0
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-39"></a>else
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-40"></a>  usage
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-41"></a>return 64
+<a name="rest_code_1db2766335cf43ed845115ee6eb81074-42"></a>fi
 </pre>
 </div>
 <div class="section" id="wifiip-service">
@@ -422,21 +422,21 @@ $ sudo systemctl enable wifiip
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/WPA_supplicant">https://wiki.archlinux.org/index.php/WPA_supplicant</a></p>
 <div class="section" id="id4">
 <h3>安裝：</h3>
-<pre class="code text"><a name="rest_code_48889076ffce4aad8961df245ae5f765-1"></a>yaourt -S wpa_supplicant
+<pre class="code text"><a name="rest_code_ac5d9c969c6b42f4875d2cd46c0d2b5c-1"></a>yaourt -S wpa_supplicant
 </pre>
 </div>
 <div class="section" id="id5">
 <h3>執行：</h3>
-<pre class="code text"><a name="rest_code_ddca4ee8c87b468884c8d032651df025-1"></a>$ wpa_passphrase essid passphrase
+<pre class="code text"><a name="rest_code_e1669f9d16d24ae6a09e5e41f9e33541-1"></a>$ wpa_passphrase essid passphrase
 </pre>
 </div>
 <div class="section" id="id6">
 <h3>結果</h3>
-<pre class="code text"><a name="rest_code_1b804006c43b4fe5a65f772a80cc55c7-1"></a>network={
-<a name="rest_code_1b804006c43b4fe5a65f772a80cc55c7-2"></a>    ssid="essid"
-<a name="rest_code_1b804006c43b4fe5a65f772a80cc55c7-3"></a>    #psk="passphrase"
-<a name="rest_code_1b804006c43b4fe5a65f772a80cc55c7-4"></a>    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
-<a name="rest_code_1b804006c43b4fe5a65f772a80cc55c7-5"></a>}
+<pre class="code text"><a name="rest_code_95f6b57927d643c6a18fa49eadbe0b59-1"></a>network={
+<a name="rest_code_95f6b57927d643c6a18fa49eadbe0b59-2"></a>    ssid="essid"
+<a name="rest_code_95f6b57927d643c6a18fa49eadbe0b59-3"></a>    #psk="passphrase"
+<a name="rest_code_95f6b57927d643c6a18fa49eadbe0b59-4"></a>    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
+<a name="rest_code_95f6b57927d643c6a18fa49eadbe0b59-5"></a>}
 </pre>
 </div>
 </div>
@@ -494,15 +494,15 @@ $ yaourt -S phototonic
 </tr>
 <tr>
 <td>Alt+Left</td>
-<td>上一個歷史目錄Back</td>
+<td>上一個歷史目錄 Back</td>
 </tr>
 <tr>
 <td>Alt+Right</td>
-<td>下一個歷史目錄Forward=</td>
+<td>下一個歷史目錄 Forward=</td>
 </tr>
 <tr>
 <td>Alt+Up</td>
-<td>上一層目錄Up=</td>
+<td>上一層目錄 Up=</td>
 </tr>
 <tr>
 <td>Ctrl+Home</td>
@@ -594,23 +594,23 @@ $ yaourt -S phototonic
 </tr>
 <tr>
 <td>Ctrl+1</td>
-<td>不做鏡像Disable</td>
+<td>不做鏡像 Disable</td>
 </tr>
 <tr>
 <td>Ctrl+2</td>
-<td>左右鏡像Dual</td>
+<td>左右鏡像 Dual</td>
 </tr>
 <tr>
 <td>Ctrl+3</td>
-<td>三像Triple</td>
+<td>三像 Triple</td>
 </tr>
 <tr>
 <td>Ctrl+4</td>
-<td>上下鏡像Dual Vertical</td>
+<td>上下鏡像 Dual Vertical</td>
 </tr>
 <tr>
 <td>Ctrl+5</td>
-<td>上下左右鏡像Quad</td>
+<td>上下左右鏡像 Quad</td>
 </tr>
 <tr>
 <td>Ctrl+=</td>
@@ -712,7 +712,7 @@ $ yaourt -S phototonic
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/systemd-timesync/" class="u-url">用systemd-timesync同步時間</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/systemd-timesync/" class="u-url">用 systemd-timesync 同步時間</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -728,12 +728,12 @@ $ yaourt -S phototonic
     </header><div class="p-summary entry-summary">
     <div>
 <p>先前用 ntpd，一直沒有成功對時。
-昨日看到這個systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
-我又不必設ntp server，用這個同步時間就好了。</p>
+昨日看到這個 systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
+我又不必設 ntp server，用這個同步時間就好了。</p>
 <p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/systemd-timesyncd">https://wiki.archlinux.org/index.php/systemd-timesyncd</a></p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<p>archlinux中已經安裝好了，執行：</p>
+<p>archlinux 中已經安裝好了，執行：</p>
 <pre class="literal-block">
 $ sudo timedatectl set-ntp true
 $ sudo systemctl enable systemd-timesyncd.service
@@ -748,7 +748,7 @@ $ sudo systemctl start systemd-timesyncd.service
 NTP=tock.stdtime.gov.tw watch.stdtime.gov.tw time.stdtime.gov.tw clock.stdtime.gov.tw tick.stdtime.gov.tw
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.tw.ntp.pool.org
 </pre>
-<p>其中，NTP server用的是 <a class="reference external" href="http://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt">中華電信研究院國家時間與頻率標準實驗室</a>
+<p>其中，NTP server 用的是 <a class="reference external" href="http://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt">中華電信研究院國家時間與頻率標準實驗室</a>
 的 server。</p>
 <p>輕鬆完工。</p>
 </div>
@@ -909,28 +909,23 @@ ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 </div>
     </header><div class="p-summary entry-summary">
     <div>
-<pre class="literal-block">
-我為何而生——伯蘭特·羅素自傳前言
-
-對愛情的渴望，對知識的追求，對人類苦難不可遏制的同情，是支配我一生的單純而強烈的三種感情。
-這些感情如陣陣巨風，吹拂在我動盪不定的生涯中，有時甚至吹過深沉痛苦的海洋，直抵絕望的邊緣。
-
-我所以追求愛情，有三方面的原因。
+<blockquote>
+<p>我為何而生——伯蘭特·羅素自傳前言</p>
+<p>對愛情的渴望，對知識的追求，對人類苦難不可遏制的同情，是支配我一生的單純而強烈的三種感情。
+這些感情如陣陣巨風，吹拂在我動盪不定的生涯中，有時甚至吹過深沉痛苦的海洋，直抵絕望的邊緣。</p>
+<p>我所以追求愛情，有三方面的原因。
 首先，愛情有時給我帶來狂喜，這種狂喜竟如此有力，以致使我常常會為了體驗幾小時愛的喜悅，而寧願犧牲生命中其他一切。
 其次，愛情可以擺脫孤寂——身歷那種可怕孤寂的人的戰慄意識，有時會由世界的邊緣，觀察到冷酷無生命的無底深淵。
 最後，在愛的結閤中，我看到了古今聖賢以及詩人們所夢想的天堂的縮影，這正是我所追尋的人生境界。
-雖然它對一般的人類生活也許太美好了，但這正是我透過愛情所得到場最終發現。
-
-我曾以同樣的感情追求知識，我渴望去瞭解人類的。也渴望知道星星為什麼會發光，同時我還想理解畢達哥拉斯的力量。
-
-愛情與知識的可能領域，總是引領我到天堂的境界，可對人類苦難的同情經常把我帶回現實世界。
+雖然它對一般的人類生活也許太美好了，但這正是我透過愛情所得到場最終發現。</p>
+<p>我曾以同樣的感情追求知識，我渴望去瞭解人類的。也渴望知道星星為什麼會發光，同時我還想理解畢達哥拉斯的力量。</p>
+<p>愛情與知識的可能領域，總是引領我到天堂的境界，可對人類苦難的同情經常把我帶回現實世界。
 那些痛苦的呼喚經常在我內心深處引起迴響。
 飢餓中的孩子，被壓迫被折磨者，給子女造成重擔的孤苦無依的老人，以及全球性的孤獨、貧窮和痛苦的存在，
 是對人類生活理想的無視和諷刺。
-我常常希望能儘自己的微薄之力去減輕這不必要的痛苦，但我發現我完全失敗了，因此我自己也感到很痛苦。
-
-這就是我的一生，我發現人是值得活的。如果有誰再給我一次生活的機會，我將欣然接受這難得的賜予。
-</pre>
+我常常希望能儘自己的微薄之力去減輕這不必要的痛苦，但我發現我完全失敗了，因此我自己也感到很痛苦。</p>
+<p>這就是我的一生，我發現人是值得活的。如果有誰再給我一次生活的機會，我將欣然接受這難得的賜予。</p>
+</blockquote>
 <p>很長的一段引言。</p>
 </div>
     </div>

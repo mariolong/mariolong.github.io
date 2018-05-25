@@ -2,31 +2,24 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="computer">
 <meta name="viewport" content="width=device-width">
 <title>vim: my python IDE | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/vim-my-python-ide/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="computer">
+<meta name="author" content="Mario Long">
 <link rel="prev" href="../autojump/" title="autojump" type="text/html">
 <link rel="next" href="../ranger/" title="ranger: 文字模式下的檔案管理員" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="vim: my python IDE">
 <meta property="og:url" content="https://mariolong.github.io/posts/vim-my-python-ide/">
-<meta property="og:description" content="參考
-
-Turning vim into a modern python ide
-用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用vim。
-
-
-
-Install
-在裝 vim 前，先改 /etc/pacman.conf，加入
-
-[herecura-stable]
-Server = http://repo.herecura.be/herecu">
+<meta property="og:description" content="computer">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-04-22T10:18:52+08:00">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="vim">
 </head>
 <body>
 
@@ -109,7 +102,7 @@ Server = http://repo.herecura.be/herecu">
 <h2>參考</h2>
 <blockquote>
 <p><a class="reference external" href="http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide">Turning vim into a modern python ide</a></p>
-<p>用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用vim。</p>
+<p>用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用 vim。</p>
 </blockquote>
 </div>
 <div class="section" id="install">
@@ -208,7 +201,7 @@ Same as |NERDComComment| except that the delimiters are aligned down the left si
 </pre>
 </div>
 <div class="section" id="file-browser">
-<h3>檔案系統瀏覽器file browser</h3>
+<h3>檔案系統瀏覽器 file browser</h3>
 <pre class="literal-block">
 " NERDTree (better file browser) toggle
 map &lt;F3&gt; :NERDTreeToggle&lt;CR&gt;
@@ -217,7 +210,11 @@ map &lt;F3&gt; :NERDTreeToggle&lt;CR&gt;
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/vim/" rel="tag">vim</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../autojump/" rel="prev" title="autojump">上一篇</a>
             </li>

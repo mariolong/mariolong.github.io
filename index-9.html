@@ -75,7 +75,93 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/post-installation-of-archlinux/" class="u-url">Post-installation of Archlinux</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/post-install-for-htpc/" class="u-url">post install for htpc</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/post-install-for-htpc/" rel="bookmark"><time class="published dt-published" datetime="2017-12-29T01:14:13-08:00" title="2017-12-29 01:14">2017-12-29 01:14</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/post-install-for-htpc/#disqus_thread" data-disqus-identifier="cache/posts/post-install-for-htpc.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+htpc
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">
+<span class="section-number-2">1</span> kodi</h2>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">
+<span class="section-number-2">2</span> wifi</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+wifi-menu
+</p>
+<div class="highlight"><pre><span></span>yaourt -S wpa_supplicant dialog
+</pre></div>
+
+<p>
+setup wifi using wifi-menu
+</p>
+<div class="highlight"><pre><span></span>ip link
+&lt;interface&gt;
+</pre></div>
+
+<div class="highlight"><pre><span></span>wifi-menu &lt;interface&gt;
+</pre></div>
+
+<div class="highlight"><pre><span></span>netctl start &lt;wifi-service&gt;
+netctl <span class="nb">enable</span> &lt;wifi-service&gt;
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">
+<span class="section-number-2">3</span> auto mount removable device by udiskie</h2>
+<div class="outline-text-2" id="text-3">
+<div class="highlight"><pre><span></span>yaourt -S udiskie
+</pre></div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">
+<span class="section-number-2">4</span> issues</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">
+<span class="section-number-3">4.1</span> alsa</h3>
+<div class="outline-text-3" id="text-4-1">
+<pre class="example">
+snd_.._intel index = 1
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">
+<span class="section-number-3">4.2</span> default.config</h3>
+<div class="outline-text-3" id="text-4-2">
+<pre class="example">
+need_root_right = no
+</pre>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/post-installation-of-archlinux/" class="u-url">Post-installation of Archlinux</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -90,8 +176,8 @@
 </div>
     </header><div class="p-summary entry-summary">
     <p>
-首先依<a href="posts/install-arch-linux-2017">Install Arch linux (2017)</a>將基本系統裝好，接著參考<a href="https://wiki.archlinux.org/index.php/General_recommendations">General
-recommendations - ArchWiki</a>記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
+首先依 <a href="posts/install-arch-linux-2017">Install Arch linux (2017)</a> 將基本系統裝好，接著參考 <a href="https://wiki.archlinux.org/index.php/General_recommendations">General
+recommendations - ArchWiki</a> 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -99,7 +185,7 @@ recommendations - ArchWiki</a>記錄下對我而言必要的軟體及簡單設�
 <span class="section-number-2">1</span> haskell</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-安裝的方法參看<a href="posts/install-haskell-applications">Install Haskell Applications</a>
+安裝的方法參看 <a href="posts/install-haskell-applications">Install Haskell Applications</a>
 </p>
 </div>
 </div>
@@ -1775,7 +1861,7 @@ iVT enable @ bios
 </p>
 
 <p>
-在《證券分析》中，葛拉漢和大衛．多德就討論過價值區間的概念：「證券分析最關鍵的一點不要痴迷計算一個證券精確的內在價值。你只需要確信其<b>價值足夠</b>，比如說，去保護其債券價格或者股票價格相對其價值來說不要太高或太低，就好了。目標是這個的話，對<b>內在價值有一個模糊大概的估算就夠了</b>。」的確，葛拉漢經常會去算每股淨運營資金的指標，用來大概估算一個公司流動價值。他頻繁使用這個粗略估算的指標，恰恰就是在無聲地向大家承認，他也沒有辦法給一個公司進行更精確的估值了。
+在《證券分析》中，葛拉漢和大衛．多德就討論過價值區間的概念：「證券分析最關鍵的一點不要痴迷計算一個證券精確的內在價值。你只需要確信其 <b>價值足夠</b> ，比如說，去保護其債券價格或者股票價格相對其價值來說不要太高或太低，就好了。目標是這個的話，對 <b>內在價值有一個模糊大概的估算就夠了</b> 。」的確，葛拉漢經常會去算每股淨運營資金的指標，用來大概估算一個公司流動價值。他頻繁使用這個粗略估算的指標，恰恰就是在無聲地向大家承認，他也沒有辦法給一個公司進行更精確的估值了。
 </p>
 </div>
 </div>
@@ -2001,7 +2087,7 @@ iVT enable @ bios
 </li>
 </ul>
 <p>
-附錄一篇<i>空腹吃水果勝癌症</i>，是從 line 直接轉出，來處不明，全文收錄於後。重點一句話：<b>常吃水果，空腹吃</b>
+附錄一篇<i>空腹吃水果勝癌症</i>，是從 line 直接轉出，來處不明，全文收錄於後。重點一句話： <b>常吃水果，空腹吃</b>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -2097,7 +2183,7 @@ iVT enable @ bios
 
 <dl class="org-dl">
 <dt> 致癌 </dt>
-<dd>咖啡炒焙過程中所產生的<span class="underline">丙烯醯胺</span>是 2B 級致癌物，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。但 2B 等級表示在動物實驗中有觀察到癌症的風險，但在流行病學研究證據不足。
+<dd>咖啡炒焙過程中所產生的 <span class="underline">丙烯醯胺</span> 是 2B 級致癌物，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。但 2B 等級表示在動物實驗中有觀察到癌症的風險，但在流行病學研究證據不足。
 </dd>
 
 <dt> 抗癌 </dt>
@@ -2128,7 +2214,7 @@ iVT enable @ bios
 </p>
 
 <p>
-發現咖啡炒焙過程中所產生的<span class="underline">丙烯醯胺</span>為 2B 級致癌物在動物實驗中觀察到有癌症的風險，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。
+發現咖啡炒焙過程中所產生的 <span class="underline">丙烯醯胺</span> 為 2B 級致癌物在動物實驗中觀察到有癌症的風險，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。
 </p>
 
 <p>
@@ -2167,7 +2253,7 @@ iVT enable @ bios
 
 <p>
 咖啡的成分相當複雜，大家所熟知的咖啡因裡面，含有綠原酸（chlorogenic
-acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂（kahweol）等抗氧化物，因此咖啡可謂富含營養素且沒有熱量的健康飲料，但是，它也含有致癌的<span class="underline">丙烯醯胺</span> (acrylamide)成分，所以，多喝咖啡是否有害健康呢？
+acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂（kahweol）等抗氧化物，因此咖啡可謂富含營養素且沒有熱量的健康飲料，但是，它也含有致癌的 <span class="underline">丙烯醯胺</span> (acrylamide)成分，所以，多喝咖啡是否有害健康呢？
 </p>
 
 <p>
@@ -2296,179 +2382,6 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 <p>
 國際癌症研究機構的專家發現，過熱飲品可能會引發食管癌。「過熱」指的是飲品溫度在 65°C 以上。世衛：非常熱的飲料被列入 2A 致癌物
 </p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/" class="u-url">生命中最重要的事</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/" rel="bookmark"><time class="published dt-published" datetime="2017-08-08T17:39:03+08:00" title="2017-08-08 17:39">2017-08-08 17:39</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/#disqus_thread" data-disqus-identifier="cache/posts/生命中最重要的事.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-來源：<a href="http://www.businessweekly.com.tw/article.aspx?id=20446&amp;type=Blog&amp;p=0">你這一生中，做過最重要的事情是什麼？這個 80 歲指揮家的回答驚醒了許多人 (重要的事,指揮,回答,…)</a>
-</p>
-
-<blockquote>
-<p>
-我現在正在做的事，就是我生命中最重要的事 – 托斯卡尼尼
-</p>
-</blockquote>
-
-<p>
-托斯卡尼尼是舉世聞名的指揮家。人生的閱歷豐富，他到過很多地方，指揮過無數的樂團，也見過無數的達官顯要。
-</p>
-
-<p>
-當他八十歲時，他兒子有一天好奇地問他：「在您一生中，一定有過很多重大的事，您覺得您做過最重要的事是什麼？」
-</p>
-
-<p>
-托斯卡尼尼回答說：「我現在正在做的事，就是我一生中最重大的事，不管是在指揮一個交響樂團，或是在剝一顆橘子。」
-</p>
-
-<p>
-有人問梵谷：「你的畫裡面那一張最好？」
-</p>
-
-<p>
-他說：「就是我現正在畫的這一張。」
-</p>
-
-<p>
-把自己全然地融入你眼前，這個人、這件事，這個地方。去享受、去欣賞、去參與，這就對了！有什麼好比的。
-</p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/" class="u-url">美國交易冠軍：教你如何找到下一家星巴克</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/" rel="bookmark"><time class="published dt-published" datetime="2017-08-08T17:14:43+08:00" title="2017-08-08 17:14">2017-08-08 17:14</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/#disqus_thread" data-disqus-identifier="cache/posts/美國交易冠軍：教你如何找到下一家星巴克.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-來源：<a href="https://www.stockfeel.com.tw/%25e7%25be%258e%25e5%259c%258b%25e4%25ba%25a4%25e6%2598%2593%25e5%2586%25a0%25e8%25bb%258d%25ef%25bc%259a%25e6%2595%2599%25e4%25bd%25a0%25e5%25a6%2582%25e4%25bd%2595%25e6%2589%25be%25e5%2588%25b0%25e4%25b8%258b%25e4%25b8%2580%25e5%25ae%25b6%25e6%2598%259f%25e5%25b7%25b4%25e5%2585%258b%25e3%2580%2581%25e5%25a5%25bd%25e5%25b8%2582/">美國交易冠軍：教你如何找到下一家星巴克、好市多？ – StockFeel 股感知識庫</a>
-</p>
-
-<p>
-建議持續關注同店銷售數字 (same-store sales 或稱 comparable sales)。同店銷售所比較的，是開業一年以上的店舖，與去年同期的業績比較。
-</p>
-
-<p>
-同店銷售要有成長，取決於兩大條件：
-</p>
-<ul class="org-ul">
-<li>價格上升；
-</li>
-<li>客人數量 (或購買量)上升。
-</li>
-</ul>
-<p>
-米氏歸納出同店銷售倒退的三大可能性：
-</p>
-<ul class="org-ul">
-<li>品牌失色，客量大減；
-</li>
-<li>經濟不景氣，大環境轉差，人們消費力下降；
-</li>
-<li>貨品價格，不升反降，又或經常折扣促銷。
-</li>
-</ul>
-<p>
-另一考慮要點，是企業用「餅乾模」，複製店面的速度，是否合理？據米氏所講，與直覺想像不同，進軍全球，並非越快越好，反可能是警訊。他有一個概略的指標：如一家公司，年開新店逾一百家，管理層縱能力非凡，也難以一一兼顧，每多欲速而不達。
-</p>
-
-<p>
-總括而言，長年累升的成長股，必具備制式化的經營模式、持續成長的同店銷售數字，以及穩健發展、年開不多於 100 家店。
-</p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/shan-zhuang-dui-lian/" class="u-url">山莊對聯</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/shan-zhuang-dui-lian/" rel="bookmark"><time class="published dt-published" datetime="2017-08-07T14:00:00+08:00" title="2017-08-07 14:00">2017-08-07 14:00</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/shan-zhuang-dui-lian/#disqus_thread" data-disqus-identifier="cache/posts/山莊對聯.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-雲房
-</p>
-
-<pre class="example">
-太上忘我獨尊無
-極下萬象眾皆虛
-</pre>
-
-<pre class="example">
-龍神入凡立足五湖平常人做平常事
-神龍㿻水雲遊四海傳道統播授太極
-</pre>
-
-<pre class="example">
-神龍四喜元亨利貞
-太極六合東西南北
-</pre>
-
-<pre class="example">
-學道學禪學劍道禪劍合一
-問理問炁問象理氣象同歸
-</pre>
-
-<pre class="example">
-劍氣非關月
-書香不是花
-</pre>
-
-<p>
-咖啡廳
-</p>
-<pre class="example">
-神居雲霄佑太極
-龍遊四海施雲雨
-</pre>
-
-<pre class="example">
-山前眺望巒七層
-莊內花草數不䀆
-</pre>
-
-<pre class="example">
-交誼以誠信為先
-𠊙情須先讓七分
-</pre>
-
-<p>
-三清閣
-</p>
-
-<pre class="example">
-練在實習我實用
-悟要清明尋清源
-</pre>
-
-<pre class="example">
-隨心同自然而然
-修真問原來本來
-</pre>
     </div>
     </article>
 </div>

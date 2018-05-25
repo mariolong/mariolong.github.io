@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：emacs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 00:20:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rectange edit</title><link>https://mariolong.github.io/posts/rectangle-edit/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;emacs中有個矩形編輯功能。&lt;/p&gt;
-&lt;p&gt;以前在PE2時代就常用，到了windows時代後，就沒有用過，是因為windows的編輯器沒有提供這樣的功能，剛開始時還真的不習慣。
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：emacs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>rectange edit</title><link>https://mariolong.github.io/posts/rectangle-edit/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;emacs 中有個矩形編輯功能。&lt;/p&gt;
+&lt;p&gt;以前在 PE2 時代就常用，到了 windows 時代後，就沒有用過，是因為 windows 的編輯器沒有提供這樣的功能，剛開始時還真的不習慣。
 寫程式時，這是個很常用的功能。&lt;/p&gt;
 &lt;p&gt;功能鍵表列於下：&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
@@ -25,13 +25,13 @@
 &lt;td&gt;yank-rectangle&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;C-x r N&lt;/td&gt;
-&lt;td&gt;rectangle-number-lines, 按C-u可輸入啟始數字。&lt;/td&gt;
+&lt;td&gt;rectangle-number-lines, 按 C-u 可輸入啟始數字。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;C-x r y&lt;/td&gt;
 &lt;td&gt;yank-rectangle&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;C-x r d&lt;/td&gt;
-&lt;td&gt;delete-rectangle: 類似kill，只是不能 yank&lt;/td&gt;
+&lt;td&gt;delete-rectangle: 類似 kill，只是不能 yank&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;C-x r c&lt;/td&gt;
 &lt;td&gt;clear-rectangle: 填入空白&lt;/td&gt;
@@ -92,7 +92,7 @@ Elpy Python version....: 1.4.0
 pip install --upgrade elpy
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://mariolong.github.io/posts/emacs-python/</guid><pubDate>Sat, 24 May 2014 04:10:54 GMT</pubDate></item><item><title>emacs server start</title><link>https://mariolong.github.io/posts/emacs-server-start/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;很想用下面的指令開啟 emacs。但是以此法開啟 emacs 後，不是字型找不到，就是找不到 fcitx。
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>python</category><guid>https://mariolong.github.io/posts/emacs-python/</guid><pubDate>Sat, 24 May 2014 04:10:54 GMT</pubDate></item><item><title>emacs server start</title><link>https://mariolong.github.io/posts/emacs-server-start/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;很想用下面的指令開啟 emacs。但是以此法開啟 emacs 後，不是字型找不到，就是找不到 fcitx。
 有時還真的想用 vim 算了，可以少掉很多的麻煩。
 可是，看到 emacs 就有一股衝動，想用。
 進了 vim 倒是沒有什麼用的動力，真是很奇怪的心情。&lt;/p&gt;
@@ -270,7 +270,7 @@ In this case it inserts a new line containing the markup for the a list item on 
 &lt;div class="section" id="id10"&gt;
 &lt;h3&gt;目錄&lt;/h3&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://mariolong.github.io/posts/emacs-rst-mode/</guid><pubDate>Thu, 15 May 2014 01:10:54 GMT</pubDate></item><item><title>emacs-ido 設定</title><link>https://mariolong.github.io/posts/emacs-ido/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;廢棄不用了，我現在先只用 helm&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>python</category><category>rst</category><guid>https://mariolong.github.io/posts/emacs-rst-mode/</guid><pubDate>Thu, 15 May 2014 01:10:54 GMT</pubDate></item><item><title>emacs-ido 設定</title><link>https://mariolong.github.io/posts/emacs-ido/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;廢棄不用了，我現在先只用 helm&lt;/p&gt;
 &lt;p&gt;ido&lt;/p&gt;
 &lt;p&gt;ido-ubiquitous&lt;/p&gt;
 &lt;p&gt;ido-vertical-mode&lt;/p&gt;
@@ -302,7 +302,7 @@ to use left and right to move through the history/directories.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://sachachua.com/blog/2014/03/emacs-basics-call-commands-name-m-x-tips-better-completion-using-ido-helm/"&gt;http://sachachua.com/blog/2014/03/emacs-basics-call-commands-name-m-x-tips-better-completion-using-ido-helm/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ido, ido-hacks, smex, ido-vertical-mode, and flx-ido&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://ergoemacs.org/emacs/emacs_name_completion.html"&gt;http://ergoemacs.org/emacs/emacs_name_completion.html&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><guid>https://mariolong.github.io/posts/emacs-ido/</guid><pubDate>Thu, 15 May 2014 00:10:54 GMT</pubDate></item><item><title>emacs 教學指引</title><link>https://mariolong.github.io/posts/emacsjiao-xue-zhi-yin/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;程式寫多了，連個編輯器都想要折騰。&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>ido</category><guid>https://mariolong.github.io/posts/emacs-ido/</guid><pubDate>Thu, 15 May 2014 00:10:54 GMT</pubDate></item><item><title>emacs 教學指引</title><link>https://mariolong.github.io/posts/emacsjiao-xue-zhi-yin/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;程式寫多了，連個編輯器都想要折騰。&lt;/p&gt;
 &lt;p&gt;vim 和 emacs 並稱兩大神器。上星期玩了 vim 後，不知道為何，突然就想玩 emacs。好像是裝了 emacs 後，發現它的畫面比較好看，用起來比較有魅力吧？其實背後最主要的原因是 lisp。看了這麼多年程式碼，從沒用過像 lisp 或 haskell 這程語言寫過程式，初步看起來應該不會太難？那就來試試吧。&lt;/p&gt;
 &lt;p&gt;試了幾天，發現和 vim 比起來，Emacs 真的較不容易入門。上網找了半天，列出以下的參考資料：&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://docs.huihoo.com/homepage/shredderyin/emacs24/index.htm"&gt;Sams Teach Yourself Emacs in 24 Hours&lt;/a&gt; 還有全書打包壓縮檔。&lt;/p&gt;

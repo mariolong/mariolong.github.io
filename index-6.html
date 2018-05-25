@@ -75,7 +75,66 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/fonts/" class="u-url">字型相關</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/from-git-to-github/" class="u-url">from git to github</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/from-git-to-github/" rel="bookmark"><time class="published dt-published" datetime="2015-05-29T01:54:41Z" title="2015-05-29 01:54">2015-05-29 01:54</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/from-git-to-github/#disqus_thread" data-disqus-identifier="cache/posts/from-git-to-github.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>想辦法把一些東西放到 github，一方面是可以備份，一方面可以分享。
+當然，備份才是我的重點，順便分享給有需要的人。
+畢竟從 open source 得到很多，也該把這個過程記錄下來，讓有需要的人採用。</p>
+<div class="section" id="id1">
+<h2>安裝</h2>
+<p><a class="reference external" href="https://help.github.com/articles/set-up-git/">Github help</a> 已經很寫得很清楚，重點是</p>
+<p>git
+git -global name
+git -global email</p>
+</div>
+<div class="section" id="id2">
+<h2>問題</h2>
+<div class="section" id="push-github">
+<h3>將已存在的專案 push 到 github</h3>
+<ol class="arabic simple">
+<li>先在 github 建一個 repostory，例如：emacs.d</li>
+<li>回到 local 端，下指令 git remote add <a class="reference external" href="https://github.com/mariolong/emacs.d.git">https://github.com/mariolong/emacs.d.git</a>
+</li>
+<li>git pull</li>
+<li>touch .gitignore</li>
+<li>git push -u origin master</li>
+</ol>
+</div>
+<div class="section" id="push">
+<h3>push 失敗</h3>
+<pre class="literal-block">
+$ git push -u origin master
+
+! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/mariolong/emacs.d.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+git checkout master
+git merge test
+git push -u origin master
+</pre>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/fonts/" class="u-url">字型相關</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -162,44 +221,28 @@ $ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-so
 <div class="section" id="split">
 <h2>split</h2>
 <p>先將不要的片段切掉</p>
-<pre class="code text"><a name="rest_code_b5990109320e4d5d8dcd30cfb40d59d8-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-<a name="rest_code_b5990109320e4d5d8dcd30cfb40d59d8-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
+<pre class="code text"><a name="rest_code_dc3e8fb342bf4f5796fb54138f33ba44-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+<a name="rest_code_dc3e8fb342bf4f5796fb54138f33ba44-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
 </pre>
 </div>
 <div class="section" id="convert-m2ts-to-avi-for-concat">
 <h2>convert M2TS to avi for concat</h2>
 <p>轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
 有一個 frame 會交錯，影片會跳一下。</p>
-<pre class="code text"><a name="rest_code_81eea7cb06484ff390bb4338fe81abcd-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
-<a name="rest_code_81eea7cb06484ff390bb4338fe81abcd-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
+<pre class="code text"><a name="rest_code_a90a2659587d4d41a564561e3f320763-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
+<a name="rest_code_a90a2659587d4d41a564561e3f320763-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
 </pre>
 </div>
 <div class="section" id="id1">
 <h2>合併</h2>
 <p>將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。</p>
-<pre class="code text"><a name="rest_code_5266a52a73fa4cedba44056c777a4a11-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_1dd453d76f5a4d53950e0fd4342074ca-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
 </pre>
 <p>或</p>
-<pre class="code text"><a name="rest_code_3307f5161187436f9270852483d9a46e-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_153a19d1a6b44262aa332c2c455f5171-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
 </pre>
 </div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/mpv/" class="u-url">mpv</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/mpv/" rel="bookmark"><time class="published dt-published" datetime="2015-02-22T13:26:01Z" title="2015-02-22 13:26">2015-02-22 13:26</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/mpv/#disqus_thread" data-disqus-identifier="cache/posts/mpv.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>Write your post here.</p>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pip-python-library/" class="u-url">pip: python library</a></h1>
         <div class="metadata">

@@ -32,6 +32,10 @@ $ yaourt -S texlive-most texlive-lang ttf-cwtex-q-fonts
 $ pandoc -o foo.tex foo.md -">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-11-26T02:14:13Z">
+<meta property="article:tag" content="LaTex">
+<meta property="article:tag" content="pandoc">
+<meta property="article:tag" content="pdf">
+<meta property="article:tag" content="texlive">
 </head>
 <body>
 
@@ -137,7 +141,13 @@ $ pandoc -o foo.tex foo.md --template=mytemp.tex
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/latex/" rel="tag">LaTex</a></li>
+            <li><a class="tag p-category" href="../../categories/pandoc/" rel="tag">pandoc</a></li>
+            <li><a class="tag p-category" href="../../categories/pdf/" rel="tag">pdf</a></li>
+            <li><a class="tag p-category" href="../../categories/texlive/" rel="tag">texlive</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../kid3%2Bgstreamer/" rel="prev" title="kid3+gstreamer">上一篇</a>
             </li>

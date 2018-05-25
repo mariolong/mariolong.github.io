@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 24 May 2018 10:56:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 06:06:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>鼻咽癌與我的初次相遇</title><link>https://mariolong.github.io/posts/cancer-first-time/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;確診&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+2016/1/7，坐在診療椅上，不由自主地一股寒氣由腳底冒起，直達心口。
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/cancer-first-time/"&gt;閱讀更多…&lt;/a&gt; (尚餘 1 分鐘)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>癌</category><category>鼻咽癌</category><guid>https://mariolong.github.io/posts/cancer-first-time/</guid><pubDate>Fri, 25 May 2018 04:53:47 GMT</pubDate></item><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 記錄一下，在 Windows 10 中，如何隱藏磁碟機？
 &lt;/p&gt;
 
@@ -109,21 +115,21 @@ unable to complete, or interface CRC (with ICRC).
 &lt;/p&gt;
 
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; setup HD: connect to computer
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; setup HD: connect to computer
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; gparted: create partition and format it in NTFS
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; gparted: create partition and format it in NTFS. &lt;b&gt;結果是在 windows 10 中做 partition 和 format.&lt;/b&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; SMART check both old and new HD
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; SMART check both old and new HD
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; mount to linux
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; mount to linux
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; sync from old to new HD: rsync -a &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; sync from old to new HD: &lt;code&gt;rsync -av &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;&lt;/code&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; disconnet old HD, reboot to windows 10
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; disconnet old HD, reboot to windows 10
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[ ]&lt;/code&gt; set new HD to disk D:
+&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; set new HD to disk D:
 &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -131,7 +137,7 @@ unable to complete, or interface CRC (with ICRC).
 要加到 lvm 就看 &lt;a href="https://mariolong.github.io/posts/replace-hd-on-lvm"&gt;replace hd on LVM&lt;/a&gt; 這篇記錄，有經驗，不會太難。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>WD</category><category>windows</category><guid>https://mariolong.github.io/posts/replace-new-hard-disk/</guid><pubDate>Thu, 24 May 2018 05:43:24 GMT</pubDate></item><item><title>快樂，當下</title><link>https://mariolong.github.io/posts/happy-current/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-SOURCE: &lt;a href="https://www.playpcesor.com/2017/09/time-Secrets-to-a-Happier-Life.html"&gt;來自 TIME 的快樂科學秘密：投入時間當下&lt;/a&gt;電腦玩物原創作者 esor huang 異塵行者
+SOURCE: &lt;a href="https://www.playpcesor.com/2017/09/time-Secrets-to-a-Happier-Life.html"&gt;來自 TIME 的快樂科學秘密：投入時間當下&lt;/a&gt; 電腦玩物原創作者 esor huang 異塵行者
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -364,7 +370,7 @@ SOURCE: &lt;a href="https://health.businessweekly.com.tw/AArticle.aspx?ID=ARTL00
 &lt;/p&gt;
 
 &lt;p&gt;
-今天看到這篇&lt;a href="https://emo.nidbox.com/diary/read/7697859"&gt;愛惜大腸，空腹吃水果(台大醫院胃腸科王正一醫師的忠告)&lt;/a&gt;覺得不錯，想留個記錄，再一次 google，發現了下面這篇
+今天看到這篇 &lt;a href="https://emo.nidbox.com/diary/read/7697859"&gt;愛惜大腸，空腹吃水果(台大醫院胃腸科王正一醫師的忠告)&lt;/a&gt; 覺得不錯，想留個記錄，再一次 google，發現了下面這篇
  &lt;a href="https://www.mygopen.com/2016/03/blog-post_1.html"&gt;【假知識】空腹吃水果會抗癌？王正一醫師說他從沒寫過這種東西！ ~ MyGoPen｜這是假消息&lt;/a&gt;
 &lt;/p&gt;
 
@@ -716,13 +722,9 @@ origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;
 &lt;p&gt;
 在 archlinux 上想用 haskell 真不是一件容易的事，因為選擇太多。
 &lt;/p&gt;
-
-&lt;p&gt;
-不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
-&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;閱讀更多…&lt;/a&gt; (尚餘 1 分鐘)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>haskell</category><category>pandoc</category><category>xmonad</category><guid>https://mariolong.github.io/posts/install-haskell-applications/</guid><pubDate>Sat, 28 Apr 2018 11:16:44 GMT</pubDate></item><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" name="fnr.2" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
-Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced linux Sound Architecture&lt;/a&gt;已說明等化器的安裝及設定，照做即可。
+Archlinux WIKI 的 &lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced linux Sound Architecture&lt;/a&gt; 已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
 
 &lt;div id="outline-container-sec-1" class="outline-2"&gt;
@@ -737,7 +739,7 @@ Archlinux WIKI 的&lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linu
 &lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; config&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
-在&lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt;加上以下設定：
+在 &lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt; 加上以下設定：
 &lt;/p&gt;
 
 &lt;pre class="example"&gt;
@@ -818,7 +820,7 @@ home…
 &lt;/blockquote&gt;
 
 &lt;p&gt;
-我在&lt;kbd&gt;/root&lt;/kbd&gt;目錄下，建一個連到主目錄&lt;kbd&gt;.alsaequal.bin&lt;/kbd&gt;的連結，
+我在 &lt;kbd&gt;/root&lt;/kbd&gt; 目錄下，建一個連到主目錄 &lt;kbd&gt;.alsaequal.bin&lt;/kbd&gt; 的連結，
 mpd 即可使用，瞎打誤撞。
 &lt;/p&gt;
 &lt;/div&gt;
@@ -837,67 +839,4 @@ mpd 即可使用，瞎打誤撞。
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>alsa</category><category>linux</category><category>mpd</category><category>music</category><guid>https://mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Sun, 14 Jan 2018 22:20:29 GMT</pubDate></item><item><title>post install for htpc</title><link>https://mariolong.github.io/posts/post-install-for-htpc/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-htpc
-&lt;/p&gt;
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; kodi&lt;/h2&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; wifi&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
-wifi-menu
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S wpa_supplicant dialog
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-setup wifi using wifi-menu
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ip link
-&amp;lt;interface&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wifi-menu &amp;lt;interface&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;netctl start &amp;lt;wifi-service&amp;gt;
-netctl &lt;span class="nb"&gt;enable&lt;/span&gt; &amp;lt;wifi-service&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; auto mount removable device by udiskie&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S udiskie
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; issues&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
-&lt;h3 id="sec-4-1"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; alsa&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-1"&gt;
-&lt;pre class="example"&gt;
-snd_.._intel index = 1
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
-&lt;h3 id="sec-4-2"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; default.config&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-2"&gt;
-&lt;pre class="example"&gt;
-need_root_right = no
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/post-install-for-htpc/</guid><pubDate>Fri, 29 Dec 2017 09:14:13 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>alsa</category><category>linux</category><category>mpd</category><category>music</category><guid>https://mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Sun, 14 Jan 2018 22:20:29 GMT</pubDate></item></channel></rss>

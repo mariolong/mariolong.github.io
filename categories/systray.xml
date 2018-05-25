@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：systray)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/systray.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Show volume icon on systray</title><link>https://mariolong.github.io/posts/show-volume-icon-on-systray/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;試用了以下幾個可以在 linux systray 顯示音量 icon 的小程式：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;volti&lt;/li&gt;
+&lt;li&gt;volicon&lt;/li&gt;
+&lt;li&gt;volumeicon&lt;/li&gt;
+&lt;li&gt;alsa-tray&lt;/li&gt;
+&lt;li&gt;volwheel&lt;/li&gt;
+&lt;li&gt;pnmixer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後決定用 alsa-tray，原因是佔用的記憶體最少，而且操作模式不會很奇怪。&lt;/p&gt;
+&lt;p&gt;再寫個小小的 service，用 systemd 啟動就大功告成了。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[Unit]
+Description=show volume icon on systray
+
+[Service]
+Type=simple
+
+ExecStart=/usr/bin/alsa-tray
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=default.target
+&lt;/pre&gt;&lt;/div&gt;</description><category>alsa</category><category>systray</category><guid>https://mariolong.github.io/posts/show-volume-icon-on-systray/</guid><pubDate>Tue, 13 Sep 2016 00:55:30 GMT</pubDate></item></channel></rss>

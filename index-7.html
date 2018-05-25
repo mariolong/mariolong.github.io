@@ -75,7 +75,55 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/my-linux/" class="u-url">My linux</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/systemctl-status-user-no-bus/" class="u-url">systemctl status --user: Failed to connect to bus</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/systemctl-status-user-no-bus/" rel="bookmark"><time class="published dt-published" datetime="2016-08-30T01:32:42Z" title="2016-08-30 01:32">2016-08-30 01:32</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/systemctl-status-user-no-bus/#disqus_thread" data-disqus-identifier="cache/posts/systemctl-status-user-no-bus.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>最近在整理 systemd，玩著著就出包了。想看一下 service 的狀態，結果出來錯誤訊息：</p>
+<pre class="literal-block">
+$ systemctl status --user
+Failed to connect to bus: No such file or directory
+</pre>
+<p>google 了半天，終於在 archlinux 的 <a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=203647">wiki</a> 中看到一句話：</p>
+<pre class="literal-block">
+I had a systemd unit file for emacs as described in
+https://wiki.archlinux.org/index.php/Em … stemd_unit located in
+~/.config/systemd/user/emacs.service When I removed it and rebooted
+the problem with startx and systemctl --user was gone.
+</pre>
+<p>想來是有寫不好的 user service，於是把還沒用到的 user service 隔離後，
+問題立刻就迎刃而解啦。</p>
+<p>記錄備查。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/mm-mpv-feh/" class="u-url">mm=mpv+feh</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/mm-mpv-feh/" rel="bookmark"><time class="published dt-published" datetime="2016-05-13T00:39:55Z" title="2016-05-13 00:39">2016-05-13 00:39</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/mm-mpv-feh/#disqus_thread" data-disqus-identifier="cache/posts/mmmpv+feh.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>單純播放照片和影片記錄而已</p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/my-linux/" class="u-url">My linux</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -120,7 +168,10 @@ update: 2016-5-13</p>
 </div>
 <div class="section" id="id4">
 <h3>影音平台</h3>
-<p><a class="reference external" href="posts/mpv/">mpv</a> 好用的影音播放器</p>
+<p><a href="posts/my-linux/#id5"><span class="problematic" id="id6">:doc:`mpv`</span></a> 好用的影音播放器</p>
+<div class="system-message" id="id5">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 52); <em><a href="posts/my-linux/#id6">backlink</a></em></p>
+"mpv" slug doesn't exist.</div>
 <p>kodi: 家庭劇院</p>
 <p><a class="reference external" href="posts/ffmpeg-xin-de/">ffmpeg 使用心得與整理</a> ，有了這個，可以應付影音轉檔的需求。</p>
 <p><a class="reference external" href="posts/dvd-backup/">DVD backup</a> ，備份 DVD 吧！現在都是看 BD，實用性已經不高。</p>
@@ -129,56 +180,24 @@ update: 2016-5-13</p>
 <p>kid3: 修改音樂檔的 tags</p>
 <p>lightworks: 非線性影音剪輯系統</p>
 </div>
-<div class="section" id="id5">
+<div class="section" id="id7">
 <h3>生活回憶</h3>
 <p><a class="reference external" href="posts/feh/">feh 小巧好用的圖片閱覽器</a></p>
 <p>mm=mpv+feh: 自己寫吧，找不到真正喜歡的。比較接近需求的是 gwenview，又有無法解決的問題，且太過笨重。</p>
 </div>
-<div class="section" id="id6">
+<div class="section" id="id8">
 <h3>程式撰寫</h3>
 <p>emacs</p>
 <p>python</p>
 <p>stock</p>
 <p>nginx</p>
 </div>
-<div class="section" id="id7">
+<div class="section" id="id9">
 <h3>其它</h3>
 <p>rsync: 備份</p>
-<p><a class="reference external" href="posts/systemd-timesync/">用systemd-timesync同步時間</a></p>
+<p><a class="reference external" href="posts/systemd-timesync/">用 systemd-timesync 同步時間</a></p>
 <p>speedcrunch: 計算器</p>
 <p>eject:</p>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hangups%2Bemacs/" class="u-url">hangups+emacs</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/hangups%2Bemacs/" rel="bookmark"><time class="published dt-published" datetime="2016-05-06T05:33:47Z" title="2016-05-06 05:33">2016-05-06 05:33</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/hangups%2Bemacs/#disqus_thread" data-disqus-identifier="cache/posts/hangups+emacs.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在 emacs 中使用 google hangout。</p>
-<p>習慣在 emacs 看文件，</p>
-<div class="section" id="id1">
-<h2>安裝及配置</h2>
-<div class="section" id="virtualenv">
-<h3>virtualenv</h3>
-</div>
-<div class="section" id="hangups-cli">
-<h3>hangups_cli</h3>
-<p>clone github hangoups_cli</p>
-</div>
-<div class="section" id="hangups-el">
-<h3>hangups.el</h3>
 </div>
 </div>
 </div>
@@ -507,13 +526,9 @@ $ systemctl enable kodi
 <pre class="literal-block">
 # timedatectl set-time "2014-05-26 11:13:54"
 </pre>
-</div>
-<div class="section" id="todo">
-<h2>TODO:</h2>
 <div class="section" id="ntp">
 <h3>時間同步 ntp</h3>
 <p>因為時間太久沒有調整，應該網路對時一下。</p>
-<p>下次更新系統再做吧。</p>
 <pre class="literal-block">
 # timedatectl set-ntp true
 </pre>
@@ -639,65 +654,6 @@ $ sudo lvresize -l -238466 /dev/VG01/LV00
 <p>這次的工作一直卡在縮小 lv 的地方，因為沒有先縮小 file system，造成 fsck 會報錯，然後就無法開機。</p>
 <p>雖然在試誤的過程中，一直擔心硬碟中的資料會毀損，最後的結果是好的，沒有任何資料毀損。</p>
 <p>真是慶幸。</p>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/from-git-to-github/" class="u-url">from git to github</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/from-git-to-github/" rel="bookmark"><time class="published dt-published" datetime="2015-05-29T01:54:41Z" title="2015-05-29 01:54">2015-05-29 01:54</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/from-git-to-github/#disqus_thread" data-disqus-identifier="cache/posts/from-git-to-github.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>想辦法把一些東西放到 github，一方面是可以備份，一方面可以分享。
-當然，備份才是我的重點，順便分享給有需要的人。
-畢竟從 open source 得到很多，也該把這個過程記錄下來，讓有需要的人採用。</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<p><a class="reference external" href="https://help.github.com/articles/set-up-git/">Github help</a> 已經很寫得很清楚，重點是</p>
-<p>git
-git -global name
-git -global email</p>
-</div>
-<div class="section" id="id2">
-<h2>問題</h2>
-<div class="section" id="push-github">
-<h3>將已存在的專案 push 到 github</h3>
-<ol class="arabic simple">
-<li>先在 github 建一個 repostory，例如：emacs.d</li>
-<li>回到 local 端，下指令 git remote add <a class="reference external" href="https://github.com/mariolong/emacs.d.git">https://github.com/mariolong/emacs.d.git</a>
-</li>
-<li>git pull</li>
-<li>touch .gitignore</li>
-<li>git push -u origin master</li>
-</ol>
-</div>
-<div class="section" id="push">
-<h3>push 失敗</h3>
-<pre class="literal-block">
-$ git push -u origin master
-
-! [rejected]        master -&gt; master (non-fast-forward)
-error: failed to push some refs to 'https://github.com/mariolong/emacs.d.git'
-hint: Updates were rejected because a pushed branch tip is behind its remote
-hint: counterpart. Check out this branch and integrate the remote changes
-hint: (e.g. 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
-
-git checkout master
-git merge test
-git push -u origin master
-</pre>
-</div>
 </div>
 </div>
     </div>

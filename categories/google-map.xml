@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：google map)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/google-map.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>gps</title><link>https://mariolong.github.io/posts/gps/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="https://mariolong.github.io/posts/garmin-kmz-kml-gpx-linux/"&gt;先前記錄了如何將&lt;/a&gt; google map 的地點轉換成 gpx，匯入 Garmin。&lt;/p&gt;
+&lt;p&gt;在我的 HTC 中，使用 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.orux.oruxmaps&amp;amp;hl=zh_TW"&gt;oruxmaps&lt;/a&gt;
+查看地圖和記錄跡。&lt;/p&gt;
+&lt;p&gt;另外安裝 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.eclipsim.gpsstatus2&amp;amp;hl=zh_TW"&gt;GPS Status&lt;/a&gt;
+可以加速定位，沒有這個，GPS 的作動有可能會怪怪的。&lt;/p&gt;
+&lt;p&gt;地圖下載：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.openandromaps.org/en/downloads/asia-middle-east"&gt;OSM 的 taiwan 地圖下載&lt;/a&gt; ，
+解壓縮 download 下來的檔案，會得到 taiwan_N.map，將此檔複製到手機 oruxmaps/mapfiles 中。&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://sites.google.com/site/asterosmtaiwantopo/mapsforge"&gt;這裡&lt;/a&gt; 有中文圖資和風格檔，
+我是比較喜歡這個，原因是有免費的等高線圖。&lt;/li&gt;
+&lt;li&gt;這個 &lt;a class="reference external" href="http://www.openandromaps.org/en/legend/elevate-mountain-hike-theme"&gt;風格檔&lt;/a&gt; 很漂亮。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以上地圖複製到 oruxmaps/mapfiles，風格檔放到 oruxmaps/mapstyles 中。&lt;/p&gt;&lt;/div&gt;</description><category>google map</category><category>gps</category><category>htc</category><category>osm</category><guid>https://mariolong.github.io/posts/gps/</guid><pubDate>Wed, 20 Apr 2016 11:42:36 GMT</pubDate></item></channel></rss>

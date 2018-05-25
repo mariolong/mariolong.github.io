@@ -30,6 +30,9 @@ application = app()
 uws">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-02-08T13:35:29+08:00">
+<meta property="article:tag" content="bottle">
+<meta property="article:tag" content="nginx">
+<meta property="article:tag" content="uwsgi">
 </head>
 <body>
 
@@ -109,28 +112,33 @@ uws">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>安裝 uwsgi</p>
-<pre class="code text"><a name="rest_code_c281b76c70f74ee78f28140f885b8b08-1"></a>sudo pip uwsgi
+<pre class="code text"><a name="rest_code_44c3f2988d3e4d71b5d2c54c83f12457-1"></a>sudo pip uwsgi
 </pre>
 <p>先寫一個小小的程式，測試一下。</p>
-<pre class="code python"><a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-3"></a>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-5"></a>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-9"></a>
-<a name="rest_code_2312aa25440b4e71bcc3dfcdc7b02200-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_5825f731597c42ab859dd926013eee66-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-3"></a>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-5"></a>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-9"></a>
+<a name="rest_code_5825f731597c42ab859dd926013eee66-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
 </pre>
 <p>啟動 uwsgi</p>
-<pre class="code text"><a name="rest_code_3d7da5e3db01481fa46cd3818b894b3c-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
+<pre class="code text"><a name="rest_code_cd96515ab3ea4a8ab1c2a95574b28c15-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
 </pre>
 <p>進 browser 看看成功否？目前成功。</p>
 <p>接下來試 nginx 中啟動 uwsgi。</p>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/bottle/" rel="tag">bottle</a></li>
+            <li><a class="tag p-category" href="../../categories/nginx/" rel="tag">nginx</a></li>
+            <li><a class="tag p-category" href="../../categories/uwsgi/" rel="tag">uwsgi</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../an-zhuang-nginx/" rel="prev" title="在 Archlinux 安裝 nginx">上一篇</a>
             </li>

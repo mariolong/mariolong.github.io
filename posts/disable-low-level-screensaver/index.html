@@ -13,13 +13,14 @@
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Disable low-level screensaver and screen DPMS poweroff">
 <meta property="og:url" content="https://mariolong.github.io/posts/disable-low-level-screensaver/">
-<meta property="og:description" content="在 Archbang wiki 中看到一段話：
-Disable Blank Screen After 10 Minutes
+<meta property="og:description" content="Disable Blank Screen After 10 Minutes
 To disable blank screen after 10 minutes of inactivity,
 create a file in /etc/X11/xorg.conf.d called custom.conf with this code:
-快建立這個檔案試試">
+快建立這個檔案試試。
+＄ nano  /etc/X11/xorg.">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-11-13T18:47:01+08:00">
+<meta property="article:tag" content="linux">
 </head>
 <body>
 
@@ -98,25 +99,27 @@ create a file in /etc/X11/xorg.conf.d called custom.conf with this code:
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>在 <a class="reference external" href="http://wiki.archbang.org/index.php?title=ArchBang_Document">Archbang wiki</a> 中看到一段話：</p>
 <p><strong>Disable Blank Screen After 10 Minutes</strong></p>
 <p>To disable blank screen after 10 minutes of inactivity,
 create a file in /etc/X11/xorg.conf.d called custom.conf with this code:</p>
 <p>快建立這個檔案試試。</p>
-<pre class="code text"><a name="rest_code_40e106d71cdd4b22bea664e744124d21-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-2"></a>
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-3"></a>Section "ServerFlags"
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-4"></a>    # disable low-level screensaver and screen DPMS poweroff
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-5"></a>    Option "BlankTime"  "0"
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-6"></a>    Option "StandbyTime" "0"
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-7"></a>    Option "SuspendTime" "0"
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-8"></a>    Option "OffTime"  "0"
-<a name="rest_code_40e106d71cdd4b22bea664e744124d21-9"></a>EndSection
+<pre class="code text"><a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-2"></a>
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-3"></a>Section "ServerFlags"
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-4"></a>    # disable low-level screensaver and screen DPMS poweroff
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-5"></a>    Option "BlankTime"  "0"
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-6"></a>    Option "StandbyTime" "0"
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-7"></a>    Option "SuspendTime" "0"
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-8"></a>    Option "OffTime"  "0"
+<a name="rest_code_3c0a98ca2c744e51af880bb12d347caa-9"></a>EndSection
 </pre>
 <p>趕快記下來，試試看。</p>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../linuxhao-hao-wan/" rel="prev" title="linux 好好玩">上一篇</a>
             </li>

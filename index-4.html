@@ -763,30 +763,30 @@ $ yaourt -S ghc haskell-xmonad-contrib haskell-pandoc
 <p>可能沒有這麼簡單吧。整個使用的感覺很不錯，比 lxde 容易，預設就好看得多。</p>
 <p><strong>2015-5-25</strong> 這次完全改寫了，原來 lxqt-panel 拿掉，
 用 xmonad/taffybar 取代。</p>
-<div class="contents topic" id="table-of-contents">
-<p class="topic-title first">Table of Contents</p>
+<div class="contents topic" id="id1">
+<p class="topic-title first">目錄</p>
 <ul class="simple">
-<li><a class="reference internal" href="posts/lxqt/#id1" id="id8">安裝</a></li>
+<li><a class="reference internal" href="posts/lxqt/#id2" id="id9">安裝</a></li>
 <li>
-<a class="reference internal" href="posts/lxqt/#id2" id="id9">配置</a><ul>
-<li><a class="reference internal" href="posts/lxqt/#wm" id="id10">修改預設的 wm</a></li>
-<li><a class="reference internal" href="posts/lxqt/#id3" id="id11">外觀設定</a></li>
+<a class="reference internal" href="posts/lxqt/#id3" id="id10">配置</a><ul>
+<li><a class="reference internal" href="posts/lxqt/#wm" id="id11">修改預設的 wm</a></li>
+<li><a class="reference internal" href="posts/lxqt/#id4" id="id12">外觀設定</a></li>
 </ul>
 </li>
 <li>
-<a class="reference internal" href="posts/lxqt/#id5" id="id12">其它工具</a><ul>
-<li><a class="reference internal" href="posts/lxqt/#lxqt-runner-lxqt-globalkeys" id="id13">lxqt-runner+lxqt-globalkeys</a></li>
-<li><a class="reference internal" href="posts/lxqt/#pcmanfm-qt" id="id14">pcmanfm-qt</a></li>
-<li><a class="reference internal" href="posts/lxqt/#file-roller" id="id15">file-roller</a></li>
-<li><a class="reference internal" href="posts/lxqt/#speedcrunch" id="id16">speedcrunch</a></li>
+<a class="reference internal" href="posts/lxqt/#id6" id="id13">其它工具</a><ul>
+<li><a class="reference internal" href="posts/lxqt/#lxqt-runner-lxqt-globalkeys" id="id14">lxqt-runner+lxqt-globalkeys</a></li>
+<li><a class="reference internal" href="posts/lxqt/#pcmanfm-qt" id="id15">pcmanfm-qt</a></li>
+<li><a class="reference internal" href="posts/lxqt/#file-roller" id="id16">file-roller</a></li>
+<li><a class="reference internal" href="posts/lxqt/#speedcrunch" id="id17">speedcrunch</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="posts/lxqt/#id6" id="id17">結論</a></li>
-<li><a class="reference internal" href="posts/lxqt/#id7" id="id18">後記</a></li>
+<li><a class="reference internal" href="posts/lxqt/#id7" id="id18">結論</a></li>
+<li><a class="reference internal" href="posts/lxqt/#id8" id="id19">後記</a></li>
 </ul>
 </div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="posts/lxqt/#id8">安裝</a></h2>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="posts/lxqt/#id9">安裝</a></h2>
 <pre class="literal-block">
 $ yaourt -S lxqt-common lxqt-config lxqt-session lxqt-policykit lxqt-globalkeys lxqt-runner lxqt-qtplugin
 </pre>
@@ -799,18 +799,18 @@ $ yaourt -S pcmanfm-qt gvfs-mtp gvfs-gphoto2 file-roller speedcrunch screengrab 
 $ cabal install xmonad xmonad-contrib taffybar
 </pre>
 </div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="posts/lxqt/#id9">配置</a></h2>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="posts/lxqt/#id10">配置</a></h2>
 <div class="section" id="wm">
-<h3><a class="toc-backref" href="posts/lxqt/#id10">修改預設的 wm</a></h3>
+<h3><a class="toc-backref" href="posts/lxqt/#id11">修改預設的 wm</a></h3>
 <p>執行 <tt class="docutils literal"><span class="pre">lxqt-config-session</span></tt> 修改「視窗管理員」。</p>
 <p>或修改 <tt class="docutils literal"><span class="pre">~/.config/lxqt/session.desktop</span></tt></p>
 <pre class="literal-block">
 window_manager=xmonad
 </pre>
 </div>
-<div class="section" id="id3">
-<h3><a class="toc-backref" href="posts/lxqt/#id11">外觀設定</a></h3>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="posts/lxqt/#id12">外觀設定</a></h3>
 <p>最重要的是讓 QT 和 GTK 的應用程式看起來很像。參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#oxygen-gtk">Archlinux Wiki</a></p>
 <div class="section" id="oxygen-gtk-gtk-qt">
 <h4>使用 oxygen-gtk 調和 gtk 和 qt 外觀</h4>
@@ -901,15 +901,15 @@ $ ln -s /usr/share/icons/Oxgen_Black/ ~/.icons/default
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="posts/lxqt/#id12">其它工具</a></h2>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="posts/lxqt/#id13">其它工具</a></h2>
 <div class="section" id="lxqt-runner-lxqt-globalkeys">
-<h3><a class="toc-backref" href="posts/lxqt/#id13">lxqt-runner+lxqt-globalkeys</a></h3>
+<h3><a class="toc-backref" href="posts/lxqt/#id14">lxqt-runner+lxqt-globalkeys</a></h3>
 <p>按下 Alt-F2 即可快速執行應用程式。
 試用過 synapse、kupfer，還是決定用 runner 就好了。</p>
 </div>
 <div class="section" id="pcmanfm-qt">
-<h3><a class="toc-backref" href="posts/lxqt/#id14">pcmanfm-qt</a></h3>
+<h3><a class="toc-backref" href="posts/lxqt/#id15">pcmanfm-qt</a></h3>
 <p>lxqt 預設的檔案管理器，目前可用了，但還是有些小問題，習慣它。
 例如：滑鼠單擊執行程式的功能要先取消，否則在選擇多文件/檔案後，不好拖放。</p>
 <pre class="literal-block">
@@ -917,22 +917,22 @@ $ yaourt -S pcmanfm-qt gvfs-mtp
 </pre>
 </div>
 <div class="section" id="file-roller">
-<h3><a class="toc-backref" href="posts/lxqt/#id15">file-roller</a></h3>
+<h3><a class="toc-backref" href="posts/lxqt/#id16">file-roller</a></h3>
 <p>安裝後，記得到 pcmanfm-qt 中設定預設的壓縮程式。</p>
 <pre class="literal-block">
 $ yaourt -S file-roller
 </pre>
 </div>
 <div class="section" id="speedcrunch">
-<h3><a class="toc-backref" href="posts/lxqt/#id16">speedcrunch</a></h3>
+<h3><a class="toc-backref" href="posts/lxqt/#id17">speedcrunch</a></h3>
 <p>很好用的計算器，就像寫數學公式，很親切的感覺。</p>
 <pre class="literal-block">
 $ yaourt -S speedcrunch
 </pre>
 </div>
 </div>
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="posts/lxqt/#id17">結論</a></h2>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="posts/lxqt/#id18">結論</a></h2>
 <p>以前用 lxde 就覺得很不錯，也用了一整年。轉到 kde 是因為 htc 的關係。現在，我又回來用 lxqt，感覺很好。
 只要能解決以下 3 個問題</p>
 <ol class="arabic">
@@ -954,8 +954,8 @@ $ xdg-mime default pcmanfm-qt.desktop inode/directory
 </li>
 </ol>
 </div>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="posts/lxqt/#id18">後記</a></h2>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="posts/lxqt/#id19">後記</a></h2>
 <p>非常滿足地用著 lxqt，感謝這個 team 的努力，讓我有個不錯的桌面可用。</p>
 <p>在安裝 lxqt 的過程中，看到了一個看圖軟體 <tt class="docutils literal">nomacs</tt> ，看起來不錯用，先記錄下來吧，免得忘了。</p>
 </div>
@@ -1007,7 +1007,7 @@ yaourt -S ranger w3m imlib2
 <h2>參考</h2>
 <blockquote>
 <p><a class="reference external" href="http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide">Turning vim into a modern python ide</a></p>
-<p>用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用vim。</p>
+<p>用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用 vim。</p>
 </blockquote>
 </div>
 <div class="section" id="install">
@@ -1106,7 +1106,7 @@ Same as |NERDComComment| except that the delimiters are aligned down the left si
 </pre>
 </div>
 <div class="section" id="file-browser">
-<h3>檔案系統瀏覽器file browser</h3>
+<h3>檔案系統瀏覽器 file browser</h3>
 <pre class="literal-block">
 " NERDTree (better file browser) toggle
 map &lt;F3&gt; :NERDTreeToggle&lt;CR&gt;

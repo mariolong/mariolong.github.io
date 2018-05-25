@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：lvm)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/lvm.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LVM on Archlinux</title><link>https://mariolong.github.io/posts/LVM-on-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;參考 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/LVM"&gt;Archlinux wiki&lt;/a&gt;，
+因爲這篇 wiki 中提到了 &lt;a class="reference external" href="https://mariolong.github.io/posts/btrfs/"&gt;btrfs&lt;/a&gt; ，花了一些時間去研究它，結果不好用。&lt;/p&gt;
+&lt;p&gt;還是回來用 LVM，我只是要他的可擴充性：硬碟不夠時，再加一顆就好。&lt;/p&gt;
+&lt;div class="section" id="lvm"&gt;
+&lt;h2&gt;建立 LVM&lt;/h2&gt;
+&lt;div class="section" id="pv"&gt;
+&lt;h3&gt;pv 階段&lt;/h3&gt;
+&lt;p&gt;用 gparted 設定，將要用的分區格式化成 lvm2 pv 即可。&lt;/p&gt;
+&lt;p&gt;pvdisplay 看看:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvdisplay
+--- Physical volume ---
+PV Name               /dev/sdb8
+VG Name               VG00
+PV Size               15.04 GiB / not usable 0
+Allocatable           yes (but full)
+PE Size               4.00 MiB
+Total PE              3849
+Free PE               0
+Allocated PE          3849
+PV UUID               76qMPb-k4bl-jHVi-w0d6-DqEO-ffpq-l2jnpU
+
+--- Physical volume ---
+PV Name               /dev/sdb9
+VG Name               VG00
+PV Size               15.13 GiB / not usable 2.00 MiB
+Allocatable           yes (but full)
+PE Size               4.00 MiB
+Total PE              3874
+Free PE               0
+Allocated PE          3874
+PV UUID               nuSNwv-w4kq-VOrG-7zSI-jom6-MDTY-01yZps
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="vg"&gt;
+&lt;h3&gt;vg 階段&lt;/h3&gt;
+&lt;p&gt;建立以 VG00 爲名的 VG:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ lsblk -f
+$ vgcreate VG00 /dev/sdb8
+$ vgextend VG00 /dev/sdb9
+$ vgdisplay
+--- Volume group ---
+  VG Name               VG00
+  System ID
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  3
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               0
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               30.17 GiB
+  PE Size               4.00 MiB
+  Total PE              7723
+  Alloc PE / Size       7723 / 30.17 GiB
+  Free  PE / Size       0 / 0
+  VG UUID               BslpFB-0DUQ-PHdf-BAIj-o7WC-fWQ0-7PkJNe
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lv"&gt;
+&lt;h3&gt;lv 階段&lt;/h3&gt;
+&lt;p&gt;建立以 LV00 爲名的 LV&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ lvcreate -l +100%FREE VG00 -n LV00
+$ lvdisplay
+  --- Logical volume ---
+  LV Path                /dev/VG00/LV00
+  LV Name                LV00
+  VG Name                VG00
+  LV UUID                d0MSXz-bcmL-XZ3R-gjyR-X1C7-P0y0-ODe0uM
+  LV Write Access        read/write
+  LV Creation host, time arch-64, 2013-04-30 13:11:43 +0800
+  LV Status              available
+  # open                 0
+  LV Size                30.17 GiB
+  Current LE             7723
+  Segments               2
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           254:0
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="create-filesystems-and-mount-logical-volumes"&gt;
+&lt;h3&gt;Create filesystems and mount logical volumes&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ modprobe dm-mod
+$ vgscan
+
+  Reading all physical volumes.  This may take a while...
+  Found volume group "VG00" using metadata type lvm2
+
+$ vgchange -ay
+
+  1 logical volume(s) in volume group "VG00" now active
+&lt;/pre&gt;
+&lt;p&gt;format and mount:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mkfs.ext4 /dev/mapper/VG00-LV00
+$ mount /dev/mapper/VG00-LV00 /mnt/lvmtest
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="add-lvm-hook-to-mkinitcpio-conf"&gt;
+&lt;h3&gt;Add lvm hook to mkinitcpio.conf&lt;/h3&gt;
+&lt;p&gt;You'll need to make sure the udev and lvm2 mkinitcpio hooks are enabled.
+udev is there by default.
+Edit the file and insert lvm2 between block and filesystem like so:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ nano /etc/mkinitcpio.conf
+HOOKS="base udev ... block lvm2 filesystems"
+&lt;/pre&gt;
+&lt;p&gt;Afterwards, you can continue in normal installation instructions with the create an initial ramdisk step.&lt;/p&gt;
+&lt;p&gt;Load proper module:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ modprobe dm_mod
+&lt;/pre&gt;
+&lt;p&gt;The dm_mod module should be automatically loaded. In case it does not, you can try:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ nano /etc/mkinitcpio.conf
+MODULES="dm_mod ..."
+&lt;/pre&gt;
+&lt;p&gt;rebuild:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mkinitcpio -p linux
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="auto-mount-by-etc-fstab"&gt;
+&lt;h3&gt;auto mount by /etc/fstab&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ nano /etc/fstab
+UUID=&amp;lt;LV UUID&amp;gt;      /mnt/lvmtest    ext4    defaults    0   0
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;增加一顆硬碟&lt;/h2&gt;
+&lt;p&gt;確定要加入那顆硬碟&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ lsblk -f
+&lt;/pre&gt;
+&lt;p&gt;做好 partition，
+將那顆硬碟設為 lvm pv&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ gparted
+$ lsblk -f
+
+NAME          FSTYPE                        LABEL    UUID                                   MOUNTPOINT
+sdd
+└─sdd1        LVM2_member                            hr0IbE-tO9I-vm9d-1x8f-iJwq-mrHj-bT0Pth
+  └─VG01-LV00 ext4                                   86068ca8-289d-480a-87db-2680b13d00e3   /mnt/data-lvm
+sde           promise_fasttrack_raid_member
+└─sde1        LVM2_member                            CGrblY-v1n3-Lzil-iwym-3Wyk-wPQS-Gqztrn
+&lt;/pre&gt;
+&lt;p&gt;pvcreate&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pvcreate /dev/sde1
+Physical volume "/dev/sde1" successfully created
+
+$ sudo vgdisplay
+  --- Volume group ---
+  VG Name               VG01
+  System ID
+  Format                lvm2
+  Metadata Areas        3
+  Metadata Sequence No  3
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               1
+  Max PV                0
+  Cur PV                3
+  Act PV                3
+  VG Size               3.18 TiB
+  PE Size               4.00 MiB
+  Total PE              834631
+  Alloc PE / Size       476932 / 1.82 TiB
+  Free  PE / Size       357699 / 1.36 TiB
+  VG UUID               8uHaKD-23zK-W5by-EJPE-5hpN-3PmN-6yY1Wl
+&lt;/pre&gt;
+&lt;p&gt;vgextend&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo vgextend VG01 /dev/sde1
+Volume group "VG01" successfully extended
+
+$ sudo lvdisplay
+  --- Logical volume ---
+  LV Path                /dev/VG01/LV00
+  LV Name                LV00
+  VG Name                VG01
+  LV UUID                0GSsZv-vzJQ-7mMk-rwsH-or0D-cDjJ-4OQFGd
+  LV Write Access        read/write
+  LV Creation host, time arch-64, 2013-04-30 19:20:38 +0800
+  LV Status              available
+  # open                 1
+  LV Size                1.82 TiB
+  Current LE             476932
+  Segments               2
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           254:0
+&lt;/pre&gt;
+&lt;p&gt;擴增剛剛設好的 lv&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ lvextend -l +100%FREE VG01/LV00
+&lt;/pre&gt;
+&lt;p&gt;df 看一下，發現 lv 容量還沒有增加&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ df
+檔案系統               1K-blocks       已用      可用 已用% 掛載點
+/dev/mapper/VG01-LV00 1922728752 1798892248  26144448   99% /mnt/data-lvm
+&lt;/pre&gt;
+&lt;p&gt;原來是，還要 resize file system&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+＄ resize2fs /dev/VG01/LV00
+&lt;/pre&gt;
+&lt;p&gt;df 看一下，發現 lv 容量增加囉&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ df
+檔案系統               1K-blocks       已用       可用 已用% 掛載點
+/dev/mapper/VG01-LV00 3364872816 1798895476 1409685920   57% /mnt/data-lvm
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-the-maximum-size-of-a-single-lv"&gt;
+&lt;h2&gt;What is the maximum size of a single LV?&lt;/h2&gt;
+&lt;p&gt;ref: &lt;a class="reference external" href="http://www.tldp.org/HOWTO/LVM-HOWTO/lvm2faq.html"&gt;http://www.tldp.org/HOWTO/LVM-HOWTO/lvm2faq.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The answer to this question depends upon the CPU architecture of your computer and the kernel you are a running:&lt;/p&gt;
+&lt;p&gt;For 2.4 based kernels, the maximum LV size is 2TB. For some older kernels,
+however, the limit was 1TB due to signedness problems in the block layer.
+Red Hat Enterprise linux 3 Update 5 has fixes to allow the full 2TB LVs.
+Consult your distribution for more information in this regard.&lt;/p&gt;
+&lt;p&gt;For 32-bit CPUs on 2.6 kernels, the maximum LV size is 16TB.&lt;/p&gt;
+&lt;p&gt;For 64-bit CPUs on 2.6 kernels, the maximum LV size is 8EB. (Yes, that is a very large number.)&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>linux</category><category>lvm</category><guid>https://mariolong.github.io/posts/LVM-on-archlinux/</guid><pubDate>Tue, 30 Apr 2013 04:41:30 GMT</pubDate></item></channel></rss>

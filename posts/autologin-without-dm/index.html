@@ -18,6 +18,8 @@ and check the status on https://github.com/joukewitteveen/xlogin.git
 Here are the installation steps, including for a systemd managed u">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-12-17T19:56:42+08:00">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="login">
 </head>
 <body>
 
@@ -107,35 +109,35 @@ yaourt -S xlogin-git
 <li>Create the following two files. 準備 D-BUS。</li>
 </ol>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.socket</tt> containing:</p>
-<pre class="code text"><a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-1"></a>[Unit]
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-2"></a>Description=D-Bus Message Bus Socket
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-3"></a>Before=sockets.target
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-4"></a>
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-5"></a>[Socket]
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-7"></a>
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-8"></a>[Install]
-<a name="rest_code_5c2815bffeb745f19b064e56ebab7b10-9"></a>WantedBy=default.target
+<pre class="code text"><a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-1"></a>[Unit]
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-2"></a>Description=D-Bus Message Bus Socket
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-3"></a>Before=sockets.target
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-4"></a>
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-5"></a>[Socket]
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-7"></a>
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-8"></a>[Install]
+<a name="rest_code_565a470b66a94b5bb0dd4951d1ed8354-9"></a>WantedBy=default.target
 </pre>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.service</tt> containing:</p>
-<pre class="code text"><a name="rest_code_c48ffe524d0f48809837e3decc55f994-1"></a>[Unit]
-<a name="rest_code_c48ffe524d0f48809837e3decc55f994-2"></a>Description=D-Bus Message Bus
-<a name="rest_code_c48ffe524d0f48809837e3decc55f994-3"></a>Requires=dbus.socket
-<a name="rest_code_c48ffe524d0f48809837e3decc55f994-4"></a>
-<a name="rest_code_c48ffe524d0f48809837e3decc55f994-5"></a>[Service]
-<a name="rest_code_c48ffe524d0f48809837e3decc55f994-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
-<a name="rest_code_c48ffe524d0f48809837e3decc55f994-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
+<pre class="code text"><a name="rest_code_66184b1e2d27457fa653d03911c7319b-1"></a>[Unit]
+<a name="rest_code_66184b1e2d27457fa653d03911c7319b-2"></a>Description=D-Bus Message Bus
+<a name="rest_code_66184b1e2d27457fa653d03911c7319b-3"></a>Requires=dbus.socket
+<a name="rest_code_66184b1e2d27457fa653d03911c7319b-4"></a>
+<a name="rest_code_66184b1e2d27457fa653d03911c7319b-5"></a>[Service]
+<a name="rest_code_66184b1e2d27457fa653d03911c7319b-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+<a name="rest_code_66184b1e2d27457fa653d03911c7319b-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
 </pre>
 <ol class="arabic simple" start="3">
 <li>Run (as root) <tt class="docutils literal">systemctl <span class="pre">--global</span> enable dbus.socket</tt> .</li>
 <li>Set up your .xinitrc and make sure it has the following near the top.</li>
 </ol>
-<pre class="code text"><a name="rest_code_ee2378ca996a4d3c98771efb410dfb73-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
-<a name="rest_code_ee2378ca996a4d3c98771efb410dfb73-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
-<a name="rest_code_ee2378ca996a4d3c98771efb410dfb73-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
-<a name="rest_code_ee2378ca996a4d3c98771efb410dfb73-4"></a>    done
-<a name="rest_code_ee2378ca996a4d3c98771efb410dfb73-5"></a>    unset f
-<a name="rest_code_ee2378ca996a4d3c98771efb410dfb73-6"></a>fi
+<pre class="code text"><a name="rest_code_aae1f46851ea49d39a5cc09f4fe074c7-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
+<a name="rest_code_aae1f46851ea49d39a5cc09f4fe074c7-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
+<a name="rest_code_aae1f46851ea49d39a5cc09f4fe074c7-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
+<a name="rest_code_aae1f46851ea49d39a5cc09f4fe074c7-4"></a>    done
+<a name="rest_code_aae1f46851ea49d39a5cc09f4fe074c7-5"></a>    unset f
+<a name="rest_code_aae1f46851ea49d39a5cc09f4fe074c7-6"></a>fi
 </pre>
 <p>Running your <tt class="docutils literal">.xinitrc</tt> should not return,
 so either have wait as the last command in your <tt class="docutils literal">.xinitrc</tt>,
@@ -144,9 +146,9 @@ or add <tt class="docutils literal">exec</tt> to the last command that will be c
 <ol class="arabic simple" start="5">
 <li>Include the following in your <tt class="docutils literal">.bashrc</tt> .</li>
 </ol>
-<pre class="code text"><a name="rest_code_276a47eb03224408b21dfe02b8e0b5d1-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
-<a name="rest_code_276a47eb03224408b21dfe02b8e0b5d1-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
-<a name="rest_code_276a47eb03224408b21dfe02b8e0b5d1-3"></a>done
+<pre class="code text"><a name="rest_code_c80caa332e024741b7eb32bccd90cf75-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
+<a name="rest_code_c80caa332e024741b7eb32bccd90cf75-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
+<a name="rest_code_c80caa332e024741b7eb32bccd90cf75-3"></a>done
 </pre>
 <p>6. Run (as root) <tt class="docutils literal">systemctl enable <span class="pre">xlogin@&lt;username&gt;</span></tt> for automatic login at boot,
 or <tt class="docutils literal">systemctl start <span class="pre">xlogin@&lt;username&gt;</span></tt> for launching a graphical user session (on tty7).</p>
@@ -156,7 +158,11 @@ or <tt class="docutils literal">systemctl start <span class="pre">xlogin@&lt;use
 The <tt class="docutils literal"><span class="pre">xorg-xinit</span></tt> package is not required for this method.</p>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="../../categories/login/" rel="tag">login</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../tiling-window-manager-xmonad-with-kde/" rel="prev" title="Tiling window manager - Xmonad with KDE">上一篇</a>
             </li>

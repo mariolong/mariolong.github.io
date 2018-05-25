@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：ibus)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/ibus.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>ibus,fcitx 輸入法設定</title><link>https://mariolong.github.io/posts/ibusfcitxshu-ru-fa-she-ding/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div class="section" id="ibus"&gt;
+&lt;h2&gt;ibus&lt;/h2&gt;
+&lt;p&gt;GNOME 3.10 中，IBus 是整合在一起，裝了 GNOME，IBus 就安裝好。
+剩下的只是安裝自己要的輸入法。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S ibus-rime ibus-chewing
+&lt;/pre&gt;
+&lt;p&gt;IBus 的字形大小，預設的太小，參考 &lt;a class="reference external" href="https://mariolong.github.io/posts/gnomean-zhuang-ji-lu/"&gt;gnome 安裝記錄&lt;/a&gt; 修改。&lt;/p&gt;
+&lt;p&gt;[2013-11-1] 拼音的 rime 實在不是我的最愛，自動選字，常常不是我想要的，現在還是回到「嘸蝦米」。
+參考 &lt;a href="https://mariolong.github.io/posts/ibusfcitxshu-ru-fa-she-ding/#id1"&gt;&lt;span class="problematic" id="id2"&gt;:doc:`IBus-Boshiamy`&lt;/span&gt;&lt;/a&gt; 。&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 12); &lt;em&gt;&lt;a href="https://mariolong.github.io/posts/ibusfcitxshu-ru-fa-she-ding/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+"IBus-Boshiamy" slug doesn't exist.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fcitx"&gt;
+&lt;h2&gt;fcitx 【中州韻】和【新酷音】&lt;/h2&gt;
+&lt;p&gt;在 LXDE 中，ibus 和 google-chrome 衝突，暫時先切到 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Fcitx"&gt;fcitx&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;[2013-11-01] 用 GNOME 3.10，IBus 和 google-chrome 配合良好。&lt;/p&gt;
+&lt;p&gt;至少到目前爲止，fcitx 和我的系統 (LXDE) 配合度很良好。
+在 Archlinux 中 &lt;a class="reference external" href="https://www.archlinux.org/packages/community/i686/fcitx-rime/"&gt;fcitx-rime&lt;/a&gt;
+看來也有人維護，那就繼續用吧。&lt;/p&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;安裝【中州韻】和【新酷音】：&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ yaourt -S fcitx fcitx-rime fcitx-chewing fcitx-configtool fcitx-gtk{2,3} fcitx-qt
+&lt;/pre&gt;
+&lt;p&gt;不必用 fcitx-rime-git。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;配置&lt;/h3&gt;
+&lt;p&gt;在 &lt;cite&gt;~/.xinitrc&lt;/cite&gt; 增加一行：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+fcitx &amp;amp;
+&lt;/pre&gt;
+&lt;p&gt;在 &lt;cite&gt;~/.bashrc&lt;/cite&gt; 加上：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;fcitx 的嘸蝦米&lt;/h2&gt;
+&lt;p&gt;fcitx
+還是比較好用，使用說明參考 &lt;a class="reference external" href="http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&amp;amp;type=&amp;amp;topic_id=53570&amp;amp;forum=8"&gt;(推薦)在 fcitx 輸入法下，(boshiamy)嘸蝦米的使用最為順暢、穩定!（新酷音、m17n、倉頡、輕鬆法亦適用）&lt;/a&gt; 。&lt;/p&gt;
+&lt;div class="section" id="kde-fcitx"&gt;
+&lt;h3&gt;KDE 安裝 fcitx + 嘸蝦米 + 酷音&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+yaourt -S fcitx-im fcitx-table-extra fcitx-chewing kdeplasma-addons-applets-kimpanel kcm-fcitx fcitx-qt5
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;配置&lt;/h3&gt;
+&lt;p&gt;在 &lt;cite&gt;~/.xinitrc&lt;/cite&gt; 增加一行：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+fcitx &amp;amp;
+&lt;/pre&gt;
+&lt;p&gt;在 &lt;cite&gt;~/.bashrc&lt;/cite&gt; 加上：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id8"&gt;
+&lt;h3&gt;自行加詞&lt;/h3&gt;
+&lt;p&gt;參考： &lt;a class="reference external" href="http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?topic_id=58540&amp;amp;forum=22&amp;amp;post_id=257328#forumpost257328"&gt;(推薦)在 fcitx 下的好用自製碼表工具，mb2txt 與 txt2mb（嘸蝦篇）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;命令：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd ~/.config/fcitx/table
+mb2txt boshiamy.mb &amp;gt; boshiamy.txt
+&lt;/pre&gt;
+&lt;p&gt;編輯 boshiamy.txt，加上想要的詞。編好後，轉成嘸蝦米的碼表：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+txt2mb boshiamy.txt boshiamy.mb
+&lt;/pre&gt;
+&lt;p&gt;在中文的輸入環境下，切換到嘸蝦米，按 Ctrl+5，以讀取新表，即可使用新定義的詞。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>fcitx</category><category>ibus</category><category>rime</category><guid>https://mariolong.github.io/posts/ibusfcitxshu-ru-fa-she-ding/</guid><pubDate>Fri, 01 Nov 2013 10:50:21 GMT</pubDate></item></channel></rss>

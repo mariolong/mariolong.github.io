@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：癌)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/yan.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 23 May 2018 00:20:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>咖啡致癌？防癌！</title><link>https://mariolong.github.io/posts/coffe-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：癌)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/yan.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 06:06:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>鼻咽癌與我的初次相遇</title><link>https://mariolong.github.io/posts/cancer-first-time/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;確診&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+2016/1/7，坐在診療椅上，不由自主地一股寒氣由腳底冒起，直達心口。
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/cancer-first-time/"&gt;閱讀更多…&lt;/a&gt; (尚餘 1 分鐘)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>癌</category><category>鼻咽癌</category><guid>https://mariolong.github.io/posts/cancer-first-time/</guid><pubDate>Fri, 25 May 2018 04:53:47 GMT</pubDate></item><item><title>咖啡致癌？防癌！</title><link>https://mariolong.github.io/posts/coffe-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 為了確認咖啡會不會致癌，特別花了點時間 google 一下，沒想到結論是真的出人意表。
 &lt;/p&gt;
 
 &lt;dl class="org-dl"&gt;
-&lt;dt&gt; 致癌 &lt;/dt&gt;&lt;dd&gt;咖啡炒焙過程中所產生的&lt;span class="underline"&gt;丙烯醯胺&lt;/span&gt;是 2B 級致癌物，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。但 2B 等級表示在動物實驗中有觀察到癌症的風險，但在流行病學研究證據不足。
+&lt;dt&gt; 致癌 &lt;/dt&gt;&lt;dd&gt;咖啡炒焙過程中所產生的 &lt;span class="underline"&gt;丙烯醯胺&lt;/span&gt; 是 2B 級致癌物，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。但 2B 等級表示在動物實驗中有觀察到癌症的風險，但在流行病學研究證據不足。
 &lt;/dd&gt;
 
 &lt;dt&gt; 抗癌 &lt;/dt&gt;&lt;dd&gt;咖啡有多種抗氧化成分與植化素，可能有助預防多種癌症。科學家認為飲用「非常燙」（超過 65℃）的飲料才是可能致癌的原因，因為有研究顯示這個行為和食道癌相關。
@@ -36,7 +42,7 @@
 &lt;/p&gt;
 
 &lt;p&gt;
-發現咖啡炒焙過程中所產生的&lt;span class="underline"&gt;丙烯醯胺&lt;/span&gt;為 2B 級致癌物在動物實驗中觀察到有癌症的風險，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。
+發現咖啡炒焙過程中所產生的 &lt;span class="underline"&gt;丙烯醯胺&lt;/span&gt; 為 2B 級致癌物在動物實驗中觀察到有癌症的風險，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -76,7 +82,7 @@
 
 &lt;p&gt;
 咖啡的成分相當複雜，大家所熟知的咖啡因裡面，含有綠原酸（chlorogenic
-acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂（kahweol）等抗氧化物，因此咖啡可謂富含營養素且沒有熱量的健康飲料，但是，它也含有致癌的&lt;span class="underline"&gt;丙烯醯胺&lt;/span&gt; (acrylamide)成分，所以，多喝咖啡是否有害健康呢？
+acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂（kahweol）等抗氧化物，因此咖啡可謂富含營養素且沒有熱量的健康飲料，但是，它也含有致癌的 &lt;span class="underline"&gt;丙烯醯胺&lt;/span&gt; (acrylamide)成分，所以，多喝咖啡是否有害健康呢？
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -209,53 +215,11 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 
 &lt;p&gt;
 國際癌症研究機構的專家發現，過熱飲品可能會引發食管癌。「過熱」指的是飲品溫度在 65°C 以上。世衛：非常熱的飲料被列入 2A 致癌物
-&lt;/p&gt;</description><category>癌</category><category>食</category><guid>https://mariolong.github.io/posts/coffe-cancer/</guid><pubDate>Wed, 09 Aug 2017 07:29:47 GMT</pubDate></item><item><title>注意！癌症發作前 2 年身體會出現的「徵兆」</title><link>https://mariolong.github.io/posts/4-years-ago/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;</description><category>癌</category><category>食</category><guid>https://mariolong.github.io/posts/coffe-cancer/</guid><pubDate>Wed, 09 Aug 2017 07:29:47 GMT</pubDate></item><item><title>注意！癌症發作前 2 年身體會出現的「徵兆」</title><link>https://mariolong.github.io/posts/4-years-ago/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;
 今天剛好看到這篇&lt;a href="http://www.thehealthdaily.org/cat/32/node/29454"&gt;注意！癌症發作前 2 年身體會出現的「徵兆」&lt;/a&gt;，心中有點感慨。如果四年前注意到一些不尋常的現象，應該也不會生出鼻咽癌。
 &lt;/p&gt;
-
-&lt;p&gt;
-其實早在四年身體就有些異常現象，只是很容易處理掉，恢復正常，也就不太在意。
-&lt;/p&gt;
-
-&lt;p&gt;
-異常症狀都差不多，呼吸困難，心跳得很快，全身没力，覺得隨時會停止呼吸，感覺快死了。
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;2013 年，連作三天「陸文灦強力瑜珈」，輕鬆搞定。
-&lt;/li&gt;
-&lt;li&gt;2014 年，連作一星期的「陸文灦強力瑜珈」，搞定，沒問題。
-&lt;/li&gt;
-&lt;li&gt;2015 年，年初開始手臂痛，痛到手都舉不起來。看骨科說是「頸椎」壓迫，開始作復健，效果不好，搞了半年，還是痛。復健的過程中，和復健師聊天，覺得問題應該是在「胸椎」，不在「頸椎」。
-
-&lt;p&gt;
-呼吸困難，心跳得很快，全身没力，覺得隨時會停止呼吸的症狀，到年中還是發生了。因為同時手痛，全身没有力量，這次「強力瑜珈」可就搞不定了，這次選擇的方法是「爬山」，一直爬「五城山」，山上有個練武場，我在那裡做「伏地挺身」，主要是推動「胸椎」鬆開。經過了一個星期，手痛就完全好了，呼吸困難，心跳得很快的症狀也不藥而癒。
-&lt;/p&gt;
-
-&lt;p&gt;
-呼吸困難，心跳得很快的這段時間，曾經到台大檢查肺功能和心臟，背了一個星期的「運動心律記錄器」。回診看報告時，因為查不出異常，我順口說了句：「那我還要再找原因。」竟然引起醫生不悅，說：「不然，我開 2 個月的藥，
-2 個月後再來看。」唉！這就是西醫的盲點：不知道原因，也敢開藥，這藥我可不敢吃啊。
-&lt;/p&gt;
-
-&lt;p&gt;
-最後，還是爬山才好的。
-&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;2015/12/E 頸部突然腫了一小顆突起，大小約 2 公分。到附近小診所看，醫生要我去大醫院檢查。唉！身體在這幾年折騰壞了。
-&lt;/li&gt;
-&lt;li&gt;2016 1/7 到亞東耳鼻喉科檢查，後來就確診了是鼻咽癌。接下來是為期 1 年的自療。
-&lt;/li&gt;
-&lt;li&gt;2017 2/28 因累、冷，加上正好斷食，體力比較差，免疫力下降，頸部腫瘤突然腫大，變成了 14 公分大小。
-&lt;/li&gt;
-&lt;li&gt;2017/3/21 才決心給西醫處理。原因是，我没有把握可以消掉這麼大的腫瘤，而且看到家人擔心的眼神，實在找不出理由不快點處理掉這顆腫瘤。這天到亞東急診、住院，開始了西醫治療。
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-身體開始變差，會有些症狀產生，一定要小心面對，不能掉以輕心，免得小問題變成大麻煩。
-&lt;/p&gt;</description><category>癌</category><guid>https://mariolong.github.io/posts/4-years-ago/</guid><pubDate>Thu, 03 Aug 2017 11:00:00 GMT</pubDate></item><item><title>鼻咽癌放療記錄</title><link>https://mariolong.github.io/posts/fang-liao-ji-lu/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/4-years-ago/"&gt;閱讀更多…&lt;/a&gt; (尚餘 1 分鐘)&lt;/p&gt;&lt;/div&gt;</description><category>癌</category><guid>https://mariolong.github.io/posts/4-years-ago/</guid><pubDate>Thu, 03 Aug 2017 11:00:00 GMT</pubDate></item><item><title>鼻咽癌放療記錄</title><link>https://mariolong.github.io/posts/record-radiation-therapy-cancer/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;前言&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 如果不是頸部腫瘤在 2017/2/28 突然惡化、長大，我應該還是不會給西醫治療。
@@ -272,7 +236,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 放療副作用&lt;/h2&gt;
+&lt;h2 id="sec-2"&gt;放療副作用&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;dl class="org-dl"&gt;
 &lt;dt&gt; 口 &lt;/dt&gt;&lt;dd&gt;口破，舌頭破，口乾。
@@ -290,7 +254,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 營(保)養品&lt;/h2&gt;
+&lt;h2 id="sec-3"&gt;營(保)養品&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;p&gt;
 因為放療會有以上的副作用，希望能有一些東西幫忙，讓傷害降到最低。
@@ -298,7 +262,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
-&lt;h3 id="sec-3-1"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 麩醯胺酸&lt;/h3&gt;
+&lt;h3 id="sec-3-1"&gt;麩醯胺酸&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-3-1"&gt;
 &lt;p&gt;
 補充修補時需要的營養和熱量。
@@ -311,7 +275,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-3-2" class="outline-3"&gt;
-&lt;h3 id="sec-3-2"&gt;&lt;span class="section-number-3"&gt;3.2&lt;/span&gt; 安素、倍力素、倍速&lt;/h3&gt;
+&lt;h3 id="sec-3-2"&gt;安素、倍力素、倍速&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-3-2"&gt;
 &lt;p&gt;
 如果吃不下或插鼻胃管時，灌食、補充熱量用。
@@ -324,7 +288,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-3-3" class="outline-3"&gt;
-&lt;h3 id="sec-3-3"&gt;&lt;span class="section-number-3"&gt;3.3&lt;/span&gt; 蘆薈、保濕面膜、NS-21&lt;/h3&gt;
+&lt;h3 id="sec-3-3"&gt;蘆薈、保濕面膜、NS-21&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-3-3"&gt;
 &lt;p&gt;
 只用蘆薈、保濕面膜應該不夠，可能還是要早一點用 NS-21，但很貴，1 支
@@ -335,7 +299,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 作息，飲食&lt;/h2&gt;
+&lt;h2 id="sec-4"&gt;作息，飲食&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-4"&gt;
 &lt;p&gt;
 和徐醫生談過後，清楚知道，放療的傷害還是要靠自己修復，多吃營養，體重要保持住，不能不降太多，如果體重下降超過 5 公斤，要插鼻胃管餵食。這是西醫的作法。
@@ -392,7 +356,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-5" class="outline-2"&gt;
-&lt;h2 id="sec-5"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 運動&lt;/h2&gt;
+&lt;h2 id="sec-5"&gt;運動&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-5"&gt;
 &lt;p&gt;
 能做的運動太多了，馬克「抗癌氣血本功」就不錯，陸文灝暖身操，拉筋功，太極拳，內功，苦行脊椎歸位操，有空就做，好好調炁。
@@ -409,7 +373,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; 總結&lt;/h2&gt;
+&lt;h2 id="sec-6"&gt;總結&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-6"&gt;
 &lt;p&gt;
 放療過程中的副作用，我覺得最嚴重的是：
@@ -458,10 +422,10 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 日記錄&lt;/h2&gt;
+&lt;h2 id="sec-7"&gt;日記錄&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-7"&gt;
 &lt;/div&gt;&lt;div id="outline-container-sec-7-1" class="outline-3"&gt;
-&lt;h3 id="sec-7-1"&gt;&lt;span class="section-number-3"&gt;7.1&lt;/span&gt; 6/6 二 (1 天, 1 次) 59kg&lt;/h3&gt;
+&lt;h3 id="sec-7-1"&gt;6/6 二 (1 天, 1 次) 59kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-1"&gt;
 &lt;p&gt;
 第一次放療和化療。
@@ -483,7 +447,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-2" class="outline-3"&gt;
-&lt;h3 id="sec-7-2"&gt;&lt;span class="section-number-3"&gt;7.2&lt;/span&gt; 6/7 三 (2 天, 2 次)&lt;/h3&gt;
+&lt;h3 id="sec-7-2"&gt;6/7 三 (2 天, 2 次)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-2"&gt;
 &lt;p&gt;
 今天警衛說我的脖子有點黑，放療果然厲害，才照一次就可以發現變黑。
@@ -492,7 +456,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-3" class="outline-3"&gt;
-&lt;h3 id="sec-7-3"&gt;&lt;span class="section-number-3"&gt;7.3&lt;/span&gt; 6/13 二 (8 天, 6 次) 58kg&lt;/h3&gt;
+&lt;h3 id="sec-7-3"&gt;6/13 二 (8 天, 6 次) 58kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-3"&gt;
 &lt;p&gt;
 口腔有點紅腫，覺得不大舒服，喉嚨裡一直覺得有一股濃痰，想吐也吐不出來。
@@ -509,7 +473,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-4" class="outline-3"&gt;
-&lt;h3 id="sec-7-4"&gt;&lt;span class="section-number-3"&gt;7.4&lt;/span&gt; 6/14 三 (9 天, 7 次)&lt;/h3&gt;
+&lt;h3 id="sec-7-4"&gt;6/14 三 (9 天, 7 次)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-4"&gt;
 &lt;p&gt;
 不吃西藥想吐，吃了藥一直打嗝。
@@ -518,7 +482,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-5" class="outline-3"&gt;
-&lt;h3 id="sec-7-5"&gt;&lt;span class="section-number-3"&gt;7.5&lt;/span&gt; 6/17 六 (12 天, 9 次)&lt;/h3&gt;
+&lt;h3 id="sec-7-5"&gt;6/17 六 (12 天, 9 次)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-5"&gt;
 &lt;p&gt;
 上顎和喉嚨開始覺得痛，口水很濃稠，一直覺得嘴巴裡鹹鹹的。後來發現，鹹鹹的是口水，吃了「液泌快」才會分泌的口水味道。
@@ -527,7 +491,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-6" class="outline-3"&gt;
-&lt;h3 id="sec-7-6"&gt;&lt;span class="section-number-3"&gt;7.6&lt;/span&gt; 6/20 二 (15 天, 11 次) 58kg&lt;/h3&gt;
+&lt;h3 id="sec-7-6"&gt;6/20 二 (15 天, 11 次) 58kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-6"&gt;
 &lt;p&gt;
 口水分泌比較差，有點口乾的感覺，買了條「白樂汀」保濕凝膠，用了後口腔比較不痛了！這條「白樂汀」保濕凝膠到後來都還有用。
@@ -536,7 +500,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-7" class="outline-3"&gt;
-&lt;h3 id="sec-7-7"&gt;&lt;span class="section-number-3"&gt;7.7&lt;/span&gt; 6/21 三 (16, 12)&lt;/h3&gt;
+&lt;h3 id="sec-7-7"&gt;6/21 三 (16, 12)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-7"&gt;
 &lt;p&gt;
 狀況不錯口腔比較不痛。策略就是努力吃。努力吃水果，百香果香吉士檸檬汁。脖子變硬了。
@@ -545,7 +509,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-8" class="outline-3"&gt;
-&lt;h3 id="sec-7-8"&gt;&lt;span class="section-number-3"&gt;7.8&lt;/span&gt; 6/23 四 (18, 14)&lt;/h3&gt;
+&lt;h3 id="sec-7-8"&gt;6/23 四 (18, 14)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-8"&gt;
 &lt;p&gt;
 去許中華醫生那拿了水包回來吃看看。口嘴巴裡一直有一股鹹鹹的味道，可能是發炎，用必達定嗽口會痛。
@@ -554,7 +518,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-9" class="outline-3"&gt;
-&lt;h3 id="sec-7-9"&gt;&lt;span class="section-number-3"&gt;7.9&lt;/span&gt; 6/27 二 (22) 59kg&lt;/h3&gt;
+&lt;h3 id="sec-7-9"&gt;6/27 二 (22) 59kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-9"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;白血球：4700
@@ -574,7 +538,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-10" class="outline-3"&gt;
-&lt;h3 id="sec-7-10"&gt;&lt;span class="section-number-3"&gt;7.10&lt;/span&gt; 6/30～7/2&lt;/h3&gt;
+&lt;h3 id="sec-7-10"&gt;6/30～7/2&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-10"&gt;
 &lt;p&gt;
 宜蘭步道之旅松羅步道，新寮瀑布，林美步道，美不勝收，重要的是都有體力走完。
@@ -583,7 +547,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-11" class="outline-3"&gt;
-&lt;h3 id="sec-7-11"&gt;&lt;span class="section-number-3"&gt;7.11&lt;/span&gt; 7/3 一 (28, 20)&lt;/h3&gt;
+&lt;h3 id="sec-7-11"&gt;7/3 一 (28, 20)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-11"&gt;
 &lt;p&gt;
 左邊鼻子也流血了。吃百香果，酸啊，好痛。吃水果，第一次感到痛。
@@ -592,7 +556,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-12" class="outline-3"&gt;
-&lt;h3 id="sec-7-12"&gt;&lt;span class="section-number-3"&gt;7.12&lt;/span&gt; 7/4 二 (29, 21) 58.5kg&lt;/h3&gt;
+&lt;h3 id="sec-7-12"&gt;7/4 二 (29, 21) 58.5kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-12"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;白血球：9800
@@ -616,7 +580,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-13" class="outline-3"&gt;
-&lt;h3 id="sec-7-13"&gt;&lt;span class="section-number-3"&gt;7.13&lt;/span&gt; 7/5 三 (30, 22)&lt;/h3&gt;
+&lt;h3 id="sec-7-13"&gt;7/5 三 (30, 22)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-13"&gt;
 &lt;p&gt;
 今天做斷層掃描，再一次確認腫瘤大小，下星期門診時再問醫生吧。
@@ -625,7 +589,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-14" class="outline-3"&gt;
-&lt;h3 id="sec-7-14"&gt;&lt;span class="section-number-3"&gt;7.14&lt;/span&gt; 7/6 四 (31, 23)&lt;/h3&gt;
+&lt;h3 id="sec-7-14"&gt;7/6 四 (31, 23)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-14"&gt;
 &lt;p&gt;
 早上起床後，喉嚨不痛，上顎也還好，椰子油可能有效。
@@ -638,7 +602,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-15" class="outline-3"&gt;
-&lt;h3 id="sec-7-15"&gt;&lt;span class="section-number-3"&gt;7.15&lt;/span&gt; 7/7 五 (32, 24)&lt;/h3&gt;
+&lt;h3 id="sec-7-15"&gt;7/7 五 (32, 24)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-15"&gt;
 &lt;p&gt;
 昨天三餐飯後，均含著椰子油至少三十分鐘，今天的口腔狀況就很不錯，不痛，連喉嚨也不痛。
@@ -647,7 +611,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-16" class="outline-3"&gt;
-&lt;h3 id="sec-7-16"&gt;&lt;span class="section-number-3"&gt;7.16&lt;/span&gt; 7/8 六 (33)&lt;/h3&gt;
+&lt;h3 id="sec-7-16"&gt;7/8 六 (33)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-16"&gt;
 &lt;p&gt;
 早餐吃得真豐富，豬肉滿福堡一個，高鈣高纖奶。後來又去丹堤吃熏鷄薄餅，炒蛋。奇怪的是食慾不錯，吃得也多，可是體重也不增加。
@@ -660,7 +624,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-17" class="outline-3"&gt;
-&lt;h3 id="sec-7-17"&gt;&lt;span class="section-number-3"&gt;7.17&lt;/span&gt; 7/9 日 (34)&lt;/h3&gt;
+&lt;h3 id="sec-7-17"&gt;7/9 日 (34)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-17"&gt;
 &lt;p&gt;
 「白樂汀口腔凝膠」還是有用。昨天晚上覺得上顎很乾喉嚨也不舒服，想了想，塗點百白樂汀可能有效，早上起來，上顎喉嚨都不大痛，但還是有點乾，狀况還算良好。
@@ -669,7 +633,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-18" class="outline-3"&gt;
-&lt;h3 id="sec-7-18"&gt;&lt;span class="section-number-3"&gt;7.18&lt;/span&gt; 7/10 一 (35, 25)&lt;/h3&gt;
+&lt;h3 id="sec-7-18"&gt;7/10 一 (35, 25)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-18"&gt;
 &lt;p&gt;
 目前就只喉嚨和上顎痛，可以進食，没問題。花了一個小時走路回家，有點累，休息了一小時。
@@ -678,7 +642,7 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-19" class="outline-3"&gt;
-&lt;h3 id="sec-7-19"&gt;&lt;span class="section-number-3"&gt;7.19&lt;/span&gt; 7/11 二 (36,26) 57.5kg&lt;/h3&gt;
+&lt;h3 id="sec-7-19"&gt;7/11 二 (36,26) 57.5kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-19"&gt;
 &lt;p&gt;
 WBC 10050 有點發炎。Platelet 125，正常，不再下降了。
@@ -707,7 +671,7 @@ MRI 要整個療程結束後一個月安排，所以還有時間爬山，練功�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-20" class="outline-3"&gt;
-&lt;h3 id="sec-7-20"&gt;&lt;span class="section-number-3"&gt;7.20&lt;/span&gt; 7/12 三 (37, 27)&lt;/h3&gt;
+&lt;h3 id="sec-7-20"&gt;7/12 三 (37, 27)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-20"&gt;
 &lt;p&gt;
 吃了白色念珠菌的藥，口腔的好像狀況好一點，没那麽痛了，中午可以吃甘泉魚麵。
@@ -716,7 +680,7 @@ MRI 要整個療程結束後一個月安排，所以還有時間爬山，練功�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-21" class="outline-3"&gt;
-&lt;h3 id="sec-7-21"&gt;&lt;span class="section-number-3"&gt;7.21&lt;/span&gt; 7/13 四 (38, 28)&lt;/h3&gt;
+&lt;h3 id="sec-7-21"&gt;7/13 四 (38, 28)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-21"&gt;
 &lt;p&gt;
 真奇怪，今天不知道為何特别累。
@@ -742,7 +706,7 @@ MRI 要整個療程結束後一個月安排，所以還有時間爬山，練功�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-22" class="outline-3"&gt;
-&lt;h3 id="sec-7-22"&gt;&lt;span class="section-number-3"&gt;7.22&lt;/span&gt; 7/14 五 (39, 29)&lt;/h3&gt;
+&lt;h3 id="sec-7-22"&gt;7/14 五 (39, 29)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-22"&gt;
 &lt;p&gt;
 今天是用新的治療計畫，重新照影像定位，放射器轉了 24 圈，放射劑量應該比較少吧？
@@ -759,7 +723,7 @@ MRI 要整個療程結束後一個月安排，所以還有時間爬山，練功�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-23" class="outline-3"&gt;
-&lt;h3 id="sec-7-23"&gt;&lt;span class="section-number-3"&gt;7.23&lt;/span&gt; 7/17 一 (42, 30)&lt;/h3&gt;
+&lt;h3 id="sec-7-23"&gt;7/17 一 (42, 30)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-23"&gt;
 &lt;p&gt;
 今天照 24 圈。
@@ -780,7 +744,7 @@ MRI 要整個療程結束後一個月安排，所以還有時間爬山，練功�
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-24" class="outline-3"&gt;
-&lt;h3 id="sec-7-24"&gt;&lt;span class="section-number-3"&gt;7.24&lt;/span&gt; 7/18 二 (43, 31) 57.5kg&lt;/h3&gt;
+&lt;h3 id="sec-7-24"&gt;7/18 二 (43, 31) 57.5kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-24"&gt;
 &lt;p&gt;
 WBC 9000
@@ -807,7 +771,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-25" class="outline-3"&gt;
-&lt;h3 id="sec-7-25"&gt;&lt;span class="section-number-3"&gt;7.25&lt;/span&gt; 7/20 四 (45, 33)&lt;/h3&gt;
+&lt;h3 id="sec-7-25"&gt;7/20 四 (45, 33)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-25"&gt;
 &lt;p&gt;
 「燙膚舒」有效，只是脖子還會變更黑。
@@ -820,7 +784,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-26" class="outline-3"&gt;
-&lt;h3 id="sec-7-26"&gt;&lt;span class="section-number-3"&gt;7.26&lt;/span&gt; 7/21 五 (46, 34)&lt;/h3&gt;
+&lt;h3 id="sec-7-26"&gt;7/21 五 (46, 34)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-26"&gt;
 &lt;p&gt;
 縮小範圍計畫，今天轉 24 圈。
@@ -837,7 +801,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-27" class="outline-3"&gt;
-&lt;h3 id="sec-7-27"&gt;&lt;span class="section-number-3"&gt;7.27&lt;/span&gt; 7/22 六 (47, 35)&lt;/h3&gt;
+&lt;h3 id="sec-7-27"&gt;7/22 六 (47, 35)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-27"&gt;
 &lt;p&gt;
 放療療程終於全部結束。
@@ -850,7 +814,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-28" class="outline-3"&gt;
-&lt;h3 id="sec-7-28"&gt;&lt;span class="section-number-3"&gt;7.28&lt;/span&gt; 7/24 一 (49)&lt;/h3&gt;
+&lt;h3 id="sec-7-28"&gt;7/24 一 (49)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-28"&gt;
 &lt;p&gt;
 脖子上的破洞好似更大片，昨天夜裡還真的很痛，吃了瑪啡止痛也無效。
@@ -863,7 +827,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-29" class="outline-3"&gt;
-&lt;h3 id="sec-7-29"&gt;&lt;span class="section-number-3"&gt;7.29&lt;/span&gt; 7/25 二 (50) 55kg&lt;/h3&gt;
+&lt;h3 id="sec-7-29"&gt;7/25 二 (50) 55kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-29"&gt;
 &lt;p&gt;
 體重掉得很快。
@@ -880,7 +844,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-30" class="outline-3"&gt;
-&lt;h3 id="sec-7-30"&gt;&lt;span class="section-number-3"&gt;7.30&lt;/span&gt; 7/27 四 (52)&lt;/h3&gt;
+&lt;h3 id="sec-7-30"&gt;7/27 四 (52)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-30"&gt;
 &lt;p&gt;
 沒想到這三天消耗安素的速度，飛快。
@@ -901,7 +865,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-31" class="outline-3"&gt;
-&lt;h3 id="sec-7-31"&gt;&lt;span class="section-number-3"&gt;7.31&lt;/span&gt; 7/28 五 (53)&lt;/h3&gt;
+&lt;h3 id="sec-7-31"&gt;7/28 五 (53)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-31"&gt;
 &lt;p&gt;
 繼續喝安素，早上多了一杯蔬果汁和鷄肉粥。
@@ -922,7 +886,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-32" class="outline-3"&gt;
-&lt;h3 id="sec-7-32"&gt;&lt;span class="section-number-3"&gt;7.32&lt;/span&gt; 7/31 一 (56)&lt;/h3&gt;
+&lt;h3 id="sec-7-32"&gt;7/31 一 (56)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-32"&gt;
 &lt;p&gt;
 早上起床，覺得喉嚨不大痛，就是乾乾的讓上顎有點痛，可也不會很痛。重要的是，不再吐出血水，傷口應該好多了。
@@ -935,7 +899,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-33" class="outline-3"&gt;
-&lt;h3 id="sec-7-33"&gt;&lt;span class="section-number-3"&gt;7.33&lt;/span&gt; 8/1 二 (57) 56kg&lt;/h3&gt;
+&lt;h3 id="sec-7-33"&gt;8/1 二 (57) 56kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-33"&gt;
 &lt;p&gt;
 回診放射科，這兩天較好，頸部破皮範圍持續縮小中，現在要保持足夠營養，讓皮膚持續修復。
@@ -956,7 +920,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-34" class="outline-3"&gt;
-&lt;h3 id="sec-7-34"&gt;&lt;span class="section-number-3"&gt;7.34&lt;/span&gt; 8/3 四 (59)&lt;/h3&gt;
+&lt;h3 id="sec-7-34"&gt;8/3 四 (59)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-34"&gt;
 &lt;p&gt;
 脖子的狀況也好很多了，受傷的範圍持續縮小。
@@ -969,7 +933,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-35" class="outline-3"&gt;
-&lt;h3 id="sec-7-35"&gt;&lt;span class="section-number-3"&gt;7.35&lt;/span&gt; 8/7 一 (63)&lt;/h3&gt;
+&lt;h3 id="sec-7-35"&gt;8/7 一 (63)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-35"&gt;
 &lt;p&gt;
 舌頭的右側和喉嚨還是很痛。剛才發現，為何舌頭右側很痛？原來是接近舌根的地方，破了個約一公分的破洞，難怪會很痛。
@@ -982,7 +946,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-36" class="outline-3"&gt;
-&lt;h3 id="sec-7-36"&gt;&lt;span class="section-number-3"&gt;7.36&lt;/span&gt; 8/8 二 (64) 56kg&lt;/h3&gt;
+&lt;h3 id="sec-7-36"&gt;8/8 二 (64) 56kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-36"&gt;
 &lt;p&gt;
 舌頭破洞，很痛，謝醫生開了口內膏，看會不會比較快好。
@@ -999,7 +963,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-37" class="outline-3"&gt;
-&lt;h3 id="sec-7-37"&gt;&lt;span class="section-number-3"&gt;7.37&lt;/span&gt; 8/10 四 (66)&lt;/h3&gt;
+&lt;h3 id="sec-7-37"&gt;8/10 四 (66)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-37"&gt;
 &lt;p&gt;
 頸部皮膚的狀況算是好了，因為可以用水清洗，完全沒有痛的感覺。
@@ -1008,7 +972,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-38" class="outline-3"&gt;
-&lt;h3 id="sec-7-38"&gt;&lt;span class="section-number-3"&gt;7.38&lt;/span&gt; 8/14 (70)&lt;/h3&gt;
+&lt;h3 id="sec-7-38"&gt;8/14 (70)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-38"&gt;
 &lt;p&gt;
 早餐吃麵，肉包，高麗菜。吃什麼不重要，重要是舌頭有味道了，肉包的香，高麗菜的甜，而且舌頭也不大痛，哈哈。不過，還是不能吃辣。中午吃豬脚飯，吃了口麻婆豆腐，痛啊！根本吃不下飯了。晚上，吃得不錯。炒米粉，客家小炒，炒山蘇，不油不膩。
@@ -1017,7 +981,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-39" class="outline-3"&gt;
-&lt;h3 id="sec-7-39"&gt;&lt;span class="section-number-3"&gt;7.39&lt;/span&gt; 8/19 (74)&lt;/h3&gt;
+&lt;h3 id="sec-7-39"&gt;8/19 (74)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-39"&gt;
 &lt;p&gt;
 旅行結束，回到家了。不得不說，最困擾的是右耳塞住了。因為上山下山的，氣壓造成耳內壓力不平衡的感覺，一直沒辦法恢復正常，不舒服。另外，舌頭痛的狀況尚未完全解除，碰到辣的食物，還是完全無法下嚥，很痛啊！但我可以確定的是，舌根的傷口已經好了很多，只剩小小的一個傷痕。
@@ -1026,7 +990,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-40" class="outline-3"&gt;
-&lt;h3 id="sec-7-40"&gt;&lt;span class="section-number-3"&gt;7.40&lt;/span&gt; 8/20 (75)&lt;/h3&gt;
+&lt;h3 id="sec-7-40"&gt;8/20 (75)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-40"&gt;
 &lt;p&gt;
 右耳還是塞住，聽不到。舌面痛，舌根的破洞快好了。
@@ -1035,7 +999,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-41" class="outline-3"&gt;
-&lt;h3 id="sec-7-41"&gt;&lt;span class="section-number-3"&gt;7.41&lt;/span&gt; 8/25 (80) 57kg&lt;/h3&gt;
+&lt;h3 id="sec-7-41"&gt;8/25 (80) 57kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-41"&gt;
 &lt;p&gt;
 右耳還是塞住。舌根不痛。舌面有點痛，不能吃辣。
@@ -1052,7 +1016,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-42" class="outline-3"&gt;
-&lt;h3 id="sec-7-42"&gt;&lt;span class="section-number-3"&gt;7.42&lt;/span&gt; 8/29 (84) 57kg&lt;/h3&gt;
+&lt;h3 id="sec-7-42"&gt;8/29 (84) 57kg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-42"&gt;
 &lt;p&gt;
 今天是看 MRI 結果。
@@ -1085,7 +1049,7 @@ NS-21 只是保濕，沒有治療功能，而且很貴，一支要台幣 1,200 �
 &lt;/div&gt;
 
 &lt;div id="outline-container-sec-7-43" class="outline-3"&gt;
-&lt;h3 id="sec-7-43"&gt;&lt;span class="section-number-3"&gt;7.43&lt;/span&gt; 9/6  (92)&lt;/h3&gt;
+&lt;h3 id="sec-7-43"&gt;9/6  (92)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-43"&gt;
 &lt;p&gt;
 昨天，謝醫生說，還是要去看耳鼻喉科，看看耳朵塞住的狀況如何？不要掉以輕心。
@@ -1113,4 +1077,4 @@ MD, 這次切片是左、右側的鼻咽部共抓了 5 塊肉，左三右二，�
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>癌</category><guid>https://mariolong.github.io/posts/fang-liao-ji-lu/</guid><pubDate>Sat, 29 Jul 2017 01:29:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>癌</category><guid>https://mariolong.github.io/posts/record-radiation-therapy-cancer/</guid><pubDate>Sat, 29 Jul 2017 01:29:00 GMT</pubDate></item></channel></rss>

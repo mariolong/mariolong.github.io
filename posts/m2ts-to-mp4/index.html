@@ -8,7 +8,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/m2ts-to-mp4/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
-<link rel="prev" href="../mpv/" title="mpv" type="text/html">
+<link rel="prev" href="../pip-python-library/" title="pip: python library" type="text/html">
 <link rel="next" href="../fonts/" title="字型相關" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="M2TS to mp4 via ffmpeg">
@@ -108,25 +108,25 @@ convert M2TS to avi for concat
 <div class="section" id="split">
 <h2>split</h2>
 <p>先將不要的片段切掉</p>
-<pre class="code text"><a name="rest_code_b5990109320e4d5d8dcd30cfb40d59d8-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-<a name="rest_code_b5990109320e4d5d8dcd30cfb40d59d8-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
+<pre class="code text"><a name="rest_code_dc3e8fb342bf4f5796fb54138f33ba44-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+<a name="rest_code_dc3e8fb342bf4f5796fb54138f33ba44-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
 </pre>
 </div>
 <div class="section" id="convert-m2ts-to-avi-for-concat">
 <h2>convert M2TS to avi for concat</h2>
 <p>轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
 有一個 frame 會交錯，影片會跳一下。</p>
-<pre class="code text"><a name="rest_code_81eea7cb06484ff390bb4338fe81abcd-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
-<a name="rest_code_81eea7cb06484ff390bb4338fe81abcd-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
+<pre class="code text"><a name="rest_code_a90a2659587d4d41a564561e3f320763-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
+<a name="rest_code_a90a2659587d4d41a564561e3f320763-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
 </pre>
 </div>
 <div class="section" id="id1">
 <h2>合併</h2>
 <p>將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。</p>
-<pre class="code text"><a name="rest_code_5266a52a73fa4cedba44056c777a4a11-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_1dd453d76f5a4d53950e0fd4342074ca-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
 </pre>
 <p>或</p>
-<pre class="code text"><a name="rest_code_3307f5161187436f9270852483d9a46e-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_153a19d1a6b44262aa332c2c455f5171-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
 </pre>
 </div>
 </div>
@@ -136,7 +136,7 @@ convert M2TS to avi for concat
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../mpv/" rel="prev" title="mpv">上一篇</a>
+                <a href="../pip-python-library/" rel="prev" title="pip: python library">上一篇</a>
             </li>
             <li class="next">
                 <a href="../fonts/" rel="next" title="字型相關">下一篇</a>

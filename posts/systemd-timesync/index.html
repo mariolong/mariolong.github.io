@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>用systemd-timesync同步時間 | Simple Life</title>
+<title>用 systemd-timesync 同步時間 | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/systemd-timesync/">
@@ -11,17 +11,17 @@
 <link rel="prev" href="../bluetooth-keyboard/" title="藍牙小鍵盤" type="text/html">
 <link rel="next" href="../phototonic/" title="phototonic: 另一個小巧的看圖程式" type="text/html">
 <meta property="og:site_name" content="Simple Life">
-<meta property="og:title" content="用systemd-timesync同步時間">
+<meta property="og:title" content="用 systemd-timesync 同步時間">
 <meta property="og:url" content="https://mariolong.github.io/posts/systemd-timesync/">
 <meta property="og:description" content="先前用 ntpd，一直沒有成功對時。
-昨日看到這個systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
-我又不必設ntp server，用這個同步時間就好了。
+昨日看到這個 systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
+我又不必設 ntp server，用這個同步時間就好了。
 參考 https://wiki.archlinux.org/index.php/systemd-timesyncd
 
 安裝
-archlinux中已經安裝好了，執行：
+archlinux 中已經安裝好了，執行：
 
-$ sudo timedatectl set-ntp">
+$ sudo timedatectl set-">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-10-13T02:59:47Z">
 </head>
@@ -82,7 +82,7 @@ $ sudo timedatectl set-ntp">
 				<div class="span8">
 					
 					
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">用systemd-timesync同步時間</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">用 systemd-timesync 同步時間</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -103,12 +103,12 @@ $ sudo timedatectl set-ntp">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>先前用 ntpd，一直沒有成功對時。
-昨日看到這個systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
-我又不必設ntp server，用這個同步時間就好了。</p>
+昨日看到這個 systemd-timesyncd，那就試試看。一試就成，而且配置簡單。
+我又不必設 ntp server，用這個同步時間就好了。</p>
 <p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/systemd-timesyncd">https://wiki.archlinux.org/index.php/systemd-timesyncd</a></p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<p>archlinux中已經安裝好了，執行：</p>
+<p>archlinux 中已經安裝好了，執行：</p>
 <pre class="literal-block">
 $ sudo timedatectl set-ntp true
 $ sudo systemctl enable systemd-timesyncd.service
@@ -123,7 +123,7 @@ $ sudo systemctl start systemd-timesyncd.service
 NTP=tock.stdtime.gov.tw watch.stdtime.gov.tw time.stdtime.gov.tw clock.stdtime.gov.tw tick.stdtime.gov.tw
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.tw.ntp.pool.org
 </pre>
-<p>其中，NTP server用的是 <a class="reference external" href="http://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt">中華電信研究院國家時間與頻率標準實驗室</a>
+<p>其中，NTP server 用的是 <a class="reference external" href="http://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt">中華電信研究院國家時間與頻率標準實驗室</a>
 的 server。</p>
 <p>輕鬆完工。</p>
 </div>
@@ -143,7 +143,7 @@ FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.tw.ntp.pool.org
         <script>
         var disqus_shortname ="simple-life",
             disqus_url="https://mariolong.github.io/posts/systemd-timesync/",
-        disqus_title="\u7528systemd-timesync\u540c\u6b65\u6642\u9593",
+        disqus_title="\u7528 systemd-timesync \u540c\u6b65\u6642\u9593",
         disqus_identifier="cache/posts/systemd-timesync.html",
         disqus_config = function () {
             this.language = "zh_tw";

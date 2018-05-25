@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：btrfs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/btrfs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>btrfs 使用筆記</title><link>https://mariolong.github.io/posts/btrfs/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div class="section" id="btrfs"&gt;
+&lt;h2&gt;btrfs&lt;/h2&gt;
+&lt;p&gt;試試看新的 filesystem&lt;/p&gt;
+&lt;p&gt;2013/4/30 update: 問題還很多。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;明明還有空間，卻會回報「空間用完」，試着在刪除一些檔案，空間還是不足。&lt;/li&gt;
+&lt;li&gt;速度上明顯比 ext4 慢。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;等到真的穩定了再來用吧。還是回頭先用 LVM 這個比較穩定的系統。&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;安裝 btrfs 工具&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo pacman -S btrfs-progs
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="format"&gt;
+&lt;h3&gt;Format&lt;/h3&gt;
+&lt;p&gt;我有 2 顆硬碟，用來裝電影，不需要用到 RAID1 做備份。
+因此，我是用 RAID0 將這 2 顆硬碟變成一顆大硬碟，管理上比較方便。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# 確認硬碟代碼
+$ lsblk -f
+
+# format 成 btrfs 格式
+$ mkfs.btrfs -m raid0 /dev/sdb /dev/sdc
+
+# 再確認 UUID
+$ lsblk -f
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mount"&gt;
+&lt;h3&gt;Mount&lt;/h3&gt;
+&lt;p&gt;mount 時，隨便用那一顆硬碟的代碼都行：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mount /dev/sdb /mnt/movie
+&lt;/pre&gt;
+&lt;p&gt;修改 /etc/fstab，開機時可自動掛上：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+UUID=&amp;lt;UUID&amp;gt;     /mnt/movie      btrfs           defaults,compress=lzo        0       0
+&lt;/pre&gt;
+&lt;p&gt;簡單設定如上。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;平衡 2 顆硬碟的負載&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ btrfs filesystem balance /mnt/movie
+&lt;/pre&gt;
+&lt;p&gt;The balance operation will take some time.
+It reads in all of the FS data and metadata and rewrites it across the new device.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;可以看看 btrfs 磁碟的狀況&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ btrfs filesystem show
+
+Label: none  uuid: 3f5fe016-9af6-4910-9671-889b0ccfcfcd
+Total devices 2 FS bytes used 344.88GB
+devid    2 size 931.51GB used 173.00GB path /dev/sde
+devid    1 size 931.51GB used 173.00GB path /dev/sdc
+&lt;/pre&gt;
+&lt;p&gt;2 顆硬碟的用量果然平衡。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="changing-raid-level"&gt;
+&lt;h3&gt;Changing RAID Level&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+btrfs balance start -dconvert=raid1 -mconvert=raid1 /mnt
+&lt;/pre&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.howtoforge.com/a-beginners-guide-to-btrfs-p2"&gt;dd&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="device"&gt;
+&lt;h3&gt;新增刪除 device&lt;/h3&gt;
+&lt;p&gt;不小心把磁碟用完了，想刪除一些沒用的檔案，竟然也失敗。
+還好先前有練習用的 /dev/sdb8，把它加上去看看，有沒有救。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo btrfs device add /dev/sdb9 /mnt/movie
+&lt;/pre&gt;
+&lt;p&gt;還好成功了。處理完畢，刪掉它。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo btrfs device delete /dev/sdb9 /mnt/movie
+&lt;/pre&gt;
+&lt;p&gt;在這個過程中，意外發現另一件事：當我把 /dev/sdb9 加上後，原先在 sdb9 的資料就消失啦。
+意味着 btrfs 不夠聰明到可以保留原本的資料。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;參考資料&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Btrfs"&gt;Btrfs: Archlinux wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Main_Page"&gt;Btrfs wiki: Main page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices"&gt;Btrfs wiki: Using Btrfs with Multiple Devices&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Mount_options"&gt;Btrfs wiki: Mount Options&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/UseCases"&gt;Btrfs wiki: UseCases&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="device-scanning"&gt;
+&lt;h3&gt;Device scanning&lt;/h3&gt;
+&lt;p&gt;btrfs device scan is used to scan all of the block devices under /dev and probe for Btrfs volumes. This is required after loading the btrfs module if you're running with more than one device in a filesystem.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# Scan all devices
+$ btrfs device scan
+
+# Scan a single device
+$ btrfs device scan /dev/sdb
+&lt;/pre&gt;
+&lt;p&gt;btrfs filesystem show will print information about all of the btrfs filesystems on the machine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="adding-new-devices"&gt;
+&lt;h3&gt;Adding new devices&lt;/h3&gt;
+&lt;p&gt;btrfs filesystem show gives you a list of all the btrfs filesystems on the systems and which devices they include.
+btrfs device add is used to add new devices to a mounted filesystem.
+btrfs filesystem balance can balance (restripe) the allocated extents across all of the existing devices. For example:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ mkfs.btrfs /dev/sdb
+$ mount /dev/sdb /mnt
+
+# Create some files
+$ btrfs device add /dev/sdc /mnt
+&lt;/pre&gt;
+&lt;p&gt;At this point we have a filesystem with two devices, but all of the metadata and data are still stored on /dev/sdb. The filesystem must be balanced to spread the files across all of the devices.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ btrfs filesystem balance /mnt
+&lt;/pre&gt;
+&lt;p&gt;The balance operation will take some time. It reads in all of the FS data and metadata and rewrites it across the new device.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conversion"&gt;
+&lt;h3&gt;Conversion&lt;/h3&gt;
+&lt;p&gt;A non-raid filesystem is converted to raid by adding a device and running a balance filter that will change the chunk allocation profile.
+For example, to convert an existing single device system (/dev/sdb1) into a 2 device raid1 (to protect against a single disk failure):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mount /dev/sdb1 /mnt
+btrfs device add /dev/sdc1 /mnt
+btrfs balance start -dconvert=raid1 -mconvert=raid1 /mnt
+&lt;/pre&gt;
+&lt;p&gt;If the metadata is not converted from the single-device default, it remains as DUP, which does not guarantee that copies of block are on separate devices. If data is not converted it does not have any redundant copies at all.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>btrfs</category><category>linux</category><guid>https://mariolong.github.io/posts/btrfs/</guid><pubDate>Sun, 28 Apr 2013 04:43:24 GMT</pubDate></item></channel></rss>

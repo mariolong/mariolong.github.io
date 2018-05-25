@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：vim)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/vim.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>vim: my python IDE</title><link>https://mariolong.github.io/posts/vim-my-python-ide/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;參考&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide"&gt;Turning vim into a modern python ide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用 vim。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;在裝 vim 前，先改 /etc/pacman.conf，加入&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[herecura-stable]
+Server = http://repo.herecura.be/herecura-stable/$arch
+&lt;/pre&gt;
+&lt;p&gt;然後再裝這個 qt 版本。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+yaourt -Syua
+yaourt vim-gvim-qt
+&lt;/pre&gt;
+&lt;p&gt;為何我裝這個 qt 版？因為我現在用的是 KDE。&lt;/p&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h3&gt;python 摺疊&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.vimrc&lt;/span&gt;&lt;/tt&gt; 加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+set foldmethod=indent
+set foldlevel=99
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;文法檢查與高亮&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+sudo pip install pyflakes pep8
+&lt;/pre&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.vimrc&lt;/span&gt;&lt;/tt&gt; 加上&lt;/p&gt;
+&lt;blockquote&gt;
+let g:pyflakes_use_quickfix = 0
+let g:pep8_map='&amp;lt;leader&amp;gt;8'&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;補完&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+Bundle ''
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;註解&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+Bundle 'scrooloose/nerdcommenter'
+
+Usage
+The following key mappings are provided by default (there is also a menu provided that contains menu items corresponding to all the below mappings):
+
+Most of the following mappings are for normal/visual mode only. The |NERDComInsertComment| mapping is for insert mode only.
+
+[count]&amp;lt;leader&amp;gt;cc |NERDComComment|
+Comment out the current line or text selected in visual mode.
+
+[count]&amp;lt;leader&amp;gt;cn |NERDComNestedComment|
+    Same as &amp;lt;leader&amp;gt;cc but forces nesting.
+....\
+
+Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+
+[count]&amp;lt;leader&amp;gt;cm |NERDComMinimalComment|
+Comments the given lines using only one set of multipart delimiters.
+
+[count]&amp;lt;leader&amp;gt;ci |NERDComInvertComment|
+Toggles the comment state of the selected line(s) individually.
+
+[count]&amp;lt;leader&amp;gt;cs |NERDComSexyComment|
+Comments out the selected lines ``sexily``
+
+[count]&amp;lt;leader&amp;gt;cy |NERDComYankComment|
+Same as &amp;lt;leader&amp;gt;cc except that the commented line(s) are yanked first.
+
+&amp;lt;leader&amp;gt;c$ |NERDComEOLComment|
+Comments the current line from the cursor to the end of line.
+
+&amp;lt;leader&amp;gt;cA |NERDComAppendComment|
+Adds comment delimiters to the end of line and goes into insert mode between them.
+
+|NERDComInsertComment|
+Adds comment delimiters at the current cursor position and inserts between. Disabled by default.
+
+&amp;lt;leader&amp;gt;ca |NERDComAltDelim|
+Switches to the alternative set of delimiters.
+
+[count]&amp;lt;leader&amp;gt;cl
+[count]&amp;lt;leader&amp;gt;cb |NERDComAlignedComment|
+Same as |NERDComComment| except that the delimiters are aligned down the left side (&amp;lt;leader&amp;gt;cl) or both sides (&amp;lt;leader&amp;gt;cb).
+
+取消註解
+[count]&amp;lt;leader&amp;gt;cu |NERDComUncommentLine|
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="git"&gt;
+&lt;h3&gt;整合 git&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.vimrc&lt;/span&gt;&lt;/tt&gt; 加上&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+%{fugitive#statusline()}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="file-browser"&gt;
+&lt;h3&gt;檔案系統瀏覽器 file browser&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+" NERDTree (better file browser) toggle
+map &amp;lt;F3&amp;gt; :NERDTreeToggle&amp;lt;CR&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>vim</category><guid>https://mariolong.github.io/posts/vim-my-python-ide/</guid><pubDate>Tue, 22 Apr 2014 02:18:52 GMT</pubDate></item><item><title>vim</title><link>https://mariolong.github.io/posts/vim/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;VIM 號稱最適合程式員的文字編輯器，今天（2014-4-20）正式開始研究她。&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+yaourt -S gvim
+&lt;/pre&gt;
+&lt;p&gt;裝了 gvim，就同時有 gui 和 terminal 版本。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="color-theme"&gt;
+&lt;h2&gt;color theme&lt;/h2&gt;
+&lt;p&gt;twilight&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="plugins"&gt;
+&lt;h2&gt;plugins，外掛&lt;/h2&gt;
+&lt;p&gt;外掛管理器
+vundle
+scrooloose/nerdtree&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>vim</category><guid>https://mariolong.github.io/posts/vim/</guid><pubDate>Mon, 21 Apr 2014 03:39:39 GMT</pubDate></item></channel></rss>
