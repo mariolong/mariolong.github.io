@@ -1,8 +1,8 @@
 .. title: Convert to pdf by pandoc
 .. slug: convert-to-pdf-by-pandoc
 .. date: 2015-11-26 02:14:13 UTC
-.. tags:
-.. category:
+.. tags: pandoc, pdf, texlive, LaTex
+.. category: computer
 .. link:
 .. description:
 .. type: text

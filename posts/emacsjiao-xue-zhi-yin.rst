@@ -5,6 +5,7 @@
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 程式寫多了，連個編輯器都想要折騰。
 

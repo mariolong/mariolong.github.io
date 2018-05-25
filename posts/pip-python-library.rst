@@ -2,7 +2,7 @@
 .. slug: pip-python-library
 .. date: 2015-01-26 12:51:50 UTC
 .. tags: python
-.. category:
+.. category: computer
 .. link:
 .. description:
 .. type: text

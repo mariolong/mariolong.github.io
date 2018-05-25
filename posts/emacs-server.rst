@@ -5,6 +5,7 @@
 .. link:
 .. description: server-start can't use on my archlinux
 .. type: text
+.. category: computer
 
 很想用下面的指令開啟 emacs。但是以此法開啟 emacs 後，不是字型找不到，就是找不到 fcitx。
 有時還真的想用 vim 算了，可以少掉很多的麻煩。

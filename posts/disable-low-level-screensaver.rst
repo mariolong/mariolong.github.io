@@ -1,10 +1,10 @@
 .. title: Disable low-level screensaver and screen DPMS poweroff
 .. description:
 .. date: 2013/11/13 18:47:01
-.. tags:
+.. tags: linux
 .. slug: disable-low-level-screensaver
 .. link:
-
+.. category: computer
 在 `Archbang wiki <http://wiki.archbang.org/index.php?title=ArchBang_Document>`_ 中看到一段話：
 
 **Disable Blank Screen After 10 Minutes**

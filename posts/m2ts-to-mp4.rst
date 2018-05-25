@@ -6,7 +6,7 @@
 .. link:
 .. description:
 .. type: text
-
+.. category: computer
 
 處理 Sony DV 拍出來的影片，還是用 ffmpeg。
 

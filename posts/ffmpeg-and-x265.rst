@@ -6,7 +6,7 @@
 .. link:
 .. description:
 .. type: text
-
+.. category: computer
 
 http://forum.doom9.org/showthread.php?t=172458
 

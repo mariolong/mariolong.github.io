@@ -1,11 +1,12 @@
 .. title: feh 小巧好用的圖片閱覽器
 .. slug: feh
 .. date: 2016-05-04 13:33:24 UTC
-.. tags:
+.. tags: photo, feh, linux
 .. category:
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 安裝
 ====

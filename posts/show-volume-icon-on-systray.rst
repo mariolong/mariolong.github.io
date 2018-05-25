@@ -1,8 +1,8 @@
 .. title: Show volume icon on systray
 .. slug: show-volume-icon-on-systray
 .. date: 2016-09-13 00:55:30 UTC
-.. tags:
-.. category:
+.. tags: alsa, systray
+.. category: computer
 .. link:
 .. description:
 .. type: text

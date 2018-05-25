@@ -2,7 +2,7 @@
 .. slug: from-git-to-github
 .. date: 2015-05-29 01:54:41 UTC
 .. tags:
-.. category:
+.. category: computer
 .. link:
 .. description:
 .. type: text

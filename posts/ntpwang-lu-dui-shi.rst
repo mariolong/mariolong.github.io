@@ -1,10 +1,11 @@
-.. title: ntp網路對時
+.. title: ntp 網路對時
 .. slug: ntpwang-lu-dui-shi
 .. date: 2014/03/09 08:25:28
 .. tags:
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 參考 https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon
 

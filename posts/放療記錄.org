@@ -1,14 +1,13 @@
 #+BEGIN_COMMENT
 .. title: 鼻咽癌放療記錄
-.. date: 2017-07-29 09:29:00
-.. updated: 2017-08-09 14:00
-.. comments: true
+.. slug: record-radiation-therapy-cancer
+.. date: 2017-07-29 09:29:00 UTC+08:00
 .. tags: 癌
-.. layout: post
-.. categories: life
-.. permalink:
-.. options: toc:nil ^:{}
+.. category: life
+.. type: text
 #+END_COMMENT
+#+OPTIONS: toc:nil ^:{} num:nil
+#+LANGUAGE: zh-TW
 
 * 前言
 

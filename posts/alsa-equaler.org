@@ -13,9 +13,6 @@
 在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
 Archlinux WIKI 的 [[https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture][Advanced linux Sound Architecture]] 已說明等化器的安裝及設定，照做即可。
 
-[fn:1][[http://www.miaofoundry.url.tw/products-and-services/DRC/][音樂再生首要難題 -- 空間]]
-[fn:2][[http://www.miaofoundry.url.tw/products-and-services/DRC/whats/DRC-vs-others/][等化器(EQ)]]
-
 * install
 #+BEGIN_SRC sh
 yaourt -S alsaequal
@@ -78,3 +75,7 @@ home...
 
 我在 =/root= 目錄下，建一個連到主目錄 =.alsaequal.bin= 的連結，
 mpd 即可使用，瞎打誤撞。
+
+
+[fn:1][[http://www.miaofoundry.url.tw/products-and-services/DRC/][音樂再生首要難題 -- 空間]]
+[fn:2][[http://www.miaofoundry.url.tw/products-and-services/DRC/whats/DRC-vs-others/][等化器(EQ)]]

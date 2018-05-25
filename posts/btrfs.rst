@@ -1,7 +1,8 @@
 .. slug: btrfs
 .. link:
 .. title: btrfs 使用筆記
-.. tags:
+.. tags: btrfs, linux
+.. categroy: computer
 .. description:
 .. date: 2013/04/28 12:43:24
 
@@ -167,4 +168,3 @@ For example, to convert an existing single device system (/dev/sdb1) into a 2 de
     btrfs balance start -dconvert=raid1 -mconvert=raid1 /mnt
 
 If the metadata is not converted from the single-device default, it remains as DUP, which does not guarantee that copies of block are on separate devices. If data is not converted it does not have any redundant copies at all.
-

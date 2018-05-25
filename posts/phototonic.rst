@@ -5,6 +5,7 @@
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 還是需要一個小巧的看圖程式，有人介紹就看看了。
 
@@ -31,9 +32,9 @@
 ----------------- ---------------------------------------------------
 Ctrl+Q            Exit
 Tab               切換視窗
-Alt+Left          上一個歷史目錄Back
-Alt+Right         下一個歷史目錄Forward=
-Alt+Up            上一層目錄Up=
+Alt+Left          上一個歷史目錄 Back
+Alt+Right         下一個歷史目錄 Forward=
+Alt+Up            上一層目錄 Up=
 Ctrl+Home         Top=
 Ctrl+End          Bottom
 Home              First=
@@ -56,11 +57,11 @@ M                 Copy or Move to...=M
 Ctrl+R            Cropping
 Ctrl+X            Cut=
 Del               Delete=
-Ctrl+1            不做鏡像Disable
-Ctrl+2            左右鏡像Dual
-Ctrl+3            三像Triple
-Ctrl+4            上下鏡像Dual Vertical
-Ctrl+5            上下左右鏡像Quad
+Ctrl+1            不做鏡像 Disable
+Ctrl+2            左右鏡像 Dual
+Ctrl+3            三像 Triple
+Ctrl+4            上下鏡像 Dual Vertical
+Ctrl+5            上下左右鏡像 Quad
 Ctrl+=            Enlarge Thumbnails=
 Ctrl--            Shrink Thumbnails=
 -                  Keep Transformations=

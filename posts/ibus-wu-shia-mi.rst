@@ -2,8 +2,9 @@
 .. title: IBus + 嘸蝦米
 .. date: 2013/11/01 10:55:08
 .. link:
-.. slug: IBus-Boshiamy
+.. slug: linux, 嘸蝦米
 .. tags:
+.. category: computer
 
 安裝 ibus-table
 ::
@@ -25,7 +26,7 @@
 
 要學嘸蝦米，就要來 `這裡 <http://boshiamy.com/cai.html>`_ 。
 
-fcitx還是比較好用，參考以下：
+fcitx 還是比較好用，參考以下：
 
 http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&type=&topic_id=53570&forum=8
 

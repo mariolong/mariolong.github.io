@@ -2,7 +2,7 @@
 .. slug: using-systemd-to-manage-user-session
 .. date: 2016-10-08 08:36:16 UTC
 .. tags:
-.. category:
+.. category: computer
 .. link:
 .. description:
 .. type: text

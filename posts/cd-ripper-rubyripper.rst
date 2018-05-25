@@ -1,9 +1,10 @@
-.. tags:
+.. tags: rip CD, linux
 .. title: CD ripper: rubyripper
 .. link:
 .. slug: cd-ripper-rubyripper
 .. date: 2013/11/02 18:05:13
 .. description:
+.. category: computer
 
 原本打算用 abcde rip CD。試 rip 了幾片，聽起來的聲音實在是差太多，真的受不了，只好再找合用的。
 有人說，rubyripper 是除了 EAC 之外，最好的選擇，那就試試看吧。
@@ -33,7 +34,7 @@ rubyripper 有 gtk2 圖形介面的 ``rrip_gui`` 和命令列式的 ``rrip_cli``
 	2)  vorbis [ ] , settings: -q 4
 	3)  mp3 [ ] , settings: -V 3 --id3v2-only
 	4)  wav [*]
-	5)  other [], settings:  
+	5)  other [], settings:
 	6)  playlist support [ ]
 	7)  encode while ripping [1]
 
@@ -58,7 +59,7 @@ rubyripper 有 gtk2 圖形介面的 ``rrip_gui`` 和命令列式的 ``rrip_cli``
 	19) site = http://freedb.freedb.org/~cddb/cddb.cgi
 	20) username = anonymous
 	21) hostname = my_secret.com
-	
+
 比較重要的是下面幾個參數：
 
 ``9)  passing extra cdparanoia parameters : -Z`` 不使用 cdparanoia 的糾錯，
@@ -85,29 +86,29 @@ hexdump
 
 meld
     compare two or three text files.
-	
+
 我的木耳
     呵呵，爽就好。
 
 
 10、8-1、8-2、5、4 次得到的結果是不同的，那一個會比較好呢？不能確定。
 但可以確定的是：8 次得到的結果和 EAC 的結果是一樣。
-10只有非常少的不同，100 bytes 以內。
+10 只有非常少的不同，100 bytes 以內。
 結論是 rubyripper 可用。																																																																																											byripper 可用。
 
 EAC 遇到讀取出錯時的策略：http://www.hksti.gov.cn/Ns.NewsView.Aspx?MBID=20&NewsID=6945&NewsClass=4
 
 	EAC 會通過讀取每個 sector 兩次或者通過 C2 error information retrieval 來檢測讀取錯誤。
-	
+
 	如果檢測到錯誤的話，EAC 會反復讀取這個 audio sector 16 次。
 	如果有 50% 次重讀返回的 sector 的數據是一樣的話，那麼這些樣本數據出錯的機會就很少了，
 	EAC 將會使用這些樣本並繼續。
-	
+
 	如果 16 次重讀都沒有得到令人滿意的結果，EAC 將會開始另一系列的 16 次反復讀取。
 	最多有 5 個系列的讀取動作，因此在 EAC 放棄讀取並顯示錯誤信息前最多有不超過 80 次的重讀。
-	
+
 註：(2013-12-11) rubyripper 怕沒人要維護了，還是回頭用 EAC 吧。
-	
+
 轉檔+tag
 ========================================================================
 
@@ -116,7 +117,7 @@ pacpl
 .. code::
 
 	$ yaourt -S pacpl
-	
+
 	$ pacpl -t aiff *.wav
 
 wav 轉成 aiff 檔，檔案內容和 itunes 轉成的 aiff 是一樣的。
@@ -154,4 +155,3 @@ kid3
 #. kid3 寫 tag。
 #. rsync to windows for itunes
 #. back to windows, import to itunes
-

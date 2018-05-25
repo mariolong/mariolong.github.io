@@ -1,9 +1,9 @@
 .. title: vim: my python IDE
 .. slug: vim-my-python-ide
 .. date: 2014/04/22 10:18:52
-.. tags: 
-.. link: 
-.. description: 
+.. tags: vim, python
+.. link:
+.. description: computer
 .. type: text
 
 參考
@@ -12,7 +12,7 @@
     `Turning vim into a modern python ide <http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide>`_
 
 
-    用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用vim。
+    用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用 vim。
 
 Install
 ========
@@ -116,9 +116,9 @@ python 摺疊
 
     %{fugitive#statusline()}
 
-檔案系統瀏覽器file browser
+檔案系統瀏覽器 file browser
 ---------------------------
 ::
-   
-    " NERDTree (better file browser) toggle 
+
+    " NERDTree (better file browser) toggle
     map <F3> :NERDTreeToggle<CR>

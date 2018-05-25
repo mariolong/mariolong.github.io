@@ -3,7 +3,8 @@
 .. description:
 .. link:
 .. title: Autologin without DM
-.. tags:
+.. tags: linux, login
+.. category: computer
 
 From here: https://bbs.archlinux.org/viewtopic.php?id=147913&p=3
 

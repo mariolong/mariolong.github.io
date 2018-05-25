@@ -1,10 +1,11 @@
 .. title: xterm
 .. slug: xterm
 .. date: 2014-12-11 14:21:22 UTC
-.. tags:
+.. tags: xterm
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 因為要用 synapse，又不知如何讓 urxvt 和 synapse 合作，所以裝上了 xterm。
 

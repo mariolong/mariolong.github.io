@@ -84,13 +84,13 @@ unable to complete, or interface CRC (with ICRC).
 
 過程如下：
 
-- [ ] setup HD: connect to computer
-- [ ] gparted: create partition and format it in NTFS
-- [ ] SMART check both old and new HD
-- [ ] mount to linux
-- [ ] sync from old to new HD: rsync -a <src> <desc>
-- [ ] if old HD is ok, then add it to lvm otherwise drop it
-- [ ] disconnet old HD, reboot to windows 10
-- [ ] set new HD to disk D:
+- [X] setup HD: connect to computer
+- [X] gparted: create partition and format it in NTFS. *結果是在 windows 10 中做 partition 和 format.*
+- [X] SMART check both old and new HD
+- [X] mount to linux
+- [X] sync from old to new HD: ~rsync -av <src> <desc>~
+- [X] if old HD is ok, then add it to lvm otherwise drop it
+- [X] disconnet old HD, reboot to windows 10
+- [X] set new HD to disk D:
 
 要加到 lvm 就看 [[../replace-hd-on-lvm][replace hd on LVM]] 這篇記錄，有經驗，不會太難。

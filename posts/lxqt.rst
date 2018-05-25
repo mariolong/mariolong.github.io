@@ -16,7 +16,7 @@ lxqt 就是 lxde 的 qt 版？！
 **2015-5-25** 這次完全改寫了，原來 lxqt-panel 拿掉，
 用 xmonad/taffybar 取代。
 
-.. contents:: Table of Contents
+.. contents:: 目錄
    :depth: 2
 
 安裝

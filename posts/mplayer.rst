@@ -5,6 +5,7 @@
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 我用的 wm 是 xmonad，想在每個螢幕上都能觀看同一部影片，故花了點時間研究 mplayer。
 

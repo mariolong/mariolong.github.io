@@ -1,10 +1,11 @@
 .. title: emacs reStructureText mode
 .. slug: emacs-rst-mode
 .. date: 2014/05/15 09:10:54
-.. tags: emacs
+.. tags: emacs, rst, python
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 參考 http://docutils.sourceforge.net/docs/user/emacs.html
 

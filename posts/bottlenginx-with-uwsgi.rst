@@ -1,10 +1,11 @@
 .. title: bottle+nginx with uwsgi
 .. slug: bottlenginx-with-uwsgi
 .. date: 2014/02/08 13:35:29
-.. tags:
+.. tags: uwsgi, nginx, bottle
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 安裝 uwsgi
 

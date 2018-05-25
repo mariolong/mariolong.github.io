@@ -5,6 +5,7 @@
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 買台了新的 Garmin u52，記錄我如何在 linux 中，將 google map 中的旅行規畫，上傳到這台 Garmin。
 

@@ -1,10 +1,11 @@
 .. title: imagemagick
 .. slug: imagemagick
 .. date: 2014-12-05 06:05:31 UTC
-.. tags:
+.. tags: linux, imagemagick, pdf
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 用了好一陣子的 imagemagick，真的覺的很不錯，記錄一些指令備忘
 

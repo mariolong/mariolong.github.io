@@ -2,7 +2,7 @@
 .. slug: rime
 .. date: 2016-04-20 06:22:54 UTC
 .. tags:
-.. category:
+.. category: computer
 .. link:
 .. description:
 .. type: text

@@ -1,9 +1,10 @@
 .. slug: using-lftp-upload-website
 .. date: 2013/11/14 11:35:13
-.. description: 
-.. tags: 
+.. description:
+.. tags:
 .. title: Using lftp upload website
-.. link: 
+.. link:
+.. category: computer
 
 為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。
 
@@ -32,7 +33,7 @@ execute backup.lftp
 .. code::
 
     $ lftp -f backup.lftp
-    
+
 reference:
 ========================================================================
 

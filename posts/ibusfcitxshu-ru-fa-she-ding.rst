@@ -1,9 +1,10 @@
 .. description:
 .. date: 2013/11/01 18:50:21
 .. slug: ibusfcitxshu-ru-fa-she-ding
-.. tags:
+.. tags: ibus, fcitx, rime
 .. link:
-.. title: ibus,fcitx輸入法設定
+.. title: ibus,fcitx 輸入法設定
+.. category: computer
 
 ibus
 ========================================================================
@@ -14,7 +15,7 @@ GNOME 3.10 中，IBus 是整合在一起，裝了 GNOME，IBus 就安裝好。
 
     $ yaourt -S ibus-rime ibus-chewing
 
-IBus的字形大小，預設的太小，參考 :doc:`gnomean-zhuang-ji-lu` 修改。
+IBus 的字形大小，預設的太小，參考 :doc:`gnomean-zhuang-ji-lu` 修改。
 
 [2013-11-1] 拼音的 rime 實在不是我的最愛，自動選字，常常不是我想要的，現在還是回到「嘸蝦米」。
 參考 :doc:`IBus-Boshiamy` 。
@@ -58,7 +59,7 @@ fcitx 的嘸蝦米
 =======================================================================
 
 fcitx
-還是比較好用，使用說明參考 `(推薦)在fcitx輸入法下，(boshiamy)嘸蝦米的使用最為順暢、穩定!（新酷音、m17n、倉頡、輕鬆法亦適用） <http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&type=&topic_id=53570&forum=8>`_ 。
+還是比較好用，使用說明參考 `(推薦)在 fcitx 輸入法下，(boshiamy)嘸蝦米的使用最為順暢、穩定!（新酷音、m17n、倉頡、輕鬆法亦適用） <http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&type=&topic_id=53570&forum=8>`_ 。
 
 KDE 安裝 fcitx + 嘸蝦米 + 酷音
 -------------------------------------------------------------
@@ -84,7 +85,7 @@ KDE 安裝 fcitx + 嘸蝦米 + 酷音
 自行加詞
 --------------------------------------------------------------
 
-參考： `(推薦)在fcitx下的好用自製碼表工具，mb2txt與txt2mb（嘸蝦篇）
+參考： `(推薦)在 fcitx 下的好用自製碼表工具，mb2txt 與 txt2mb（嘸蝦篇）
 <http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?topic_id=58540&forum=22&
 post_id=257328#forumpost257328>`_
 

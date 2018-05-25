@@ -1,10 +1,11 @@
 .. title: emacs-ido 設定
 .. slug: emacs-ido
 .. date: 2014/05/15 08:10:54
-.. tags: emacs
+.. tags: emacs, ido
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 廢棄不用了，我現在先只用 helm
 

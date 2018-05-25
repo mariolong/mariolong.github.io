@@ -1,8 +1,8 @@
 .. title: systemctl status --user: Failed to connect to bus
 .. slug: systemctl-status-user-no-bus
 .. date: 2016-08-30 01:32:42 UTC
-.. tags:
-.. category:
+.. tags: systemd. linux
+.. category: computer
 .. link:
 .. description:
 .. type: text

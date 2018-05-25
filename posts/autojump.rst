@@ -3,6 +3,7 @@
 .. date: 2014/04/22 09:06:38
 .. tags:
 .. link:
+.. category: computer
 .. description:
 .. type: text
 

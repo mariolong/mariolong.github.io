@@ -1,7 +1,7 @@
 .. slug: LVM-on-archlinux
 .. link:
 .. title: LVM on Archlinux
-.. tags: linux
+.. tags: linux, lvm
 .. category : computer
 .. description:
 .. date: 2013/04/30 12:41:30

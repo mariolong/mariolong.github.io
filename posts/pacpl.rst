@@ -5,8 +5,11 @@
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
-一個音檔轉換程式，我是用來將 wav 轉成 aif 。
+**不用了，直接用 sox, ffmepg**
+
+一個音檔轉換程式，我是用來將 wav 轉成 aif。
 
 `Perl Audio Converter  <http://vorzox.wix.com/pacpl>`_: KDE Sound Application
 

@@ -1,12 +1,11 @@
 .. title: gps
 .. slug: gps
 .. date: 2016-04-20 11:42:36 UTC
-.. tags:
-.. category:
+.. tags: gps, htc, osm, google map
 .. link:
 .. description:
 .. type: text
-
+.. category: computer
 
 :doc:`先前記錄了如何將 <garmin-kmz-kml-gpx-linux>` google map 的地點轉換成 gpx，匯入 Garmin。
 

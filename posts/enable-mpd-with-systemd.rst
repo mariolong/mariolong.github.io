@@ -1,9 +1,10 @@
 .. title: enable mpd with systemd
 .. date: 2013/11/26 14:17:33
 .. description:
-.. tags:
+.. tags: linux, mpd, music
 .. slug: enable-mpd-with-systemd
 .. link:
+.. category: computer
 
 error message:
 

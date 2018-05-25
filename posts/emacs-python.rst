@@ -1,10 +1,11 @@
 .. title: emacs python 環境設定
 .. slug: emacs-python
 .. date: 2014/05/24 12:10:54
-.. tags: emacs
+.. tags: emacs, python
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 平時是用 python 寫些程式，網路上很多將 emacs 配置成 python IDE 的文章。參考後，決定用 elpy，jedi 為後端。
 

@@ -2,7 +2,7 @@
 .. slug: kid3+gstreamer
 .. date: 2015-11-17 04:40:21 UTC
 .. tags:
-.. category:
+.. category: computer
 .. link:
 .. description:
 .. type: text

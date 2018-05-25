@@ -1,18 +1,19 @@
 .. title: wireless AP 設定 （hostapd+netcfg/netctl）
 .. slug: archlinux-hostapd-netcfg
 .. date: 2014/03/07 11:13:56
-.. tags:
+.. tags: netctl, hostapd, linux
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 Update: 2014-10-16
 
-目前已改用netctl了，參考 http://linsir.sinaapp.com/post/Raspberry_Pi_Wifi_Router 設定。
+目前已改用 netctl 了，參考 http://linsir.sinaapp.com/post/Raspberry_Pi_Wifi_Router 設定。
 
-裝上 hostapd，讓我的 HTC 和IPOD 可以上網。
+裝上 hostapd，讓我的 HTC 和 IPOD 可以上網。
 
-完整的說明參考： http://guildwar23.blogspot.tw/2013/03/notebook-ap-arch-linux.html
+完整的說明參考：http://guildwar23.blogspot.tw/2013/03/notebook-ap-arch-linux.html
 
 安裝
 ====
@@ -80,7 +81,7 @@ netcfg 設定檔
 wifiip
 ------
 
-設定nat和防火牆的script，注意要用絕對路徑，不然開機時期，會找不到相對應的程式執行。
+設定 nat 和防火牆的 script，注意要用絕對路徑，不然開機時期，會找不到相對應的程式執行。
 
 .. code::
 
@@ -175,13 +176,13 @@ netctl 設定檔
     $ sudo systemctl stop netcfg@hostapd
 
 
-設定systemd
+設定 systemd
 -----------
 
 在 ``dnsmasq.service`` 中修改 ``After=network.target`` 為 ``After=hostapd.service`` ，
-確dnsmasq在hostapd之後啟動。 (可能有誤，保留)
+確 dnsmasq 在 hostapd 之後啟動。 (可能有誤，保留)
 
-enable相關服務：
+enable 相關服務：
 ::
 
    $ netctl enable hostapd
@@ -194,7 +195,7 @@ enable相關服務：
 註：wpa 的取得
 ==============
 
-參考： https://wiki.archlinux.org/index.php/WPA_supplicant
+參考：https://wiki.archlinux.org/index.php/WPA_supplicant
 
 安裝：
 ------
@@ -226,4 +227,4 @@ enable相關服務：
 
 在 archlinux, netcfg 已經進 AUR，取而代之的是 netctl，應該試一試。
 
-netctl在配置上與netcfg幾乎相同，可參閱上文。
+netctl 在配置上與 netcfg 幾乎相同，可參閱上文。

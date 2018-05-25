@@ -1,11 +1,11 @@
 .. title: 安裝 haskell 程式
 .. slug: haskell-programs
 .. date: 2014/04/29 10:27:14
-.. tags:
+.. tags: haskell, pandoc, xmonad
 .. link:
 .. description:
 .. type: text
-
+.. category: computer
 
 目前我會用的 haskell 程式有 pandoc 和 xmonad。
 

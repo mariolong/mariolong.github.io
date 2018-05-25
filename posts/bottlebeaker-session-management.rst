@@ -1,10 +1,11 @@
 .. title: bottle+beaker session management
 .. slug: bottlebeaker-session-management
 .. date: 2014/02/22 09:39:50
-.. tags: 
-.. link: 
-.. description: 
+.. tags: python
+.. link:
+.. description:
 .. type: text
+.. category: computer
 
 直接看程式碼：
 
@@ -14,7 +15,7 @@
 	from bottle import mako_view as view, mako_template as template
 	from bottle import route, hook, static_file, request
 	import bottle
-	
+
 	## Beaker middleware
 	# set up beaker session state middleware
 	_session_opts = {'session.type': 'memory',
@@ -32,7 +33,7 @@
 		if 'user_session' not in request.session:
 			request.session['user_session'] = Something
 		return request.session['user_session']
-		
+
 	@route('/')
 	@view('market.tmpl')
 	def market():
@@ -40,7 +41,7 @@
 		return dict(name = _us.user_id)
 
 其中 hook 這一段，設定只要有 request，就會先執行下面的程式：
-	
+
 .. code:: python
 
 	# hook request to make the beaker session easier to get to

@@ -5,6 +5,7 @@
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 目前選擇的桌面是 lxqt，取其輕快美。嗯，相對於 lxde 是漂亮多了。
 

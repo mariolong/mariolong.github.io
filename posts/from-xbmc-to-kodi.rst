@@ -1,11 +1,11 @@
 .. title: From XBMC to Kodi
 .. slug: from-xbmc-to-kodi
 .. date: 2015-10-29 03:51:27 UTC
-.. tags:
-.. category: linux
+.. tags: kodi, xbmc, movies, linux, htpc
 .. link:
 .. description:
 .. type: text
+.. category: computer
 
 今天將客廳的 XBMC 升級至 Kodi，因為年代久遠，系統都沒有更新，發生了一些事情，還好都順利解決。
 記錄下來，以利未來升級時參考。
@@ -86,15 +86,10 @@
 
    # timedatectl set-time "2014-05-26 11:13:54"
 
-TODO:
-=====
-
 時間同步 ntp
 ------------
 
 因為時間太久沒有調整，應該網路對時一下。
-
-下次更新系統再做吧。
 ::
 
    # timedatectl set-ntp true

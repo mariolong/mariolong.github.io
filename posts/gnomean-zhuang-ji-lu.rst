@@ -1,9 +1,10 @@
-.. description: 
+.. description:
 .. date: 2013/10/24 12:57:19
-.. tags: 
+.. tags:
 .. slug: gnomean-zhuang-ji-lu
 .. title: gnome 安裝記錄
-.. link: 
+.. link:
+.. category: computer
 
 安裝了 GNOME 3.10，使用的感覺很不錯，特別記錄一下安裝時碰到的困難，以利未來查詢可用。
 
@@ -111,7 +112,7 @@
 重啟 gnome shell，OK。
 
 聲音
--------------------------------------------------------------	
+-------------------------------------------------------------
 
 gnome 的聲音也不好搞，預設用的是 PulseAudio，理論上是不用配置。
 但它和 ALSA 配合不好，會找不到 sound device，當然就無法發聲。
@@ -120,7 +121,7 @@ gnome 的聲音也不好搞，預設用的是 PulseAudio，理論上是不用配
 ::
 
 	$ sudo gedit /etc/pulse/default.pa
-	
+
 找到 ``#load-module module-alsa-sink``，改成 ``load-module module-alsa-sink device=dmix``。
 
 找到 ``load-module module-suspend-on-idle``，改成 ``#load-module module-suspend-on-idle``
