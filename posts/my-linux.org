@@ -1,0 +1,101 @@
+#+BEGIN_COMMENT
+.. title: My simple linux
+.. slug:
+.. date: 2017-08-20 09:57:04 UTC+08:00
+.. status: draft
+.. tags: linux
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:2 ^:{}
+#+LANGUAGE: zh-TW
+
+
+* 前言
+
+我的電腦已經是 8 年前的老電腦。一般人是打怪耗時間，要性能强電腦。我打的
+怪是「工作流程」不斷地改善。而我又喜歡命令列和文字模式，需要的效能不必
+太高，只要能顯示即可。
+
+工作環境一切單純，不必要的程序都不想載入記憶體，精簡而有效率地完成我的
+工作才是王道。
+
+windows 做不到這一點，總是安裝了一堆不想用的東西，刪又刪不掉。
+
+因此，最後決定使用 linux 搞定一切。但如此就有太多的設定要記住，這個部落格只
+是記錄一些想法，流程和設定，免得忘記，還要重新查過。
+
+* 配備
+
+- CPU ::
+  + AMD Phenom(tm) II X4 945 Processor
+  + size: 800MHz
+  + capacity: 3GHz
+- MB :: ASUS M4A78 PRO
+- RAM :: 4G DDR2
+- SSD :: SanDisk 128GB
+- VGA :: Radeon HD 7730/8730
+
+* 常用工具
+
+** 外觀
+
+*** xmonad & taffybar
+
+github: https://github.com/mariolong/xmonad
+
+
+using haskellarch
+don't use cabal to install packages
+
+*** gtk qt  configurations
+
+*** mouse icon theme
+
+*** font/font config
+
+** entrainment
+
+*** mpd/mpc
+
+*** kodi
+
+*** mpv
+
+*** feh
+
+** programming
+
+*** git
+
+*** python/pip
+
+udiskie
+nikola requests lxml
+elpy jedi yapf
+chardet unicode cherrpy mako blist bottle beaker
+hangups
+
+*** haskell
+
+** network/internet
+
+*** dropbox
+
+*** chrome
+
+** blog
+
+*** hexo
+
+*** nikola
+
+** utilities
+
+*** emacs
+
+*** mc
+
+*** pandoc

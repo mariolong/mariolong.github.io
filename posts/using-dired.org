@@ -1,0 +1,45 @@
+#+BEGIN_COMMENT
+.. title: Using dired in Emacs
+.. slug: using-dired
+.. date: 2018-06-10 18:18:52 UTC+08:00
+.. status: draft
+.. tags: dired, emacs
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+dired 真是好用，記錄我的使用流程
+
+* dired basic
+
+** enter dired
+=C-x d <enter>=
+=C-x C-f <enter>=
+
+** exit dired
+=q=
+
+** 操作檔案
+=d=
+=m= mark
+=u= unmark
+=U=  all unmark
+
+=C= copy
+=R= rename
+
+** edit file name/mode like edit text
+=C-x C-q=
+
+
+* 顯示
+** =(= 切換 hide detail 模式
+** =)= 切換 omit 模式
+** auto revert
+
+* 進階使用
+** 像 Norton command/Midnight commander 一/copy/move files like NC/MC

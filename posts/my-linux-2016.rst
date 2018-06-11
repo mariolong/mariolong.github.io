@@ -1,5 +1,5 @@
 .. title: My linux
-.. slug: my-linux
+.. slug: my-linux-2016
 .. date: 2016-05-12 09:55:41 UTC
 .. tags: linux
 .. category: computer
@@ -58,7 +58,7 @@ wifi-ap: :doc:`archlinux-hostapd-netcfg`
 影音平台
 ========
 
-:doc:`mpv` 好用的影音播放器
+:doc:`mm-mpv-feh` 好用的影音播放器
 
 kodi: 家庭劇院
 

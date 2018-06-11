@@ -57,11 +57,6 @@ cabal install pandoc
 
 https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux
 
-#+BEGIN_SRC sh
-yaourt -S ghc
-yaourt -S stack
-#+END_SRC
-
 決定用 static link
 #+BEGIN_SRC sh
 yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
@@ -91,12 +86,34 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 
 目前用 taffybar-0.4.6，也就換維護者前的最後版本，比較穩定。
 
-有三種做法
+以下三種做法，我的選擇是第一種，自行編譯。
 
 *** 自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib
-**** fork and download taffybar from github
+**** fork and download taffybar from github and checkout v0.4.6
+
+#+BEGIN_SRC sh
+git clone https://github.com/taffybar/taffybar.git
+git checkout v0.4.6
+cp
+#+END_SRC
 
 **** adding stack.yaml and setup stack project
+
+1. 產生 ~stack.yaml~ ：
+#+BEGIN_SRC sh
+stack init --resolver lts-9.21 --omit-packages
+#+END_SRC
+
+2. 修改 ~stack.yaml~ ，加上：
+#+BEGIN_SRC yaml
+packages:
+- '.'
+#+END_SRC
+和
+#+BEGIN_SRC yaml
+extra-deps:
+- gtk-traymanager-0.1.6
+#+END_SRC
 
 **** config file of taffybar/xmonad must put them to this directory
 否則 recompile config file 時，會找不到需要的模組。
@@ -104,7 +121,12 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 **** stack build/install taffybar
 自動安裝 taffybar 和 xomnad 和 xmonad-contrib
 
-**** 執行
+#+BEGIN_SRC sh
+stack install
+#+END_SRC
+
+**** 修改 config
+修改 config 後，要重新編譯 config
 
 #+BEGIN_SRC sh
 stack exec -- taffybar
@@ -124,39 +146,12 @@ cabal install taffybar-0.4.6
 cabal install pandoc
 #+END_SRC
 
-* emacs
 
-using [[https://commercialhaskell.github.io/intero/][intero]] and haskell-mode
+* Issues
 
-#+BEGIN_SRC emacs-lisp
-  (use-package intero
-    :ensure haskell-mode
-    :config
-    (add-hook 'haskell-mode-hook 'intero-mode))
-#+END_SRC
-
-
-** TODO hindent
+** system tray 中 dropbox 的字型太小
+dropbox 是 QT application，taffybar 是 gtk application，所以要調理一下，我用的法子是加上環境變數：
 
 #+BEGIN_SRC sh
-stack install hindent
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-  (use-package hindent
-    :config
-    (add-hook 'haskell-mode-hook #'hindent-mode))
-#+END_SRC
-
-* Dynamic Link Issue
-
-read https://wiki.archlinux.org/index.php/Haskell#Problems_with_linking.
-
-You can also set these flags in ~/.cabal/config so that it applies to all projects by default.
-
-=~/.cabal/config=
-#+BEGIN_SRC conf
-library-vanilla: False
-shared: True
-executable-dynamic: True
+export QT_STYLE_OVERRIDE=GTK+
 #+END_SRC

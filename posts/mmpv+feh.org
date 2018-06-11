@@ -1,0 +1,21 @@
+#+BEGIN_COMMENT
+.. title: mm=mpv+feh
+.. slug: mm-mpv-feh
+.. date: 2018-05-29 09:57:04 UTC+08:00
+.. status: draft
+.. tags: feh, mpv, mm
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+用全螢幕幻燈片模式播放照片：
+
+#+BEGIN_SRC sh
+feh -FD1 --auto-rotate
+#+END_SRC
+
+單純播放照片和影片記錄而已
