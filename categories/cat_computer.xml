@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 06:06:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 11 Jun 2018 12:39:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+dired 真是好用，記錄我的使用流程
+&lt;/p&gt;
+
+&lt;div id="outline-container-org3d50382" class="outline-2"&gt;
+&lt;h2 id="org3d50382"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org8940497" class="outline-3"&gt;
+&lt;h3 id="org8940497"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;p&gt;
+&lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
+&lt;kbd&gt;C-x C-f &amp;lt;enter&amp;gt;&lt;/kbd&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org4307771" class="outline-3"&gt;
+&lt;h3 id="org4307771"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+&lt;kbd&gt;q&lt;/kbd&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org8165113" class="outline-3"&gt;
+&lt;h3 id="org8165113"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-3"&gt;
+&lt;p&gt;
+&lt;kbd&gt;d&lt;/kbd&gt;
+&lt;kbd&gt;m&lt;/kbd&gt; mark
+&lt;kbd&gt;u&lt;/kbd&gt; unmark
+&lt;kbd&gt;U&lt;/kbd&gt;  all unmark
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;kbd&gt;C&lt;/kbd&gt; copy
+&lt;kbd&gt;R&lt;/kbd&gt; rename
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgcec6738" class="outline-3"&gt;
+&lt;h3 id="orgcec6738"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-4"&gt;
+&lt;p&gt;
+&lt;kbd&gt;C-x C-q&lt;/kbd&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org7599d21" class="outline-2"&gt;
+&lt;h2 id="org7599d21"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge3d9fb6" class="outline-3"&gt;
+&lt;h3 id="orge3d9fb6"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb2a1e1d" class="outline-3"&gt;
+&lt;h3 id="orgb2a1e1d"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge398016" class="outline-3"&gt;
+&lt;h3 id="orge398016"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org643a1e8" class="outline-2"&gt;
+&lt;h2 id="org643a1e8"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgeccb22e" class="outline-3"&gt;
+&lt;h3 id="orgeccb22e"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command/Midnight commander 一/copy/move files like NC/MC&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item><item><title>mm=mpv+feh</title><link>https://mariolong.github.io/posts/mm-mpv-feh/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+用全螢幕幻燈片模式播放照片：
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;feh -FD1 --auto-rotate
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+單純播放照片和影片記錄而已
+&lt;/p&gt;</description><category>feh</category><category>mm</category><category>mpv</category><guid>https://mariolong.github.io/posts/mm-mpv-feh/</guid><pubDate>Tue, 29 May 2018 01:57:04 GMT</pubDate></item><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 記錄一下，在 Windows 10 中，如何隱藏磁碟機？
 &lt;/p&gt;
 
@@ -462,8 +548,8 @@ origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;
 一切都就緒了，那就開始專心寫文章吧！
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
+&lt;/div&gt;</description><category>linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org1b8ebfc" class="outline-2"&gt;
+&lt;h2 id="org1b8ebfc"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 在 archlinux 上想用 haskell 真不是一件容易的事，因為選擇太多。
@@ -1896,112 +1982,189 @@ iVT enable @ bios
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item><item><title>ffmpeg and x265</title><link>https://mariolong.github.io/posts/ffmpeg-and-x265/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://forum.doom9.org/showthread.php?t=172458"&gt;http://forum.doom9.org/showthread.php?t=172458&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Suggestion for x265's --tune film
-Several days ago we asked the x265's team how could we participate in the discussion, and they left me with e-mail address. When we finished writing the email, we are also glad to post it here so all of you are welcome to discuss about the topic: How to keep the film grain and details at higher quality when using x265?&lt;/p&gt;
-&lt;p&gt;We take several movie scenes with moderate level of film grain, rich details, and some dark scenes. Then we take out the tests between x264-10bit and x265-10bit:&lt;/p&gt;
-&lt;p&gt;(NOTE there are --input-depth 10 for both sets of parameters. Do NOT just copy and paste if you are not encoding 10-bit input)&lt;/p&gt;
-&lt;p&gt;x264: --preset veryslow --tune film --crf 19.0 --qcomp 0.75 --input-depth 10(a fairly trusted setting )&lt;/p&gt;
-&lt;p&gt;x265: --preset slower --ctu 32 --max-tu-size 16 --crf 20.0 --tu-intra-depth 2 --tu-inter-depth 2 --rdpenalty 2 --me 3 --subme 5 --merange 44 --b-intra --no-amp --ref 5 --weightb --keyint 360 --min-keyint 1 --bframes 8 --aq-mode 1 --aq-strength 1.0 --rd 5 --psy-rd 1.5 --psy-rdoq 5.0 --rdoq-level 1 --no-sao --no-open-gop --rc-lookahead 80 --scenecut 40 --max-merge 4 --qcomp 0.8 --no-strong-intra-smoothing --deblock -2:-2 --qg-size 16 --pbratio 1.2
-(We've tested hundreds of parameter combinations and we conclude this set is the best outcome)&lt;/p&gt;
-&lt;p&gt;We compare the quality with our eyes, NOT psnr/ssim, which favors blurriness over grain keeping.
-x264 gives an 118% size compared to x265, with nearly the same visual quality. We can also drop the bit-rate of x264 a bit, but then AVC outcome necessarily looks worse. At this point we believe x265 claims a victory, not at extremely low bit-rate cases where HEVC blurriness looks better than AVC blockiness, but rather a high-quality, near-transparent encoding.&lt;/p&gt;
-&lt;p&gt;Our test focus on several RC parameters: --ctu, --tu, --crf, --qcomp, --aq-mode, --aq-strength, --psy, --qcomp --qg-size...These parameters can alter RC behavior with minor impact on the speed. We took some iterative method with genetic algorithms to select the possibly best parameter sets out of infinite.&lt;/p&gt;
-&lt;p&gt;Here are some of our comments:
---ctu, --max-tu-size: This two should be decreased in 1080p @ high-quality encoding. Keeping other parameters constant, tweaking --ctu 64-&amp;gt;32, --tu 32-&amp;gt;16 gives even better quality with nearly 15% of size-decrease, in crf mode. We assume that adopting larger CU and TU actually wastes the bit-rate by producing over-smoothed block, forcing bit-rate to rise in order to keep a "constant rate-factor". So we'd better just leave them smaller, at least under 1080p&lt;/p&gt;
-&lt;p&gt;--crf: x265 gives a default value 28. This is way too low to compete against x264's default value 23. Many users believe by tweaking crf they can choose between quality and size without other concerns, but they are wrong; sometimes, tweaking other parameters is more efficient. --crf need to be coupled with other parameters properly tuned.&lt;/p&gt;
-&lt;p&gt;--qcomp: the lower your crf, the higher the quality, and you should set --qcomp to be higher. This is also true for x264. Our test suggest --qcomp 0.8 is very essential when x265_crf&amp;lt;23.&lt;/p&gt;
-&lt;p&gt;--aq-mode: keep it at 1. aq-mode=3 gives wired bit-rate for nothing.&lt;/p&gt;
-&lt;p&gt;--aq-strength: default 1.0 is pretty good.&lt;/p&gt;
-&lt;p&gt;--psy: the primary weapon to fight blurriness. --psy-rd 1.5 --psy-rdoq 5.0 --rdoq-level 1 works better than --tune grain's settings, trust me.&lt;/p&gt;
-&lt;p&gt;--deblock -2:-2: This is also a rule of thumb since x264's era: using smaller numbers if you prioritize quality.&lt;/p&gt;
-&lt;p&gt;--qg-size 16: The larger number you set, the smaller file you get, but much worse quality for trade. Just change it to 16 instead of 64; this is worthy.&lt;/p&gt;
-&lt;p&gt;--no-sao: SAO smooths everything up. Do NOT use it unless you really want to.&lt;/p&gt;
-&lt;p&gt;--me_range 44: me_range has minor impact on speed when coupled with low level of me and subme; but that's not true for --me 3 --subme 5. Decrease it a bit in 1080p do you a favor with little sacrifice.&lt;/p&gt;
-&lt;p&gt;--no-rect --no-amp: They trade time for nothing. Do NOT enable them unless you really have time to waste.&lt;/p&gt;
-&lt;p&gt;So, here are our suggestions for x265 --tune film:&lt;/p&gt;
-&lt;p&gt;--ctu 32 --max-tu-size 16 --qcomp 0.8 --aq-mode 1 --aq-strength 1.0 --psy-rd 1.8 --psy-rdoq 5.0 --rdoq-level 1 --deblock -2:-2 --qg-size 16 --no-sao --me_range 44 --no-rect --no-amp&lt;/p&gt;
-&lt;p&gt;By setting these parameters, you can probably set your crf to be around 22~19, and it gives you considerably good output with small size. if you set crf=21~22, --qcomp 0.75 is recommended.
-We don't see any advantage for x265 if you are targeting at x264_crf&amp;lt;=16. At that point x265 requires even more bit-rate to keep the details.&lt;/p&gt;
-&lt;p&gt;Furthermore, here are some other recommendations:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Except for --tune and --preset, add another parameter "--expectation" and let user specify whether he wishes a high, medium or low quality(with respective size). This can also be derived if --crf is specified. Then use the input to change the rc behaviors. For example, if the user is expecting high quality rather than a crf=28 blurriness, increase --qcomp to 0.8.&lt;/li&gt;
-&lt;li&gt;Change RC behaviors and speed options based on resolution. 720p/1080p/1440p/4K don't optimally share a same set of parameters. For example, --max-tu-size --ctu --me_range.&lt;/li&gt;
-&lt;li&gt;Give less bias/more penalty to bigger CUs and TUs, especially at higher quality expectation and lower resolution. --rd-penalty 2 is a very useful parameter, but it only prohibits TU size of 32x32. Let's impose more penalties to similar cases.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Thank you for patiently reading this email, and I'm ready to conclude it:
-So far x265 team has done a fantastic job by offering the best encoder (at low bit-rate), but let us greedily urge more. We wish x265 to be best not only at low quality, but also best overall. At the same time, we are willing to help the team with our own effort.&lt;/p&gt;
-&lt;p&gt;Regards,
-LittlePox&lt;/p&gt;
-&lt;p&gt;2015/08/11&lt;/p&gt;&lt;/div&gt;</description><guid>https://mariolong.github.io/posts/ffmpeg-and-x265/</guid><pubDate>Mon, 21 Nov 2016 02:12:28 GMT</pubDate></item><item><title>Using systemd to manage user session</title><link>https://mariolong.github.io/posts/using-systemd-to-manage-user-session/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;create /etc/systemd/system/user@.service.d/dbus_env.conf&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[Unit]
-Wants=dbus.service
-
-[Service]
-Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%I/bus
-&lt;/pre&gt;
-&lt;p&gt;show environment variables&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ systemctl --user show-environment|grep DBUS
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-&lt;/pre&gt;
-&lt;p&gt;create my_stuff.target&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[Unit]
-Description=My services
-Wants=dbus.service
-AllowIsolate=true
-
-[Install]
-Alias=default.target
-&lt;/pre&gt;
-&lt;p&gt;enable it&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-systemctl --user enable my_stuff_target
-&lt;/pre&gt;
-&lt;p&gt;create ~/.config/systemd/user/alsa-tray.service&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[Unit]
-Description=show volume icon on systray
-
-[Service]
-Type=simple
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/python2 /usr/bin/alsa-tray
-
-[Install]
-WantedBy=my_stuff.target
-&lt;/pre&gt;
-&lt;p&gt;enable it:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ systemctl --user enable alsa-tray.service
-&lt;/pre&gt;
-&lt;p&gt;reboot and success&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;參考文件&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://immae.eu/blog/2014/05/26/manage-your-session-with-systemd/"&gt;http://immae.eu/blog/2014/05/26/manage-your-session-with-systemd/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://mariolong.github.io/posts/using-systemd-to-manage-user-session/</guid><pubDate>Sat, 08 Oct 2016 08:36:16 GMT</pubDate></item><item><title>Show volume icon on systray</title><link>https://mariolong.github.io/posts/show-volume-icon-on-systray/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;試用了以下幾個可以在 linux systray 顯示音量 icon 的小程式：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;volti&lt;/li&gt;
-&lt;li&gt;volicon&lt;/li&gt;
-&lt;li&gt;volumeicon&lt;/li&gt;
-&lt;li&gt;alsa-tray&lt;/li&gt;
-&lt;li&gt;volwheel&lt;/li&gt;
-&lt;li&gt;pnmixer&lt;/li&gt;
+&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item><item><title>My simple linux</title><link>https://mariolong.github.io/posts/my-linux/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="table-of-contents"&gt;
+&lt;h2&gt;目錄&lt;/h2&gt;
+&lt;div id="text-table-of-contents"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-1"&gt;1. 前言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-2"&gt;2. 配備&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-3"&gt;3. 常用工具&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-3-1"&gt;3.1. 外觀&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-3-2"&gt;3.2. entrainment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-3-3"&gt;3.3. programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-3-4"&gt;3.4. network/internet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-3-5"&gt;3.5. blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/my-linux/#sec-3-6"&gt;3.6. utilities&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;最後決定用 alsa-tray，原因是佔用的記憶體最少，而且操作模式不會很奇怪。&lt;/p&gt;
-&lt;p&gt;再寫個小小的 service，用 systemd 啟動就大功告成了。&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-[Unit]
-Description=show volume icon on systray
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-[Service]
-Type=simple
 
-ExecStart=/usr/bin/alsa-tray
-ExecReload=/bin/kill -HUP $MAINPID
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+我的電腦已經是 8 年前的老電腦。一般人是打怪耗時間，要性能强電腦。我打的怪是「工作流程」不斷地改善。而我又喜歡命令列和文字模式，需要的效能不必太高，只要能顯示即可。
+&lt;/p&gt;
 
-[Install]
-WantedBy=default.target
-&lt;/pre&gt;&lt;/div&gt;</description><category>alsa</category><category>systray</category><guid>https://mariolong.github.io/posts/show-volume-icon-on-systray/</guid><pubDate>Tue, 13 Sep 2016 00:55:30 GMT</pubDate></item></channel></rss>
+&lt;p&gt;
+工作環境一切單純，不必要的程序都不想載入記憶體，精簡而有效率地完成我的工作才是王道。
+&lt;/p&gt;
+
+&lt;p&gt;
+windows 做不到這一點，總是安裝了一堆不想用的東西，刪又刪不掉。
+&lt;/p&gt;
+
+&lt;p&gt;
+因此，最後決定使用 linux 搞定一切。但如此就有太多的設定要記住，這個部落格只是記錄一些想法，流程和設定，免得忘記，還要重新查過。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 配備&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;dl class="org-dl"&gt;
+&lt;dt&gt; CPU &lt;/dt&gt;&lt;dd&gt;&lt;ul class="org-ul"&gt;
+&lt;li&gt;AMD Phenom(tm) II X4 945 Processor
+&lt;/li&gt;
+&lt;li&gt;size: 800MHz
+&lt;/li&gt;
+&lt;li&gt;capacity: 3GHz
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt; MB &lt;/dt&gt;&lt;dd&gt;ASUS M4A78 PRO
+&lt;/dd&gt;
+&lt;dt&gt; RAM &lt;/dt&gt;&lt;dd&gt;4G DDR2
+&lt;/dd&gt;
+&lt;dt&gt; SSD &lt;/dt&gt;&lt;dd&gt;SanDisk 128GB
+&lt;/dd&gt;
+&lt;dt&gt; VGA &lt;/dt&gt;&lt;dd&gt;Radeon HD 7730/8730
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 常用工具&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
+&lt;h3 id="sec-3-1"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 外觀&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-1-1" class="outline-4"&gt;
+&lt;h4 id="sec-3-1-1"&gt;&lt;span class="section-number-4"&gt;3.1.1&lt;/span&gt; xmonad &amp;amp; taffybar&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-3-1-1"&gt;
+&lt;p&gt;
+github: &lt;a href="https://github.com/mariolong/xmonad"&gt;https://github.com/mariolong/xmonad&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+using haskellarch
+don't use cabal to install packages
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-1-2" class="outline-4"&gt;
+&lt;h4 id="sec-3-1-2"&gt;&lt;span class="section-number-4"&gt;3.1.2&lt;/span&gt; gtk qt  configurations&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-1-3" class="outline-4"&gt;
+&lt;h4 id="sec-3-1-3"&gt;&lt;span class="section-number-4"&gt;3.1.3&lt;/span&gt; mouse icon theme&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-1-4" class="outline-4"&gt;
+&lt;h4 id="sec-3-1-4"&gt;&lt;span class="section-number-4"&gt;3.1.4&lt;/span&gt; font/font config&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-2" class="outline-3"&gt;
+&lt;h3 id="sec-3-2"&gt;&lt;span class="section-number-3"&gt;3.2&lt;/span&gt; entrainment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-2"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-2-1" class="outline-4"&gt;
+&lt;h4 id="sec-3-2-1"&gt;&lt;span class="section-number-4"&gt;3.2.1&lt;/span&gt; mpd/mpc&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-2-2" class="outline-4"&gt;
+&lt;h4 id="sec-3-2-2"&gt;&lt;span class="section-number-4"&gt;3.2.2&lt;/span&gt; kodi&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-2-3" class="outline-4"&gt;
+&lt;h4 id="sec-3-2-3"&gt;&lt;span class="section-number-4"&gt;3.2.3&lt;/span&gt; mpv&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-2-4" class="outline-4"&gt;
+&lt;h4 id="sec-3-2-4"&gt;&lt;span class="section-number-4"&gt;3.2.4&lt;/span&gt; feh&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-3" class="outline-3"&gt;
+&lt;h3 id="sec-3-3"&gt;&lt;span class="section-number-3"&gt;3.3&lt;/span&gt; programming&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-3"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-3-1" class="outline-4"&gt;
+&lt;h4 id="sec-3-3-1"&gt;&lt;span class="section-number-4"&gt;3.3.1&lt;/span&gt; git&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-3-2" class="outline-4"&gt;
+&lt;h4 id="sec-3-3-2"&gt;&lt;span class="section-number-4"&gt;3.3.2&lt;/span&gt; python/pip&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-3-3-2"&gt;
+&lt;p&gt;
+udiskie
+nikola requests lxml
+elpy jedi yapf
+chardet unicode cherrpy mako blist bottle beaker
+hangups
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-3-3" class="outline-4"&gt;
+&lt;h4 id="sec-3-3-3"&gt;&lt;span class="section-number-4"&gt;3.3.3&lt;/span&gt; haskell&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-4" class="outline-3"&gt;
+&lt;h3 id="sec-3-4"&gt;&lt;span class="section-number-3"&gt;3.4&lt;/span&gt; network/internet&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-4"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-4-1" class="outline-4"&gt;
+&lt;h4 id="sec-3-4-1"&gt;&lt;span class="section-number-4"&gt;3.4.1&lt;/span&gt; dropbox&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-4-2" class="outline-4"&gt;
+&lt;h4 id="sec-3-4-2"&gt;&lt;span class="section-number-4"&gt;3.4.2&lt;/span&gt; chrome&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-5" class="outline-3"&gt;
+&lt;h3 id="sec-3-5"&gt;&lt;span class="section-number-3"&gt;3.5&lt;/span&gt; blog&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-5"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-5-1" class="outline-4"&gt;
+&lt;h4 id="sec-3-5-1"&gt;&lt;span class="section-number-4"&gt;3.5.1&lt;/span&gt; hexo&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-5-2" class="outline-4"&gt;
+&lt;h4 id="sec-3-5-2"&gt;&lt;span class="section-number-4"&gt;3.5.2&lt;/span&gt; nikola&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-6" class="outline-3"&gt;
+&lt;h3 id="sec-3-6"&gt;&lt;span class="section-number-3"&gt;3.6&lt;/span&gt; utilities&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-6"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-6-1" class="outline-4"&gt;
+&lt;h4 id="sec-3-6-1"&gt;&lt;span class="section-number-4"&gt;3.6.1&lt;/span&gt; emacs&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-6-2" class="outline-4"&gt;
+&lt;h4 id="sec-3-6-2"&gt;&lt;span class="section-number-4"&gt;3.6.2&lt;/span&gt; mc&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3-6-3" class="outline-4"&gt;
+&lt;h4 id="sec-3-6-3"&gt;&lt;span class="section-number-4"&gt;3.6.3&lt;/span&gt; pandoc&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/my-linux/</guid><pubDate>Sun, 20 Aug 2017 01:57:04 GMT</pubDate></item></channel></rss>

@@ -35,7 +35,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-05-25T05:55:00Z</lastmod>
+  <lastmod>2018-06-11T08:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -82,10 +82,6 @@
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariolong.github.io/categories/cat_linux/</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
- </url>
- <url>
   <loc>https://mariolong.github.io/categories/costco/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
@@ -96,6 +92,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/desktop/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/dired/</loc>
+  <lastmod>2018-06-11T08:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/disk/</loc>
@@ -144,10 +144,6 @@
  <url>
   <loc>https://mariolong.github.io/categories/gps/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariolong.github.io/categories/hangout/</loc>
-  <lastmod>2018-05-25T05:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/happy/</loc>
@@ -230,6 +226,10 @@
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/mm/</loc>
+  <lastmod>2018-05-29T02:16:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/moon/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
@@ -240,6 +240,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/mpd/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/mpv/</loc>
+  <lastmod>2018-05-29T02:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/munger/</loc>
@@ -407,15 +411,15 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-7.html</loc>
-  <lastmod>2018-05-25T05:55:00Z</lastmod>
+  <lastmod>2018-05-29T02:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-8.html</loc>
-  <lastmod>2018-05-25T06:06:00Z</lastmod>
+  <lastmod>2018-05-29T02:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-05-25T05:55:00Z</lastmod>
+  <lastmod>2018-06-11T12:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/30-thinkings/</loc>
@@ -424,10 +428,6 @@
  <url>
   <loc>https://mariolong.github.io/posts/4-years-ago/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariolong.github.io/posts/IBus-Boshiamy/</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/LVM-on-archlinux/</loc>
@@ -534,10 +534,6 @@
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariolong.github.io/posts/fang-liao-ji-lu/</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
- </url>
- <url>
   <loc>https://mariolong.github.io/posts/feh/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
@@ -584,10 +580,6 @@
  <url>
   <loc>https://mariolong.github.io/posts/gps/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariolong.github.io/posts/hangups%2Bemacs/</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/happy-current/</loc>
@@ -686,8 +678,8 @@
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariolong.github.io/posts/mpv/</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
+  <loc>https://mariolong.github.io/posts/my-linux-2016/</loc>
+  <lastmod>2018-05-29T02:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/my-linux/</loc>
@@ -750,10 +742,6 @@
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariolong.github.io/posts/setup-cups-for-fuji-xerox-cp105b/</loc>
-  <lastmod>2018-05-23T00:20:00Z</lastmod>
- </url>
- <url>
   <loc>https://mariolong.github.io/posts/shan-zhuang-dui-lian/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
  </url>
@@ -784,6 +772,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/urxvt/</loc>
   <lastmod>2018-05-25T05:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/using-dired/</loc>
+  <lastmod>2018-06-11T08:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/using-lftp-upload-website/</loc>

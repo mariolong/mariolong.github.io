@@ -3,31 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>feh 小巧好用的圖片閱覽器 | Simple Life</title>
+<title>Using dired in Emacs | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://mariolong.github.io/posts/feh/">
+<link rel="canonical" href="https://mariolong.github.io/posts/using-dired/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
-<link rel="prev" href="../gps/" title="gps" type="text/html">
-<link rel="next" href="../my-linux-2016/" title="My linux" type="text/html">
+<link rel="prev" href="../mm-mpv-feh/" title="mm=mpv+feh" type="text/html">
 <meta property="og:site_name" content="Simple Life">
-<meta property="og:title" content="feh 小巧好用的圖片閱覽器">
-<meta property="og:url" content="https://mariolong.github.io/posts/feh/">
-<meta property="og:description" content="安裝
-
-$ yaourt -S feh xorg-xev
+<meta property="og:title" content="Using dired in Emacs">
+<meta property="og:url" content="https://mariolong.github.io/posts/using-dired/">
+<meta property="og:description" content="dired 真是好用，記錄我的使用流程
 
 
 
-配置
+1 dired basic
 
-重新定義按鍵
-~/.config/feh/keys">
+
+
+1.1 enter dired
+
+
+C-x d &lt;enter&gt;
+C-x C-f &lt;enter&gt;
+
+
+
+
+
+1.2 exit dired
+
+
+q
+
+
+
+
+
+1.3 操作檔案
+
+
+d
+m mark
+u unmark
+U  all unmark
+
+
+
+C copy
+R rename
+
+
+
+
+
+1.4 edit file na">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-05-04T13:33:24Z">
-<meta property="article:tag" content="feh">
-<meta property="article:tag" content="linux">
-<meta property="article:tag" content="photo">
+<meta property="article:published_time" content="2018-06-10T18:18:52+08:00">
+<meta property="article:tag" content="dired">
+<meta property="article:tag" content="emacs">
 </head>
 <body>
 
@@ -86,16 +119,16 @@ $ yaourt -S feh xorg-xev
 				<div class="span8">
 					
 					
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">feh 小巧好用的圖片閱覽器</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Using dired in Emacs</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-05-04T13:33:24Z" itemprop="datePublished" title="2016-05-04 13:33">2016-05-04 13:33</time></a></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2018-06-10T18:18:52+08:00" itemprop="datePublished" title="2018-06-10 18:18">2018-06-10 18:18</time></a></p>
                 <p class="commentline">
         
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/feh.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/using-dired.html">Comments</a>
 
 
             
@@ -105,33 +138,103 @@ $ yaourt -S feh xorg-xev
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<pre class="literal-block">
-$ yaourt -S feh xorg-xev
-</pre>
+    <p>
+dired 真是好用，記錄我的使用流程
+</p>
+
+<div id="outline-container-org3d50382" class="outline-2">
+<h2 id="org3d50382">
+<span class="section-number-2">1</span> dired basic</h2>
+<div class="outline-text-2" id="text-1">
 </div>
-<div class="section" id="id2">
-<h2>配置</h2>
-<div class="section" id="id3">
-<h3>重新定義按鍵</h3>
-<p>~/.config/feh/keys</p>
+<div id="outline-container-org8940497" class="outline-3">
+<h3 id="org8940497">
+<span class="section-number-3">1.1</span> enter dired</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<kbd>C-x d &lt;enter&gt;</kbd>
+<kbd>C-x C-f &lt;enter&gt;</kbd>
+</p>
 </div>
+</div>
+
+<div id="outline-container-org4307771" class="outline-3">
+<h3 id="org4307771">
+<span class="section-number-3">1.2</span> exit dired</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<kbd>q</kbd>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8165113" class="outline-3">
+<h3 id="org8165113">
+<span class="section-number-3">1.3</span> 操作檔案</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+<kbd>d</kbd>
+<kbd>m</kbd> mark
+<kbd>u</kbd> unmark
+<kbd>U</kbd>  all unmark
+</p>
+
+<p>
+<kbd>C</kbd> copy
+<kbd>R</kbd> rename
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcec6738" class="outline-3">
+<h3 id="orgcec6738">
+<span class="section-number-3">1.4</span> edit file name/mode like edit text</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<kbd>C-x C-q</kbd>
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7599d21" class="outline-2">
+<h2 id="org7599d21">
+<span class="section-number-2">2</span> 顯示</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orge3d9fb6" class="outline-3">
+<h3 id="orge3d9fb6">
+<span class="section-number-3">2.1</span> <kbd>(</kbd> 切換 hide detail 模式</h3>
+</div>
+<div id="outline-container-orgb2a1e1d" class="outline-3">
+<h3 id="orgb2a1e1d">
+<span class="section-number-3">2.2</span> <kbd>)</kbd> 切換 omit 模式</h3>
+</div>
+<div id="outline-container-orge398016" class="outline-3">
+<h3 id="orge398016">
+<span class="section-number-3">2.3</span> auto revert</h3>
+</div>
+</div>
+
+<div id="outline-container-org643a1e8" class="outline-2">
+<h2 id="org643a1e8">
+<span class="section-number-2">3</span> 進階使用</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgeccb22e" class="outline-3">
+<h3 id="orgeccb22e">
+<span class="section-number-3">3.1</span> 像 Norton command/Midnight commander 一/copy/move files like NC/MC</h3>
 </div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/feh/" rel="tag">feh</a></li>
-            <li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
-            <li><a class="tag p-category" href="../../categories/photo/" rel="tag">photo</a></li>
+<li><a class="tag p-category" href="../../categories/dired/" rel="tag">dired</a></li>
+            <li><a class="tag p-category" href="../../categories/emacs/" rel="tag">emacs</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../gps/" rel="prev" title="gps">上一篇</a>
-            </li>
-            <li class="next">
-                <a href="../my-linux-2016/" rel="next" title="My linux">下一篇</a>
+                <a href="../mm-mpv-feh/" rel="prev" title="mm=mpv+feh">上一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
         
@@ -139,9 +242,9 @@ $ yaourt -S feh xorg-xev
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="simple-life",
-            disqus_url="https://mariolong.github.io/posts/feh/",
-        disqus_title="feh \u5c0f\u5de7\u597d\u7528\u7684\u5716\u7247\u95b1\u89bd\u5668",
-        disqus_identifier="cache/posts/feh.html",
+            disqus_url="https://mariolong.github.io/posts/using-dired/",
+        disqus_title="Using dired in Emacs",
+        disqus_identifier="cache/posts/using-dired.html",
         disqus_config = function () {
             this.language = "zh_tw";
         };
