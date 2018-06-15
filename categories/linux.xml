@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 29 May 2018 02:17:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Jun 2018 09:36:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;目錄&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-1"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2"&gt;2. 設定&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0eba8b7"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0479869"&gt;2. 設定&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-1"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-2"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-3"&gt;2.3. org-mod&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org679b822"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org13bc6e6"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgb1154c6"&gt;2.3. org-mod&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-3-1"&gt;2.3.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-3-2"&gt;2.3.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-3-3"&gt;2.3.3. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfb23e60"&gt;2.3.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org2fd9985"&gt;2.3.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org78be690"&gt;2.3.3. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org292b230"&gt;2.3.4. Inline verbatim and code&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-4"&gt;2.4. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgad197ad"&gt;2.4. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-4-1"&gt;2.4.1. Initialize a Nikola site, if you haven’t already.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-4-2"&gt;2.4.2. Initialize a git repository in your Nikola source directory by running:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-4-3"&gt;2.4.3. Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-4-4"&gt;2.4.4. Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-4-5"&gt;2.4.5. Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-2-4-6"&gt;2.4.6. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgd343d12"&gt;2.4.1. Initialize a Nikola site, if you haven’t already.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfe5b84a"&gt;2.4.2. Initialize a git repository in your Nikola source directory by running:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgd873299"&gt;2.4.3. Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgac8767d"&gt;2.4.4. Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org31f15d9"&gt;2.4.5. Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org99ff7b7"&gt;2.4.6. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#sec-3"&gt;3. 開始使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org90a7138"&gt;3. 開始使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -35,16 +36,16 @@
 掙扎了許久，還是先用 &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt; 記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
 
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 安裝&lt;/h2&gt;
+&lt;div id="outline-container-org0eba8b7" class="outline-2"&gt;
+&lt;h2 id="org0eba8b7"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 安裝&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip nikola
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 設定&lt;/h2&gt;
+&lt;div id="outline-container-org0479869" class="outline-2"&gt;
+&lt;h2 id="org0479869"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 設定&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 執行 &lt;code&gt;nikola init&lt;/code&gt; 後，依指示設定，比較省事。
@@ -55,8 +56,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
-&lt;h3 id="sec-2-1"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; configuration file&lt;/h3&gt;
+&lt;div id="outline-container-org679b822" class="outline-3"&gt;
+&lt;h3 id="org679b822"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; configuration file&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-1"&gt;
 &lt;p&gt;
 修改 &lt;code&gt;conf.py&lt;/code&gt; ，慢慢改，內容很多，不必急於一時。
@@ -64,16 +65,16 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
-&lt;h3 id="sec-2-2"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; theme&lt;/h3&gt;
+&lt;div id="outline-container-org13bc6e6" class="outline-3"&gt;
+&lt;h3 id="org13bc6e6"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; theme&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme install bootstrap
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
-&lt;h3 id="sec-2-3"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; org-mod&lt;/h3&gt;
+&lt;div id="outline-container-orgb1154c6" class="outline-3"&gt;
+&lt;h3 id="orgb1154c6"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; org-mod&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-3"&gt;
 &lt;p&gt;
 先安裝 plugin orgmode，再做一點點微調即可。
@@ -87,8 +88,8 @@
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-3-1" class="outline-4"&gt;
-&lt;h4 id="sec-2-3-1"&gt;&lt;span class="section-number-4"&gt;2.3.1&lt;/span&gt; 刪除不必要的空白&lt;/h4&gt;
+&lt;div id="outline-container-orgfb23e60" class="outline-4"&gt;
+&lt;h4 id="orgfb23e60"&gt;&lt;span class="section-number-4"&gt;2.3.1&lt;/span&gt; 刪除不必要的空白&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-3-1"&gt;
 &lt;p&gt;
 換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
@@ -111,8 +112,8 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-3-2" class="outline-4"&gt;
-&lt;h4 id="sec-2-3-2"&gt;&lt;span class="section-number-4"&gt;2.3.2&lt;/span&gt; Convert inline verbatim to kbd when HTML export&lt;/h4&gt;
+&lt;div id="outline-container-org2fd9985" class="outline-4"&gt;
+&lt;h4 id="org2fd9985"&gt;&lt;span class="section-number-4"&gt;2.3.2&lt;/span&gt; Convert inline verbatim to kbd when HTML export&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-3-2"&gt;
 &lt;p&gt;
 ref: &lt;a href="https://emacs-china.org/t/org-mode/1165"&gt;https://emacs-china.org/t/org-mode/1165&lt;/a&gt;
@@ -137,30 +138,97 @@ change &lt;kbd&gt;verbatim&lt;/kbd&gt; to &lt;kbd&gt;kbd&lt;/kbd&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-3-3" class="outline-4"&gt;
-&lt;h4 id="sec-2-3-3"&gt;&lt;span class="section-number-4"&gt;2.3.3&lt;/span&gt; 用 pygment 幫程式碼著色&lt;/h4&gt;
+&lt;div id="outline-container-org78be690" class="outline-4"&gt;
+&lt;h4 id="org78be690"&gt;&lt;span class="section-number-4"&gt;2.3.3&lt;/span&gt; 用 pygment 幫程式碼著色&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-3-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; themes/your-theme-name/assets/css
 $ pygmentize -S emacs -a .highlight -f html &amp;gt; pygment.css
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
+
+&lt;div id="outline-container-org292b230" class="outline-4"&gt;
+&lt;h4 id="org292b230"&gt;&lt;span class="section-number-4"&gt;2.3.4&lt;/span&gt; Inline verbatim and code&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-2-3-4"&gt;
+&lt;p&gt;
+如果有中文字要強調時，原本是要加上空白，如下：
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+~hello~ hh
+=hello= hh
+*star* s
++中文+ 測試
+/中文/ 測試
+&lt;/pre&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;hello&lt;/code&gt; hh&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;hello&lt;/kbd&gt; hh&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;star&lt;/b&gt; s&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;中文&lt;/del&gt; 測試&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;中文&lt;/i&gt; 測試&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+實在是不符習慣。google 了許久，加上一些實驗，終於找到以下的解法：
+&lt;/p&gt;
+
+&lt;p&gt;
+開啟 &lt;code&gt;&amp;lt;blog-name&amp;gt;/plugins/orgmode/init.el&lt;/code&gt; ，加上以下的程式碼。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setcar&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt; &lt;span class="s"&gt;" \t('\"{[:alpha:]"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nthcdr&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"[:alpha:]- \t.,:!?;'\")}\\"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;org-set-emph-re&lt;/span&gt; &lt;span class="ss"&gt;'org-emphasis-regexp-components&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+結果如下：
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+- 測試~code~測試
+- 測試=kbd=測試
+- 測試*star*測試
+- *star*s
+- ~中文~測試
+- =中文=測試
+- *中文*測試
+- +中文+測試
+- /中文/測試
+&lt;/pre&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;測試&lt;code&gt;code&lt;/code&gt;測試&lt;/li&gt;
+&lt;li&gt;測試&lt;kbd&gt;kbd&lt;/kbd&gt;測試&lt;/li&gt;
+&lt;li&gt;測試&lt;b&gt;star&lt;/b&gt;測試&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;star&lt;/b&gt;s&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;中文&lt;/code&gt;測試&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;中文&lt;/kbd&gt;測試&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;中文&lt;/b&gt;測試&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;中文&lt;/del&gt;測試&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;中文&lt;/i&gt;測試&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
-&lt;h3 id="sec-2-4"&gt;&lt;span class="section-number-3"&gt;2.4&lt;/span&gt; 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/h3&gt;
+&lt;div id="outline-container-orgad197ad" class="outline-3"&gt;
+&lt;h3 id="orgad197ad"&gt;&lt;span class="section-number-3"&gt;2.4&lt;/span&gt; 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-4"&gt;
 &lt;p&gt;
 REF: &lt;a href="https://getnikola.com/handbook.html#deploying-to-github"&gt;https://getnikola.com/handbook.html#deploying-to-github&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4-1" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-1"&gt;&lt;span class="section-number-4"&gt;2.4.1&lt;/span&gt; Initialize a Nikola site, if you haven’t already.&lt;/h4&gt;
+&lt;div id="outline-container-orgd343d12" class="outline-4"&gt;
+&lt;h4 id="orgd343d12"&gt;&lt;span class="section-number-4"&gt;2.4.1&lt;/span&gt; Initialize a Nikola site, if you haven’t already.&lt;/h4&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4-2" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-2"&gt;&lt;span class="section-number-4"&gt;2.4.2&lt;/span&gt; Initialize a git repository in your Nikola source directory by running:&lt;/h4&gt;
+&lt;div id="outline-container-orgfe5b84a" class="outline-4"&gt;
+&lt;h4 id="orgfe5b84a"&gt;&lt;span class="section-number-4"&gt;2.4.2&lt;/span&gt; Initialize a git repository in your Nikola source directory by running:&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-4-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
 git remote add origin git@github.com:user/user.github.io
@@ -172,32 +240,28 @@ url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4-3" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-3"&gt;&lt;span class="section-number-4"&gt;2.4.3&lt;/span&gt; Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/h4&gt;
+&lt;div id="outline-container-orgd873299" class="outline-4"&gt;
+&lt;h4 id="orgd873299"&gt;&lt;span class="section-number-4"&gt;2.4.3&lt;/span&gt; Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-4-3"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
 will be deployed. It should be gh-pages for project pages and master
-for user pages (&lt;b&gt;user.github.io&lt;/b&gt;).
-&lt;/li&gt;
+for user pages (&lt;b&gt;user.github.io&lt;/b&gt;).&lt;/li&gt;
 
 &lt;li&gt;GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-will be deployed. We recommend and default to &lt;b&gt;src&lt;/b&gt;.
-&lt;/li&gt;
+will be deployed. We recommend and default to &lt;b&gt;src&lt;/b&gt;.&lt;/li&gt;
 
-&lt;li&gt;GITHUB_REMOTE_NAME is the remote to which changes are pushed.
-&lt;/li&gt;
+&lt;li&gt;GITHUB_REMOTE_NAME is the remote to which changes are pushed.&lt;/li&gt;
 
 &lt;li&gt;GITHUB_COMMIT_SOURCE controls whether or not the source branch is
 automatically committed to and pushed. We recommend setting it to
-&lt;b&gt;True&lt;/b&gt;, unless you are automating builds with Travis CI.
-&lt;/li&gt;
+&lt;b&gt;True&lt;/b&gt;, unless you are automating builds with Travis CI.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4-4" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-4"&gt;&lt;span class="section-number-4"&gt;2.4.4&lt;/span&gt; Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/h4&gt;
+&lt;div id="outline-container-orgac8767d" class="outline-4"&gt;
+&lt;h4 id="orgac8767d"&gt;&lt;span class="section-number-4"&gt;2.4.4&lt;/span&gt; Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-4-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cache
 .doit.db
@@ -212,8 +276,8 @@ source branch and commit to it. Otherwise, this is done for you.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4-5" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-5"&gt;&lt;span class="section-number-4"&gt;2.4.5&lt;/span&gt; Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/h4&gt;
+&lt;div id="outline-container-org31f15d9" class="outline-4"&gt;
+&lt;h4 id="org31f15d9"&gt;&lt;span class="section-number-4"&gt;2.4.5&lt;/span&gt; Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-4-5"&gt;
 &lt;p&gt;
 This will &lt;b&gt;build&lt;/b&gt; the site, &lt;b&gt;commit&lt;/b&gt; the output folder to your deploy
@@ -223,44 +287,49 @@ within a few minutes.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-4-6" class="outline-4"&gt;
-&lt;h4 id="sec-2-4-6"&gt;&lt;span class="section-number-4"&gt;2.4.6&lt;/span&gt; 在 nikola github_deploy 之前&lt;/h4&gt;
+&lt;div id="outline-container-org99ff7b7" class="outline-4"&gt;
+&lt;h4 id="org99ff7b7"&gt;&lt;span class="section-number-4"&gt;2.4.6&lt;/span&gt; 在 nikola github_deploy 之前&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-2-4-6"&gt;
 &lt;p&gt;
 為了要能用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 指令，有以下的準備工作：
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-6-1" name="sec-2-4-6-1"&gt;&lt;/a&gt;install ghp_import2&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-6-1"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;&lt;a id="orgf904216"&gt;&lt;/a&gt;install ghp_import2&lt;br&gt;
+&lt;div class="outline-text-5" id="text-2-4-6-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pip install ghp_import2
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="sec-2-4-6-2" name="sec-2-4-6-2"&gt;&lt;/a&gt;install and setup ssh&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-6-2"&gt;
+&lt;li&gt;&lt;a id="org33ce532"&gt;&lt;/a&gt;install and setup ssh&lt;br&gt;
+&lt;div class="outline-text-5" id="text-2-4-6-2"&gt;
 &lt;p&gt;
 為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-6-2-1" name="sec-2-4-6-2-1"&gt;&lt;/a&gt;install openssh&lt;br&gt;&lt;div class="outline-text-6" id="text-2-4-6-2-1"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;&lt;a id="org10c1542"&gt;&lt;/a&gt;install openssh&lt;br&gt;
+&lt;div class="outline-text-6" id="text-2-4-6-2-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S openssh
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="sec-2-4-6-2-2" name="sec-2-4-6-2-2"&gt;&lt;/a&gt;follow github help page to add ssh connect to github&lt;br&gt;&lt;div class="outline-text-6" id="text-2-4-6-2-2"&gt;
+&lt;li&gt;&lt;a id="orgac0430e"&gt;&lt;/a&gt;follow github help page to add ssh connect to github&lt;br&gt;
+&lt;div class="outline-text-6" id="text-2-4-6-2-2"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"&gt;Generating a new SSH key and adding it to the ssh-agent - User Documentation&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/working-with-ssh-key-passphrases/"&gt;Working with SSH key passphrases - User Documentation&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"&gt;Generating a new SSH key and adding it to the ssh-agent - User Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/articles/working-with-ssh-key-passphrases/"&gt;Working with SSH key passphrases - User Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;ol class="org-ol"&gt;&lt;li&gt;&lt;a id="sec-2-4-6-2-2-1" name="sec-2-4-6-2-2-1"&gt;&lt;/a&gt;產生 ssh key&lt;br&gt;&lt;div class="outline-text-7" id="text-2-4-6-2-2-1"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;&lt;a id="orgd7a59b9"&gt;&lt;/a&gt;產生 ssh key&lt;br&gt;
+&lt;div class="outline-text-7" id="text-2-4-6-2-2-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b &lt;span class="m"&gt;4096&lt;/span&gt; -C &lt;span class="s2"&gt;"your_email@example.com"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -276,16 +345,20 @@ within a few minutes.
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="sec-2-4-6-2-2-2" name="sec-2-4-6-2-2-2"&gt;&lt;/a&gt;將 ssh key 加到 github 中&lt;br&gt;&lt;div class="outline-text-7" id="text-2-4-6-2-2-2"&gt;
+&lt;li&gt;&lt;a id="org5ee2110"&gt;&lt;/a&gt;將 ssh key 加到 github 中&lt;br&gt;
+&lt;div class="outline-text-7" id="text-2-4-6-2-2-2"&gt;
 &lt;p&gt;
 依 &lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt; 執行
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/li&gt;&lt;/ol&gt;
-&lt;/li&gt;&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="sec-2-4-6-3" name="sec-2-4-6-3"&gt;&lt;/a&gt;確定以 ssh 連上 github (不能是 https)&lt;br&gt;&lt;div class="outline-text-5" id="text-2-4-6-3"&gt;
+&lt;li&gt;&lt;a id="orgd79f7d7"&gt;&lt;/a&gt;確定以 ssh 連上 github (不能是 https)&lt;br&gt;
+&lt;div class="outline-text-5" id="text-2-4-6-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git remote -v
 origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;fetch&lt;span class="o"&gt;)&lt;/span&gt;
 origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;push&lt;span class="o"&gt;)&lt;/span&gt;
@@ -298,13 +371,14 @@ origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote set-url origin git@github.com:mariolong/mariolong.github.io
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/li&gt;&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 開始使用&lt;/h2&gt;
+&lt;div id="outline-container-org90a7138" class="outline-2"&gt;
+&lt;h2 id="org90a7138"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 開始使用&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;p&gt;
 建立新的文章，
