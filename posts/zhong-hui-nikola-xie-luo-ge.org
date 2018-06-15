@@ -89,6 +89,58 @@ $ cd themes/your-theme-name/assets/css
 $ pygmentize -S emacs -a .highlight -f html > pygment.css
 #+END_SRC
 
+
+*** Inline verbatim and code
+如果有中文字要強調時，原本是要加上空白，如下：
+
+#+BEGIN_EXAMPLE
+~hello~ hh
+=hello= hh
+*star* s
++中文+ 測試
+/中文/ 測試
+#+END_EXAMPLE
+
+- ~hello~ hh
+- =hello= hh
+- *star* s
+- +中文+ 測試
+- /中文/ 測試
+
+實在是不符習慣。google 了許久，加上一些實驗，終於找到以下的解法：
+
+開啟 ~<blog-name>/plugins/orgmode/init.el~ ，加上以下的程式碼。
+
+#+BEGIN_SRC emacs-lisp
+(setcar org-emphasis-regexp-components " \t('\"{[:alpha:]")
+(setcar (nthcdr 1 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
+(org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+#+END_SRC
+
+結果如下：
+
+#+BEGIN_EXAMPLE
+- 測試~code~測試
+- 測試=kbd=測試
+- 測試*star*測試
+- *star*s
+- ~中文~測試
+- =中文=測試
+- *中文*測試
+- +中文+測試
+- /中文/測試
+#+END_EXAMPLE
+
+- 測試~code~測試
+- 測試=kbd=測試
+- 測試*star*測試
+- *star*s
+- ~中文~測試
+- =中文=測試
+- *中文*測試
+- +中文+測試
+- /中文/測試
+
 ** 用 ~nikola github_deploy~ 快速發佈文章
 
 REF: https://getnikola.com/handbook.html#deploying-to-github

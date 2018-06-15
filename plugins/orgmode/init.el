@@ -172,3 +172,9 @@ unwanted space when exporting org-mode to html."
 								   (strike-through . "<del>%s</del>")
 								   (underline . "<span class=\"underline\">%s</span>")
 								   (verbatim . "<kbd>%s</kbd>")))
+
+
+(setcar org-emphasis-regexp-components " \t('\"{[:alpha:]")
+(setcar (nthcdr 1 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
+;; (setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n,\"")
+(org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
