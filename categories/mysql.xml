@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mysql)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 07:14:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org3178f1c" class="outline-2"&gt;
+&lt;h2 id="org3178f1c"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; change root password&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;PASSWORD&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"password"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'root'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;flush&lt;/span&gt; &lt;span class="n"&gt;privileges&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;quit&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgbea4cfb" class="outline-2"&gt;
+&lt;h2 id="orgbea4cfb"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; commands&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org0d94115" class="outline-3"&gt;
+&lt;h3 id="org0d94115"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; create user&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;USER&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="n"&gt;PRIVILEGES&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;OPTION&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SHOW&lt;/span&gt; &lt;span class="n"&gt;GRANTS&lt;/span&gt; &lt;span class="k"&gt;FOR&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+--------------------------------------------------------------------------------------------------------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Grants&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;                                                                                   &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+--------------------------------------------------------------------------------------------------------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;USAGE&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;PASSWORD&lt;/span&gt; &lt;span class="s1"&gt;'*DAE5C577E73995AE12C81FF21F2A6336BD9D2F1F'&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="n"&gt;PRIVILEGES&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="ss"&gt;`stock`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;OPTION&lt;/span&gt;                                   &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+--------------------------------------------------------------------------------------------------------------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5782bae" class="outline-3"&gt;
+&lt;h3 id="org5782bae"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; show database&lt;b&gt;s&lt;/b&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;p&gt;
+&lt;b&gt;注意&lt;/b&gt;: database 和 table 的名稱，在 linux 中會區分大小寫。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SHOW&lt;/span&gt; &lt;span class="k"&gt;DATABASES&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org63a7464" class="outline-3"&gt;
+&lt;h3 id="org63a7464"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;USE&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>mariadb</category><category>mysql</category><guid>https://mariolong.github.io/posts/using-mariadb/</guid><pubDate>Fri, 15 Jun 2018 10:03:15 GMT</pubDate></item><item><title>Install Mariadb</title><link>https://mariolong.github.io/posts/install-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+Ref: &lt;a href="https://wiki.archlinux.org/index.php/MySQL"&gt;MySQL - ArchWiki&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div id="outline-container-org6bb76d6" class="outline-2"&gt;
+&lt;h2 id="org6bb76d6"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install mariadb&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mariadb
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7715326" class="outline-2"&gt;
+&lt;h2 id="org7715326"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; install and setup database&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_install_db --user&lt;span class="o"&gt;=&lt;/span&gt;mysql --basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr --datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6cf7d68" class="outline-3"&gt;
+&lt;h3 id="org6cf7d68"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;pre class="example"&gt;
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following commands:
+
+'/usr/bin/mysqladmin' -u root password 'new-password'
+'/usr/bin/mysqladmin' -u root -h arch64 password 'new-password'
+
+Alternatively you can run:
+
+'/usr/bin/mysql_secure_installation'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at http://mariadb.com/kb or the
+MySQL manual for more instructions.
+
+You can start the MariaDB daemon with:
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/mnt/lvm-data/mysql-data'
+
+You can test the MariaDB daemon with mysql-test-run.pl
+cd '/usr/mysql-test' ; perl mysql-test-run.pl
+
+Please report any problems at http://mariadb.org/jira
+
+The latest information about MariaDB is available at http://mariadb.org/.
+You can find additional information about the MySQL part at:
+http://dev.mysql.com
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org3d29f34" class="outline-2"&gt;
+&lt;h2 id="org3d29f34"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+Tip: If you use something different from &lt;i&gt;var&lt;/i&gt;lib/mysql for your data
+dir, you need to set &lt;code&gt;datadir=&amp;lt;YOUR_DATADIR&amp;gt;&lt;/code&gt; under section &lt;code&gt;[mysqld]&lt;/code&gt; of
+your &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;.  The following command will interactively
+guide you through a number of recommended security measures at the
+database level:
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org30f24ca" class="outline-2"&gt;
+&lt;h2 id="org30f24ca"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start mariadb
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgef176f1" class="outline-2"&gt;
+&lt;h2 id="orgef176f1"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; To start mysqld at boot time&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;p&gt;
+you have to copy support-files/mysql.server to the right place for your system
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_secure_installation
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orga1115b5" class="outline-2"&gt;
+&lt;h2 id="orga1115b5"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; Using UTF8MB4&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;p&gt;
+在 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; 加上以下指令：
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[client]&lt;/span&gt;
+&lt;span class="na"&gt;default-character-set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4&lt;/span&gt;
+
+&lt;span class="k"&gt;[mysqld]&lt;/span&gt;
+&lt;span class="na"&gt;collation_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4_unicode_ci&lt;/span&gt;
+&lt;span class="na"&gt;character_set_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4&lt;/span&gt;
+
+&lt;span class="k"&gt;[mysql]&lt;/span&gt;
+&lt;span class="na"&gt;default-character-set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7242c6f" class="outline-2"&gt;
+&lt;h2 id="org7242c6f"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 開啓自動補全&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;p&gt;
+Note: Enabling this feature can make the client initialization longer.
+&lt;/p&gt;
+
+&lt;p&gt;
+The MySQL client completion feature is disabled by default. To enable
+it system-wide edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; , and replace &lt;code&gt;no-auto-rehash&lt;/code&gt; by
+&lt;code&gt;auto-rehash&lt;/code&gt;. Completion will be enabled next time you run the MySQL
+client.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>archlinux</category><category>mariadb</category><category>mysql</category><guid>https://mariolong.github.io/posts/install-mariadb/</guid><pubDate>Fri, 15 Jun 2018 08:20:11 GMT</pubDate></item></channel></rss>

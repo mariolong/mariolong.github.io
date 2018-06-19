@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="install mariadb on archlinux">
+<meta name="viewport" content="width=device-width">
+<title>Install Mariadb | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://mariolong.github.io/posts/install-mariadb/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="install mariadb on archlinux">
+<meta name="author" content="Mario Long">
+<link rel="prev" href="../using-dired/" title="Using dired in Emacs" type="text/html">
+<link rel="next" href="../using-mariadb/" title="Using Mariadb" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="Install Mariadb">
+<meta property="og:url" content="https://mariolong.github.io/posts/install-mariadb/">
+<meta property="og:description" content="install mariadb on archlinux">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-06-15T16:20:11+08:00">
+<meta property="article:tag" content="archlinux">
+<meta property="article:tag" content="mariadb">
+<meta property="article:tag" content="mysql">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Install Mariadb</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2018-06-15T16:20:11+08:00" itemprop="datePublished" title="2018-06-15 16:20">2018-06-15 16:20</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/install-mariadb.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+Ref: <a href="https://wiki.archlinux.org/index.php/MySQL">MySQL - ArchWiki</a>
+</p>
+
+<div id="outline-container-org6bb76d6" class="outline-2">
+<h2 id="org6bb76d6">
+<span class="section-number-2">1</span> install mariadb</h2>
+<div class="outline-text-2" id="text-1">
+<div class="highlight"><pre><span></span>yaourt -S mariadb
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org7715326" class="outline-2">
+<h2 id="org7715326">
+<span class="section-number-2">2</span> install and setup database</h2>
+<div class="outline-text-2" id="text-2">
+<div class="highlight"><pre><span></span>sudo mysql_install_db --user<span class="o">=</span>mysql --basedir<span class="o">=</span>/usr --datadir<span class="o">=</span>/var/lib/mysql
+</pre></div>
+</div>
+
+<div id="outline-container-org6cf7d68" class="outline-3">
+<h3 id="org6cf7d68">
+<span class="section-number-3">2.1</span> message</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following commands:
+
+'/usr/bin/mysqladmin' -u root password 'new-password'
+'/usr/bin/mysqladmin' -u root -h arch64 password 'new-password'
+
+Alternatively you can run:
+
+'/usr/bin/mysql_secure_installation'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at http://mariadb.com/kb or the
+MySQL manual for more instructions.
+
+You can start the MariaDB daemon with:
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/mnt/lvm-data/mysql-data'
+
+You can test the MariaDB daemon with mysql-test-run.pl
+cd '/usr/mysql-test' ; perl mysql-test-run.pl
+
+Please report any problems at http://mariadb.org/jira
+
+The latest information about MariaDB is available at http://mariadb.org/.
+You can find additional information about the MySQL part at:
+http://dev.mysql.com
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3d29f34" class="outline-2">
+<h2 id="org3d29f34">
+<span class="section-number-2">3</span> edit <code>/etc/mysql/my.cnf</code>
+</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Tip: If you use something different from <i>var</i>lib/mysql for your data
+dir, you need to set <code>datadir=&lt;YOUR_DATADIR&gt;</code> under section <code>[mysqld]</code> of
+your <code>/etc/mysql/my.cnf</code>.  The following command will interactively
+guide you through a number of recommended security measures at the
+database level:
+</p>
+</div>
+</div>
+
+<div id="outline-container-org30f24ca" class="outline-2">
+<h2 id="org30f24ca">
+<span class="section-number-2">4</span> start/enable <code>mariadb.service</code> with systemd</h2>
+<div class="outline-text-2" id="text-4">
+<div class="highlight"><pre><span></span>sudo systemctl start mariadb
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgef176f1" class="outline-2">
+<h2 id="orgef176f1">
+<span class="section-number-2">5</span> To start mysqld at boot time</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+you have to copy support-files/mysql.server to the right place for your system
+</p>
+
+<div class="highlight"><pre><span></span>sudo mysql_secure_installation
+</pre></div>
+
+<p>
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga1115b5" class="outline-2">
+<h2 id="orga1115b5">
+<span class="section-number-2">6</span> Using UTF8MB4</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+在 <code>/etc/mysql/my.cnf</code> 加上以下指令：
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">[client]</span>
+<span class="na">default-character-set</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+
+<span class="k">[mysqld]</span>
+<span class="na">collation_server</span> <span class="o">=</span> <span class="s">utf8mb4_unicode_ci</span>
+<span class="na">character_set_server</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+
+<span class="k">[mysql]</span>
+<span class="na">default-character-set</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org7242c6f" class="outline-2">
+<h2 id="org7242c6f">
+<span class="section-number-2">7</span> 開啓自動補全</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Note: Enabling this feature can make the client initialization longer.
+</p>
+
+<p>
+The MySQL client completion feature is disabled by default. To enable
+it system-wide edit <code>/etc/mysql/my.cnf</code> , and replace <code>no-auto-rehash</code> by
+<code>auto-rehash</code>. Completion will be enabled next time you run the MySQL
+client.</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/archlinux/" rel="tag">archlinux</a></li>
+            <li><a class="tag p-category" href="../../categories/mariadb/" rel="tag">mariadb</a></li>
+            <li><a class="tag p-category" href="../../categories/mysql/" rel="tag">mysql</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../using-dired/" rel="prev" title="Using dired in Emacs">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../using-mariadb/" rel="next" title="Using Mariadb">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://mariolong.github.io/posts/install-mariadb/",
+        disqus_title="Install Mariadb",
+        disqus_identifier="cache/posts/install-mariadb.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

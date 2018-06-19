@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Start emacs with systemd | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://mariolong.github.io/posts/start-emacs-with-systemd/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../using-mariadb/" title="Using Mariadb" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="Start emacs with systemd">
+<meta property="og:url" content="https://mariolong.github.io/posts/start-emacs-with-systemd/">
+<meta property="og:description" content="emacs version 26.1 systemd support
+
+
+
+1 設定
+
+
+
+1.1 start emacs via systemd
+
+systemdctl --user start emacs
+
+
+
+
+
+1.2 emacs.service
+
+
+還是要設定一下 emacs.service.
+
+
+
+將 /usr/lib/systemd/user/emacs.service, 複製一份到">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-06-17T13:49:50+08:00">
+<meta property="article:tag" content="emacs">
+<meta property="article:tag" content="systemd">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Start emacs with systemd</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2018-06-17T13:49:50+08:00" itemprop="datePublished" title="2018-06-17 13:49">2018-06-17 13:49</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/emacs-systemd.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+emacs version 26.1 systemd support
+</p>
+
+<div id="outline-container-orgc382304" class="outline-2">
+<h2 id="orgc382304">
+<span class="section-number-2">1</span> 設定</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orga76cfd2" class="outline-3">
+<h3 id="orga76cfd2">
+<span class="section-number-3">1.1</span> start emacs via systemd</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="highlight"><pre><span></span>systemdctl --user start emacs
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org989da15" class="outline-3">
+<h3 id="org989da15">
+<span class="section-number-3">1.2</span> emacs.service</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+還是要設定一下 emacs.service.
+</p>
+
+<p>
+將 <code>/usr/lib/systemd/user/emacs.service</code>, 複製一份到 <code>/.config/systemd/user</code> 中修改。
+</p>
+
+<div class="highlight"><pre><span></span>cp /usr/lib/systemd/user/emacs.service /home/mario/.config/systemd/user/emacs.service
+</pre></div>
+</div>
+
+<div id="outline-container-org00bdbed" class="outline-4">
+<h4 id="org00bdbed">
+<span class="section-number-4">1.2.1</span> 中文輸入法</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+在 <code>emacs.service</code> 中加上以下指令，才能在 emacs 中使用 fcitx.
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">Environment</span><span class="o">=</span><span class="no">DISPLAY</span><span class="o">=:</span><span class="mh">0</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">LC_ALL</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span> <span class="no">LANG</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">GTK_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span> <span class="no">QT_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span> <span class="no">XMODIFIERS</span><span class="o">=</span><span class="s">"@im=fcitx"</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org01a11eb" class="outline-4">
+<h4 id="org01a11eb">
+<span class="section-number-4">1.2.2</span> shell term</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">Environment</span><span class="o">=</span><span class="no">PATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="nl">sbin:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nl">site_perl:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nl">vendor_perl:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nl">core_perl:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="nl">bin:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="n">cabal</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="k">local</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="n">gem</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="mf">2.5.0</span><span class="o">/</span><span class="n">bin</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgd115f6e" class="outline-4">
+<h4 id="orgd115f6e">
+<span class="section-number-4">1.2.3</span> final emacs.service</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+最後 emacs.service 的設定。
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">Emacs</span> <span class="n">text</span> <span class="n">editor</span>
+<span class="n">Documentation</span><span class="o">=</span><span class="nl">info:</span><span class="n">emacs</span> <span class="nl">man:</span><span class="n">emacs</span><span class="p">(</span><span class="mh">1</span><span class="p">)</span> <span class="nl">https:</span><span class="c1">//gnu.org/software/emacs/</span>
+
+<span class="p">[</span><span class="n">Service</span><span class="p">]</span>
+<span class="n">Type</span><span class="o">=</span><span class="n">simple</span>
+<span class="n">ExecStart</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">emacs</span> <span class="o">--</span><span class="n">fg</span><span class="o">-</span><span class="n">daemon</span>
+<span class="n">ExecStop</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">emacsclient</span> <span class="o">--</span><span class="n">eval</span> <span class="s">"(kill-emacs)"</span>
+<span class="n">Restart</span><span class="o">=</span><span class="n">on</span><span class="o">-</span><span class="n">failure</span>
+
+<span class="n">Environment</span><span class="o">=</span><span class="no">SSH_AUTH_SOCK</span><span class="o">=%</span><span class="n">t</span><span class="o">/</span><span class="n">keyring</span><span class="o">/</span><span class="n">ssh</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">DISPLAY</span><span class="o">=:</span><span class="mh">0</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">LC_ALL</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span> <span class="no">LANG</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">GTK_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span> <span class="no">QT_IM_MODULE</span><span class="o">=</span><span class="n">fcitx</span> <span class="no">XMODIFIERS</span><span class="o">=</span><span class="s">"@im=fcitx"</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">PATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="nl">sbin:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nl">site_perl:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nl">vendor_perl:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nl">core_perl:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="nl">bin:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="n">cabal</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="k">local</span><span class="o">/</span><span class="nl">bin:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mario</span><span class="o">/</span><span class="p">.</span><span class="n">gem</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="mf">2.5.0</span><span class="o">/</span><span class="n">bin</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="k">default</span><span class="p">.</span><span class="n">target</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org355df5e" class="outline-3">
+<h3 id="org355df5e">
+<span class="section-number-3">1.3</span> 修改 init.el</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+package server is unnecessary. 可以刪除。
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">use-package</span> <span class="nv">server</span>
+  <span class="nv">:commands</span> <span class="p">(</span><span class="nf">server-running-p</span><span class="p">)</span>
+  <span class="nv">:init</span>
+  <span class="p">(</span><span class="nf">unless</span> <span class="p">(</span><span class="nf">server-running-p</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">server-start</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org5b4c3d9" class="outline-3">
+<h3 id="org5b4c3d9">
+<span class="section-number-3">1.4</span> restart emacs via systemd</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="highlight"><pre><span></span>systemdctl --user restart emacs
+</pre></div>
+
+<p>
+實際上，在 emacs 中執行 <code>(kill-emacs)</code> 即可重啓 emacs.
+</p>
+
+<p>
+觀察：emacs.service 中有下列指令：
+</p>
+<div class="highlight"><pre><span></span><span class="n">ExecStop</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">emacsclient</span> <span class="o">--</span><span class="n">eval</span> <span class="s">"(kill-emacs)"</span>
+<span class="n">Restart</span><span class="o">=</span><span class="n">on</span><span class="o">-</span><span class="n">failure</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd0faa85" class="outline-2">
+<h2 id="orgd0faa85">
+<span class="section-number-2">2</span> 結語</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+emacs 26.1 支援 systemd 真的不錯。</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/emacs/" rel="tag">emacs</a></li>
+            <li><a class="tag p-category" href="../../categories/systemd/" rel="tag">systemd</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../using-mariadb/" rel="prev" title="Using Mariadb">上一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://mariolong.github.io/posts/start-emacs-with-systemd/",
+        disqus_title="Start emacs with systemd",
+        disqus_identifier="cache/posts/emacs-systemd.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

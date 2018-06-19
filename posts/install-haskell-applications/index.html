@@ -107,8 +107,8 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-org1b8ebfc" class="outline-2">
-<h2 id="org1b8ebfc">
+    <div id="outline-container-org58ae188" class="outline-2">
+<h2 id="org58ae188">
 <span class="section-number-2">1</span> 前言</h2>
 <div class="outline-text-2" id="text-1">
 <p>
@@ -126,8 +126,8 @@ Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 
 </div>
 </div>
 
-<div id="outline-container-org1b7396d" class="outline-2">
-<h2 id="org1b7396d">
+<div id="outline-container-orgdb814f0" class="outline-2">
+<h2 id="orgdb814f0">
 <span class="section-number-2">2</span> 安裝</h2>
 <div class="outline-text-2" id="text-2">
 <p>
@@ -148,7 +148,7 @@ archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版
 </p>
 
 <p>
-如果要用 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
+如果要用 nix<i>Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix</i>Miso.
 </p>
 
 <p>
@@ -167,8 +167,8 @@ cabal install pandoc
 </pre></div>
 </div>
 
-<div id="outline-container-org4f9cb11" class="outline-3">
-<h3 id="org4f9cb11">
+<div id="outline-container-orgebbe1e9" class="outline-3">
+<h3 id="orgebbe1e9">
 <span class="section-number-3">2.1</span> install ghc, stack</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
@@ -183,22 +183,22 @@ cabal install pandoc
 </div>
 </div>
 
-<div id="outline-container-org75faa22" class="outline-3">
-<h3 id="org75faa22">
+<div id="outline-container-org4be3ee1" class="outline-3">
+<h3 id="org4be3ee1">
 <span class="section-number-3">2.2</span> install cabal</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29">Building statically linked packages with Cabal (without using shared libraries)</a>
 </p>
 
-<div class="highlight"><pre><span></span><span class="nv">stack</span> <span class="nv">setup</span> <span class="nv">--system-ghc</span>
-<span class="nv">stack</span> <span class="nv">install</span> <span class="nv">--system-ghc</span> <span class="nv">cabal-install</span>
+<div class="highlight"><pre><span></span>stack setup --system-ghc
+stack install --system-ghc cabal-install
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org0be1dc3" class="outline-3">
-<h3 id="org0be1dc3">
+<div id="outline-container-orgc5c9e2f" class="outline-3">
+<h3 id="orgc5c9e2f">
 <span class="section-number-3">2.3</span> install pandoc</h3>
 <div class="outline-text-3" id="text-2-3">
 <div class="highlight"><pre><span></span>cabal update
@@ -207,8 +207,8 @@ cabal install pandoc
 </div>
 </div>
 
-<div id="outline-container-orgcf66600" class="outline-3">
-<h3 id="orgcf66600">
+<div id="outline-container-org92d36ca" class="outline-3">
+<h3 id="org92d36ca">
 <span class="section-number-3">2.4</span> taffybar, xmonad, xomnad-contrib</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
@@ -225,14 +225,14 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 </p>
 </div>
 
-<div id="outline-container-org11792dd" class="outline-4">
-<h4 id="org11792dd">
+<div id="outline-container-org31eef77" class="outline-4">
+<h4 id="org31eef77">
 <span class="section-number-4">2.4.1</span> 自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib</h4>
 <div class="outline-text-4" id="text-2-4-1">
 </div>
 <ol class="org-ol">
 <li>
-<a id="orgd850268"></a>fork and download taffybar from github and checkout v0.4.6<br><div class="outline-text-5" id="text-2-4-1-1">
+<a id="org78e0012"></a>fork and download taffybar from github and checkout v0.4.6<br><div class="outline-text-5" id="text-2-4-1-1">
 <div class="highlight"><pre><span></span>git clone https://github.com/taffybar/taffybar.git
 git checkout v0.4.6
 cp
@@ -241,7 +241,7 @@ cp
 </li>
 
 <li>
-<a id="orgff59369"></a>adding stack.yaml and setup stack project<br><div class="outline-text-5" id="text-2-4-1-2">
+<a id="org14024f1"></a>adding stack.yaml and setup stack project<br><div class="outline-text-5" id="text-2-4-1-2">
 <ol class="org-ol">
 <li>產生 <code>stack.yaml</code> ：</li>
 </ol>
@@ -264,7 +264,7 @@ cp
 </li>
 
 <li>
-<a id="org5feeddf"></a>config file of taffybar/xmonad must put them to this directory<br><div class="outline-text-5" id="text-2-4-1-3">
+<a id="org60f794d"></a>config file of taffybar/xmonad must put them to this directory<br><div class="outline-text-5" id="text-2-4-1-3">
 <p>
 否則 recompile config file 時，會找不到需要的模組。
 </p>
@@ -272,7 +272,7 @@ cp
 </li>
 
 <li>
-<a id="org7d60e31"></a>stack build/install taffybar<br><div class="outline-text-5" id="text-2-4-1-4">
+<a id="orgac9de53"></a>stack build/install taffybar<br><div class="outline-text-5" id="text-2-4-1-4">
 <p>
 自動安裝 taffybar 和 xomnad 和 xmonad-contrib
 </p>
@@ -283,7 +283,7 @@ cp
 </li>
 
 <li>
-<a id="orga94c3f6"></a>修改 config<br><div class="outline-text-5" id="text-2-4-1-5">
+<a id="org678051c"></a>修改 config<br><div class="outline-text-5" id="text-2-4-1-5">
 <p>
 修改 config 後，要重新編譯 config
 </p>
@@ -297,8 +297,8 @@ stack <span class="nb">exec</span> -- xmonad --restart
 </ol>
 </div>
 
-<div id="outline-container-org6b24997" class="outline-4">
-<h4 id="org6b24997">
+<div id="outline-container-orgba4525e" class="outline-4">
+<h4 id="orgba4525e">
 <span class="section-number-4">2.4.2</span> haskell-taffybar at ArchHaskell</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <p>
@@ -307,8 +307,8 @@ stack <span class="nb">exec</span> -- xmonad --restart
 </div>
 </div>
 
-<div id="outline-container-orgccca157" class="outline-4">
-<h4 id="orgccca157">
+<div id="outline-container-org1c597ba" class="outline-4">
+<h4 id="org1c597ba">
 <span class="section-number-4">2.4.3</span> cabal install taffybar-0.4.6</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <div class="highlight"><pre><span></span>cabal update
@@ -322,17 +322,17 @@ cabal install pandoc
 </div>
 
 
-<div id="outline-container-org0af56c9" class="outline-2">
-<h2 id="org0af56c9">
+<div id="outline-container-orgd0482f7" class="outline-2">
+<h2 id="orgd0482f7">
 <span class="section-number-2">3</span> Issues</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org7e8d7c8" class="outline-3">
-<h3 id="org7e8d7c8">
+<div id="outline-container-org17dde67" class="outline-3">
+<h3 id="org17dde67">
 <span class="section-number-3">3.1</span> system tray 中 dropbox 的字型太小</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
-dropbox 是 QT application，taffybar 是 gtk application，所以要調理一下，我用的法子是加上環境變數：
+dropbox 是 QT application，taffybar 是 gtk application，所以要調整一下，我用的法子是加上環境變數：
 </p>
 
 <div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">QT_STYLE_OVERRIDE</span><span class="o">=</span>GTK+

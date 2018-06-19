@@ -1,14 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：emacs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 11 Jun 2018 08:07:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：emacs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 07:14:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+emacs version 26.1 systemd support
+&lt;/p&gt;
+
+&lt;div id="outline-container-orgc382304" class="outline-2"&gt;
+&lt;h2 id="orgc382304"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga76cfd2" class="outline-3"&gt;
+&lt;h3 id="orga76cfd2"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org989da15" class="outline-3"&gt;
+&lt;h3 id="org989da15"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+還是要設定一下 emacs.service.
+&lt;/p&gt;
+
+&lt;p&gt;
+將 &lt;code&gt;/usr/lib/systemd/user/emacs.service&lt;/code&gt;, 複製一份到 &lt;code&gt;/.config/systemd/user&lt;/code&gt; 中修改。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cp /usr/lib/systemd/user/emacs.service /home/mario/.config/systemd/user/emacs.service
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org00bdbed" class="outline-4"&gt;
+&lt;h4 id="org00bdbed"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-1"&gt;
+&lt;p&gt;
+在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=:&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;XMODIFIERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"@im=fcitx"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org01a11eb" class="outline-4"&gt;
+&lt;h4 id="org01a11eb"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-2"&gt;
+&lt;p&gt;
+設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;sbin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;site_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;vendor_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;core_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cabal&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ruby&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;2.5.0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgd115f6e" class="outline-4"&gt;
+&lt;h4 id="orgd115f6e"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-3"&gt;
+&lt;p&gt;
+最後 emacs.service 的設定。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Unit&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Emacs&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="n"&gt;editor&lt;/span&gt;
+&lt;span class="n"&gt;Documentation&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nl"&gt;info:&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt; &lt;span class="nl"&gt;man:&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nl"&gt;https:&lt;/span&gt;&lt;span class="c1"&gt;//gnu.org/software/emacs/&lt;/span&gt;
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Service&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;simple&lt;/span&gt;
+&lt;span class="n"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;fg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;daemon&lt;/span&gt;
+&lt;span class="n"&gt;ExecStop&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;emacsclient&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;eval&lt;/span&gt; &lt;span class="s"&gt;"(kill-emacs)"&lt;/span&gt;
+&lt;span class="n"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;failure&lt;/span&gt;
+
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;SSH_AUTH_SOCK&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;keyring&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=:&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;XMODIFIERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"@im=fcitx"&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;sbin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;site_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;vendor_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;core_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cabal&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ruby&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;2.5.0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Install&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org355df5e" class="outline-3"&gt;
+&lt;h3 id="org355df5e"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-3"&gt;
+&lt;p&gt;
+package server is unnecessary. 可以刪除。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;server&lt;/span&gt;
+  &lt;span class="nv"&gt;:commands&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-running-p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;:init&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;unless&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-running-p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-start&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5b4c3d9" class="outline-3"&gt;
+&lt;h3 id="org5b4c3d9"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-4"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+實際上，在 emacs 中執行 &lt;code&gt;(kill-emacs)&lt;/code&gt; 即可重啓 emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+觀察：emacs.service 中有下列指令：
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ExecStop&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;emacsclient&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;eval&lt;/span&gt; &lt;span class="s"&gt;"(kill-emacs)"&lt;/span&gt;
+&lt;span class="n"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;failure&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgd0faa85" class="outline-2"&gt;
+&lt;h2 id="orgd0faa85"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 dired 真是好用，記錄我的使用流程
 &lt;/p&gt;
 
-&lt;div id="outline-container-org3d50382" class="outline-2"&gt;
-&lt;h2 id="org3d50382"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
+&lt;div id="outline-container-orgcc1b948" class="outline-2"&gt;
+&lt;h2 id="orgcc1b948"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8940497" class="outline-3"&gt;
-&lt;h3 id="org8940497"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
+&lt;div id="outline-container-org9708cbe" class="outline-3"&gt;
+&lt;h3 id="org9708cbe"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
@@ -17,8 +146,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4307771" class="outline-3"&gt;
-&lt;h3 id="org4307771"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
+&lt;div id="outline-container-orgaf44ce7" class="outline-3"&gt;
+&lt;h3 id="orgaf44ce7"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 &lt;kbd&gt;q&lt;/kbd&gt;
@@ -26,8 +155,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8165113" class="outline-3"&gt;
-&lt;h3 id="org8165113"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
+&lt;div id="outline-container-org4eed87f" class="outline-3"&gt;
+&lt;h3 id="org4eed87f"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;p&gt;
 &lt;kbd&gt;d&lt;/kbd&gt;
@@ -43,8 +172,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcec6738" class="outline-3"&gt;
-&lt;h3 id="orgcec6738"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
+&lt;div id="outline-container-org0167cc2" class="outline-3"&gt;
+&lt;h3 id="org0167cc2"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x C-q&lt;/kbd&gt;
@@ -54,27 +183,27 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org7599d21" class="outline-2"&gt;
-&lt;h2 id="org7599d21"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
+&lt;div id="outline-container-org578d235" class="outline-2"&gt;
+&lt;h2 id="org578d235"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge3d9fb6" class="outline-3"&gt;
-&lt;h3 id="orge3d9fb6"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
+&lt;div id="outline-container-org1645141" class="outline-3"&gt;
+&lt;h3 id="org1645141"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb2a1e1d" class="outline-3"&gt;
-&lt;h3 id="orgb2a1e1d"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
+&lt;div id="outline-container-org0e97307" class="outline-3"&gt;
+&lt;h3 id="org0e97307"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge398016" class="outline-3"&gt;
-&lt;h3 id="orge398016"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
+&lt;div id="outline-container-org9dca2a9" class="outline-3"&gt;
+&lt;h3 id="org9dca2a9"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org643a1e8" class="outline-2"&gt;
-&lt;h2 id="org643a1e8"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
+&lt;div id="outline-container-orgb6c1287" class="outline-2"&gt;
+&lt;h2 id="orgb6c1287"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgeccb22e" class="outline-3"&gt;
-&lt;h3 id="orgeccb22e"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command/Midnight commander 一/copy/move files like NC/MC&lt;/h3&gt;
+&lt;div id="outline-container-org38b9e6d" class="outline-3"&gt;
+&lt;h3 id="org38b9e6d"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command&lt;i&gt;Midnight commander 一&lt;/i&gt;copy&lt;i&gt;move files like NC&lt;/i&gt;MC&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item><item><title>rectange edit</title><link>https://mariolong.github.io/posts/rectangle-edit/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;emacs 中有個矩形編輯功能。&lt;/p&gt;
 &lt;p&gt;以前在 PE2 時代就常用，到了 windows 時代後，就沒有用過，是因為 windows 的編輯器沒有提供這樣的功能，剛開始時還真的不習慣。

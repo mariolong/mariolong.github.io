@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：disk)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/disk.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：disk)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/disk.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 07:14:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 記錄一下，在 Windows 10 中，如何隱藏磁碟機？
 &lt;/p&gt;
 
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;windows 系統管理
-&lt;/li&gt;
-&lt;li&gt;磁碟管理
-&lt;/li&gt;
-&lt;li&gt;點要隱藏的 partition，按右鍵
-&lt;/li&gt;
-&lt;li&gt;變更磁碟機代號及路徑
-&lt;/li&gt;
-&lt;li&gt;新增，變更，移除，三選一
-&lt;/li&gt;
+&lt;li&gt;windows 系統管理&lt;/li&gt;
+&lt;li&gt;磁碟管理&lt;/li&gt;
+&lt;li&gt;點要隱藏的 partition，按右鍵&lt;/li&gt;
+&lt;li&gt;變更磁碟機代號及路徑&lt;/li&gt;
+&lt;li&gt;新增，變更，移除，三選一&lt;/li&gt;
 &lt;/ol&gt;</description><category>disk</category><category>windows</category><guid>https://mariolong.github.io/posts/hide-driver-on-windows/</guid><pubDate>Thu, 24 May 2018 07:49:19 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：cron)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cron.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 25 May 2018 05:55:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>archlinux enable cron</title><link>https://mariolong.github.io/posts/archlinux-enable-cron/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：cron)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cron.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 07:14:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>archlinux enable cron</title><link>https://mariolong.github.io/posts/archlinux-enable-cron/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
 &amp;lt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/cron"&gt;https://wiki.archlinux.org/index.php/cron&lt;/a&gt;&amp;gt;&lt;/blockquote&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
@@ -9,20 +9,20 @@
 &lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;Activation and autostart&lt;/p&gt;
 &lt;p&gt;cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_b595beee68ef49e3aa014c1f1e22476f-1"&gt;&lt;/a&gt;$ systemctl is-enabled cronie
+&lt;pre class="code text"&gt;&lt;a name="rest_code_6b317cf05c9f41eeba646d491e3a1dc1-1"&gt;&lt;/a&gt;$ systemctl is-enabled cronie
 &lt;/pre&gt;&lt;p&gt;Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_cdd7b5d17a0344d696af7bc3a04018d1-1"&gt;&lt;/a&gt;# systemctl start cronie
-&lt;a name="rest_code_cdd7b5d17a0344d696af7bc3a04018d1-2"&gt;&lt;/a&gt;# systemctl enable cronie
+&lt;pre class="code text"&gt;&lt;a name="rest_code_61226fae874b4510a5f356a9a5c2c0d3-1"&gt;&lt;/a&gt;# systemctl start cronie
+&lt;a name="rest_code_61226fae874b4510a5f356a9a5c2c0d3-2"&gt;&lt;/a&gt;# systemctl enable cronie
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="default-editor"&gt;
 &lt;h2&gt;Default editor&lt;/h2&gt;
 &lt;p&gt;To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_f60b2b7908db47b98c612e0f90dde0d9-1"&gt;&lt;/a&gt;# /etc/profile.d/nano-default-editor
+&lt;pre class="code text"&gt;&lt;a name="rest_code_6aab9488bc6b4a9f9ad79b1f2921cbee-1"&gt;&lt;/a&gt;# /etc/profile.d/nano-default-editor
 &lt;/pre&gt;&lt;p&gt;加上：&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_c09c77c28cc3477b9114ca3697c25171-1"&gt;&lt;/a&gt;#!/bin/sh
-&lt;a name="rest_code_c09c77c28cc3477b9114ca3697c25171-2"&gt;&lt;/a&gt;export EDITOR=/usr/bin/nano
+&lt;pre class="code text"&gt;&lt;a name="rest_code_730062e5dd174c5b878879b4d61bdef2-1"&gt;&lt;/a&gt;#!/bin/sh
+&lt;a name="rest_code_730062e5dd174c5b878879b4d61bdef2-2"&gt;&lt;/a&gt;export EDITOR=/usr/bin/nano
 &lt;/pre&gt;&lt;p&gt;修改權限：&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_9c49a5841f0042158690e81320bb334f-1"&gt;&lt;/a&gt;#chmod +x /etc/profile.d/nano-default-editor
+&lt;pre class="code text"&gt;&lt;a name="rest_code_50b571e5dd7f4e4b9cd368ce7b05adfa-1"&gt;&lt;/a&gt;#chmod +x /etc/profile.d/nano-default-editor
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="crontab-format"&gt;
 &lt;h2&gt;Crontab format&lt;/h2&gt;

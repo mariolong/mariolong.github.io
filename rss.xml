@@ -1,14 +1,324 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Jun 2018 09:36:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 09:30:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+emacs version 26.1 systemd support
+&lt;/p&gt;
+
+&lt;div id="outline-container-orgc382304" class="outline-2"&gt;
+&lt;h2 id="orgc382304"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga76cfd2" class="outline-3"&gt;
+&lt;h3 id="orga76cfd2"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org989da15" class="outline-3"&gt;
+&lt;h3 id="org989da15"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+還是要設定一下 emacs.service.
+&lt;/p&gt;
+
+&lt;p&gt;
+將 &lt;code&gt;/usr/lib/systemd/user/emacs.service&lt;/code&gt;, 複製一份到 &lt;code&gt;/.config/systemd/user&lt;/code&gt; 中修改。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cp /usr/lib/systemd/user/emacs.service /home/mario/.config/systemd/user/emacs.service
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org00bdbed" class="outline-4"&gt;
+&lt;h4 id="org00bdbed"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-1"&gt;
+&lt;p&gt;
+在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=:&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;XMODIFIERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"@im=fcitx"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org01a11eb" class="outline-4"&gt;
+&lt;h4 id="org01a11eb"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-2"&gt;
+&lt;p&gt;
+設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;sbin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;site_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;vendor_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;core_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cabal&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ruby&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;2.5.0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgd115f6e" class="outline-4"&gt;
+&lt;h4 id="orgd115f6e"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-3"&gt;
+&lt;p&gt;
+最後 emacs.service 的設定。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Unit&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Emacs&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="n"&gt;editor&lt;/span&gt;
+&lt;span class="n"&gt;Documentation&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nl"&gt;info:&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt; &lt;span class="nl"&gt;man:&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nl"&gt;https:&lt;/span&gt;&lt;span class="c1"&gt;//gnu.org/software/emacs/&lt;/span&gt;
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Service&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;simple&lt;/span&gt;
+&lt;span class="n"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;fg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;daemon&lt;/span&gt;
+&lt;span class="n"&gt;ExecStop&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;emacsclient&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;eval&lt;/span&gt; &lt;span class="s"&gt;"(kill-emacs)"&lt;/span&gt;
+&lt;span class="n"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;failure&lt;/span&gt;
+
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;SSH_AUTH_SOCK&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;keyring&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=:&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;fcitx&lt;/span&gt; &lt;span class="no"&gt;XMODIFIERS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"@im=fcitx"&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;sbin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;site_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;vendor_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;core_perl:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cabal&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;bin:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mario&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ruby&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mf"&gt;2.5.0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Install&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org355df5e" class="outline-3"&gt;
+&lt;h3 id="org355df5e"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-3"&gt;
+&lt;p&gt;
+package server is unnecessary. 可以刪除。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;server&lt;/span&gt;
+  &lt;span class="nv"&gt;:commands&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-running-p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;:init&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;unless&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-running-p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-start&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5b4c3d9" class="outline-3"&gt;
+&lt;h3 id="org5b4c3d9"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-4"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+實際上，在 emacs 中執行 &lt;code&gt;(kill-emacs)&lt;/code&gt; 即可重啓 emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+觀察：emacs.service 中有下列指令：
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ExecStop&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;emacsclient&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;eval&lt;/span&gt; &lt;span class="s"&gt;"(kill-emacs)"&lt;/span&gt;
+&lt;span class="n"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;failure&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgd0faa85" class="outline-2"&gt;
+&lt;h2 id="orgd0faa85"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org3178f1c" class="outline-2"&gt;
+&lt;h2 id="org3178f1c"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; change root password&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;PASSWORD&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"password"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'root'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;flush&lt;/span&gt; &lt;span class="n"&gt;privileges&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;quit&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgbea4cfb" class="outline-2"&gt;
+&lt;h2 id="orgbea4cfb"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; commands&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org0d94115" class="outline-3"&gt;
+&lt;h3 id="org0d94115"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; create user&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;USER&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="n"&gt;PRIVILEGES&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;OPTION&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;SHOW&lt;/span&gt; &lt;span class="n"&gt;GRANTS&lt;/span&gt; &lt;span class="k"&gt;FOR&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+--------------------------------------------------------------------------------------------------------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Grants&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;                                                                                   &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+--------------------------------------------------------------------------------------------------------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;USAGE&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;PASSWORD&lt;/span&gt; &lt;span class="s1"&gt;'*DAE5C577E73995AE12C81FF21F2A6336BD9D2F1F'&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="n"&gt;PRIVILEGES&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="ss"&gt;`stock`&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;OPTION&lt;/span&gt;                                   &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+--------------------------------------------------------------------------------------------------------------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5782bae" class="outline-3"&gt;
+&lt;h3 id="org5782bae"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; show database&lt;b&gt;s&lt;/b&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;p&gt;
+&lt;b&gt;注意&lt;/b&gt;: database 和 table 的名稱，在 linux 中會區分大小寫。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SHOW&lt;/span&gt; &lt;span class="k"&gt;DATABASES&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org63a7464" class="outline-3"&gt;
+&lt;h3 id="org63a7464"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;USE&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>mariadb</category><category>mysql</category><guid>https://mariolong.github.io/posts/using-mariadb/</guid><pubDate>Fri, 15 Jun 2018 10:03:15 GMT</pubDate></item><item><title>Install Mariadb</title><link>https://mariolong.github.io/posts/install-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+Ref: &lt;a href="https://wiki.archlinux.org/index.php/MySQL"&gt;MySQL - ArchWiki&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div id="outline-container-org6bb76d6" class="outline-2"&gt;
+&lt;h2 id="org6bb76d6"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install mariadb&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mariadb
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7715326" class="outline-2"&gt;
+&lt;h2 id="org7715326"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; install and setup database&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_install_db --user&lt;span class="o"&gt;=&lt;/span&gt;mysql --basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr --datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6cf7d68" class="outline-3"&gt;
+&lt;h3 id="org6cf7d68"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;pre class="example"&gt;
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following commands:
+
+'/usr/bin/mysqladmin' -u root password 'new-password'
+'/usr/bin/mysqladmin' -u root -h arch64 password 'new-password'
+
+Alternatively you can run:
+
+'/usr/bin/mysql_secure_installation'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at http://mariadb.com/kb or the
+MySQL manual for more instructions.
+
+You can start the MariaDB daemon with:
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/mnt/lvm-data/mysql-data'
+
+You can test the MariaDB daemon with mysql-test-run.pl
+cd '/usr/mysql-test' ; perl mysql-test-run.pl
+
+Please report any problems at http://mariadb.org/jira
+
+The latest information about MariaDB is available at http://mariadb.org/.
+You can find additional information about the MySQL part at:
+http://dev.mysql.com
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org3d29f34" class="outline-2"&gt;
+&lt;h2 id="org3d29f34"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+Tip: If you use something different from &lt;i&gt;var&lt;/i&gt;lib/mysql for your data
+dir, you need to set &lt;code&gt;datadir=&amp;lt;YOUR_DATADIR&amp;gt;&lt;/code&gt; under section &lt;code&gt;[mysqld]&lt;/code&gt; of
+your &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;.  The following command will interactively
+guide you through a number of recommended security measures at the
+database level:
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org30f24ca" class="outline-2"&gt;
+&lt;h2 id="org30f24ca"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start mariadb
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgef176f1" class="outline-2"&gt;
+&lt;h2 id="orgef176f1"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; To start mysqld at boot time&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;p&gt;
+you have to copy support-files/mysql.server to the right place for your system
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_secure_installation
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orga1115b5" class="outline-2"&gt;
+&lt;h2 id="orga1115b5"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; Using UTF8MB4&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;p&gt;
+在 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; 加上以下指令：
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[client]&lt;/span&gt;
+&lt;span class="na"&gt;default-character-set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4&lt;/span&gt;
+
+&lt;span class="k"&gt;[mysqld]&lt;/span&gt;
+&lt;span class="na"&gt;collation_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4_unicode_ci&lt;/span&gt;
+&lt;span class="na"&gt;character_set_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4&lt;/span&gt;
+
+&lt;span class="k"&gt;[mysql]&lt;/span&gt;
+&lt;span class="na"&gt;default-character-set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;utf8mb4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7242c6f" class="outline-2"&gt;
+&lt;h2 id="org7242c6f"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 開啓自動補全&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;p&gt;
+Note: Enabling this feature can make the client initialization longer.
+&lt;/p&gt;
+
+&lt;p&gt;
+The MySQL client completion feature is disabled by default. To enable
+it system-wide edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; , and replace &lt;code&gt;no-auto-rehash&lt;/code&gt; by
+&lt;code&gt;auto-rehash&lt;/code&gt;. Completion will be enabled next time you run the MySQL
+client.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>archlinux</category><category>mariadb</category><category>mysql</category><guid>https://mariolong.github.io/posts/install-mariadb/</guid><pubDate>Fri, 15 Jun 2018 08:20:11 GMT</pubDate></item><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 dired 真是好用，記錄我的使用流程
 &lt;/p&gt;
 
-&lt;div id="outline-container-org3d50382" class="outline-2"&gt;
-&lt;h2 id="org3d50382"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
+&lt;div id="outline-container-orgcc1b948" class="outline-2"&gt;
+&lt;h2 id="orgcc1b948"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org8940497" class="outline-3"&gt;
-&lt;h3 id="org8940497"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
+&lt;div id="outline-container-org9708cbe" class="outline-3"&gt;
+&lt;h3 id="org9708cbe"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
@@ -17,8 +327,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4307771" class="outline-3"&gt;
-&lt;h3 id="org4307771"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
+&lt;div id="outline-container-orgaf44ce7" class="outline-3"&gt;
+&lt;h3 id="orgaf44ce7"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 &lt;kbd&gt;q&lt;/kbd&gt;
@@ -26,8 +336,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8165113" class="outline-3"&gt;
-&lt;h3 id="org8165113"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
+&lt;div id="outline-container-org4eed87f" class="outline-3"&gt;
+&lt;h3 id="org4eed87f"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;p&gt;
 &lt;kbd&gt;d&lt;/kbd&gt;
@@ -43,8 +353,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcec6738" class="outline-3"&gt;
-&lt;h3 id="orgcec6738"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
+&lt;div id="outline-container-org0167cc2" class="outline-3"&gt;
+&lt;h3 id="org0167cc2"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x C-q&lt;/kbd&gt;
@@ -54,27 +364,27 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org7599d21" class="outline-2"&gt;
-&lt;h2 id="org7599d21"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
+&lt;div id="outline-container-org578d235" class="outline-2"&gt;
+&lt;h2 id="org578d235"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge3d9fb6" class="outline-3"&gt;
-&lt;h3 id="orge3d9fb6"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
+&lt;div id="outline-container-org1645141" class="outline-3"&gt;
+&lt;h3 id="org1645141"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb2a1e1d" class="outline-3"&gt;
-&lt;h3 id="orgb2a1e1d"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
+&lt;div id="outline-container-org0e97307" class="outline-3"&gt;
+&lt;h3 id="org0e97307"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge398016" class="outline-3"&gt;
-&lt;h3 id="orge398016"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
+&lt;div id="outline-container-org9dca2a9" class="outline-3"&gt;
+&lt;h3 id="org9dca2a9"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org643a1e8" class="outline-2"&gt;
-&lt;h2 id="org643a1e8"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
+&lt;div id="outline-container-orgb6c1287" class="outline-2"&gt;
+&lt;h2 id="orgb6c1287"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgeccb22e" class="outline-3"&gt;
-&lt;h3 id="orgeccb22e"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command/Midnight commander 一/copy/move files like NC/MC&lt;/h3&gt;
+&lt;div id="outline-container-org38b9e6d" class="outline-3"&gt;
+&lt;h3 id="org38b9e6d"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command&lt;i&gt;Midnight commander 一&lt;/i&gt;copy&lt;i&gt;move files like NC&lt;/i&gt;MC&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item><item><title>mm=mpv+feh</title><link>https://mariolong.github.io/posts/mm-mpv-feh/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 用全螢幕幻燈片模式播放照片：
@@ -85,9 +395,9 @@ dired 真是好用，記錄我的使用流程
 
 &lt;p&gt;
 單純播放照片和影片記錄而已
-&lt;/p&gt;</description><category>feh</category><category>mm</category><category>mpv</category><guid>https://mariolong.github.io/posts/mm-mpv-feh/</guid><pubDate>Tue, 29 May 2018 01:57:04 GMT</pubDate></item><item><title>鼻咽癌與我的初次相遇</title><link>https://mariolong.github.io/posts/cancer-first-time/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;確診&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;/p&gt;</description><category>feh</category><category>mm</category><category>mpv</category><guid>https://mariolong.github.io/posts/mm-mpv-feh/</guid><pubDate>Tue, 29 May 2018 01:57:04 GMT</pubDate></item><item><title>鼻咽癌與我的初次相遇</title><link>https://mariolong.github.io/posts/cancer-first-time/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org8c08a93" class="outline-2"&gt;
+&lt;h2 id="org8c08a93"&gt;確診&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8c08a93"&gt;
 &lt;p&gt;
 2016/1/7，坐在診療椅上，不由自主地一股寒氣由腳底冒起，直達心口。
 &lt;/p&gt;
@@ -96,23 +406,18 @@ dired 真是好用，記錄我的使用流程
 &lt;/p&gt;
 
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;windows 系統管理
-&lt;/li&gt;
-&lt;li&gt;磁碟管理
-&lt;/li&gt;
-&lt;li&gt;點要隱藏的 partition，按右鍵
-&lt;/li&gt;
-&lt;li&gt;變更磁碟機代號及路徑
-&lt;/li&gt;
-&lt;li&gt;新增，變更，移除，三選一
-&lt;/li&gt;
+&lt;li&gt;windows 系統管理&lt;/li&gt;
+&lt;li&gt;磁碟管理&lt;/li&gt;
+&lt;li&gt;點要隱藏的 partition，按右鍵&lt;/li&gt;
+&lt;li&gt;變更磁碟機代號及路徑&lt;/li&gt;
+&lt;li&gt;新增，變更，移除，三選一&lt;/li&gt;
 &lt;/ol&gt;</description><category>disk</category><category>windows</category><guid>https://mariolong.github.io/posts/hide-driver-on-windows/</guid><pubDate>Thu, 24 May 2018 07:49:19 GMT</pubDate></item><item><title>為 windows 10，換一顆硬碟</title><link>https://mariolong.github.io/posts/replace-new-hard-disk/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 昨晚，開啓 windows 10 時，速度變得很慢，等了好久，好不容易才進入
 windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
 &lt;/p&gt;
 
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
+&lt;div id="outline-container-org24d54e9" class="outline-2"&gt;
+&lt;h2 id="org24d54e9"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
@@ -193,30 +498,22 @@ unable to complete, or interface CRC (with ICRC).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
+&lt;div id="outline-container-org6f3a60b" class="outline-2"&gt;
+&lt;h2 id="org6f3a60b"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 過程如下：
 &lt;/p&gt;
 
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; setup HD: connect to computer
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; gparted: create partition and format it in NTFS. &lt;b&gt;結果是在 windows 10 中做 partition 和 format.&lt;/b&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; SMART check both old and new HD
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; mount to linux
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; sync from old to new HD: &lt;code&gt;rsync -av &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;&lt;/code&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; disconnet old HD, reboot to windows 10
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[X]&lt;/code&gt; set new HD to disk D:
-&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; setup HD: connect to computer&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; gparted: create partition and format it in NTFS. &lt;b&gt;結果是在 windows 10 中做 partition 和 format.&lt;/b&gt;&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; SMART check both old and new HD&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; mount to linux&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; sync from old to new HD: &lt;code&gt;rsync -av &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; disconnet old HD, reboot to windows 10&lt;/li&gt;
+&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; set new HD to disk D:&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;
@@ -361,7 +658,7 @@ SOURCE: LINE
 &lt;/p&gt;
 
 &lt;p&gt;
-走路運動….不是趕路運動。輕鬆走，慢慢走；天熱/帶條毛巾；天涼/帶件薄外套。
+走路運動….不是趕路運動。輕鬆走，慢慢走；天熱&lt;i&gt;帶條毛巾；天涼&lt;/i&gt;帶件薄外套。
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -426,454 +723,4 @@ D. 多流汗！
 
 &lt;p&gt;
 ◎＂氧＂是身體治病救命的靈丹，它決定腺體調節能力，免疫系統的強弱，更掌控了癌症病人的生殺大權！
-&lt;/p&gt;</description><category>health</category><category>walking</category><guid>https://mariolong.github.io/posts/walking/</guid><pubDate>Tue, 22 May 2018 04:36:56 GMT</pubDate></item><item><title>錯誤時間睡覺，傷神又耗氣！</title><link>https://mariolong.github.io/posts/wrong-time-go-to-bed/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-SOURCE: &lt;a href="https://health.businessweekly.com.tw/AArticle.aspx?ID=ARTL000099919&amp;amp;p=2"&gt;錯誤時間睡覺，傷神又耗氣！&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;b&gt;養生方法不在多寡，在於能否持之以恆&lt;/b&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-養生 Tips
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;上午散步 30 分鐘、晚餐後再走 30 分鐘，早晚各 5,000 步，達天天萬步目標。
-&lt;/li&gt;
-&lt;li&gt;早晚各做 5 次自創扭轉運動。
-&lt;/li&gt;
-&lt;li&gt;常按摩雙眼周圍的穴位，增加眼睛血液循環，減少乾澀、疲倦症狀。
-&lt;/li&gt;
-&lt;li&gt;天天喝養生精力飲，用堅果、薏仁、燕麥、黑芝麻或黃豆（建議勿超過 5
-種），加水或牛奶 350c.c.打成汁喝。喝茶外，也喝可可、咖啡，飲食以五穀雜糧為主，多吃堅果、豆類、蔬菜水果。
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;
-標題不知誰下的，整篇没看到「睡覺時間」。&lt;/p&gt;</description><category>health</category><category>sleep</category><guid>https://mariolong.github.io/posts/wrong-time-go-to-bed/</guid><pubDate>Tue, 22 May 2018 04:07:58 GMT</pubDate></item><item><title>【謠言】愛惜大腸，空腹吃水果</title><link>https://mariolong.github.io/posts/eat-fruit-as-empty-stomach/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-網路上常會有一些「善心人士」轉傳他們認的好文，我想大家的初衷也是想幫忙人，只是未經查證或没有能力查證，只能直接轉傳，可也造成了困擾。如果重症患者誤信了没有根據的方法，後果不堪設想。
-&lt;/p&gt;
-
-&lt;p&gt;
-今天看到這篇 &lt;a href="https://emo.nidbox.com/diary/read/7697859"&gt;愛惜大腸，空腹吃水果(台大醫院胃腸科王正一醫師的忠告)&lt;/a&gt; 覺得不錯，想留個記錄，再一次 google，發現了下面這篇
- &lt;a href="https://www.mygopen.com/2016/03/blog-post_1.html"&gt;【假知識】空腹吃水果會抗癌？王正一醫師說他從沒寫過這種東西！ ~ MyGoPen｜這是假消息&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-哈哈，直接把結論節錄如後：
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-闢謠網站 Snopes.com 報告指出，這則「空腹吃水果抗癌」，最早在 2001 年出現，來自新加坡廚藝作家 Devagi Sanmugam 在 1998 年的著作《吃水果的正確方法（The Correct Way of Eating Fruits）》，之後文章出現變種版，在
-2002 年以後流傳的版本，才又多了後面水果功效的部份。甚至轉到中文版，亂出現其他台大醫生的說詞，原信中提到的「赫伯博士( Dr. Herbert Shelton)」，並沒有醫學學位，還曾因為無照行醫被逮捕了好幾次；而這位赫伯博士，在
-1985 年已逝世。真的純屬謠言一則，請不要再傳這種假消息了！
-&lt;/p&gt;
-&lt;/blockquote&gt;</description><category>food</category><category>fruit</category><guid>https://mariolong.github.io/posts/eat-fruit-as-empty-stomach/</guid><pubDate>Wed, 16 May 2018 08:44:08 GMT</pubDate></item><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="table-of-contents"&gt;
-&lt;h2&gt;目錄&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0eba8b7"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0479869"&gt;2. 設定&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org679b822"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org13bc6e6"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgb1154c6"&gt;2.3. org-mod&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfb23e60"&gt;2.3.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org2fd9985"&gt;2.3.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org78be690"&gt;2.3.3. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org292b230"&gt;2.3.4. Inline verbatim and code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgad197ad"&gt;2.4. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgd343d12"&gt;2.4.1. Initialize a Nikola site, if you haven’t already.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfe5b84a"&gt;2.4.2. Initialize a git repository in your Nikola source directory by running:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgd873299"&gt;2.4.3. Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgac8767d"&gt;2.4.4. Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org31f15d9"&gt;2.4.5. Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org99ff7b7"&gt;2.4.6. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org90a7138"&gt;3. 開始使用&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;
-掙扎了許久，還是先用 &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt; 記錄一些事，畢竟比較熟悉，能快一點上手。
-&lt;/p&gt;
-
-&lt;div id="outline-container-org0eba8b7" class="outline-2"&gt;
-&lt;h2 id="org0eba8b7"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 安裝&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip nikola
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org0479869" class="outline-2"&gt;
-&lt;h2 id="org0479869"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 設定&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
-執行 &lt;code&gt;nikola init&lt;/code&gt; 後，依指示設定，比較省事。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola init &amp;lt;blog-name&amp;gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;blog-name&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org679b822" class="outline-3"&gt;
-&lt;h3 id="org679b822"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; configuration file&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-1"&gt;
-&lt;p&gt;
-修改 &lt;code&gt;conf.py&lt;/code&gt; ，慢慢改，內容很多，不必急於一時。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org13bc6e6" class="outline-3"&gt;
-&lt;h3 id="org13bc6e6"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; theme&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme install bootstrap
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgb1154c6" class="outline-3"&gt;
-&lt;h3 id="orgb1154c6"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; org-mod&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-3"&gt;
-&lt;p&gt;
-先安裝 plugin orgmode，再做一點點微調即可。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola plugin -i orgmode
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-開啟 &lt;code&gt;&amp;lt;blog-name&amp;gt;/plugins/orgmode/init.el&lt;/code&gt; ，加上以下的程式碼。
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgfb23e60" class="outline-4"&gt;
-&lt;h4 id="orgfb23e60"&gt;&lt;span class="section-number-4"&gt;2.3.1&lt;/span&gt; 刪除不必要的空白&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-1"&gt;
-&lt;p&gt;
-換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; https://coldnew.github.io/a1ed40e3/&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-html-paragraph&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;before&lt;/span&gt; &lt;span class="nv"&gt;org-html-paragraph-advice&lt;/span&gt;
-				      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;paragraph&lt;/span&gt; &lt;span class="nv"&gt;contents&lt;/span&gt; &lt;span class="nv"&gt;info&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;activate&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="s"&gt;"Join consecutive Chinese lines into a single long line without&lt;/span&gt;
-&lt;span class="s"&gt;unwanted space when exporting org-mode to html."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let* &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origin-contents&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;ad-get-arg&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;fix-regexp&lt;/span&gt; &lt;span class="s"&gt;"[[:multibyte:]]"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;fixed-contents&lt;/span&gt;
-	  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;replace-regexp-in-string&lt;/span&gt;
-	   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;concat&lt;/span&gt;
-	    &lt;span class="s"&gt;"\\("&lt;/span&gt; &lt;span class="nv"&gt;fix-regexp&lt;/span&gt; &lt;span class="s"&gt;"\\) *\n *\\("&lt;/span&gt; &lt;span class="nv"&gt;fix-regexp&lt;/span&gt; &lt;span class="s"&gt;"\\)"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"\\1\\2"&lt;/span&gt; &lt;span class="nv"&gt;origin-contents&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;ad-set-arg&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;fixed-contents&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org2fd9985" class="outline-4"&gt;
-&lt;h4 id="org2fd9985"&gt;&lt;span class="section-number-4"&gt;2.3.2&lt;/span&gt; Convert inline verbatim to kbd when HTML export&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-2"&gt;
-&lt;p&gt;
-ref: &lt;a href="https://emacs-china.org/t/org-mode/1165"&gt;https://emacs-china.org/t/org-mode/1165&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-change &lt;kbd&gt;verbatim&lt;/kbd&gt; to &lt;kbd&gt;kbd&lt;/kbd&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;code&gt;code&lt;/code&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-html-text-markup-alist&lt;/span&gt;
-      &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;bold&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;b&amp;gt;%s&amp;lt;/b&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;code&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;code&amp;gt;%s&amp;lt;/code&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;italic&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;i&amp;gt;%s&amp;lt;/i&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;strike-through&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;del&amp;gt;%s&amp;lt;/del&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;underline&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;span class=\"underline\"&amp;gt;%s&amp;lt;/span&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;verbatim&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;kbd&amp;gt;%s&amp;lt;/kbd&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org78be690" class="outline-4"&gt;
-&lt;h4 id="org78be690"&gt;&lt;span class="section-number-4"&gt;2.3.3&lt;/span&gt; 用 pygment 幫程式碼著色&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; themes/your-theme-name/assets/css
-$ pygmentize -S emacs -a .highlight -f html &amp;gt; pygment.css
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-org292b230" class="outline-4"&gt;
-&lt;h4 id="org292b230"&gt;&lt;span class="section-number-4"&gt;2.3.4&lt;/span&gt; Inline verbatim and code&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-4"&gt;
-&lt;p&gt;
-如果有中文字要強調時，原本是要加上空白，如下：
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-~hello~ hh
-=hello= hh
-*star* s
-+中文+ 測試
-/中文/ 測試
-&lt;/pre&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;hello&lt;/code&gt; hh&lt;/li&gt;
-&lt;li&gt;&lt;kbd&gt;hello&lt;/kbd&gt; hh&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;star&lt;/b&gt; s&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;中文&lt;/del&gt; 測試&lt;/li&gt;
-&lt;li&gt;&lt;i&gt;中文&lt;/i&gt; 測試&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-實在是不符習慣。google 了許久，加上一些實驗，終於找到以下的解法：
-&lt;/p&gt;
-
-&lt;p&gt;
-開啟 &lt;code&gt;&amp;lt;blog-name&amp;gt;/plugins/orgmode/init.el&lt;/code&gt; ，加上以下的程式碼。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setcar&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt; &lt;span class="s"&gt;" \t('\"{[:alpha:]"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nthcdr&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"[:alpha:]- \t.,:!?;'\")}\\"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;org-set-emph-re&lt;/span&gt; &lt;span class="ss"&gt;'org-emphasis-regexp-components&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-結果如下：
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-- 測試~code~測試
-- 測試=kbd=測試
-- 測試*star*測試
-- *star*s
-- ~中文~測試
-- =中文=測試
-- *中文*測試
-- +中文+測試
-- /中文/測試
-&lt;/pre&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;測試&lt;code&gt;code&lt;/code&gt;測試&lt;/li&gt;
-&lt;li&gt;測試&lt;kbd&gt;kbd&lt;/kbd&gt;測試&lt;/li&gt;
-&lt;li&gt;測試&lt;b&gt;star&lt;/b&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;star&lt;/b&gt;s&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;中文&lt;/code&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;kbd&gt;中文&lt;/kbd&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;中文&lt;/b&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;中文&lt;/del&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;i&gt;中文&lt;/i&gt;測試&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgad197ad" class="outline-3"&gt;
-&lt;h3 id="orgad197ad"&gt;&lt;span class="section-number-3"&gt;2.4&lt;/span&gt; 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-4"&gt;
-&lt;p&gt;
-REF: &lt;a href="https://getnikola.com/handbook.html#deploying-to-github"&gt;https://getnikola.com/handbook.html#deploying-to-github&lt;/a&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgd343d12" class="outline-4"&gt;
-&lt;h4 id="orgd343d12"&gt;&lt;span class="section-number-4"&gt;2.4.1&lt;/span&gt; Initialize a Nikola site, if you haven’t already.&lt;/h4&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgfe5b84a" class="outline-4"&gt;
-&lt;h4 id="orgfe5b84a"&gt;&lt;span class="section-number-4"&gt;2.4.2&lt;/span&gt; Initialize a git repository in your Nikola source directory by running:&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
-git remote add origin git@github.com:user/user.github.io
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgd873299" class="outline-4"&gt;
-&lt;h4 id="orgd873299"&gt;&lt;span class="section-number-4"&gt;2.4.3&lt;/span&gt; Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-3"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
-will be deployed. It should be gh-pages for project pages and master
-for user pages (&lt;b&gt;user.github.io&lt;/b&gt;).&lt;/li&gt;
-
-&lt;li&gt;GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-will be deployed. We recommend and default to &lt;b&gt;src&lt;/b&gt;.&lt;/li&gt;
-
-&lt;li&gt;GITHUB_REMOTE_NAME is the remote to which changes are pushed.&lt;/li&gt;
-
-&lt;li&gt;GITHUB_COMMIT_SOURCE controls whether or not the source branch is
-automatically committed to and pushed. We recommend setting it to
-&lt;b&gt;True&lt;/b&gt;, unless you are automating builds with Travis CI.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgac8767d" class="outline-4"&gt;
-&lt;h4 id="orgac8767d"&gt;&lt;span class="section-number-4"&gt;2.4.4&lt;/span&gt; Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-4"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cache
-.doit.db
-__pycache__
-output
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-If you set GITHUB_COMMIT_SOURCE to &lt;b&gt;False&lt;/b&gt;, you must switch to your
-source branch and commit to it. Otherwise, this is done for you.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org31f15d9" class="outline-4"&gt;
-&lt;h4 id="org31f15d9"&gt;&lt;span class="section-number-4"&gt;2.4.5&lt;/span&gt; Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-5"&gt;
-&lt;p&gt;
-This will &lt;b&gt;build&lt;/b&gt; the site, &lt;b&gt;commit&lt;/b&gt; the output folder to your deploy
-branch, and &lt;b&gt;push&lt;/b&gt; to GitHub.  Your website should be up and running
-within a few minutes.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org99ff7b7" class="outline-4"&gt;
-&lt;h4 id="org99ff7b7"&gt;&lt;span class="section-number-4"&gt;2.4.6&lt;/span&gt; 在 nikola github_deploy 之前&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-6"&gt;
-&lt;p&gt;
-為了要能用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 指令，有以下的準備工作：
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;a id="orgf904216"&gt;&lt;/a&gt;install ghp_import2&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-4-6-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pip install ghp_import2
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="org33ce532"&gt;&lt;/a&gt;install and setup ssh&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-4-6-2"&gt;
-&lt;p&gt;
-為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;a id="org10c1542"&gt;&lt;/a&gt;install openssh&lt;br&gt;
-&lt;div class="outline-text-6" id="text-2-4-6-2-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S openssh
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="orgac0430e"&gt;&lt;/a&gt;follow github help page to add ssh connect to github&lt;br&gt;
-&lt;div class="outline-text-6" id="text-2-4-6-2-2"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"&gt;Generating a new SSH key and adding it to the ssh-agent - User Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/working-with-ssh-key-passphrases/"&gt;Working with SSH key passphrases - User Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;a id="orgd7a59b9"&gt;&lt;/a&gt;產生 ssh key&lt;br&gt;
-&lt;div class="outline-text-7" id="text-2-4-6-2-2-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b &lt;span class="m"&gt;4096&lt;/span&gt; -C &lt;span class="s2"&gt;"your_email@example.com"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-螢幕上會出現
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase &lt;span class="k"&gt;for&lt;/span&gt; key &lt;span class="s1"&gt;'/home/USERNAME/.ssh/id_rsa'&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-此時不要輸入密碼，直接按 &lt;kbd&gt;Enter&lt;/kbd&gt; ，否則未來 &lt;code&gt;nikola github_deploy&lt;/code&gt; 時，就要每次輸入密碼。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="org5ee2110"&gt;&lt;/a&gt;將 ssh key 加到 github 中&lt;br&gt;
-&lt;div class="outline-text-7" id="text-2-4-6-2-2-2"&gt;
-&lt;p&gt;
-依 &lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt; 執行
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="orgd79f7d7"&gt;&lt;/a&gt;確定以 ssh 連上 github (不能是 https)&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-4-6-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git remote -v
-origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;fetch&lt;span class="o"&gt;)&lt;/span&gt;
-origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;push&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-如果不是，要用以下指令修正。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote set-url origin git@github.com:mariolong/mariolong.github.io
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org90a7138" class="outline-2"&gt;
-&lt;h2 id="org90a7138"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 開始使用&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;p&gt;
-建立新的文章，
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new-post -e -f orgmod
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-寫完就 build
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola build
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-或發佈吧！
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola github_deploy
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-一切都就緒了，那就開始專心寫文章吧！
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><category>health</category><category>walking</category><guid>https://mariolong.github.io/posts/walking/</guid><pubDate>Tue, 22 May 2018 04:36:56 GMT</pubDate></item></channel></rss>

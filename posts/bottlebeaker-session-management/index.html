@@ -103,54 +103,54 @@ import bottle
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>直接看程式碼：</p>
-<pre class="code python"><a name="rest_code_ca555b2b0ebe432685962d23b4462175-1"></a><span class="kn">import</span> <span class="nn">beaker.middleware</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-2"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">mako_view</span> <span class="k">as</span> <span class="n">view</span><span class="p">,</span> <span class="n">mako_template</span> <span class="k">as</span> <span class="n">template</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-3"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">hook</span><span class="p">,</span> <span class="n">static_file</span><span class="p">,</span> <span class="n">request</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-4"></a><span class="kn">import</span> <span class="nn">bottle</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-5"></a>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-6"></a><span class="c1">## Beaker middleware</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-7"></a><span class="c1"># set up beaker session state middleware</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-8"></a><span class="n">_session_opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'session.type'</span><span class="p">:</span> <span class="s1">'memory'</span><span class="p">,</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-9"></a>                                 <span class="s1">'session.auto'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-10"></a>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-11"></a><span class="c1"># wrap the bottle app in a beaker</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-12"></a><span class="n">_app</span> <span class="o">=</span> <span class="n">beaker</span><span class="o">.</span><span class="n">middleware</span><span class="o">.</span><span class="n">SessionMiddleware</span><span class="p">(</span><span class="n">bottle</span><span class="o">.</span><span class="n">app</span><span class="p">(),</span> <span class="n">_session_opts</span><span class="p">)</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-13"></a>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-14"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-15"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-16"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-17"></a>        <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-18"></a>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-19"></a><span class="k">def</span> <span class="nf">_init_root</span><span class="p">():</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-20"></a>        <span class="k">if</span> <span class="s1">'user_session'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-21"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Something</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-22"></a>        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-23"></a>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-24"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-25"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'market.tmpl'</span><span class="p">)</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-26"></a><span class="k">def</span> <span class="nf">market</span><span class="p">():</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-27"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">_init_root</span><span class="p">()</span>
-<a name="rest_code_ca555b2b0ebe432685962d23b4462175-28"></a>        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_6ef5f4e2924d47819b907fff01271db6-1"></a><span class="kn">import</span> <span class="nn">beaker.middleware</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-2"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">mako_view</span> <span class="k">as</span> <span class="n">view</span><span class="p">,</span> <span class="n">mako_template</span> <span class="k">as</span> <span class="n">template</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-3"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">hook</span><span class="p">,</span> <span class="n">static_file</span><span class="p">,</span> <span class="n">request</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-4"></a><span class="kn">import</span> <span class="nn">bottle</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-5"></a>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-6"></a><span class="c1">## Beaker middleware</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-7"></a><span class="c1"># set up beaker session state middleware</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-8"></a><span class="n">_session_opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'session.type'</span><span class="p">:</span> <span class="s1">'memory'</span><span class="p">,</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-9"></a>                                 <span class="s1">'session.auto'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-10"></a>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-11"></a><span class="c1"># wrap the bottle app in a beaker</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-12"></a><span class="n">_app</span> <span class="o">=</span> <span class="n">beaker</span><span class="o">.</span><span class="n">middleware</span><span class="o">.</span><span class="n">SessionMiddleware</span><span class="p">(</span><span class="n">bottle</span><span class="o">.</span><span class="n">app</span><span class="p">(),</span> <span class="n">_session_opts</span><span class="p">)</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-13"></a>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-14"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-15"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-16"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-17"></a>        <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-18"></a>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-19"></a><span class="k">def</span> <span class="nf">_init_root</span><span class="p">():</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-20"></a>        <span class="k">if</span> <span class="s1">'user_session'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-21"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Something</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-22"></a>        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-23"></a>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-24"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-25"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'market.tmpl'</span><span class="p">)</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-26"></a><span class="k">def</span> <span class="nf">market</span><span class="p">():</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-27"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">_init_root</span><span class="p">()</span>
+<a name="rest_code_6ef5f4e2924d47819b907fff01271db6-28"></a>        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
 </pre>
 <p>其中 hook 這一段，設定只要有 request，就會先執行下面的程式：</p>
-<pre class="code python"><a name="rest_code_3306546f068b489b880fda7a33f1d2d8-1"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
-<a name="rest_code_3306546f068b489b880fda7a33f1d2d8-2"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
-<a name="rest_code_3306546f068b489b880fda7a33f1d2d8-3"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
-<a name="rest_code_3306546f068b489b880fda7a33f1d2d8-4"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
+<pre class="code python"><a name="rest_code_32d5c9065df74e8ab267aed05bbf3bbb-1"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
+<a name="rest_code_32d5c9065df74e8ab267aed05bbf3bbb-2"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
+<a name="rest_code_32d5c9065df74e8ab267aed05bbf3bbb-3"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
+<a name="rest_code_32d5c9065df74e8ab267aed05bbf3bbb-4"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
 </pre>
 <p>在 route 中可以用下列方法取得 session 資料：</p>
-<pre class="code python"><a name="rest_code_0b9b666e273d45a287bfbf939ab07284-1"></a><span class="c1"># web server start here</span>
-<a name="rest_code_0b9b666e273d45a287bfbf939ab07284-2"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/stk/&lt;sid&gt;'</span><span class="p">)</span>
-<a name="rest_code_0b9b666e273d45a287bfbf939ab07284-3"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'stkinfo.tmpl'</span><span class="p">)</span>
-<a name="rest_code_0b9b666e273d45a287bfbf939ab07284-4"></a><span class="k">def</span> <span class="nf">stkinfo</span><span class="p">(</span><span class="n">sid</span><span class="p">):</span>
-<a name="rest_code_0b9b666e273d45a287bfbf939ab07284-5"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
-<a name="rest_code_0b9b666e273d45a287bfbf939ab07284-6"></a><span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_cd49ba146e99439cb996f5e0384e42b7-1"></a><span class="c1"># web server start here</span>
+<a name="rest_code_cd49ba146e99439cb996f5e0384e42b7-2"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/stk/&lt;sid&gt;'</span><span class="p">)</span>
+<a name="rest_code_cd49ba146e99439cb996f5e0384e42b7-3"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'stkinfo.tmpl'</span><span class="p">)</span>
+<a name="rest_code_cd49ba146e99439cb996f5e0384e42b7-4"></a><span class="k">def</span> <span class="nf">stkinfo</span><span class="p">(</span><span class="n">sid</span><span class="p">):</span>
+<a name="rest_code_cd49ba146e99439cb996f5e0384e42b7-5"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
+<a name="rest_code_cd49ba146e99439cb996f5e0384e42b7-6"></a><span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">)</span>
 </pre>
 <p>在程式檔的最後加上讓程式可以執行：</p>
-<pre class="code python"><a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-2"></a>        <span class="n">bottle</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">_app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-3"></a><span class="k">else</span><span class="p">:</span>
-<a name="rest_code_fa760f54ed464f6abbad3e5b21652e5c-4"></a>        <span class="n">application</span> <span class="o">=</span> <span class="n">_app</span>
+<pre class="code python"><a name="rest_code_409a615e564243938cc127924be0148c-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_409a615e564243938cc127924be0148c-2"></a>        <span class="n">bottle</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">_app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_409a615e564243938cc127924be0148c-3"></a><span class="k">else</span><span class="p">:</span>
+<a name="rest_code_409a615e564243938cc127924be0148c-4"></a>        <span class="n">application</span> <span class="o">=</span> <span class="n">_app</span>
 </pre>
 <p>其中 <tt class="docutils literal">application</tt> 是 python 和 uwsgi 溝通的物件，和 beaker 沒有關係。</p>
 </div>
