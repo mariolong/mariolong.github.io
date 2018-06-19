@@ -218,7 +218,6 @@ zh_CN.UTF-8 UTF-8
 
 把以上全部打開。
 
-
 *** 使 locale 生效
 
 #+BEGIN_SRC sh
@@ -239,7 +238,6 @@ nano /etc/locale.conf
 #+END_SRC
 
 修改 ~LANG~, 主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
-
 #+BEGIN_EXAMPLE
 LANG=en_US.UTF-8
 #+END_EXAMPLE
@@ -254,7 +252,6 @@ setconsolefont ter-128n
 #+END_SRC
 
 The FONT variable in ~/etc/vconsole.conf~ is used to set the font at boot, persistently for all consoles.[fn:1]
-
 
 #+BEGIN_SRC sh
 nano /etc/vconsole.conf
@@ -390,7 +387,7 @@ grub-install --target=i386-pc --recheck /dev/sda  ## 安裝到 boot 區
 #+END_SRC
 
 ** 自動尋找其它的 OS
-如果有其他的 OS，這個就很重要。
+如果有其他的 OS，這個就很重要。 :
 
 #+BEGIN_SRC sh
 pacman -S os-prober
@@ -462,7 +459,7 @@ pacman -S sudo
 EDITOR=nano visudo
 #+END_SRC
 
-允許 wheel 用戶組成員無密碼使用 sudo：
+允許 wheel 用戶組成員無密碼使用 sudo： :
 
 #+BEGIN_SRC sh
 visudo
@@ -474,7 +471,7 @@ visudo
 %wheel ALL=(ALL) NOPASSWD:ALL
 #+END_SRC
 
-再來是設定 sudo，隨便找一個空白行加上：
+再來是設定 sudo，隨便找一個空白行加上： :
 
 #+BEGIN_SRC conf
 username ALL=(ALL) ALL
@@ -482,7 +479,7 @@ username ALL=(ALL) ALL
 
 ** 登出，並以新的用戶名稱登入
 ** 設定聲音 alas
-安裝音效驅動，直接用 alas，不要考慮太多。
+安裝音效驅動，直接用 alas，不要考慮太多。 :
 
 #+BEGIN_SRC sh
 yaourt -S alsa-utils
@@ -511,7 +508,6 @@ amixer sset Master unmute
 #+BEGIN_SRC sh
 speaker-test -c 2
 #+END_SRC
-
 
 ** 安裝 x11
 
