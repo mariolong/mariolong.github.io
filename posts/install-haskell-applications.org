@@ -66,7 +66,7 @@ yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
 
 [[https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29][Building statically linked packages with Cabal (without using shared libraries)]]
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC sh
 stack setup --system-ghc
 stack install --system-ghc cabal-install
 #+END_SRC
@@ -150,7 +150,7 @@ cabal install pandoc
 * Issues
 
 ** system tray 中 dropbox 的字型太小
-dropbox 是 QT application，taffybar 是 gtk application，所以要調理一下，我用的法子是加上環境變數：
+dropbox 是 QT application，taffybar 是 gtk application，所以要調整一下，我用的法子是加上環境變數：
 
 #+BEGIN_SRC sh
 export QT_STYLE_OVERRIDE=GTK+

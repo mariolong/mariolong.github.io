@@ -1,0 +1,104 @@
+#+BEGIN_COMMENT
+.. title: Start emacs with systemd
+.. slug: start-emacs-with-systemd
+.. date: 2018-06-17 13:49:50 UTC+08:00
+.. status: draft
+.. tags: emacs, systemd
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+emacs version 26.1 systemd support
+
+* 設定
+
+** start emacs via systemd
+
+#+BEGIN_SRC sh
+systemdctl --user start emacs
+#+END_SRC
+
+** emacs.service
+
+還是要設定一下 emacs.service.
+
+將 ~/usr/lib/systemd/user/emacs.service~, 複製一份到 ~/.config/systemd/user~ 中修改。
+
+#+BEGIN_SRC sh
+cp /usr/lib/systemd/user/emacs.service /home/mario/.config/systemd/user/emacs.service
+#+END_SRC
+
+*** 中文輸入法
+
+在 ~emacs.service~ 中加上以下指令，才能在 emacs 中使用 fcitx.
+
+#+BEGIN_SRC systemd
+Environment=DISPLAY=:0
+Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8
+Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
+#+END_SRC
+
+*** shell term
+
+設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
+
+#+BEGIN_SRC systemd
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/mario/.bin:/home/mario/.cabal/bin:/home/mario/.local/bin:/home/mario/.gem/ruby/2.5.0/bin
+#+END_SRC
+
+*** final emacs.service
+
+最後 emacs.service 的設定。
+
+#+BEGIN_SRC systemd
+[Unit]
+Description=Emacs text editor
+Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/emacs --fg-daemon
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Restart=on-failure
+
+Environment=SSH_AUTH_SOCK=%t/keyring/ssh
+Environment=DISPLAY=:0
+Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8
+Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/mario/.bin:/home/mario/.cabal/bin:/home/mario/.local/bin:/home/mario/.gem/ruby/2.5.0/bin
+
+[Install]
+WantedBy=default.target
+#+END_SRC
+
+** 修改 init.el
+package server is unnecessary. 可以刪除。
+
+#+BEGIN_SRC emacs-lisp
+  (use-package server
+    :commands (server-running-p)
+    :init
+    (unless (server-running-p)
+      (server-start)))
+#+END_SRC
+
+** restart emacs via systemd
+
+#+BEGIN_SRC sh
+systemdctl --user restart emacs
+#+END_SRC
+
+實際上，在 emacs 中執行 ~(kill-emacs)~ 即可重啓 emacs.
+
+觀察：emacs.service 中有下列指令：
+#+BEGIN_SRC systemd
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Restart=on-failure
+#+END_SRC
+
+* 結語
+emacs 26.1 支援 systemd 真的不錯。

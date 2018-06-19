@@ -15,7 +15,7 @@
 ;;; Add any custom configuration that you would like to 'conf.el'.
 (setq nikola-use-pygments t
       org-export-with-toc nil
-      org-export-with-section-numbers t
+	  org-export-with-section-numbers t
       org-startup-folded 'showeverything)
 
 ;; Load additional configuration from conf.el
@@ -59,6 +59,7 @@
     ("awk" . "awk")
     ("c" . "c")
     ("c++" . "cpp")
+	("conf" . "ini")
     ("cpp" . "cpp")
     ("clojure" . "clojure")
     ("css" . "css")
@@ -68,6 +69,7 @@
     ("gnuplot" . "gnuplot")
     ("groovy" . "groovy")
     ("haskell" . "haskell")
+	("ini" . "ini")
     ("java" . "java")
     ("js" . "js")
     ("julia" . "julia")
@@ -75,9 +77,11 @@
     ("lisp" . "lisp")
     ("makefile" . "makefile")
     ("matlab" . "matlab")
-    ("mscgen" . "mscgen")
+	("mysql" . "mysql")
+	("mscgen" . "mscgen")
     ("ocaml" . "ocaml")
     ("octave" . "octave")
+	("pacmanconf" . "pacmanconf")
     ("perl" . "perl")
     ("picolisp" . "scheme")
     ("python" . "python")
@@ -86,7 +90,9 @@
     ("sass" . "sass")
     ("scala" . "scala")
     ("scheme" . "scheme")
+	("systemd" . "sv")
     ("sh" . "sh")
+	("shell" . "sh")
     ("sql" . "sql")
     ("sqlite" . "sqlite3")
     ("tcl" . "tcl"))
@@ -123,7 +129,7 @@ specified location."
   (with-current-buffer (find-file infile)
     (org-macro-replace-all nikola-macro-templates)
     (org-html-export-as-html nil nil t t)
-    (write-file outfile nil)))
+	(write-file outfile nil)))
 
 ;; https://coldnew.github.io/a1ed40e3/
 (defadvice org-html-paragraph (before org-html-paragraph-advice
@@ -136,35 +142,7 @@ unwanted space when exporting org-mode to html."
           (replace-regexp-in-string
            (concat
             "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" origin-contents)))
-
-    (ad-set-arg 1 fixed-contents)))
-
-
-;; https://github.com/emacs-china/emacs-china.github.io/blob/master/blog/FengShu/org-remove-useless-space-between-chinese.org
-(defun eh-org-clean-space (text backend info)
-  "在export为HTML时，删除中文之间不必要的空格"
-  (when (org-export-derived-backend-p backend 'html)
-    (let ((regexp "[[:multibyte:]]")
-          (string text))
-      ;; org默认将一个换行符转换为空格，但中文不需要这个空格，删除。
-      (setq string
-            (replace-regexp-in-string
-             (format "\\(%s\\) *\n *\\(%s\\)" regexp regexp)
-             "\\1\\2" string))
-      ;; 删除粗体之前的空格
-      (setq string
-            (replace-regexp-in-string
-             (format "\\(%s\\) +\\(<\\)" regexp)
-             "\\1\\2" string))
-      ;; 删除粗体之后的空格
-      (setq string
-            (replace-regexp-in-string
-             (format "\\(>\\) +\\(%s\\)" regexp)
-             "\\1\\2" string))
-      string)))
-
-;; (add-to-list 'org-export-filter-paragraph-functions
-;; 'eh-org-clean-space)
+	(ad-set-arg 1 fixed-contents)))
 
 (setq org-html-text-markup-alist '((bold . "<b>%s</b>")
 								   (code . "<code>%s</code>")
@@ -173,8 +151,6 @@ unwanted space when exporting org-mode to html."
 								   (underline . "<span class=\"underline\">%s</span>")
 								   (verbatim . "<kbd>%s</kbd>")))
 
-
 (setcar org-emphasis-regexp-components " \t('\"{[:alpha:]")
 (setcar (nthcdr 1 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
-;; (setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n,\"")
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)

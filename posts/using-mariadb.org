@@ -1,0 +1,51 @@
+#+BEGIN_COMMENT
+.. title: Using Mariadb
+.. slug: using-mariadb
+.. date: 2018-06-15 18:03:15 UTC+08:00
+.. tags: mysql, mariadb
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+* change root password
+
+#+BEGIN_SRC mysql
+mysql> use mysql;
+mysql> UPDATE user SET Password=PASSWORD("password") WHERE User='root';
+mysql> flush privileges;
+mysql> quit
+#+END_SRC
+
+* commands
+
+** create user
+
+#+BEGIN_SRC mysql
+mysql> CREATE USER 'stock'@'localhost' IDENTIFIED BY 'password';
+mysql> GRANT ALL PRIVILEGES ON stock.* TO 'stock'@'localhost' WITH GRANT OPTION;
+mysql> SHOW GRANTS FOR 'stock'@'localhost';
++--------------------------------------------------------------------------------------------------------------+
+| Grants for stock@localhost                                                                                   |
++--------------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'stock'@'localhost' IDENTIFIED BY PASSWORD '*DAE5C577E73995AE12C81FF21F2A6336BD9D2F1F' |
+| GRANT ALL PRIVILEGES ON `stock`.* TO 'stock'@'localhost' WITH GRANT OPTION                                   |
++--------------------------------------------------------------------------------------------------------------+
+#+END_SRC
+
+** show database*s*
+
+*注意*: database 和 table 的名稱，在 linux 中會區分大小寫。
+
+#+BEGIN_SRC mysql
+SHOW DATABASES
+#+END_SRC
+
+** use <db-name>
+
+#+BEGIN_SRC mysql
+USE stock
+#+END_SRC

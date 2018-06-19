@@ -82,14 +82,6 @@ change =verbatim= to =kbd=
           (verbatim . "<kbd>%s</kbd>")))
 #+END_SRC
 
-*** 用 pygment 幫程式碼著色
-
-#+BEGIN_SRC sh
-$ cd themes/your-theme-name/assets/css
-$ pygmentize -S emacs -a .highlight -f html > pygment.css
-#+END_SRC
-
-
 *** Inline verbatim and code
 如果有中文字要強調時，原本是要加上空白，如下：
 
@@ -141,12 +133,107 @@ $ pygmentize -S emacs -a .highlight -f html > pygment.css
 - +中文+測試
 - /中文/測試
 
+*** 用 pygment 幫程式碼著色
+
+**** 如果不想高亮程式碼
+在 ~init.el~ 設定 ~nikola-use-pygments~ 為 ~nil~.
+#+BEGIN_SRC emacs-lisp
+(setq nikola-use-pygments nil)
+#+END_SRC
+
+**** 產生 pygments.css
+#+BEGIN_SRC sh
+$ cd themes/your-theme-name/assets/css
+$ pygmentize -S emacs -a .highlight -f html > pygments.css
+#+END_SRC
+
+**** 設定 pygments 可支援的語言
+我目前加上 ini, systemd, shell. 可參考
+http://orgmode.org/worg/org-contrib/babel/languages.html
+和
+http://pygments.org/docs/lexers/
+增減。
+
+#+BEGIN_SRC emacs-lisp
+(defconst org-pygments-language-alist
+  '(("asymptote" . "asymptote")
+    ("conf" . "ini")
+    ("ini" . "ini")
+    ("systemd" . "sv")
+    ("shell" . "sh")
+    ("tcl" . "tcl"))
+  "Alist between org-babel languages and Pygments lexers.
+lang is downcased before assoc, so use lowercase to describe language available.
+See: http://orgmode.org/worg/org-contrib/babel/languages.html and
+http://pygments.org/docs/lexers/ for adding new languages to the mapping.")
+#+END_SRC
+
+**** 程式碼縮排
+如果要保留整體縮排，加上：
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-preserve-indentation t)
+#+END_SRC
+
+不過，我覺得預設的 ~nil~ 可能好看點。
+
+**** 如果不想用 pygments
+其實我根本不想用 pygments，只想用內定的高亮型式。
+於是找到 ~init.el~ 把 ~org-html-src-block~ 函數刪掉。
+
+#+BEGIN_SRC emacs-lisp
+;; Override the html export function to use pygments
+;; (defun org-html-src-block (src-block contents info)
+#+END_SRC
+
+並加上
+#+BEGIN_SRC emacs-lisp
+  (setq nikola-use-pygments nil
+        org-html-htmlize-output-type 'css)
+#+END_SRC
+
+*** text block
+
+#+BEGIN_SRC sh
+shell commands
+cd /cd/dir
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+shell command output
+#+END_EXAMPLE
+
+#+BEGIN_VERSE
+verse
+-- verse
+#+END_VERSE
+
+#+BEGIN_QUOTE
+quote
+-- quote
+#+END_QUOTE
+
+#+BEGIN_CENTER
+center
+-- center
+#+END_CENTER
+
+*** Image URLs
+
+ref: https://plugins.getnikola.com/v7/orgmode/
+
+In order to correctly generate image urls, you may write
+#+BEGIN_SRC org
+[[img-url:/images/test.jpg]]
+#+END_SRC
+, and then it should be generated as
+~<img src="/images/test.jpg" alt="test.jpg">~.
+
 ** 用 ~nikola github_deploy~ 快速發佈文章
 
 REF: https://getnikola.com/handbook.html#deploying-to-github
 
 *** Initialize a Nikola site, if you haven’t already.
-
 *** Initialize a git repository in your Nikola source directory by running:
 
 #+BEGIN_SRC sh

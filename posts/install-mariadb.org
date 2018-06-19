@@ -1,0 +1,112 @@
+#+BEGIN_COMMENT
+.. title: Install Mariadb
+.. slug: install-mariadb
+.. date: 2018-06-15 16:20:11 UTC+08:00
+.. tags: mariadb, archlinux, mysql
+.. category: computer
+.. link:
+.. description: install mariadb on archlinux
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+Ref: [[https://wiki.archlinux.org/index.php/MySQL][MySQL - ArchWiki]]
+
+* install mariadb
+
+#+BEGIN_SRC sh
+yaourt -S mariadb
+#+END_SRC
+
+* install and setup database
+
+#+BEGIN_SRC sh
+  sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+#+END_SRC
+
+** message
+
+#+BEGIN_EXAMPLE
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following commands:
+
+'/usr/bin/mysqladmin' -u root password 'new-password'
+'/usr/bin/mysqladmin' -u root -h arch64 password 'new-password'
+
+Alternatively you can run:
+
+'/usr/bin/mysql_secure_installation'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at http://mariadb.com/kb or the
+MySQL manual for more instructions.
+
+You can start the MariaDB daemon with:
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/mnt/lvm-data/mysql-data'
+
+You can test the MariaDB daemon with mysql-test-run.pl
+cd '/usr/mysql-test' ; perl mysql-test-run.pl
+
+Please report any problems at http://mariadb.org/jira
+
+The latest information about MariaDB is available at http://mariadb.org/.
+You can find additional information about the MySQL part at:
+http://dev.mysql.com
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+#+END_EXAMPLE
+
+* edit ~/etc/mysql/my.cnf~
+
+Tip: If you use something different from /var/lib/mysql for your data
+dir, you need to set ~datadir=<YOUR_DATADIR>~ under section ~[mysqld]~ of
+your ~/etc/mysql/my.cnf~.  The following command will interactively
+guide you through a number of recommended security measures at the
+database level:
+
+* start/enable ~mariadb.service~ with systemd
+
+#+BEGIN_SRC sh
+sudo systemctl start mariadb
+#+END_SRC
+
+* To start mysqld at boot time
+
+you have to copy support-files/mysql.server to the right place for your system
+
+#+BEGIN_SRC sh
+sudo mysql_secure_installation
+#+END_SRC
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+* Using UTF8MB4
+
+在 ~/etc/mysql/my.cnf~ 加上以下指令：
+
+#+BEGIN_SRC conf
+[client]
+default-character-set = utf8mb4
+
+[mysqld]
+collation_server = utf8mb4_unicode_ci
+character_set_server = utf8mb4
+
+[mysql]
+default-character-set = utf8mb4
+#+END_SRC
+
+* 開啓自動補全
+Note: Enabling this feature can make the client initialization longer.
+
+The MySQL client completion feature is disabled by default. To enable
+it system-wide edit ~/etc/mysql/my.cnf~ , and replace ~no-auto-rehash~ by
+~auto-rehash~. Completion will be enabled next time you run the MySQL
+client.

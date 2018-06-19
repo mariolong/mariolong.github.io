@@ -20,9 +20,9 @@
 
 參考 [[https://wiki.archlinux.org/index.php/USB_flash_installation_media][USB flash installation media]] 製作開機片 :
 
-#+BEGIN_EXAMPLE
-  # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress && sync
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress && sync
+#+END_SRC
 
 * 啟動 ArchLinux 安裝程序
 
@@ -31,17 +31,17 @@
 
 * 建立網絡連接
 
-ping 8.8.8.8 看看有没有網路，没有網路就啓動 dhcpcd:
+~ping 8.8.8.8~ 看看有没有網路，没有網路就啓動 ~dhcpcd~:
 
 #+BEGIN_SRC sh
-  # systemctl start dhcpcd
+systemctl start dhcpcd
 #+END_SRC
 
 若要用 wifi 則用:
 
-#+BEGIN_EXAMPLE
-    # wifi-menu -o profile-name
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+wifi-menu -o profile-name
+#+END_SRC
 
 ping 一下看看網路連上了嗎？
 
@@ -51,32 +51,31 @@ ping 一下看看網路連上了嗎？
 
 ** 檢查分區狀況
 
-#+BEGIN_EXAMPLE
-  lsblk -f
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+lsblk -f
+#+END_SRC
 
 ** 格式化
 
 格式化目標 partition，免得有不可預期的狀況
 
 #+BEGIN_SRC sh
-  mkfs.ext4 -L LABLE /dev/sdax
+mkfs.ext4 -L LABLE /dev/sdax
 #+END_SRC
 
 ** 掛載分區
 
 先掛載 root 區 :
-
-#+BEGIN_EXAMPLE
-  # mount /dev/sdaX /mnt
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+mount /dev/sdaX /mnt
+#+END_SRC
 
 再掛載其他分區，/home 最好獨立分區。 :
 
-#+BEGIN_EXAMPLE
-  # mkdir /mnt/home
-  # mount /dev/sda1 /mnt/home
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+mkdir /mnt/home
+mount /dev/sda1 /mnt/home
+#+END_SRC
 
 ** 建立 swap
 
@@ -85,22 +84,20 @@ ping 一下看看網路連上了嗎？
 *** 建立 swap file
 
 如果真的要裝 swap，可用檔案取代，方便好管理。 :
-
-#+BEGIN_EXAMPLE
-    # fallocate -l 16G /swapfile
-    # sudo chmod 600 /swapfile
-    # mkswap /swapfile
-    # sudo mkswap /swapfile
-    # swapon /swpfile
-    # sudo swapon /swapfile
-    # sudo nano /etc/fstab
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+fallocate -l 16G /swapfile
+sudo chmod 600 /swapfile
+mkswap /swapfile
+sudo mkswap /swapfile
+swapon /swpfile
+sudo swapon /swapfile
+sudo nano /etc/fstab
+#+END_SRC
 
 在 fstab 中加入 :
-
-#+BEGIN_EXAMPLE
-    /swapfile none swap defaults 0 0
-#+END_EXAMPLE
+#+BEGIN_SRC conf
+/swapfile none swap defaults 0 0
+#+END_SRC
 
 *** Remove swap file
 
@@ -110,29 +107,30 @@ ping 一下看看網路連上了嗎？
 some time. To remove a swap file, the current swap file must be turned
 off. :
 
-#+BEGIN_EXAMPLE
-    # swapoff -a
-    # rm -f /swapfile
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+swapoff -a
+rm -f /swapfile
+#+END_SRC
 
 * 配置安裝的環境
 
 ** DNS setup (可不做)
+#+BEGIN_SRC sh
+nano /etc/resolv.conf
+#+END_SRC
 
-#+BEGIN_EXAMPLE
-    # nano /etc/resolv.conf
-
-    nameserver 168.95.1.1
-    nameserver 8.8.8.8
-#+END_EXAMPLE
+#+BEGIN_SRC conf
+nameserver 168.95.1.1
+nameserver 8.8.8.8
+#+END_SRC
 
 ** 選擇安裝鏡像
 
-安裝前需要編輯 /etc/pacman.d/mirrorlist，將最想使用的鏡像放到前面。 :
+安裝前需要編輯 ~/etc/pacman.d/mirrorlist~, 將最想使用的鏡像放到前面：
 
-#+BEGIN_EXAMPLE
-    # nano /etc/pacman.d/mirrorlist
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+nano /etc/pacman.d/mirrorlist
+#+END_SRC
 
 nano 簡單指令 :
 
@@ -144,132 +142,135 @@ nano 簡單指令 :
 
 原則上，改過 mirrorlist 就執行以下指令(可不做)： :
 
-#+BEGIN_EXAMPLE
-    # pacman -Syy
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman -Syy
+#+END_SRC
 
 * 安裝基本系統
 
-#+BEGIN_EXAMPLE
-    # pacstrap -i /mnt base base-devel
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacstrap -i /mnt base base-devel
+#+END_SRC
 
 if pacman complains that error: :
 
 #+BEGIN_EXAMPLE
-    failed to commit transaction (invalid or corrupted package)
+failed to commit transaction (invalid or corrupted package)
 #+END_EXAMPLE
 
 run the following command: :
 
-#+BEGIN_EXAMPLE
-    # pacman-key --init && pacman-key --populate archlinux
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman-key --init && pacman-key --populate archlinux
+#+END_SRC
 
 ** 生成 fstab
 
 這個一定要做，不然後頭會很麻煩。 :
 
-#+BEGIN_EXAMPLE
-  # genfstab -U -p /mnt >> /mnt/etc/fstab
-  # nano /mnt/etc/fstab   # 檢查一下 fstab
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+genfstab -U -p /mnt >> /mnt/etc/fstab
+nano /mnt/etc/fstab   # 檢查一下 fstab
+#+END_SRC
 
 ** Chroot 到新系統，並作基本配置
 
-#+BEGIN_EXAMPLE
-    $ arch-chroot /mnt /bin/bash
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+arch-chroot /mnt /bin/bash
+#+END_SRC
 
 ** 配置 pacman
 
-#+BEGIN_EXAMPLE
-  # nano /etc/pacman.conf
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+nano /etc/pacman.conf
+#+END_SRC
 
 爲了安裝 yaourt，到最後空白處加上： :
 
-#+BEGIN_EXAMPLE
-  [archlinuxfr]
-  SigLevel = Never    # add: 2013/04/28
-  Server = http://repo.archlinux.fr/$arch
-#+END_EXAMPLE
+#+BEGIN_SRC pacmanconf
+[archlinuxfr]
+SigLevel = Never    # add: 2013/04/28
+Server = http://repo.archlinux.fr/$arch
+#+END_SRC
 
 一般使用者用 [core], [extra] 與 [community]。
 
 ** 更新系統，並安裝 yaourt
 
-#+BEGIN_EXAMPLE
-    # pacman -Syu
-    # pacman -S yaourt
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman -Syu
+pacman -S yaourt
+#+END_SRC
 
 ** 配置系統 Locale
 
 #+BEGIN_SRC sh
-  $ nano /etc/locale.gen
+nano /etc/locale.gen
 #+END_SRC
 
 *** 找到
 
-#+BEGIN_QUOTE
-  en_US.UTF-8 UTF-8
-  zh_TW.UTF-8 UTF-8
-  zh_CN.UTF-8 UTF-8
-#+END_QUOTE
+#+BEGIN_EXAMPLE
+en_US.UTF-8 UTF-8
+zh_TW.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+#+END_EXAMPLE
 
 把以上全部打開。
 
 *** 使 locale 生效
 
-#+BEGIN_EXAMPLE
-  $ locale-gen    #使更改生效運行
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+locale-gen    #使更改生效運行
+#+END_SRC
 
 *** 確認一下 locale
 
-#+BEGIN_EXAMPLE
-    $ locale -a     #確認一下開啟的 locale
-    $ locale        #目前的 locale
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+locale -a     #確認一下開啟的 locale
+locale        #目前的 locale
+#+END_SRC
 
 *** 全域 locale 設定：對整個系統有效
 
+#+BEGIN_SRC sh
+nano /etc/locale.conf
+#+END_SRC
+
+修改 ~LANG~, 主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
 #+BEGIN_EXAMPLE
-    $ nano /etc/locale.conf
-
-    LANG=en_US.UTF-8
+LANG=en_US.UTF-8
 #+END_EXAMPLE
-
-主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
 
 ** 更改 console 字型
 把字改大一點，眼睛比較不吃力。
 先安裝字型，再設定字型。
 
 #+BEGIN_SRC sh
-  pacman -S terminus-font
-  setconsolefont ter-128n
+pacman -S terminus-font
+setconsolefont ter-128n
 #+END_SRC
 
-The FONT variable in =/etc/vconsole.conf= is used to set the font at boot, persistently for all consoles.[fn:1]
+The FONT variable in ~/etc/vconsole.conf~ is used to set the font at boot, persistently for all consoles.[fn:1]
 
 #+BEGIN_SRC sh
-  nano /etc/vconsole.conf
-  ...
-  FONT=ter-128n
-  FONT_MAP=8859-1
+nano /etc/vconsole.conf
+#+END_SRC
+加上
+#+BEGIN_SRC conf
+FONT=ter-128n
+FONT_MAP=8859-1
 #+END_SRC
 
 ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐語言」[fn:2]
 
 ** 配置系統時區
 
-可用的時區位於目錄 /usr/share/zoneinfo/ 下，可以 ls 一下。用以下指令配
+可用的時區位於目錄 ~/usr/share/zoneinfo/~ 下，可以 ~ls~ 一下。用以下指令配
 置系統時區：
 
 #+BEGIN_SRC sh
-  ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 #+END_SRC
 
 ** 時間調整
@@ -289,39 +290,37 @@ ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐�
 在 linux 中，只需執行： :
 
 #+BEGIN_SRC sh
-  timedatectl set-local-rtc false
-  timedatectl set-ntp true
+timedatectl set-local-rtc false
+timedatectl set-ntp true
 #+END_SRC
 
 並將 utc 時間寫入 BIOS 中即可。
 
 #+BEGIN_SRC sh
-  hwclock --systohc --utc
+hwclock --systohc --utc
 #+END_SRC
 
 ** 設置主機名稱
 
 #+BEGIN_SRC sh
-  nano /etc/hostname
+nano /etc/hostname
 #+END_SRC
-
 加入
-
-#+BEGIN_QUOTE
-  hostname
-#+END_QUOTE
+#+BEGIN_SRC conf
+hostname
+#+END_SRC
 
 * 再一次設定網路
 
-簡單啓動 dhcpcd :
+簡單啓動 ~dhcpcd~ :
 
-#+BEGIN_EXAMPLE
-  # systemctl enable dhcpcd
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+systemctl enable dhcpcd
+#+END_SRC
 
 ** WIFI
 
-用 netctl 啓動 wifi
+用 ~netctl~ 啓動 wifi
 
 ** ADSL
 
@@ -332,111 +331,115 @@ DSL-Modem into your computer. After adding your newly installed
 network card to the modules.conf/modprobe.conf install therp-pppoe
 package :
 
-#+BEGIN_EXAMPLE
-    $ pacman -S rp-pppoe
-    $ pppoe-setup
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman -S rp-pppoe
+pppoe-setup
+#+END_SRC
 
-run the pppoe-setup script to configure your connection After you have
+run the ~pppoe-setup~ script to configure your connection After you have
 entered all the data, you can connect and disconnect your line with :
 
-#+BEGIN_EXAMPLE
-    $ systemctl start adsl
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+systemctl start adsl
+#+END_SRC
 
-and :
-
-#+BEGIN_EXAMPLE
-    $ systemctl stop adsl
-#+END_EXAMPLE
+and:
+#+BEGIN_SRC sh
+systemctl stop adsl
+#+END_SRC
 
 respectively. The setup is usually easy and straightforward, but feel
 free to read the manpages for hints. If you want to automatically 'dial
 in' at boot, issue command :
 
-#+BEGIN_EXAMPLE
-    $ systemctl enable adsl
-
-    or
-
-    $ systemctl disable adsl
-#+END_EXAMPLE
-
+#+BEGIN_SRC sh
+systemctl enable adsl
+#+END_SRC
+or
+#+BEGIN_SRC sh
+systemctl disable adsl
+#+END_SRC
 to remove auto 'dial in' at boot.
 
 * mkinitcpio
-增加 lvm2 到 hooks 後，執行 =mkinitcpio= :
+增加 lvm2 到 hooks 後，執行 ~mkinitcpio~ :
 
-#+BEGIN_EXAMPLE
-    # nano /etc/mkinitcpio.conf
-
-    HOOKS=(... udev ... block lvm2 filesystems ...)
-
-    # mkinitcpio -p linux
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+nano /etc/mkinitcpio.conf
+#+END_SRC
+修改
+#+BEGIN_SRC conf
+HOOKS=(... udev ... block lvm2 filesystems ...)
+#+END_SRC
+再執行
+#+BEGIN_SRC sh
+mkinitcpio -p linux
+#+END_SRC
 
 * Install and configure a bootloader
 Install the grub-bios package and then run grub-install: :
 
-#+BEGIN_EXAMPLE
-    # pacman -S grub-bios                       ## 安裝 grub-bios
-    # grub-install --target=i386-pc --recheck /dev/sda  ## 安裝到 boot 區
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman -S grub-bios  ## 安裝 grub-bios
+grub-install --target=i386-pc --recheck /dev/sda  ## 安裝到 boot 區
+#+END_SRC
 
 ** 自動尋找其它的 OS
 如果有其他的 OS，這個就很重要。 :
 
-#+BEGIN_EXAMPLE
-  # pacman -S os-prober
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman -S os-prober
+#+END_SRC
 
 或是直接在 /etc/grub.d/40\_custom 加上以下指令 :
 
-#+BEGIN_EXAMPLE
-    menuentry "Windows 10" --class windows --class os {
-      insmod ntfs
-      search --no-floppy --set=root --fs-uuid $your_uuid_here$
-      ntldr /bootmgr
-    }
-#+END_EXAMPLE
+#+BEGIN_SRC conf
+menuentry "Windows 10" --class windows --class os {
+  insmod ntfs
+  search --no-floppy --set=root --fs-uuid $your_uuid_here$
+  ntldr /bootmgr
+}
+#+END_SRC
 
-** 安裝 microcode
+** intel CPU 要安裝 microcode
 這步要在 grub-mkconfig 之前做 :
 
-#+BEGIN_EXAMPLE
-  # pacman -S intel-ucode
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman -S intel-ucode
+#+END_SRC
 
 ** 自動產生 grub.cfg
 這個一定要做，不然重開機時，就等著進 grub shell，很麻煩。 :
 
-#+BEGIN_EXAMPLE
-  # grub-mkconfig -o /boot/grub/grub.cfg
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+grub-mkconfig -o /boot/grub/grub.cfg
+#+END_SRC
 
 * 重啓
-#+BEGIN_EXAMPLE
-  # exit
-  # umount /mnt
-  # reboot
-#+END_EXAMPLE
+
+#+BEGIN_SRC sh
+exit
+umount /mnt
+reboot
+#+END_SRC
 
 ** 確認網路連線
 
 root 重啓後，ping 一下看看網路連上了嗎？如果沒有，手動連線。 :
 
-#+BEGIN_EXAMPLE
-  # ping 8.8.8.8
-  # systemctl start dhcpcd
+#+BEGIN_SRC sh
+ping 8.8.8.8
+systemctl start dhcpcd
+#+END_SRC
 或
-  # netctl start <wifi-profile-name>
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+netctl start <wifi-profile-name>
+#+END_SRC
 
 ** update system（可不做）
-
-#+BEGIN_EXAMPLE
-    # pacman -Syu
-#+END_EXAMPLE
+#+BEGIN_SRC sh
+pacman -Syu
+#+END_SRC
 
 * post-installation
 ** 設置 Root 密碼並創建一般用戶
