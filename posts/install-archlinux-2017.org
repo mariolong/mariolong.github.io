@@ -218,7 +218,6 @@ zh_CN.UTF-8 UTF-8
 
 把以上全部打開。
 
-
 *** 使 locale 生效
 
 #+BEGIN_SRC sh
@@ -239,7 +238,6 @@ nano /etc/locale.conf
 #+END_SRC
 
 修改 ~LANG~, 主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
-
 #+BEGIN_EXAMPLE
 LANG=en_US.UTF-8
 #+END_EXAMPLE
@@ -254,7 +252,6 @@ setconsolefont ter-128n
 #+END_SRC
 
 The FONT variable in ~/etc/vconsole.conf~ is used to set the font at boot, persistently for all consoles.[fn:1]
-
 
 #+BEGIN_SRC sh
 nano /etc/vconsole.conf
@@ -382,7 +379,7 @@ mkinitcpio -p linux
 #+END_SRC
 
 * Install and configure a bootloader
-Install the grub-bios package and then run grub-install: :
+Install the grub-bios package and then run grub-install:
 
 #+BEGIN_SRC sh
 pacman -S grub-bios  ## 安裝 grub-bios
@@ -396,7 +393,7 @@ grub-install --target=i386-pc --recheck /dev/sda  ## 安裝到 boot 區
 pacman -S os-prober
 #+END_SRC
 
-或是直接在 /etc/grub.d/40\_custom 加上以下指令 :
+或是直接在 /etc/grub.d/40\_custom 加上以下指令：
 
 #+BEGIN_SRC conf
 menuentry "Windows 10" --class windows --class os {
@@ -407,14 +404,14 @@ menuentry "Windows 10" --class windows --class os {
 #+END_SRC
 
 ** intel CPU 要安裝 microcode
-這步要在 grub-mkconfig 之前做 :
+這步要在 grub-mkconfig 之前做：
 
 #+BEGIN_SRC sh
 pacman -S intel-ucode
 #+END_SRC
 
 ** 自動產生 grub.cfg
-這個一定要做，不然重開機時，就等著進 grub shell，很麻煩。 :
+這個一定要做，不然重開機時，就等著進 grub shell，很麻煩。
 
 #+BEGIN_SRC sh
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -430,7 +427,7 @@ reboot
 
 ** 確認網路連線
 
-root 重啓後，ping 一下看看網路連上了嗎？如果沒有，手動連線。 :
+root 重啓後，ping 一下看看網路連上了嗎？如果沒有，手動連線。
 
 #+BEGIN_SRC sh
 ping 8.8.8.8
@@ -488,30 +485,28 @@ username ALL=(ALL) ALL
 yaourt -S alsa-utils
 #+END_SRC
 
-將帳號加入音效使用權： :
-
+將帳號加入音效使用權：
 #+BEGIN_SRC sh
 sudo gpasswd -a username audio
 #+END_SRC
 
-alsa 預設是靜音，以 alsamixer 手動打開聲音 :
+alsa 預設是靜音，以 alsamixer 手動打開聲音：
 
 #+BEGIN_SRC sh
 alsamixer
 #+END_SRC
 
-或者命令列直接開啓 :
+或者命令列直接開啓：
 
 #+BEGIN_SRC sh
 amixer sset Master unmute
 #+END_SRC
 
-測試一下有沒有聲音 :
+測試一下有沒有聲音：
 
 #+BEGIN_SRC sh
 speaker-test -c 2
 #+END_SRC
-
 
 ** 安裝 x11
 
@@ -635,8 +630,7 @@ yaourt -S google-chrome
 yaourt -S emacs
 #+END_SRC
 
-可用的系統成型了，但是， 後面 [[../post-installation-of-archlinux][Post-installation of Archlinux]]
-還有許多需要再調整的。
+可用的系統成型了，但是還是要再參考 [[../post-installation-of-archlinux][Post-installation of Archlinux]] 有許多需要再調整的。
 
 * issues
 ** kvm:disable by bios

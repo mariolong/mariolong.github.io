@@ -16,7 +16,10 @@
 (setq nikola-use-pygments t
       org-export-with-toc nil
 	  org-export-with-section-numbers t
+	  sh-basic-offset 4
+	  tab-width 4
       org-startup-folded 'showeverything)
+(defvaralias 'c-basic-offset 'tab-width)
 
 ;; Load additional configuration from conf.el
 (let ((conf (expand-file-name "conf.el" (file-name-directory load-file-name))))

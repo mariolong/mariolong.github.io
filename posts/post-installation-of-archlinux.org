@@ -49,14 +49,14 @@ sudo nano /etc/oblogout.conf
 
 修改 [looks] 中的 buttons，以顯示按鈕。
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC conf
 [looks]
 buttons = cancel, restart, shutdown, lock
-#+END_EXAMPLE
+#+END_SRC
 
 修改 [shortcuts] 中不用的命令刪掉。
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC conf
 [shortcuts]
 cancel = Escape
 shutdown = S
@@ -65,14 +65,14 @@ restart = R
 #logout = L
 lock = K
 #hibernate = H
-#+END_EXAMPLE
+#+END_SRC
 
 修改 [commands] 中的命令。
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC conf
 [commands]
 lock = slock
-#+END_EXAMPLE
+#+END_SRC
 
 * system
 DPMS: display power manpage system
@@ -98,7 +98,6 @@ using mc and pcmanfm-qt
 yaourt -S mc pcmanfm-qt gvfs-mtp
 #+END_SRC
 
-
 ** pcmanfm-qt
 
 使用 pcmanfm-qt, for mtp 傳送檔案 and dropbox
@@ -120,6 +119,7 @@ sudo ln -s /usr/bin/pcmanfm-qt /usr/bin/pcmanfm
 ** mc
 
 * 影音
+
 #+BEGIN_SRC sh
 yaourt -S alsa-utils mpd mpc ncmpcpp mpv ffmpeg sox kodi kid3 aegisub
 #+END_SRC
