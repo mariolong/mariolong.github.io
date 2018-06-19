@@ -122,8 +122,8 @@ yaourt -S bre">
 recommendations - ArchWiki</a> 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
 </p>
 
-<div id="outline-container-org5b8766b" class="outline-2">
-<h2 id="org5b8766b">
+<div id="outline-container-org9b7c8d2" class="outline-2">
+<h2 id="org9b7c8d2">
 <span class="section-number-2">1</span> haskell</h2>
 <div class="outline-text-2" id="text-1">
 <p>
@@ -132,13 +132,13 @@ recommendations - ArchWiki</a> 記錄下對我而言必要的軟體及簡單設�
 </div>
 </div>
 
-<div id="outline-container-org454a53d" class="outline-2">
-<h2 id="org454a53d">
+<div id="outline-container-org63813a9" class="outline-2">
+<h2 id="org63813a9">
 <span class="section-number-2">2</span> 桌面及外觀</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org8ef2bce" class="outline-3">
-<h3 id="org8ef2bce">
+<div id="outline-container-org0545fb2" class="outline-3">
+<h3 id="org0545fb2">
 <span class="section-number-3">2.1</span> theme</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="highlight"><pre><span></span>yaourt -S breeze<span class="o">{</span>,-kde4,-gtk<span class="o">}</span> flat-remix-git lxappearance
@@ -150,8 +150,8 @@ Using Breeze theme and Flat Remix icon theme
 </div>
 </div>
 
-<div id="outline-container-org4a6b51b" class="outline-3">
-<h3 id="org4a6b51b">
+<div id="outline-container-org8a2e135" class="outline-3">
+<h3 id="org8a2e135">
 <span class="section-number-3">2.2</span> lxappearance</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
@@ -164,8 +164,8 @@ Using Breeze theme and Flat Remix icon theme
 </div>
 </div>
 
-<div id="outline-container-orgae58303" class="outline-3">
-<h3 id="orgae58303">
+<div id="outline-container-orgac5ec40" class="outline-3">
+<h3 id="orgac5ec40">
 <span class="section-number-3">2.3</span> oblogout and screen lock</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
@@ -187,40 +187,37 @@ sudo nano /etc/oblogout.conf
 修改 [looks] 中的 buttons，以顯示按鈕。
 </p>
 
-<pre class="example">
-[looks]
-buttons = cancel, restart, shutdown, lock
-</pre>
+<div class="highlight"><pre><span></span><span class="k">[looks]</span>
+<span class="na">buttons</span> <span class="o">=</span> <span class="s">cancel, restart, shutdown, lock</span>
+</pre></div>
 
 <p>
 修改 [shortcuts] 中不用的命令刪掉。
 </p>
 
-<pre class="example">
-[shortcuts]
-cancel = Escape
-shutdown = S
-restart = R
-#suspend = U
-#logout = L
-lock = K
-#hibernate = H
-</pre>
+<div class="highlight"><pre><span></span><span class="k">[shortcuts]</span>
+<span class="na">cancel</span> <span class="o">=</span> <span class="s">Escape</span>
+<span class="na">shutdown</span> <span class="o">=</span> <span class="s">S</span>
+<span class="na">restart</span> <span class="o">=</span> <span class="s">R</span>
+<span class="c1">#suspend = U</span>
+<span class="c1">#logout = L</span>
+<span class="na">lock</span> <span class="o">=</span> <span class="s">K</span>
+<span class="c1">#hibernate = H</span>
+</pre></div>
 
 <p>
 修改 [commands] 中的命令。
 </p>
 
-<pre class="example">
-[commands]
-lock = slock
-</pre>
+<div class="highlight"><pre><span></span><span class="k">[commands]</span>
+<span class="na">lock</span> <span class="o">=</span> <span class="s">slock</span>
+</pre></div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4144b8f" class="outline-2">
-<h2 id="org4144b8f">
+<div id="outline-container-org12e1cfb" class="outline-2">
+<h2 id="org12e1cfb">
 <span class="section-number-2">3</span> system</h2>
 <div class="outline-text-2" id="text-3">
 <p>
@@ -230,13 +227,13 @@ slock:
 </div>
 </div>
 
-<div id="outline-container-org90b3dd7" class="outline-2">
-<h2 id="org90b3dd7">
+<div id="outline-container-org0e087bb" class="outline-2">
+<h2 id="org0e087bb">
 <span class="section-number-2">4</span> 網路</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org7c6097c" class="outline-3">
-<h3 id="org7c6097c">
+<div id="outline-container-orgef384f1" class="outline-3">
+<h3 id="orgef384f1">
 <span class="section-number-3">4.1</span> dropbox</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
@@ -248,8 +245,8 @@ dropbox 在 archlinux.fr 中
 </div>
 </div>
 
-<div id="outline-container-orgece5198" class="outline-3">
-<h3 id="orgece5198">
+<div id="outline-container-org1f39f85" class="outline-3">
+<h3 id="org1f39f85">
 <span class="section-number-3">4.2</span> qbittorrent</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="highlight"><pre><span></span>yaourt -S qbittorrent
@@ -258,8 +255,8 @@ dropbox 在 archlinux.fr 中
 </div>
 </div>
 
-<div id="outline-container-org970f698" class="outline-2">
-<h2 id="org970f698">
+<div id="outline-container-orga269101" class="outline-2">
+<h2 id="orga269101">
 <span class="section-number-2">5</span> 檔案管理</h2>
 <div class="outline-text-2" id="text-5">
 <p>
@@ -270,9 +267,8 @@ using mc and pcmanfm-qt
 </pre></div>
 </div>
 
-
-<div id="outline-container-org60c40cd" class="outline-3">
-<h3 id="org60c40cd">
+<div id="outline-container-org7e69825" class="outline-3">
+<h3 id="org7e69825">
 <span class="section-number-3">5.1</span> pcmanfm-qt</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
@@ -280,8 +276,8 @@ using mc and pcmanfm-qt
 </p>
 </div>
 
-<div id="outline-container-orgab65ef1" class="outline-4">
-<h4 id="orgab65ef1">
+<div id="outline-container-org10321bd" class="outline-4">
+<h4 id="org10321bd">
 <span class="section-number-4">5.1.1</span> issues</h4>
 <div class="outline-text-4" id="text-5-1-1">
 <p>
@@ -302,22 +298,22 @@ fix this problem:
 </div>
 </div>
 
-<div id="outline-container-org7cce6c4" class="outline-3">
-<h3 id="org7cce6c4">
+<div id="outline-container-org6944c27" class="outline-3">
+<h3 id="org6944c27">
 <span class="section-number-3">5.2</span> mc</h3>
 </div>
 </div>
 
-<div id="outline-container-orga0ef1a5" class="outline-2">
-<h2 id="orga0ef1a5">
+<div id="outline-container-org17af68c" class="outline-2">
+<h2 id="org17af68c">
 <span class="section-number-2">6</span> 影音</h2>
 <div class="outline-text-2" id="text-6">
 <div class="highlight"><pre><span></span>yaourt -S alsa-utils mpd mpc ncmpcpp mpv ffmpeg sox kodi kid3 aegisub
 </pre></div>
 </div>
 
-<div id="outline-container-org7b4d172" class="outline-3">
-<h3 id="org7b4d172">
+<div id="outline-container-org5bff6ad" class="outline-3">
+<h3 id="org5bff6ad">
 <span class="section-number-3">6.1</span> alsa</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
@@ -326,8 +322,8 @@ fix this problem:
 </div>
 </div>
 
-<div id="outline-container-org1225082" class="outline-3">
-<h3 id="org1225082">
+<div id="outline-container-orgaedbc97" class="outline-3">
+<h3 id="orgaedbc97">
 <span class="section-number-3">6.2</span> mpd, mpc, ncmpcpp</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
@@ -336,8 +332,8 @@ fix this problem:
 </div>
 </div>
 
-<div id="outline-container-org1a5ee48" class="outline-3">
-<h3 id="org1a5ee48">
+<div id="outline-container-org1f682b5" class="outline-3">
+<h3 id="org1f682b5">
 <span class="section-number-3">6.3</span> mpv</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
@@ -350,8 +346,8 @@ mpv dvd://
 </div>
 </div>
 
-<div id="outline-container-orgb8ea16d" class="outline-3">
-<h3 id="orgb8ea16d">
+<div id="outline-container-orgbc53688" class="outline-3">
+<h3 id="orgbc53688">
 <span class="section-number-3">6.4</span> kodi</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
@@ -360,8 +356,8 @@ mpv dvd://
 </div>
 </div>
 
-<div id="outline-container-orgc2a1382" class="outline-3">
-<h3 id="orgc2a1382">
+<div id="outline-container-orgc3b9274" class="outline-3">
+<h3 id="orgc3b9274">
 <span class="section-number-3">6.5</span> aegisub</h3>
 <div class="outline-text-3" id="text-6-5">
 <p>
@@ -370,8 +366,8 @@ mpv dvd://
 </div>
 </div>
 
-<div id="outline-container-org3b880ec" class="outline-3">
-<h3 id="org3b880ec">
+<div id="outline-container-orgcf852ad" class="outline-3">
+<h3 id="orgcf852ad">
 <span class="section-number-3">6.6</span> ffmpeg</h3>
 <div class="outline-text-3" id="text-6-6">
 <p>
@@ -381,12 +377,12 @@ mpv dvd://
 </div>
 </div>
 
-<div id="outline-container-org4bec8aa" class="outline-3">
-<h3 id="org4bec8aa">
+<div id="outline-container-org5fdbb77" class="outline-3">
+<h3 id="org5fdbb77">
 <span class="section-number-3">6.7</span> dvdbackup</h3>
 </div>
-<div id="outline-container-org9f8819e" class="outline-3">
-<h3 id="org9f8819e">
+<div id="outline-container-orgef7997d" class="outline-3">
+<h3 id="orgef7997d">
 <span class="section-number-3">6.8</span> sox</h3>
 <div class="outline-text-3" id="text-6-8">
 <p>
@@ -395,8 +391,8 @@ wav 轉 aiff
 </div>
 </div>
 
-<div id="outline-container-org14f82cc" class="outline-3">
-<h3 id="org14f82cc">
+<div id="outline-container-org8e3d24a" class="outline-3">
+<h3 id="org8e3d24a">
 <span class="section-number-3">6.9</span> kid3</h3>
 <div class="outline-text-3" id="text-6-9">
 <p>
@@ -406,13 +402,13 @@ wav 轉 aiff
 </div>
 </div>
 
-<div id="outline-container-org723b391" class="outline-2">
-<h2 id="org723b391">
+<div id="outline-container-org4dfc14d" class="outline-2">
+<h2 id="org4dfc14d">
 <span class="section-number-2">7</span> 其它工具</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgbe38ed3" class="outline-3">
-<h3 id="orgbe38ed3">
+<div id="outline-container-org92f4d71" class="outline-3">
+<h3 id="org92f4d71">
 <span class="section-number-3">7.1</span> emacs</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
@@ -422,8 +418,8 @@ opencc: using s2twp.json
 </div>
 </div>
 
-<div id="outline-container-org30d0347" class="outline-3">
-<h3 id="org30d0347">
+<div id="outline-container-orga0260ec" class="outline-3">
+<h3 id="orga0260ec">
 <span class="section-number-3">7.2</span> meld</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="highlight"><pre><span></span>yaourt -S meld
@@ -431,8 +427,8 @@ opencc: using s2twp.json
 </div>
 </div>
 
-<div id="outline-container-org3885160" class="outline-3">
-<h3 id="org3885160">
+<div id="outline-container-org5aeaa2a" class="outline-3">
+<h3 id="org5aeaa2a">
 <span class="section-number-3">7.3</span> albert</h3>
 <div class="outline-text-3" id="text-7-3">
 <p>
@@ -444,8 +440,8 @@ opencc: using s2twp.json
 </div>
 </div>
 
-<div id="outline-container-orgeb39d55" class="outline-3">
-<h3 id="orgeb39d55">
+<div id="outline-container-org9931782" class="outline-3">
+<h3 id="org9931782">
 <span class="section-number-3">7.4</span> speedcrunch (calculator)</h3>
 <div class="outline-text-3" id="text-7-4">
 <div class="highlight"><pre><span></span>yaourt -S speedcrunch
@@ -453,8 +449,8 @@ opencc: using s2twp.json
 </div>
 </div>
 
-<div id="outline-container-org84c6afc" class="outline-3">
-<h3 id="org84c6afc">
+<div id="outline-container-org35baa55" class="outline-3">
+<h3 id="org35baa55">
 <span class="section-number-3">7.5</span> calibre</h3>
 <div class="outline-text-3" id="text-7-5">
 <p>
@@ -465,8 +461,8 @@ opencc: using s2twp.json
 </pre></div>
 </div>
 </div>
-<div id="outline-container-orgd9a4a34" class="outline-3">
-<h3 id="orgd9a4a34">
+<div id="outline-container-orga30b1fe" class="outline-3">
+<h3 id="orga30b1fe">
 <span class="section-number-3">7.6</span> nikola</h3>
 <div class="outline-text-3" id="text-7-6">
 <div class="highlight"><pre><span></span>pip install nikola Pygments
@@ -474,12 +470,12 @@ opencc: using s2twp.json
 </div>
 </div>
 
-<div id="outline-container-orgaacc9c9" class="outline-3">
-<h3 id="orgaacc9c9">
+<div id="outline-container-org428ac42" class="outline-3">
+<h3 id="org428ac42">
 <span class="section-number-3">7.7</span> htop</h3>
 </div>
-<div id="outline-container-org5df1824" class="outline-3">
-<h3 id="org5df1824">
+<div id="outline-container-orgabc2ecb" class="outline-3">
+<h3 id="orgabc2ecb">
 <span class="section-number-3">7.8</span> gnash</h3>
 <div class="outline-text-3" id="text-7-8">
 <div class="highlight"><pre><span></span>yaourt -S gnash-git
@@ -492,13 +488,13 @@ opencc: using s2twp.json
 </div>
 </div>
 
-<div id="outline-container-orge71ff91" class="outline-2">
-<h2 id="orge71ff91">
+<div id="outline-container-org31e48a4" class="outline-2">
+<h2 id="org31e48a4">
 <span class="section-number-2">8</span> stock</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orgc33be82" class="outline-3">
-<h3 id="orgc33be82">
+<div id="outline-container-org2334c5a" class="outline-3">
+<h3 id="org2334c5a">
 <span class="section-number-3">8.1</span> python and depending modules</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="highlight"><pre><span></span>yaourt -S python python-pip
@@ -506,8 +502,8 @@ opencc: using s2twp.json
 </div>
 </div>
 
-<div id="outline-container-org646e498" class="outline-3">
-<h3 id="org646e498">
+<div id="outline-container-orgbd1bc4f" class="outline-3">
+<h3 id="orgbd1bc4f">
 <span class="section-number-3">8.2</span> systemd timers</h3>
 </div>
 </div>
