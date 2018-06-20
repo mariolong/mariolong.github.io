@@ -331,9 +331,6 @@ http://pygments.org/docs/lexers/ for adding new languages to the mapping.")
 #+HTML: <img src='https://drive.google.com/uc?export=view&id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm' width=320 alt="test picture"/>
 但這就不是 inline-image，所以在 emacs 中不能用 ~M-x org-display-inline-image~ 顯示此圖，小小缺憾。
 
-在 emacs 中，是看不到圖片預覧，
-[[https://drive.google.com/uc?export=view&id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm]]
-
 ** 圖片連結 (Image URLs)
 
 另外可參考 [[https://plugins.getnikola.com/v7/orgmode/][orgmode | Plugins for Nikola]]
