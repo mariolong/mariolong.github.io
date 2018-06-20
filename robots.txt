@@ -1,6 +1,4 @@
 Sitemap: https://mariolong.github.io/sitemapindex.xml
 
 User-Agent: *
-Disallow: /archive.html
-Disallow: /category/*.html
 Host: mariolong.github.io
