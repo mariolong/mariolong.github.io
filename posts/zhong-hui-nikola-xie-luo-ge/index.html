@@ -101,46 +101,60 @@
 <h2>目錄</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org20c1542">1. 安裝</a></li>
+<li><a href="#org14b2e71">1. 安裝</a></li>
 <li>
-<a href="#org85469ca">2. 設定</a>
+<a href="#orged32c54">2. 設定</a>
 <ul>
-<li><a href="#org7a5cca6">2.1. configuration file</a></li>
-<li><a href="#org28caaae">2.2. theme</a></li>
+<li><a href="#orge9bb265">2.1. configuration file</a></li>
+<li><a href="#orgfc16302">2.2. theme</a></li>
 <li>
-<a href="#orga81af79">2.3. org-mod</a>
+<a href="#orgd974719">2.3. 用 <code>nikola github_deploy</code> 快速發佈文章</a>
 <ul>
-<li><a href="#orgd80c3f2">2.3.1. 刪除不必要的空白</a></li>
-<li><a href="#orgfb91bb1">2.3.2. Convert inline verbatim to kbd when HTML export</a></li>
-<li><a href="#org8e14bb8">2.3.3. Inline verbatim and code</a></li>
-<li><a href="#orgc0c83ac">2.3.4. 用 pygment 幫程式碼著色</a></li>
-<li><a href="#orge6175f7">2.3.5. text block</a></li>
-<li><a href="#org6049117">2.3.6. Image URLs</a></li>
-</ul>
-</li>
-<li>
-<a href="#org579757b">2.4. 用 <code>nikola github_deploy</code> 快速發佈文章</a>
-<ul>
-<li><a href="#org1ec37f7">2.4.1. Initialize a Nikola site, if you haven’t already.</a></li>
-<li><a href="#org6c75389">2.4.2. Initialize a git repository in your Nikola source directory by running:</a></li>
-<li><a href="#org9009f51">2.4.3. Setup branches and remotes in <code>conf.py</code>:</a></li>
-<li><a href="#orgf29e9be">2.4.4. Create a <code>.gitignore</code> file. We recommend adding at least the following entries:</a></li>
-<li><a href="#orgfba29fc">2.4.5. Run <code>nikola github_deploy</code>.</a></li>
-<li><a href="#org32097b8">2.4.6. 在 nikola github_deploy 之前</a></li>
+<li><a href="#org3c33c83">2.3.1. 在 nikola github_deploy 之前</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org7f957c6">3. 開始使用</a></li>
+<li>
+<a href="#org6bbd79f">3. 用 org-mode 寫文章</a>
+<ul>
+<li>
+<a href="#orgb236956">3.1. 修改 <i>orgmode</i>init.el</a>
+<ul>
+<li><a href="#orge4ecded">3.1.1. 刪除不必要的空白</a></li>
+<li><a href="#orga1ecaaf">3.1.2. Convert inline verbatim to kbd when HTML export</a></li>
+<li><a href="#orgcf8c32b">3.1.3. 在 Inline verbatim and code 不要空白</a></li>
+<li><a href="#orgc3079bf">3.1.4. 用 pygment 幫程式碼著色</a></li>
+</ul>
+</li>
+<li>
+<a href="#org018a93d">3.2. 揷入圖片</a>
+<ul>
+<li><a href="#org07dd23e">3.2.1. 利用 Google Drive 取得 Google Photos 的照片</a></li>
+</ul>
+</li>
+<li><a href="#org0b6903f">3.3. 圖片連結 (Image URLs)</a></li>
+<li>
+<a href="#orgfec2b0c">3.4. plain list</a>
+<ul>
+<li><a href="#org9d10123">3.4.1. Lord of the Rings</a></li>
+</ul>
+</li>
+<li><a href="#org652f59e">3.5. Subscripts and superscripts</a></li>
+<li><a href="#org66261ec">3.6. Teasers</a></li>
+<li><a href="#org437201a">3.7. text block</a></li>
+</ul>
+</li>
+<li><a href="#org6d1b617">4. 開始使用</a></li>
 </ul>
 </div>
 </div>
 <p>
 掙扎了許久，還是先用 <a href="https://getnikola.com/">nikola</a> 記錄一些事，畢竟比較熟悉，能快一點上手。
 </p>
-
-<div id="outline-container-org20c1542" class="outline-2">
-<h2 id="org20c1542">
+<!-- TEASER_END -->
+<div id="outline-container-org14b2e71" class="outline-2">
+<h2 id="org14b2e71">
 <span class="section-number-2">1</span> 安裝</h2>
 <div class="outline-text-2" id="text-1">
 <div class="highlight"><pre><span></span>pip nikola
@@ -148,8 +162,8 @@
 </div>
 </div>
 
-<div id="outline-container-org85469ca" class="outline-2">
-<h2 id="org85469ca">
+<div id="outline-container-orged32c54" class="outline-2">
+<h2 id="orged32c54">
 <span class="section-number-2">2</span> 設定</h2>
 <div class="outline-text-2" id="text-2">
 <p>
@@ -161,8 +175,8 @@
 </pre></div>
 </div>
 
-<div id="outline-container-org7a5cca6" class="outline-3">
-<h3 id="org7a5cca6">
+<div id="outline-container-orge9bb265" class="outline-3">
+<h3 id="orge9bb265">
 <span class="section-number-3">2.1</span> configuration file</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
@@ -171,8 +185,8 @@
 </div>
 </div>
 
-<div id="outline-container-org28caaae" class="outline-3">
-<h3 id="org28caaae">
+<div id="outline-container-orgfc16302" class="outline-3">
+<h3 id="orgfc16302">
 <span class="section-number-3">2.2</span> theme</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="highlight"><pre><span></span>nikola theme install bootstrap
@@ -180,26 +194,193 @@
 </div>
 </div>
 
-<div id="outline-container-orga81af79" class="outline-3">
-<h3 id="orga81af79">
-<span class="section-number-3">2.3</span> org-mod</h3>
+<div id="outline-container-orgd974719" class="outline-3">
+<h3 id="orgd974719">
+<span class="section-number-3">2.3</span> 用 <code>nikola github_deploy</code> 快速發佈文章</h3>
 <div class="outline-text-3" id="text-2-3">
+<p>
+參考 <a href="https://getnikola.com/handbook.html#deploying-to-github">The Nikola Handbook | Nikola</a>
+</p>
+
+<p>
+設定的步驟如下：
+</p>
+
+<ol class="org-ol">
+<li>Initialize a Nikola site, if you haven’t already.</li>
+<li>
+<p>
+Initialize a git repository in your Nikola source directory by running:
+</p>
+
+<div class="highlight"><pre><span></span>   git init .
+   git remote add origin git@github.com:user/user.github.io
+</pre></div>
+
+<p>
+url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
+</p>
+</li>
+
+<li>Setup branches and remotes in <code>conf.py</code>:
+
+<ul class="org-ul">
+<li>
+<code>GITHUB_DEPLOY_BRANCH</code> is the branch where Nikola-generated HTML
+files will be deployed. It should be gh-pages for project pages
+and master for user pages (<b>user.github.io</b>).</li>
+
+<li>
+<code>GITHUB_SOURCE_BRANCH</code> is the branch where your Nikola site source
+will be deployed. We recommend and default to <b>src</b>.</li>
+
+<li>
+<code>GITHUB_REMOTE_NAME</code> is the remote to which changes are pushed.</li>
+
+<li>
+<code>GITHUB_COMMIT_SOURCE</code> controls whether or not the source branch is
+automatically committed to and pushed. We recommend setting it to
+<b>True</b>, unless you are automating builds with Travis CI.</li>
+</ul>
+</li>
+
+<li>
+<p>
+Create a <code>.gitignore</code> file. We recommend adding at least the following entries:
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="na">cache</span>
+   <span class="na">.doit.db</span>
+   <span class="na">__pycache__</span>
+   <span class="na">output</span>
+</pre></div>
+
+<p>
+If you set <code>GITHUB_COMMIT_SOURCE</code> to <b>False</b>, you must switch to
+your source branch and commit to it. Otherwise, this is done for
+you.
+</p>
+</li>
+
+<li>Run <code>nikola github_deploy</code>.
+This will <b>build</b> the site, <b>commit</b> the output folder to your deploy
+branch, and <b>push</b> to GitHub.  Your website should be up and running
+within a few minutes.</li>
+</ol>
+</div>
+
+<div id="outline-container-org3c33c83" class="outline-4">
+<h4 id="org3c33c83">
+<span class="section-number-4">2.3.1</span> 在 nikola github_deploy 之前</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+為了要能用 <code>nikola github_deploy</code> 指令，有以下的準備工作：
+</p>
+</div>
+
+<ol class="org-ol">
+<li>
+<a id="orgafdfbda"></a>install ghp_import2<br><div class="outline-text-5" id="text-2-3-1-1">
+<div class="highlight"><pre><span></span>sudo pip install ghp_import2
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="orga2ff288"></a>install and setup ssh<br><div class="outline-text-5" id="text-2-3-1-2">
+<p>
+為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
+</p>
+</div>
+
+<ol class="org-ol">
+<li>
+<a id="org59cb8b9"></a>install openssh<br><div class="outline-text-6" id="text-2-3-1-2-1">
+<div class="highlight"><pre><span></span>yaourt -S openssh
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org23addbd"></a>follow github help page to add ssh connect to github<br><div class="outline-text-6" id="text-2-3-1-2-2">
+<p>
+參考了以下文章設定 SSH：
+</p>
+
+<ul class="org-ul">
+<li><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generating a new SSH key and adding it to the ssh-agent - User Documentation</a></li>
+<li><a href="https://help.github.com/articles/working-with-ssh-key-passphrases/">Working with SSH key passphrases - User Documentation</a></li>
+<li><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Adding a new SSH key to your GitHub account - User Documentation</a></li>
+</ul>
+<p>
+a. 產生 ssh key
+</p>
+<div class="highlight"><pre><span></span>   ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">"your_email@example.com"</span>
+</pre></div>
+
+<p>
+螢幕上會出現
+</p>
+<div class="highlight"><pre><span></span>   Enter passphrase <span class="k">for</span> key <span class="s1">'/home/USERNAME/.ssh/id_rsa'</span>
+</pre></div>
+
+<p>
+此時不要輸入密碼，直接按 <kbd>Enter</kbd> ，否則未來 <code>nikola github_deploy</code> 時，就要每次輸入密碼。
+</p>
+
+<p>
+b. 將 ssh key 加到 github 中依 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Adding a new SSH key to your GitHub account - User Documentation</a> 執行
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li>
+<a id="orge460d37"></a>確定以 ssh 連上 github (不能是 https 型式)<br><div class="outline-text-5" id="text-2-3-1-3">
+<div class="highlight"><pre><span></span>$ git remote -v
+origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>fetch<span class="o">)</span>
+origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+
+<p>
+如果不是 ssh 型式，要用以下指令修正。
+</p>
+
+<div class="highlight"><pre><span></span>git remote set-url origin git@github.com:mariolong/mariolong.github.io
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6bbd79f" class="outline-2">
+<h2 id="org6bbd79f">
+<span class="section-number-2">3</span> 用 org-mode 寫文章</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 先安裝 plugin orgmode，再做一點點微調即可。
 </p>
 
 <div class="highlight"><pre><span></span>nikola plugin -i orgmode
 </pre></div>
+</div>
 
+<div id="outline-container-orgb236956" class="outline-3">
+<h3 id="orgb236956">
+<span class="section-number-3">3.1</span> 修改 <i>orgmode</i>init.el</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 開啟 <code>&lt;blog-name&gt;/plugins/orgmode/init.el</code> ，加上以下的程式碼。
 </p>
 </div>
 
-<div id="outline-container-orgd80c3f2" class="outline-4">
-<h4 id="orgd80c3f2">
-<span class="section-number-4">2.3.1</span> 刪除不必要的空白</h4>
-<div class="outline-text-4" id="text-2-3-1">
+<div id="outline-container-orge4ecded" class="outline-4">
+<h4 id="orge4ecded">
+<span class="section-number-4">3.1.1</span> 刪除不必要的空白</h4>
+<div class="outline-text-4" id="text-3-1-1">
 <p>
 換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
 </p>
@@ -221,10 +402,10 @@
 </div>
 </div>
 
-<div id="outline-container-orgfb91bb1" class="outline-4">
-<h4 id="orgfb91bb1">
-<span class="section-number-4">2.3.2</span> Convert inline verbatim to kbd when HTML export</h4>
-<div class="outline-text-4" id="text-2-3-2">
+<div id="outline-container-orga1ecaaf" class="outline-4">
+<h4 id="orga1ecaaf">
+<span class="section-number-4">3.1.2</span> Convert inline verbatim to kbd when HTML export</h4>
+<div class="outline-text-4" id="text-3-1-2">
 <p>
 ref: <a href="https://emacs-china.org/t/org-mode/1165">https://emacs-china.org/t/org-mode/1165</a>
 </p>
@@ -248,10 +429,10 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </div>
 </div>
 
-<div id="outline-container-org8e14bb8" class="outline-4">
-<h4 id="org8e14bb8">
-<span class="section-number-4">2.3.3</span> Inline verbatim and code</h4>
-<div class="outline-text-4" id="text-2-3-3">
+<div id="outline-container-orgcf8c32b" class="outline-4">
+<h4 id="orgcf8c32b">
+<span class="section-number-4">3.1.3</span> 在 Inline verbatim and code 不要空白</h4>
+<div class="outline-text-4" id="text-3-1-3">
 <p>
 如果有中文字要強調時，原本是要加上空白，如下：
 </p>
@@ -325,14 +506,14 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </div>
 </div>
 
-<div id="outline-container-orgc0c83ac" class="outline-4">
-<h4 id="orgc0c83ac">
-<span class="section-number-4">2.3.4</span> 用 pygment 幫程式碼著色</h4>
-<div class="outline-text-4" id="text-2-3-4">
+<div id="outline-container-orgc3079bf" class="outline-4">
+<h4 id="orgc3079bf">
+<span class="section-number-4">3.1.4</span> 用 pygment 幫程式碼著色</h4>
+<div class="outline-text-4" id="text-3-1-4">
 </div>
 <ol class="org-ol">
 <li>
-<a id="org48af1c2"></a>如果不想高亮程式碼<br><div class="outline-text-5" id="text-2-3-4-1">
+<a id="org59aa24c"></a>如果不想以 pygments 高亮程式碼<br><div class="outline-text-5" id="text-3-1-4-1">
 <p>
 在 <code>init.el</code> 設定 <code>nikola-use-pygments</code> 為 <code>nil</code>.
 </p>
@@ -342,7 +523,7 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </li>
 
 <li>
-<a id="orgb2f3438"></a>產生 pygments.css<br><div class="outline-text-5" id="text-2-3-4-2">
+<a id="orge264daf"></a>產生 pygments.css<br><div class="outline-text-5" id="text-3-1-4-2">
 <div class="highlight"><pre><span></span>$ <span class="nb">cd</span> themes/your-theme-name/assets/css
 $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </pre></div>
@@ -350,13 +531,10 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="orgc48c929"></a>設定 pygments 可支援的語言<br><div class="outline-text-5" id="text-2-3-4-3">
+<a id="org50977aa"></a>設定 pygments 可支援的語言<br><div class="outline-text-5" id="text-3-1-4-3">
 <p>
-我目前加上 ini, systemd, shell. 可參考
-<a href="http://orgmode.org/worg/org-contrib/babel/languages.html">http://orgmode.org/worg/org-contrib/babel/languages.html</a>
-和
-<a href="http://pygments.org/docs/lexers/">http://pygments.org/docs/lexers/</a>
-增減。
+我目前加上 ini, systemd, shell.
+可參考 <a href="http://orgmode.org/worg/org-contrib/babel/languages.html">Babel: Languages</a> 和 <a href="http://pygments.org/docs/lexers/">Available lexers — Pygments</a> 增減。
 </p>
 
 <div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defconst</span> <span class="nv">org-pygments-language-alist</span>
@@ -375,7 +553,7 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="orgd80c9ea"></a>程式碼縮排<br><div class="outline-text-5" id="text-2-3-4-4">
+<a id="org6fcfa42"></a>程式碼縮排<br><div class="outline-text-5" id="text-3-1-4-4">
 <p>
 如果要保留整體縮排，加上：
 </p>
@@ -390,7 +568,7 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="org1862837"></a>如果不想用 pygments<br><div class="outline-text-5" id="text-2-3-4-5">
+<a id="org99bd37f"></a>如果不想用 pygments<br><div class="outline-text-5" id="text-3-1-4-5">
 <p>
 其實我根本不想用 pygments，只想用內定的高亮型式。於是找到 <code>init.el</code> 把 <code>org-html-src-block</code> 函數刪掉。
 </p>
@@ -409,45 +587,85 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </li>
 </ol>
 </div>
+</div>
 
-<div id="outline-container-orge6175f7" class="outline-4">
-<h4 id="orge6175f7">
-<span class="section-number-4">2.3.5</span> text block</h4>
-<div class="outline-text-4" id="text-2-3-5">
-<div class="highlight"><pre><span></span>shell commands
-<span class="nb">cd</span> /cd/dir
-</pre></div>
+<div id="outline-container-org018a93d" class="outline-3">
+<h3 id="org018a93d">
+<span class="section-number-3">3.2</span> 揷入圖片</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+文章中不免有圖片，依照目前的工作流程，還是直接用 google photos 中的圖片，會比較方便。
+</p>
+</div>
+
+<div id="outline-container-org07dd23e" class="outline-4">
+<h4 id="org07dd23e">
+<span class="section-number-4">3.2.1</span> 利用 Google Drive 取得 Google Photos 的照片</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+參考 <a href="https://confluence.biola.edu/display/itservices/How+to+Embed+Images+from+Google+Drive+in+a+Web+Page">How to embed image from Google Drive in a Web page</a> 這篇文章的方法。
+</p>
+
+<p>
+新的設定步驟如下：
+</p>
+
+<ol class="org-ol">
+<li>在 google drive 中設定「建立 Google 相簿資料夾」，順便看一下</li>
+</ol>
+<p>
+<a href="https://support.google.com/drive/answer/6156103?visit_id=1-636650734031974235-4053810063&amp;p=create_photos_folder&amp;rd=2">Google 相簿如何與 Google 雲端硬碟搭配運作 - Google 雲端硬碟說明</a>
+</p>
+
+<ol class="org-ol">
+<li>在 google photots 中 設定「Google 雲端硬碟：從 Google 雲端硬碟同步處理相片和影片」</li>
+
+<li>
+<p>
+由 google drive 中選擇要分享的照片，按「右鍵」，選「取得檔案共用連結」，在剪貼簿中可得到下面連結：
+</p>
 
 <pre class="example">
-shell command output
+https://drive.google.com/open?id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm
 </pre>
 
-<p class="verse">
-verse<br>
-– verse<br></p>
-
-<blockquote>
 <p>
-quote
-– quote
+註：這一步要善用 google drive 的「搜尋」功能。
 </p>
-</blockquote>
+</li>
 
-<div class="org-center">
+<li>把上述的 <code>open?</code> 改成 <kbd>uc?export</kbd>view&amp;= ，並加上 &lt;img&gt; tags 即可。</li>
+</ol>
 <p>
-center
-– center
+由以上 4 步驟，可得到以下指令：
+</p>
+
+<pre class="example">
+#+HTML: &lt;img src='https://drive.google.com/uc?export=view&amp;=id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm'  width=320 alt="test picture"/&gt;
+</pre>
+
+<p>
+將以上的指令寫到文章中，呈現的結果如下：
+</p>
+
+<img src="https://drive.google.com/uc?export=view&amp;id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm" width="320" alt="test picture"><p>
+但這就不是 inline-image，所以在 emacs 中不能用 <code>M-x org-display-inline-image</code> 顯示此圖，小小缺憾。
+</p>
+
+<p>
+在 emacs 中，是看不到圖片預覧，
+<a href="https://drive.google.com/uc?export=view&amp;id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm">https://drive.google.com/uc?export=view&amp;id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm</a>
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6049117" class="outline-4">
-<h4 id="org6049117">
-<span class="section-number-4">2.3.6</span> Image URLs</h4>
-<div class="outline-text-4" id="text-2-3-6">
+<div id="outline-container-org0b6903f" class="outline-3">
+<h3 id="org0b6903f">
+<span class="section-number-3">3.3</span> 圖片連結 (Image URLs)</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
-ref: <a href="https://plugins.getnikola.com/v7/orgmode/">https://plugins.getnikola.com/v7/orgmode/</a>
+另外可參考 <a href="https://plugins.getnikola.com/v7/orgmode/">orgmode | Plugins for Nikola</a>
 </p>
 
 <p>
@@ -459,182 +677,139 @@ In order to correctly generate image urls, you may write
 , and then it should be generated as
 <code>&lt;img src="/images/test.jpg" alt="test.jpg"&gt;</code>.
 </p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org579757b" class="outline-3">
-<h3 id="org579757b">
-<span class="section-number-3">2.4</span> 用 <code>nikola github_deploy</code> 快速發佈文章</h3>
-<div class="outline-text-3" id="text-2-4">
-<p>
-REF: <a href="https://getnikola.com/handbook.html#deploying-to-github">https://getnikola.com/handbook.html#deploying-to-github</a>
-</p>
-</div>
-
-<div id="outline-container-org1ec37f7" class="outline-4">
-<h4 id="org1ec37f7">
-<span class="section-number-4">2.4.1</span> Initialize a Nikola site, if you haven’t already.</h4>
-</div>
-<div id="outline-container-org6c75389" class="outline-4">
-<h4 id="org6c75389">
-<span class="section-number-4">2.4.2</span> Initialize a git repository in your Nikola source directory by running:</h4>
-<div class="outline-text-4" id="text-2-4-2">
-<div class="highlight"><pre><span></span>git init .
-git remote add origin git@github.com:user/user.github.io
-</pre></div>
 
 <p>
-url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
+<img src="https://drive.google.com/uc?export=view&amp;id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm" alt="nil"></p>
+
+<p>
+但要如何設定圖片大小呢？還没研究出來。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9009f51" class="outline-4">
-<h4 id="org9009f51">
-<span class="section-number-4">2.4.3</span> Setup branches and remotes in <code>conf.py</code>:</h4>
-<div class="outline-text-4" id="text-2-4-3">
+<div id="outline-container-orgfec2b0c" class="outline-3">
+<h3 id="orgfec2b0c">
+<span class="section-number-3">3.4</span> plain list</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<div id="outline-container-org9d10123" class="outline-4">
+<h4 id="org9d10123">
+<span class="section-number-4">3.4.1</span> Lord of the Rings</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+My favorite scenes are (in this order)
+</p>
+<ol class="org-ol">
+<li>The attack of the Rohirrim</li>
+<li>Eowyn's fight with the witch king
 <ul class="org-ul">
-<li>GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
-will be deployed. It should be gh-pages for project pages and master
-for user pages (<b>user.github.io</b>).</li>
-
-<li>GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-will be deployed. We recommend and default to <b>src</b>.</li>
-
-<li>GITHUB_REMOTE_NAME is the remote to which changes are pushed.</li>
-
-<li>GITHUB_COMMIT_SOURCE controls whether or not the source branch is
-automatically committed to and pushed. We recommend setting it to
-<b>True</b>, unless you are automating builds with Travis CI.</li>
+<li>this was already my favorite scene in the book</li>
+<li>I really like Miranda Otto.</li>
 </ul>
-</div>
-</div>
-
-<div id="outline-container-orgf29e9be" class="outline-4">
-<h4 id="orgf29e9be">
-<span class="section-number-4">2.4.4</span> Create a <code>.gitignore</code> file. We recommend adding at least the following entries:</h4>
-<div class="outline-text-4" id="text-2-4-4">
-<div class="highlight"><pre><span></span>cache
-.doit.db
-__pycache__
-output
-</pre></div>
-
-<p>
-If you set GITHUB_COMMIT_SOURCE to <b>False</b>, you must switch to your
-source branch and commit to it. Otherwise, this is done for you.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgfba29fc" class="outline-4">
-<h4 id="orgfba29fc">
-<span class="section-number-4">2.4.5</span> Run <code>nikola github_deploy</code>.</h4>
-<div class="outline-text-4" id="text-2-4-5">
-<p>
-This will <b>build</b> the site, <b>commit</b> the output folder to your deploy
-branch, and <b>push</b> to GitHub.  Your website should be up and running
-within a few minutes.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org32097b8" class="outline-4">
-<h4 id="org32097b8">
-<span class="section-number-4">2.4.6</span> 在 nikola github_deploy 之前</h4>
-<div class="outline-text-4" id="text-2-4-6">
-<p>
-為了要能用 <code>nikola github_deploy</code> 指令，有以下的準備工作：
-</p>
-</div>
-
-<ol class="org-ol">
-<li>
-<a id="org1aa9629"></a>install ghp_import2<br><div class="outline-text-5" id="text-2-4-6-1">
-<div class="highlight"><pre><span></span>sudo pip install ghp_import2
-</pre></div>
-</div>
 </li>
-
 <li>
-<a id="org6d85535"></a>install and setup ssh<br><div class="outline-text-5" id="text-2-4-6-2">
 <p>
-為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
+Peter Jackson being shot by Legolas
 </p>
-</div>
-
-<ol class="org-ol">
-<li>
-<a id="org6c77e51"></a>install openssh<br><div class="outline-text-6" id="text-2-4-6-2-1">
-<div class="highlight"><pre><span></span>yaourt -S openssh
-</pre></div>
-</div>
-</li>
-
-<li>
-<a id="org96d9226"></a>follow github help page to add ssh connect to github<br><div class="outline-text-6" id="text-2-4-6-2-2">
 <ul class="org-ul">
-<li><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generating a new SSH key and adding it to the ssh-agent - User Documentation</a></li>
-<li><a href="https://help.github.com/articles/working-with-ssh-key-passphrases/">Working with SSH key passphrases - User Documentation</a></li>
-<li><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Adding a new SSH key to your GitHub account - User Documentation</a></li>
+<li>on DVD only</li>
 </ul>
-</div>
-
-<ol class="org-ol">
-<li>
-<a id="org8965331"></a>產生 ssh key<br><div class="outline-text-7" id="text-2-4-6-2-2-1">
-<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">"your_email@example.com"</span>
-</pre></div>
-
 <p>
-螢幕上會出現
+He makes a really funny face when it happens.
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
 </p>
-<div class="highlight"><pre><span></span>Enter passphrase <span class="k">for</span> key <span class="s1">'/home/USERNAME/.ssh/id_rsa'</span>
-</pre></div>
-
+<dl class="org-dl">
+<dt>Elijah Wood</dt>
+<dd>He plays Frodo</dd>
+<dt>Sean Astin</dt>
+<dd>He plays Sam, Frodo's friend.  I still remember</dd>
+</dl>
 <p>
-此時不要輸入密碼，直接按 <kbd>Enter</kbd> ，否則未來 <code>nikola github_deploy</code> 時，就要每次輸入密碼。
+him very well from his role as Mikey Walsh in The Goonies.
 </p>
-</div>
-</li>
-
-<li>
-<a id="org414ee05"></a>將 ssh key 加到 github 中<br><div class="outline-text-7" id="text-2-4-6-2-2-2">
-<p>
-依 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Adding a new SSH key to your GitHub account - User Documentation</a> 執行
-</p>
-</div>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-
-<li>
-<a id="org96efce4"></a>確定以 ssh 連上 github (不能是 https)<br><div class="outline-text-5" id="text-2-4-6-3">
-<div class="highlight"><pre><span></span>$ git remote -v
-origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>fetch<span class="o">)</span>
-origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>push<span class="o">)</span>
-</pre></div>
-
-<p>
-如果不是，要用以下指令修正。
-</p>
-
-<div class="highlight"><pre><span></span>git remote set-url origin git@github.com:mariolong/mariolong.github.io
-</pre></div>
-</div>
 </li>
 </ol>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7f957c6" class="outline-2">
-<h2 id="org7f957c6">
-<span class="section-number-2">3</span> 開始使用</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org652f59e" class="outline-3">
+<h3 id="org652f59e">
+<span class="section-number-3">3.5</span> Subscripts and superscripts</h3>
+<div class="outline-text-3" id="text-3-5">
+<div class="highlight"><pre><span></span>#+OPTIONS: ^:{}
+</pre></div>
+
+<p>
+a_subb^sup
+</p>
+
+<p>
+如果真的要上、下標，就加 <code>{}</code>
+</p>
+
+<pre class="example">
+a_{sub}b^{sup}
+</pre>
+
+<p>
+結果為 a<sub>sub</sub>b<sup>sup</sup></p>
+</div>
+</div>
+
+<div id="outline-container-org66261ec" class="outline-3">
+<h3 id="org66261ec">
+<span class="section-number-3">3.6</span> Teasers</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+You may use teasers by enabling <code>INDEX_TEASERS = True</code> in <code>conf.py</code>,
+and use #+HTML: &lt;!– TEASER_END –&gt; to generate &lt;!– TEASER_END –&gt; in org posts.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org437201a" class="outline-3">
+<h3 id="org437201a">
+<span class="section-number-3">3.7</span> text block</h3>
+<div class="outline-text-3" id="text-3-7">
+<div class="highlight"><pre><span></span>shell commands
+<span class="nb">cd</span> /cd/dir
+</pre></div>
+
+<pre class="example">
+shell command output
+</pre>
+
+<p class="verse">
+詩句<br>
+Great clouds overhead<br>
+Tiny black birds rise and fall<br>
+Snow covers Emacs<br><br>
+  – AlexSchroeder<br></p>
+
+<blockquote>
+<p>
+引言
+Everything should be made as simple as possible,
+but not any simpler – Albert Einstein
+</p>
+</blockquote>
+
+<div class="org-center">
+<p>
+CENTER
+Everything should be made as simple as possible, <br>
+but not any simpler
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6d1b617" class="outline-2">
+<h2 id="org6d1b617">
+<span class="section-number-2">4</span> 開始使用</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 建立新的文章，
 </p>

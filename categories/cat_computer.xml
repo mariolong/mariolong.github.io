@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 13:09:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 06:58:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 emacs version 26.1 systemd support
 &lt;/p&gt;
 
@@ -513,539 +513,56 @@ unable to complete, or interface CRC (with ICRC).
 &lt;p&gt;
 要加到 lvm 就看 &lt;a href="https://mariolong.github.io/posts/replace-hd-on-lvm"&gt;replace hd on LVM&lt;/a&gt; 這篇記錄，有經驗，不會太難。&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>WD</category><category>windows</category><guid>https://mariolong.github.io/posts/replace-new-hard-disk/</guid><pubDate>Thu, 24 May 2018 05:43:24 GMT</pubDate></item><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="table-of-contents"&gt;
+&lt;/div&gt;</description><category>WD</category><category>windows</category><guid>https://mariolong.github.io/posts/replace-new-hard-disk/</guid><pubDate>Thu, 24 May 2018 05:43:24 GMT</pubDate></item><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;目錄&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org20c1542"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org85469ca"&gt;2. 設定&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org14b2e71"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orged32c54"&gt;2. 設定&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org7a5cca6"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org28caaae"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orga81af79"&gt;2.3. org-mod&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orge9bb265"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfc16302"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgd974719"&gt;2.3. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgd80c3f2"&gt;2.3.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfb91bb1"&gt;2.3.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org8e14bb8"&gt;2.3.3. Inline verbatim and code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgc0c83ac"&gt;2.3.4. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orge6175f7"&gt;2.3.5. text block&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org6049117"&gt;2.3.6. Image URLs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org579757b"&gt;2.4. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org1ec37f7"&gt;2.4.1. Initialize a Nikola site, if you haven’t already.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org6c75389"&gt;2.4.2. Initialize a git repository in your Nikola source directory by running:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org9009f51"&gt;2.4.3. Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgf29e9be"&gt;2.4.4. Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfba29fc"&gt;2.4.5. Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org32097b8"&gt;2.4.6. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org3c33c83"&gt;2.3.1. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org7f957c6"&gt;3. 開始使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org6bbd79f"&gt;3. 用 org-mode 寫文章&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgb236956"&gt;3.1. 修改 &lt;i&gt;orgmode&lt;/i&gt;init.el&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orge4ecded"&gt;3.1.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orga1ecaaf"&gt;3.1.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgcf8c32b"&gt;3.1.3. 在 Inline verbatim and code 不要空白&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgc3079bf"&gt;3.1.4. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org018a93d"&gt;3.2. 揷入圖片&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org07dd23e"&gt;3.2.1. 利用 Google Drive 取得 Google Photos 的照片&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0b6903f"&gt;3.3. 圖片連結 (Image URLs)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgfec2b0c"&gt;3.4. plain list&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org9d10123"&gt;3.4.1. Lord of the Rings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org652f59e"&gt;3.5. Subscripts and superscripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org66261ec"&gt;3.6. Teasers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org437201a"&gt;3.7. text block&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org6d1b617"&gt;4. 開始使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
 掙扎了許久，還是先用 &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt; 記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
-
-&lt;div id="outline-container-org20c1542" class="outline-2"&gt;
-&lt;h2 id="org20c1542"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 安裝&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip nikola
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org85469ca" class="outline-2"&gt;
-&lt;h2 id="org85469ca"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 設定&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
-執行 &lt;code&gt;nikola init&lt;/code&gt; 後，依指示設定，比較省事。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola init &amp;lt;blog-name&amp;gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;blog-name&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7a5cca6" class="outline-3"&gt;
-&lt;h3 id="org7a5cca6"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; configuration file&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-1"&gt;
-&lt;p&gt;
-修改 &lt;code&gt;conf.py&lt;/code&gt; ，慢慢改，內容很多，不必急於一時。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org28caaae" class="outline-3"&gt;
-&lt;h3 id="org28caaae"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; theme&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme install bootstrap
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orga81af79" class="outline-3"&gt;
-&lt;h3 id="orga81af79"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; org-mod&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-3"&gt;
-&lt;p&gt;
-先安裝 plugin orgmode，再做一點點微調即可。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola plugin -i orgmode
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-開啟 &lt;code&gt;&amp;lt;blog-name&amp;gt;/plugins/orgmode/init.el&lt;/code&gt; ，加上以下的程式碼。
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgd80c3f2" class="outline-4"&gt;
-&lt;h4 id="orgd80c3f2"&gt;&lt;span class="section-number-4"&gt;2.3.1&lt;/span&gt; 刪除不必要的空白&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-1"&gt;
-&lt;p&gt;
-換行時，在兩個中文字間會有一個空白，不好看，所以想辦法刪除。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; https://coldnew.github.io/a1ed40e3/&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defadvice&lt;/span&gt; &lt;span class="nv"&gt;org-html-paragraph&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;before&lt;/span&gt; &lt;span class="nv"&gt;org-html-paragraph-advice&lt;/span&gt;
-				      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;paragraph&lt;/span&gt; &lt;span class="nv"&gt;contents&lt;/span&gt; &lt;span class="nv"&gt;info&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;activate&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="s"&gt;"Join consecutive Chinese lines into a single long line without&lt;/span&gt;
-&lt;span class="s"&gt;unwanted space when exporting org-mode to html."&lt;/span&gt;
-  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let* &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origin-contents&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;ad-get-arg&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;fix-regexp&lt;/span&gt; &lt;span class="s"&gt;"[[:multibyte:]]"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;fixed-contents&lt;/span&gt;
-	  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;replace-regexp-in-string&lt;/span&gt;
-	   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;concat&lt;/span&gt;
-	    &lt;span class="s"&gt;"\\("&lt;/span&gt; &lt;span class="nv"&gt;fix-regexp&lt;/span&gt; &lt;span class="s"&gt;"\\) *\n *\\("&lt;/span&gt; &lt;span class="nv"&gt;fix-regexp&lt;/span&gt; &lt;span class="s"&gt;"\\)"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"\\1\\2"&lt;/span&gt; &lt;span class="nv"&gt;origin-contents&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;ad-set-arg&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;fixed-contents&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgfb91bb1" class="outline-4"&gt;
-&lt;h4 id="orgfb91bb1"&gt;&lt;span class="section-number-4"&gt;2.3.2&lt;/span&gt; Convert inline verbatim to kbd when HTML export&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-2"&gt;
-&lt;p&gt;
-ref: &lt;a href="https://emacs-china.org/t/org-mode/1165"&gt;https://emacs-china.org/t/org-mode/1165&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-change &lt;kbd&gt;verbatim&lt;/kbd&gt; to &lt;kbd&gt;kbd&lt;/kbd&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;code&gt;code&lt;/code&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-html-text-markup-alist&lt;/span&gt;
-      &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;bold&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;b&amp;gt;%s&amp;lt;/b&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;code&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;code&amp;gt;%s&amp;lt;/code&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;italic&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;i&amp;gt;%s&amp;lt;/i&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;strike-through&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;del&amp;gt;%s&amp;lt;/del&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;underline&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;span class=\"underline\"&amp;gt;%s&amp;lt;/span&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-	&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;verbatim&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;kbd&amp;gt;%s&amp;lt;/kbd&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org8e14bb8" class="outline-4"&gt;
-&lt;h4 id="org8e14bb8"&gt;&lt;span class="section-number-4"&gt;2.3.3&lt;/span&gt; Inline verbatim and code&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-3"&gt;
-&lt;p&gt;
-如果有中文字要強調時，原本是要加上空白，如下：
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-~hello~ hh
-=hello= hh
-*star* s
-+中文+ 測試
-/中文/ 測試
-&lt;/pre&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;hello&lt;/code&gt; hh&lt;/li&gt;
-&lt;li&gt;&lt;kbd&gt;hello&lt;/kbd&gt; hh&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;star&lt;/b&gt; s&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;中文&lt;/del&gt; 測試&lt;/li&gt;
-&lt;li&gt;&lt;i&gt;中文&lt;/i&gt; 測試&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-實在是不符習慣。google 了許久，加上一些實驗，終於找到以下的解法：
-&lt;/p&gt;
-
-&lt;p&gt;
-開啟 &lt;code&gt;&amp;lt;blog-name&amp;gt;/plugins/orgmode/init.el&lt;/code&gt; ，加上以下的程式碼。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setcar&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt; &lt;span class="s"&gt;" \t('\"{[:alpha:]"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;nthcdr&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="s"&gt;"[:alpha:]- \t.,:!?;'\")}\\"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;org-set-emph-re&lt;/span&gt; &lt;span class="ss"&gt;'org-emphasis-regexp-components&lt;/span&gt; &lt;span class="nv"&gt;org-emphasis-regexp-components&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-結果如下：
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-- 測試~code~測試
-- 測試=kbd=測試
-- 測試*star*測試
-- *star*s
-- ~中文~測試
-- =中文=測試
-- *中文*測試
-- +中文+測試
-- /中文/測試
-&lt;/pre&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;測試&lt;code&gt;code&lt;/code&gt;測試&lt;/li&gt;
-&lt;li&gt;測試&lt;kbd&gt;kbd&lt;/kbd&gt;測試&lt;/li&gt;
-&lt;li&gt;測試&lt;b&gt;star&lt;/b&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;star&lt;/b&gt;s&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;中文&lt;/code&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;kbd&gt;中文&lt;/kbd&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;中文&lt;/b&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;中文&lt;/del&gt;測試&lt;/li&gt;
-&lt;li&gt;&lt;i&gt;中文&lt;/i&gt;測試&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgc0c83ac" class="outline-4"&gt;
-&lt;h4 id="orgc0c83ac"&gt;&lt;span class="section-number-4"&gt;2.3.4&lt;/span&gt; 用 pygment 幫程式碼著色&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-4"&gt;
-&lt;/div&gt;
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;a id="org48af1c2"&gt;&lt;/a&gt;如果不想高亮程式碼&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-3-4-1"&gt;
-&lt;p&gt;
-在 &lt;code&gt;init.el&lt;/code&gt; 設定 &lt;code&gt;nikola-use-pygments&lt;/code&gt; 為 &lt;code&gt;nil&lt;/code&gt;.
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;nikola-use-pygments&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="orgb2f3438"&gt;&lt;/a&gt;產生 pygments.css&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-3-4-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; themes/your-theme-name/assets/css
-$ pygmentize -S emacs -a .highlight -f html &amp;gt; pygments.css
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="orgc48c929"&gt;&lt;/a&gt;設定 pygments 可支援的語言&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-3-4-3"&gt;
-&lt;p&gt;
-我目前加上 ini, systemd, shell. 可參考
-&lt;a href="http://orgmode.org/worg/org-contrib/babel/languages.html"&gt;http://orgmode.org/worg/org-contrib/babel/languages.html&lt;/a&gt;
-和
-&lt;a href="http://pygments.org/docs/lexers/"&gt;http://pygments.org/docs/lexers/&lt;/a&gt;
-增減。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defconst&lt;/span&gt; &lt;span class="nv"&gt;org-pygments-language-alist&lt;/span&gt;
-  &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;"asymptote"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"asymptote"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"conf"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"ini"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"ini"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"ini"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"systemd"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"sv"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"shell"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"sh"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"tcl"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"tcl"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-  &lt;span class="s"&gt;"Alist between org-babel languages and Pygments lexers.&lt;/span&gt;
-&lt;span class="s"&gt;lang is downcased before assoc, so use lowercase to describe language available.&lt;/span&gt;
-&lt;span class="s"&gt;See: http://orgmode.org/worg/org-contrib/babel/languages.html and&lt;/span&gt;
-&lt;span class="s"&gt;http://pygments.org/docs/lexers/ for adding new languages to the mapping."&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="orgd80c9ea"&gt;&lt;/a&gt;程式碼縮排&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-3-4-4"&gt;
-&lt;p&gt;
-如果要保留整體縮排，加上：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;org-src-preserve-indentation&lt;/span&gt; &lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-不過，我覺得預設的 &lt;code&gt;nil&lt;/code&gt; 可能好看點。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="org1862837"&gt;&lt;/a&gt;如果不想用 pygments&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-3-4-5"&gt;
-&lt;p&gt;
-其實我根本不想用 pygments，只想用內定的高亮型式。於是找到 &lt;code&gt;init.el&lt;/code&gt; 把 &lt;code&gt;org-html-src-block&lt;/code&gt; 函數刪掉。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;;; Override the html export function to use pygments&lt;/span&gt;
-&lt;span class="c1"&gt;;; (defun org-html-src-block (src-block contents info)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-並加上
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;nikola-use-pygments&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt;
-      &lt;span class="nv"&gt;org-html-htmlize-output-type&lt;/span&gt; &lt;span class="ss"&gt;'css&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orge6175f7" class="outline-4"&gt;
-&lt;h4 id="orge6175f7"&gt;&lt;span class="section-number-4"&gt;2.3.5&lt;/span&gt; text block&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-5"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;shell commands
-&lt;span class="nb"&gt;cd&lt;/span&gt; /cd/dir
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-shell command output
-&lt;/pre&gt;
-
-&lt;p class="verse"&gt;
-verse&lt;br&gt;
-– verse&lt;br&gt;
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-quote
-– quote
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class="org-center"&gt;
-&lt;p&gt;
-center
-– center
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6049117" class="outline-4"&gt;
-&lt;h4 id="org6049117"&gt;&lt;span class="section-number-4"&gt;2.3.6&lt;/span&gt; Image URLs&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-3-6"&gt;
-&lt;p&gt;
-ref: &lt;a href="https://plugins.getnikola.com/v7/orgmode/"&gt;https://plugins.getnikola.com/v7/orgmode/&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-In order to correctly generate image urls, you may write
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[[img-url:/images/test.jpg]]
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;
-, and then it should be generated as
-&lt;code&gt;&amp;lt;img src="/images/test.jpg" alt="test.jpg"&amp;gt;&lt;/code&gt;.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org579757b" class="outline-3"&gt;
-&lt;h3 id="org579757b"&gt;&lt;span class="section-number-3"&gt;2.4&lt;/span&gt; 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-4"&gt;
-&lt;p&gt;
-REF: &lt;a href="https://getnikola.com/handbook.html#deploying-to-github"&gt;https://getnikola.com/handbook.html#deploying-to-github&lt;/a&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org1ec37f7" class="outline-4"&gt;
-&lt;h4 id="org1ec37f7"&gt;&lt;span class="section-number-4"&gt;2.4.1&lt;/span&gt; Initialize a Nikola site, if you haven’t already.&lt;/h4&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org6c75389" class="outline-4"&gt;
-&lt;h4 id="org6c75389"&gt;&lt;span class="section-number-4"&gt;2.4.2&lt;/span&gt; Initialize a git repository in your Nikola source directory by running:&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
-git remote add origin git@github.com:user/user.github.io
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org9009f51" class="outline-4"&gt;
-&lt;h4 id="org9009f51"&gt;&lt;span class="section-number-4"&gt;2.4.3&lt;/span&gt; Setup branches and remotes in &lt;code&gt;conf.py&lt;/code&gt;:&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-3"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
-will be deployed. It should be gh-pages for project pages and master
-for user pages (&lt;b&gt;user.github.io&lt;/b&gt;).&lt;/li&gt;
-
-&lt;li&gt;GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-will be deployed. We recommend and default to &lt;b&gt;src&lt;/b&gt;.&lt;/li&gt;
-
-&lt;li&gt;GITHUB_REMOTE_NAME is the remote to which changes are pushed.&lt;/li&gt;
-
-&lt;li&gt;GITHUB_COMMIT_SOURCE controls whether or not the source branch is
-automatically committed to and pushed. We recommend setting it to
-&lt;b&gt;True&lt;/b&gt;, unless you are automating builds with Travis CI.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgf29e9be" class="outline-4"&gt;
-&lt;h4 id="orgf29e9be"&gt;&lt;span class="section-number-4"&gt;2.4.4&lt;/span&gt; Create a &lt;code&gt;.gitignore&lt;/code&gt; file. We recommend adding at least the following entries:&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-4"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cache
-.doit.db
-__pycache__
-output
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-If you set GITHUB_COMMIT_SOURCE to &lt;b&gt;False&lt;/b&gt;, you must switch to your
-source branch and commit to it. Otherwise, this is done for you.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgfba29fc" class="outline-4"&gt;
-&lt;h4 id="orgfba29fc"&gt;&lt;span class="section-number-4"&gt;2.4.5&lt;/span&gt; Run &lt;code&gt;nikola github_deploy&lt;/code&gt;.&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-5"&gt;
-&lt;p&gt;
-This will &lt;b&gt;build&lt;/b&gt; the site, &lt;b&gt;commit&lt;/b&gt; the output folder to your deploy
-branch, and &lt;b&gt;push&lt;/b&gt; to GitHub.  Your website should be up and running
-within a few minutes.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org32097b8" class="outline-4"&gt;
-&lt;h4 id="org32097b8"&gt;&lt;span class="section-number-4"&gt;2.4.6&lt;/span&gt; 在 nikola github_deploy 之前&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-2-4-6"&gt;
-&lt;p&gt;
-為了要能用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 指令，有以下的準備工作：
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;a id="org1aa9629"&gt;&lt;/a&gt;install ghp_import2&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-4-6-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pip install ghp_import2
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="org6d85535"&gt;&lt;/a&gt;install and setup ssh&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-4-6-2"&gt;
-&lt;p&gt;
-為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;a id="org6c77e51"&gt;&lt;/a&gt;install openssh&lt;br&gt;
-&lt;div class="outline-text-6" id="text-2-4-6-2-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S openssh
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="org96d9226"&gt;&lt;/a&gt;follow github help page to add ssh connect to github&lt;br&gt;
-&lt;div class="outline-text-6" id="text-2-4-6-2-2"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"&gt;Generating a new SSH key and adding it to the ssh-agent - User Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/working-with-ssh-key-passphrases/"&gt;Working with SSH key passphrases - User Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;a id="org8965331"&gt;&lt;/a&gt;產生 ssh key&lt;br&gt;
-&lt;div class="outline-text-7" id="text-2-4-6-2-2-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b &lt;span class="m"&gt;4096&lt;/span&gt; -C &lt;span class="s2"&gt;"your_email@example.com"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-螢幕上會出現
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase &lt;span class="k"&gt;for&lt;/span&gt; key &lt;span class="s1"&gt;'/home/USERNAME/.ssh/id_rsa'&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-此時不要輸入密碼，直接按 &lt;kbd&gt;Enter&lt;/kbd&gt; ，否則未來 &lt;code&gt;nikola github_deploy&lt;/code&gt; 時，就要每次輸入密碼。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="org414ee05"&gt;&lt;/a&gt;將 ssh key 加到 github 中&lt;br&gt;
-&lt;div class="outline-text-7" id="text-2-4-6-2-2-2"&gt;
-&lt;p&gt;
-依 &lt;a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"&gt;Adding a new SSH key to your GitHub account - User Documentation&lt;/a&gt; 執行
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-
-&lt;li&gt;&lt;a id="org96efce4"&gt;&lt;/a&gt;確定以 ssh 連上 github (不能是 https)&lt;br&gt;
-&lt;div class="outline-text-5" id="text-2-4-6-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git remote -v
-origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;fetch&lt;span class="o"&gt;)&lt;/span&gt;
-origin  git@github.com:mariolong/mariolong.github.io &lt;span class="o"&gt;(&lt;/span&gt;push&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-如果不是，要用以下指令修正。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote set-url origin git@github.com:mariolong/mariolong.github.io
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7f957c6" class="outline-2"&gt;
-&lt;h2 id="org7f957c6"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 開始使用&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;p&gt;
-建立新的文章，
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new-post -e -f orgmod
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-寫完就 build
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola build
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-或發佈吧！
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola github_deploy
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-一切都就緒了，那就開始專心寫文章吧！
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org58ae188" class="outline-2"&gt;
+&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/"&gt;閱讀更多…&lt;/a&gt; (尚餘 5 分鐘)&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org58ae188" class="outline-2"&gt;
 &lt;h2 id="org58ae188"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
