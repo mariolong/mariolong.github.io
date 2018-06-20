@@ -12,7 +12,7 @@
 #+OPTIONS: toc:3 num:t ^:{}
 
 掙扎了許久，還是先用 [[https://getnikola.com/][nikola]] 記錄一些事，畢竟比較熟悉，能快一點上手。
-
+ {{{TEASER_END}}}
 * 安裝
 #+BEGIN_SRC sh
 pip nikola
@@ -35,13 +35,118 @@ cd <blog-name>
 nikola theme install bootstrap
 #+END_SRC
 
-** org-mod
+** 用 ~nikola github_deploy~ 快速發佈文章
+
+參考 [[https://getnikola.com/handbook.html#deploying-to-github][The Nikola Handbook | Nikola]]
+
+設定的步驟如下：
+
+1. Initialize a Nikola site, if you haven’t already.
+2. Initialize a git repository in your Nikola source directory by running:
+
+   #+BEGIN_SRC sh
+   git init .
+   git remote add origin git@github.com:user/user.github.io
+   #+END_SRC
+
+   url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
+
+3. Setup branches and remotes in ~conf.py~:
+
+   - ~GITHUB_DEPLOY_BRANCH~ is the branch where Nikola-generated HTML
+     files will be deployed. It should be gh-pages for project pages
+     and master for user pages (*user.github.io*).
+
+   - ~GITHUB_SOURCE_BRANCH~ is the branch where your Nikola site source
+     will be deployed. We recommend and default to *src*.
+
+   - ~GITHUB_REMOTE_NAME~ is the remote to which changes are pushed.
+
+   - ~GITHUB_COMMIT_SOURCE~ controls whether or not the source branch is
+     automatically committed to and pushed. We recommend setting it to
+     *True*, unless you are automating builds with Travis CI.
+
+4. Create a ~.gitignore~ file. We recommend adding at least the following entries:
+
+   #+BEGIN_SRC conf
+   cache
+   .doit.db
+   __pycache__
+   output
+   #+END_SRC
+
+   If you set ~GITHUB_COMMIT_SOURCE~ to *False*, you must switch to
+   your source branch and commit to it. Otherwise, this is done for
+   you.
+
+5. Run ~nikola github_deploy~.
+   This will *build* the site, *commit* the output folder to your deploy
+   branch, and *push* to GitHub.  Your website should be up and running
+   within a few minutes.
+
+*** 在 nikola github_deploy 之前
+為了要能用 ~nikola github_deploy~ 指令，有以下的準備工作：
+
+**** install ghp_import2
+
+#+BEGIN_SRC sh
+sudo pip install ghp_import2
+#+END_SRC
+
+**** install and setup ssh
+為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
+
+***** install openssh
+
+#+BEGIN_SRC sh
+yaourt -S openssh
+#+END_SRC
+
+***** follow github help page to add ssh connect to github
+參考了以下文章設定 SSH：
+
+- [[https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/][Generating a new SSH key and adding it to the ssh-agent - User Documentation]]
+- [[https://help.github.com/articles/working-with-ssh-key-passphrases/][Working with SSH key passphrases - User Documentation]]
+- [[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/][Adding a new SSH key to your GitHub account - User Documentation]]
+
+a. 產生 ssh key
+   #+BEGIN_SRC sh
+   ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+   #+END_SRC
+
+   螢幕上會出現
+   #+BEGIN_SRC sh
+   Enter passphrase for key '/home/USERNAME/.ssh/id_rsa'
+   #+END_SRC
+
+   此時不要輸入密碼，直接按 =Enter= ，否則未來 ~nikola github_deploy~ 時，
+   就要每次輸入密碼。
+
+b. 將 ssh key 加到 github 中
+   依 [[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/][Adding a new SSH key to your GitHub account - User Documentation]] 執行
+
+**** 確定以 ssh 連上 github (不能是 https 型式)
+
+#+BEGIN_SRC sh
+$ git remote -v
+origin  git@github.com:mariolong/mariolong.github.io (fetch)
+origin  git@github.com:mariolong/mariolong.github.io (push)
+#+END_SRC
+
+如果不是 ssh 型式，要用以下指令修正。
+
+#+BEGIN_SRC sh
+git remote set-url origin git@github.com:mariolong/mariolong.github.io
+#+END_SRC
+
+* 用 org-mode 寫文章
 先安裝 plugin orgmode，再做一點點微調即可。
 
 #+BEGIN_SRC sh
 nikola plugin -i orgmode
 #+END_SRC
 
+** 修改 /orgmode/init.el
 開啟 ~<blog-name>/plugins/orgmode/init.el~ ，加上以下的程式碼。
 
 *** 刪除不必要的空白
@@ -82,7 +187,7 @@ change =verbatim= to =kbd=
           (verbatim . "<kbd>%s</kbd>")))
 #+END_SRC
 
-*** Inline verbatim and code
+*** 在 Inline verbatim and code 不要空白
 如果有中文字要強調時，原本是要加上空白，如下：
 
 #+BEGIN_EXAMPLE
@@ -135,7 +240,7 @@ change =verbatim= to =kbd=
 
 *** 用 pygment 幫程式碼著色
 
-**** 如果不想高亮程式碼
+**** 如果不想以 pygments 高亮程式碼
 在 ~init.el~ 設定 ~nikola-use-pygments~ 為 ~nil~.
 #+BEGIN_SRC emacs-lisp
 (setq nikola-use-pygments nil)
@@ -148,11 +253,8 @@ $ pygmentize -S emacs -a .highlight -f html > pygments.css
 #+END_SRC
 
 **** 設定 pygments 可支援的語言
-我目前加上 ini, systemd, shell. 可參考
-http://orgmode.org/worg/org-contrib/babel/languages.html
-和
-http://pygments.org/docs/lexers/
-增減。
+我目前加上 ini, systemd, shell.
+可參考 [[http://orgmode.org/worg/org-contrib/babel/languages.html][Babel: Languages]] 和 [[http://pygments.org/docs/lexers/][Available lexers — Pygments]] 增減。
 
 #+BEGIN_SRC emacs-lisp
 (defconst org-pygments-language-alist
@@ -192,7 +294,98 @@ http://pygments.org/docs/lexers/ for adding new languages to the mapping.")
         org-html-htmlize-output-type 'css)
 #+END_SRC
 
-*** text block
+** 揷入圖片
+文章中不免有圖片，依照目前的工作流程，還是直接用 google photos 中的圖
+片，會比較方便。
+
+*** 利用 Google Drive 取得 Google Photos 的照片
+
+參考 [[https://confluence.biola.edu/display/itservices/How+to+Embed+Images+from+Google+Drive+in+a+Web+Page][How to embed image from Google Drive in a Web page]] 這篇文章的方法。
+
+新的設定步驟如下：
+
+1. 在 google drive 中設定「建立 Google 相簿資料夾」，順便看一下
+[[https://support.google.com/drive/answer/6156103?visit_id=1-636650734031974235-4053810063&p=create_photos_folder&rd=2][Google 相簿如何與 Google 雲端硬碟搭配運作 - Google 雲端硬碟說明]]
+
+2. 在 google photots 中 設定「Google 雲端硬碟：從 Google 雲端硬碟同步處理相片和影片」
+
+3. 由 google drive 中選擇要分享的照片，按「右鍵」，選「取得檔案共用連
+   結」，在剪貼簿中可得到下面連結：
+
+   #+BEGIN_EXAMPLE
+   https://drive.google.com/open?id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm
+   #+END_EXAMPLE
+
+   註：這一步要善用 google drive 的「搜尋」功能。
+
+4. 把上述的 ~open?~ 改成 =uc?export=view&= ，並加上 <img> tags 即可。
+
+由以上 4 步驟，可得到以下指令：
+
+#+BEGIN_EXAMPLE
+#+HTML: <img src='https://drive.google.com/uc?export=view&=id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm'  width=320 alt="test picture"/>
+#+END_EXAMPLE
+
+將以上的指令寫到文章中，呈現的結果如下：
+
+#+HTML: <img src='https://drive.google.com/uc?export=view&id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm' width=320 alt="test picture"/>
+但這就不是 inline-image，所以在 emacs 中不能用 ~M-x org-display-inline-image~ 顯示此圖，小小缺憾。
+
+在 emacs 中，是看不到圖片預覧，
+[[https://drive.google.com/uc?export=view&id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm]]
+
+** 圖片連結 (Image URLs)
+
+另外可參考 [[https://plugins.getnikola.com/v7/orgmode/][orgmode | Plugins for Nikola]]
+
+In order to correctly generate image urls, you may write
+#+BEGIN_SRC org
+[[img-url:/images/test.jpg]]
+#+END_SRC
+, and then it should be generated as
+~<img src="/images/test.jpg" alt="test.jpg">~.
+
+[[img-url:https://drive.google.com/uc?export=view&id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm]]
+
+但要如何設定圖片大小呢？還没研究出來。
+
+** plain list
+*** Lord of the Rings
+ My favorite scenes are (in this order)
+    1. The attack of the Rohirrim
+    2. Eowyn's fight with the witch king
+       + this was already my favorite scene in the book
+       + I really like Miranda Otto.
+    3. Peter Jackson being shot by Legolas
+       - on DVD only
+       He makes a really funny face when it happens.
+       But in the end, no individual scenes matter but the film as a whole.
+       Important actors in this film are:
+         - Elijah Wood :: He plays Frodo
+         - Sean Astin :: He plays Sam, Frodo's friend.  I still remember
+         him very well from his role as Mikey Walsh in The Goonies.
+
+** Subscripts and superscripts
+
+#+BEGIN_SRC orgmode
+  #+OPTIONS: ^:{}
+#+END_SRC
+
+a_subb^sup
+
+如果真的要上、下標，就加 ~{}~
+
+#+BEGIN_EXAMPLE
+  a_{sub}b^{sup}
+#+END_EXAMPLE
+
+結果為 a_{sub}b^{sup}
+
+** Teasers
+You may use teasers by enabling ~INDEX_TEASERS = True~ in ~conf.py~,
+and use {{{TEASER_END}}} to generate <!-- TEASER_END --> in org posts.
+
+** text block
 
 #+BEGIN_SRC sh
 shell commands
@@ -204,130 +397,25 @@ shell command output
 #+END_EXAMPLE
 
 #+BEGIN_VERSE
-verse
--- verse
+  詩句
+  Great clouds overhead
+  Tiny black birds rise and fall
+  Snow covers Emacs
+
+    -- AlexSchroeder
 #+END_VERSE
 
 #+BEGIN_QUOTE
-quote
--- quote
+  引言
+  Everything should be made as simple as possible,
+  but not any simpler -- Albert Einstein
 #+END_QUOTE
 
 #+BEGIN_CENTER
-center
--- center
+  CENTER
+  Everything should be made as simple as possible, \\
+  but not any simpler
 #+END_CENTER
-
-*** Image URLs
-
-ref: https://plugins.getnikola.com/v7/orgmode/
-
-In order to correctly generate image urls, you may write
-#+BEGIN_SRC org
-[[img-url:/images/test.jpg]]
-#+END_SRC
-, and then it should be generated as
-~<img src="/images/test.jpg" alt="test.jpg">~.
-
-** 用 ~nikola github_deploy~ 快速發佈文章
-
-REF: https://getnikola.com/handbook.html#deploying-to-github
-
-*** Initialize a Nikola site, if you haven’t already.
-*** Initialize a git repository in your Nikola source directory by running:
-
-#+BEGIN_SRC sh
-git init .
-git remote add origin git@github.com:user/user.github.io
-#+END_SRC
-
-url 要確認清楚，必須是 ssh 形式的，未來才可不必一直重覆輸入密碼
-
-*** Setup branches and remotes in ~conf.py~:
-
-- GITHUB_DEPLOY_BRANCH is the branch where Nikola-generated HTML files
-  will be deployed. It should be gh-pages for project pages and master
-  for user pages (*user.github.io*).
-
-- GITHUB_SOURCE_BRANCH is the branch where your Nikola site source
-  will be deployed. We recommend and default to *src*.
-
-- GITHUB_REMOTE_NAME is the remote to which changes are pushed.
-
-- GITHUB_COMMIT_SOURCE controls whether or not the source branch is
-  automatically committed to and pushed. We recommend setting it to
-  *True*, unless you are automating builds with Travis CI.
-
-*** Create a ~.gitignore~ file. We recommend adding at least the following entries:
-
-#+BEGIN_SRC sh
-cache
-.doit.db
-__pycache__
-output
-#+END_SRC
-
-If you set GITHUB_COMMIT_SOURCE to *False*, you must switch to your
-source branch and commit to it. Otherwise, this is done for you.
-
-*** Run ~nikola github_deploy~.
-This will *build* the site, *commit* the output folder to your deploy
-branch, and *push* to GitHub.  Your website should be up and running
-within a few minutes.
-
-*** 在 nikola github_deploy 之前
-為了要能用 ~nikola github_deploy~ 指令，有以下的準備工作：
-
-**** install ghp_import2
-
-#+BEGIN_SRC sh
-sudo pip install ghp_import2
-#+END_SRC
-
-**** install and setup ssh
-為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
-
-***** install openssh
-
-#+BEGIN_SRC sh
-yaourt -S openssh
-#+END_SRC
-
-***** follow github help page to add ssh connect to github
-- [[https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/][Generating a new SSH key and adding it to the ssh-agent - User Documentation]]
-- [[https://help.github.com/articles/working-with-ssh-key-passphrases/][Working with SSH key passphrases - User Documentation]]
-- [[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/][Adding a new SSH key to your GitHub account - User Documentation]]
-
-****** 產生 ssh key
-#+BEGIN_SRC sh
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-#+END_SRC
-
-螢幕上會出現
-#+BEGIN_SRC sh
-Enter passphrase for key '/home/USERNAME/.ssh/id_rsa'
-#+END_SRC
-
-此時不要輸入密碼，直接按 =Enter= ，否則未來 ~nikola github_deploy~ 時，
-就要每次輸入密碼。
-
-****** 將 ssh key 加到 github 中
-依 [[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/][Adding a new SSH key to your GitHub account - User Documentation]] 執行
-
-**** 確定以 ssh 連上 github (不能是 https)
-
-#+BEGIN_SRC sh
-$ git remote -v
-origin  git@github.com:mariolong/mariolong.github.io (fetch)
-origin  git@github.com:mariolong/mariolong.github.io (push)
-#+END_SRC
-
-如果不是，要用以下指令修正。
-
-#+BEGIN_SRC sh
-git remote set-url origin git@github.com:mariolong/mariolong.github.io
-#+END_SRC
-
 * 開始使用
 
 建立新的文章，

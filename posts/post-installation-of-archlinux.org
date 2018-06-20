@@ -8,6 +8,8 @@
 .. description:
 .. type: text
 #+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
 
 首先依 [[../install-arch-linux-2017][Install Arch linux (2017)]] 將基本系統裝好，接著參考 [[https://wiki.archlinux.org/index.php/General_recommendations][General
 recommendations - ArchWiki]] 記錄下對我而言必要的軟體及簡單設定，讓日常
@@ -76,7 +78,7 @@ lock = slock
 
 * system
 DPMS: display power manpage system
-slock:
+slock: screen saver
 
 * 網路
 ** dropbox
@@ -117,6 +119,7 @@ sudo ln -s /usr/bin/pcmanfm-qt /usr/bin/pcmanfm
 #+END_SRC
 
 ** mc
+midnight-commander like norton commander
 
 * 影音
 
@@ -169,7 +172,7 @@ yaourt -S meld
 應用程式快速啓動器
 
 #+BEGIN_SRC sh
- yaourt -S albert qt5-graphicaleffects qt5-quickcontrols
+yaourt -S albert qt5-graphicaleffects qt5-quickcontrols
 #+END_SRC
 
 ** speedcrunch (calculator)
@@ -198,10 +201,10 @@ yaourt -S gnash-git
 
 可讀 .swf 檔
 
-* stock
+* programming
 ** python and depending modules
 
-#+BEGIN_SRC bash
+#+BEGIN_SRC sh
 yaourt -S python python-pip
 #+END_SRC
 
