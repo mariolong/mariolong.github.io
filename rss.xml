@@ -1,22 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 07:58:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 21 Jun 2018 04:00:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>鄭曼青師徒對話錄</title><link>https://mariolong.github.io/posts/master-zheng-and-student-smith/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+轉錄自&lt;a href="https://m.facebook.com/story.php?story_fbid=466445743807976&amp;amp;id=100013276627941"&gt;太极亚洲&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+史密施先生，美國人，1959 年起隨鄭曼青大師學習太極拳，此後勤練此拳並教授此拳至今。他認為太極拳帶給他一個謙和的自我和健康的體格。
+&lt;/p&gt;
+
+&lt;p&gt;
+本文是史密施先生與鄭曼青大師合著之《太極》一書中所選出的一節師徒對話。
+&lt;/p&gt;
+
+&lt;div id="outline-container-orgb40ad1f" class="outline-2"&gt;
+&lt;h2 id="orgb40ad1f"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 引言&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+我們坐在那裡，大師微笑著。有人告訴我，當他心情合適時，會有問必答，他說：“如果你以小卵石撞鐘，鐘聲必小。如果你以大木槌擊之，則其聲必大。同樣的，如果你問我大問題，答案也必重要。”這話使我得知應從何處著手。於是我問：
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+在大部分武藝行中，學生的造詣均會接近老師，或高過老師。何故你的學生沒有能接近你，不管他們進步如何快速，其水準均低你遠甚。可有何祕訣？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+不錯，是有祕訣。但是此祕訣太過簡單，簡單的幾乎令人不敢相信。但是你又非信不可。否則你就無法成功。
+&lt;/p&gt;
+
+&lt;p&gt;
+其祕訣僅為：你必須&lt;b&gt;身心放鬆&lt;/b&gt; ，你必須長時間&lt;b&gt;接受失敗&lt;/b&gt; 。你必須投資於失敗，否則你就無法成功。
+&lt;/p&gt;
+
+&lt;p&gt;
+我有如今的成就，是因我把驕傲置之於一旁，相信我老師的話，把身體放鬆，心靈靜定，只&lt;b&gt;讓氣隨意行&lt;/b&gt; 。開始時常使我遍體受傷。有時我會被重擊而跌至失去知覺。但仍堅持下去。聽老師的話，注意我的氣。在慘敗時我會忘了驕傲、焦慮以及自我。把自己身心完全騰空而全部讓位於氣，漸漸的我的技術進步了。直到這時我的反應才變得靈敏。可使化與打於瞬間完成。我的學生或是不相信這一套，或是雖相信而不熱心追求，何能得成。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+你講起來很容易，如果心意正確，身體放鬆就有進步，但是，如無辛苦的鍛鍊、規律的練習並不斷地努力，是否可以？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+如想精通此藝，必須求助於你剛才所提各項。你須辛勤努力，每日不斷，但是卻須注意不要把太極拳與少林拳混為一談。
+&lt;/p&gt;
+
+&lt;p&gt;
+後者注重鍛鍊肌肉及力氣，而練太極拳，心中常須念記拳經各論。並非要你每天苦練一、二小時就必能成，練習必須得法，否則全為白費。
+&lt;/p&gt;
+
+&lt;p&gt;
+吾師楊公澄甫是由其著名的父親楊健侯所親授。三十歲時任教於山東某富宦之府內。其處生活優裕，其人也就變得肥胖及懶散，此後他還返北京，生活實形放蕩。其父得知此情，令其辭職逐裡，將其禁閉於一空屋內，不准他與任何外界人物接觸，前後四年之間，除了他父親每天來與他練拳，推手，同時也練練太極器械外，不准任何人去看他，在這期間他的成就遠超過前此他的一生所學。四年後他走出囚室，便可輕易地打敗他父親最好的徒弟。前此他經常是他們手下的敗將，如今他已是一位偉大的拳手，其偉大終身與共。此後多年間，雖然他不須多加練習，亦能可保持其效能。
+&lt;/p&gt;
+
+&lt;p&gt;
+這是太極拳的一項必然特性，一個人如果不斷地進步，將可達到一種程度，此後即不必要練習，因其已臻化境。對此我不再多談。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+在練拳的時候怎麼能知道是不是已鬆？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+知不知道是主觀的，而鬆不鬆是客觀的。我願意說，當一個人在練習整套拳架的過程中，其心靈完全不受外界的干擾，這便是求鬆的一個好的開始，但是這只是第一步。
+&lt;/p&gt;
+
+&lt;p&gt;
+下一步是你須踏踏實實的練。練完時你會&lt;b&gt;筋疲力盡&lt;/b&gt; 。當你的雙肩覺得沉重時，你就知道這已是接近真鬆了。這是“陸地游泳”的結果。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+但是拳經不是告訴我們，你的身體必需如此輕靈，一羽相加都可以覺得。你怎樣把這種輕靈與假設的抵抗而來的筋疲力盡相提並論呢？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+這是不相稱時。雖然聽起來有此矛盾。你當然可以輕鬆愉快的練五分鐘的拳架而毫無倦意。這卻無助於你求鬆。你打拳時慢而正確，假設前有抵抗，你必會疲倦。但是在真正交手時，你的身體擺脫了你心中的抵抗的束縛，就會覺得無比的輕靈及敏捷。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+如你所知，我曾跟過其他數位老師學習太極拳。我不是對你不敬。但因為我們的時間都很有限，我又想寫些有關太極拳的書，我想是最好能儘量的學。其他各派大部分都加輔助的運動以增強其呼吸、活力及拳藝。你看這種運動是否有益？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+只有小氣的老師才會嫉妒學生到別處學藝。我非常高興你能從各派去嘗試。因為我知道你必會發現，在這種拳中你將只有一位老師。拳架本身已是變化多端包羅圓滿非常有益。附加的運動只會使你分心，妨礙進步。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+少林拳是否是一種非常好的健身運動及防身武術？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+如果我認為是的話，我會取少林而捨太極。在運動方面來說，他注重肌肉的緊張及蠻力而不注意健康。在搏鬥時，因為你永不會超出依靠力氣及技巧的範圍，因此也就不會得到真正的優勢。我不是自誇。當我年輕在大陸時，常遇各派人氏的挑戰，吾藝從未敗過。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+推手的重要性如何？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+非常重要，不經推手，你就不會有進步。但是注意，我現在告訴你，你最好與一
+&lt;b&gt;小孩&lt;/b&gt;相推。同一有技巧的大人相推他會用力，你也就會跟著用力。與小孩相推時把他看作是大人。與大人相推把他看作是小孩。這話聽起來矛盾其實並不。小孩會提供你一個&lt;b&gt;鬆&lt;/b&gt;的練習夥伴。
+&lt;/p&gt;
+
+&lt;p&gt;
+當你從他“可鬆性”中獲益時，你可把他看作與你相同，假裝他是大人。這就把練習提升“用”的方面來。現在反過來講。為什麼要把大人看作是小孩呢？這只是一種輕視的方法，以使我們卻除怕意，但這亦不意味這種“勇氣”可以真的戰勝怕懼。我們在卻除懼怕時也去掉傲氣。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+在推手時，如讓對手接觸到自己身體，是否危險？在真正交手時，這種情形是否會慘敗？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+推手主要是一種達到目的方法。他教觸覺的靈敏及辨別的能力 (意即聽勁及種勁——譯者注)，也教你對於距離的審忖。在真正交手時不要讓敵手觸控到你。但是卻要儘量的靠近他以利攻擊。有些大師們具有我們所說的接勁。這種勁不但可以收化敵人的攻擊，在同時也予以反擊。有些更高的大師們的這種能力是由潛意識所控制。你如從後向他攻擊，他可借敵人之力將其反彈出一丈以外。而自己幾乎並不覺得。這種人在真正交手時自無困難。一般的拳手雖無此種能力，但可經由推手鍛鍊其知覺，使其可以&lt;b&gt;接近敵人而不讓敵人觸控到自己&lt;/b&gt; 。
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+莊子說：醉漢無傷，其魂固也。這種狀況是否是太極拳所追求的呢？如果莊子所言不假，那麼我們只要變成酒鬼不更簡單嗎？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+把自己騰空是為了克服恐懼，這是“無為”的主要目的之一。這也是所以道士之將死，可生起烈火，從容走入之道理。(在這裡我說，這種不怕死的品性，並非中國所專有。日本的武士亦求死的美。更不須提聖勞倫斯，在其身受炮烙時對其行刑者說：“把我翻個身吧，這半邊已烤好了”)
+&lt;/p&gt;
+
+&lt;p&gt;
+大師微笑著表示欣賞，繼續說：“不錯，醉漢是解除了顧及。他的肌肉不緊張，他的身體鬆弛。但是並非完全如此，因為醉漢總是會認路回家。醉漢失去了心意，為環境所左右。反過來在太極拳，我們雖然放鬆了身體，但卻保持一顆靈活清醒的心。”
+&lt;/p&gt;
+
+&lt;p&gt;
+史：
+&lt;/p&gt;
+
+&lt;p&gt;
+為什麼楊澄甫不到西方教拳？
+&lt;/p&gt;
+
+&lt;p&gt;
+鄭：
+&lt;/p&gt;
+
+&lt;p&gt;
+曾有一中醫生從美國回到廣州，他遊說楊氏同他返美，說是可賺大錢，被其所拒。西方及金錢對楊氏均不具吸引力。他對其所屬環境非常滿意，不思改變。
+&lt;/p&gt;
+
+&lt;p&gt;
+轉自網路中和國術館
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>tai-ji</category><guid>https://mariolong.github.io/posts/master-zheng-and-student-smith/</guid><pubDate>Thu, 21 Jun 2018 03:17:46 GMT</pubDate></item><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 emacs version 26.1 systemd support
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgc382304" class="outline-2"&gt;
-&lt;h2 id="orgc382304"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
+&lt;div id="outline-container-orgc6af3b1" class="outline-2"&gt;
+&lt;h2 id="orgc6af3b1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga76cfd2" class="outline-3"&gt;
-&lt;h3 id="orga76cfd2"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
+&lt;div id="outline-container-org59ee250" class="outline-3"&gt;
+&lt;h3 id="org59ee250"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org989da15" class="outline-3"&gt;
-&lt;h3 id="org989da15"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
+&lt;div id="outline-container-org002e7bb" class="outline-3"&gt;
+&lt;h3 id="org002e7bb"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 還是要設定一下 emacs.service.
@@ -30,8 +246,8 @@ emacs version 26.1 systemd support
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org00bdbed" class="outline-4"&gt;
-&lt;h4 id="org00bdbed"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
+&lt;div id="outline-container-org46a70e9" class="outline-4"&gt;
+&lt;h4 id="org46a70e9"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-1"&gt;
 &lt;p&gt;
 在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
@@ -44,8 +260,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org01a11eb" class="outline-4"&gt;
-&lt;h4 id="org01a11eb"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
+&lt;div id="outline-container-org5af14d6" class="outline-4"&gt;
+&lt;h4 id="org5af14d6"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-2"&gt;
 &lt;p&gt;
 設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
@@ -56,8 +272,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd115f6e" class="outline-4"&gt;
-&lt;h4 id="orgd115f6e"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
+&lt;div id="outline-container-org69b87e3" class="outline-4"&gt;
+&lt;h4 id="org69b87e3"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-3"&gt;
 &lt;p&gt;
 最後 emacs.service 的設定。
@@ -86,8 +302,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org355df5e" class="outline-3"&gt;
-&lt;h3 id="org355df5e"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
+&lt;div id="outline-container-orgd9a8b79" class="outline-3"&gt;
+&lt;h3 id="orgd9a8b79"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;p&gt;
 package server is unnecessary. 可以刪除。
@@ -102,8 +318,8 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5b4c3d9" class="outline-3"&gt;
-&lt;h3 id="org5b4c3d9"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
+&lt;div id="outline-container-org0d32375" class="outline-3"&gt;
+&lt;h3 id="org0d32375"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
 &lt;/pre&gt;&lt;/div&gt;
@@ -122,14 +338,14 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd0faa85" class="outline-2"&gt;
-&lt;h2 id="orgd0faa85"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
+&lt;div id="outline-container-org977e13a" class="outline-2"&gt;
+&lt;h2 id="org977e13a"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org3178f1c" class="outline-2"&gt;
-&lt;h2 id="org3178f1c"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; change root password&lt;/h2&gt;
+&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org8bca7f7" class="outline-2"&gt;
+&lt;h2 id="org8bca7f7"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; change root password&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;PASSWORD&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"password"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'root'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -139,12 +355,12 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbea4cfb" class="outline-2"&gt;
-&lt;h2 id="orgbea4cfb"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; commands&lt;/h2&gt;
+&lt;div id="outline-container-orgce5e7cc" class="outline-2"&gt;
+&lt;h2 id="orgce5e7cc"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; commands&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0d94115" class="outline-3"&gt;
-&lt;h3 id="org0d94115"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; create user&lt;/h3&gt;
+&lt;div id="outline-container-org45d3e13" class="outline-3"&gt;
+&lt;h3 id="org45d3e13"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; create user&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;USER&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="n"&gt;PRIVILEGES&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;OPTION&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -159,8 +375,8 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5782bae" class="outline-3"&gt;
-&lt;h3 id="org5782bae"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; show database&lt;b&gt;s&lt;/b&gt;&lt;/h3&gt;
+&lt;div id="outline-container-org5c03610" class="outline-3"&gt;
+&lt;h3 id="org5c03610"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; show database&lt;b&gt;s&lt;/b&gt;&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-2"&gt;
 &lt;p&gt;
 &lt;b&gt;注意&lt;/b&gt;: database 和 table 的名稱，在 linux 中會區分大小寫。
@@ -171,8 +387,8 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org63a7464" class="outline-3"&gt;
-&lt;h3 id="org63a7464"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
+&lt;div id="outline-container-org99e0c16" class="outline-3"&gt;
+&lt;h3 id="org99e0c16"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;USE&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -182,23 +398,23 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 Ref: &lt;a href="https://wiki.archlinux.org/index.php/MySQL"&gt;MySQL - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org6bb76d6" class="outline-2"&gt;
-&lt;h2 id="org6bb76d6"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install mariadb&lt;/h2&gt;
+&lt;div id="outline-container-org1c86d3d" class="outline-2"&gt;
+&lt;h2 id="org1c86d3d"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install mariadb&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7715326" class="outline-2"&gt;
-&lt;h2 id="org7715326"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; install and setup database&lt;/h2&gt;
+&lt;div id="outline-container-org3fc3dca" class="outline-2"&gt;
+&lt;h2 id="org3fc3dca"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; install and setup database&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_install_db --user&lt;span class="o"&gt;=&lt;/span&gt;mysql --basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr --datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6cf7d68" class="outline-3"&gt;
-&lt;h3 id="org6cf7d68"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; message&lt;/h3&gt;
+&lt;div id="outline-container-org9dbf135" class="outline-3"&gt;
+&lt;h3 id="org9dbf135"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; message&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-1"&gt;
 &lt;pre class="example"&gt;
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
@@ -237,8 +453,8 @@ https://mariadb.org/get-involved/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3d29f34" class="outline-2"&gt;
-&lt;h2 id="org3d29f34"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
+&lt;div id="outline-container-orgac3e8af" class="outline-2"&gt;
+&lt;h2 id="orgac3e8af"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;p&gt;
 Tip: If you use something different from &lt;i&gt;var&lt;/i&gt;lib/mysql for your data
@@ -250,16 +466,16 @@ database level:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org30f24ca" class="outline-2"&gt;
-&lt;h2 id="org30f24ca"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
+&lt;div id="outline-container-org5cb2fad" class="outline-2"&gt;
+&lt;h2 id="org5cb2fad"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgef176f1" class="outline-2"&gt;
-&lt;h2 id="orgef176f1"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; To start mysqld at boot time&lt;/h2&gt;
+&lt;div id="outline-container-org3460875" class="outline-2"&gt;
+&lt;h2 id="org3460875"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; To start mysqld at boot time&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-5"&gt;
 &lt;p&gt;
 you have to copy support-files/mysql.server to the right place for your system
@@ -276,8 +492,8 @@ strongly recommended for production servers.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga1115b5" class="outline-2"&gt;
-&lt;h2 id="orga1115b5"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; Using UTF8MB4&lt;/h2&gt;
+&lt;div id="outline-container-org2a3d6dc" class="outline-2"&gt;
+&lt;h2 id="org2a3d6dc"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; Using UTF8MB4&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-6"&gt;
 &lt;p&gt;
 在 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; 加上以下指令：
@@ -296,8 +512,8 @@ strongly recommended for production servers.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7242c6f" class="outline-2"&gt;
-&lt;h2 id="org7242c6f"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 開啓自動補全&lt;/h2&gt;
+&lt;div id="outline-container-org91338b4" class="outline-2"&gt;
+&lt;h2 id="org91338b4"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 開啓自動補全&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-7"&gt;
 &lt;p&gt;
 Note: Enabling this feature can make the client initialization longer.
@@ -313,12 +529,12 @@ client.&lt;/p&gt;
 dired 真是好用，記錄我的使用流程
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgcc1b948" class="outline-2"&gt;
-&lt;h2 id="orgcc1b948"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
+&lt;div id="outline-container-org4fdc33d" class="outline-2"&gt;
+&lt;h2 id="org4fdc33d"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9708cbe" class="outline-3"&gt;
-&lt;h3 id="org9708cbe"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
+&lt;div id="outline-container-orge3fe3d1" class="outline-3"&gt;
+&lt;h3 id="orge3fe3d1"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
@@ -327,8 +543,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgaf44ce7" class="outline-3"&gt;
-&lt;h3 id="orgaf44ce7"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
+&lt;div id="outline-container-orgf55cd65" class="outline-3"&gt;
+&lt;h3 id="orgf55cd65"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 &lt;kbd&gt;q&lt;/kbd&gt;
@@ -336,8 +552,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4eed87f" class="outline-3"&gt;
-&lt;h3 id="org4eed87f"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
+&lt;div id="outline-container-orgc4a622c" class="outline-3"&gt;
+&lt;h3 id="orgc4a622c"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;p&gt;
 &lt;kbd&gt;d&lt;/kbd&gt;
@@ -353,8 +569,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0167cc2" class="outline-3"&gt;
-&lt;h3 id="org0167cc2"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
+&lt;div id="outline-container-orga0d96b0" class="outline-3"&gt;
+&lt;h3 id="orga0d96b0"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x C-q&lt;/kbd&gt;
@@ -364,27 +580,27 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org578d235" class="outline-2"&gt;
-&lt;h2 id="org578d235"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
+&lt;div id="outline-container-orgab55e44" class="outline-2"&gt;
+&lt;h2 id="orgab55e44"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1645141" class="outline-3"&gt;
-&lt;h3 id="org1645141"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
+&lt;div id="outline-container-org0ca7d26" class="outline-3"&gt;
+&lt;h3 id="org0ca7d26"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0e97307" class="outline-3"&gt;
-&lt;h3 id="org0e97307"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
+&lt;div id="outline-container-org03b16da" class="outline-3"&gt;
+&lt;h3 id="org03b16da"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9dca2a9" class="outline-3"&gt;
-&lt;h3 id="org9dca2a9"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
+&lt;div id="outline-container-orgcfcb3e0" class="outline-3"&gt;
+&lt;h3 id="orgcfcb3e0"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb6c1287" class="outline-2"&gt;
-&lt;h2 id="orgb6c1287"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
+&lt;div id="outline-container-org6d471fb" class="outline-2"&gt;
+&lt;h2 id="org6d471fb"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org38b9e6d" class="outline-3"&gt;
-&lt;h3 id="org38b9e6d"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command&lt;i&gt;Midnight commander 一&lt;/i&gt;copy&lt;i&gt;move files like NC&lt;/i&gt;MC&lt;/h3&gt;
+&lt;div id="outline-container-org45e1589" class="outline-3"&gt;
+&lt;h3 id="org45e1589"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command&lt;i&gt;Midnight commander 一&lt;/i&gt;copy&lt;i&gt;move files like NC&lt;/i&gt;MC&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item><item><title>mm=mpv+feh</title><link>https://mariolong.github.io/posts/mm-mpv-feh/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 用全螢幕幻燈片模式播放照片：
@@ -395,9 +611,9 @@ dired 真是好用，記錄我的使用流程
 
 &lt;p&gt;
 單純播放照片和影片記錄而已
-&lt;/p&gt;</description><category>feh</category><category>mm</category><category>mpv</category><guid>https://mariolong.github.io/posts/mm-mpv-feh/</guid><pubDate>Tue, 29 May 2018 01:57:04 GMT</pubDate></item><item><title>鼻咽癌與我的初次相遇</title><link>https://mariolong.github.io/posts/cancer-first-time/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org8c08a93" class="outline-2"&gt;
-&lt;h2 id="org8c08a93"&gt;確診&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8c08a93"&gt;
+&lt;/p&gt;</description><category>feh</category><category>mm</category><category>mpv</category><guid>https://mariolong.github.io/posts/mm-mpv-feh/</guid><pubDate>Tue, 29 May 2018 01:57:04 GMT</pubDate></item><item><title>鼻咽癌與我的初次相遇</title><link>https://mariolong.github.io/posts/cancer-first-time/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org7867fce" class="outline-2"&gt;
+&lt;h2 id="org7867fce"&gt;確診&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7867fce"&gt;
 &lt;p&gt;
 2016/1/7，坐在診療椅上，不由自主地一股寒氣由腳底冒起，直達心口。
 &lt;/p&gt;
@@ -416,8 +632,8 @@ dired 真是好用，記錄我的使用流程
 windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org24d54e9" class="outline-2"&gt;
-&lt;h2 id="org24d54e9"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
+&lt;div id="outline-container-org2249ef3" class="outline-2"&gt;
+&lt;h2 id="org2249ef3"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
@@ -498,8 +714,8 @@ unable to complete, or interface CRC (with ICRC).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6f3a60b" class="outline-2"&gt;
-&lt;h2 id="org6f3a60b"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
+&lt;div id="outline-container-org2f12f5e" class="outline-2"&gt;
+&lt;h2 id="org2f12f5e"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 過程如下：
@@ -549,178 +765,4 @@ REF: &lt;a href="http://time.com/4856944/secrets-happier-life/"&gt;6 Secrets to 
 &lt;p&gt;
 專注且投入到當下。
 &lt;/p&gt;
-&lt;/blockquote&gt;</description><category>happy</category><guid>https://mariolong.github.io/posts/happy-current/</guid><pubDate>Tue, 22 May 2018 04:49:49 GMT</pubDate></item><item><title>[LINE] 走路吧！</title><link>https://mariolong.github.io/posts/walking/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-SOURCE: LINE
-&lt;/p&gt;
-
-&lt;p&gt;
-走路吧！
-&lt;/p&gt;
-
-&lt;p&gt;
-孫正春走到腫瘤也怕他！孫正春身體力行 100 天，2 個腫瘤消失了 16 種宿疾改善了！想健康，走路最簡單，不花錢，絕無副作用！
-&lt;/p&gt;
-
-&lt;p&gt;
-「我覺得爸爸會抗癌成功，關鍵在於『堅持到底』。他的確在開始長途走路的一百天內腫瘤消失了，心跳正常了，很多人看到成效出現就停止，但他非但沒有鬆懈，反而更堅持走下去，直到現在，持續二十幾年。」
-&lt;/p&gt;
-
-&lt;p&gt;
-孫羽佑，孫正春之子，神經科學博士
-&lt;/p&gt;
-
-&lt;p&gt;
-他原本天天吃焢肉、能坐就不願站，直到癌症的陰影迫近，才驚覺必須改變！
-&lt;/p&gt;
-
-&lt;p&gt;
-從完全不走路到一天走上六小時，他慢慢走，打赤腳走，拿著啞鈴負重走；他吃樹葉、喝葉子水，打造了一個「山上的家」三餐吃優格，徹底地改變了體質。兩個腫瘤一百天消失不是奇蹟，而是「動、綠、奶」的有力實踐。
-&lt;/p&gt;
-
-&lt;p&gt;
-他到宜蘭工作，就把走路的觀念傳給同事；搬回埔里，帶動了遠近馳名的社區「夜走」熱。
-&lt;/p&gt;
-
-&lt;p&gt;
-他還鼓勵原已無法進食、無法行動的癌末朋友，從吃一小滴優格、爬行一小步開始，重獲健康。
-&lt;/p&gt;
-
-&lt;p&gt;
-這一份對走路的執著和熱愛，鼓舞了無數人迎向希望。
-&lt;/p&gt;
-
-&lt;p&gt;
-他曾花六天翻越中央山脈，從南投走到宜蘭；四十五天健走，以一雙傷痕累累的「真皮鞋」實現赤腳環台夢想；更跨足世界，走向義大利，兩天完攻山海雙線的考驗。
-&lt;/p&gt;
-
-&lt;p&gt;
-他賦予了「距離」全新的意義，只要走路到得了的地方，就不算遠。人生的路，原來可以靠雙腳走出來，而最重要的是：堅持走下去。「堅持到底」，讓孫正春贏回健康，更讓他走出了康莊大道！
-&lt;/p&gt;
-
-&lt;p&gt;
-台灣國家衛生研究院：每日健走 15 分鐘，延壽 3 年！英國癌症團體：每日健走 20 分鐘，癌症死亡率減半！
-&lt;/p&gt;
-
-&lt;p&gt;
-走路的好處，他們都親身體會到！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎孫正春之妻陳梅香曾患腎臟病，身體水腫到像懷孕，每天走路讓她重獲健康。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎紀政的尿失禁毛病因走路不藥而癒，而且 6 個月瘦了 20 公斤。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎希望基金會祕書長黃純湘的癌末父親，靠走路贏回了 7 年人生。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎前暨南大學公共行政系教授梁雙蓮，以走路擺脫了更年期及失眠困擾。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎作家陳芸英長期受便祕所苦，開始走路的第二天，便祕問題竟然解決 了。
-&lt;/p&gt;
-
-&lt;p&gt;
-走路很簡單，就是「走出去」而已。出門多走一站搭車或提早一站下車；在公司少打一通電話，直接走去找同事；不必刻意挑什麼健走路線，有時間就走。
-&lt;/p&gt;
-
-&lt;p&gt;
-把自己交給雙腳，慢慢走，不要急，才能走得遠、走得久。有人問： 「走這麼長、這麼久的路，不累嗎？」孫正春說： 「只要心不趕，就不會累。」
-&lt;/p&gt;
-
-&lt;p&gt;
-◎不管身體有多糟糕，背一定要挺，不能垮下去，只要能動就要動，動一 下也好。可別小看「動一下」這是很單純的求生訊號。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎既然站得起來，就試著走出去吧！一步就好。第二天再走一步，慢慢來，只要 一天進步一點點就可以。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎「走路」就像每天都要吃飯、睡覺一樣，是生命的必需品。讓走路融入每日生活，養成隨時走路的習慣。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎走路是最緩和、最舒服的一種運動，隨時隨地都可以進行，不需要技術、不需要夥伴。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎其實走路很簡單，就是走出去而已，把自己交給雙腳，慢慢走，不要想太多，重點是持之以恆。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎剛走路的人都希望走快點，趕快走完，好回家休息，但當你走到一個程度，就會曉得什麼樣的方式對你的身體和生理有幫助。
-&lt;/p&gt;
-
-&lt;p&gt;
-走路運動….不是趕路運動。輕鬆走，慢慢走；天熱&lt;i&gt;帶條毛巾；天涼&lt;/i&gt;帶件薄外套。
-&lt;/p&gt;
-
-&lt;p&gt;
-生病不是意外，是自己平常不注意自己的身體健康。病痛來襲，只有默默承受。
-&lt;/p&gt;
-
-&lt;p&gt;
-走路可以運動到環跳穴，改善上熱下寒的情形，也可以活潑足三陽的氣機，使陽下行而陰上滋，是活命之源！
-&lt;/p&gt;
-
-&lt;p&gt;
-⭕⭕ 榮總急診部王醫師傳送 @ 很寶貴的養生短文◎成為永遠病人的二大原因：過食+藥物！
-&lt;/p&gt;
-
-&lt;p&gt;
-就是吃太多啦，還有就是吃葯，這絕對不是好事，醫師和護理人員，都很少吃葯。
-&lt;/p&gt;
-
-&lt;p&gt;
-◎糖尿病是全身性的代謝紊亂！主因則是胰臟過度疲勞！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎細嚼慢嚥是在降低胰臟負擔！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎活得健康的重要原則？一少三多！
-A. 少吃；
-B. 多休息
-C. 多喝水；
-D. 多流汗！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎滿身流汗對各種疾病都是有益的！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎飯量越大丶耗氧也越大丶細胞越缺氧，心臟就越加壓，血壓也就越高了！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎吃飯最好＂五分飽＂，不要撐飽！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎當身體飢餓感訊號出現時，正是排毒旺盛，免疫功能快速增強時！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎空腹時身體發熱流汗是最有效的新陳代謝法，也是細胞自行清血解毒，補氣活化的時機！（消化系統運作時，就停止排毒！）
-&lt;/p&gt;
-
-&lt;p&gt;
-◎癌症的主因：超級中毒＋組織缺氧（重度缺氧）！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎癌症是身體長期處於中毒狀態（強酸），所引起＂缺氧＂的自然現象！
-&lt;/p&gt;
-
-&lt;p&gt;
-◎＂氧＂是身體治病救命的靈丹，它決定腺體調節能力，免疫系統的強弱，更掌控了癌症病人的生殺大權！
-&lt;/p&gt;</description><category>health</category><category>walking</category><guid>https://mariolong.github.io/posts/walking/</guid><pubDate>Tue, 22 May 2018 04:36:56 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;</description><category>happy</category><guid>https://mariolong.github.io/posts/happy-current/</guid><pubDate>Tue, 22 May 2018 04:49:49 GMT</pubDate></item></channel></rss>

@@ -102,8 +102,8 @@
 Ref: <a href="https://wiki.archlinux.org/index.php/MySQL">MySQL - ArchWiki</a>
 </p>
 
-<div id="outline-container-org6bb76d6" class="outline-2">
-<h2 id="org6bb76d6">
+<div id="outline-container-org1c86d3d" class="outline-2">
+<h2 id="org1c86d3d">
 <span class="section-number-2">1</span> install mariadb</h2>
 <div class="outline-text-2" id="text-1">
 <div class="highlight"><pre><span></span>yaourt -S mariadb
@@ -111,16 +111,16 @@ Ref: <a href="https://wiki.archlinux.org/index.php/MySQL">MySQL - ArchWiki</a>
 </div>
 </div>
 
-<div id="outline-container-org7715326" class="outline-2">
-<h2 id="org7715326">
+<div id="outline-container-org3fc3dca" class="outline-2">
+<h2 id="org3fc3dca">
 <span class="section-number-2">2</span> install and setup database</h2>
 <div class="outline-text-2" id="text-2">
 <div class="highlight"><pre><span></span>sudo mysql_install_db --user<span class="o">=</span>mysql --basedir<span class="o">=</span>/usr --datadir<span class="o">=</span>/var/lib/mysql
 </pre></div>
 </div>
 
-<div id="outline-container-org6cf7d68" class="outline-3">
-<h3 id="org6cf7d68">
+<div id="outline-container-org9dbf135" class="outline-3">
+<h3 id="org9dbf135">
 <span class="section-number-3">2.1</span> message</h3>
 <div class="outline-text-3" id="text-2-1">
 <pre class="example">
@@ -160,8 +160,8 @@ https://mariadb.org/get-involved/
 </div>
 </div>
 
-<div id="outline-container-org3d29f34" class="outline-2">
-<h2 id="org3d29f34">
+<div id="outline-container-orgac3e8af" class="outline-2">
+<h2 id="orgac3e8af">
 <span class="section-number-2">3</span> edit <code>/etc/mysql/my.cnf</code>
 </h2>
 <div class="outline-text-2" id="text-3">
@@ -175,8 +175,8 @@ database level:
 </div>
 </div>
 
-<div id="outline-container-org30f24ca" class="outline-2">
-<h2 id="org30f24ca">
+<div id="outline-container-org5cb2fad" class="outline-2">
+<h2 id="org5cb2fad">
 <span class="section-number-2">4</span> start/enable <code>mariadb.service</code> with systemd</h2>
 <div class="outline-text-2" id="text-4">
 <div class="highlight"><pre><span></span>sudo systemctl start mariadb
@@ -184,8 +184,8 @@ database level:
 </div>
 </div>
 
-<div id="outline-container-orgef176f1" class="outline-2">
-<h2 id="orgef176f1">
+<div id="outline-container-org3460875" class="outline-2">
+<h2 id="org3460875">
 <span class="section-number-2">5</span> To start mysqld at boot time</h2>
 <div class="outline-text-2" id="text-5">
 <p>
@@ -203,8 +203,8 @@ strongly recommended for production servers.
 </div>
 </div>
 
-<div id="outline-container-orga1115b5" class="outline-2">
-<h2 id="orga1115b5">
+<div id="outline-container-org2a3d6dc" class="outline-2">
+<h2 id="org2a3d6dc">
 <span class="section-number-2">6</span> Using UTF8MB4</h2>
 <div class="outline-text-2" id="text-6">
 <p>
@@ -224,8 +224,8 @@ strongly recommended for production servers.
 </div>
 </div>
 
-<div id="outline-container-org7242c6f" class="outline-2">
-<h2 id="org7242c6f">
+<div id="outline-container-org91338b4" class="outline-2">
+<h2 id="org91338b4">
 <span class="section-number-2">7</span> 開啓自動補全</h2>
 <div class="outline-text-2" id="text-7">
 <p>

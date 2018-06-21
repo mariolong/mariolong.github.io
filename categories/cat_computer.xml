@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 07:58:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 21 Jun 2018 04:00:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 emacs version 26.1 systemd support
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgc382304" class="outline-2"&gt;
-&lt;h2 id="orgc382304"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
+&lt;div id="outline-container-orgc6af3b1" class="outline-2"&gt;
+&lt;h2 id="orgc6af3b1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga76cfd2" class="outline-3"&gt;
-&lt;h3 id="orga76cfd2"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
+&lt;div id="outline-container-org59ee250" class="outline-3"&gt;
+&lt;h3 id="org59ee250"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org989da15" class="outline-3"&gt;
-&lt;h3 id="org989da15"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
+&lt;div id="outline-container-org002e7bb" class="outline-3"&gt;
+&lt;h3 id="org002e7bb"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 還是要設定一下 emacs.service.
@@ -30,8 +30,8 @@ emacs version 26.1 systemd support
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org00bdbed" class="outline-4"&gt;
-&lt;h4 id="org00bdbed"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
+&lt;div id="outline-container-org46a70e9" class="outline-4"&gt;
+&lt;h4 id="org46a70e9"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-1"&gt;
 &lt;p&gt;
 在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
@@ -44,8 +44,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org01a11eb" class="outline-4"&gt;
-&lt;h4 id="org01a11eb"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
+&lt;div id="outline-container-org5af14d6" class="outline-4"&gt;
+&lt;h4 id="org5af14d6"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-2"&gt;
 &lt;p&gt;
 設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
@@ -56,8 +56,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd115f6e" class="outline-4"&gt;
-&lt;h4 id="orgd115f6e"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
+&lt;div id="outline-container-org69b87e3" class="outline-4"&gt;
+&lt;h4 id="org69b87e3"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-3"&gt;
 &lt;p&gt;
 最後 emacs.service 的設定。
@@ -86,8 +86,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org355df5e" class="outline-3"&gt;
-&lt;h3 id="org355df5e"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
+&lt;div id="outline-container-orgd9a8b79" class="outline-3"&gt;
+&lt;h3 id="orgd9a8b79"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;p&gt;
 package server is unnecessary. 可以刪除。
@@ -102,8 +102,8 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5b4c3d9" class="outline-3"&gt;
-&lt;h3 id="org5b4c3d9"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
+&lt;div id="outline-container-org0d32375" class="outline-3"&gt;
+&lt;h3 id="org0d32375"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
 &lt;/pre&gt;&lt;/div&gt;
@@ -122,14 +122,14 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd0faa85" class="outline-2"&gt;
-&lt;h2 id="orgd0faa85"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
+&lt;div id="outline-container-org977e13a" class="outline-2"&gt;
+&lt;h2 id="org977e13a"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org3178f1c" class="outline-2"&gt;
-&lt;h2 id="org3178f1c"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; change root password&lt;/h2&gt;
+&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org8bca7f7" class="outline-2"&gt;
+&lt;h2 id="org8bca7f7"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; change root password&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;UPDATE&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="kt"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;Password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nf"&gt;PASSWORD&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"password"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'root'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -139,12 +139,12 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbea4cfb" class="outline-2"&gt;
-&lt;h2 id="orgbea4cfb"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; commands&lt;/h2&gt;
+&lt;div id="outline-container-orgce5e7cc" class="outline-2"&gt;
+&lt;h2 id="orgce5e7cc"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; commands&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0d94115" class="outline-3"&gt;
-&lt;h3 id="org0d94115"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; create user&lt;/h3&gt;
+&lt;div id="outline-container-org45d3e13" class="outline-3"&gt;
+&lt;h3 id="org45d3e13"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; create user&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;USER&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="s1"&gt;'password'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;ALL&lt;/span&gt; &lt;span class="n"&gt;PRIVILEGES&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'stock'&lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="s1"&gt;'localhost'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="k"&gt;GRANT&lt;/span&gt; &lt;span class="k"&gt;OPTION&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -159,8 +159,8 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5782bae" class="outline-3"&gt;
-&lt;h3 id="org5782bae"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; show database&lt;b&gt;s&lt;/b&gt;&lt;/h3&gt;
+&lt;div id="outline-container-org5c03610" class="outline-3"&gt;
+&lt;h3 id="org5c03610"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; show database&lt;b&gt;s&lt;/b&gt;&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-2"&gt;
 &lt;p&gt;
 &lt;b&gt;注意&lt;/b&gt;: database 和 table 的名稱，在 linux 中會區分大小寫。
@@ -171,8 +171,8 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org63a7464" class="outline-3"&gt;
-&lt;h3 id="org63a7464"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
+&lt;div id="outline-container-org99e0c16" class="outline-3"&gt;
+&lt;h3 id="org99e0c16"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;USE&lt;/span&gt; &lt;span class="n"&gt;stock&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -182,23 +182,23 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 Ref: &lt;a href="https://wiki.archlinux.org/index.php/MySQL"&gt;MySQL - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org6bb76d6" class="outline-2"&gt;
-&lt;h2 id="org6bb76d6"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install mariadb&lt;/h2&gt;
+&lt;div id="outline-container-org1c86d3d" class="outline-2"&gt;
+&lt;h2 id="org1c86d3d"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install mariadb&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7715326" class="outline-2"&gt;
-&lt;h2 id="org7715326"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; install and setup database&lt;/h2&gt;
+&lt;div id="outline-container-org3fc3dca" class="outline-2"&gt;
+&lt;h2 id="org3fc3dca"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; install and setup database&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_install_db --user&lt;span class="o"&gt;=&lt;/span&gt;mysql --basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr --datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6cf7d68" class="outline-3"&gt;
-&lt;h3 id="org6cf7d68"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; message&lt;/h3&gt;
+&lt;div id="outline-container-org9dbf135" class="outline-3"&gt;
+&lt;h3 id="org9dbf135"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; message&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-1"&gt;
 &lt;pre class="example"&gt;
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
@@ -237,8 +237,8 @@ https://mariadb.org/get-involved/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3d29f34" class="outline-2"&gt;
-&lt;h2 id="org3d29f34"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
+&lt;div id="outline-container-orgac3e8af" class="outline-2"&gt;
+&lt;h2 id="orgac3e8af"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;p&gt;
 Tip: If you use something different from &lt;i&gt;var&lt;/i&gt;lib/mysql for your data
@@ -250,16 +250,16 @@ database level:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org30f24ca" class="outline-2"&gt;
-&lt;h2 id="org30f24ca"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
+&lt;div id="outline-container-org5cb2fad" class="outline-2"&gt;
+&lt;h2 id="org5cb2fad"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgef176f1" class="outline-2"&gt;
-&lt;h2 id="orgef176f1"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; To start mysqld at boot time&lt;/h2&gt;
+&lt;div id="outline-container-org3460875" class="outline-2"&gt;
+&lt;h2 id="org3460875"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; To start mysqld at boot time&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-5"&gt;
 &lt;p&gt;
 you have to copy support-files/mysql.server to the right place for your system
@@ -276,8 +276,8 @@ strongly recommended for production servers.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga1115b5" class="outline-2"&gt;
-&lt;h2 id="orga1115b5"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; Using UTF8MB4&lt;/h2&gt;
+&lt;div id="outline-container-org2a3d6dc" class="outline-2"&gt;
+&lt;h2 id="org2a3d6dc"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; Using UTF8MB4&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-6"&gt;
 &lt;p&gt;
 在 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; 加上以下指令：
@@ -296,8 +296,8 @@ strongly recommended for production servers.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7242c6f" class="outline-2"&gt;
-&lt;h2 id="org7242c6f"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 開啓自動補全&lt;/h2&gt;
+&lt;div id="outline-container-org91338b4" class="outline-2"&gt;
+&lt;h2 id="org91338b4"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 開啓自動補全&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-7"&gt;
 &lt;p&gt;
 Note: Enabling this feature can make the client initialization longer.
@@ -313,12 +313,12 @@ client.&lt;/p&gt;
 dired 真是好用，記錄我的使用流程
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgcc1b948" class="outline-2"&gt;
-&lt;h2 id="orgcc1b948"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
+&lt;div id="outline-container-org4fdc33d" class="outline-2"&gt;
+&lt;h2 id="org4fdc33d"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9708cbe" class="outline-3"&gt;
-&lt;h3 id="org9708cbe"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
+&lt;div id="outline-container-orge3fe3d1" class="outline-3"&gt;
+&lt;h3 id="orge3fe3d1"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
@@ -327,8 +327,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgaf44ce7" class="outline-3"&gt;
-&lt;h3 id="orgaf44ce7"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
+&lt;div id="outline-container-orgf55cd65" class="outline-3"&gt;
+&lt;h3 id="orgf55cd65"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 &lt;kbd&gt;q&lt;/kbd&gt;
@@ -336,8 +336,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4eed87f" class="outline-3"&gt;
-&lt;h3 id="org4eed87f"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
+&lt;div id="outline-container-orgc4a622c" class="outline-3"&gt;
+&lt;h3 id="orgc4a622c"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;p&gt;
 &lt;kbd&gt;d&lt;/kbd&gt;
@@ -353,8 +353,8 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0167cc2" class="outline-3"&gt;
-&lt;h3 id="org0167cc2"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
+&lt;div id="outline-container-orga0d96b0" class="outline-3"&gt;
+&lt;h3 id="orga0d96b0"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x C-q&lt;/kbd&gt;
@@ -364,27 +364,27 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org578d235" class="outline-2"&gt;
-&lt;h2 id="org578d235"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
+&lt;div id="outline-container-orgab55e44" class="outline-2"&gt;
+&lt;h2 id="orgab55e44"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1645141" class="outline-3"&gt;
-&lt;h3 id="org1645141"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
+&lt;div id="outline-container-org0ca7d26" class="outline-3"&gt;
+&lt;h3 id="org0ca7d26"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0e97307" class="outline-3"&gt;
-&lt;h3 id="org0e97307"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
+&lt;div id="outline-container-org03b16da" class="outline-3"&gt;
+&lt;h3 id="org03b16da"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9dca2a9" class="outline-3"&gt;
-&lt;h3 id="org9dca2a9"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
+&lt;div id="outline-container-orgcfcb3e0" class="outline-3"&gt;
+&lt;h3 id="orgcfcb3e0"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb6c1287" class="outline-2"&gt;
-&lt;h2 id="orgb6c1287"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
+&lt;div id="outline-container-org6d471fb" class="outline-2"&gt;
+&lt;h2 id="org6d471fb"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org38b9e6d" class="outline-3"&gt;
-&lt;h3 id="org38b9e6d"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command&lt;i&gt;Midnight commander 一&lt;/i&gt;copy&lt;i&gt;move files like NC&lt;/i&gt;MC&lt;/h3&gt;
+&lt;div id="outline-container-org45e1589" class="outline-3"&gt;
+&lt;h3 id="org45e1589"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command&lt;i&gt;Midnight commander 一&lt;/i&gt;copy&lt;i&gt;move files like NC&lt;/i&gt;MC&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item><item><title>mm=mpv+feh</title><link>https://mariolong.github.io/posts/mm-mpv-feh/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 用全螢幕幻燈片模式播放照片：
@@ -410,8 +410,8 @@ dired 真是好用，記錄我的使用流程
 windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org24d54e9" class="outline-2"&gt;
-&lt;h2 id="org24d54e9"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
+&lt;div id="outline-container-org2249ef3" class="outline-2"&gt;
+&lt;h2 id="org2249ef3"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
@@ -492,8 +492,8 @@ unable to complete, or interface CRC (with ICRC).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6f3a60b" class="outline-2"&gt;
-&lt;h2 id="org6f3a60b"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
+&lt;div id="outline-container-org2f12f5e" class="outline-2"&gt;
+&lt;h2 id="org2f12f5e"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 過程如下：
@@ -517,53 +517,53 @@ unable to complete, or interface CRC (with ICRC).
 &lt;h2&gt;目錄&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org38f20d0"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org9fec7b5"&gt;2. 設定&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgf745437"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org16223a2"&gt;2. 設定&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0af4d3b"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org5e5ce85"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgb759aa4"&gt;2.3. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org3aec033"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgaa3cb2a"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgedb27c3"&gt;2.3. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org17b35fb"&gt;2.3.1. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org34ced52"&gt;2.3.1. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org3e04677"&gt;3. 用 org-mode 寫文章&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgf4bd8cb"&gt;3. 用 org-mode 寫文章&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org5887dca"&gt;3.1. 修改 &lt;i&gt;orgmode&lt;/i&gt;init.el&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgcb33f32"&gt;3.1. 修改 &lt;i&gt;orgmode&lt;/i&gt;init.el&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org7ee41aa"&gt;3.1.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org83d6c64"&gt;3.1.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org8a16851"&gt;3.1.3. 在 Inline verbatim and code 不要空白&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgb0552e6"&gt;3.1.4. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org04f4baf"&gt;3.1.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org8c035b9"&gt;3.1.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org2216dda"&gt;3.1.3. 在 Inline verbatim and code 不要空白&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org260742d"&gt;3.1.4. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org83c11fb"&gt;3.2. 揷入圖片&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org71ff1b3"&gt;3.2. 揷入圖片&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0c36438"&gt;3.2.1. 利用 Google Drive 取得 Google Photos 的照片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org81fb10b"&gt;3.2.1. 利用 Google Drive 取得 Google Photos 的照片&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org128a736"&gt;3.3. 圖片連結 (Image URLs)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgc8a47fe"&gt;3.4. plain list&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org230863a"&gt;3.3. 圖片連結 (Image URLs)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org57a99af"&gt;3.4. plain list&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org719366f"&gt;3.4.1. Lord of the Rings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org17ecf08"&gt;3.4.1. Lord of the Rings&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org4e7249c"&gt;3.5. Subscripts and superscripts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org3d1bba0"&gt;3.6. Teasers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org33d159d"&gt;3.7. text block&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org06c34c9"&gt;3.5. Subscripts and superscripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org7fad6fe"&gt;3.6. Teasers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org8a03a03"&gt;3.7. text block&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orga05367a"&gt;4. 開始使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org8e84d63"&gt;4. 開始使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
 掙扎了許久，還是先用 &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt; 記錄一些事，畢竟比較熟悉，能快一點上手。
 &lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/"&gt;閱讀更多…&lt;/a&gt; (尚餘 5 分鐘)&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org58ae188" class="outline-2"&gt;
-&lt;h2 id="org58ae188"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/"&gt;閱讀更多…&lt;/a&gt; (尚餘 5 分鐘)&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><category>nikola</category><guid>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</guid><pubDate>Mon, 14 May 2018 01:32:19 GMT</pubDate></item><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org1f793f2" class="outline-2"&gt;
+&lt;h2 id="org1f793f2"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 在 archlinux 上想用 haskell 真不是一件容易的事，因為選擇太多。
@@ -573,16 +573,16 @@ unable to complete, or interface CRC (with ICRC).
 Archlinux WIKI 的 &lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced linux Sound Architecture&lt;/a&gt; 已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org428e606" class="outline-2"&gt;
-&lt;h2 id="org428e606"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install&lt;/h2&gt;
+&lt;div id="outline-container-org2caa220" class="outline-2"&gt;
+&lt;h2 id="org2caa220"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsaequal
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd1e9a53" class="outline-2"&gt;
-&lt;h2 id="orgd1e9a53"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; config&lt;/h2&gt;
+&lt;div id="outline-container-org298e54a" class="outline-2"&gt;
+&lt;h2 id="org298e54a"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; config&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 在 &lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt; 加上以下設定：
@@ -616,8 +616,8 @@ pcm.!default {
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdb9f5e5" class="outline-2"&gt;
-&lt;h2 id="orgdb9f5e5"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; reboot&lt;/h2&gt;
+&lt;div id="outline-container-org4215d03" class="outline-2"&gt;
+&lt;h2 id="org4215d03"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; reboot&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;p&gt;
 讓 alsa 可用等化器
@@ -625,8 +625,8 @@ pcm.!default {
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org79722a9" class="outline-2"&gt;
-&lt;h2 id="org79722a9"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 調整等化器&lt;/h2&gt;
+&lt;div id="outline-container-org890e769" class="outline-2"&gt;
+&lt;h2 id="org890e769"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 調整等化器&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-4"&gt;
 &lt;p&gt;
 執行
@@ -640,8 +640,8 @@ PS. 用 Q,W,E,Z,X,C 可分別調整左右聲道的音量。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfb886b6" class="outline-2"&gt;
-&lt;h2 id="orgfb886b6"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; mpd issue&lt;/h2&gt;
+&lt;div id="outline-container-org95aa928" class="outline-2"&gt;
+&lt;h2 id="org95aa928"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; mpd issue&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-5"&gt;
 &lt;p&gt;
 總是會連不上 mpd server，後來在 WIKI 中讀到一段話：

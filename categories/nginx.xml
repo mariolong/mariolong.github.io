@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：nginx)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/nginx.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 07:14:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>bottle+nginx with uwsgi</title><link>https://mariolong.github.io/posts/bottlenginx-with-uwsgi/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;安裝 uwsgi&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_6037023a145f4f5d88210b87922a5a80-1"&gt;&lt;/a&gt;sudo pip uwsgi
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：nginx)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/nginx.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 08:01:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>bottle+nginx with uwsgi</title><link>https://mariolong.github.io/posts/bottlenginx-with-uwsgi/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;安裝 uwsgi&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_52ea7cd5767c4899ad0e754b11e39d73-1"&gt;&lt;/a&gt;sudo pip uwsgi
 &lt;/pre&gt;&lt;p&gt;先寫一個小小的程式，測試一下。&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-6"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s2"&gt;"Hello world"&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-6"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s2"&gt;"Hello world"&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;啟動 uwsgi&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_0486820adb89402dae633bd6b572c346-1"&gt;&lt;/a&gt;uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
+&lt;pre class="code text"&gt;&lt;a name="rest_code_bf725f4ff8114a2a970f1f709aa8d015-1"&gt;&lt;/a&gt;uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
 &lt;/pre&gt;&lt;p&gt;進 browser 看看成功否？目前成功。&lt;/p&gt;
 &lt;p&gt;接下來試 nginx 中啟動 uwsgi。&lt;/p&gt;&lt;/div&gt;</description><category>bottle</category><category>nginx</category><category>uwsgi</category><guid>https://mariolong.github.io/posts/bottlenginx-with-uwsgi/</guid><pubDate>Sat, 08 Feb 2014 05:35:29 GMT</pubDate></item><item><title>在 Archlinux 安裝 nginx</title><link>https://mariolong.github.io/posts/an-zhuang-nginx/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;用 nikola 寫了些 blog，裝上 nginx 只是為了能在 localhost 看看這些文章。
 很大材小用吧。&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;安裝&lt;/h2&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_e2f32436a9c3421db0ef6d2f967cb932-1"&gt;&lt;/a&gt;yaourt -S nginx
+&lt;pre class="code text"&gt;&lt;a name="rest_code_3f8b7e149a8d43c39e0c87f178ea6e4f-1"&gt;&lt;/a&gt;yaourt -S nginx
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;配置&lt;/h2&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_27105cd57692460cac3a3dc0ebee638b-1"&gt;&lt;/a&gt;sudo nano /etc/nginx/nginx.conf
+&lt;pre class="code text"&gt;&lt;a name="rest_code_db4e3b7e7f264f16aa8da3ff57c28ca2-1"&gt;&lt;/a&gt;sudo nano /etc/nginx/nginx.conf
 &lt;/pre&gt;&lt;p&gt;預設的 nginx.conf 的結構很單純。&lt;tt class="docutils literal"&gt;$ grep &lt;span class="pre"&gt;-v&lt;/span&gt; '#' /etc/nginx/nginx.conf&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-1"&gt;&lt;/a&gt;worker_processes  1;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-3"&gt;&lt;/a&gt;events {
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-4"&gt;&lt;/a&gt;    worker_connections  1024;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-5"&gt;&lt;/a&gt;}
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-8"&gt;&lt;/a&gt;http {
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-9"&gt;&lt;/a&gt;    include       mime.types;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-10"&gt;&lt;/a&gt;    default_type  application/octet-stream;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-11"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-12"&gt;&lt;/a&gt;    sendfile        on;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-13"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-14"&gt;&lt;/a&gt;    keepalive_timeout  65;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-15"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-16"&gt;&lt;/a&gt;    server {
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-17"&gt;&lt;/a&gt;        listen       80;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-18"&gt;&lt;/a&gt;        server_name  localhost;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-19"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-20"&gt;&lt;/a&gt;        location / {
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-21"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-22"&gt;&lt;/a&gt;            index  index.html index.htm;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-23"&gt;&lt;/a&gt;        }
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-24"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-25"&gt;&lt;/a&gt;        error_page   500 502 503 504  /50x.html;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-26"&gt;&lt;/a&gt;        location = /50x.html {
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-27"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-28"&gt;&lt;/a&gt;        }
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-29"&gt;&lt;/a&gt;    }
-&lt;a name="rest_code_6e7eabb8e8c94661b68c8d8164dd092d-30"&gt;&lt;/a&gt;}
+&lt;pre class="code text"&gt;&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-1"&gt;&lt;/a&gt;worker_processes  1;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-3"&gt;&lt;/a&gt;events {
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-4"&gt;&lt;/a&gt;    worker_connections  1024;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-5"&gt;&lt;/a&gt;}
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-8"&gt;&lt;/a&gt;http {
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-9"&gt;&lt;/a&gt;    include       mime.types;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-10"&gt;&lt;/a&gt;    default_type  application/octet-stream;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-12"&gt;&lt;/a&gt;    sendfile        on;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-14"&gt;&lt;/a&gt;    keepalive_timeout  65;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-15"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-16"&gt;&lt;/a&gt;    server {
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-17"&gt;&lt;/a&gt;        listen       80;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-18"&gt;&lt;/a&gt;        server_name  localhost;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-19"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-20"&gt;&lt;/a&gt;        location / {
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-21"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-22"&gt;&lt;/a&gt;            index  index.html index.htm;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-23"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-24"&gt;&lt;/a&gt;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-25"&gt;&lt;/a&gt;        error_page   500 502 503 504  /50x.html;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-26"&gt;&lt;/a&gt;        location = /50x.html {
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-27"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-28"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-29"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_987484351cd4422caa28ac4b3f90911b-30"&gt;&lt;/a&gt;}
 &lt;/pre&gt;&lt;p&gt;以下是我的設定&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-1"&gt;&lt;/a&gt;worker_processes  1;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-3"&gt;&lt;/a&gt;events {
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-4"&gt;&lt;/a&gt;    worker_connections  1024;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-5"&gt;&lt;/a&gt;}
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-7"&gt;&lt;/a&gt;http {
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-8"&gt;&lt;/a&gt;    include       mime.types;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-9"&gt;&lt;/a&gt;    default_type  application/octet-stream;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-11"&gt;&lt;/a&gt;    sendfile        on;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-12"&gt;&lt;/a&gt;    keepalive_timeout  65;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-13"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-14"&gt;&lt;/a&gt;    server {
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-15"&gt;&lt;/a&gt;        listen       8000;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-16"&gt;&lt;/a&gt;        server_name  localhost;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-17"&gt;&lt;/a&gt;        location / {
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-18"&gt;&lt;/a&gt;            root   /home/mariolong/Programing/wen-de-www/www/output;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-19"&gt;&lt;/a&gt;            index  index.html index.htm;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-20"&gt;&lt;/a&gt;        }
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-21"&gt;&lt;/a&gt;        error_page   500 502 503 504  /50x.html;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-22"&gt;&lt;/a&gt;        location = /50x.html {
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-23"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-24"&gt;&lt;/a&gt;        }
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-25"&gt;&lt;/a&gt;    }
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-26"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-27"&gt;&lt;/a&gt;    server {
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-28"&gt;&lt;/a&gt;        listen       8088;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-29"&gt;&lt;/a&gt;        server_name  localhost;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-30"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-31"&gt;&lt;/a&gt;        location / {
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-32"&gt;&lt;/a&gt;            root /home/mariolong/Documents/myBlog/output;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-33"&gt;&lt;/a&gt;            index  index.html index.htm;
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-34"&gt;&lt;/a&gt;        }
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-35"&gt;&lt;/a&gt;    }
-&lt;a name="rest_code_7e34cf8a6267428a8c973d1bcf0bfb16-36"&gt;&lt;/a&gt;}
+&lt;pre class="code text"&gt;&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-1"&gt;&lt;/a&gt;worker_processes  1;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-3"&gt;&lt;/a&gt;events {
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-4"&gt;&lt;/a&gt;    worker_connections  1024;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-5"&gt;&lt;/a&gt;}
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-7"&gt;&lt;/a&gt;http {
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-8"&gt;&lt;/a&gt;    include       mime.types;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-9"&gt;&lt;/a&gt;    default_type  application/octet-stream;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-11"&gt;&lt;/a&gt;    sendfile        on;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-12"&gt;&lt;/a&gt;    keepalive_timeout  65;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-14"&gt;&lt;/a&gt;    server {
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-15"&gt;&lt;/a&gt;        listen       8000;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-16"&gt;&lt;/a&gt;        server_name  localhost;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-17"&gt;&lt;/a&gt;        location / {
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-18"&gt;&lt;/a&gt;            root   /home/mariolong/Programing/wen-de-www/www/output;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-19"&gt;&lt;/a&gt;            index  index.html index.htm;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-20"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-21"&gt;&lt;/a&gt;        error_page   500 502 503 504  /50x.html;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-22"&gt;&lt;/a&gt;        location = /50x.html {
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-23"&gt;&lt;/a&gt;            root   /usr/share/nginx/html;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-24"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-25"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-26"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-27"&gt;&lt;/a&gt;    server {
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-28"&gt;&lt;/a&gt;        listen       8088;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-29"&gt;&lt;/a&gt;        server_name  localhost;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-30"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-31"&gt;&lt;/a&gt;        location / {
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-32"&gt;&lt;/a&gt;            root /home/mariolong/Documents/myBlog/output;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-33"&gt;&lt;/a&gt;            index  index.html index.htm;
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-34"&gt;&lt;/a&gt;        }
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-35"&gt;&lt;/a&gt;    }
+&lt;a name="rest_code_7e6ee9d125b34baba67c5394eb3e3993-36"&gt;&lt;/a&gt;}
 &lt;/pre&gt;&lt;p&gt;如此配置好，文章寫好後，只要 &lt;tt class="docutils literal"&gt;nikola build&lt;/tt&gt; 即可，不必再 &lt;tt class="docutils literal"&gt;nikola serve&lt;/tt&gt;。&lt;/p&gt;
 &lt;p&gt;回到 browser 中，直接訪問文章就好，方便多了。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;啟動&lt;/h2&gt;
 &lt;p&gt;以下分別為啟動、重啟、停止、開機啟動&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_07efb634e5dd413ba496a0497438072b-1"&gt;&lt;/a&gt;sudo systemctl start nginx
-&lt;a name="rest_code_07efb634e5dd413ba496a0497438072b-2"&gt;&lt;/a&gt;sudo systemctl restart nginx
-&lt;a name="rest_code_07efb634e5dd413ba496a0497438072b-3"&gt;&lt;/a&gt;sudo systemctl stop nginx
-&lt;a name="rest_code_07efb634e5dd413ba496a0497438072b-4"&gt;&lt;/a&gt;sudo systemctl enable nginx
+&lt;pre class="code text"&gt;&lt;a name="rest_code_53ebe5b69e7c4ad4aa23c9fa7ce8ffb3-1"&gt;&lt;/a&gt;sudo systemctl start nginx
+&lt;a name="rest_code_53ebe5b69e7c4ad4aa23c9fa7ce8ffb3-2"&gt;&lt;/a&gt;sudo systemctl restart nginx
+&lt;a name="rest_code_53ebe5b69e7c4ad4aa23c9fa7ce8ffb3-3"&gt;&lt;/a&gt;sudo systemctl stop nginx
+&lt;a name="rest_code_53ebe5b69e7c4ad4aa23c9fa7ce8ffb3-4"&gt;&lt;/a&gt;sudo systemctl enable nginx
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="id4"&gt;
 &lt;h2&gt;結論&lt;/h2&gt;

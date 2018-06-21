@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：haskell)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/haskell.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 07:58:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org58ae188" class="outline-2"&gt;
-&lt;h2 id="org58ae188"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：haskell)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/haskell.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 08:01:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org1f793f2" class="outline-2"&gt;
+&lt;h2 id="org1f793f2"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 前言&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 在 archlinux 上想用 haskell 真不是一件容易的事，因為選擇太多。
@@ -10,8 +10,8 @@
 recommendations - ArchWiki&lt;/a&gt; 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgb5a2290" class="outline-2"&gt;
-&lt;h2 id="orgb5a2290"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; haskell&lt;/h2&gt;
+&lt;div id="outline-container-org35c5176" class="outline-2"&gt;
+&lt;h2 id="org35c5176"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; haskell&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 安裝的方法參看 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications"&gt;Install Haskell Applications&lt;/a&gt;
@@ -19,12 +19,12 @@ recommendations - ArchWiki&lt;/a&gt; 記錄下對我而言必要的軟體及簡�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga5855df" class="outline-2"&gt;
-&lt;h2 id="orga5855df"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 桌面及外觀&lt;/h2&gt;
+&lt;div id="outline-container-orgea2b359" class="outline-2"&gt;
+&lt;h2 id="orgea2b359"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 桌面及外觀&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd052dbe" class="outline-3"&gt;
-&lt;h3 id="orgd052dbe"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; theme&lt;/h3&gt;
+&lt;div id="outline-container-orgc866bef" class="outline-3"&gt;
+&lt;h3 id="orgc866bef"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; theme&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S breeze&lt;span class="o"&gt;{&lt;/span&gt;,-kde4,-gtk&lt;span class="o"&gt;}&lt;/span&gt; flat-remix-git lxappearance
 &lt;/pre&gt;&lt;/div&gt;
@@ -35,8 +35,8 @@ Using Breeze theme and Flat Remix icon theme
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org819a8eb" class="outline-3"&gt;
-&lt;h3 id="org819a8eb"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; lxappearance&lt;/h3&gt;
+&lt;div id="outline-container-org14e73a0" class="outline-3"&gt;
+&lt;h3 id="org14e73a0"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; lxappearance&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-2"&gt;
 &lt;p&gt;
 用 lxappearance 修改 gtk 程式的外觀。
@@ -48,8 +48,8 @@ Using Breeze theme and Flat Remix icon theme
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org08980e6" class="outline-3"&gt;
-&lt;h3 id="org08980e6"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; oblogout and screen lock&lt;/h3&gt;
+&lt;div id="outline-container-orgd9d826f" class="outline-3"&gt;
+&lt;h3 id="orgd9d826f"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; oblogout and screen lock&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-2-3"&gt;
 &lt;p&gt;
 &lt;a href="https://wiki.archlinux.org/index.php/Oblogout"&gt;https://wiki.archlinux.org/index.php/Oblogout&lt;/a&gt;
@@ -99,8 +99,8 @@ sudo nano /etc/oblogout.conf
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga4676a4" class="outline-2"&gt;
-&lt;h2 id="orga4676a4"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; system&lt;/h2&gt;
+&lt;div id="outline-container-org5353afd" class="outline-2"&gt;
+&lt;h2 id="org5353afd"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; system&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;p&gt;
 DPMS: display power manpage system
@@ -109,12 +109,12 @@ slock: screen saver
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc30208b" class="outline-2"&gt;
-&lt;h2 id="orgc30208b"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 網路&lt;/h2&gt;
+&lt;div id="outline-container-org5291971" class="outline-2"&gt;
+&lt;h2 id="org5291971"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 網路&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-4"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7d57a12" class="outline-3"&gt;
-&lt;h3 id="org7d57a12"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; dropbox&lt;/h3&gt;
+&lt;div id="outline-container-orgc107c68" class="outline-3"&gt;
+&lt;h3 id="orgc107c68"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; dropbox&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-4-1"&gt;
 &lt;p&gt;
 dropbox 在 archlinux.fr 中
@@ -125,8 +125,8 @@ dropbox 在 archlinux.fr 中
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9d1ca90" class="outline-3"&gt;
-&lt;h3 id="org9d1ca90"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; qbittorrent&lt;/h3&gt;
+&lt;div id="outline-container-orgc141f6d" class="outline-3"&gt;
+&lt;h3 id="orgc141f6d"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; qbittorrent&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-4-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S qbittorrent
 &lt;/pre&gt;&lt;/div&gt;
@@ -134,8 +134,8 @@ dropbox 在 archlinux.fr 中
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5af92f2" class="outline-2"&gt;
-&lt;h2 id="org5af92f2"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 檔案管理&lt;/h2&gt;
+&lt;div id="outline-container-orgf326226" class="outline-2"&gt;
+&lt;h2 id="orgf326226"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 檔案管理&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-5"&gt;
 &lt;p&gt;
 using mc and pcmanfm-qt
@@ -145,16 +145,16 @@ using mc and pcmanfm-qt
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb3958b1" class="outline-3"&gt;
-&lt;h3 id="orgb3958b1"&gt;&lt;span class="section-number-3"&gt;5.1&lt;/span&gt; pcmanfm-qt&lt;/h3&gt;
+&lt;div id="outline-container-orge3e704e" class="outline-3"&gt;
+&lt;h3 id="orge3e704e"&gt;&lt;span class="section-number-3"&gt;5.1&lt;/span&gt; pcmanfm-qt&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-5-1"&gt;
 &lt;p&gt;
 使用 pcmanfm-qt, for mtp 傳送檔案 and dropbox
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org941b397" class="outline-4"&gt;
-&lt;h4 id="org941b397"&gt;&lt;span class="section-number-4"&gt;5.1.1&lt;/span&gt; issues&lt;/h4&gt;
+&lt;div id="outline-container-org0b82626" class="outline-4"&gt;
+&lt;h4 id="org0b82626"&gt;&lt;span class="section-number-4"&gt;5.1.1&lt;/span&gt; issues&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-5-1-1"&gt;
 &lt;p&gt;
 error message:
@@ -174,8 +174,8 @@ fix this problem:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd4e2c2b" class="outline-3"&gt;
-&lt;h3 id="orgd4e2c2b"&gt;&lt;span class="section-number-3"&gt;5.2&lt;/span&gt; mc&lt;/h3&gt;
+&lt;div id="outline-container-org780e4e6" class="outline-3"&gt;
+&lt;h3 id="org780e4e6"&gt;&lt;span class="section-number-3"&gt;5.2&lt;/span&gt; mc&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-5-2"&gt;
 &lt;p&gt;
 midnight-commander like norton commander
@@ -184,15 +184,15 @@ midnight-commander like norton commander
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0ef6315" class="outline-2"&gt;
-&lt;h2 id="org0ef6315"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; 影音&lt;/h2&gt;
+&lt;div id="outline-container-orga538780" class="outline-2"&gt;
+&lt;h2 id="orga538780"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; 影音&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsa-utils mpd mpc ncmpcpp mpv ffmpeg sox kodi kid3 aegisub
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0aa893c" class="outline-3"&gt;
-&lt;h3 id="org0aa893c"&gt;&lt;span class="section-number-3"&gt;6.1&lt;/span&gt; alsa&lt;/h3&gt;
+&lt;div id="outline-container-orga9e4d41" class="outline-3"&gt;
+&lt;h3 id="orga9e4d41"&gt;&lt;span class="section-number-3"&gt;6.1&lt;/span&gt; alsa&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-1"&gt;
 &lt;p&gt;
 聲音
@@ -200,8 +200,8 @@ midnight-commander like norton commander
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0dba187" class="outline-3"&gt;
-&lt;h3 id="org0dba187"&gt;&lt;span class="section-number-3"&gt;6.2&lt;/span&gt; mpd, mpc, ncmpcpp&lt;/h3&gt;
+&lt;div id="outline-container-orgf1ae535" class="outline-3"&gt;
+&lt;h3 id="orgf1ae535"&gt;&lt;span class="section-number-3"&gt;6.2&lt;/span&gt; mpd, mpc, ncmpcpp&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-2"&gt;
 &lt;p&gt;
 音樂背景播放
@@ -209,8 +209,8 @@ midnight-commander like norton commander
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org89fe0b6" class="outline-3"&gt;
-&lt;h3 id="org89fe0b6"&gt;&lt;span class="section-number-3"&gt;6.3&lt;/span&gt; mpv&lt;/h3&gt;
+&lt;div id="outline-container-org197ae60" class="outline-3"&gt;
+&lt;h3 id="org197ae60"&gt;&lt;span class="section-number-3"&gt;6.3&lt;/span&gt; mpv&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-3"&gt;
 &lt;p&gt;
 影片播放
@@ -222,8 +222,8 @@ mpv dvd://
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8d57ddf" class="outline-3"&gt;
-&lt;h3 id="org8d57ddf"&gt;&lt;span class="section-number-3"&gt;6.4&lt;/span&gt; kodi&lt;/h3&gt;
+&lt;div id="outline-container-org07ddb51" class="outline-3"&gt;
+&lt;h3 id="org07ddb51"&gt;&lt;span class="section-number-3"&gt;6.4&lt;/span&gt; kodi&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-4"&gt;
 &lt;p&gt;
 影片管理
@@ -231,8 +231,8 @@ mpv dvd://
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd9987bc" class="outline-3"&gt;
-&lt;h3 id="orgd9987bc"&gt;&lt;span class="section-number-3"&gt;6.5&lt;/span&gt; aegisub&lt;/h3&gt;
+&lt;div id="outline-container-org385ea85" class="outline-3"&gt;
+&lt;h3 id="org385ea85"&gt;&lt;span class="section-number-3"&gt;6.5&lt;/span&gt; aegisub&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-5"&gt;
 &lt;p&gt;
 字幕處理
@@ -240,8 +240,8 @@ mpv dvd://
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7a38bba" class="outline-3"&gt;
-&lt;h3 id="org7a38bba"&gt;&lt;span class="section-number-3"&gt;6.6&lt;/span&gt; ffmpeg&lt;/h3&gt;
+&lt;div id="outline-container-org1d111e0" class="outline-3"&gt;
+&lt;h3 id="org1d111e0"&gt;&lt;span class="section-number-3"&gt;6.6&lt;/span&gt; ffmpeg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-6"&gt;
 &lt;p&gt;
 影片處理
@@ -250,11 +250,11 @@ mpv dvd://
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9758d99" class="outline-3"&gt;
-&lt;h3 id="org9758d99"&gt;&lt;span class="section-number-3"&gt;6.7&lt;/span&gt; dvdbackup&lt;/h3&gt;
+&lt;div id="outline-container-org8424314" class="outline-3"&gt;
+&lt;h3 id="org8424314"&gt;&lt;span class="section-number-3"&gt;6.7&lt;/span&gt; dvdbackup&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0086e8d" class="outline-3"&gt;
-&lt;h3 id="org0086e8d"&gt;&lt;span class="section-number-3"&gt;6.8&lt;/span&gt; sox&lt;/h3&gt;
+&lt;div id="outline-container-org81f7364" class="outline-3"&gt;
+&lt;h3 id="org81f7364"&gt;&lt;span class="section-number-3"&gt;6.8&lt;/span&gt; sox&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-8"&gt;
 &lt;p&gt;
 wav 轉 aiff
@@ -262,8 +262,8 @@ wav 轉 aiff
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge201de8" class="outline-3"&gt;
-&lt;h3 id="orge201de8"&gt;&lt;span class="section-number-3"&gt;6.9&lt;/span&gt; kid3&lt;/h3&gt;
+&lt;div id="outline-container-orgaa82ec5" class="outline-3"&gt;
+&lt;h3 id="orgaa82ec5"&gt;&lt;span class="section-number-3"&gt;6.9&lt;/span&gt; kid3&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-9"&gt;
 &lt;p&gt;
 音檔加 tag
@@ -272,12 +272,12 @@ wav 轉 aiff
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7a3c545" class="outline-2"&gt;
-&lt;h2 id="org7a3c545"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 其它工具&lt;/h2&gt;
+&lt;div id="outline-container-org18b7da1" class="outline-2"&gt;
+&lt;h2 id="org18b7da1"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 其它工具&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-7"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge450849" class="outline-3"&gt;
-&lt;h3 id="orge450849"&gt;&lt;span class="section-number-3"&gt;7.1&lt;/span&gt; emacs&lt;/h3&gt;
+&lt;div id="outline-container-org88857b1" class="outline-3"&gt;
+&lt;h3 id="org88857b1"&gt;&lt;span class="section-number-3"&gt;7.1&lt;/span&gt; emacs&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-1"&gt;
 &lt;p&gt;
 ripgrep
@@ -286,16 +286,16 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge7a692f" class="outline-3"&gt;
-&lt;h3 id="orge7a692f"&gt;&lt;span class="section-number-3"&gt;7.2&lt;/span&gt; meld&lt;/h3&gt;
+&lt;div id="outline-container-org8873f56" class="outline-3"&gt;
+&lt;h3 id="org8873f56"&gt;&lt;span class="section-number-3"&gt;7.2&lt;/span&gt; meld&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S meld
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdb5b53d" class="outline-3"&gt;
-&lt;h3 id="orgdb5b53d"&gt;&lt;span class="section-number-3"&gt;7.3&lt;/span&gt; albert&lt;/h3&gt;
+&lt;div id="outline-container-org0b205c0" class="outline-3"&gt;
+&lt;h3 id="org0b205c0"&gt;&lt;span class="section-number-3"&gt;7.3&lt;/span&gt; albert&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-3"&gt;
 &lt;p&gt;
 應用程式快速啓動器
@@ -306,16 +306,16 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge2dd28d" class="outline-3"&gt;
-&lt;h3 id="orge2dd28d"&gt;&lt;span class="section-number-3"&gt;7.4&lt;/span&gt; speedcrunch (calculator)&lt;/h3&gt;
+&lt;div id="outline-container-orgb14b872" class="outline-3"&gt;
+&lt;h3 id="orgb14b872"&gt;&lt;span class="section-number-3"&gt;7.4&lt;/span&gt; speedcrunch (calculator)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S speedcrunch
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8421292" class="outline-3"&gt;
-&lt;h3 id="org8421292"&gt;&lt;span class="section-number-3"&gt;7.5&lt;/span&gt; calibre&lt;/h3&gt;
+&lt;div id="outline-container-org98c7520" class="outline-3"&gt;
+&lt;h3 id="org98c7520"&gt;&lt;span class="section-number-3"&gt;7.5&lt;/span&gt; calibre&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-5"&gt;
 &lt;p&gt;
 管理電子書，我只用來管理我的 kindle
@@ -325,19 +325,19 @@ opencc: using s2twp.json
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgea9a5f9" class="outline-3"&gt;
-&lt;h3 id="orgea9a5f9"&gt;&lt;span class="section-number-3"&gt;7.6&lt;/span&gt; nikola&lt;/h3&gt;
+&lt;div id="outline-container-orgf896565" class="outline-3"&gt;
+&lt;h3 id="orgf896565"&gt;&lt;span class="section-number-3"&gt;7.6&lt;/span&gt; nikola&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install nikola Pygments
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7c4b8ed" class="outline-3"&gt;
-&lt;h3 id="org7c4b8ed"&gt;&lt;span class="section-number-3"&gt;7.7&lt;/span&gt; htop&lt;/h3&gt;
+&lt;div id="outline-container-org72ef5bd" class="outline-3"&gt;
+&lt;h3 id="org72ef5bd"&gt;&lt;span class="section-number-3"&gt;7.7&lt;/span&gt; htop&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2cdf07b" class="outline-3"&gt;
-&lt;h3 id="org2cdf07b"&gt;&lt;span class="section-number-3"&gt;7.8&lt;/span&gt; gnash&lt;/h3&gt;
+&lt;div id="outline-container-org2d216a4" class="outline-3"&gt;
+&lt;h3 id="org2d216a4"&gt;&lt;span class="section-number-3"&gt;7.8&lt;/span&gt; gnash&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S gnash-git
 &lt;/pre&gt;&lt;/div&gt;
@@ -349,20 +349,20 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4384688" class="outline-2"&gt;
-&lt;h2 id="org4384688"&gt;&lt;span class="section-number-2"&gt;8&lt;/span&gt; programming&lt;/h2&gt;
+&lt;div id="outline-container-org61e2698" class="outline-2"&gt;
+&lt;h2 id="org61e2698"&gt;&lt;span class="section-number-2"&gt;8&lt;/span&gt; programming&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-8"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org77eeedc" class="outline-3"&gt;
-&lt;h3 id="org77eeedc"&gt;&lt;span class="section-number-3"&gt;8.1&lt;/span&gt; python and depending modules&lt;/h3&gt;
+&lt;div id="outline-container-orgc48ea32" class="outline-3"&gt;
+&lt;h3 id="orgc48ea32"&gt;&lt;span class="section-number-3"&gt;8.1&lt;/span&gt; python and depending modules&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-8-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S python python-pip
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8da00a9" class="outline-3"&gt;
-&lt;h3 id="org8da00a9"&gt;&lt;span class="section-number-3"&gt;8.2&lt;/span&gt; systemd timers&lt;/h3&gt;
+&lt;div id="outline-container-org227a6e8" class="outline-3"&gt;
+&lt;h3 id="org227a6e8"&gt;&lt;span class="section-number-3"&gt;8.2&lt;/span&gt; systemd timers&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>haskell</category><category>linux</category><category>taffybar</category><category>xmonad</category><guid>https://mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item><item><title>安裝 haskell 程式</title><link>https://mariolong.github.io/posts/haskell-programs/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;目前我會用的 haskell 程式有 pandoc 和 xmonad。&lt;/p&gt;
 &lt;p&gt;原先我也是用 archlinux 中的 yaourt 安裝 haskell 的程式來用。但是有一天突然就不能用了，重裝也沒用。

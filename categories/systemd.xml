@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：systemd)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/systemd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 07:14:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：systemd)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/systemd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 08:01:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 emacs version 26.1 systemd support
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgc382304" class="outline-2"&gt;
-&lt;h2 id="orgc382304"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
+&lt;div id="outline-container-orgc6af3b1" class="outline-2"&gt;
+&lt;h2 id="orgc6af3b1"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 設定&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga76cfd2" class="outline-3"&gt;
-&lt;h3 id="orga76cfd2"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
+&lt;div id="outline-container-org59ee250" class="outline-3"&gt;
+&lt;h3 id="org59ee250"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; start emacs via systemd&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org989da15" class="outline-3"&gt;
-&lt;h3 id="org989da15"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
+&lt;div id="outline-container-org002e7bb" class="outline-3"&gt;
+&lt;h3 id="org002e7bb"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; emacs.service&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 還是要設定一下 emacs.service.
@@ -30,8 +30,8 @@ emacs version 26.1 systemd support
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org00bdbed" class="outline-4"&gt;
-&lt;h4 id="org00bdbed"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
+&lt;div id="outline-container-org46a70e9" class="outline-4"&gt;
+&lt;h4 id="org46a70e9"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; 中文輸入法&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-1"&gt;
 &lt;p&gt;
 在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
@@ -44,8 +44,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org01a11eb" class="outline-4"&gt;
-&lt;h4 id="org01a11eb"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
+&lt;div id="outline-container-org5af14d6" class="outline-4"&gt;
+&lt;h4 id="org5af14d6"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; shell term&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-2"&gt;
 &lt;p&gt;
 設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
@@ -56,8 +56,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd115f6e" class="outline-4"&gt;
-&lt;h4 id="orgd115f6e"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
+&lt;div id="outline-container-org69b87e3" class="outline-4"&gt;
+&lt;h4 id="org69b87e3"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; final emacs.service&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-1-2-3"&gt;
 &lt;p&gt;
 最後 emacs.service 的設定。
@@ -86,8 +86,8 @@ emacs version 26.1 systemd support
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org355df5e" class="outline-3"&gt;
-&lt;h3 id="org355df5e"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
+&lt;div id="outline-container-orgd9a8b79" class="outline-3"&gt;
+&lt;h3 id="orgd9a8b79"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 修改 init.el&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;p&gt;
 package server is unnecessary. 可以刪除。
@@ -102,8 +102,8 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5b4c3d9" class="outline-3"&gt;
-&lt;h3 id="org5b4c3d9"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
+&lt;div id="outline-container-org0d32375" class="outline-3"&gt;
+&lt;h3 id="org0d32375"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; restart emacs via systemd&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
 &lt;/pre&gt;&lt;/div&gt;
@@ -122,8 +122,8 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd0faa85" class="outline-2"&gt;
-&lt;h2 id="orgd0faa85"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
+&lt;div id="outline-container-org977e13a" class="outline-2"&gt;
+&lt;h2 id="org977e13a"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 結語&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;

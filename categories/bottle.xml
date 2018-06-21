@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：bottle)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/bottle.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Jun 2018 07:14:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>bottle+nginx with uwsgi</title><link>https://mariolong.github.io/posts/bottlenginx-with-uwsgi/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;安裝 uwsgi&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_6037023a145f4f5d88210b87922a5a80-1"&gt;&lt;/a&gt;sudo pip uwsgi
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：bottle)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/bottle.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Jun 2018 08:01:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>bottle+nginx with uwsgi</title><link>https://mariolong.github.io/posts/bottlenginx-with-uwsgi/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;安裝 uwsgi&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_52ea7cd5767c4899ad0e754b11e39d73-1"&gt;&lt;/a&gt;sudo pip uwsgi
 &lt;/pre&gt;&lt;p&gt;先寫一個小小的程式，測試一下。&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-6"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s2"&gt;"Hello world"&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_875a5fa58f0c4b21846b4d13a13dc85f-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-1"&gt;&lt;/a&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-6"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s2"&gt;"Hello world"&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_32f04d0985e64c06a5d538cde19882ee-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;啟動 uwsgi&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_0486820adb89402dae633bd6b572c346-1"&gt;&lt;/a&gt;uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
+&lt;pre class="code text"&gt;&lt;a name="rest_code_bf725f4ff8114a2a970f1f709aa8d015-1"&gt;&lt;/a&gt;uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
 &lt;/pre&gt;&lt;p&gt;進 browser 看看成功否？目前成功。&lt;/p&gt;
 &lt;p&gt;接下來試 nginx 中啟動 uwsgi。&lt;/p&gt;&lt;/div&gt;</description><category>bottle</category><category>nginx</category><category>uwsgi</category><guid>https://mariolong.github.io/posts/bottlenginx-with-uwsgi/</guid><pubDate>Sat, 08 Feb 2014 05:35:29 GMT</pubDate></item></channel></rss>
