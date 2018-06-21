@@ -14,6 +14,8 @@
 
     用 vim 打造自己專屬的 python IDE。聽起來很累人，可是「男人要用男人自己的刀」，男人就是要用 vim。
 
+	***Update** 改用 emacs 了 :doc:`emacsjiao-xue-zhi-yin` ，比較「帥」。
+
 Install
 ========
 在裝 vim 前，先改 /etc/pacman.conf，加入
