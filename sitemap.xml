@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-06-21T04:00:00Z</lastmod>
+  <lastmod>2018-08-03T01:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-06-21T04:00:00Z</lastmod>
+  <lastmod>2018-08-03T01:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -88,6 +88,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/cat_life/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/coffee/</loc>
+  <lastmod>2018-06-25T03:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/costco/</loc>
@@ -188,6 +192,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/imagemagick/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/investment/</loc>
+  <lastmod>2018-08-03T01:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/kde/</loc>
@@ -330,6 +338,10 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/smart/</loc>
+  <lastmod>2018-07-12T05:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/starbucks/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
@@ -386,6 +398,10 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/water/</loc>
+  <lastmod>2018-07-12T05:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/wd/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
@@ -415,7 +431,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-10.html</loc>
-  <lastmod>2018-06-21T04:00:00Z</lastmod>
+  <lastmod>2018-08-03T01:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-2.html</loc>
@@ -447,7 +463,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-06-21T04:37:00Z</lastmod>
+  <lastmod>2018-06-25T03:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/24-years-old-3-suggestions/</loc>
+  <lastmod>2018-08-03T01:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/30-thinkings/</loc>
@@ -508,6 +528,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/cancer-first-time/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/cancer-free-oxygen/</loc>
+  <lastmod>2018-06-21T08:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/cd-ripper-rubyripper/</loc>
@@ -662,6 +686,10 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/posts/kodi-tv/</loc>
+  <lastmod>2018-07-12T05:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/posts/lightworks-on-archlinux/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
@@ -724,6 +752,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/ntpwang-lu-dui-shi/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/one-cup-black-coffee-every-day/</loc>
+  <lastmod>2018-06-25T03:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/pacpl/</loc>
@@ -804,6 +836,14 @@
  <url>
   <loc>https://mariolong.github.io/posts/tiling-window-manager-xmonad-with-kde/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/time-to-drink-water/</loc>
+  <lastmod>2018-07-12T05:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/turn-on-smart/</loc>
+  <lastmod>2018-07-12T05:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/udiskie-usb-storage-automount/</loc>

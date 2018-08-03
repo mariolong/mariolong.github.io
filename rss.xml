@@ -1,5 +1,475 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Thu, 21 Jun 2018 04:37:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>鄭曼青師徒對話錄</title><link>https://mariolong.github.io/posts/master-zheng-and-student-smith/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 03 Aug 2018 01:18:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>24 歲與股神相遇 巴菲特給她的 3 個建議</title><link>https://mariolong.github.io/posts/24-years-old-3-suggestions/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+來源：&lt;a href="https://news.cnyes.com/news/id/4064409"&gt;24 歲與股神相遇 巴菲特給她的 3 個建議 | 鉅亨網 - 時事&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+現年 32 歲的中國年輕企業家龔曉思曾在 8 年前遇過股神巴菲特，當時的她鼓起勇氣邀約巴菲特共進晚餐，雖然遭到拒絕，但巴菲特當時給她的三個建議，她依然覺得終身受用。
+&lt;/p&gt;
+
+&lt;p&gt;
+巴菲特給了她三點建議：
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;在你每晚睡覺之前要問問自己，是不是更聰明？有沒有學到&lt;b&gt;新東西&lt;/b&gt;？&lt;/li&gt;
+&lt;li&gt;在生活中會有很多想逃避的事，但是要&lt;b&gt;勇於面對&lt;/b&gt;。&lt;/li&gt;
+&lt;li&gt;不管所處的地位有多高，都應該要&lt;b&gt;謙虛&lt;/b&gt;。&lt;/li&gt;
+&lt;/ul&gt;</description><category>Buffett</category><category>investment</category><guid>https://mariolong.github.io/posts/24-years-old-3-suggestions/</guid><pubDate>Fri, 03 Aug 2018 00:34:11 GMT</pubDate></item><item><title>這個時間喝水，輕鬆甩肉、防中風！ - 康健雜誌]]</title><link>https://mariolong.github.io/posts/time-to-drink-water/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+出處：&lt;a href="http://www.commonhealth.com.tw/article/article.action?nid=74133"&gt;這個時間喝水，輕鬆甩肉、防中風！ - 康健雜誌&lt;/a&gt;
+作者 ： 康健網站編輯
+&lt;/p&gt;
+
+&lt;p&gt;
+除了平時喝水保健康外，如果在這幾個時間點喝水，不用花力氣花大錢，也能養生！
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;睡前喝水，可預防心肌梗塞或中風&lt;/li&gt;
+&lt;li&gt;一起床就喝水，改善便秘&lt;/li&gt;
+&lt;li&gt;運動前先喝水，表現更亮眼&lt;/li&gt;
+&lt;li&gt;喝酒時，也要多喝水&lt;/li&gt;
+&lt;li&gt;焦躁疲憊時，喝杯水立即頭腦清醒&lt;/li&gt;
+&lt;li&gt;天黑後才煮開水，水質最佳&lt;/li&gt;
+&lt;li&gt;大口喝水，等於沒喝，切記要小口喝&lt;/li&gt;
+&lt;li&gt;飯前先喝兩杯水，減重且不復胖&lt;/li&gt;
+&lt;/ol&gt;</description><category>health</category><category>water</category><guid>https://mariolong.github.io/posts/time-to-drink-water/</guid><pubDate>Thu, 12 Jul 2018 03:41:28 GMT</pubDate></item><item><title>Turn on SMART to monitor HD</title><link>https://mariolong.github.io/posts/turn-on-smart/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. - ArchWiki&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div id="outline-container-org009d021" class="outline-2"&gt;
+&lt;h2 id="org009d021"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S smartmontools
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgcf3e321" class="outline-2"&gt;
+&lt;h2 id="orgcf3e321"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; start smartd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start smartd
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+配置檔 &lt;code&gt;/etc/smartd.conf&lt;/code&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org55cbfeb" class="outline-2"&gt;
+&lt;h2 id="org55cbfeb"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; smartd.conf&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+To monitor for all possible SMART errors on all disks, the following
+setting must be added in the configuration file.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;DEVICESCAN -a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orga6b58ea" class="outline-3"&gt;
+&lt;h3 id="orga6b58ea"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; auto mail&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;p&gt;
+先依 &lt;a href="https://dominicm.com/configure-email-notifications-on-arch-linux/"&gt;Configure Email Notifications on Arch Linux | DominicM&lt;/a&gt; 設定 s-nail,
+再於 &lt;code&gt;/etc/smartd.conf&lt;/code&gt; 加上以下指令
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;DEVICESCAN -m address@domain.com -M test&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>linux</category><category>smart</category><guid>https://mariolong.github.io/posts/turn-on-smart/</guid><pubDate>Wed, 11 Jul 2018 13:40:06 GMT</pubDate></item><item><title>Kodi TV</title><link>https://mariolong.github.io/posts/kodi-tv/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+&lt;a href="https://kodi.wiki/view/HOW-TO:Install_Tvheadend_on_Arch_Linux"&gt;HOW-TO:Install Tvheadend on Arch Linux - Official Kodi Wiki&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://wiki.archlinux.org/index.php/Tvheadend"&gt;Tvheadend - ArchWiki&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;div id="outline-container-org51ada84" class="outline-2"&gt;
+&lt;h2 id="org51ada84"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S tvheadend kodi-addon-hts-pvrmanager kodi-addon-pvr-hts --noconfirm
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org11cd998" class="outline-2"&gt;
+&lt;h2 id="org11cd998"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; start/enable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+Once Tvheadend is installed start/enable the tvheadend.service.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org07204f9" class="outline-2"&gt;
+&lt;h2 id="org07204f9"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; Configuration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+Once the service is running, configuration of Tvheadend is done through a web interface on &lt;code&gt;localhost:9981&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>kodi</category><guid>https://mariolong.github.io/posts/kodi-tv/</guid><pubDate>Tue, 26 Jun 2018 06:56:03 GMT</pubDate></item><item><title>一天 1 杯黑咖啡，肝癌風險降 42％</title><link>https://mariolong.github.io/posts/one-cup-black-coffee-every-day/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+【原文】&lt;a href="https://health.businessweekly.com.tw/AArticle.aspx?id=ARTL000095352"&gt;一天 1 杯黑咖啡，肝癌風險降 42％！肝臟最喜歡的 10 種食物 - 商業周刊（百大良醫）&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+這篇主要說明的是「促進肝臟健康的十大養分」，咖啡只是其中一項。
+&lt;/p&gt;
+
+&lt;div id="outline-container-org12b6226" class="outline-2"&gt;
+&lt;h2 id="org12b6226"&gt;促進肝臟健康的十大養分&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org12b6226"&gt;
+&lt;p&gt;
+儘管肝臟的健康和整體的飲食型態或三大營養素攝取量息息相關，但其實飲食中的許多微量營養素也是守護或促進肝臟健康的重要養分，所以不論是奉行地中海飲食、低 GI 飲食或是其他飲食法，都必須多留意這方面。
+&lt;/p&gt;
+
+&lt;p&gt;
+每一份健康飲食都應該涵蓋這些滋養肝臟的營養素或成分，因為它們不只能保護肝臟不受傷害，讓你擁有健康的肝臟，也能改善非酒精性脂肪肝的狀況。接下來，我們就來看看這些促進肝臟健康的養分有哪些。
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2be976f" class="outline-3"&gt;
+&lt;h3 id="org2be976f"&gt;（一）植化素&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2be976f"&gt;
+&lt;p&gt;
+這些出現在&lt;b&gt;水果、蔬菜、堅果和種子&lt;/b&gt;類食物中的植化素，對身體有不少健康功效，還有機會預防癌症和心臟病等重大疾病的發生。就增進肝臟健康方面來看，則屬吲哚類（indoles）、茄紅素（lycopene）、木酚素（lignans）、白藜蘆醇（resveratrol）、花青素（anthocyanin）和槲皮素（quercetin）的效果特別顯著。
+&lt;/p&gt;
+
+&lt;p&gt;
+2013 年一篇探討&lt;b&gt;花青素&lt;/b&gt;對肝臟影響的研究發現，花青素（存在於黑莓、接骨木莓、覆盆莓、黑葡萄和茄子的表皮）不只能預防肝臟出現脂肪堆積和發炎的狀況，還能幫助肝臟對抗氧化壓力。槲皮素這種屬於黃酮類（flavonoids）的植化素，則被發現具有抑制 C 型肝炎感染的功效；&lt;b&gt;柑橘類、蘋果、洋蔥、巴西里、橄欖油、葡萄和深色莓果&lt;/b&gt;裡都含有豐富的槲皮素。另外，2015 年中國的研究還發現，槲皮素能改善因高脂飲食所造成的肝損傷（尤其是脂肪堆積的部分）。
+&lt;/p&gt;
+
+&lt;p&gt;
+不過，市面上的營養補充劑是不用經過美國食品和藥物管理局檢測和認證的，因此我&lt;b&gt;不建議用營養補充劑&lt;/b&gt;來取得這些植化素，直接從新鮮的蔬果中攝取比較健康。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orga7764de" class="outline-3"&gt;
+&lt;h3 id="orga7764de"&gt;（二）咖啡&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga7764de"&gt;
+&lt;p&gt;
+喜歡喝咖啡的人，如果聽到我接下來要說的事實，肯定會覺得通體舒暢。
+&lt;/p&gt;
+
+&lt;p&gt;
+研究發現，喝咖啡能降低得到第二型糖尿病、心臟病、中風、膽結石和巴金森氏症等疾病的風險，而且還可以全面降低早亡的機會。
+&lt;/p&gt;
+
+&lt;p&gt;
+不僅如此，現在研究還發現咖啡可以降低丙胺酸轉胺脢（ALT）、天門冬胺酸轉胺酶（AST）和 γ-丙醯基轉肽酶（GGT）的數值；而且就算這些人有慢性肝病或是過量飲酒、肥胖、抽菸等陋習，咖啡也能發揮一定的功效。另外，連續執行了四個週期的美國國家健康和營養調查（NHANES）報告顯示，咖啡因的攝取量多寡，確實和降低非酒精性脂肪肝的風險有相關性（該報告由美國疾病控制與預防中心的國家衛生統計中心〔National Center for Health Statistics，NCHS〕以問卷的方式進行飲食攝取量的調查。
+&lt;/p&gt;
+
+&lt;p&gt;
+2005 年，日本的研究人員在分析了兩場前瞻性世代研究（prospective cohort
+study）的成果後發現，咖啡的攝取量和肝癌的得病率呈反比： &lt;b&gt;與不喝咖啡的人相比，每天喝一到兩杯咖啡者，其得到肝癌的風險降低了 42％&lt;/b&gt; 。
+&lt;/p&gt;
+
+&lt;p&gt;
+由於咖啡中含有成千上萬種物質，所以我們不可能直接點名是當中的哪些成分貢獻了這些護肝功效，因為很可能必須要有多種物質相輔相成（例如當中的強效抗氧化劑和抗癌物質相互搭配），方能產生這股守護肝臟的力量；不過最近有研究發現，或許是咖啡中的綠原酸成分所致。不論是飲用&lt;b&gt;黑咖啡&lt;/b&gt;或是&lt;b&gt;拿鐵&lt;/b&gt;都可以獲得這方面的好處，唯一需要注意的一點，就是沖泡咖啡時最好要有&lt;b&gt;過濾&lt;/b&gt;這道手續，因為這個動作可以濾除咖啡中大部分的咖啡固醇（cafestol）和咖啡白脂（kahweol）；這是兩種會讓血中膽固醇含量上升的油性物質。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2ad5582" class="outline-3"&gt;
+&lt;h3 id="org2ad5582"&gt;（三）ω-3 脂肪酸&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2ad5582"&gt;
+&lt;p&gt;
+&lt;b&gt;鮭魚、鮪魚、核桃、亞麻籽和奇亞籽&lt;/b&gt;等富含多元不飽和脂肪酸的食物，有助維持心臟、腦部健康和其他身體機能的運作。ω-3 脂肪酸可改善血脂狀態，並降低造成體內發炎的因素，這些優點都對肝臟健康有正面影響。事實上，奧勒岡州立大學新發表的研究發現，屬於ω-3 脂肪酸一員的 DHA（docosahexaenoic acid，二十二碳六烯酸）能預防脂肪肝，且成效顯著。
+&lt;/p&gt;
+
+&lt;p&gt;
+此外，研究還顯示血液中缺乏 ω-3 脂肪酸是造成非酒精性脂肪肝惡化的直接因素之一。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org41778c6" class="outline-3"&gt;
+&lt;h3 id="org41778c6"&gt;（四）纖維素&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org41778c6"&gt;
+&lt;p&gt;
+纖維素有兩大類，分別為&lt;b&gt;水溶性&lt;/b&gt;和&lt;b&gt;非水溶性&lt;/b&gt;；對身體健康來說，它們各有各有的好處。
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;水溶性纖維&lt;/b&gt;有助降低體內膽固醇的含量和整體心臟病的風險，同時它也是維持腸道健康的一項重要因素；富含水溶性纖維的食物泡在水裡體積會膨大，
+&lt;/p&gt;
+
+&lt;p&gt;
+例如&lt;b&gt;燕麥、豆類和奇亞籽&lt;/b&gt;等。
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;非水溶性纖維&lt;/b&gt;的食物有：&lt;b&gt;堅果、麩皮、糙米、水果的表皮&lt;/b&gt;等；這兩種纖維素都有益肝臟健康。
+&lt;/p&gt;
+
+&lt;p&gt;
+2007 年&lt;b&gt;巴西&lt;/b&gt;的研究發現，非酒精性脂肪肝的人連續 3 個月，每天食用 10 公克的水溶性纖維（以營養補充劑的形式攝取）後，他們上升的肝指數下降了，
+BMI、腰圍、胰島素阻抗和膽固醇也有顯著改善。
+&lt;/p&gt;
+
+&lt;p&gt;
+研究也發現，攝取充足的&lt;b&gt;膳食纖維&lt;/b&gt;能降低第二型糖尿病（包括胰島素阻抗）的風險、膽固醇和三酸甘油酯的含量，並讓體重獲得比較好的控制—這所有的改變都有助於降低得到肝臟疾病的風險。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgf22af0e" class="outline-3"&gt;
+&lt;h3 id="orgf22af0e"&gt;（五）益生菌&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf22af0e"&gt;
+&lt;p&gt;
+好菌是讓我們擁有一副健康腸道的關鍵角色，健康的腸道可以為肝臟的健康帶來保障，因為腸道和肝臟之間的互動密切，就如我們在前面提到的，部分學者甚至創了一個「腸肝軸系」的名詞，來描述腸道菌相可能透過怎樣的機制來保護肝臟不受慢性損傷的迫害。
+&lt;/p&gt;
+
+&lt;p&gt;
+其實不少研究都已經發現非酒精性脂肪肝、肝硬化或酒精性肝病的病人，其體內的腸道菌相都出現了轉變。好消息是，
+&lt;/p&gt;
+
+&lt;p&gt;
+有研究認為，只要透過食用&lt;b&gt;益生菌&lt;/b&gt;（促進腸道健康的好菌）和&lt;b&gt;益生質&lt;/b&gt;（人體不能消化的纖維素，但卻可以做為益生菌生長的養分）重新打造出擁有健康菌相的腸道
+&lt;/p&gt;
+
+&lt;p&gt;
+為了讓我們的腸道&lt;b&gt;好菌&lt;/b&gt;多多，可多食用&lt;b&gt;優格&lt;/b&gt;、&lt;b&gt;優酪乳&lt;/b&gt;、&lt;b&gt;味噌&lt;/b&gt;、&lt;b&gt;泡菜&lt;/b&gt;、
+&lt;b&gt;天貝&lt;/b&gt;（一種印尼的發酵豆製品）和&lt;b&gt;酸菜&lt;/b&gt;等發酵食品，或直接服用&lt;b&gt;益生菌營養補充劑&lt;/b&gt;，保持腸道菌相的健康。
+&lt;/p&gt;
+
+&lt;p&gt;
+提升腸胃功能，而且增進了肝臟的機能
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org0cfd16f" class="outline-3"&gt;
+&lt;h3 id="org0cfd16f"&gt;（六）大豆蛋白&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0cfd16f"&gt;
+&lt;p&gt;
+大豆常常因為它含有雌激素的特性身負惡名，但其實富含天然&lt;b&gt;大豆蛋白&lt;/b&gt;（非大豆加工製品）的飲食，對健康有諸多幫助，肝臟也是受惠者之一。研究發現大豆裡的&lt;b&gt;異黃酮&lt;/b&gt;能透過調節肝臟的脂肪代謝和改變肝臟的基因表現，來提升肝臟氧化脂肪酸的能力，進而減少脂肪囤積在肝臟的機會，達到預防或治療非酒精性脂肪肝的效果。
+&lt;/p&gt;
+
+&lt;p&gt;
+另外，&lt;b&gt;大豆異黃酮&lt;/b&gt;亦具有降低發炎因素和改善葡萄糖耐受度的能力。
+&lt;/p&gt;
+
+&lt;p&gt;
+獲取大豆蛋白的最佳來源是由完整大豆製成的食品，例如&lt;b&gt;豆腐&lt;/b&gt;、&lt;b&gt;毛豆&lt;/b&gt;、&lt;b&gt;天貝&lt;/b&gt;和&lt;b&gt;味噌&lt;/b&gt;都是很好的選擇，而非成分中徒有大豆分離蛋白的脆餅或能量棒。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org8801045" class="outline-3"&gt;
+&lt;h3 id="org8801045"&gt;（七）辛香料&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8801045"&gt;
+&lt;p&gt;
+在料理中添加辛香料，除了可以增加味蕾的豐富性，&lt;b&gt;薑黃、咖哩粉、辣椒、薑&lt;/b&gt;
+和&lt;b&gt;葫蘆巴籽&lt;/b&gt;裡的活性成分也能促進肝臟的健康。
+&lt;/p&gt;
+
+&lt;p&gt;
+大部分辛香料的護肝功效都是源自於它們所含的&lt;b&gt;抗氧化物質&lt;/b&gt;，不過也有少部分的辛香料是因為擁有抗發炎、改變基因表現或是增進解毒酵素活性的成分。
+&lt;/p&gt;
+
+&lt;p&gt;
+以 2014 年 7 月發表在期刊《消化學》（Gut）的一篇研究為例，他們在實驗過程中發現薑黃裡的薑黃素（curcumin）能阻擋 C 型肝炎的病毒進入肝臟細胞；
+&lt;/p&gt;
+
+&lt;p&gt;
+2013 年，中國也同樣在實驗時發現&lt;b&gt;薑黃素能阻止肝癌細胞生長&lt;/b&gt;。
+&lt;/p&gt;
+
+&lt;p&gt;
+2013 年來自台灣的研究團隊則發現，萃取自薑的精油有助於對抗酒精性肝病，因為他們每天餵食患有酒精性肝病的小老鼠薑精油後，小老鼠的肝臟便不再受到損傷。
+&lt;/p&gt;
+
+&lt;p&gt;
+在&lt;b&gt;葫蘆巴籽&lt;/b&gt;方面，2011 年日本研究發現，當大老鼠採取高油、高糖飲食時，若攝取葫蘆巴籽將能抑制脂肪在肝臟堆積。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgceaeb89" class="outline-3"&gt;
+&lt;h3 id="orgceaeb89"&gt;（八）綠茶&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgceaeb89"&gt;
+&lt;p&gt;
+儘管常被用來當成減肥聖品的濃縮綠茶萃取錠劑有礙健康（因為&lt;b&gt;大量服用很可能會導致急性肝衰竭&lt;/b&gt;），但&lt;b&gt;適度飲用綠茶&lt;/b&gt;卻有益肝臟健康。
+&lt;/p&gt;
+
+&lt;p&gt;
+這項優點很可能是&lt;b&gt;綠茶多酚&lt;/b&gt;的功勞，因為研究已經證實綠茶多酚能降低 DNA
+受損機率和血脂濃度。
+&lt;/p&gt;
+
+&lt;p&gt;
+不過想要安全無虞的獲得綠茶的好處，我的建議是不要攝取任何營養補充劑形式的綠茶萃取物，要&lt;b&gt;飲用天然的綠茶飲品，不論是冷泡或熱水沖泡的綠茶&lt;/b&gt;。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org27f58f3" class="outline-3"&gt;
+&lt;h3 id="org27f58f3"&gt;（九）維生素 E&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org27f58f3"&gt;
+&lt;p&gt;
+研究認為，維生素 E 有助降低升高的肝指數、預防非酒精性脂肪肝惡化，並減少疤痕組織在肝臟生成的機會。
+&lt;/p&gt;
+
+&lt;p&gt;
+就跟前面介紹的幾項護肝養分相同，最好的維生素 E 也是來自食物，而非營養補充劑；富含維生素 E 的食物有：&lt;b&gt;植物油&lt;/b&gt;、&lt;b&gt;堅果&lt;/b&gt;、&lt;b&gt;種子&lt;/b&gt;、&lt;b&gt;全穀類&lt;/b&gt;和*蛋
+*等食物。
+&lt;/p&gt;
+
+&lt;p&gt;
+維生素 E 並非多多益善，&lt;b&gt;過量攝取維生素 E 反而會對健康造成反效果&lt;/b&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2257a49" class="outline-3"&gt;
+&lt;h3 id="org2257a49"&gt;（十）膽鹼&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2257a49"&gt;
+&lt;p&gt;
+膽鹼屬於&lt;b&gt;維生素 B&lt;/b&gt; 的一員，是維持人體正常生理作用不可或缺的元素
+&lt;/p&gt;
+
+&lt;p&gt;
+許多與肝臟有關的代謝作用都需要它的參與才可以進行，極低密度脂蛋白（VLDL，三酸甘油酯從肝臟被分泌出的形式）的代謝就是一例。萬一體內膽鹼的濃度過低，就會造成脂肪堆積在肝臟，進一步導致粒線體的功能損傷、脂肪酸氧化能力下降和腸道菌相變差等不利健康的生理變化，這簡直是牽一髮而動全身的骨牌效應。
+&lt;/p&gt;
+
+&lt;p&gt;
+不少研究發現，&lt;b&gt;膽鹼缺乏&lt;/b&gt;可能會促進非酒精性脂肪肝和肝癌的生成，然而體內膽鹼含量較高時，卻可能具有預防這兩類肝臟疾病的能力。
+&lt;/p&gt;
+
+&lt;p&gt;
+富含膽鹼的食物有：&lt;b&gt;蛋品&lt;/b&gt;、&lt;b&gt;貝類&lt;/b&gt;、&lt;b&gt;禽肉&lt;/b&gt;、&lt;b&gt;花生&lt;/b&gt;、&lt;b&gt;小麥胚芽&lt;/b&gt;和&lt;b&gt;全大豆製品&lt;/b&gt;。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgb5541b2" class="outline-2"&gt;
+&lt;h2 id="orgb5541b2"&gt;結語&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb5541b2"&gt;
+&lt;p&gt;
+只要你的飲食主要以&lt;b&gt;全穀類&lt;/b&gt;、&lt;b&gt;蔬菜&lt;/b&gt;、&lt;b&gt;水果&lt;/b&gt;、&lt;b&gt;豆類&lt;/b&gt;、&lt;b&gt;堅果&lt;/b&gt;和&lt;b&gt;健康的油脂&lt;/b&gt;（例如橄欖油）組成，並搭配小分量的&lt;b&gt;乳製品&lt;/b&gt;、&lt;b&gt;魚類&lt;/b&gt;和&lt;b&gt;海鮮&lt;/b&gt;，紅肉則偶爾少量食用，便可充分掌握獲取最佳健康和護肝飲食的重點。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>cancer</category><category>coffee</category><guid>https://mariolong.github.io/posts/one-cup-black-coffee-every-day/</guid><pubDate>Fri, 22 Jun 2018 04:49:57 GMT</pubDate></item><item><title>最關鍵的抗癌策略：設法不讓腫瘤缺氧</title><link>https://mariolong.github.io/posts/cancer-free-oxygen/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+【原文】&lt;a href="http://www.commonhealth.com.tw/blog/blogTopic.action?nid=2641"&gt;最關鍵的抗癌策略：設法不讓腫瘤缺氧&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+顏博士活力診所／腫瘤科醫師
+&lt;/p&gt;
+
+&lt;p&gt;
+作者：顏榮郎（顏博士活力診所／腫瘤科醫師）
+&lt;/p&gt;
+
+&lt;div id="outline-container-org95e47db" class="outline-2"&gt;
+&lt;h2 id="org95e47db"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 重點&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+缺氧還會促進癌細胞的生長和轉移。缺氧會促使腫瘤產生「缺氧誘導因子（HIF）」，後果：
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;促進癌細胞的生長與惡化&lt;/li&gt;
+&lt;li&gt;讓癌細胞對於化療、放療&lt;b&gt;極度不敏感&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;誘導腫瘤內充斥著負面的發炎細胞，壓抑抗癌免疫力；這往往讓貴蔘蔘的抗癌&lt;b&gt;免疫療法&lt;/b&gt;有如肉包子打狗，不易產生療效&lt;/li&gt;
+&lt;li&gt;也會促成癌細胞侵襲、 &lt;b&gt;轉移&lt;/b&gt;至遠處器官&lt;/li&gt;
+&lt;li&gt;最可怕的在於&lt;b&gt;缺氧&lt;/b&gt;會誘導腫瘤內產生「癌幹細胞」，讓癌細胞生生不息。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+抗癌策略組合是&lt;b&gt;開刀、化療、放療、免疫療法、食療，或其他自然療法&lt;/b&gt; ，你都要用盡洪荒之力，設法&lt;b&gt;讓腫瘤不缺氧&lt;/b&gt; 。
+&lt;/p&gt;
+
+&lt;p&gt;
+吸取 60%氧氣，能吸引較多的抗癌型 T 細胞進入腫瘤，增加腫瘤內的氧濃度，不只能提升抗癌免疫力，也可以&lt;b&gt;逆轉&lt;/b&gt;上述所提到的一連串惡果
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgca60390" class="outline-2"&gt;
+&lt;h2 id="orgca60390"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 能做什麼？&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;每日做 3 回以上的&lt;b&gt;平甩功&lt;/b&gt; ，每回至少 1,000 下或 15 分鐘；或每日吸取高濃度氧氣至少 6 回，每回 30 分鐘，有助於提升抗癌免疫力。&lt;/li&gt;
+
+&lt;li&gt;積極的「有氧運動」，例如每天&lt;b&gt;快步健走&lt;/b&gt; 、 &lt;b&gt;騎腳踏車&lt;/b&gt; 至少 1 至 2 小時。這能提供多種效益：
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;讓人產生&lt;b&gt;愉悅感&lt;/b&gt; ，進而改善免疫力&lt;/li&gt;
+&lt;li&gt;肌肉運動時所生的&lt;b&gt;溫熱&lt;/b&gt;能活化自然殺手細胞&lt;/li&gt;
+&lt;li&gt;能讓緩解全身的&lt;b&gt;氧化性壓力&lt;/b&gt;與&lt;b&gt;慢性發炎&lt;/b&gt; ，因而減少癌細胞生長的肥料。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;長期耐力運動&lt;/b&gt;能激活抗癌蛋白 p53，進而促進線粒體的再生與活性，改善癌細胞的代謝缺陷，或促進癌細胞自殺與抗癌藥的療效。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;健走&lt;/b&gt;能促進肌肉分泌多種&lt;b&gt;肌肉素&lt;/b&gt; ；某些&lt;b&gt;肌肉素&lt;/b&gt;能誘導癌細胞自殺；即使讓肌肉運動至筋疲力盡，它們仍會產生&lt;b&gt;抗癌蛋白&lt;/b&gt; 。&lt;/li&gt;
+&lt;li&gt;可以促進&lt;b&gt;脂肪燃燒&lt;/b&gt; ，藉此清除堆積在脂肪內的毒素；&lt;/li&gt;
+&lt;li&gt;也可以&lt;b&gt;降低血糖&lt;/b&gt; 從而降低「 &lt;b&gt;胰島素&lt;/b&gt; 」與「類胰島生長因子」等等促癌細胞生長的肥料。&lt;/li&gt;
+&lt;li&gt;能讓腫瘤內的&lt;b&gt;血液循環正常&lt;/b&gt;化，降低癌細胞惡化基因的表現。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;使用具有深部穿透功能的&lt;b&gt;熱療&lt;/b&gt;或&lt;b&gt;遠紅外線照射&lt;/b&gt;儀器，改善腫瘤的局部循環。&lt;/li&gt;
+
+&lt;li&gt;進食有助於提升抗癌免疫力的&lt;b&gt;比菲德氏菌&lt;/b&gt; ；或把&lt;b&gt;金針菇&lt;/b&gt;與&lt;b&gt;他種菇類&lt;/b&gt;混合加水絞碎後，熱煮 2~3 分鐘再喝下。但是，正在化療時不宜同時食用金針菇或或其他菇類。生吃青花椰菜苗、蘿蔔嬰、蘿蔔泥、兒茶素、樟芝、薑黃也有助於抑制缺氧誘導因子 HIF 的不良功能。&lt;/li&gt;
+
+&lt;li&gt;諮詢你的醫師，幫你開立能改善腫瘤&lt;b&gt;局部循環&lt;/b&gt;的藥物或食物。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org693abd1" class="outline-2"&gt;
+&lt;h2 id="org693abd1"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 相關文章&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga4844c7" class="outline-3"&gt;
+&lt;h3 id="orga4844c7"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; &lt;a href="http://technews.tw/2017/07/19/instead-of-starving-a-cancer-researchers-go-after-its-defenses/"&gt;癌細胞練了「龜息大法」，科學家設法破解 | TechNews 科技新報&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;腫瘤的發育過程中常會遭遇缺氧狀況&lt;/li&gt;
+
+&lt;li&gt;癌細胞內氧含量下降時，會使對缺氧環境敏感的「缺氧誘導因子」（HIF）的表現量上升，進而促進癌細胞內幫助適應缺氧環境相關的基因的表現。
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;促進「血管新生」（neoangiogenesis）的生長因子（VEGF），促使腫瘤內生成新的微血管以提供癌細胞氧氣與養分。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+針對腫瘤此項特性，科學家發展出了一種抗癌的對策，稱為
+&lt;/p&gt;
+
+&lt;p&gt;
+-「抗血管新生療法」
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;2004 年美國食品及藥物管理局（FAD）核准的抗癌藥物 Avastin（癌思停）。&lt;/li&gt;
+&lt;li&gt;臨床上 Avastin 可以破壞腫瘤內的血管系統使腫瘤縮小&lt;/li&gt;
+&lt;li&gt;若與化療藥物合併使用已證實可以延長末期的直腸癌、非小細胞肺癌、卵巢癌以及腎臟癌病患的壽命。&lt;/li&gt;
+&lt;li&gt;Avastin 無法治癒上述癌症，只能延緩病情的惡化，最後病患仍難逃一死。&lt;/li&gt;
+&lt;li&gt;因為研究顯示， &lt;b&gt;缺氧還是促使腫瘤惡化的一項重要因素&lt;/b&gt; 。缺氧不但會使放射線治療失效，也會使癌細胞對化學治療產生耐藥性。更重要的是，缺氧還會促進癌細胞&lt;b&gt;轉移&lt;/b&gt;的能力。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgce1d573" class="outline-3"&gt;
+&lt;h3 id="orgce1d573"&gt;&lt;span class="section-number-3"&gt;3.2&lt;/span&gt; &lt;a href="http://enews.nhri.org.tw/enews_list_new2.php?volume_indx=121&amp;amp;showx=showarticle&amp;amp;article_indx=2946&amp;amp;enews_dt=2005-10-20"&gt;國家衛生研究院電子報&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-2"&gt;
+&lt;p&gt;
+ &lt;b&gt;低氧誘導因子&lt;/b&gt;-1alpha（HIF-1alpha）參與癌組織擴展及癌細胞轉移，而&lt;b&gt;缺氧&lt;/b&gt;會促使腫瘤產生「缺氧誘導因子（HIF）」
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>cancer</category><guid>https://mariolong.github.io/posts/cancer-free-oxygen/</guid><pubDate>Thu, 21 Jun 2018 03:17:46 GMT</pubDate></item><item><title>鄭曼青師徒對話錄</title><link>https://mariolong.github.io/posts/master-zheng-and-student-smith/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 轉錄自&lt;a href="https://m.facebook.com/story.php?story_fbid=466445743807976&amp;amp;id=100013276627941"&gt;太极亚洲&lt;/a&gt;
 &lt;/p&gt;
 
@@ -524,244 +994,4 @@ it system-wide edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; , and replace &lt
 &lt;code&gt;auto-rehash&lt;/code&gt;. Completion will be enabled next time you run the MySQL
 client.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>archlinux</category><category>mariadb</category><category>mysql</category><guid>https://mariolong.github.io/posts/install-mariadb/</guid><pubDate>Fri, 15 Jun 2018 08:20:11 GMT</pubDate></item><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-dired 真是好用，記錄我的使用流程
-&lt;/p&gt;
-
-&lt;div id="outline-container-org4fdc33d" class="outline-2"&gt;
-&lt;h2 id="org4fdc33d"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; dired basic&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orge3fe3d1" class="outline-3"&gt;
-&lt;h3 id="orge3fe3d1"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; enter dired&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
-&lt;p&gt;
-&lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
-&lt;kbd&gt;C-x C-f &amp;lt;enter&amp;gt;&lt;/kbd&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgf55cd65" class="outline-3"&gt;
-&lt;h3 id="orgf55cd65"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; exit dired&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-2"&gt;
-&lt;p&gt;
-&lt;kbd&gt;q&lt;/kbd&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgc4a622c" class="outline-3"&gt;
-&lt;h3 id="orgc4a622c"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; 操作檔案&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-3"&gt;
-&lt;p&gt;
-&lt;kbd&gt;d&lt;/kbd&gt;
-&lt;kbd&gt;m&lt;/kbd&gt; mark
-&lt;kbd&gt;u&lt;/kbd&gt; unmark
-&lt;kbd&gt;U&lt;/kbd&gt;  all unmark
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;kbd&gt;C&lt;/kbd&gt; copy
-&lt;kbd&gt;R&lt;/kbd&gt; rename
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orga0d96b0" class="outline-3"&gt;
-&lt;h3 id="orga0d96b0"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; edit file name/mode like edit text&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-4"&gt;
-&lt;p&gt;
-&lt;kbd&gt;C-x C-q&lt;/kbd&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-orgab55e44" class="outline-2"&gt;
-&lt;h2 id="orgab55e44"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 顯示&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org0ca7d26" class="outline-3"&gt;
-&lt;h3 id="org0ca7d26"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; &lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org03b16da" class="outline-3"&gt;
-&lt;h3 id="org03b16da"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; &lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgcfcb3e0" class="outline-3"&gt;
-&lt;h3 id="orgcfcb3e0"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; auto revert&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6d471fb" class="outline-2"&gt;
-&lt;h2 id="org6d471fb"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 進階使用&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org45e1589" class="outline-3"&gt;
-&lt;h3 id="org45e1589"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; 像 Norton command&lt;i&gt;Midnight commander 一&lt;/i&gt;copy&lt;i&gt;move files like NC&lt;/i&gt;MC&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item><item><title>mm=mpv+feh</title><link>https://mariolong.github.io/posts/mm-mpv-feh/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-用全螢幕幻燈片模式播放照片：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;feh -FD1 --auto-rotate
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-單純播放照片和影片記錄而已
-&lt;/p&gt;</description><category>feh</category><category>mm</category><category>mpv</category><guid>https://mariolong.github.io/posts/mm-mpv-feh/</guid><pubDate>Tue, 29 May 2018 01:57:04 GMT</pubDate></item><item><title>鼻咽癌與我的初次相遇</title><link>https://mariolong.github.io/posts/cancer-first-time/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org7867fce" class="outline-2"&gt;
-&lt;h2 id="org7867fce"&gt;確診&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7867fce"&gt;
-&lt;p&gt;
-2016/1/7，坐在診療椅上，不由自主地一股寒氣由腳底冒起，直達心口。
-&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://mariolong.github.io/posts/cancer-first-time/"&gt;閱讀更多…&lt;/a&gt; (尚餘 1 分鐘)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>癌</category><category>鼻咽癌</category><guid>https://mariolong.github.io/posts/cancer-first-time/</guid><pubDate>Fri, 25 May 2018 04:53:47 GMT</pubDate></item><item><title>Windows 10 中，隱藏磁碟機</title><link>https://mariolong.github.io/posts/hide-driver-on-windows/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-記錄一下，在 Windows 10 中，如何隱藏磁碟機？
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;windows 系統管理&lt;/li&gt;
-&lt;li&gt;磁碟管理&lt;/li&gt;
-&lt;li&gt;點要隱藏的 partition，按右鍵&lt;/li&gt;
-&lt;li&gt;變更磁碟機代號及路徑&lt;/li&gt;
-&lt;li&gt;新增，變更，移除，三選一&lt;/li&gt;
-&lt;/ol&gt;</description><category>disk</category><category>windows</category><guid>https://mariolong.github.io/posts/hide-driver-on-windows/</guid><pubDate>Thu, 24 May 2018 07:49:19 GMT</pubDate></item><item><title>為 windows 10，換一顆硬碟</title><link>https://mariolong.github.io/posts/replace-new-hard-disk/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-昨晚，開啓 windows 10 時，速度變得很慢，等了好久，好不容易才進入
-windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
-&lt;/p&gt;
-
-&lt;div id="outline-container-org2249ef3" class="outline-2"&gt;
-&lt;h2 id="org2249ef3"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; SMART check&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;
-用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
-&lt;/p&gt;
-
-&lt;p&gt;
-這硬碟的一般資訊如下：
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-SMART Attributes Data Structure revision number: 16
-Vendor Specific SMART Attributes with Thresholds:
-ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
-  1 Raw_Read_Error_Rate     0x000b   100   100   016    Pre-fail  Always       -       0
-  2 Throughput_Performance  0x0005   140   140   054    Pre-fail  Offline      -       69
-  3 Spin_Up_Time            0x0007   129   129   024    Pre-fail  Always       -       294 (Average 294)
-  4 Start_Stop_Count        0x0012   100   100   000    Old_age   Always       -       2302
-  5 Reallocated_Sector_Ct   0x0033   100   100   005    Pre-fail  Always       -       0
-  7 Seek_Error_Rate         0x000b   100   100   067    Pre-fail  Always       -       0
-  8 Seek_Time_Performance   0x0005   124   124   020    Pre-fail  Offline      -       33
-  9 Power_On_Hours          0x0012   099   099   000    Old_age   Always       -       12850
- 10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
- 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       1815
-192 Power-Off_Retract_Count 0x0032   099   099   000    Old_age   Always       -       2392
-193 Load_Cycle_Count        0x0012   099   099   000    Old_age   Always       -       2392
-194 Temperature_Celsius     0x0002   120   120   000    Old_age   Always       -       50 (Min/Max 12/61)
-196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
-197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
-198 Offline_Uncorrectable   0x0008   100   100   000    Old_age   Offline      -       0
-199 UDMA_CRC_Error_Count    0x000a   200   200   000    Old_age   Always       -       171
-&lt;/pre&gt;
-
-&lt;p&gt;
-其它硬碟都没有錯誤訊息，就是這顆 toshiba 2TB 的錯誤訊息如下：
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-Error 171 occurred at disk power-on lifetime: 12844 hours (535 days + 4 hours)
-  When the command that caused the error occurred, the device was active or idle.
-
-  After command completion occurred, registers were:
-  ER ST SC SN CL CH DH
-  -- -- -- -- -- -- --
-  84 51 01 2f 36 5a 00  Error: ICRC, ABRT 1 sectors at LBA = 0x005a362f = 5912111
-
-  Commands leading to the command that caused the error were:
-  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
-  -- -- -- -- -- -- -- --  ----------------  --------------------
-  35 00 00 2f 36 5a e0 ff      00:42:51.858  WRITE DMA EXT
-  35 00 08 28 36 5a e0 00      00:42:51.857  WRITE DMA EXT
-  ef 90 03 00 00 00 a0 00      00:42:50.877  SET FEATURES [Disable SATA feature]
-  ef 02 00 00 00 00 a0 00      00:42:50.877  SET FEATURES [Enable write cache]
-  35 00 00 2f 36 5a e0 ff      00:42:50.851  WRITE DMA EXT
-&lt;/pre&gt;
-
-&lt;p&gt;
-到 PCHOME 24hr，選了一顆 WD 紅標 3TB，接著就要等它來。當然不會再選
-Toshiba 的，主要的原因是 Power_On_Hours 的時數不到其它 WD 的 1/3，卻先掛點，MTBF 差了點。
-&lt;/p&gt;
-
-&lt;p&gt;
-Google &lt;code&gt;Error: ICRC, ABRT&lt;/code&gt; 的意義如下：
-&lt;/p&gt;
-&lt;pre class="example"&gt;
-Interface CRC error during Ultra DMA transfer - often either a bad
-cable or power problem, though possibly an incorrect Ultra DMA mode
-setting by the driver. Command aborted - either command not supported,
-unable to complete, or interface CRC (with ICRC).
-&lt;/pre&gt;
-
-&lt;p&gt;
-好像是要確認接線的狀況。
-&lt;/p&gt;
-
-&lt;p&gt;
-没關係，反正也想換硬碟，趁此機會，順便整理電腦。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org2f12f5e" class="outline-2"&gt;
-&lt;h2 id="org2f12f5e"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 裝上新的硬碟&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
-過程如下：
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; setup HD: connect to computer&lt;/li&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; gparted: create partition and format it in NTFS. &lt;b&gt;結果是在 windows 10 中做 partition 和 format.&lt;/b&gt;&lt;/li&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; SMART check both old and new HD&lt;/li&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; mount to linux&lt;/li&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; sync from old to new HD: &lt;code&gt;rsync -av &amp;lt;src&amp;gt; &amp;lt;desc&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; if old HD is ok, then add it to lvm otherwise drop it&lt;/li&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; disconnet old HD, reboot to windows 10&lt;/li&gt;
-&lt;li class="on"&gt;&lt;code&gt;[X]&lt;/code&gt; set new HD to disk D:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-要加到 lvm 就看 &lt;a href="https://mariolong.github.io/posts/replace-hd-on-lvm"&gt;replace hd on LVM&lt;/a&gt; 這篇記錄，有經驗，不會太難。&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>WD</category><category>windows</category><guid>https://mariolong.github.io/posts/replace-new-hard-disk/</guid><pubDate>Thu, 24 May 2018 05:43:24 GMT</pubDate></item><item><title>快樂，當下</title><link>https://mariolong.github.io/posts/happy-current/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-SOURCE: &lt;a href="https://www.playpcesor.com/2017/09/time-Secrets-to-a-Happier-Life.html"&gt;來自 TIME 的快樂科學秘密：投入時間當下&lt;/a&gt; 電腦玩物原創作者 esor huang 異塵行者
-&lt;/p&gt;
-
-&lt;p&gt;
-REF: &lt;a href="http://time.com/4856944/secrets-happier-life/"&gt;6 Secrets to a Happier Life | Time&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-「專注且投入當下」才是真正的高效率定義，無論這段時間我做了什麼，只要我能進入忘我狀態，感覺自己 100% 投入時間中，我都覺得有高效率的產出。
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-「如果你的頭腦永遠在想下一個任務、下一個成就、下一個你需要談話的人。在這個過程中，你犧牲了現在的個人幸福，你就會持續累積負面情緒和巨大的壓力。」 — 6 Secrets to a Happier Life | Time
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-而我們永遠都會有目標還沒完成！永遠都會在成功之後還有下一個成功可以追求！那不就永遠都不會快樂了？
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-專注且投入到當下。
-&lt;/p&gt;
-&lt;/blockquote&gt;</description><category>happy</category><guid>https://mariolong.github.io/posts/happy-current/</guid><pubDate>Tue, 22 May 2018 04:49:49 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>archlinux</category><category>mariadb</category><category>mysql</category><guid>https://mariolong.github.io/posts/install-mariadb/</guid><pubDate>Fri, 15 Jun 2018 08:20:11 GMT</pubDate></item></channel></rss>
