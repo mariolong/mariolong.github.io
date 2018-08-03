@@ -3,8 +3,8 @@
 .. slug: 24-years-old-3-suggestions
 .. date: 2018-08-03 08:34:11 UTC+08:00
 .. status: draft
-.. tags: investment, Buffett
-.. category: life
+.. tags: Buffett
+.. category: investment
 .. link:
 .. description:
 .. type: text
