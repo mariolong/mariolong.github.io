@@ -16,6 +16,7 @@
 (setq nikola-use-pygments t
       org-export-with-toc nil
 	  org-export-with-section-numbers t
+	  org-html-postamble nil
 	  ;; org-src-preserve-indentation nil
       org-startup-folded 'showeverything)
 
@@ -157,6 +158,6 @@ unwanted space when exporting org-mode to html."
 								   (underline . "<span class=\"underline\">%s</span>")
 								   (verbatim . "<kbd>%s</kbd>")))
 
-(setcar org-emphasis-regexp-components " \t('\"{[:alpha:]")
-(setcar (nthcdr 1 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
+(setcar org-emphasis-regexp-components (concat " \t('\"{[:multibyte:]"))
+(setcar (nthcdr 1 org-emphasis-regexp-components) (concat "[:multibyte:]- \t.,:!?;'\")}\\"))
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)

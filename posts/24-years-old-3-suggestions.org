@@ -1,0 +1,25 @@
+#+BEGIN_COMMENT
+.. title: 24 歲與股神相遇 巴菲特給她的 3 個建議
+.. slug: 24-years-old-3-suggestions
+.. date: 2018-08-03 08:34:11 UTC+08:00
+.. status: draft
+.. tags: investment, Buffett
+.. category: life
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+來源：[[https://news.cnyes.com/news/id/4064409][24 歲與股神相遇 巴菲特給她的 3 個建議 | 鉅亨網 - 時事]]
+
+現年 32 歲的中國年輕企業家龔曉思曾在 8 年前遇過股神巴菲特，當時的她鼓
+起勇氣邀約巴菲特共進晚餐，雖然遭到拒絕，但巴菲特當時給她的三個建議，她
+依然覺得終身受用。
+
+巴菲特給了她三點建議：
+
+- 在你每晚睡覺之前要問問自己，是不是更聰明？有沒有學到*新東西*？
+- 在生活中會有很多想逃避的事，但是要*勇於面對*。
+- 不管所處的地位有多高，都應該要*謙虛*。

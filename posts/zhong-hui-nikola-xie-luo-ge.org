@@ -209,8 +209,9 @@ change =verbatim= to =kbd=
 開啟 ~<blog-name>/plugins/orgmode/init.el~ ，加上以下的程式碼。
 
 #+BEGIN_SRC emacs-lisp
-(setcar org-emphasis-regexp-components " \t('\"{[:alpha:]")
-(setcar (nthcdr 1 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
+(setq my-full-punctuation "。，：！？；、（）「」【】《》")
+(setcar org-emphasis-regexp-components (concat " \t('\"{[:alpha:]" my-full-punctuation))
+(setcar (nthcdr 1 org-emphasis-regexp-components) (concat "[:alpha:]- \t.,:!?;'\")}\\" my-full-punctuation))
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
 #+END_SRC
 

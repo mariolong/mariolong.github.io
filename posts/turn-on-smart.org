@@ -1,0 +1,47 @@
+#+BEGIN_COMMENT
+.. title: Turn on SMART to monitor HD
+.. slug: turn-on-smart
+.. date: 2018-07-11 21:40:06 UTC+08:00
+.. status: draft
+.. tags: smart, linux
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+ref: [[https://wiki.archlinux.org/index.php/S.M.A.R.T.][S.M.A.R.T. - ArchWiki]]
+
+* Install
+
+#+BEGIN_SRC sh
+yaourt -S smartmontools
+#+END_SRC
+
+* start smartd
+
+#+BEGIN_SRC sh
+systemctl start smartd
+#+END_SRC
+
+配置檔 ~/etc/smartd.conf~
+
+* smartd.conf
+
+To monitor for all possible SMART errors on all disks, the following
+setting must be added in the configuration file.
+
+#+BEGIN_SRC conf
+DEVICESCAN -a
+#+END_SRC
+
+** auto mail
+
+先依 [[https://dominicm.com/configure-email-notifications-on-arch-linux/][Configure Email Notifications on Arch Linux | DominicM]] 設定 s-nail,
+再於 ~/etc/smartd.conf~ 加上以下指令
+
+#+BEGIN_SRC conf
+DEVICESCAN -m address@domain.com -M test
+#+END_SRC

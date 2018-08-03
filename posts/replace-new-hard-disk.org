@@ -2,7 +2,7 @@
 .. title: 為 windows 10，換一顆硬碟
 .. slug: replace-new-hard-disk
 .. date: 2018-05-24 13:43:24 UTC+08:00
-.. tags: WD, windows
+.. tags: WD, windows, smart
 .. category: computer
 .. link:
 .. description:

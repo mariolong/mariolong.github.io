@@ -1,0 +1,34 @@
+#+BEGIN_COMMENT
+.. title: Kodi TV
+.. slug: kodi-tv
+.. date: 2018-06-26 14:56:03 UTC+08:00
+.. status: draft
+.. tags: kodi
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+
+[[https://kodi.wiki/view/HOW-TO:Install_Tvheadend_on_Arch_Linux][HOW-TO:Install Tvheadend on Arch Linux - Official Kodi Wiki]]
+
+[[https://wiki.archlinux.org/index.php/Tvheadend][Tvheadend - ArchWiki]]
+
+
+* Install
+
+#+BEGIN_SRC sh
+yaourt -S tvheadend kodi-addon-hts-pvrmanager kodi-addon-pvr-hts --noconfirm
+#+END_SRC
+
+
+* start/enable
+Once Tvheadend is installed start/enable the tvheadend.service.
+
+* Configuration
+Once the service is running, configuration of Tvheadend is done through a web interface on ~localhost:9981~.
+
+The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.
