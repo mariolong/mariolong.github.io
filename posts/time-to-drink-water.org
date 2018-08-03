@@ -1,5 +1,5 @@
 #+BEGIN_COMMENT
-.. title: 這個時間喝水，輕鬆甩肉、防中風！ - 康健雜誌]]
+.. title: 這個時間喝水，輕鬆甩肉、防中風！ - 康健雜誌
 .. slug: time-to-drink-water
 .. date: 2018-07-12 11:41:28 UTC+08:00
 .. tags: water, health
