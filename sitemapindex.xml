@@ -35,11 +35,11 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/buffett.xml</loc>
-  <lastmod>2018-08-03T01:22:00Z</lastmod>
+  <lastmod>2018-08-03T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cancer.xml</loc>
-  <lastmod>2018-06-25T03:45:00Z</lastmod>
+  <lastmod>2018-08-06T09:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_computer.xml</loc>
@@ -47,11 +47,11 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_investment.xml</loc>
-  <lastmod>2018-08-03T01:22:00Z</lastmod>
+  <lastmod>2018-08-03T06:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_life.xml</loc>
-  <lastmod>2018-08-03T01:22:00Z</lastmod>
+  <lastmod>2018-08-06T09:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/coffee.xml</loc>
@@ -227,7 +227,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/munger.xml</loc>
-  <lastmod>2018-06-20T08:01:00Z</lastmod>
+  <lastmod>2018-08-03T06:28:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/music.xml</loc>
@@ -338,6 +338,14 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://mariolong.github.io/categories/thinkings.xml</loc>
+  <lastmod>2018-08-03T06:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariolong.github.io/categories/tou-zi-jia.xml</loc>
+  <lastmod>2018-08-03T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariolong.github.io/categories/urxvt.xml</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </sitemap>
@@ -387,10 +395,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/rss.xml</loc>
-  <lastmod>2018-08-03T01:22:00Z</lastmod>
+  <lastmod>2018-08-06T09:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/sitemap.xml</loc>
-  <lastmod>2018-08-03T01:23:00Z</lastmod>
+  <lastmod>2018-08-06T09:23:00Z</lastmod>
  </sitemap>
 </sitemapindex>

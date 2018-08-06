@@ -8,7 +8,7 @@
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/index-10.html">
-<link rel="prev" href="." type="text/html">
+<link rel="prev" href="index-11.html" type="text/html">
 <link rel="next" href="index-9.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
@@ -75,7 +75,235 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/using-dired/" class="u-url">Using dired in Emacs</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/using-mariadb/" class="u-url">Using Mariadb</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/using-mariadb/" rel="bookmark"><time class="published dt-published" datetime="2018-06-15T18:03:15+08:00" title="2018-06-15 18:03">2018-06-15 18:03</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/using-mariadb/#disqus_thread" data-disqus-identifier="cache/posts/using-mariadb.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div id="outline-container-org8bca7f7" class="outline-2">
+<h2 id="org8bca7f7">
+<span class="section-number-2">1</span> change root password</h2>
+<div class="outline-text-2" id="text-1">
+<div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">use</span> <span class="n">mysql</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">UPDATE</span> <span class="n">user</span> <span class="kt">SET</span> <span class="n">Password</span><span class="o">=</span><span class="nf">PASSWORD</span><span class="p">(</span><span class="s2">"password"</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">User</span><span class="o">=</span><span class="s1">'root'</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">flush</span> <span class="n">privileges</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">quit</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgce5e7cc" class="outline-2">
+<h2 id="orgce5e7cc">
+<span class="section-number-2">2</span> commands</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org45d3e13" class="outline-3">
+<h3 id="org45d3e13">
+<span class="section-number-3">2.1</span> create user</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="n">USER</span> <span class="s1">'stock'</span><span class="o">@</span><span class="s1">'localhost'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'password'</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="n">PRIVILEGES</span> <span class="k">ON</span> <span class="n">stock</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'stock'</span><span class="o">@</span><span class="s1">'localhost'</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SHOW</span> <span class="n">GRANTS</span> <span class="k">FOR</span> <span class="s1">'stock'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="p">;</span>
+<span class="o">+--------------------------------------------------------------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">Grants</span> <span class="k">for</span> <span class="n">stock</span><span class="o">@</span><span class="n">localhost</span>                                                                                   <span class="o">|</span>
+<span class="o">+--------------------------------------------------------------------------------------------------------------+</span>
+<span class="o">|</span> <span class="k">GRANT</span> <span class="k">USAGE</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'stock'</span><span class="o">@</span><span class="s1">'localhost'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="n">PASSWORD</span> <span class="s1">'*DAE5C577E73995AE12C81FF21F2A6336BD9D2F1F'</span> <span class="o">|</span>
+<span class="o">|</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="n">PRIVILEGES</span> <span class="k">ON</span> <span class="ss">`stock`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'stock'</span><span class="o">@</span><span class="s1">'localhost'</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span>                                   <span class="o">|</span>
+<span class="o">+--------------------------------------------------------------------------------------------------------------+</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org5c03610" class="outline-3">
+<h3 id="org5c03610">
+<span class="section-number-3">2.2</span> show database<b>s</b>
+</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<b>注意</b>: database 和 table 的名稱，在 linux 中會區分大小寫。
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">SHOW</span> <span class="k">DATABASES</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org99e0c16" class="outline-3">
+<h3 id="org99e0c16">
+<span class="section-number-3">2.3</span> use &lt;db-name&gt;</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="highlight"><pre><span></span><span class="k">USE</span> <span class="n">stock</span>
+</pre></div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/install-mariadb/" class="u-url">Install Mariadb</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/install-mariadb/" rel="bookmark"><time class="published dt-published" datetime="2018-06-15T16:20:11+08:00" title="2018-06-15 16:20">2018-06-15 16:20</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/install-mariadb/#disqus_thread" data-disqus-identifier="cache/posts/install-mariadb.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+Ref: <a href="https://wiki.archlinux.org/index.php/MySQL">MySQL - ArchWiki</a>
+</p>
+
+<div id="outline-container-org1c86d3d" class="outline-2">
+<h2 id="org1c86d3d">
+<span class="section-number-2">1</span> install mariadb</h2>
+<div class="outline-text-2" id="text-1">
+<div class="highlight"><pre><span></span>yaourt -S mariadb
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org3fc3dca" class="outline-2">
+<h2 id="org3fc3dca">
+<span class="section-number-2">2</span> install and setup database</h2>
+<div class="outline-text-2" id="text-2">
+<div class="highlight"><pre><span></span>sudo mysql_install_db --user<span class="o">=</span>mysql --basedir<span class="o">=</span>/usr --datadir<span class="o">=</span>/var/lib/mysql
+</pre></div>
+</div>
+
+<div id="outline-container-org9dbf135" class="outline-3">
+<h3 id="org9dbf135">
+<span class="section-number-3">2.1</span> message</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following commands:
+
+'/usr/bin/mysqladmin' -u root password 'new-password'
+'/usr/bin/mysqladmin' -u root -h arch64 password 'new-password'
+
+Alternatively you can run:
+
+'/usr/bin/mysql_secure_installation'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at http://mariadb.com/kb or the
+MySQL manual for more instructions.
+
+You can start the MariaDB daemon with:
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/mnt/lvm-data/mysql-data'
+
+You can test the MariaDB daemon with mysql-test-run.pl
+cd '/usr/mysql-test' ; perl mysql-test-run.pl
+
+Please report any problems at http://mariadb.org/jira
+
+The latest information about MariaDB is available at http://mariadb.org/.
+You can find additional information about the MySQL part at:
+http://dev.mysql.com
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac3e8af" class="outline-2">
+<h2 id="orgac3e8af">
+<span class="section-number-2">3</span> edit <code>/etc/mysql/my.cnf</code>
+</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Tip: If you use something different from <i>var</i>lib/mysql for your data
+dir, you need to set <code>datadir=&lt;YOUR_DATADIR&gt;</code> under section <code>[mysqld]</code> of
+your <code>/etc/mysql/my.cnf</code>.  The following command will interactively
+guide you through a number of recommended security measures at the
+database level:
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5cb2fad" class="outline-2">
+<h2 id="org5cb2fad">
+<span class="section-number-2">4</span> start/enable <code>mariadb.service</code> with systemd</h2>
+<div class="outline-text-2" id="text-4">
+<div class="highlight"><pre><span></span>sudo systemctl start mariadb
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org3460875" class="outline-2">
+<h2 id="org3460875">
+<span class="section-number-2">5</span> To start mysqld at boot time</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+you have to copy support-files/mysql.server to the right place for your system
+</p>
+
+<div class="highlight"><pre><span></span>sudo mysql_secure_installation
+</pre></div>
+
+<p>
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2a3d6dc" class="outline-2">
+<h2 id="org2a3d6dc">
+<span class="section-number-2">6</span> Using UTF8MB4</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+在 <code>/etc/mysql/my.cnf</code> 加上以下指令：
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">[client]</span>
+<span class="na">default-character-set</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+
+<span class="k">[mysqld]</span>
+<span class="na">collation_server</span> <span class="o">=</span> <span class="s">utf8mb4_unicode_ci</span>
+<span class="na">character_set_server</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+
+<span class="k">[mysql]</span>
+<span class="na">default-character-set</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org91338b4" class="outline-2">
+<h2 id="org91338b4">
+<span class="section-number-2">7</span> 開啓自動補全</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Note: Enabling this feature can make the client initialization longer.
+</p>
+
+<p>
+The MySQL client completion feature is disabled by default. To enable
+it system-wide edit <code>/etc/mysql/my.cnf</code> , and replace <code>no-auto-rehash</code> by
+<code>auto-rehash</code>. Completion will be enabled next time you run the MySQL
+client.</p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/using-dired/" class="u-url">Using dired in Emacs</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -666,7 +894,7 @@ SOURCE: <a href="https://health.businessweekly.com.tw/AArticle.aspx?ID=ARTL00009
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="." rel="prev">較新的文章</a>
+                <a href="index-11.html" rel="prev">較新的文章</a>
             </li>
             <li class="next">
                 <a href="index-9.html" rel="next">較舊的文章</a>

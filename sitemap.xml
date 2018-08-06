@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://mariolong.github.io/</loc>
-  <lastmod>2018-06-20T08:01:00Z</lastmod>
+  <lastmod>2018-08-03T06:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/2013/</loc>
@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-08-03T01:16:00Z</lastmod>
+  <lastmod>2018-08-06T09:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-08-03T01:23:00Z</lastmod>
+  <lastmod>2018-08-03T06:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -374,6 +374,14 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/thinkings/</loc>
+  <lastmod>2018-08-03T06:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/tou-zi-jia/</loc>
+  <lastmod>2018-08-03T06:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/urxvt/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
@@ -427,7 +435,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-10.html</loc>
-  <lastmod>2018-08-03T01:16:00Z</lastmod>
+  <lastmod>2018-08-03T06:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/index-11.html</loc>
+  <lastmod>2018-08-06T09:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-2.html</loc>
@@ -518,12 +530,20 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/posts/buffett-thinks-evolution/</loc>
+  <lastmod>2018-08-03T06:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/posts/buffett/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/cancer-first-time/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/cancer-food-exercise/</loc>
+  <lastmod>2018-08-06T09:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/cancer-free-oxygen/</loc>
@@ -738,6 +758,10 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/posts/munger-speaking/</loc>
+  <lastmod>2018-08-03T06:28:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/posts/my-linux-2016/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
@@ -806,6 +830,10 @@
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/posts/safe-margin-thinkings/</loc>
+  <lastmod>2018-08-03T06:09:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/posts/shan-zhuang-dui-lian/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
  </url>
@@ -836,6 +864,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/time-to-drink-water/</loc>
   <lastmod>2018-07-12T05:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/top-10-investment-thinking/</loc>
+  <lastmod>2018-08-03T06:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/turn-on-smart/</loc>
