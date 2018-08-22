@@ -147,6 +147,40 @@ cabal install pandoc
 #+END_SRC
 
 
+** uninstall application that install by stack
+
+*** install and uninstall hoogle
+
+#+BEGIN_SRC sh
+stack install hoogle
+#+END_SRC
+
+*** get package id
+#+BEGIN_SRC sh
+stack exec -- ghc-pkg field hoogle id
+#+END_SRC
+#+BEGIN_EXAMPLE
+id: hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
+#+END_EXAMPLE
+
+*** unregister hoogle
+#+BEGIN_SRC sh
+stack exec ghc-pkg unregister hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
+#+END_SRC
+
+*** find path to hoogle
+
+#+BEGIN_SRC sh
+which hoogle
+#+END_SRC
+#+BEGIN_EXAMPLE
+path/to/hoogle
+#+END_EXAMPLE
+*** remove hoogle
+#+BEGIN_SRC sh
+rm path/to/hoogle
+#+END_SRC
+
 * Issues
 
 ** system tray 中 dropbox 的字型太小

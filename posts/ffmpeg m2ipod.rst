@@ -172,6 +172,16 @@ s.ssa 中加上
 重點注意： -i sub.ass -map 1 -c:s copy。
 此處的 sub.ass 也可以是 sub.srt。
 
+6. chapter
+~~~~~~~~~~
+
+‘-map_chapters input_file_index (output)’
+    Copy chapters from input file with index input_file_index to the next output file.
+    If no chapter mapping is specified, then chapters are copied from the first input file with at least one chapter.
+    Use a negative file index to disable any chapter copying.
+
+
+
 影片翻轉
 ========
 ::
