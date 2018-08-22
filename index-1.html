@@ -589,6 +589,15 @@ ffmpeg -i video.avi -i sub.ass -map 0:0 -map 0:2 -map 1 -c:a copy -c:v copy -c:s
 <p>重點注意： -i sub.ass -map 1 -c:s copy。
 此處的 sub.ass 也可以是 sub.srt。</p>
 </div>
+<div class="section" id="chapter">
+<h4>6. chapter</h4>
+<dl class="docutils">
+<dt>‘-map_chapters input_file_index (output)’</dt>
+<dd>Copy chapters from input file with index input_file_index to the next output file.
+If no chapter mapping is specified, then chapters are copied from the first input file with at least one chapter.
+Use a negative file index to disable any chapter copying.</dd>
+</dl>
+</div>
 </div>
 </div>
 <div class="section" id="id8">

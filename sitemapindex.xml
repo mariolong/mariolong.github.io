@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_computer.xml</loc>
-  <lastmod>2018-08-03T01:18:00Z</lastmod>
+  <lastmod>2018-08-22T03:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_investment.xml</loc>
@@ -95,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/ffmpeg.xml</loc>
-  <lastmod>2018-06-20T08:01:00Z</lastmod>
+  <lastmod>2018-08-10T00:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/fm.xml</loc>
@@ -127,7 +127,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/haskell.xml</loc>
-  <lastmod>2018-06-20T08:01:00Z</lastmod>
+  <lastmod>2018-08-22T03:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/health.xml</loc>
@@ -179,7 +179,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/linux.xml</loc>
-  <lastmod>2018-08-03T01:18:00Z</lastmod>
+  <lastmod>2018-08-10T00:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/login.xml</loc>
@@ -255,7 +255,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/pandoc.xml</loc>
-  <lastmod>2018-06-20T08:01:00Z</lastmod>
+  <lastmod>2018-08-22T03:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/pdf.xml</loc>
@@ -383,7 +383,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/xmonad.xml</loc>
-  <lastmod>2018-06-20T08:01:00Z</lastmod>
+  <lastmod>2018-08-22T03:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/xterm.xml</loc>
@@ -395,10 +395,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/rss.xml</loc>
-  <lastmod>2018-08-06T09:23:00Z</lastmod>
+  <lastmod>2018-08-22T03:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/sitemap.xml</loc>
-  <lastmod>2018-08-06T09:23:00Z</lastmod>
+  <lastmod>2018-08-22T03:36:00Z</lastmod>
  </sitemap>
 </sitemapindex>
