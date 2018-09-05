@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：ghcjs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/ghcjs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 05 Sep 2018 07:36:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install ghcjs for ghc 8.4.3 on archlinux</title><link>https://mariolong.github.io/posts/install-ghcjs-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghc --version
+The Glorious Glasgow Haskell Compilation System, version &lt;span class="m"&gt;8&lt;/span&gt;.4.3
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div id="outline-container-orga21a766" class="outline-2"&gt;
+&lt;h2 id="orga21a766"&gt;參考 &lt;a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4"&gt;GitHub - ghcjs/ghcjs at ghc-8.4&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga21a766"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org6d2f58a" class="outline-3"&gt;
+&lt;h3 id="org6d2f58a"&gt;getting and preparing the source tree&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6d2f58a"&gt;
+&lt;p&gt;
+add step &lt;code&gt;git checkout ghc-8.4&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/ghcjs/ghcjs.git
+&lt;span class="nb"&gt;cd&lt;/span&gt; ghcjs
+git checkout ghc-8.4
+git submodule update --init --recursive
+./utils/makePackages.sh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orga4d876a" class="outline-3"&gt;
+&lt;h3 id="orga4d876a"&gt;building the compiler&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga4d876a"&gt;
+&lt;p&gt;
+You can use &lt;code&gt;cabal-install&lt;/code&gt; &lt;b&gt;and&lt;/b&gt; &lt;code&gt;stack&lt;/code&gt; to set up a build environment that contains these packages.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgd0241fa" class="outline-4"&gt;
+&lt;h4 id="orgd0241fa"&gt;Cabal new-build&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgd0241fa"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install cabal-install
+cabal update
+cabal new-configure
+cabal new-build
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgb672bd3" class="outline-4"&gt;
+&lt;h4 id="orgb672bd3"&gt;link to executables&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgb672bd3"&gt;
+&lt;p&gt;
+&lt;b&gt;DON'T DO THIS, IT IS NOT NECESSARY&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Since cabal new-build does not install executables or wrapper scripts,
+we need to make them accessible by hand. You can do this by creating
+symlinks to the /utils/dist-newstyle-wrapper.sh script.
+&lt;/p&gt;
+
+&lt;p&gt;
+For &lt;b&gt;example&lt;/b&gt; if the &lt;code&gt;.bin&lt;/code&gt; directory is in your &lt;code&gt;PATH&lt;/code&gt;:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; .bin
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-pkg
+ln -s ../utils/dist-newstyle-wrapper.sh haddock-ghcjs
+ln -s ../utils/dist-newstyle-wrapper.sh hsc2hs-ghcjs
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-boot
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgcd6965e" class="outline-4"&gt;
+&lt;h4 id="orgcd6965e"&gt;stack&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgcd6965e"&gt;
+&lt;/div&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="orgf4af126"&gt;&lt;/a&gt;DON'T DO THIS&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orgf4af126"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack build
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org6833cb7"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org6833cb7"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgfeb2cce" class="outline-4"&gt;
+&lt;h4 id="orgfeb2cce"&gt;install haddock&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgfeb2cce"&gt;
+&lt;p&gt;
+&lt;b&gt;error message: Haddock's resource directory does not exist!&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+this step is useless for above error message.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal install haddock
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack haddock
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6d85540" class="outline-3"&gt;
+&lt;h3 id="org6d85540"&gt;Booting GHCJS&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6d85540"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghcjs-boot
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+when invoked without arguments, ghcjs-boot will build the libraries
+from &lt;code&gt;boot.tar&lt;/code&gt; (unless the current directory contains a &lt;code&gt;boot.yaml&lt;/code&gt;
+file), installed in GHCJS' data directory (&lt;code&gt;boot.tar&lt;/code&gt; is generated by
+the &lt;code&gt;makePackages.sh&lt;/code&gt; script and included in a source distribution).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org93d00f0" class="outline-3"&gt;
+&lt;h3 id="org93d00f0"&gt;Test&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org93d00f0"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'main = putStrLn "Hello World!"'&lt;/span&gt; &amp;gt; helloWorld.hs
+$ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghcjs -o helloWorld helloWorld.hs
+$ node helloWorld.jsexe/all.js
+Hello world!
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+test is OK.
+&lt;/p&gt;
+
+&lt;p&gt;
+I don't know why.
+But these steps are work for me to install ghcjs with ghc-8.4.3
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2af64fd" class="outline-2"&gt;
+&lt;h2 id="org2af64fd"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2af64fd"&gt;
+&lt;p&gt;
+this is not work.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# install stack, haskell-stack, node.js and alex using pacman&lt;/span&gt;
+$ sudo pacman -S stack haskell-stack nodejs alex
+
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git clone https://github.com/ghcjs/ghcjs.git
+
+&lt;span class="c1"&gt;# if you `stack setup` now you'll get an error saying /usr/lib/libtinfo.so.5 cannot be found&lt;/span&gt;
+
+&lt;span class="c1"&gt;# install libtinfo from AUR&lt;/span&gt;
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; ~/build-aur
+$ git clone https://aur.archlinux.org/libtinfo.git
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; libtinfo
+$ makepkg -sri
+
+&lt;span class="c1"&gt;# introducing the terrible hack...  I know, but it's the only way I can make it work&lt;/span&gt;
+$ sudo ln -s /usr/lib/libtinfo.so /usr/lib/libtinfo.so.5
+
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; ~/ghcjs
+$ stack setup
+$ stack build
+$ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghcjs-boot --dev
+
+$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'main = putStrLn "Hello World!"'&lt;/span&gt; &amp;gt; helloWorld.hs
+$ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghcjs -o helloWorld helloWorld.hs
+$ node helloWorld.jsexe/all.js
+Hello world!
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>ghcjs</category><category>haskell</category><category>linux</category><guid>https://mariolong.github.io/posts/install-ghcjs-archlinux/</guid><pubDate>Tue, 04 Sep 2018 00:22:35 GMT</pubDate></item></channel></rss>

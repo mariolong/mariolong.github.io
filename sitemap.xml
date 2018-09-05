@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-08-10T00:39:00Z</lastmod>
+  <lastmod>2018-09-05T07:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-08-03T06:09:00Z</lastmod>
+  <lastmod>2018-09-05T07:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -148,6 +148,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/fruit/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/ghcjs/</loc>
+  <lastmod>2018-09-05T07:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/google-map/</loc>
@@ -435,11 +439,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-10.html</loc>
-  <lastmod>2018-08-10T00:39:00Z</lastmod>
+  <lastmod>2018-09-05T07:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-11.html</loc>
-  <lastmod>2018-08-10T00:39:00Z</lastmod>
+  <lastmod>2018-09-05T07:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-2.html</loc>
@@ -471,7 +475,7 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-08-22T03:36:00Z</lastmod>
+  <lastmod>2018-08-22T04:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/24-years-old-3-suggestions/</loc>
@@ -680,6 +684,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/install-arch-linux/</loc>
   <lastmod>2018-06-20T08:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/install-ghcjs-archlinux/</loc>
+  <lastmod>2018-09-05T07:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/install-haskell-applications/</loc>

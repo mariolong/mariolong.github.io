@@ -9,7 +9,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/">
 <link rel="next" href="index-11.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/cancer-food-exercise/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/install-ghcjs-archlinux/" type="text/html">
 </head>
 <body>
 
@@ -74,7 +74,206 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cancer-food-exercise/" class="u-url">癌症是自己養出來的</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/install-ghcjs-archlinux/" class="u-url">Install ghcjs for ghc 8.4.3 on archlinux</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/install-ghcjs-archlinux/" rel="bookmark"><time class="published dt-published" datetime="2018-09-04T08:22:35+08:00" title="2018-09-04 08:22">2018-09-04 08:22</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/install-ghcjs-archlinux/#disqus_thread" data-disqus-identifier="cache/posts/install-ghcjs-archlinux.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div class="highlight"><pre><span></span>ghc --version
+The Glorious Glasgow Haskell Compilation System, version <span class="m">8</span>.4.3
+</pre></div>
+
+<div id="outline-container-orga21a766" class="outline-2">
+<h2 id="orga21a766">參考 <a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4">GitHub - ghcjs/ghcjs at ghc-8.4</a>
+</h2>
+<div class="outline-text-2" id="text-orga21a766">
+</div>
+<div id="outline-container-org6d2f58a" class="outline-3">
+<h3 id="org6d2f58a">getting and preparing the source tree</h3>
+<div class="outline-text-3" id="text-org6d2f58a">
+<p>
+add step <code>git checkout ghc-8.4</code>
+</p>
+
+<div class="highlight"><pre><span></span>git clone https://github.com/ghcjs/ghcjs.git
+<span class="nb">cd</span> ghcjs
+git checkout ghc-8.4
+git submodule update --init --recursive
+./utils/makePackages.sh
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orga4d876a" class="outline-3">
+<h3 id="orga4d876a">building the compiler</h3>
+<div class="outline-text-3" id="text-orga4d876a">
+<p>
+You can use <code>cabal-install</code> <b>and</b> <code>stack</code> to set up a build environment that contains these packages.
+</p>
+</div>
+
+<div id="outline-container-orgd0241fa" class="outline-4">
+<h4 id="orgd0241fa">Cabal new-build</h4>
+<div class="outline-text-4" id="text-orgd0241fa">
+<div class="highlight"><pre><span></span>stack install cabal-install
+cabal update
+cabal new-configure
+cabal new-build
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgb672bd3" class="outline-4">
+<h4 id="orgb672bd3">link to executables</h4>
+<div class="outline-text-4" id="text-orgb672bd3">
+<p>
+<b>DON'T DO THIS, IT IS NOT NECESSARY</b>
+</p>
+
+<p>
+Since cabal new-build does not install executables or wrapper scripts,
+we need to make them accessible by hand. You can do this by creating
+symlinks to the /utils/dist-newstyle-wrapper.sh script.
+</p>
+
+<p>
+For <b>example</b> if the <code>.bin</code> directory is in your <code>PATH</code>:
+</p>
+
+<div class="highlight"><pre><span></span><span class="nb">cd</span> .bin
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-pkg
+ln -s ../utils/dist-newstyle-wrapper.sh haddock-ghcjs
+ln -s ../utils/dist-newstyle-wrapper.sh hsc2hs-ghcjs
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-boot
+ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgcd6965e" class="outline-4">
+<h4 id="orgcd6965e">stack</h4>
+<div class="outline-text-4" id="text-orgcd6965e">
+</div>
+<ul class="org-ul">
+<li>
+<a id="orgf4af126"></a>DON'T DO THIS<br><div class="outline-text-5" id="text-orgf4af126">
+<div class="highlight"><pre><span></span>stack build
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org6833cb7"></a>DO THIS<br><div class="outline-text-5" id="text-org6833cb7">
+<div class="highlight"><pre><span></span>stack install
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgfeb2cce" class="outline-4">
+<h4 id="orgfeb2cce">install haddock</h4>
+<div class="outline-text-4" id="text-orgfeb2cce">
+<p>
+<b>error message: Haddock's resource directory does not exist!</b>
+</p>
+
+<p>
+this step is useless for above error message.
+</p>
+
+<div class="highlight"><pre><span></span>cabal install haddock
+</pre></div>
+
+<div class="highlight"><pre><span></span>stack haddock
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6d85540" class="outline-3">
+<h3 id="org6d85540">Booting GHCJS</h3>
+<div class="outline-text-3" id="text-org6d85540">
+<div class="highlight"><pre><span></span>ghcjs-boot
+</pre></div>
+
+<p>
+when invoked without arguments, ghcjs-boot will build the libraries
+from <code>boot.tar</code> (unless the current directory contains a <code>boot.yaml</code>
+file), installed in GHCJS' data directory (<code>boot.tar</code> is generated by
+the <code>makePackages.sh</code> script and included in a source distribution).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org93d00f0" class="outline-3">
+<h3 id="org93d00f0">Test</h3>
+<div class="outline-text-3" id="text-org93d00f0">
+<div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">'main = putStrLn "Hello World!"'</span> &gt; helloWorld.hs
+$ stack <span class="nb">exec</span> -- ghcjs -o helloWorld helloWorld.hs
+$ node helloWorld.jsexe/all.js
+Hello world!
+</pre></div>
+
+<p>
+test is OK.
+</p>
+
+<p>
+I don't know why.
+But these steps are work for me to install ghcjs with ghc-8.4.3
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2af64fd" class="outline-2">
+<h2 id="org2af64fd">參考 <a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html">Peachful Space - ghcjs on Arch Linux</a> 和以下指令：(FAIL)</h2>
+<div class="outline-text-2" id="text-org2af64fd">
+<p>
+this is not work.
+</p>
+
+<div class="highlight"><pre><span></span><span class="c1"># install stack, haskell-stack, node.js and alex using pacman</span>
+$ sudo pacman -S stack haskell-stack nodejs alex
+
+$ <span class="nb">cd</span> <span class="o">&amp;&amp;</span> git clone https://github.com/ghcjs/ghcjs.git
+
+<span class="c1"># if you `stack setup` now you'll get an error saying /usr/lib/libtinfo.so.5 cannot be found</span>
+
+<span class="c1"># install libtinfo from AUR</span>
+$ <span class="nb">cd</span> ~/build-aur
+$ git clone https://aur.archlinux.org/libtinfo.git
+$ <span class="nb">cd</span> libtinfo
+$ makepkg -sri
+
+<span class="c1"># introducing the terrible hack...  I know, but it's the only way I can make it work</span>
+$ sudo ln -s /usr/lib/libtinfo.so /usr/lib/libtinfo.so.5
+
+$ <span class="nb">cd</span> ~/ghcjs
+$ stack setup
+$ stack build
+$ stack <span class="nb">exec</span> -- ghcjs-boot --dev
+
+$ <span class="nb">echo</span> <span class="s1">'main = putStrLn "Hello World!"'</span> &gt; helloWorld.hs
+$ stack <span class="nb">exec</span> -- ghcjs -o helloWorld helloWorld.hs
+$ node helloWorld.jsexe/all.js
+Hello world!
+</pre></div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cancer-food-exercise/" class="u-url">癌症是自己養出來的</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -2366,267 +2565,6 @@ Once the service is running, configuration of Tvheadend is done through a web in
 
 <p>
 The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.</p>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/one-cup-black-coffee-every-day/" class="u-url">一天 1 杯黑咖啡，肝癌風險降 42％</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/one-cup-black-coffee-every-day/" rel="bookmark"><time class="published dt-published" datetime="2018-06-22T12:49:57+08:00" title="2018-06-22 12:49">2018-06-22 12:49</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/one-cup-black-coffee-every-day/#disqus_thread" data-disqus-identifier="cache/posts/one-cup-coffee-every-day.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-【原文】<a href="https://health.businessweekly.com.tw/AArticle.aspx?id=ARTL000095352">一天 1 杯黑咖啡，肝癌風險降 42％！肝臟最喜歡的 10 種食物 - 商業周刊（百大良醫）</a>
-</p>
-
-
-<p>
-這篇主要說明的是「促進肝臟健康的十大養分」，咖啡只是其中一項。
-</p>
-
-<div id="outline-container-org12b6226" class="outline-2">
-<h2 id="org12b6226">促進肝臟健康的十大養分</h2>
-<div class="outline-text-2" id="text-org12b6226">
-<p>
-儘管肝臟的健康和整體的飲食型態或三大營養素攝取量息息相關，但其實飲食中的許多微量營養素也是守護或促進肝臟健康的重要養分，所以不論是奉行地中海飲食、低 GI 飲食或是其他飲食法，都必須多留意這方面。
-</p>
-
-<p>
-每一份健康飲食都應該涵蓋這些滋養肝臟的營養素或成分，因為它們不只能保護肝臟不受傷害，讓你擁有健康的肝臟，也能改善非酒精性脂肪肝的狀況。接下來，我們就來看看這些促進肝臟健康的養分有哪些。
-</p>
-</div>
-
-<div id="outline-container-org2be976f" class="outline-3">
-<h3 id="org2be976f">（一）植化素</h3>
-<div class="outline-text-3" id="text-org2be976f">
-<p>
-這些出現在<b>水果、蔬菜、堅果和種子</b>類食物中的植化素，對身體有不少健康功效，還有機會預防癌症和心臟病等重大疾病的發生。就增進肝臟健康方面來看，則屬吲哚類（indoles）、茄紅素（lycopene）、木酚素（lignans）、白藜蘆醇（resveratrol）、花青素（anthocyanin）和槲皮素（quercetin）的效果特別顯著。
-</p>
-
-<p>
-2013 年一篇探討<b>花青素</b>對肝臟影響的研究發現，花青素（存在於黑莓、接骨木莓、覆盆莓、黑葡萄和茄子的表皮）不只能預防肝臟出現脂肪堆積和發炎的狀況，還能幫助肝臟對抗氧化壓力。槲皮素這種屬於黃酮類（flavonoids）的植化素，則被發現具有抑制 C 型肝炎感染的功效；<b>柑橘類、蘋果、洋蔥、巴西里、橄欖油、葡萄和深色莓果</b>裡都含有豐富的槲皮素。另外，2015 年中國的研究還發現，槲皮素能改善因高脂飲食所造成的肝損傷（尤其是脂肪堆積的部分）。
-</p>
-
-<p>
-不過，市面上的營養補充劑是不用經過美國食品和藥物管理局檢測和認證的，因此我<b>不建議用營養補充劑</b>來取得這些植化素，直接從新鮮的蔬果中攝取比較健康。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga7764de" class="outline-3">
-<h3 id="orga7764de">（二）咖啡</h3>
-<div class="outline-text-3" id="text-orga7764de">
-<p>
-喜歡喝咖啡的人，如果聽到我接下來要說的事實，肯定會覺得通體舒暢。
-</p>
-
-<p>
-研究發現，喝咖啡能降低得到第二型糖尿病、心臟病、中風、膽結石和巴金森氏症等疾病的風險，而且還可以全面降低早亡的機會。
-</p>
-
-<p>
-不僅如此，現在研究還發現咖啡可以降低丙胺酸轉胺脢（ALT）、天門冬胺酸轉胺酶（AST）和 γ-丙醯基轉肽酶（GGT）的數值；而且就算這些人有慢性肝病或是過量飲酒、肥胖、抽菸等陋習，咖啡也能發揮一定的功效。另外，連續執行了四個週期的美國國家健康和營養調查（NHANES）報告顯示，咖啡因的攝取量多寡，確實和降低非酒精性脂肪肝的風險有相關性（該報告由美國疾病控制與預防中心的國家衛生統計中心〔National Center for Health Statistics，NCHS〕以問卷的方式進行飲食攝取量的調查。
-</p>
-
-<p>
-2005 年，日本的研究人員在分析了兩場前瞻性世代研究（prospective cohort
-study）的成果後發現，咖啡的攝取量和肝癌的得病率呈反比： <b>與不喝咖啡的人相比，每天喝一到兩杯咖啡者，其得到肝癌的風險降低了 42％</b> 。
-</p>
-
-<p>
-由於咖啡中含有成千上萬種物質，所以我們不可能直接點名是當中的哪些成分貢獻了這些護肝功效，因為很可能必須要有多種物質相輔相成（例如當中的強效抗氧化劑和抗癌物質相互搭配），方能產生這股守護肝臟的力量；不過最近有研究發現，或許是咖啡中的綠原酸成分所致。不論是飲用<b>黑咖啡</b>或是<b>拿鐵</b>都可以獲得這方面的好處，唯一需要注意的一點，就是沖泡咖啡時最好要有<b>過濾</b>這道手續，因為這個動作可以濾除咖啡中大部分的咖啡固醇（cafestol）和咖啡白脂（kahweol）；這是兩種會讓血中膽固醇含量上升的油性物質。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org2ad5582" class="outline-3">
-<h3 id="org2ad5582">（三）ω-3 脂肪酸</h3>
-<div class="outline-text-3" id="text-org2ad5582">
-<p>
-<b>鮭魚、鮪魚、核桃、亞麻籽和奇亞籽</b>等富含多元不飽和脂肪酸的食物，有助維持心臟、腦部健康和其他身體機能的運作。ω-3 脂肪酸可改善血脂狀態，並降低造成體內發炎的因素，這些優點都對肝臟健康有正面影響。事實上，奧勒岡州立大學新發表的研究發現，屬於ω-3 脂肪酸一員的 DHA（docosahexaenoic acid，二十二碳六烯酸）能預防脂肪肝，且成效顯著。
-</p>
-
-<p>
-此外，研究還顯示血液中缺乏 ω-3 脂肪酸是造成非酒精性脂肪肝惡化的直接因素之一。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org41778c6" class="outline-3">
-<h3 id="org41778c6">（四）纖維素</h3>
-<div class="outline-text-3" id="text-org41778c6">
-<p>
-纖維素有兩大類，分別為<b>水溶性</b>和<b>非水溶性</b>；對身體健康來說，它們各有各有的好處。
-</p>
-
-<p>
-<b>水溶性纖維</b>有助降低體內膽固醇的含量和整體心臟病的風險，同時它也是維持腸道健康的一項重要因素；富含水溶性纖維的食物泡在水裡體積會膨大，
-</p>
-
-<p>
-例如<b>燕麥、豆類和奇亞籽</b>等。
-</p>
-
-<p>
-<b>非水溶性纖維</b>的食物有：<b>堅果、麩皮、糙米、水果的表皮</b>等；這兩種纖維素都有益肝臟健康。
-</p>
-
-<p>
-2007 年<b>巴西</b>的研究發現，非酒精性脂肪肝的人連續 3 個月，每天食用 10 公克的水溶性纖維（以營養補充劑的形式攝取）後，他們上升的肝指數下降了，
-BMI、腰圍、胰島素阻抗和膽固醇也有顯著改善。
-</p>
-
-<p>
-研究也發現，攝取充足的<b>膳食纖維</b>能降低第二型糖尿病（包括胰島素阻抗）的風險、膽固醇和三酸甘油酯的含量，並讓體重獲得比較好的控制—這所有的改變都有助於降低得到肝臟疾病的風險。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf22af0e" class="outline-3">
-<h3 id="orgf22af0e">（五）益生菌</h3>
-<div class="outline-text-3" id="text-orgf22af0e">
-<p>
-好菌是讓我們擁有一副健康腸道的關鍵角色，健康的腸道可以為肝臟的健康帶來保障，因為腸道和肝臟之間的互動密切，就如我們在前面提到的，部分學者甚至創了一個「腸肝軸系」的名詞，來描述腸道菌相可能透過怎樣的機制來保護肝臟不受慢性損傷的迫害。
-</p>
-
-<p>
-其實不少研究都已經發現非酒精性脂肪肝、肝硬化或酒精性肝病的病人，其體內的腸道菌相都出現了轉變。好消息是，
-</p>
-
-<p>
-有研究認為，只要透過食用<b>益生菌</b>（促進腸道健康的好菌）和<b>益生質</b>（人體不能消化的纖維素，但卻可以做為益生菌生長的養分）重新打造出擁有健康菌相的腸道
-</p>
-
-<p>
-為了讓我們的腸道<b>好菌</b>多多，可多食用<b>優格</b>、<b>優酪乳</b>、<b>味噌</b>、<b>泡菜</b>、
-<b>天貝</b>（一種印尼的發酵豆製品）和<b>酸菜</b>等發酵食品，或直接服用<b>益生菌營養補充劑</b>，保持腸道菌相的健康。
-</p>
-
-<p>
-提升腸胃功能，而且增進了肝臟的機能
-</p>
-</div>
-</div>
-
-<div id="outline-container-org0cfd16f" class="outline-3">
-<h3 id="org0cfd16f">（六）大豆蛋白</h3>
-<div class="outline-text-3" id="text-org0cfd16f">
-<p>
-大豆常常因為它含有雌激素的特性身負惡名，但其實富含天然<b>大豆蛋白</b>（非大豆加工製品）的飲食，對健康有諸多幫助，肝臟也是受惠者之一。研究發現大豆裡的<b>異黃酮</b>能透過調節肝臟的脂肪代謝和改變肝臟的基因表現，來提升肝臟氧化脂肪酸的能力，進而減少脂肪囤積在肝臟的機會，達到預防或治療非酒精性脂肪肝的效果。
-</p>
-
-<p>
-另外，<b>大豆異黃酮</b>亦具有降低發炎因素和改善葡萄糖耐受度的能力。
-</p>
-
-<p>
-獲取大豆蛋白的最佳來源是由完整大豆製成的食品，例如<b>豆腐</b>、<b>毛豆</b>、<b>天貝</b>和<b>味噌</b>都是很好的選擇，而非成分中徒有大豆分離蛋白的脆餅或能量棒。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org8801045" class="outline-3">
-<h3 id="org8801045">（七）辛香料</h3>
-<div class="outline-text-3" id="text-org8801045">
-<p>
-在料理中添加辛香料，除了可以增加味蕾的豐富性，<b>薑黃、咖哩粉、辣椒、薑</b>
-和<b>葫蘆巴籽</b>裡的活性成分也能促進肝臟的健康。
-</p>
-
-<p>
-大部分辛香料的護肝功效都是源自於它們所含的<b>抗氧化物質</b>，不過也有少部分的辛香料是因為擁有抗發炎、改變基因表現或是增進解毒酵素活性的成分。
-</p>
-
-<p>
-以 2014 年 7 月發表在期刊《消化學》（Gut）的一篇研究為例，他們在實驗過程中發現薑黃裡的薑黃素（curcumin）能阻擋 C 型肝炎的病毒進入肝臟細胞；
-</p>
-
-<p>
-2013 年，中國也同樣在實驗時發現<b>薑黃素能阻止肝癌細胞生長</b>。
-</p>
-
-<p>
-2013 年來自台灣的研究團隊則發現，萃取自薑的精油有助於對抗酒精性肝病，因為他們每天餵食患有酒精性肝病的小老鼠薑精油後，小老鼠的肝臟便不再受到損傷。
-</p>
-
-<p>
-在<b>葫蘆巴籽</b>方面，2011 年日本研究發現，當大老鼠採取高油、高糖飲食時，若攝取葫蘆巴籽將能抑制脂肪在肝臟堆積。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgceaeb89" class="outline-3">
-<h3 id="orgceaeb89">（八）綠茶</h3>
-<div class="outline-text-3" id="text-orgceaeb89">
-<p>
-儘管常被用來當成減肥聖品的濃縮綠茶萃取錠劑有礙健康（因為<b>大量服用很可能會導致急性肝衰竭</b>），但<b>適度飲用綠茶</b>卻有益肝臟健康。
-</p>
-
-<p>
-這項優點很可能是<b>綠茶多酚</b>的功勞，因為研究已經證實綠茶多酚能降低 DNA
-受損機率和血脂濃度。
-</p>
-
-<p>
-不過想要安全無虞的獲得綠茶的好處，我的建議是不要攝取任何營養補充劑形式的綠茶萃取物，要<b>飲用天然的綠茶飲品，不論是冷泡或熱水沖泡的綠茶</b>。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org27f58f3" class="outline-3">
-<h3 id="org27f58f3">（九）維生素 E</h3>
-<div class="outline-text-3" id="text-org27f58f3">
-<p>
-研究認為，維生素 E 有助降低升高的肝指數、預防非酒精性脂肪肝惡化，並減少疤痕組織在肝臟生成的機會。
-</p>
-
-<p>
-就跟前面介紹的幾項護肝養分相同，最好的維生素 E 也是來自食物，而非營養補充劑；富含維生素 E 的食物有：<b>植物油</b>、<b>堅果</b>、<b>種子</b>、<b>全穀類</b>和*蛋
-*等食物。
-</p>
-
-<p>
-維生素 E 並非多多益善，<b>過量攝取維生素 E 反而會對健康造成反效果</b>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org2257a49" class="outline-3">
-<h3 id="org2257a49">（十）膽鹼</h3>
-<div class="outline-text-3" id="text-org2257a49">
-<p>
-膽鹼屬於<b>維生素 B</b> 的一員，是維持人體正常生理作用不可或缺的元素
-</p>
-
-<p>
-許多與肝臟有關的代謝作用都需要它的參與才可以進行，極低密度脂蛋白（VLDL，三酸甘油酯從肝臟被分泌出的形式）的代謝就是一例。萬一體內膽鹼的濃度過低，就會造成脂肪堆積在肝臟，進一步導致粒線體的功能損傷、脂肪酸氧化能力下降和腸道菌相變差等不利健康的生理變化，這簡直是牽一髮而動全身的骨牌效應。
-</p>
-
-<p>
-不少研究發現，<b>膽鹼缺乏</b>可能會促進非酒精性脂肪肝和肝癌的生成，然而體內膽鹼含量較高時，卻可能具有預防這兩類肝臟疾病的能力。
-</p>
-
-<p>
-富含膽鹼的食物有：<b>蛋品</b>、<b>貝類</b>、<b>禽肉</b>、<b>花生</b>、<b>小麥胚芽</b>和<b>全大豆製品</b>。
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgb5541b2" class="outline-2">
-<h2 id="orgb5541b2">結語</h2>
-<div class="outline-text-2" id="text-orgb5541b2">
-<p>
-只要你的飲食主要以<b>全穀類</b>、<b>蔬菜</b>、<b>水果</b>、<b>豆類</b>、<b>堅果</b>和<b>健康的油脂</b>（例如橄欖油）組成，並搭配小分量的<b>乳製品</b>、<b>魚類</b>和<b>海鮮</b>，紅肉則偶爾少量食用，便可充分掌握獲取最佳健康和護肝飲食的重點。
-</p>
 </div>
 </div>
     </div>

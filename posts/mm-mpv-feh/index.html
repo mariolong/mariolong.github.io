@@ -20,7 +20,24 @@ feh -FD1 --auto-rotate
 
 
 
-單純播放照片和影片記錄而已">
+單純播放照片和影片記錄而已
+
+
+
+1 mpv
+
+
+
+1.1 keyboard control
+
+
+LEFT and RIGHT
+
+
+Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see –hr-seek).
+
+
+U">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-05-29T09:57:04+08:00">
 <meta property="article:tag" content="feh">
@@ -113,6 +130,320 @@ feh -FD1 --auto-rotate
 <p>
 單純播放照片和影片記錄而已
 </p>
+
+<div id="outline-container-org5de1d8d" class="outline-2">
+<h2 id="org5de1d8d">
+<span class="section-number-2">1</span> mpv</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org1bc64b7" class="outline-3">
+<h3 id="org1bc64b7">
+<span class="section-number-3">1.1</span> keyboard control</h3>
+<div class="outline-text-3" id="text-1-1">
+<dl class="org-dl">
+<dt>LEFT and RIGHT</dt>
+<dd></dd>
+</dl>
+<p>
+Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see –hr-seek).
+</p>
+<dl class="org-dl">
+<dt>UP and DOWN</dt>
+<dd></dd>
+</dl>
+<p>
+Seek forward/backward 1 minute. Shift+arrow does a 5 second exact seek (see  –hr-seek).
+</p>
+<dl class="org-dl">
+<dt>Ctrl+LEFT and Ctrl+RIGHT</dt>
+<dd></dd>
+</dl>
+<p>
+Seek to the previous/next subtitle. Subject to some restrictions and might not always work; see  sub-seek command.
+</p>
+<dl class="org-dl">
+<dt>Ctrl+Shift+Left and Ctrl+Shift+Right</dt>
+<dd></dd>
+</dl>
+<p>
+Adjust subtitle delay so that the next or previous subtitle is displayed now. This is especially useful to sync subtitles to audio.
+</p>
+<dl class="org-dl">
+<dt>[ and ]</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase current playback speed by 10%.
+</p>
+<dl class="org-dl">
+<dt>{ and }</dt>
+<dd></dd>
+</dl>
+<p>
+Halve/double current playback speed.
+</p>
+<dl class="org-dl">
+<dt>BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Reset playback speed to normal.
+</p>
+<dl class="org-dl">
+<dt>Shift+BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Undo the last seek. This works only if the playlist entry was not changed. Hitting it a second time will go back to the original position. See revert-seek command for details.
+</p>
+<dl class="org-dl">
+<dt>Shift+Ctrl+BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Mark the current position. This will then be used by Shift+BACKSPACE as revert position (once you seek back, the marker will be reset). You can use this to seek around in the file and then return to the exact position where you left off.
+</p>
+<dl class="org-dl">
+<dt>&lt; and &gt;</dt>
+<dd></dd>
+</dl>
+<p>
+Go backward/forward in the playlist.
+</p>
+<dl class="org-dl">
+<dt>ENTER</dt>
+<dd></dd>
+</dl>
+<p>
+Go forward in the playlist.
+</p>
+<dl class="org-dl">
+<dt>p / SPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Pause (pressing again unpauses).
+</p>
+<dl class="org-dl">
+<dt>.</dt>
+<dd></dd>
+</dl>
+<p>
+Step forward. Pressing once will pause, every consecutive press will play one frame and then go into pause mode again.
+</p>
+<dl class="org-dl">
+<dt>,</dt>
+<dd></dd>
+</dl>
+<p>
+Step backward. Pressing once will pause, every consecutive press will play one frame in reverse and then go into pause mode again.
+</p>
+<dl class="org-dl">
+<dt>q</dt>
+<dd></dd>
+</dl>
+<p>
+Stop playing and quit.
+</p>
+<dl class="org-dl">
+<dt>Q</dt>
+<dd></dd>
+</dl>
+<p>
+Like q, but store the current playback position. Playing the same file later will resume at the old playback position if possible.
+</p>
+<dl class="org-dl">
+<dt>/ and *</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase volume.
+</p>
+<dl class="org-dl">
+<dt>9 and 0</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase volume.
+</p>
+<dl class="org-dl">
+<dt>m</dt>
+<dd></dd>
+</dl>
+<p>
+Mute sound.
+</p>
+<dl class="org-dl">
+<dt>_</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available video tracks.
+</p>
+<dl class="org-dl">
+<dt>#</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available audio tracks.
+</p>
+<dl class="org-dl">
+<dt>f</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle fullscreen (see also –fs).
+</p>
+<dl class="org-dl">
+<dt>ESC</dt>
+<dd></dd>
+</dl>
+<p>
+Exit fullscreen mode.
+</p>
+<dl class="org-dl">
+<dt>T</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle stay-on-top (see also –ontop).
+</p>
+<dl class="org-dl">
+<dt>w and W</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase pan-and-scan range. The e key does the same as W currently, but use is discouraged.
+</p>
+<dl class="org-dl">
+<dt>o (also P)</dt>
+<dd></dd>
+</dl>
+<p>
+Show progression bar, elapsed time and total duration on the OSD.
+</p>
+<dl class="org-dl">
+<dt>O</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle OSD states between normal and playback time/duration.
+</p>
+<dl class="org-dl">
+<dt>v</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle subtitle visibility.
+</p>
+<dl class="org-dl">
+<dt>j and J</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available subtitles.
+</p>
+<dl class="org-dl">
+<dt>z and Z</dt>
+<dd></dd>
+</dl>
+<p>
+Adjust subtitle delay by +/- 0.1 seconds. The x key does the same as Z currently, but use is discouraged.
+</p>
+<dl class="org-dl">
+<dt>l</dt>
+<dd></dd>
+</dl>
+<p>
+Set/clear A-B loop points. See ab-loop command for details.
+</p>
+<dl class="org-dl">
+<dt>L</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle infinite looping.
+Ctrl + and Ctrl -
+Adjust audio delay (A/V sync) by +/- 0.1 seconds.
+u
+Switch between applying no style overrides to SSA/ASS subtitles, and overriding them almost completely with the normal subtitle style. See  –sub-ass-override for more info.
+V
+Toggle subtitle VSFilter aspect compatibility mode. See  –sub-ass-vsfilter-aspect-compat for more info.
+r and R
+Move subtitles up/down. The t key does the same as R currently, but use is discouraged.
+s
+Take a screenshot.
+S
+Take a screenshot, without subtitles. (Whether this works depends on VO driver support.)
+Ctrl s
+Take a screenshot, as the window shows it (with subtitles, OSD, and scaled video).
+PGUP and PGDWN
+Seek to the beginning of the previous/next chapter. In most cases, "previous" will actually go to the beginning of the current chapter; see  –chapter-seek-threshold.
+Shift+PGUP and Shift+PGDWN
+Seek backward or forward by 10 minutes. (This used to be mapped to PGUP/PGDWN without Shift.)
+d
+Activate/deactivate deinterlacer.
+A
+Cycle aspect ratio override.
+Ctrl h
+Toggle hardware video decoding on/off.
+Alt+LEFT, Alt+RIGHT, Alt+UP, Alt+DOWN
+Move the video rectangle (panning).
+Alt + and Alt -
+Combining Alt with the + or - keys changes video zoom.
+Alt+BACKSPACE
+Reset the pan/zoom settings.
+F9
+Show the playlist and the current position in it (useful only if a UI window is used, broken on the terminal).
+F10
+Show the list of audio and subtitle streams (useful only if a UI window is used, broken on the terminal).
+(The following keys are valid only when using a video output that supports the corresponding adjustment.)
+</p>
+
+<p>
+1 and 2
+Adjust contrast.
+3 and 4
+Adjust brightness.
+5 and 6
+Adjust gamma.
+7 and 8
+Adjust saturation.
+Alt+0 (and command+0 on OSX)
+Resize video window to half its original size.
+Alt+1 (and command+1 on OSX)
+Resize video window to its original size.
+Alt+2 (and command+2 on OSX)
+Resize video window to double its original size.
+command + f (OSX only)
+Toggle fullscreen (see also –fs).
+(The following keys are valid if you have a keyboard with multimedia keys.)
+</p>
+
+<p>
+PAUSE
+Pause.
+STOP
+Stop playing and quit.
+PREVIOUS and NEXT
+Seek backward/forward 1 minute.
+If you miss some older key bindings, look at etc/restore-old-bindings.conf in the mpv git repository.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org51eba41" class="outline-2">
+<h2 id="org51eba41">
+<span class="section-number-2">2</span> feh</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgf36a604" class="outline-3">
+<h3 id="orgf36a604">
+<span class="section-number-3">2.1</span> keyborad control</h3>
+</div>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/feh/" rel="tag">feh</a></li>
