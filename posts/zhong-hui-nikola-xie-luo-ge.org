@@ -15,8 +15,10 @@
  {{{TEASER_END}}}
 * 安裝
 #+BEGIN_SRC sh
-pip nikola
+sudo pip install nikola webassets ghp_import
 #+END_SRC
+
+其中 ghp_import 是為了發佈到 github. webassets 可將 所有的 css 檔打包成一個 css 檔。
 
 * 設定
 
