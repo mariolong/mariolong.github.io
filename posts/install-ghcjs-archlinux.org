@@ -9,7 +9,7 @@
 .. description:
 .. type: text
 #+END_COMMENT
-#+OPTIONS: num:nil toc:nil ^:{}
+#+OPTIONS: toc:nil ^:{}
 #+LANGUAGE: zh-TW
 
 #+BEGIN_SRC sh
@@ -17,7 +17,9 @@ ghc --version
 The Glorious Glasgow Haskell Compilation System, version 8.4.3
 #+END_SRC
 
-* 參考 [[https://github.com/ghcjs/ghcjs/tree/ghc-8.4][GitHub - ghcjs/ghcjs at ghc-8.4]]
+* Install steps
+
+參考 [[https://github.com/ghcjs/ghcjs/tree/ghc-8.4][GitHub - ghcjs/ghcjs at ghc-8.4]]
 
 ** getting and preparing the source tree
 

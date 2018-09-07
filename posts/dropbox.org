@@ -1,0 +1,76 @@
+#+BEGIN_COMMENT
+.. title: install and use dropbox on archlinux
+.. slug: dropbox
+.. date: 2018-09-07 12:18:23 UTC+08:00
+.. status: draft
+.. tags: dropbox, linux
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+* install
+
+因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 ~aur/dropbox~
+
+#+BEGIN_SRC sh
+yaourt -S aur/dropbox
+#+END_SRC
+
+* config dropbox.service
+
+** setup environment variables
+
+為了正確顯示，要加上以下命令：
+
+#+BEGIN_SRC systemd
+Environment=DISPLAY=:0
+Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 QT_STYLE_OVERRIDE=GTK+
+#+END_SRC
+
+** set Restart=no in dropbox.service
+
+根據 [[https://gitlab.com/yan12125/aur/issues/21][Dropbox kill/restart loop when started at boot via systemd]]，在
+dropbox.service 中，特別加上
+
+#+BEGIN_SRC systemd
+Restart=no
+#+END_SRC
+
+** final dropbox.service
+
+#+BEGIN_SRC systemd
+[Unit]
+Description=Dropbox for systemd/user
+
+[Service]
+Environment=DISPLAY=:0
+Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 QT_STYLE_OVERRIDE=GTK+
+Type=simple
+ExecStart=/usr/bin/dropbox
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=no
+
+[Install]
+WantedBy=default.target
+#+END_SRC
+
+* start dropbox
+
+最後執行
+
+#+BEGIN_SRC sh
+systemctl start dropbox --user
+#+END_SRC
+
+or/and
+
+#+BEGIN_SRC sh
+systemctl enable dropbox --user
+#+END_SRC
+
+即可。
