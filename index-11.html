@@ -75,7 +75,131 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/one-cup-black-coffee-every-day/" class="u-url">一天 1 杯黑咖啡，肝癌風險降 42％</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/turn-on-smart/" class="u-url">Turn on SMART to monitor HD</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/turn-on-smart/" rel="bookmark"><time class="published dt-published" datetime="2018-07-11T21:40:06+08:00" title="2018-07-11 21:40">2018-07-11 21:40</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/turn-on-smart/#disqus_thread" data-disqus-identifier="cache/posts/turn-on-smart.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - ArchWiki</a>
+</p>
+
+<div id="outline-container-org009d021" class="outline-2">
+<h2 id="org009d021">
+<span class="section-number-2">1</span> Install</h2>
+<div class="outline-text-2" id="text-1">
+<div class="highlight"><pre><span></span>yaourt -S smartmontools
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgcf3e321" class="outline-2">
+<h2 id="orgcf3e321">
+<span class="section-number-2">2</span> start smartd</h2>
+<div class="outline-text-2" id="text-2">
+<div class="highlight"><pre><span></span>systemctl start smartd
+</pre></div>
+
+<p>
+配置檔 <code>/etc/smartd.conf</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org55cbfeb" class="outline-2">
+<h2 id="org55cbfeb">
+<span class="section-number-2">3</span> smartd.conf</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+To monitor for all possible SMART errors on all disks, the following
+setting must be added in the configuration file.
+</p>
+
+<div class="highlight"><pre><span></span><span class="na">DEVICESCAN -a</span>
+</pre></div>
+</div>
+
+<div id="outline-container-orga6b58ea" class="outline-3">
+<h3 id="orga6b58ea">
+<span class="section-number-3">3.1</span> auto mail</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+先依 <a href="https://dominicm.com/configure-email-notifications-on-arch-linux/">Configure Email Notifications on Arch Linux | DominicM</a> 設定 s-nail,
+再於 <code>/etc/smartd.conf</code> 加上以下指令
+</p>
+
+<div class="highlight"><pre><span></span><span class="na">DEVICESCAN -m address@domain.com -M test</span>
+</pre></div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/kodi-tv/" class="u-url">Kodi TV</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/kodi-tv/" rel="bookmark"><time class="published dt-published" datetime="2018-06-26T14:56:03+08:00" title="2018-06-26 14:56">2018-06-26 14:56</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/kodi-tv/#disqus_thread" data-disqus-identifier="cache/posts/kodi-tv.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+<a href="https://kodi.wiki/view/HOW-TO:Install_Tvheadend_on_Arch_Linux">HOW-TO:Install Tvheadend on Arch Linux - Official Kodi Wiki</a>
+</p>
+
+<p>
+<a href="https://wiki.archlinux.org/index.php/Tvheadend">Tvheadend - ArchWiki</a>
+</p>
+
+
+<div id="outline-container-org51ada84" class="outline-2">
+<h2 id="org51ada84">
+<span class="section-number-2">1</span> Install</h2>
+<div class="outline-text-2" id="text-1">
+<div class="highlight"><pre><span></span>yaourt -S tvheadend kodi-addon-hts-pvrmanager kodi-addon-pvr-hts --noconfirm
+</pre></div>
+</div>
+</div>
+
+
+<div id="outline-container-org11cd998" class="outline-2">
+<h2 id="org11cd998">
+<span class="section-number-2">2</span> start/enable</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Once Tvheadend is installed start/enable the tvheadend.service.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org07204f9" class="outline-2">
+<h2 id="org07204f9">
+<span class="section-number-2">3</span> Configuration</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Once the service is running, configuration of Tvheadend is done through a web interface on <code>localhost:9981</code>.
+</p>
+
+<p>
+The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.</p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/one-cup-black-coffee-every-day/" class="u-url">一天 1 杯黑咖啡，肝癌風險降 42％</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long

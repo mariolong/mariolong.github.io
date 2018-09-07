@@ -9,6 +9,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/install-ghcjs-archlinux/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
 <link rel="prev" href="../cancer-food-exercise/" title="癌症是自己養出來的" type="text/html">
+<link rel="next" href="../fish-usage/" title="Fish 用法記錄" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Install ghcjs for ghc 8.4.3 on archlinux">
 <meta property="og:url" content="https://mariolong.github.io/posts/install-ghcjs-archlinux/">
@@ -17,17 +18,18 @@ The Glorious Glasgow Haskell Compilation System, version 8.4.3
 
 
 
+1 Install steps
+
+
 參考 GitHub - ghcjs/ghcjs at ghc-8.4
 
 
 
-getting and preparing the source tree
+
+1.1 getting and preparing the source tree
 
 
-add step git checkout ghc-8.4
-
-
-git clone ">
+add step git checko">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-09-04T08:22:35+08:00">
 <meta property="article:tag" content="ghcjs">
@@ -114,14 +116,19 @@ git clone ">
 The Glorious Glasgow Haskell Compilation System, version <span class="m">8</span>.4.3
 </pre></div>
 
-<div id="outline-container-orga21a766" class="outline-2">
-<h2 id="orga21a766">參考 <a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4">GitHub - ghcjs/ghcjs at ghc-8.4</a>
-</h2>
-<div class="outline-text-2" id="text-orga21a766">
+<div id="outline-container-org9d5efb5" class="outline-2">
+<h2 id="org9d5efb5">
+<span class="section-number-2">1</span> Install steps</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+參考 <a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4">GitHub - ghcjs/ghcjs at ghc-8.4</a>
+</p>
 </div>
-<div id="outline-container-org6d2f58a" class="outline-3">
-<h3 id="org6d2f58a">getting and preparing the source tree</h3>
-<div class="outline-text-3" id="text-org6d2f58a">
+
+<div id="outline-container-org5ba8719" class="outline-3">
+<h3 id="org5ba8719">
+<span class="section-number-3">1.1</span> getting and preparing the source tree</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 add step <code>git checkout ghc-8.4</code>
 </p>
@@ -135,17 +142,19 @@ git submodule update --init --recursive
 </div>
 </div>
 
-<div id="outline-container-orga4d876a" class="outline-3">
-<h3 id="orga4d876a">building the compiler</h3>
-<div class="outline-text-3" id="text-orga4d876a">
+<div id="outline-container-org6d8943b" class="outline-3">
+<h3 id="org6d8943b">
+<span class="section-number-3">1.2</span> building the compiler</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 You can use <code>cabal-install</code> <b>and</b> <code>stack</code> to set up a build environment that contains these packages.
 </p>
 </div>
 
-<div id="outline-container-orgd0241fa" class="outline-4">
-<h4 id="orgd0241fa">Cabal new-build</h4>
-<div class="outline-text-4" id="text-orgd0241fa">
+<div id="outline-container-orgefe08a9" class="outline-4">
+<h4 id="orgefe08a9">
+<span class="section-number-4">1.2.1</span> Cabal new-build</h4>
+<div class="outline-text-4" id="text-1-2-1">
 <div class="highlight"><pre><span></span>stack install cabal-install
 cabal update
 cabal new-configure
@@ -154,9 +163,10 @@ cabal new-build
 </div>
 </div>
 
-<div id="outline-container-orgb672bd3" class="outline-4">
-<h4 id="orgb672bd3">link to executables</h4>
-<div class="outline-text-4" id="text-orgb672bd3">
+<div id="outline-container-orgcc009c0" class="outline-4">
+<h4 id="orgcc009c0">
+<span class="section-number-4">1.2.2</span> link to executables</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <p>
 <b>DON'T DO THIS, IT IS NOT NECESSARY</b>
 </p>
@@ -182,30 +192,32 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 </div>
 </div>
 
-<div id="outline-container-orgcd6965e" class="outline-4">
-<h4 id="orgcd6965e">stack</h4>
-<div class="outline-text-4" id="text-orgcd6965e">
+<div id="outline-container-org905e95a" class="outline-4">
+<h4 id="org905e95a">
+<span class="section-number-4">1.2.3</span> stack</h4>
+<div class="outline-text-4" id="text-1-2-3">
 </div>
-<ul class="org-ul">
+<ol class="org-ol">
 <li>
-<a id="orgf4af126"></a>DON'T DO THIS<br><div class="outline-text-5" id="text-orgf4af126">
+<a id="org659f9bc"></a>DON'T DO THIS<br><div class="outline-text-5" id="text-1-2-3-1">
 <div class="highlight"><pre><span></span>stack build
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="org6833cb7"></a>DO THIS<br><div class="outline-text-5" id="text-org6833cb7">
+<a id="orge61efaa"></a>DO THIS<br><div class="outline-text-5" id="text-1-2-3-2">
 <div class="highlight"><pre><span></span>stack install
 </pre></div>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 
-<div id="outline-container-orgfeb2cce" class="outline-4">
-<h4 id="orgfeb2cce">install haddock</h4>
-<div class="outline-text-4" id="text-orgfeb2cce">
+<div id="outline-container-org9f8d7cd" class="outline-4">
+<h4 id="org9f8d7cd">
+<span class="section-number-4">1.2.4</span> install haddock</h4>
+<div class="outline-text-4" id="text-1-2-4">
 <p>
 <b>error message: Haddock's resource directory does not exist!</b>
 </p>
@@ -223,9 +235,10 @@ this step is useless for above error message.
 </div>
 </div>
 
-<div id="outline-container-org6d85540" class="outline-3">
-<h3 id="org6d85540">Booting GHCJS</h3>
-<div class="outline-text-3" id="text-org6d85540">
+<div id="outline-container-orgc3b38b9" class="outline-3">
+<h3 id="orgc3b38b9">
+<span class="section-number-3">1.3</span> Booting GHCJS</h3>
+<div class="outline-text-3" id="text-1-3">
 <div class="highlight"><pre><span></span>ghcjs-boot
 </pre></div>
 
@@ -238,9 +251,10 @@ the <code>makePackages.sh</code> script and included in a source distribution).
 </div>
 </div>
 
-<div id="outline-container-org93d00f0" class="outline-3">
-<h3 id="org93d00f0">Test</h3>
-<div class="outline-text-3" id="text-org93d00f0">
+<div id="outline-container-org6f59cb4" class="outline-3">
+<h3 id="org6f59cb4">
+<span class="section-number-3">1.4</span> Test</h3>
+<div class="outline-text-3" id="text-1-4">
 <div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">'main = putStrLn "Hello World!"'</span> &gt; helloWorld.hs
 $ stack <span class="nb">exec</span> -- ghcjs -o helloWorld helloWorld.hs
 $ node helloWorld.jsexe/all.js
@@ -259,9 +273,10 @@ But these steps are work for me to install ghcjs with ghc-8.4.3
 </div>
 </div>
 
-<div id="outline-container-org2af64fd" class="outline-2">
-<h2 id="org2af64fd">參考 <a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html">Peachful Space - ghcjs on Arch Linux</a> 和以下指令：(FAIL)</h2>
-<div class="outline-text-2" id="text-org2af64fd">
+<div id="outline-container-orgb41faa8" class="outline-2">
+<h2 id="orgb41faa8">
+<span class="section-number-2">2</span> 參考 <a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html">Peachful Space - ghcjs on Arch Linux</a> 和以下指令：(FAIL)</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 this is not work.
 </p>
@@ -303,6 +318,9 @@ Hello world!
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../cancer-food-exercise/" rel="prev" title="癌症是自己養出來的">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../fish-usage/" rel="next" title="Fish 用法記錄">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
         

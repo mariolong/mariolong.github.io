@@ -9,7 +9,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/">
 <link rel="next" href="index-11.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/install-ghcjs-archlinux/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/dropbox/" type="text/html">
 </head>
 <body>
 
@@ -74,7 +74,144 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/install-ghcjs-archlinux/" class="u-url">Install ghcjs for ghc 8.4.3 on archlinux</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dropbox/" class="u-url">install and use dropbox on archlinux</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/dropbox/" rel="bookmark"><time class="published dt-published" datetime="2018-09-07T12:18:23+08:00" title="2018-09-07 12:18">2018-09-07 12:18</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/dropbox/#disqus_thread" data-disqus-identifier="cache/posts/dropbox.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div id="outline-container-org2a6c8f0" class="outline-2">
+<h2 id="org2a6c8f0">
+<span class="section-number-2">1</span> install</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 <code>aur/dropbox</code>
+</p>
+
+<div class="highlight"><pre><span></span>yaourt -S aur/dropbox
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org4b7aafa" class="outline-2">
+<h2 id="org4b7aafa">
+<span class="section-number-2">2</span> config dropbox.service</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga665fb4" class="outline-3">
+<h3 id="orga665fb4">
+<span class="section-number-3">2.1</span> setup environment variables</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+為了正確顯示，要加上以下命令：
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">Environment</span><span class="o">=</span><span class="no">DISPLAY</span><span class="o">=:</span><span class="mh">0</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">LC_ALL</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span> <span class="no">LANG</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span> <span class="no">QT_STYLE_OVERRIDE</span><span class="o">=</span><span class="no">GTK</span><span class="o">+</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgd16a643" class="outline-3">
+<h3 id="orgd16a643">
+<span class="section-number-3">2.2</span> set Restart=no in dropbox.service</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+根據 <a href="https://gitlab.com/yan12125/aur/issues/21">Dropbox kill/restart loop when started at boot via systemd</a>，在
+dropbox.service 中，特別加上
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">Restart</span><span class="o">=</span><span class="n">no</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org139bee7" class="outline-3">
+<h3 id="org139bee7">
+<span class="section-number-3">2.3</span> final dropbox.service</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">Dropbox</span> <span class="k">for</span> <span class="n">systemd</span><span class="o">/</span><span class="n">user</span>
+
+<span class="p">[</span><span class="n">Service</span><span class="p">]</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">DISPLAY</span><span class="o">=:</span><span class="mh">0</span>
+<span class="n">Environment</span><span class="o">=</span><span class="no">LC_ALL</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span> <span class="no">LANG</span><span class="o">=</span><span class="n">zh_TW</span><span class="p">.</span><span class="no">UTF</span><span class="o">-</span><span class="mh">8</span> <span class="no">QT_STYLE_OVERRIDE</span><span class="o">=</span><span class="no">GTK</span><span class="o">+</span>
+<span class="n">Type</span><span class="o">=</span><span class="n">simple</span>
+<span class="n">ExecStart</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">dropbox</span>
+<span class="n">ExecReload</span><span class="o">=/</span><span class="n">bin</span><span class="o">/</span><span class="n">kill</span> <span class="o">-</span><span class="no">HUP</span> <span class="no">$MAINPID</span>
+<span class="n">KillMode</span><span class="o">=</span><span class="n">process</span>
+<span class="n">Restart</span><span class="o">=</span><span class="n">no</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="k">default</span><span class="p">.</span><span class="n">target</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9c9aecf" class="outline-2">
+<h2 id="org9c9aecf">
+<span class="section-number-2">3</span> start dropbox</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+最後執行
+</p>
+
+<div class="highlight"><pre><span></span>systemctl start dropbox --user
+</pre></div>
+
+<p>
+or/and
+</p>
+
+<div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> dropbox --user
+</pre></div>
+
+<p>
+即可。</p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/fish-usage/" class="u-url">Fish 用法記錄</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline"><a href="posts/fish-usage/" rel="bookmark"><time class="published dt-published" datetime="2018-09-06T09:46:21+08:00" title="2018-09-06 09:46">2018-09-06 09:46</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/fish-usage/#disqus_thread" data-disqus-identifier="cache/posts/fish.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div id="outline-container-orgd6dabdf" class="outline-2">
+<h2 id="orgd6dabdf"><a href="https://codeyarns.com/2015/05/29/directory-history-in-the-fish-shell/">Directory history in the Fish shell</a></h2>
+<div class="outline-text-2" id="text-orgd6dabdf">
+<ul class="org-ul">
+<li>
+<code>dirh</code> : 目錄歷史</li>
+<li>
+<code>prevd</code> : 到前一目錄</li>
+<li>
+<code>nextd</code> : 到後一目錄</li>
+</ul>
+<p>
+按 <kbd>Alt-Left/Right</kbd> 直接到上／下目錄
+</p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/install-ghcjs-archlinux/" class="u-url">Install ghcjs for ghc 8.4.3 on archlinux</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -92,14 +229,19 @@
 The Glorious Glasgow Haskell Compilation System, version <span class="m">8</span>.4.3
 </pre></div>
 
-<div id="outline-container-orga21a766" class="outline-2">
-<h2 id="orga21a766">參考 <a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4">GitHub - ghcjs/ghcjs at ghc-8.4</a>
-</h2>
-<div class="outline-text-2" id="text-orga21a766">
+<div id="outline-container-org9d5efb5" class="outline-2">
+<h2 id="org9d5efb5">
+<span class="section-number-2">1</span> Install steps</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+參考 <a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4">GitHub - ghcjs/ghcjs at ghc-8.4</a>
+</p>
 </div>
-<div id="outline-container-org6d2f58a" class="outline-3">
-<h3 id="org6d2f58a">getting and preparing the source tree</h3>
-<div class="outline-text-3" id="text-org6d2f58a">
+
+<div id="outline-container-org5ba8719" class="outline-3">
+<h3 id="org5ba8719">
+<span class="section-number-3">1.1</span> getting and preparing the source tree</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 add step <code>git checkout ghc-8.4</code>
 </p>
@@ -113,17 +255,19 @@ git submodule update --init --recursive
 </div>
 </div>
 
-<div id="outline-container-orga4d876a" class="outline-3">
-<h3 id="orga4d876a">building the compiler</h3>
-<div class="outline-text-3" id="text-orga4d876a">
+<div id="outline-container-org6d8943b" class="outline-3">
+<h3 id="org6d8943b">
+<span class="section-number-3">1.2</span> building the compiler</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 You can use <code>cabal-install</code> <b>and</b> <code>stack</code> to set up a build environment that contains these packages.
 </p>
 </div>
 
-<div id="outline-container-orgd0241fa" class="outline-4">
-<h4 id="orgd0241fa">Cabal new-build</h4>
-<div class="outline-text-4" id="text-orgd0241fa">
+<div id="outline-container-orgefe08a9" class="outline-4">
+<h4 id="orgefe08a9">
+<span class="section-number-4">1.2.1</span> Cabal new-build</h4>
+<div class="outline-text-4" id="text-1-2-1">
 <div class="highlight"><pre><span></span>stack install cabal-install
 cabal update
 cabal new-configure
@@ -132,9 +276,10 @@ cabal new-build
 </div>
 </div>
 
-<div id="outline-container-orgb672bd3" class="outline-4">
-<h4 id="orgb672bd3">link to executables</h4>
-<div class="outline-text-4" id="text-orgb672bd3">
+<div id="outline-container-orgcc009c0" class="outline-4">
+<h4 id="orgcc009c0">
+<span class="section-number-4">1.2.2</span> link to executables</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <p>
 <b>DON'T DO THIS, IT IS NOT NECESSARY</b>
 </p>
@@ -160,30 +305,32 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 </div>
 </div>
 
-<div id="outline-container-orgcd6965e" class="outline-4">
-<h4 id="orgcd6965e">stack</h4>
-<div class="outline-text-4" id="text-orgcd6965e">
+<div id="outline-container-org905e95a" class="outline-4">
+<h4 id="org905e95a">
+<span class="section-number-4">1.2.3</span> stack</h4>
+<div class="outline-text-4" id="text-1-2-3">
 </div>
-<ul class="org-ul">
+<ol class="org-ol">
 <li>
-<a id="orgf4af126"></a>DON'T DO THIS<br><div class="outline-text-5" id="text-orgf4af126">
+<a id="org659f9bc"></a>DON'T DO THIS<br><div class="outline-text-5" id="text-1-2-3-1">
 <div class="highlight"><pre><span></span>stack build
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="org6833cb7"></a>DO THIS<br><div class="outline-text-5" id="text-org6833cb7">
+<a id="orge61efaa"></a>DO THIS<br><div class="outline-text-5" id="text-1-2-3-2">
 <div class="highlight"><pre><span></span>stack install
 </pre></div>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 
-<div id="outline-container-orgfeb2cce" class="outline-4">
-<h4 id="orgfeb2cce">install haddock</h4>
-<div class="outline-text-4" id="text-orgfeb2cce">
+<div id="outline-container-org9f8d7cd" class="outline-4">
+<h4 id="org9f8d7cd">
+<span class="section-number-4">1.2.4</span> install haddock</h4>
+<div class="outline-text-4" id="text-1-2-4">
 <p>
 <b>error message: Haddock's resource directory does not exist!</b>
 </p>
@@ -201,9 +348,10 @@ this step is useless for above error message.
 </div>
 </div>
 
-<div id="outline-container-org6d85540" class="outline-3">
-<h3 id="org6d85540">Booting GHCJS</h3>
-<div class="outline-text-3" id="text-org6d85540">
+<div id="outline-container-orgc3b38b9" class="outline-3">
+<h3 id="orgc3b38b9">
+<span class="section-number-3">1.3</span> Booting GHCJS</h3>
+<div class="outline-text-3" id="text-1-3">
 <div class="highlight"><pre><span></span>ghcjs-boot
 </pre></div>
 
@@ -216,9 +364,10 @@ the <code>makePackages.sh</code> script and included in a source distribution).
 </div>
 </div>
 
-<div id="outline-container-org93d00f0" class="outline-3">
-<h3 id="org93d00f0">Test</h3>
-<div class="outline-text-3" id="text-org93d00f0">
+<div id="outline-container-org6f59cb4" class="outline-3">
+<h3 id="org6f59cb4">
+<span class="section-number-3">1.4</span> Test</h3>
+<div class="outline-text-3" id="text-1-4">
 <div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">'main = putStrLn "Hello World!"'</span> &gt; helloWorld.hs
 $ stack <span class="nb">exec</span> -- ghcjs -o helloWorld helloWorld.hs
 $ node helloWorld.jsexe/all.js
@@ -237,9 +386,10 @@ But these steps are work for me to install ghcjs with ghc-8.4.3
 </div>
 </div>
 
-<div id="outline-container-org2af64fd" class="outline-2">
-<h2 id="org2af64fd">參考 <a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html">Peachful Space - ghcjs on Arch Linux</a> 和以下指令：(FAIL)</h2>
-<div class="outline-text-2" id="text-org2af64fd">
+<div id="outline-container-orgb41faa8" class="outline-2">
+<h2 id="orgb41faa8">
+<span class="section-number-2">2</span> 參考 <a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html">Peachful Space - ghcjs on Arch Linux</a> 和以下指令：(FAIL)</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 this is not work.
 </p>
@@ -2444,130 +2594,6 @@ Lackawanna 鐵路公司。至 1987 年年末，當時 Erie Lackawanna 的股價�
 <li>飯前先喝兩杯水，減重且不復胖</li>
 </ol>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/turn-on-smart/" class="u-url">Turn on SMART to monitor HD</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/turn-on-smart/" rel="bookmark"><time class="published dt-published" datetime="2018-07-11T21:40:06+08:00" title="2018-07-11 21:40">2018-07-11 21:40</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/turn-on-smart/#disqus_thread" data-disqus-identifier="cache/posts/turn-on-smart.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - ArchWiki</a>
-</p>
-
-<div id="outline-container-org009d021" class="outline-2">
-<h2 id="org009d021">
-<span class="section-number-2">1</span> Install</h2>
-<div class="outline-text-2" id="text-1">
-<div class="highlight"><pre><span></span>yaourt -S smartmontools
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgcf3e321" class="outline-2">
-<h2 id="orgcf3e321">
-<span class="section-number-2">2</span> start smartd</h2>
-<div class="outline-text-2" id="text-2">
-<div class="highlight"><pre><span></span>systemctl start smartd
-</pre></div>
-
-<p>
-配置檔 <code>/etc/smartd.conf</code>
-</p>
-</div>
-</div>
-
-<div id="outline-container-org55cbfeb" class="outline-2">
-<h2 id="org55cbfeb">
-<span class="section-number-2">3</span> smartd.conf</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-To monitor for all possible SMART errors on all disks, the following
-setting must be added in the configuration file.
-</p>
-
-<div class="highlight"><pre><span></span><span class="na">DEVICESCAN -a</span>
-</pre></div>
-</div>
-
-<div id="outline-container-orga6b58ea" class="outline-3">
-<h3 id="orga6b58ea">
-<span class="section-number-3">3.1</span> auto mail</h3>
-<div class="outline-text-3" id="text-3-1">
-<p>
-先依 <a href="https://dominicm.com/configure-email-notifications-on-arch-linux/">Configure Email Notifications on Arch Linux | DominicM</a> 設定 s-nail,
-再於 <code>/etc/smartd.conf</code> 加上以下指令
-</p>
-
-<div class="highlight"><pre><span></span><span class="na">DEVICESCAN -m address@domain.com -M test</span>
-</pre></div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/kodi-tv/" class="u-url">Kodi TV</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline"><a href="posts/kodi-tv/" rel="bookmark"><time class="published dt-published" datetime="2018-06-26T14:56:03+08:00" title="2018-06-26 14:56">2018-06-26 14:56</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/kodi-tv/#disqus_thread" data-disqus-identifier="cache/posts/kodi-tv.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-<a href="https://kodi.wiki/view/HOW-TO:Install_Tvheadend_on_Arch_Linux">HOW-TO:Install Tvheadend on Arch Linux - Official Kodi Wiki</a>
-</p>
-
-<p>
-<a href="https://wiki.archlinux.org/index.php/Tvheadend">Tvheadend - ArchWiki</a>
-</p>
-
-
-<div id="outline-container-org51ada84" class="outline-2">
-<h2 id="org51ada84">
-<span class="section-number-2">1</span> Install</h2>
-<div class="outline-text-2" id="text-1">
-<div class="highlight"><pre><span></span>yaourt -S tvheadend kodi-addon-hts-pvrmanager kodi-addon-pvr-hts --noconfirm
-</pre></div>
-</div>
-</div>
-
-
-<div id="outline-container-org11cd998" class="outline-2">
-<h2 id="org11cd998">
-<span class="section-number-2">2</span> start/enable</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Once Tvheadend is installed start/enable the tvheadend.service.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org07204f9" class="outline-2">
-<h2 id="org07204f9">
-<span class="section-number-2">3</span> Configuration</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-Once the service is running, configuration of Tvheadend is done through a web interface on <code>localhost:9981</code>.
-</p>
-
-<p>
-The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.</p>
-</div>
-</div>
-    </div>
     </article>
 </div>
 

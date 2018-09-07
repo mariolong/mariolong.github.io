@@ -1,15 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Wed, 05 Sep 2018 07:36:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install ghcjs for ghc 8.4.3 on archlinux</title><link>https://mariolong.github.io/posts/install-ghcjs-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghc --version
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>Simple is beautiful. Note for health, computer and investment.</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Sep 2018 04:35:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org2a6c8f0" class="outline-2"&gt;
+&lt;h2 id="org2a6c8f0"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 &lt;code&gt;aur/dropbox&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S aur/dropbox
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org4b7aafa" class="outline-2"&gt;
+&lt;h2 id="org4b7aafa"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; config dropbox.service&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga665fb4" class="outline-3"&gt;
+&lt;h3 id="orga665fb4"&gt;&lt;span class="section-number-3"&gt;2.1&lt;/span&gt; setup environment variables&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;p&gt;
+為了正確顯示，要加上以下命令：
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=:&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;QT_STYLE_OVERRIDE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;GTK&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgd16a643" class="outline-3"&gt;
+&lt;h3 id="orgd16a643"&gt;&lt;span class="section-number-3"&gt;2.2&lt;/span&gt; set Restart=no in dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;p&gt;
+根據 &lt;a href="https://gitlab.com/yan12125/aur/issues/21"&gt;Dropbox kill/restart loop when started at boot via systemd&lt;/a&gt;，在
+dropbox.service 中，特別加上
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;no&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org139bee7" class="outline-3"&gt;
+&lt;h3 id="org139bee7"&gt;&lt;span class="section-number-3"&gt;2.3&lt;/span&gt; final dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Unit&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Dropbox&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;systemd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Service&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=:&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;zh_TW&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="no"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mh"&gt;8&lt;/span&gt; &lt;span class="no"&gt;QT_STYLE_OVERRIDE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;GTK&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+&lt;span class="n"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;simple&lt;/span&gt;
+&lt;span class="n"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dropbox&lt;/span&gt;
+&lt;span class="n"&gt;ExecReload&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="no"&gt;HUP&lt;/span&gt; &lt;span class="no"&gt;$MAINPID&lt;/span&gt;
+&lt;span class="n"&gt;KillMode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;process&lt;/span&gt;
+&lt;span class="n"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;no&lt;/span&gt;
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Install&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org9c9aecf" class="outline-2"&gt;
+&lt;h2 id="org9c9aecf"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; start dropbox&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+最後執行
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start dropbox --user
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+or/and
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; dropbox --user
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+即可。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>dropbox</category><category>linux</category><guid>https://mariolong.github.io/posts/dropbox/</guid><pubDate>Fri, 07 Sep 2018 04:18:23 GMT</pubDate></item><item><title>Fish 用法記錄</title><link>https://mariolong.github.io/posts/fish-usage/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orgd6dabdf" class="outline-2"&gt;
+&lt;h2 id="orgd6dabdf"&gt;&lt;a href="https://codeyarns.com/2015/05/29/directory-history-in-the-fish-shell/"&gt;Directory history in the Fish shell&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd6dabdf"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;dirh&lt;/code&gt; : 目錄歷史&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prevd&lt;/code&gt; : 到前一目錄&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nextd&lt;/code&gt; : 到後一目錄&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+按 &lt;kbd&gt;Alt-Left/Right&lt;/kbd&gt; 直接到上／下目錄
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>fish</category><category>linux</category><guid>https://mariolong.github.io/posts/fish-usage/</guid><pubDate>Thu, 06 Sep 2018 01:46:21 GMT</pubDate></item><item><title>Install ghcjs for ghc 8.4.3 on archlinux</title><link>https://mariolong.github.io/posts/install-ghcjs-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghc --version
 The Glorious Glasgow Haskell Compilation System, version &lt;span class="m"&gt;8&lt;/span&gt;.4.3
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div id="outline-container-orga21a766" class="outline-2"&gt;
-&lt;h2 id="orga21a766"&gt;參考 &lt;a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4"&gt;GitHub - ghcjs/ghcjs at ghc-8.4&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga21a766"&gt;
+&lt;div id="outline-container-org9d5efb5" class="outline-2"&gt;
+&lt;h2 id="org9d5efb5"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; Install steps&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+參考 &lt;a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4"&gt;GitHub - ghcjs/ghcjs at ghc-8.4&lt;/a&gt;
+&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6d2f58a" class="outline-3"&gt;
-&lt;h3 id="org6d2f58a"&gt;getting and preparing the source tree&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6d2f58a"&gt;
+
+&lt;div id="outline-container-org5ba8719" class="outline-3"&gt;
+&lt;h3 id="org5ba8719"&gt;&lt;span class="section-number-3"&gt;1.1&lt;/span&gt; getting and preparing the source tree&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;
 add step &lt;code&gt;git checkout ghc-8.4&lt;/code&gt;
 &lt;/p&gt;
@@ -23,17 +124,17 @@ git submodule update --init --recursive
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga4d876a" class="outline-3"&gt;
-&lt;h3 id="orga4d876a"&gt;building the compiler&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga4d876a"&gt;
+&lt;div id="outline-container-org6d8943b" class="outline-3"&gt;
+&lt;h3 id="org6d8943b"&gt;&lt;span class="section-number-3"&gt;1.2&lt;/span&gt; building the compiler&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
 &lt;p&gt;
 You can use &lt;code&gt;cabal-install&lt;/code&gt; &lt;b&gt;and&lt;/b&gt; &lt;code&gt;stack&lt;/code&gt; to set up a build environment that contains these packages.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd0241fa" class="outline-4"&gt;
-&lt;h4 id="orgd0241fa"&gt;Cabal new-build&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgd0241fa"&gt;
+&lt;div id="outline-container-orgefe08a9" class="outline-4"&gt;
+&lt;h4 id="orgefe08a9"&gt;&lt;span class="section-number-4"&gt;1.2.1&lt;/span&gt; Cabal new-build&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install cabal-install
 cabal update
 cabal new-configure
@@ -42,9 +143,9 @@ cabal new-build
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb672bd3" class="outline-4"&gt;
-&lt;h4 id="orgb672bd3"&gt;link to executables&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgb672bd3"&gt;
+&lt;div id="outline-container-orgcc009c0" class="outline-4"&gt;
+&lt;h4 id="orgcc009c0"&gt;&lt;span class="section-number-4"&gt;1.2.2&lt;/span&gt; link to executables&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-2"&gt;
 &lt;p&gt;
 &lt;b&gt;DON'T DO THIS, IT IS NOT NECESSARY&lt;/b&gt;
 &lt;/p&gt;
@@ -70,30 +171,30 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcd6965e" class="outline-4"&gt;
-&lt;h4 id="orgcd6965e"&gt;stack&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgcd6965e"&gt;
+&lt;div id="outline-container-org905e95a" class="outline-4"&gt;
+&lt;h4 id="org905e95a"&gt;&lt;span class="section-number-4"&gt;1.2.3&lt;/span&gt; stack&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-3"&gt;
 &lt;/div&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a id="orgf4af126"&gt;&lt;/a&gt;DON'T DO THIS&lt;br&gt;
-&lt;div class="outline-text-5" id="text-orgf4af126"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;&lt;a id="org659f9bc"&gt;&lt;/a&gt;DON'T DO THIS&lt;br&gt;
+&lt;div class="outline-text-5" id="text-1-2-3-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="org6833cb7"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org6833cb7"&gt;
+&lt;li&gt;&lt;a id="orge61efaa"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
+&lt;div class="outline-text-5" id="text-1-2-3-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfeb2cce" class="outline-4"&gt;
-&lt;h4 id="orgfeb2cce"&gt;install haddock&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgfeb2cce"&gt;
+&lt;div id="outline-container-org9f8d7cd" class="outline-4"&gt;
+&lt;h4 id="org9f8d7cd"&gt;&lt;span class="section-number-4"&gt;1.2.4&lt;/span&gt; install haddock&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-4"&gt;
 &lt;p&gt;
 &lt;b&gt;error message: Haddock's resource directory does not exist!&lt;/b&gt;
 &lt;/p&gt;
@@ -111,9 +212,9 @@ this step is useless for above error message.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6d85540" class="outline-3"&gt;
-&lt;h3 id="org6d85540"&gt;Booting GHCJS&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6d85540"&gt;
+&lt;div id="outline-container-orgc3b38b9" class="outline-3"&gt;
+&lt;h3 id="orgc3b38b9"&gt;&lt;span class="section-number-3"&gt;1.3&lt;/span&gt; Booting GHCJS&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghcjs-boot
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -126,9 +227,9 @@ the &lt;code&gt;makePackages.sh&lt;/code&gt; script and included in a source dis
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org93d00f0" class="outline-3"&gt;
-&lt;h3 id="org93d00f0"&gt;Test&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org93d00f0"&gt;
+&lt;div id="outline-container-org6f59cb4" class="outline-3"&gt;
+&lt;h3 id="org6f59cb4"&gt;&lt;span class="section-number-3"&gt;1.4&lt;/span&gt; Test&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'main = putStrLn "Hello World!"'&lt;/span&gt; &amp;gt; helloWorld.hs
 $ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghcjs -o helloWorld helloWorld.hs
 $ node helloWorld.jsexe/all.js
@@ -147,9 +248,9 @@ But these steps are work for me to install ghcjs with ghc-8.4.3
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2af64fd" class="outline-2"&gt;
-&lt;h2 id="org2af64fd"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2af64fd"&gt;
+&lt;div id="outline-container-orgb41faa8" class="outline-2"&gt;
+&lt;h2 id="orgb41faa8"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 this is not work.
 &lt;/p&gt;
@@ -2200,89 +2301,4 @@ Lackawanna 鐵路公司。至 1987 年年末，當時 Erie Lackawanna 的股價�
 &lt;li&gt;天黑後才煮開水，水質最佳&lt;/li&gt;
 &lt;li&gt;大口喝水，等於沒喝，切記要小口喝&lt;/li&gt;
 &lt;li&gt;飯前先喝兩杯水，減重且不復胖&lt;/li&gt;
-&lt;/ol&gt;</description><category>health</category><category>water</category><guid>https://mariolong.github.io/posts/time-to-drink-water/</guid><pubDate>Thu, 12 Jul 2018 03:41:28 GMT</pubDate></item><item><title>Turn on SMART to monitor HD</title><link>https://mariolong.github.io/posts/turn-on-smart/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. - ArchWiki&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;div id="outline-container-org009d021" class="outline-2"&gt;
-&lt;h2 id="org009d021"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S smartmontools
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgcf3e321" class="outline-2"&gt;
-&lt;h2 id="orgcf3e321"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; start smartd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start smartd
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-配置檔 &lt;code&gt;/etc/smartd.conf&lt;/code&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org55cbfeb" class="outline-2"&gt;
-&lt;h2 id="org55cbfeb"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; smartd.conf&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;p&gt;
-To monitor for all possible SMART errors on all disks, the following
-setting must be added in the configuration file.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;DEVICESCAN -a&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orga6b58ea" class="outline-3"&gt;
-&lt;h3 id="orga6b58ea"&gt;&lt;span class="section-number-3"&gt;3.1&lt;/span&gt; auto mail&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-1"&gt;
-&lt;p&gt;
-先依 &lt;a href="https://dominicm.com/configure-email-notifications-on-arch-linux/"&gt;Configure Email Notifications on Arch Linux | DominicM&lt;/a&gt; 設定 s-nail,
-再於 &lt;code&gt;/etc/smartd.conf&lt;/code&gt; 加上以下指令
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;DEVICESCAN -m address@domain.com -M test&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><category>smart</category><guid>https://mariolong.github.io/posts/turn-on-smart/</guid><pubDate>Wed, 11 Jul 2018 13:40:06 GMT</pubDate></item><item><title>Kodi TV</title><link>https://mariolong.github.io/posts/kodi-tv/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-&lt;a href="https://kodi.wiki/view/HOW-TO:Install_Tvheadend_on_Arch_Linux"&gt;HOW-TO:Install Tvheadend on Arch Linux - Official Kodi Wiki&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;a href="https://wiki.archlinux.org/index.php/Tvheadend"&gt;Tvheadend - ArchWiki&lt;/a&gt;
-&lt;/p&gt;
-
-
-&lt;div id="outline-container-org51ada84" class="outline-2"&gt;
-&lt;h2 id="org51ada84"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S tvheadend kodi-addon-hts-pvrmanager kodi-addon-pvr-hts --noconfirm
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-org11cd998" class="outline-2"&gt;
-&lt;h2 id="org11cd998"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; start/enable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
-Once Tvheadend is installed start/enable the tvheadend.service.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org07204f9" class="outline-2"&gt;
-&lt;h2 id="org07204f9"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; Configuration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;p&gt;
-Once the service is running, configuration of Tvheadend is done through a web interface on &lt;code&gt;localhost:9981&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>kodi</category><guid>https://mariolong.github.io/posts/kodi-tv/</guid><pubDate>Tue, 26 Jun 2018 06:56:03 GMT</pubDate></item></channel></rss>
+&lt;/ol&gt;</description><category>health</category><category>water</category><guid>https://mariolong.github.io/posts/time-to-drink-water/</guid><pubDate>Thu, 12 Jul 2018 03:41:28 GMT</pubDate></item></channel></rss>
