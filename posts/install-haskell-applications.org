@@ -12,7 +12,7 @@
 
 * 前言
 
-在 archlinux 上想用 haskell 真不是一件容易的事，因為選擇太多。
+在 archlinux 上想用 haskell 真不是一件容易的事，因為可用的方法太多，不好選擇。
 {{{TEASER_END}}}
 不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可
 以抓網頁上目前最新的電影表列，並以 gmail 通知。
@@ -35,6 +35,7 @@ archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版
 問題還是能解決，用 stack 就可以完美克服。
 
 但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
+[[pandoc-source][(update 2018/9/11: install from source maybe a good choice.)]]
 
 如果要用 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安
 裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
@@ -45,14 +46,6 @@ archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版
 3. taffybar-0.4.6，自行用 ghc-8.0.2 編譯
 4. pandoc 先用 cabal 裝。
 
-
-#+BEGIN_SRC sh
-stack setup --system-ghc
-stack install cabal-install --system-ghc
-cabal update
-cabal install pandoc
-#+END_SRC
-
 ** install ghc, stack
 
 https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux
@@ -60,6 +53,14 @@ https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux
 決定用 static link
 #+BEGIN_SRC sh
 yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
+stack setup --system-ghc
+#+END_SRC
+
+** install happy alex
+
+#+BEGIN_SRC sh
+stack install happy
+stack install alex
 #+END_SRC
 
 ** install cabal
@@ -67,18 +68,29 @@ yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
 [[https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29][Building statically linked packages with Cabal (without using shared libraries)]]
 
 #+BEGIN_SRC sh
-stack setup --system-ghc
 stack install --system-ghc cabal-install
 #+END_SRC
 
 ** install pandoc
+
+*** install pandoc by cabal
 
 #+BEGIN_SRC sh
 cabal update
 cabal install pandoc
 #+END_SRC
 
-** taffybar, xmonad, xomnad-contrib
+*** <<pandoc-source>> install pandoc from source
+
+[[https://github.com/jgm/pandoc][GitHub - jgm/pandoc: Universal markup converter]]
+
+#+BEGIN_SRC sh
+git clone https://github.com/jgm/pandoc
+cd pandoc
+stack install
+#+END_SRC
+
+** install taffybar, xmonad, xomnad-contrib
 
 taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯。即
 使硬上，taffybar 的顯示高度也不對。因此暫時不用，等 ghc 8.4.2 release
@@ -94,8 +106,10 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 #+BEGIN_SRC sh
 git clone https://github.com/taffybar/taffybar.git
 git checkout v0.4.6
-cp
 #+END_SRC
+
+**** copy ~xmonad.hs~ and ~taffybar.hs~ to ~taffybar~ directory.
+否則 recompile config file 時，會找不到需要的模組。
 
 **** adding stack.yaml and setup stack project
 
@@ -113,10 +127,9 @@ packages:
 #+BEGIN_SRC yaml
 extra-deps:
 - gtk-traymanager-0.1.6
+- xmonad-0.14.2
+- xmonad-contrib-0.14
 #+END_SRC
-
-**** config file of taffybar/xmonad must put them to this directory
-否則 recompile config file 時，會找不到需要的模組。
 
 **** stack build/install taffybar
 自動安裝 taffybar 和 xomnad 和 xmonad-contrib
@@ -149,8 +162,9 @@ cabal install pandoc
 
 ** uninstall application that install by stack
 
-*** install and uninstall hoogle
+example for uninstalling hoogle
 
+*** install and uninstall hoogle
 #+BEGIN_SRC sh
 stack install hoogle
 #+END_SRC
@@ -169,13 +183,13 @@ stack exec ghc-pkg unregister hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
 #+END_SRC
 
 *** find path to hoogle
-
 #+BEGIN_SRC sh
 which hoogle
 #+END_SRC
 #+BEGIN_EXAMPLE
 path/to/hoogle
 #+END_EXAMPLE
+
 *** remove hoogle
 #+BEGIN_SRC sh
 rm path/to/hoogle
