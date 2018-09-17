@@ -2,7 +2,7 @@
 .. title: Install stack, cabal and nix for writing miso project
 .. slug: install-stack-cabal-nix-for-miso
 .. date: 2018-09-14 12:07:35 UTC+08:00
-.. status: draft
+.. status:
 .. tags: linux, haskell, miso, stack, cabal, nix
 .. category: computer
 .. link:

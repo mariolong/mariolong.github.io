@@ -2,7 +2,7 @@
 .. title: 大新倉頡輸入法
 .. slug: da-xin-new-cj
 .. date: 2018-09-06 15:55:10 UTC+08:00
-.. status: draft
+.. status:
 .. tags: 倉頡
 .. category: computer
 .. link:

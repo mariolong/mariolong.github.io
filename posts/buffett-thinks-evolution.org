@@ -2,7 +2,7 @@
 .. title: 巴菲特投資思想進階軌跡：大師進化史
 .. slug: buffett-thinks-evolution
 .. date: 2018-08-03 14:34:22 UTC+08:00
-.. status: draft
+.. status:
 .. tags: Buffett
 .. category: investment
 .. link:

@@ -2,7 +2,7 @@
 .. title: mm=mpv+feh
 .. slug: mm-mpv-feh
 .. date: 2018-05-29 09:57:04 UTC+08:00
-.. status: draft
+.. status:
 .. tags: feh, mpv, mm
 .. category: computer
 .. link:

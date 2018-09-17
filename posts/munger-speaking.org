@@ -2,7 +2,7 @@
 .. title: 蒙格最經典演講 投資是判斷行為邏輯的最真實表現
 .. slug: munger-speaking
 .. date: 2018-08-03 11:57:39 UTC+08:00
-.. status: draft
+.. status:
 .. tags: Munger
 .. category: investment
 .. link:

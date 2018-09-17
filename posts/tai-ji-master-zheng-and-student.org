@@ -2,7 +2,7 @@
 .. title: 鄭曼青師徒對話錄
 .. slug: master-zheng-and-student-smith
 .. date: 2018-06-21 11:17:46 UTC+08:00
-.. status: draft
+.. status:
 .. tags: tai-ji
 .. category: life
 .. link:

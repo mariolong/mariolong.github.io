@@ -2,7 +2,7 @@
 .. title: Kodi TV
 .. slug: kodi-tv
 .. date: 2018-06-26 14:56:03 UTC+08:00
-.. status: draft
+.. status:
 .. tags: kodi
 .. category: computer
 .. link:
@@ -23,7 +23,6 @@
 #+BEGIN_SRC sh
 yaourt -S tvheadend kodi-addon-hts-pvrmanager kodi-addon-pvr-hts --noconfirm
 #+END_SRC
-
 
 * start/enable
 Once Tvheadend is installed start/enable the tvheadend.service.

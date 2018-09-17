@@ -2,7 +2,7 @@
 .. title: Using dired in Emacs
 .. slug: using-dired
 .. date: 2018-06-10 18:18:52 UTC+08:00
-.. status: draft
+.. status:
 .. tags: dired, emacs
 .. category: computer
 .. link:

@@ -2,7 +2,7 @@
 .. title: Start emacs with systemd
 .. slug: start-emacs-with-systemd
 .. date: 2018-06-17 13:49:50 UTC+08:00
-.. status: draft
+.. status:
 .. tags: emacs, systemd
 .. category: computer
 .. link:

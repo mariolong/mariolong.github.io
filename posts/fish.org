@@ -2,7 +2,7 @@
 .. title: Fish 用法記錄
 .. slug: fish-usage
 .. date: 2018-09-06 09:46:21 UTC+08:00
-.. status: draft
+.. status:
 .. tags: fish, linux
 .. category: computer
 .. link:

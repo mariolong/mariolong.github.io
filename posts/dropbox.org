@@ -2,7 +2,7 @@
 .. title: install and use dropbox on archlinux
 .. slug: dropbox
 .. date: 2018-09-07 12:18:23 UTC+08:00
-.. status: draft
+.. status:
 .. tags: dropbox, linux
 .. category: computer
 .. link:

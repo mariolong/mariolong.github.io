@@ -3,7 +3,7 @@
 .. slug: post-installation-of-archlinux
 .. date: 2017-11-26 23:28:36 UTC-08:00
 .. tags: linux, haskell, xmonad, taffybar
-.. status: draft
+.. status:
 .. category: computer
 .. link:
 .. description:

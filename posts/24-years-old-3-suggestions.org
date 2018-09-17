@@ -2,7 +2,7 @@
 .. title: 24 歲與股神相遇 巴菲特給她的 3 個建議
 .. slug: 24-years-old-3-suggestions
 .. date: 2018-08-03 08:34:11 UTC+08:00
-.. status: draft
+.. status:
 .. tags: Buffett
 .. category: investment
 .. link:

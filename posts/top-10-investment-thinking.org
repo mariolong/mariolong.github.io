@@ -2,7 +2,7 @@
 .. title: 全球 10 位最頂尖投資家的交易思想
 .. slug: top-10-investment-thinking
 .. date: 2018-08-03 11:57:39 UTC+08:00
-.. status: draft
+.. status:
 .. tags: 投資家
 .. category: investment
 .. link:

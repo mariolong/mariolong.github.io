@@ -2,7 +2,7 @@
 .. title: 安全邊際大師 — 克拉爾曼的價值投資思想解讀
 .. slug: safe-margin-thinkings
 .. date: 2018-08-03 11:57:39 UTC+08:00
-.. status: draft
+.. status:
 .. tags: thinkings
 .. category: investment
 .. link:

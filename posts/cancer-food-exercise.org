@@ -2,7 +2,7 @@
 .. title: 癌症是自己養出來的
 .. slug: cancer-food-exercise
 .. date: 2018-08-06 17:10:27 UTC+08:00
-.. status: draft
+.. status:
 .. tags: cancer
 .. category: life
 .. link:
