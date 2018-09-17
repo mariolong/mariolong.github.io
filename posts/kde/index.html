@@ -126,7 +126,7 @@ yaourt -S --needed --noconfirm kdebase kdebase-workspace kde-l10n-zh_tw oxygen-g
 提到了 qtcurve，gtk-qt-engine 可惜都不適用。</p>
 <p>qtcurve 的樣子看起來是不錯，可惜，不支援 gtk3。造成 gtk3 的程式還是醜。</p>
 <p>最後，選用了 <a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B">oxygen-gtk</a> 的解決方案。</p>
-<pre class="code text"><a name="rest_code_d6edfb9258844294a59e60d33bf60982-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
+<pre class="code text"><a name="rest_code_acbd887416524c44a1525cc96733cc9a-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
 </pre>
 </div>
 <div class="section" id="qt4">
@@ -140,12 +140,12 @@ qtconfig-qt4
 <div class="section" id="stop-akonadi">
 <h3>stop akonadi</h3>
 <p>參考 <a class="reference external" href="http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable">http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable</a></p>
-<pre class="code text"><a name="rest_code_0dc8260c956a44e2a322677639af2a30-1"></a>akonadictl stop
-<a name="rest_code_0dc8260c956a44e2a322677639af2a30-2"></a>sudo systemctl stop mysqld
-<a name="rest_code_0dc8260c956a44e2a322677639af2a30-3"></a>sudo systemctl disable mysqld
+<pre class="code text"><a name="rest_code_5ed03f20886e43d8977ba838af3cee9b-1"></a>akonadictl stop
+<a name="rest_code_5ed03f20886e43d8977ba838af3cee9b-2"></a>sudo systemctl stop mysqld
+<a name="rest_code_5ed03f20886e43d8977ba838af3cee9b-3"></a>sudo systemctl disable mysqld
 </pre>
 <p>修改 <tt class="docutils literal"><span class="pre">~/.config/akonadi/akonadiserverrc</span></tt></p>
-<pre class="code text"><a name="rest_code_66a35265e1924812a03923973a0eb578-1"></a>StartServer=false
+<pre class="code text"><a name="rest_code_18fc91b067284713ab44d903fcc0beab-1"></a>StartServer=false
 </pre>
 </div>
 <div class="section" id="cursor-theme">
@@ -153,13 +153,13 @@ qtconfig-qt4
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_Themes">https://wiki.archlinux.org/index.php/Cursor_Themes</a></p>
 <p>不知道什麼原因，滑鼠游標的型狀，老是會變成 x 的游標主題，做個小小的軟連結，讓游標好看一點。
 但我相信這個不是正解，只是 google 了好久，總找不到根本解法，先治標吧。</p>
-<pre class="code text"><a name="rest_code_61911e38ead3499aa0655417349d4323-1"></a>$ mkdir ~/.icons
-<a name="rest_code_61911e38ead3499aa0655417349d4323-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
-<a name="rest_code_61911e38ead3499aa0655417349d4323-3"></a># mkdir -p /usr/share/icons/default
-<a name="rest_code_61911e38ead3499aa0655417349d4323-4"></a># nano /usr/share/icons/default/index.theme
-<a name="rest_code_61911e38ead3499aa0655417349d4323-5"></a>
-<a name="rest_code_61911e38ead3499aa0655417349d4323-6"></a>[icon theme]
-<a name="rest_code_61911e38ead3499aa0655417349d4323-7"></a>Inherits=Oxygen_Black
+<pre class="code text"><a name="rest_code_70ab753e1e3f49fda7b8a2140340bdc3-1"></a>$ mkdir ~/.icons
+<a name="rest_code_70ab753e1e3f49fda7b8a2140340bdc3-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
+<a name="rest_code_70ab753e1e3f49fda7b8a2140340bdc3-3"></a># mkdir -p /usr/share/icons/default
+<a name="rest_code_70ab753e1e3f49fda7b8a2140340bdc3-4"></a># nano /usr/share/icons/default/index.theme
+<a name="rest_code_70ab753e1e3f49fda7b8a2140340bdc3-5"></a>
+<a name="rest_code_70ab753e1e3f49fda7b8a2140340bdc3-6"></a>[icon theme]
+<a name="rest_code_70ab753e1e3f49fda7b8a2140340bdc3-7"></a>Inherits=Oxygen_Black
 </pre>
 </div>
 <div class="section" id="id1">

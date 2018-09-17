@@ -115,9 +115,9 @@ mysql&gt; CREATE USER 's">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-orgc1836c6" class="outline-2">
-<h2 id="orgc1836c6">change root password</h2>
-<div class="outline-text-2" id="text-orgc1836c6">
+    <div id="outline-container-org7c845fc" class="outline-2">
+<h2 id="org7c845fc">change root password</h2>
+<div class="outline-text-2" id="text-org7c845fc">
 <div class="highlight"><pre><span></span>mysql&gt; use mysql;
 mysql&gt; UPDATE user SET Password=PASSWORD("password") WHERE User='root';
 mysql&gt; flush privileges;
@@ -126,13 +126,13 @@ mysql&gt; quit
 </div>
 </div>
 
-<div id="outline-container-orgfbd475a" class="outline-2">
-<h2 id="orgfbd475a">commands</h2>
-<div class="outline-text-2" id="text-orgfbd475a">
+<div id="outline-container-org5637119" class="outline-2">
+<h2 id="org5637119">commands</h2>
+<div class="outline-text-2" id="text-org5637119">
 </div>
-<div id="outline-container-orgb23c4ed" class="outline-3">
-<h3 id="orgb23c4ed">create user</h3>
-<div class="outline-text-3" id="text-orgb23c4ed">
+<div id="outline-container-orge633045" class="outline-3">
+<h3 id="orge633045">create user</h3>
+<div class="outline-text-3" id="text-orge633045">
 <div class="highlight"><pre><span></span>mysql&gt; CREATE USER 'stock'@'localhost' IDENTIFIED BY 'password';
 mysql&gt; GRANT ALL PRIVILEGES ON stock.* TO 'stock'@'localhost' WITH GRANT OPTION;
 mysql&gt; SHOW GRANTS FOR 'stock'@'localhost';
@@ -146,9 +146,9 @@ mysql&gt; SHOW GRANTS FOR 'stock'@'localhost';
 </div>
 </div>
 
-<div id="outline-container-org4a364a2" class="outline-3">
-<h3 id="org4a364a2">show database*s*</h3>
-<div class="outline-text-3" id="text-org4a364a2">
+<div id="outline-container-org1c7504f" class="outline-3">
+<h3 id="org1c7504f">show database*s*</h3>
+<div class="outline-text-3" id="text-org1c7504f">
 <p>
 <b>注意</b>: database 和 table 的名稱，在 linux 中會區分大小寫。
 </p>
@@ -158,9 +158,9 @@ mysql&gt; SHOW GRANTS FOR 'stock'@'localhost';
 </div>
 </div>
 
-<div id="outline-container-org7b6bd2a" class="outline-3">
-<h3 id="org7b6bd2a">use &lt;db-name&gt;</h3>
-<div class="outline-text-3" id="text-org7b6bd2a">
+<div id="outline-container-orgb6ed80b" class="outline-3">
+<h3 id="orgb6ed80b">use &lt;db-name&gt;</h3>
+<div class="outline-text-3" id="text-orgb6ed80b">
 <div class="highlight"><pre><span></span>USE stock
 </pre></div>
 </div>

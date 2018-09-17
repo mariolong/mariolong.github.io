@@ -110,45 +110,45 @@ server 0.pool.">
 <p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon">https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon</a></p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<pre class="code text"><a name="rest_code_05864f067e2a4201b3f98f2fd0d49d92-1"></a>yaourt -S ntp
+<pre class="code text"><a name="rest_code_d504cf10a5194596827d15a3a40eae0a-1"></a>yaourt -S ntp
 </pre>
 </div>
 <div class="section" id="id2">
 <h2>配置</h2>
-<pre class="code text"><a name="rest_code_49065fed0ae1475f88a8252495d2cf33-1"></a>sudo nano /etc/ntp.conf
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-2"></a>
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-3"></a># Associate to public NTP pool servers; see http://www.pool.ntp.org/
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-4"></a>server 0.pool.ntp.org iburst
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-5"></a>server 1.pool.ntp.org iburst
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-6"></a>server 2.pool.ntp.org iburst
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-7"></a>server 3.pool.ntp.org iburst
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-8"></a>
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-9"></a># Only allow read-only access from localhost
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-10"></a>#restrict default noquery nopeer
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-11"></a>#restrict 127.0.0.1
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-12"></a>#restrict ::1
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-13"></a>
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-14"></a># Location of drift file
-<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-15"></a>driftfile /var/lib/ntp/ntp.drift
+<pre class="code text"><a name="rest_code_9c974ce292694603b3510557bb435bc7-1"></a>sudo nano /etc/ntp.conf
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-2"></a>
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-3"></a># Associate to public NTP pool servers; see http://www.pool.ntp.org/
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-4"></a>server 0.pool.ntp.org iburst
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-5"></a>server 1.pool.ntp.org iburst
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-6"></a>server 2.pool.ntp.org iburst
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-7"></a>server 3.pool.ntp.org iburst
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-8"></a>
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-9"></a># Only allow read-only access from localhost
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-10"></a>#restrict default noquery nopeer
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-11"></a>#restrict 127.0.0.1
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-12"></a>#restrict ::1
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-13"></a>
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-14"></a># Location of drift file
+<a name="rest_code_9c974ce292694603b3510557bb435bc7-15"></a>driftfile /var/lib/ntp/ntp.drift
 </pre>
 <p>Write a oneshot systemd unit:</p>
-<pre class="code text"><a name="rest_code_b23c33bbc02841559db33cfb692ed65f-1"></a>sudo nano /etc/systemd/system/ntp-once.service
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-2"></a>
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-3"></a>[Unit]
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-4"></a>Description=Network Time Service (once)
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-5"></a>After=network.target nss-lookup.target
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-6"></a>
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-7"></a>[Service]
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-8"></a>Type=oneshot
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-9"></a>ExecStart=/usr/bin/ntpd -g -u ntp:ntp ; /usr/bin/hwclock -w
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-10"></a>
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-11"></a>[Install]
-<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-12"></a>WantedBy=multi-user.target
+<pre class="code text"><a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-1"></a>sudo nano /etc/systemd/system/ntp-once.service
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-2"></a>
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-3"></a>[Unit]
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-4"></a>Description=Network Time Service (once)
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-5"></a>After=network.target nss-lookup.target
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-6"></a>
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-7"></a>[Service]
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-8"></a>Type=oneshot
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-9"></a>ExecStart=/usr/bin/ntpd -g -u ntp:ntp ; /usr/bin/hwclock -w
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-10"></a>
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-11"></a>[Install]
+<a name="rest_code_262e475b9ca845a6bfda6624aee83ce4-12"></a>WantedBy=multi-user.target
 </pre>
 </div>
 <div class="section" id="id3">
 <h2>啟動</h2>
-<pre class="code text"><a name="rest_code_cf6e851b89df48f6bffc33056953c8d4-1"></a>sudo systemctl enable ntp-once
+<pre class="code text"><a name="rest_code_af690bfc71b748a5b4642a11d444ecc1-1"></a>sudo systemctl enable ntp-once
 </pre>
 </div>
 <div class="section" id="install">
