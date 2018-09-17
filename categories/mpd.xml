@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mpd)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mpd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:02:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mpd)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mpd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>alsa equaler</title><link>https://mariolong.github.io/posts/alsa-equaler/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 音響要好聲，空間才是王道&lt;sup&gt;&lt;a id="fnr.1" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;，没有 DRC 前，先試試等化器&lt;sup&gt;&lt;a id="fnr.2" class="footref" href="https://mariolong.github.io/posts/alsa-equaler/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
 Archlinux WIKI 的 &lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced linux Sound Architecture&lt;/a&gt; 已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org6766e0a" class="outline-2"&gt;
-&lt;h2 id="org6766e0a"&gt;install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6766e0a"&gt;
+&lt;div id="outline-container-org5834ab2" class="outline-2"&gt;
+&lt;h2 id="org5834ab2"&gt;install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5834ab2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsaequal
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd9fda9c" class="outline-2"&gt;
-&lt;h2 id="orgd9fda9c"&gt;config&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd9fda9c"&gt;
+&lt;div id="outline-container-orgca91a78" class="outline-2"&gt;
+&lt;h2 id="orgca91a78"&gt;config&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgca91a78"&gt;
 &lt;p&gt;
 在 &lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt; 加上以下設定：
 &lt;/p&gt;
@@ -47,18 +47,18 @@ pcm.!default {
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9503a7c" class="outline-2"&gt;
-&lt;h2 id="org9503a7c"&gt;reboot&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9503a7c"&gt;
+&lt;div id="outline-container-orgfcc39a8" class="outline-2"&gt;
+&lt;h2 id="orgfcc39a8"&gt;reboot&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfcc39a8"&gt;
 &lt;p&gt;
 讓 alsa 可用等化器
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2dd9a0e" class="outline-2"&gt;
-&lt;h2 id="org2dd9a0e"&gt;調整等化器&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2dd9a0e"&gt;
+&lt;div id="outline-container-org910db45" class="outline-2"&gt;
+&lt;h2 id="org910db45"&gt;調整等化器&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org910db45"&gt;
 &lt;p&gt;
 執行
 &lt;/p&gt;
@@ -71,9 +71,9 @@ PS. 用 Q,W,E,Z,X,C 可分別調整左右聲道的音量。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org252cfe2" class="outline-2"&gt;
-&lt;h2 id="org252cfe2"&gt;mpd issue&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org252cfe2"&gt;
+&lt;div id="outline-container-org2fa84f6" class="outline-2"&gt;
+&lt;h2 id="org2fa84f6"&gt;mpd issue&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2fa84f6"&gt;
 &lt;p&gt;
 總是會連不上 mpd server，後來在 WIKI 中讀到一段話：
 &lt;/p&gt;
@@ -117,20 +117,20 @@ mpd 即可使用，瞎打誤撞。
 
 &lt;/div&gt;
 &lt;/div&gt;</description><category>alsa</category><category>linux</category><category>mpd</category><category>music</category><guid>https://mariolong.github.io/posts/alsa-equaler/</guid><pubDate>Sun, 14 Jan 2018 22:20:29 GMT</pubDate></item><item><title>enable mpd with systemd</title><link>https://mariolong.github.io/posts/enable-mpd-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;error message:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_70cfbb7fa4894d0ebe1eb5c5ddfa4a80-1"&gt;&lt;/a&gt;$ systemctl --user status mpd.service
-&lt;a name="rest_code_70cfbb7fa4894d0ebe1eb5c5ddfa4a80-2"&gt;&lt;/a&gt;Failed to issue method call: Process /bin/false exited with status 1
-&lt;a name="rest_code_70cfbb7fa4894d0ebe1eb5c5ddfa4a80-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_70cfbb7fa4894d0ebe1eb5c5ddfa4a80-4"&gt;&lt;/a&gt;$ sudo journalctl -u mpd
-&lt;a name="rest_code_70cfbb7fa4894d0ebe1eb5c5ddfa4a80-5"&gt;&lt;/a&gt;fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
+&lt;pre class="code text"&gt;&lt;a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-1"&gt;&lt;/a&gt;$ systemctl --user status mpd.service
+&lt;a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-2"&gt;&lt;/a&gt;Failed to issue method call: Process /bin/false exited with status 1
+&lt;a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-4"&gt;&lt;/a&gt;$ sudo journalctl -u mpd
+&lt;a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-5"&gt;&lt;/a&gt;fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
 &lt;/pre&gt;&lt;p&gt;參考：&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206"&gt;https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206&lt;/a&gt; 後，
 解決了這個問題。&lt;/p&gt;
 &lt;p&gt;下這個指令：&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_3273fed932e44ef68eaefa205775f209-1"&gt;&lt;/a&gt;# sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
+&lt;pre class="code text"&gt;&lt;a name="rest_code_7a24fb21c18d4ab99af289096ccd9e95-1"&gt;&lt;/a&gt;# sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
 &lt;/pre&gt;&lt;p&gt;2014-3-14 update：現在不必用上述的方法囉。&lt;/p&gt;
 &lt;p&gt;加環境變數的檔：&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_3c481958386d4825930667b97c1bc563-1"&gt;&lt;/a&gt;# EDIT /etc/systemd/system/user@.service.d/environment.conf
-&lt;a name="rest_code_3c481958386d4825930667b97c1bc563-2"&gt;&lt;/a&gt;[Service]
-&lt;a name="rest_code_3c481958386d4825930667b97c1bc563-3"&gt;&lt;/a&gt;Environment=DISPLAY=:0
+&lt;pre class="code text"&gt;&lt;a name="rest_code_7acfa52c648f4683adddc86d959af712-1"&gt;&lt;/a&gt;# EDIT /etc/systemd/system/user@.service.d/environment.conf
+&lt;a name="rest_code_7acfa52c648f4683adddc86d959af712-2"&gt;&lt;/a&gt;[Service]
+&lt;a name="rest_code_7acfa52c648f4683adddc86d959af712-3"&gt;&lt;/a&gt;Environment=DISPLAY=:0
 &lt;/pre&gt;&lt;p&gt;&lt;strong&gt;2014-4-3 update&lt;/strong&gt; : 為何這個 install 標題在這個位置？因為以上都是過去的故事了。
 還是把它留著，免得下次又重做這些不必要做的事。&lt;/p&gt;
 &lt;div class="section" id="install"&gt;
@@ -145,19 +145,19 @@ yaourt -S mpd ncmpcpp mpdris2-git cantata cdparanoia
 nano ~/.config/systemd/user/mpd.service
 &lt;/pre&gt;
 &lt;p&gt;內容如下：&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-1"&gt;&lt;/a&gt;[Unit]
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-2"&gt;&lt;/a&gt;Description=Music Player Daemon
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-4"&gt;&lt;/a&gt;[Service]
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-5"&gt;&lt;/a&gt;Nice=-10
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-6"&gt;&lt;/a&gt;ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-7"&gt;&lt;/a&gt;ExecStop=/usr/bin/mpd --kill
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-9"&gt;&lt;/a&gt;[Install]
-&lt;a name="rest_code_3cc1741dd58647c0991b2ec78af09e0b-10"&gt;&lt;/a&gt;WantedBy=default.target
+&lt;pre class="code text"&gt;&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-1"&gt;&lt;/a&gt;[Unit]
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-2"&gt;&lt;/a&gt;Description=Music Player Daemon
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-4"&gt;&lt;/a&gt;[Service]
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-5"&gt;&lt;/a&gt;Nice=-10
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-6"&gt;&lt;/a&gt;ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-7"&gt;&lt;/a&gt;ExecStop=/usr/bin/mpd --kill
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-9"&gt;&lt;/a&gt;[Install]
+&lt;a name="rest_code_c6b172c330494fc383cb39497dada361-10"&gt;&lt;/a&gt;WantedBy=default.target
 &lt;/pre&gt;&lt;p&gt;把 mpd 開起來吧，不必 reboot！&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_e7c45222d138499ca1556d5cf8617591-1"&gt;&lt;/a&gt;$ systemctl --user start mpd
-&lt;a name="rest_code_e7c45222d138499ca1556d5cf8617591-2"&gt;&lt;/a&gt;$ systemctl --user enable mpd
+&lt;pre class="code text"&gt;&lt;a name="rest_code_6db30b0ba71a49c98f9bc4de995ca865-1"&gt;&lt;/a&gt;$ systemctl --user start mpd
+&lt;a name="rest_code_6db30b0ba71a49c98f9bc4de995ca865-2"&gt;&lt;/a&gt;$ systemctl --user enable mpd
 &lt;/pre&gt;&lt;p&gt;在 KDE 中使用 mpd-client，比較好用的 ncmpcpp 和 cantata。&lt;/p&gt;
 &lt;p&gt;ncmpcpp 配置起來也是「落落長」的故事。&lt;/p&gt;
 &lt;/div&gt;

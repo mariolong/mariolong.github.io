@@ -7940,10 +7940,6 @@ article.post-micro {
 .highlight pre .vm { color: #f8f8f2 } /* Name.Variable.Magic */
 .highlight pre .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 
-body {
-  font-size: 16pt;
-}
-
 .brand #blog-title {
   font-size: 2em;
 }
@@ -7969,3 +7965,57 @@ ul.postlist>li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  font-size: 22px;
+  line-height: 1.75em;
+  height:100%;
+  max-width: 1200px;
+  min-width: 320px;
+  margin:0 auto 0;
+}
+
+
+h1{
+  font-size:2em;
+  text-align:center;
+  margin-top:2em;
+  margin-bottom:0.5em;
+}
+
+h2,h3{
+  font-size:1.5em;
+  padding-bottom: 0.25em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h4,h5,h6 {
+  font-size:1.25em;
+  padding-bottom: 0.25em;
+}
+
+h2 {
+  border-bottom: #777777 1px solid;
+}
+
+.metadata {
+  text-align:center;
+  font-size:0.9em;
+  margin-bottom:2.5em;
+}
+
+pre.literal-block,
+pre.code {
+  font-size: 0.9em;
+  margin-right: 0em;
+  margin-left: 0em;
+}
+

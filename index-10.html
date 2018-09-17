@@ -8,7 +8,7 @@
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/index-10.html">
-<link rel="prev" href="." type="text/html">
+<link rel="prev" href="index-11.html" type="text/html">
 <link rel="next" href="index-9.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
@@ -75,7 +75,401 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/replace-new-hard-disk/" class="u-url">為 windows 10，換一顆硬碟</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mm-mpv-feh/" class="u-url">mm=mpv+feh</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/mm-mpv-feh/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-29T09:57:04+08:00" itemprop="datePublished" title="2018-05-29 09:57">2018-05-29 09:57</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/mm-mpv-feh/#disqus_thread" data-disqus-identifier="cache/posts/mmpv+feh.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+用全螢幕幻燈片模式播放照片：
+</p>
+
+<div class="highlight"><pre><span></span>feh -FD1 --auto-rotate
+</pre></div>
+
+<p>
+單純播放照片和影片記錄而已
+</p>
+
+<div id="outline-container-org1371708" class="outline-2">
+<h2 id="org1371708">mpv</h2>
+<div class="outline-text-2" id="text-org1371708">
+</div>
+<div id="outline-container-org76b2a78" class="outline-3">
+<h3 id="org76b2a78">keyboard control</h3>
+<div class="outline-text-3" id="text-org76b2a78">
+<dl class="org-dl">
+<dt>LEFT and RIGHT</dt>
+<dd></dd>
+</dl>
+<p>
+Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see –hr-seek).
+</p>
+<dl class="org-dl">
+<dt>UP and DOWN</dt>
+<dd></dd>
+</dl>
+<p>
+Seek forward/backward 1 minute. Shift+arrow does a 5 second exact seek (see  –hr-seek).
+</p>
+<dl class="org-dl">
+<dt>Ctrl+LEFT and Ctrl+RIGHT</dt>
+<dd></dd>
+</dl>
+<p>
+Seek to the previous/next subtitle. Subject to some restrictions and might not always work; see  sub-seek command.
+</p>
+<dl class="org-dl">
+<dt>Ctrl+Shift+Left and Ctrl+Shift+Right</dt>
+<dd></dd>
+</dl>
+<p>
+Adjust subtitle delay so that the next or previous subtitle is displayed now. This is especially useful to sync subtitles to audio.
+</p>
+<dl class="org-dl">
+<dt>[ and ]</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase current playback speed by 10%.
+</p>
+<dl class="org-dl">
+<dt>{ and }</dt>
+<dd></dd>
+</dl>
+<p>
+Halve/double current playback speed.
+</p>
+<dl class="org-dl">
+<dt>BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Reset playback speed to normal.
+</p>
+<dl class="org-dl">
+<dt>Shift+BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Undo the last seek. This works only if the playlist entry was not changed. Hitting it a second time will go back to the original position. See revert-seek command for details.
+</p>
+<dl class="org-dl">
+<dt>Shift+Ctrl+BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Mark the current position. This will then be used by Shift+BACKSPACE as revert position (once you seek back, the marker will be reset). You can use this to seek around in the file and then return to the exact position where you left off.
+</p>
+<dl class="org-dl">
+<dt>&lt; and &gt;</dt>
+<dd></dd>
+</dl>
+<p>
+Go backward/forward in the playlist.
+</p>
+<dl class="org-dl">
+<dt>ENTER</dt>
+<dd></dd>
+</dl>
+<p>
+Go forward in the playlist.
+</p>
+<dl class="org-dl">
+<dt>p / SPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Pause (pressing again unpauses).
+</p>
+<dl class="org-dl">
+<dt>.</dt>
+<dd></dd>
+</dl>
+<p>
+Step forward. Pressing once will pause, every consecutive press will play one frame and then go into pause mode again.
+</p>
+<dl class="org-dl">
+<dt>,</dt>
+<dd></dd>
+</dl>
+<p>
+Step backward. Pressing once will pause, every consecutive press will play one frame in reverse and then go into pause mode again.
+</p>
+<dl class="org-dl">
+<dt>q</dt>
+<dd></dd>
+</dl>
+<p>
+Stop playing and quit.
+</p>
+<dl class="org-dl">
+<dt>Q</dt>
+<dd></dd>
+</dl>
+<p>
+Like q, but store the current playback position. Playing the same file later will resume at the old playback position if possible.
+</p>
+<dl class="org-dl">
+<dt>/ and *</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase volume.
+</p>
+<dl class="org-dl">
+<dt>9 and 0</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase volume.
+</p>
+<dl class="org-dl">
+<dt>m</dt>
+<dd></dd>
+</dl>
+<p>
+Mute sound.
+</p>
+<dl class="org-dl">
+<dt>_</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available video tracks.
+</p>
+<dl class="org-dl">
+<dt>#</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available audio tracks.
+</p>
+<dl class="org-dl">
+<dt>f</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle fullscreen (see also –fs).
+</p>
+<dl class="org-dl">
+<dt>ESC</dt>
+<dd></dd>
+</dl>
+<p>
+Exit fullscreen mode.
+</p>
+<dl class="org-dl">
+<dt>T</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle stay-on-top (see also –ontop).
+</p>
+<dl class="org-dl">
+<dt>w and W</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase pan-and-scan range. The e key does the same as W currently, but use is discouraged.
+</p>
+<dl class="org-dl">
+<dt>o (also P)</dt>
+<dd></dd>
+</dl>
+<p>
+Show progression bar, elapsed time and total duration on the OSD.
+</p>
+<dl class="org-dl">
+<dt>O</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle OSD states between normal and playback time/duration.
+</p>
+<dl class="org-dl">
+<dt>v</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle subtitle visibility.
+</p>
+<dl class="org-dl">
+<dt>j and J</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available subtitles.
+</p>
+<dl class="org-dl">
+<dt>z and Z</dt>
+<dd></dd>
+</dl>
+<p>
+Adjust subtitle delay by +/- 0.1 seconds. The x key does the same as Z currently, but use is discouraged.
+</p>
+<dl class="org-dl">
+<dt>l</dt>
+<dd></dd>
+</dl>
+<p>
+Set/clear A-B loop points. See ab-loop command for details.
+</p>
+<dl class="org-dl">
+<dt>L</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle infinite looping.
+Ctrl + and Ctrl -
+Adjust audio delay (A/V sync) by +/- 0.1 seconds.
+u
+Switch between applying no style overrides to SSA/ASS subtitles, and overriding them almost completely with the normal subtitle style. See  –sub-ass-override for more info.
+V
+Toggle subtitle VSFilter aspect compatibility mode. See  –sub-ass-vsfilter-aspect-compat for more info.
+r and R
+Move subtitles up/down. The t key does the same as R currently, but use is discouraged.
+s
+Take a screenshot.
+S
+Take a screenshot, without subtitles. (Whether this works depends on VO driver support.)
+Ctrl s
+Take a screenshot, as the window shows it (with subtitles, OSD, and scaled video).
+PGUP and PGDWN
+Seek to the beginning of the previous/next chapter. In most cases, "previous" will actually go to the beginning of the current chapter; see  –chapter-seek-threshold.
+Shift+PGUP and Shift+PGDWN
+Seek backward or forward by 10 minutes. (This used to be mapped to PGUP/PGDWN without Shift.)
+d
+Activate/deactivate deinterlacer.
+A
+Cycle aspect ratio override.
+Ctrl h
+Toggle hardware video decoding on/off.
+Alt+LEFT, Alt+RIGHT, Alt+UP, Alt+DOWN
+Move the video rectangle (panning).
+Alt + and Alt -
+Combining Alt with the + or - keys changes video zoom.
+Alt+BACKSPACE
+Reset the pan/zoom settings.
+F9
+Show the playlist and the current position in it (useful only if a UI window is used, broken on the terminal).
+F10
+Show the list of audio and subtitle streams (useful only if a UI window is used, broken on the terminal).
+(The following keys are valid only when using a video output that supports the corresponding adjustment.)
+</p>
+
+<p>
+1 and 2
+Adjust contrast.
+3 and 4
+Adjust brightness.
+5 and 6
+Adjust gamma.
+7 and 8
+Adjust saturation.
+Alt+0 (and command+0 on OSX)
+Resize video window to half its original size.
+Alt+1 (and command+1 on OSX)
+Resize video window to its original size.
+Alt+2 (and command+2 on OSX)
+Resize video window to double its original size.
+command + f (OSX only)
+Toggle fullscreen (see also –fs).
+(The following keys are valid if you have a keyboard with multimedia keys.)
+</p>
+
+<p>
+PAUSE
+Pause.
+STOP
+Stop playing and quit.
+PREVIOUS and NEXT
+Seek backward/forward 1 minute.
+If you miss some older key bindings, look at etc/restore-old-bindings.conf in the mpv git repository.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8930a08" class="outline-2">
+<h2 id="org8930a08">feh</h2>
+<div class="outline-text-2" id="text-org8930a08">
+</div>
+<div id="outline-container-org23d8901" class="outline-3">
+<h3 id="org23d8901">keyborad control</h3>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/cancer-first-time/" class="u-url">鼻咽癌與我的初次相遇</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/cancer-first-time/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-25T12:53:47+08:00" itemprop="datePublished" title="2018-05-25 12:53">2018-05-25 12:53</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/cancer-first-time/#disqus_thread" data-disqus-identifier="cache/posts/cancer-first-time.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div id="outline-container-org5758eaf" class="outline-2">
+<h2 id="org5758eaf">確診</h2>
+<div class="outline-text-2" id="text-org5758eaf">
+<p>
+2016/1/7，坐在診療椅上，不由自主地一股寒氣由腳底冒起，直達心口。
+</p>
+<p class="more"><a href="posts/cancer-first-time/">閱讀更多…</a></p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/hide-driver-on-windows/" class="u-url">Windows 10 中，隱藏磁碟機</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/hide-driver-on-windows/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-24T15:49:19+08:00" itemprop="datePublished" title="2018-05-24 15:49">2018-05-24 15:49</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/hide-driver-on-windows/#disqus_thread" data-disqus-identifier="cache/posts/hide-driver-on-windows.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+記錄一下，在 Windows 10 中，如何隱藏磁碟機？
+</p>
+
+<ol class="org-ol">
+<li>windows 系統管理</li>
+<li>磁碟管理</li>
+<li>點要隱藏的 partition，按右鍵</li>
+<li>變更磁碟機代號及路徑</li>
+<li>新增，變更，移除，三選一</li>
+</ol>
+</div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/replace-new-hard-disk/" class="u-url">為 windows 10，換一顆硬碟</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -97,9 +491,9 @@
 windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
 </p>
 
-<div id="outline-container-org4594bd6" class="outline-2">
-<h2 id="org4594bd6">SMART check</h2>
-<div class="outline-text-2" id="text-org4594bd6">
+<div id="outline-container-orgfb95fcb" class="outline-2">
+<h2 id="orgfb95fcb">SMART check</h2>
+<div class="outline-text-2" id="text-orgfb95fcb">
 <p>
 用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
 </p>
@@ -179,9 +573,9 @@ unable to complete, or interface CRC (with ICRC).
 </div>
 </div>
 
-<div id="outline-container-orga4c358d" class="outline-2">
-<h2 id="orga4c358d">裝上新的硬碟</h2>
-<div class="outline-text-2" id="text-orga4c358d">
+<div id="outline-container-orgf8e7dde" class="outline-2">
+<h2 id="orgf8e7dde">裝上新的硬碟</h2>
+<div class="outline-text-2" id="text-orgf8e7dde">
 <p>
 過程如下：
 </p>
@@ -211,12 +605,727 @@ unable to complete, or interface CRC (with ICRC).
 </div>
 </div>
     </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/happy-current/" class="u-url">快樂，當下</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/happy-current/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-22T12:49:49+08:00" itemprop="datePublished" title="2018-05-22 12:49">2018-05-22 12:49</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/happy-current/#disqus_thread" data-disqus-identifier="cache/posts/happy-current.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+SOURCE: <a href="https://www.playpcesor.com/2017/09/time-Secrets-to-a-Happier-Life.html">來自 TIME 的快樂科學秘密：投入時間當下</a> 電腦玩物原創作者 esor huang 異塵行者
+</p>
+
+<p>
+REF: <a href="http://time.com/4856944/secrets-happier-life/">6 Secrets to a Happier Life | Time</a>
+</p>
+
+<blockquote>
+<p>
+「專注且投入當下」才是真正的高效率定義，無論這段時間我做了什麼，只要我能進入忘我狀態，感覺自己 100% 投入時間中，我都覺得有高效率的產出。
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+「如果你的頭腦永遠在想下一個任務、下一個成就、下一個你需要談話的人。在這個過程中，你犧牲了現在的個人幸福，你就會持續累積負面情緒和巨大的壓力。」 — 6 Secrets to a Happier Life | Time
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+而我們永遠都會有目標還沒完成！永遠都會在成功之後還有下一個成功可以追求！那不就永遠都不會快樂了？
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+專注且投入到當下。
+</p>
+</blockquote>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/walking/" class="u-url">[LINE] 走路吧！</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/walking/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-22T12:36:56+08:00" itemprop="datePublished" title="2018-05-22 12:36">2018-05-22 12:36</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/walking/#disqus_thread" data-disqus-identifier="cache/posts/walking.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+SOURCE: LINE
+</p>
+
+<p>
+走路吧！
+</p>
+
+<p>
+孫正春走到腫瘤也怕他！孫正春身體力行 100 天，2 個腫瘤消失了 16 種宿疾改善了！想健康，走路最簡單，不花錢，絕無副作用！
+</p>
+
+<p>
+「我覺得爸爸會抗癌成功，關鍵在於『堅持到底』。他的確在開始長途走路的一百天內腫瘤消失了，心跳正常了，很多人看到成效出現就停止，但他非但沒有鬆懈，反而更堅持走下去，直到現在，持續二十幾年。」
+</p>
+
+<p>
+孫羽佑，孫正春之子，神經科學博士
+</p>
+
+<p>
+他原本天天吃焢肉、能坐就不願站，直到癌症的陰影迫近，才驚覺必須改變！
+</p>
+
+<p>
+從完全不走路到一天走上六小時，他慢慢走，打赤腳走，拿著啞鈴負重走；他吃樹葉、喝葉子水，打造了一個「山上的家」三餐吃優格，徹底地改變了體質。兩個腫瘤一百天消失不是奇蹟，而是「動、綠、奶」的有力實踐。
+</p>
+
+<p>
+他到宜蘭工作，就把走路的觀念傳給同事；搬回埔里，帶動了遠近馳名的社區「夜走」熱。
+</p>
+
+<p>
+他還鼓勵原已無法進食、無法行動的癌末朋友，從吃一小滴優格、爬行一小步開始，重獲健康。
+</p>
+
+<p>
+這一份對走路的執著和熱愛，鼓舞了無數人迎向希望。
+</p>
+
+<p>
+他曾花六天翻越中央山脈，從南投走到宜蘭；四十五天健走，以一雙傷痕累累的「真皮鞋」實現赤腳環台夢想；更跨足世界，走向義大利，兩天完攻山海雙線的考驗。
+</p>
+
+<p>
+他賦予了「距離」全新的意義，只要走路到得了的地方，就不算遠。人生的路，原來可以靠雙腳走出來，而最重要的是：堅持走下去。「堅持到底」，讓孫正春贏回健康，更讓他走出了康莊大道！
+</p>
+
+<p>
+台灣國家衛生研究院：每日健走 15 分鐘，延壽 3 年！英國癌症團體：每日健走 20 分鐘，癌症死亡率減半！
+</p>
+
+<p>
+走路的好處，他們都親身體會到！
+</p>
+
+<p>
+◎孫正春之妻陳梅香曾患腎臟病，身體水腫到像懷孕，每天走路讓她重獲健康。
+</p>
+
+<p>
+◎紀政的尿失禁毛病因走路不藥而癒，而且 6 個月瘦了 20 公斤。
+</p>
+
+<p>
+◎希望基金會祕書長黃純湘的癌末父親，靠走路贏回了 7 年人生。
+</p>
+
+<p>
+◎前暨南大學公共行政系教授梁雙蓮，以走路擺脫了更年期及失眠困擾。
+</p>
+
+<p>
+◎作家陳芸英長期受便祕所苦，開始走路的第二天，便祕問題竟然解決 了。
+</p>
+
+<p>
+走路很簡單，就是「走出去」而已。出門多走一站搭車或提早一站下車；在公司少打一通電話，直接走去找同事；不必刻意挑什麼健走路線，有時間就走。
+</p>
+
+<p>
+把自己交給雙腳，慢慢走，不要急，才能走得遠、走得久。有人問： 「走這麼長、這麼久的路，不累嗎？」孫正春說： 「只要心不趕，就不會累。」
+</p>
+
+<p>
+◎不管身體有多糟糕，背一定要挺，不能垮下去，只要能動就要動，動一 下也好。可別小看「動一下」這是很單純的求生訊號。
+</p>
+
+<p>
+◎既然站得起來，就試著走出去吧！一步就好。第二天再走一步，慢慢來，只要 一天進步一點點就可以。
+</p>
+
+<p>
+◎「走路」就像每天都要吃飯、睡覺一樣，是生命的必需品。讓走路融入每日生活，養成隨時走路的習慣。
+</p>
+
+<p>
+◎走路是最緩和、最舒服的一種運動，隨時隨地都可以進行，不需要技術、不需要夥伴。
+</p>
+
+<p>
+◎其實走路很簡單，就是走出去而已，把自己交給雙腳，慢慢走，不要想太多，重點是持之以恆。
+</p>
+
+<p>
+◎剛走路的人都希望走快點，趕快走完，好回家休息，但當你走到一個程度，就會曉得什麼樣的方式對你的身體和生理有幫助。
+</p>
+
+<p>
+走路運動….不是趕路運動。輕鬆走，慢慢走；天熱<i>帶條毛巾；天涼</i>帶件薄外套。
+</p>
+
+<p>
+生病不是意外，是自己平常不注意自己的身體健康。病痛來襲，只有默默承受。
+</p>
+
+<p>
+走路可以運動到環跳穴，改善上熱下寒的情形，也可以活潑足三陽的氣機，使陽下行而陰上滋，是活命之源！
+</p>
+
+<p>
+⭕⭕ 榮總急診部王醫師傳送 @ 很寶貴的養生短文◎成為永遠病人的二大原因：過食+藥物！
+</p>
+
+<p>
+就是吃太多啦，還有就是吃葯，這絕對不是好事，醫師和護理人員，都很少吃葯。
+</p>
+
+<p>
+◎糖尿病是全身性的代謝紊亂！主因則是胰臟過度疲勞！
+</p>
+
+<p>
+◎細嚼慢嚥是在降低胰臟負擔！
+</p>
+
+<p>
+◎活得健康的重要原則？一少三多！
+A. 少吃；
+B. 多休息
+C. 多喝水；
+D. 多流汗！
+</p>
+
+<p>
+◎滿身流汗對各種疾病都是有益的！
+</p>
+
+<p>
+◎飯量越大丶耗氧也越大丶細胞越缺氧，心臟就越加壓，血壓也就越高了！
+</p>
+
+<p>
+◎吃飯最好＂五分飽＂，不要撐飽！
+</p>
+
+<p>
+◎當身體飢餓感訊號出現時，正是排毒旺盛，免疫功能快速增強時！
+</p>
+
+<p>
+◎空腹時身體發熱流汗是最有效的新陳代謝法，也是細胞自行清血解毒，補氣活化的時機！（消化系統運作時，就停止排毒！）
+</p>
+
+<p>
+◎癌症的主因：超級中毒＋組織缺氧（重度缺氧）！
+</p>
+
+<p>
+◎癌症是身體長期處於中毒狀態（強酸），所引起＂缺氧＂的自然現象！
+</p>
+
+<p>
+◎＂氧＂是身體治病救命的靈丹，它決定腺體調節能力，免疫系統的強弱，更掌控了癌症病人的生殺大權！
+</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/wrong-time-go-to-bed/" class="u-url">錯誤時間睡覺，傷神又耗氣！</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/wrong-time-go-to-bed/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-22T12:07:58+08:00" itemprop="datePublished" title="2018-05-22 12:07">2018-05-22 12:07</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/wrong-time-go-to-bed/#disqus_thread" data-disqus-identifier="cache/posts/wrong-time-go-to-bed.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+SOURCE: <a href="https://health.businessweekly.com.tw/AArticle.aspx?ID=ARTL000099919&amp;p=2">錯誤時間睡覺，傷神又耗氣！</a>
+</p>
+
+<p>
+<b>養生方法不在多寡，在於能否持之以恆</b>
+</p>
+
+<p>
+養生 Tips
+</p>
+
+<ol class="org-ol">
+<li>上午散步 30 分鐘、晚餐後再走 30 分鐘，早晚各 5,000 步，達天天萬步目標。</li>
+<li>早晚各做 5 次自創扭轉運動。</li>
+<li>常按摩雙眼周圍的穴位，增加眼睛血液循環，減少乾澀、疲倦症狀。</li>
+<li>天天喝養生精力飲，用堅果、薏仁、燕麥、黑芝麻或黃豆（建議勿超過 5
+種），加水或牛奶 350c.c.打成汁喝。喝茶外，也喝可可、咖啡，飲食以五穀雜糧為主，多吃堅果、豆類、蔬菜水果。</li>
+</ol>
+<p>
+標題不知誰下的，整篇没看到「睡覺時間」。</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/eat-fruit-as-empty-stomach/" class="u-url">【謠言】愛惜大腸，空腹吃水果</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/eat-fruit-as-empty-stomach/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-16T16:44:08+08:00" itemprop="datePublished" title="2018-05-16 16:44">2018-05-16 16:44</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/eat-fruit-as-empty-stomach/#disqus_thread" data-disqus-identifier="cache/posts/eat-fruit-as-empty-stomach.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>
+網路上常會有一些「善心人士」轉傳他們認的好文，我想大家的初衷也是想幫忙人，只是未經查證或没有能力查證，只能直接轉傳，可也造成了困擾。如果重症患者誤信了没有根據的方法，後果不堪設想。
+</p>
+
+<p>
+今天看到這篇 <a href="https://emo.nidbox.com/diary/read/7697859">愛惜大腸，空腹吃水果(台大醫院胃腸科王正一醫師的忠告)</a> 覺得不錯，想留個記錄，再一次 google，發現了下面這篇
+ <a href="https://www.mygopen.com/2016/03/blog-post_1.html">【假知識】空腹吃水果會抗癌？王正一醫師說他從沒寫過這種東西！ ~ MyGoPen｜這是假消息</a>
+</p>
+
+<p>
+哈哈，直接把結論節錄如後：
+</p>
+
+<blockquote>
+<p>
+闢謠網站 Snopes.com 報告指出，這則「空腹吃水果抗癌」，最早在 2001 年出現，來自新加坡廚藝作家 Devagi Sanmugam 在 1998 年的著作《吃水果的正確方法（The Correct Way of Eating Fruits）》，之後文章出現變種版，在
+2002 年以後流傳的版本，才又多了後面水果功效的部份。甚至轉到中文版，亂出現其他台大醫生的說詞，原信中提到的「赫伯博士( Dr. Herbert Shelton)」，並沒有醫學學位，還曾因為無照行醫被逮捕了好幾次；而這位赫伯博士，在
+1985 年已逝世。真的純屬謠言一則，請不要再傳這種假消息了！
+</p>
+</blockquote>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/zhong-hui-nikola-xie-luo-ge/" class="u-url">部落格，重回 nikola+org-mode</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/zhong-hui-nikola-xie-luo-ge/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-14T09:32:19+08:00" itemprop="datePublished" title="2018-05-14 09:32">2018-05-14 09:32</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/zhong-hui-nikola-xie-luo-ge/#disqus_thread" data-disqus-identifier="cache/posts/zhong-hui-nikola-xie-luo-ge.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div id="table-of-contents">
+<h2>目錄</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#orgc3bdd5d">1. 安裝</a></li>
+<li>
+<a href="posts/zhong-hui-nikola-xie-luo-ge/#orgf5bc36f">2. 設定</a>
+<ul>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#orgda23d42">2.1. configuration file</a></li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org63fdc6b">2.2. theme</a></li>
+<li>
+<a href="posts/zhong-hui-nikola-xie-luo-ge/#org766abf3">2.3. 用 <code>nikola github_deploy</code> 快速發佈文章</a>
+<ul>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#orge4563bc">2.3.1. 在 nikola github_deploy 之前</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="posts/zhong-hui-nikola-xie-luo-ge/#org3b82d90">3. 用 org-mode 寫文章</a>
+<ul>
+<li>
+<a href="posts/zhong-hui-nikola-xie-luo-ge/#orge6eaf90">3.1. 修改 /orgmode/init.el</a>
+<ul>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org8838a7e">3.1.1. 刪除不必要的空白</a></li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org5d76200">3.1.2. Convert inline verbatim to kbd when HTML export</a></li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org99f5b36">3.1.3. 在 Inline verbatim and code 不要空白</a></li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org8f67e41">3.1.4. 用 pygment 幫程式碼著色</a></li>
+</ul>
+</li>
+<li>
+<a href="posts/zhong-hui-nikola-xie-luo-ge/#orgf12a996">3.2. 揷入圖片</a>
+<ul>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#orgd550a9a">3.2.1. 利用 Google Drive 取得 Google Photos 的照片</a></li>
+</ul>
+</li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org37f8c35">3.3. 圖片連結 (Image URLs)</a></li>
+<li>
+<a href="posts/zhong-hui-nikola-xie-luo-ge/#orgda58c24">3.4. plain list</a>
+<ul>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org7d56e27">3.4.1. Lord of the Rings</a></li>
+</ul>
+</li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#orgbfe25f6">3.5. Subscripts and superscripts</a></li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#orgb351f12">3.6. Teasers</a></li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org5c9dd4e">3.7. text block</a></li>
+</ul>
+</li>
+<li><a href="posts/zhong-hui-nikola-xie-luo-ge/#org42857d3">4. 開始使用</a></li>
+</ul>
+</div>
+</div>
+<p>
+掙扎了許久，還是先用 <a href="https://getnikola.com/">nikola</a> 記錄一些事，畢竟比較熟悉，能快一點上手。
+</p>
+<p class="more"><a href="posts/zhong-hui-nikola-xie-luo-ge/">閱讀更多…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/install-haskell-applications/" class="u-url">Install Haskell Applications</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/install-haskell-applications/" rel="bookmark">
+            <time class="published dt-published" datetime="2018-04-28T19:16:44+08:00" itemprop="datePublished" title="2018-04-28 19:16">2018-04-28 19:16</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/install-haskell-applications/#disqus_thread" data-disqus-identifier="cache/posts/install-haskell-applications.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div id="outline-container-orgc50d905" class="outline-2">
+<h2 id="orgc50d905">前言</h2>
+<div class="outline-text-2" id="text-orgc50d905">
+<p>
+在 archlinux 上想用 haskell 真不是一件容易的事，因為可用的方法太多，不好選擇。
+</p>
+
+<p>
+不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
+</p>
+
+<p>
+上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，經過一番折騰，程式結構幾乎相同，代碼行數也差不多。但是，比起先前用
+Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 clojure, 先把安裝的過程記錄下來。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga56448b" class="outline-2">
+<h2 id="orga56448b">安裝</h2>
+<div class="outline-text-2" id="text-orga56448b">
+<p>
+archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版 haskell
+用的是 dynamic-link, 問題多多。另外也不用 ArchHaskell repository, 原因是其中 Application 的版本比較舊。
+</p>
+
+<p>
+但我要用的 taffybar，新版看起來還不好用，所以只好退回 taffybar-0.4.6。而 0.4.6 版又不能用 ghc-8.2.2 編譯，只能回到 ghc-8.0.2。如此一來，就不能用新的 haskell 和 intero，真困擾。
+</p>
+
+<p>
+問題還是能解決，用 stack 就可以完美克服。
+</p>
+
+<p>
+但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
+<a href="posts/install-haskell-applications/#orgbea26dd">(update 2018/9/11: install from source maybe a good choice.)</a>
+</p>
+
+<p>
+如果要用 GHCJS 和 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
+</p>
+
+<p>
+最後決定的方法是：
+</p>
+<ol class="org-ol">
+<li>安裝 ghc-8.2.2 的 static 版。</li>
+<li>安裝 stack-bin，是 stack 的 static 版。</li>
+<li>taffybar-0.4.6，自行用 ghc-8.0.2 編譯</li>
+<li>pandoc 先用 cabal 裝。</li>
+</ol>
+</div>
+
+<div id="outline-container-org6b6caae" class="outline-3">
+<h3 id="org6b6caae">install ghc, stack</h3>
+<div class="outline-text-3" id="text-org6b6caae">
+<p>
+<a href="https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux">https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux</a>
+</p>
+
+<p>
+決定用 static link
+</p>
+<div class="highlight"><pre><span></span>yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
+stack setup --system-ghc
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org6c8ebd6" class="outline-3">
+<h3 id="org6c8ebd6">install happy alex</h3>
+<div class="outline-text-3" id="text-org6c8ebd6">
+<div class="highlight"><pre><span></span>stack install happy
+stack install alex
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org5bda659" class="outline-3">
+<h3 id="org5bda659">install cabal</h3>
+<div class="outline-text-3" id="text-org5bda659">
+<p>
+<a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29">Building statically linked packages with Cabal (without using shared libraries)</a>
+</p>
+
+<div class="highlight"><pre><span></span>stack install --system-ghc cabal-install
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgab68189" class="outline-3">
+<h3 id="orgab68189">install pandoc</h3>
+<div class="outline-text-3" id="text-orgab68189">
+</div>
+<div id="outline-container-orge27cfe5" class="outline-4">
+<h4 id="orge27cfe5">install pandoc by cabal</h4>
+<div class="outline-text-4" id="text-orge27cfe5">
+<div class="highlight"><pre><span></span>cabal update
+cabal install pandoc
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgfbf62ca" class="outline-4">
+<h4 id="orgfbf62ca">
+<a id="orgbea26dd"></a> install pandoc from source</h4>
+<div class="outline-text-4" id="text-orgfbf62ca">
+<p>
+<a href="https://github.com/jgm/pandoc">GitHub - jgm/pandoc: Universal markup converter</a>
+</p>
+
+<div class="highlight"><pre><span></span>git clone https://github.com/jgm/pandoc
+<span class="nb">cd</span> pandoc
+stack install
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b13721" class="outline-3">
+<h3 id="org4b13721">install taffybar, xmonad, xomnad-contrib</h3>
+<div class="outline-text-3" id="text-org4b13721">
+<p>
+taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯。即使硬上，taffybar 的顯示高度也不對。因此暫時不用，等 ghc 8.4.2 release
+了再試 taffybar-2.x.x。
+</p>
+
+<p>
+目前用 taffybar-0.4.6，也就換維護者前的最後版本，比較穩定。
+</p>
+
+<p>
+以下三種做法，我的選擇是第一種，自行編譯。
+</p>
+</div>
+
+<div id="outline-container-orgf8a19f7" class="outline-4">
+<h4 id="orgf8a19f7">自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib</h4>
+<div class="outline-text-4" id="text-orgf8a19f7">
+</div>
+<ul class="org-ul">
+<li>
+<a id="orgd6dc659"></a>fork and download taffybar from github and checkout v0.4.6<br><div class="outline-text-5" id="text-orgd6dc659">
+<div class="highlight"><pre><span></span>git clone https://github.com/taffybar/taffybar.git
+git checkout v0.4.6
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org624132e"></a>copy <code>xmonad.hs</code> and <code>taffybar.hs</code> to <code>taffybar</code> directory.<br><div class="outline-text-5" id="text-org624132e">
+<p>
+否則 recompile config file 時，會找不到需要的模組。
+</p>
+</div>
+</li>
+
+<li>
+<a id="orgfa0aeb8"></a>adding stack.yaml and setup stack project<br><div class="outline-text-5" id="text-orgfa0aeb8">
+<ol class="org-ol">
+<li>產生 <code>stack.yaml</code> ：</li>
+</ol>
+<div class="highlight"><pre><span></span>stack init --resolver lts-9.21 --omit-packages
+</pre></div>
+
+<ol class="org-ol">
+<li>修改 <code>stack.yaml</code> ，加上：</li>
+</ol>
+<div class="highlight"><pre><span></span>packages:
+- '.'
+</pre></div>
+<p>
+和
+</p>
+<div class="highlight"><pre><span></span>extra-deps:
+- gtk-traymanager-0.1.6
+- xmonad-0.14.2
+- xmonad-contrib-0.14
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org2b9f75a"></a>stack build/install taffybar<br><div class="outline-text-5" id="text-org2b9f75a">
+<p>
+自動安裝 taffybar 和 xomnad 和 xmonad-contrib
+</p>
+
+<div class="highlight"><pre><span></span>stack install
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org40c9dcd"></a>修改 config<br><div class="outline-text-5" id="text-org40c9dcd">
+<p>
+修改 config 後，要重新編譯 config
+</p>
+
+<div class="highlight"><pre><span></span>stack <span class="nb">exec</span> -- taffybar
+stack <span class="nb">exec</span> -- xmonad --recompile
+stack <span class="nb">exec</span> -- xmonad --restart
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgef07a2e" class="outline-4">
+<h4 id="orgef07a2e">haskell-taffybar at ArchHaskell</h4>
+<div class="outline-text-4" id="text-orgef07a2e">
+<p>
+用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge91fc1e" class="outline-4">
+<h4 id="orge91fc1e">cabal install taffybar-0.4.6</h4>
+<div class="outline-text-4" id="text-orge91fc1e">
+<div class="highlight"><pre><span></span>cabal update
+cabal install happy alex haddock c2hs
+cabal install taffybar-0.4.6
+cabal install pandoc
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb9c896" class="outline-3">
+<h3 id="orgfb9c896">uninstall application that install by stack</h3>
+<div class="outline-text-3" id="text-orgfb9c896">
+<p>
+example for uninstalling hoogle
+</p>
+</div>
+
+<div id="outline-container-orgdea84dd" class="outline-4">
+<h4 id="orgdea84dd">install and uninstall hoogle</h4>
+<div class="outline-text-4" id="text-orgdea84dd">
+<div class="highlight"><pre><span></span>stack install hoogle
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org4c61a27" class="outline-4">
+<h4 id="org4c61a27">get package id</h4>
+<div class="outline-text-4" id="text-org4c61a27">
+<div class="highlight"><pre><span></span>stack <span class="nb">exec</span> -- ghc-pkg field hoogle id
+</pre></div>
+<pre class="example">
+id: hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3b682b7" class="outline-4">
+<h4 id="org3b682b7">unregister hoogle</h4>
+<div class="outline-text-4" id="text-org3b682b7">
+<div class="highlight"><pre><span></span>stack <span class="nb">exec</span> ghc-pkg unregister hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orge94e24d" class="outline-4">
+<h4 id="orge94e24d">find path to hoogle</h4>
+<div class="outline-text-4" id="text-orge94e24d">
+<div class="highlight"><pre><span></span>which hoogle
+</pre></div>
+<pre class="example">
+path/to/hoogle
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgccd2d83" class="outline-4">
+<h4 id="orgccd2d83">remove hoogle</h4>
+<div class="outline-text-4" id="text-orgccd2d83">
+<div class="highlight"><pre><span></span>rm path/to/hoogle
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd89d9bf" class="outline-2">
+<h2 id="orgd89d9bf">Issues</h2>
+<div class="outline-text-2" id="text-orgd89d9bf">
+</div>
+<div id="outline-container-org237bbcf" class="outline-3">
+<h3 id="org237bbcf">system tray 中 dropbox 的字型太小</h3>
+<div class="outline-text-3" id="text-org237bbcf">
+<p>
+dropbox 是 QT application，taffybar 是 gtk application，所以要調整一下，我用的法子是加上環境變數：
+</p>
+
+<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">QT_STYLE_OVERRIDE</span><span class="o">=</span>GTK+
+</pre></div>
+</div>
+</div>
+</div>
+    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="." rel="prev">較新的文章</a>
+                <a href="index-11.html" rel="prev">較新的文章</a>
             </li>
             <li class="next">
                 <a href="index-9.html" rel="next">較舊的文章</a>

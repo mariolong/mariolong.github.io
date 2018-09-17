@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/install-mariadb/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="install mariadb on archlinux">
 <meta name="author" content="Mario Long">
-<link rel="prev" href="../cancer-first-time/" title="鼻咽癌與我的初次相遇" type="text/html">
+<link rel="prev" href="../using-dired/" title="Using dired in Emacs" type="text/html">
 <link rel="next" href="../using-mariadb/" title="Using Mariadb" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Install Mariadb">
@@ -105,24 +105,24 @@
 Ref: <a href="https://wiki.archlinux.org/index.php/MySQL">MySQL - ArchWiki</a>
 </p>
 
-<div id="outline-container-orgcea1dc6" class="outline-2">
-<h2 id="orgcea1dc6">install mariadb</h2>
-<div class="outline-text-2" id="text-orgcea1dc6">
+<div id="outline-container-org67b9b15" class="outline-2">
+<h2 id="org67b9b15">install mariadb</h2>
+<div class="outline-text-2" id="text-org67b9b15">
 <div class="highlight"><pre><span></span>yaourt -S mariadb
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org908903f" class="outline-2">
-<h2 id="org908903f">install and setup database</h2>
-<div class="outline-text-2" id="text-org908903f">
+<div id="outline-container-org1588c17" class="outline-2">
+<h2 id="org1588c17">install and setup database</h2>
+<div class="outline-text-2" id="text-org1588c17">
 <div class="highlight"><pre><span></span>sudo mysql_install_db --user<span class="o">=</span>mysql --basedir<span class="o">=</span>/usr --datadir<span class="o">=</span>/var/lib/mysql
 </pre></div>
 </div>
 
-<div id="outline-container-org519a698" class="outline-3">
-<h3 id="org519a698">message</h3>
-<div class="outline-text-3" id="text-org519a698">
+<div id="outline-container-org73d5c84" class="outline-3">
+<h3 id="org73d5c84">message</h3>
+<div class="outline-text-3" id="text-org73d5c84">
 <pre class="example">
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 To do so, start the server, then issue the following commands:
@@ -160,10 +160,10 @@ https://mariadb.org/get-involved/
 </div>
 </div>
 
-<div id="outline-container-orgdceed11" class="outline-2">
-<h2 id="orgdceed11">edit <code>/etc/mysql/my.cnf</code>
+<div id="outline-container-orga884e3d" class="outline-2">
+<h2 id="orga884e3d">edit <code>/etc/mysql/my.cnf</code>
 </h2>
-<div class="outline-text-2" id="text-orgdceed11">
+<div class="outline-text-2" id="text-orga884e3d">
 <p>
 Tip: If you use something different from /var/lib/mysql for your data
 dir, you need to set <code>datadir=&lt;YOUR_DATADIR&gt;</code> under section <code>[mysqld]</code> of
@@ -174,17 +174,17 @@ database level:
 </div>
 </div>
 
-<div id="outline-container-orge567e80" class="outline-2">
-<h2 id="orge567e80">start/enable <code>mariadb.service</code> with systemd</h2>
-<div class="outline-text-2" id="text-orge567e80">
+<div id="outline-container-org2fbc189" class="outline-2">
+<h2 id="org2fbc189">start/enable <code>mariadb.service</code> with systemd</h2>
+<div class="outline-text-2" id="text-org2fbc189">
 <div class="highlight"><pre><span></span>sudo systemctl start mariadb
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org34eae57" class="outline-2">
-<h2 id="org34eae57">To start mysqld at boot time</h2>
-<div class="outline-text-2" id="text-org34eae57">
+<div id="outline-container-org662f629" class="outline-2">
+<h2 id="org662f629">To start mysqld at boot time</h2>
+<div class="outline-text-2" id="text-org662f629">
 <p>
 you have to copy support-files/mysql.server to the right place for your system
 </p>
@@ -200,9 +200,9 @@ strongly recommended for production servers.
 </div>
 </div>
 
-<div id="outline-container-orgcb2ba3d" class="outline-2">
-<h2 id="orgcb2ba3d">Using UTF8MB4</h2>
-<div class="outline-text-2" id="text-orgcb2ba3d">
+<div id="outline-container-orgc533291" class="outline-2">
+<h2 id="orgc533291">Using UTF8MB4</h2>
+<div class="outline-text-2" id="text-orgc533291">
 <p>
 在 <code>/etc/mysql/my.cnf</code> 加上以下指令：
 </p>
@@ -220,9 +220,9 @@ default-character-set = utf8mb4
 </div>
 </div>
 
-<div id="outline-container-org2430e84" class="outline-2">
-<h2 id="org2430e84">開啓自動補全</h2>
-<div class="outline-text-2" id="text-org2430e84">
+<div id="outline-container-org06eecd8" class="outline-2">
+<h2 id="org06eecd8">開啓自動補全</h2>
+<div class="outline-text-2" id="text-org06eecd8">
 <p>
 Note: Enabling this feature can make the client initialization longer.
 </p>
@@ -242,7 +242,7 @@ client.</p>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../cancer-first-time/" rel="prev" title="鼻咽癌與我的初次相遇">上一篇</a>
+                <a href="../using-dired/" rel="prev" title="Using dired in Emacs">上一篇</a>
             </li>
             <li class="next">
                 <a href="../using-mariadb/" rel="next" title="Using Mariadb">下一篇</a>

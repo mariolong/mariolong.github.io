@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/alsa-equaler/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
 <link rel="prev" href="../post-install-for-htpc/" title="post install for htpc" type="text/html">
-<link rel="next" href="../zhong-hui-nikola-xie-luo-ge/" title="部落格，重回 nikola+org-mode" type="text/html">
+<link rel="next" href="../install-haskell-applications/" title="Install Haskell Applications" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="alsa equaler">
 <meta property="og:url" content="https://mariolong.github.io/posts/alsa-equaler/">
@@ -121,17 +121,17 @@ config
 Archlinux WIKI 的 <a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture">Advanced linux Sound Architecture</a> 已說明等化器的安裝及設定，照做即可。
 </p>
 
-<div id="outline-container-org6766e0a" class="outline-2">
-<h2 id="org6766e0a">install</h2>
-<div class="outline-text-2" id="text-org6766e0a">
+<div id="outline-container-org5834ab2" class="outline-2">
+<h2 id="org5834ab2">install</h2>
+<div class="outline-text-2" id="text-org5834ab2">
 <div class="highlight"><pre><span></span>yaourt -S alsaequal
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orgd9fda9c" class="outline-2">
-<h2 id="orgd9fda9c">config</h2>
-<div class="outline-text-2" id="text-orgd9fda9c">
+<div id="outline-container-orgca91a78" class="outline-2">
+<h2 id="orgca91a78">config</h2>
+<div class="outline-text-2" id="text-orgca91a78">
 <p>
 在 <kbd>/etc/asound.conf</kbd> 加上以下設定：
 </p>
@@ -164,18 +164,18 @@ pcm.!default {
 </div>
 </div>
 
-<div id="outline-container-org9503a7c" class="outline-2">
-<h2 id="org9503a7c">reboot</h2>
-<div class="outline-text-2" id="text-org9503a7c">
+<div id="outline-container-orgfcc39a8" class="outline-2">
+<h2 id="orgfcc39a8">reboot</h2>
+<div class="outline-text-2" id="text-orgfcc39a8">
 <p>
 讓 alsa 可用等化器
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2dd9a0e" class="outline-2">
-<h2 id="org2dd9a0e">調整等化器</h2>
-<div class="outline-text-2" id="text-org2dd9a0e">
+<div id="outline-container-org910db45" class="outline-2">
+<h2 id="org910db45">調整等化器</h2>
+<div class="outline-text-2" id="text-org910db45">
 <p>
 執行
 </p>
@@ -188,9 +188,9 @@ PS. 用 Q,W,E,Z,X,C 可分別調整左右聲道的音量。
 </div>
 </div>
 
-<div id="outline-container-org252cfe2" class="outline-2">
-<h2 id="org252cfe2">mpd issue</h2>
-<div class="outline-text-2" id="text-org252cfe2">
+<div id="outline-container-org2fa84f6" class="outline-2">
+<h2 id="org2fa84f6">mpd issue</h2>
+<div class="outline-text-2" id="text-org2fa84f6">
 <p>
 總是會連不上 mpd server，後來在 WIKI 中讀到一段話：
 </p>
@@ -250,7 +250,7 @@ mpd 即可使用，瞎打誤撞。
                 <a href="../post-install-for-htpc/" rel="prev" title="post install for htpc">上一篇</a>
             </li>
             <li class="next">
-                <a href="../zhong-hui-nikola-xie-luo-ge/" rel="next" title="部落格，重回 nikola+org-mode">下一篇</a>
+                <a href="../install-haskell-applications/" rel="next" title="Install Haskell Applications">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
         

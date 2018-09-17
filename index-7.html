@@ -75,138 +75,37 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/resurrection-of-taffybar-and-lxqt-globalkeyd/" class="u-url">Resurrection of taffybar and lxqt-globalkeyd</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/hangups%2Bemacs/" class="u-url">hangups+emacs</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
             <p class="dateline">
-            <a href="posts/resurrection-of-taffybar-and-lxqt-globalkeyd/" rel="bookmark">
-            <time class="published dt-published" datetime="2016-09-03T03:13:37Z" itemprop="datePublished" title="2016-09-03 03:13">2016-09-03 03:13</time></a>
+            <a href="posts/hangups%2Bemacs/" rel="bookmark">
+            <time class="published dt-published" datetime="2016-05-06T05:33:47Z" itemprop="datePublished" title="2016-05-06 05:33">2016-05-06 05:33</time></a>
             </p>
                 <p class="commentline">
         
-    <a href="posts/resurrection-of-taffybar-and-lxqt-globalkeyd/#disqus_thread" data-disqus-identifier="cache/posts/resurrection-of-taffybar-and-lxqt-globalkeyd.html">Comments</a>
+    <a href="posts/hangups%2Bemacs/#disqus_thread" data-disqus-identifier="cache/posts/hangups+emacs.html">Comments</a>
 
 
         </p>
 </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>ref: <a class="reference external" href="https://github.com/travitch/taffybar/blob/master/src/System/Taffybar.hs">https://github.com/travitch/taffybar/blob/master/src/System/Taffybar.hs</a></p>
-<p>put eval <cite>dbus-launch --auto-syntax</cite> into .xinitrc before exec startlxqt</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/systemctl-status-user-no-bus/" class="u-url">systemctl status --user: Failed to connect to bus</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/systemctl-status-user-no-bus/" rel="bookmark">
-            <time class="published dt-published" datetime="2016-08-30T01:32:42Z" itemprop="datePublished" title="2016-08-30 01:32">2016-08-30 01:32</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/systemctl-status-user-no-bus/#disqus_thread" data-disqus-identifier="cache/posts/systemctl-status-user-no-bus.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>最近在整理 systemd，玩著著就出包了。想看一下 service 的狀態，結果出來錯誤訊息：</p>
-<pre class="literal-block">
-$ systemctl status --user
-Failed to connect to bus: No such file or directory
-</pre>
-<p>google 了半天，終於在 archlinux 的 <a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=203647">wiki</a> 中看到一句話：</p>
-<pre class="literal-block">
-I had a systemd unit file for emacs as described in
-https://wiki.archlinux.org/index.php/Em … stemd_unit located in
-~/.config/systemd/user/emacs.service When I removed it and rebooted
-the problem with startx and systemctl --user was gone.
-</pre>
-<p>想來是有寫不好的 user service，於是把還沒用到的 user service 隔離後，
-問題立刻就迎刃而解啦。</p>
-<p>記錄備查。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/my-linux-2016/" class="u-url">My linux</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/my-linux-2016/" rel="bookmark">
-            <time class="published dt-published" datetime="2016-05-12T09:55:41Z" itemprop="datePublished" title="2016-05-12 09:55">2016-05-12 09:55</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/my-linux-2016/#disqus_thread" data-disqus-identifier="cache/posts/my-linux-2016.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>first write: 2015-5-23
-update: 2016-5-13</p>
-<p>這一年，幾乎沒有大的改變。</p>
-<div class="section" id="linux">
-<h2>我的 linux 平台</h2>
-<p>整理一下目前在 linux 下，目前還在用的工具。試過後，不用的就不必放進來。</p>
-<p>目的是，如果有一天要重新安裝系統時，能快速完成，回到可工作狀態。</p>
+<p>在 emacs 中使用 google hangout。</p>
+<p>習慣在 emacs 看文件，</p>
 <div class="section" id="id1">
-<h3>作業系統</h3>
-<p><a class="reference external" href="posts/install-arch-linux/">Install Arch Linux</a> : 接觸 linux 後，就只用過這個發行版。喜歡它的 rolling update，一直是用最新版。</p>
-<p><a class="reference external" href="posts/xterm/">xterm</a></p>
-<p>fish: current shell</p>
+<h2>安裝及配置</h2>
+<div class="section" id="virtualenv">
+<h3>virtualenv</h3>
 </div>
-<div class="section" id="id2">
-<h3>桌面</h3>
-<p><a class="reference external" href="posts/lxqt/">lxqt</a> : 簡單好用的「台灣之光」</p>
-<p><a class="reference external" href="posts/lxqt%2Bxmonad%2Btaffybar/">我的桌面組合 lxqt+xmonad+taffybar</a> ，著重於工作效率的平舖式視窗管理</p>
-<p><a class="reference external" href="posts/show-volume-icon-on-systray/">Show volume icon on systray</a></p>
-<p><a class="reference external" href="posts/fonts/">字型相關</a></p>
-<p><a class="reference external" href="posts/rime/">Rime 中州韻輸入法引擎</a></p>
+<div class="section" id="hangups-cli">
+<h3>hangups_cli</h3>
+<p>clone github hangoups_cli</p>
 </div>
-<div class="section" id="id3">
-<h3>網路工具</h3>
-<p>google-chrome</p>
-<p>youtube-dl: 超強的 youtube downloader</p>
-<p>qbittorrent: BT client</p>
-<p>wifi-ap: <a class="reference external" href="posts/archlinux-hostapd-netcfg/">wireless AP 設定 （hostapd+netcfg/netctl）</a></p>
-</div>
-<div class="section" id="id4">
-<h3>影音平台</h3>
-<p><a class="reference external" href="posts/mm-mpv-feh/">mm=mpv+feh</a> 好用的影音播放器</p>
-<p>kodi: 家庭劇院</p>
-<p><a class="reference external" href="posts/ffmpeg-xin-de/">ffmpeg 使用心得與整理</a> ，有了這個，可以應付影音轉檔的需求。</p>
-<p><a class="reference external" href="posts/dvd-backup/">DVD backup</a> ，備份 DVD 吧！現在都是看 BD，實用性已經不高。</p>
-<p>aegisub: 字幕處理。</p>
-<p>mpd+mpc+ncmpcpp: 聽音樂的好朋友。 <a class="reference external" href="posts/enable-mpd-with-systemd/">enable mpd with systemd</a></p>
-<p>kid3: 修改音樂檔的 tags</p>
-<p>lightworks: 非線性影音剪輯系統</p>
-</div>
-<div class="section" id="id5">
-<h3>生活回憶</h3>
-<p><a class="reference external" href="posts/feh/">feh 小巧好用的圖片閱覽器</a></p>
-<p>mm=mpv+feh: 自己寫吧，找不到真正喜歡的。比較接近需求的是 gwenview，又有無法解決的問題，且太過笨重。</p>
-</div>
-<div class="section" id="id6">
-<h3>程式撰寫</h3>
-<p>emacs</p>
-<p>python</p>
-<p>stock</p>
-<p>nginx</p>
-</div>
-<div class="section" id="id7">
-<h3>其它</h3>
-<p>rsync: 備份</p>
-<p><a class="reference external" href="posts/systemd-timesync/">用 systemd-timesync 同步時間</a></p>
-<p>speedcrunch: 計算器</p>
-<p>eject:</p>
+<div class="section" id="hangups-el">
+<h3>hangups.el</h3>
 </div>
 </div>
 </div>
@@ -684,6 +583,139 @@ $ sudo lvresize -l -238466 /dev/VG01/LV00
 <p>這次的工作一直卡在縮小 lv 的地方，因為沒有先縮小 file system，造成 fsck 會報錯，然後就無法開機。</p>
 <p>雖然在試誤的過程中，一直擔心硬碟中的資料會毀損，最後的結果是好的，沒有任何資料毀損。</p>
 <p>真是慶幸。</p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/from-git-to-github/" class="u-url">from git to github</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/from-git-to-github/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-05-29T01:54:41Z" itemprop="datePublished" title="2015-05-29 01:54">2015-05-29 01:54</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/from-git-to-github/#disqus_thread" data-disqus-identifier="cache/posts/from-git-to-github.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>想辦法把一些東西放到 github，一方面是可以備份，一方面可以分享。
+當然，備份才是我的重點，順便分享給有需要的人。
+畢竟從 open source 得到很多，也該把這個過程記錄下來，讓有需要的人採用。</p>
+<div class="section" id="id1">
+<h2>安裝</h2>
+<p><a class="reference external" href="https://help.github.com/articles/set-up-git/">Github help</a> 已經很寫得很清楚，重點是</p>
+<p>git
+git -global name
+git -global email</p>
+</div>
+<div class="section" id="id2">
+<h2>問題</h2>
+<div class="section" id="push-github">
+<h3>將已存在的專案 push 到 github</h3>
+<ol class="arabic simple">
+<li>先在 github 建一個 repostory，例如：emacs.d</li>
+<li>回到 local 端，下指令 git remote add <a class="reference external" href="https://github.com/mariolong/emacs.d.git">https://github.com/mariolong/emacs.d.git</a>
+</li>
+<li>git pull</li>
+<li>touch .gitignore</li>
+<li>git push -u origin master</li>
+</ol>
+</div>
+<div class="section" id="push">
+<h3>push 失敗</h3>
+<pre class="literal-block">
+$ git push -u origin master
+
+! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/mariolong/emacs.d.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+git checkout master
+git merge test
+git push -u origin master
+</pre>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fonts/" class="u-url">字型相關</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/fonts/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-05-27T13:48:41Z" itemprop="datePublished" title="2015-05-27 13:48">2015-05-27 13:48</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/fonts/#disqus_thread" data-disqus-identifier="cache/posts/fonts.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>己經没有 [infinality-bundle] 了，這篇留作紀念。</strong></p>
+<p>系統看起來要好看，最重要的其實是字型，字型沒調好看起來就是怪怪的，不舒服。</p>
+<p>目前我的解法是參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Infinality">https://wiki.archlinux.org/index.php/Infinality</a> 設定整個系統的字型。</p>
+<div class="section" id="id1">
+<h2>安裝</h2>
+<p>1. 增加公鑰</p>
+<pre class="literal-block">
+$ sudo pacman-key -r 962DDE58
+$ sudo pacman-key --lsign-key 962DDE58
+</pre>
+<p>2. 編輯 <tt class="docutils literal">/etc/pacman.conf</tt> ，加上</p>
+<pre class="literal-block">
+[infinality-bundle]
+Server = http://bohoomil.com/repo/$arch
+</pre>
+<p>3. 更新資料庫，並安裝 <tt class="docutils literal"><span class="pre">infinality-bundle</span></tt></p>
+<pre class="literal-block">
+$ yaourt -Syy
+$ yaourt -S infinality-bundle
+</pre>
+<ol class="arabic" start="4">
+<li>
+<p class="first">安裝字體，可以挑選 <a class="reference external" href="http://bohoomil.com/doc/05-fonts/">這裡</a> 有的。</p>
+<p>例如，想用 <tt class="docutils literal"><span class="pre">adobe-source-code-pro-fonts</span></tt> ，查到有 ttf-source-code-pro-ibx，
+那就可以安裝。</p>
+<pre class="literal-block">
+$ yaourt -S adobe-source-code-pro-fonts
+</pre>
+<p>目前我安裝的是以下字型：</p>
+<pre class="literal-block">
+$ yaourt -S ttf-tw ttf-dejavu ttf-oxygen ttf-liberation
+$ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts adobe-source-code-pro-fonts
+</pre>
+</li>
+<li>
+<p class="first">用 lxqt-config-apperance 調整字體渲染方式。</p>
+<p>自動產生 <tt class="docutils literal"><span class="pre">~/.config/fontconfig/fonts.conf</span></tt> 和 <tt class="docutils literal"><span class="pre">~/.config/fonts.conf</span></tt> 一樣的檔案。</p>
+</li>
+<li>
+<p class="first">微調 <tt class="docutils literal"><span class="pre">/etc/X11/xinit/xinitrc.d/infinality-settings.sh</span></tt></p>
+<p>設定 USE_STYLE="3"</p>
+</li>
+<li>
+<p class="first">重啟 X 看結果。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>結論</h2>
+<p>暫時就先這樣，有空再來調整吧。</p>
 </div>
 </div>
     </div>

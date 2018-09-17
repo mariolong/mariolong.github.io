@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Install Haskell Applications | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://mariolong.github.io/posts/install-haskell-applications/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../alsa-equaler/" title="alsa equaler" type="text/html">
+<link rel="next" href="../zhong-hui-nikola-xie-luo-ge/" title="部落格，重回 nikola+org-mode" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="Install Haskell Applications">
+<meta property="og:url" content="https://mariolong.github.io/posts/install-haskell-applications/">
+<meta property="og:description" content="前言
+
+
+在 archlinux 上想用 haskell 真不是一件容易的事，因為可用的方法太多，不好選擇。
+
+
+
+不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
+
+
+
+上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，經過一番折騰，程式結構幾乎相同，代碼行數也差不多。但">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-04-28T19:16:44+08:00">
+<meta property="article:tag" content="haskell">
+<meta property="article:tag" content="pandoc">
+<meta property="article:tag" content="xmonad">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Install Haskell Applications</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2018-04-28T19:16:44+08:00" itemprop="datePublished" title="2018-04-28 19:16">2018-04-28 19:16</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/install-haskell-applications.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div id="outline-container-orgc50d905" class="outline-2">
+<h2 id="orgc50d905">前言</h2>
+<div class="outline-text-2" id="text-orgc50d905">
+<p>
+在 archlinux 上想用 haskell 真不是一件容易的事，因為可用的方法太多，不好選擇。
+</p>
+
+<p>
+不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可以抓網頁上目前最新的電影表列，並以 gmail 通知。
+</p>
+
+<p>
+上個月練習 clojure 時，也寫過相同功能的程式。果然都是 functional 語言，經過一番折騰，程式結構幾乎相同，代碼行數也差不多。但是，比起先前用
+Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 clojure, 先把安裝的過程記錄下來。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga56448b" class="outline-2">
+<h2 id="orga56448b">安裝</h2>
+<div class="outline-text-2" id="text-orga56448b">
+<p>
+archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版 haskell
+用的是 dynamic-link, 問題多多。另外也不用 ArchHaskell repository, 原因是其中 Application 的版本比較舊。
+</p>
+
+<p>
+但我要用的 taffybar，新版看起來還不好用，所以只好退回 taffybar-0.4.6。而 0.4.6 版又不能用 ghc-8.2.2 編譯，只能回到 ghc-8.0.2。如此一來，就不能用新的 haskell 和 intero，真困擾。
+</p>
+
+<p>
+問題還是能解決，用 stack 就可以完美克服。
+</p>
+
+<p>
+但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
+<a href="#orgbea26dd">(update 2018/9/11: install from source maybe a good choice.)</a>
+</p>
+
+<p>
+如果要用 GHCJS 和 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
+</p>
+
+<p>
+最後決定的方法是：
+</p>
+<ol class="org-ol">
+<li>安裝 ghc-8.2.2 的 static 版。</li>
+<li>安裝 stack-bin，是 stack 的 static 版。</li>
+<li>taffybar-0.4.6，自行用 ghc-8.0.2 編譯</li>
+<li>pandoc 先用 cabal 裝。</li>
+</ol>
+</div>
+
+<div id="outline-container-org6b6caae" class="outline-3">
+<h3 id="org6b6caae">install ghc, stack</h3>
+<div class="outline-text-3" id="text-org6b6caae">
+<p>
+<a href="https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux">https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux</a>
+</p>
+
+<p>
+決定用 static link
+</p>
+<div class="highlight"><pre><span></span>yaourt -Sy ghc ghc-static ghc-pristine stack-bin --noconfirm
+stack setup --system-ghc
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org6c8ebd6" class="outline-3">
+<h3 id="org6c8ebd6">install happy alex</h3>
+<div class="outline-text-3" id="text-org6c8ebd6">
+<div class="highlight"><pre><span></span>stack install happy
+stack install alex
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org5bda659" class="outline-3">
+<h3 id="org5bda659">install cabal</h3>
+<div class="outline-text-3" id="text-org5bda659">
+<p>
+<a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29">Building statically linked packages with Cabal (without using shared libraries)</a>
+</p>
+
+<div class="highlight"><pre><span></span>stack install --system-ghc cabal-install
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgab68189" class="outline-3">
+<h3 id="orgab68189">install pandoc</h3>
+<div class="outline-text-3" id="text-orgab68189">
+</div>
+<div id="outline-container-orge27cfe5" class="outline-4">
+<h4 id="orge27cfe5">install pandoc by cabal</h4>
+<div class="outline-text-4" id="text-orge27cfe5">
+<div class="highlight"><pre><span></span>cabal update
+cabal install pandoc
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgfbf62ca" class="outline-4">
+<h4 id="orgfbf62ca">
+<a id="orgbea26dd"></a> install pandoc from source</h4>
+<div class="outline-text-4" id="text-orgfbf62ca">
+<p>
+<a href="https://github.com/jgm/pandoc">GitHub - jgm/pandoc: Universal markup converter</a>
+</p>
+
+<div class="highlight"><pre><span></span>git clone https://github.com/jgm/pandoc
+<span class="nb">cd</span> pandoc
+stack install
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b13721" class="outline-3">
+<h3 id="org4b13721">install taffybar, xmonad, xomnad-contrib</h3>
+<div class="outline-text-3" id="text-org4b13721">
+<p>
+taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯。即使硬上，taffybar 的顯示高度也不對。因此暫時不用，等 ghc 8.4.2 release
+了再試 taffybar-2.x.x。
+</p>
+
+<p>
+目前用 taffybar-0.4.6，也就換維護者前的最後版本，比較穩定。
+</p>
+
+<p>
+以下三種做法，我的選擇是第一種，自行編譯。
+</p>
+</div>
+
+<div id="outline-container-orgf8a19f7" class="outline-4">
+<h4 id="orgf8a19f7">自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib</h4>
+<div class="outline-text-4" id="text-orgf8a19f7">
+</div>
+<ul class="org-ul">
+<li>
+<a id="orgd6dc659"></a>fork and download taffybar from github and checkout v0.4.6<br><div class="outline-text-5" id="text-orgd6dc659">
+<div class="highlight"><pre><span></span>git clone https://github.com/taffybar/taffybar.git
+git checkout v0.4.6
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org624132e"></a>copy <code>xmonad.hs</code> and <code>taffybar.hs</code> to <code>taffybar</code> directory.<br><div class="outline-text-5" id="text-org624132e">
+<p>
+否則 recompile config file 時，會找不到需要的模組。
+</p>
+</div>
+</li>
+
+<li>
+<a id="orgfa0aeb8"></a>adding stack.yaml and setup stack project<br><div class="outline-text-5" id="text-orgfa0aeb8">
+<ol class="org-ol">
+<li>產生 <code>stack.yaml</code> ：</li>
+</ol>
+<div class="highlight"><pre><span></span>stack init --resolver lts-9.21 --omit-packages
+</pre></div>
+
+<ol class="org-ol">
+<li>修改 <code>stack.yaml</code> ，加上：</li>
+</ol>
+<div class="highlight"><pre><span></span>packages:
+- '.'
+</pre></div>
+<p>
+和
+</p>
+<div class="highlight"><pre><span></span>extra-deps:
+- gtk-traymanager-0.1.6
+- xmonad-0.14.2
+- xmonad-contrib-0.14
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org2b9f75a"></a>stack build/install taffybar<br><div class="outline-text-5" id="text-org2b9f75a">
+<p>
+自動安裝 taffybar 和 xomnad 和 xmonad-contrib
+</p>
+
+<div class="highlight"><pre><span></span>stack install
+</pre></div>
+</div>
+</li>
+
+<li>
+<a id="org40c9dcd"></a>修改 config<br><div class="outline-text-5" id="text-org40c9dcd">
+<p>
+修改 config 後，要重新編譯 config
+</p>
+
+<div class="highlight"><pre><span></span>stack <span class="nb">exec</span> -- taffybar
+stack <span class="nb">exec</span> -- xmonad --recompile
+stack <span class="nb">exec</span> -- xmonad --restart
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgef07a2e" class="outline-4">
+<h4 id="orgef07a2e">haskell-taffybar at ArchHaskell</h4>
+<div class="outline-text-4" id="text-orgef07a2e">
+<p>
+用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge91fc1e" class="outline-4">
+<h4 id="orge91fc1e">cabal install taffybar-0.4.6</h4>
+<div class="outline-text-4" id="text-orge91fc1e">
+<div class="highlight"><pre><span></span>cabal update
+cabal install happy alex haddock c2hs
+cabal install taffybar-0.4.6
+cabal install pandoc
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb9c896" class="outline-3">
+<h3 id="orgfb9c896">uninstall application that install by stack</h3>
+<div class="outline-text-3" id="text-orgfb9c896">
+<p>
+example for uninstalling hoogle
+</p>
+</div>
+
+<div id="outline-container-orgdea84dd" class="outline-4">
+<h4 id="orgdea84dd">install and uninstall hoogle</h4>
+<div class="outline-text-4" id="text-orgdea84dd">
+<div class="highlight"><pre><span></span>stack install hoogle
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org4c61a27" class="outline-4">
+<h4 id="org4c61a27">get package id</h4>
+<div class="outline-text-4" id="text-org4c61a27">
+<div class="highlight"><pre><span></span>stack <span class="nb">exec</span> -- ghc-pkg field hoogle id
+</pre></div>
+<pre class="example">
+id: hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3b682b7" class="outline-4">
+<h4 id="org3b682b7">unregister hoogle</h4>
+<div class="outline-text-4" id="text-org3b682b7">
+<div class="highlight"><pre><span></span>stack <span class="nb">exec</span> ghc-pkg unregister hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orge94e24d" class="outline-4">
+<h4 id="orge94e24d">find path to hoogle</h4>
+<div class="outline-text-4" id="text-orge94e24d">
+<div class="highlight"><pre><span></span>which hoogle
+</pre></div>
+<pre class="example">
+path/to/hoogle
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgccd2d83" class="outline-4">
+<h4 id="orgccd2d83">remove hoogle</h4>
+<div class="outline-text-4" id="text-orgccd2d83">
+<div class="highlight"><pre><span></span>rm path/to/hoogle
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd89d9bf" class="outline-2">
+<h2 id="orgd89d9bf">Issues</h2>
+<div class="outline-text-2" id="text-orgd89d9bf">
+</div>
+<div id="outline-container-org237bbcf" class="outline-3">
+<h3 id="org237bbcf">system tray 中 dropbox 的字型太小</h3>
+<div class="outline-text-3" id="text-org237bbcf">
+<p>
+dropbox 是 QT application，taffybar 是 gtk application，所以要調整一下，我用的法子是加上環境變數：
+</p>
+
+<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">QT_STYLE_OVERRIDE</span><span class="o">=</span>GTK+
+</pre></div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/haskell/" rel="tag">haskell</a></li>
+            <li><a class="tag p-category" href="../../categories/pandoc/" rel="tag">pandoc</a></li>
+            <li><a class="tag p-category" href="../../categories/xmonad/" rel="tag">xmonad</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../alsa-equaler/" rel="prev" title="alsa equaler">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../zhong-hui-nikola-xie-luo-ge/" rel="next" title="部落格，重回 nikola+org-mode">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://mariolong.github.io/posts/install-haskell-applications/",
+        disqus_title="Install Haskell Applications",
+        disqus_identifier="cache/posts/install-haskell-applications.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>

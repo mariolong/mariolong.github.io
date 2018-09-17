@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：systemd)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/systemd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+emacs version 26.1 systemd support
+&lt;/p&gt;
+
+&lt;div id="outline-container-orgfd427df" class="outline-2"&gt;
+&lt;h2 id="orgfd427df"&gt;設定&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfd427df"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org38a801e" class="outline-3"&gt;
+&lt;h3 id="org38a801e"&gt;start emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org38a801e"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5e7276f" class="outline-3"&gt;
+&lt;h3 id="org5e7276f"&gt;emacs.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5e7276f"&gt;
+&lt;p&gt;
+還是要設定一下 emacs.service.
+&lt;/p&gt;
+
+&lt;p&gt;
+將 &lt;code&gt;/usr/lib/systemd/user/emacs.service&lt;/code&gt;, 複製一份到 &lt;code&gt;/.config/systemd/user&lt;/code&gt; 中修改。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cp /usr/lib/systemd/user/emacs.service /home/mario/.config/systemd/user/emacs.service
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgf8b9a1e" class="outline-4"&gt;
+&lt;h4 id="orgf8b9a1e"&gt;中文輸入法&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgf8b9a1e"&gt;
+&lt;p&gt;
+在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Environment=DISPLAY=:0
+Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8
+Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgbb59101" class="outline-4"&gt;
+&lt;h4 id="orgbb59101"&gt;shell term&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgbb59101"&gt;
+&lt;p&gt;
+設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/mario/.bin:/home/mario/.cabal/bin:/home/mario/.local/bin:/home/mario/.gem/ruby/2.5.0/bin
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org0b519be" class="outline-4"&gt;
+&lt;h4 id="org0b519be"&gt;final emacs.service&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org0b519be"&gt;
+&lt;p&gt;
+最後 emacs.service 的設定。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[Unit]
+Description=Emacs text editor
+Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/emacs --fg-daemon
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Restart=on-failure
+
+Environment=SSH_AUTH_SOCK=%t/keyring/ssh
+Environment=DISPLAY=:0
+Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8
+Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/mario/.bin:/home/mario/.cabal/bin:/home/mario/.local/bin:/home/mario/.gem/ruby/2.5.0/bin
+
+[Install]
+WantedBy=default.target
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org8670642" class="outline-3"&gt;
+&lt;h3 id="org8670642"&gt;修改 init.el&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8670642"&gt;
+&lt;p&gt;
+package server is unnecessary. 可以刪除。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;use-package&lt;/span&gt; &lt;span class="nv"&gt;server&lt;/span&gt;
+  &lt;span class="nv"&gt;:commands&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-running-p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="nv"&gt;:init&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;unless&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-running-p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;server-start&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgb34ec63" class="outline-3"&gt;
+&lt;h3 id="orgb34ec63"&gt;restart emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb34ec63"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+實際上，在 emacs 中執行 &lt;code&gt;(kill-emacs)&lt;/code&gt; 即可重啓 emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+觀察：emacs.service 中有下列指令：
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Restart=on-failure
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgf1ff2c8" class="outline-2"&gt;
+&lt;h2 id="orgf1ff2c8"&gt;結語&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf1ff2c8"&gt;
+&lt;p&gt;
+emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item></channel></rss>

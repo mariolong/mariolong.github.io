@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/install-arch-linux-2017/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
 <link rel="prev" href="../30-thinkings/" title="塞斯．卡拉曼：價值投資中的 30 個重要投資思想" type="text/html">
-<link rel="next" href="../post-install-for-htpc/" title="post install for htpc" type="text/html">
+<link rel="next" href="../post-installation-of-archlinux/" title="Post-installation of Archlinux" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Install Arch linux (2017)">
 <meta property="og:url" content="https://mariolong.github.io/posts/install-arch-linux-2017/">
@@ -116,8 +116,8 @@
 這次安裝，把目前系統應有的指令再記録下來，以備參閱。與上次安裝時所用的指令，差異不大。
 </p>
 
-<div id="outline-container-orgf9754a2" class="outline-2">
-<h2 id="orgf9754a2">
+<div id="outline-container-orgacbb69b" class="outline-2">
+<h2 id="orgacbb69b">
 <span class="section-number-2">1</span> 製作開機片（CD、USB、硬碟）啓動</h2>
 <div class="outline-text-2" id="text-1">
 <p>
@@ -133,8 +133,8 @@
 </div>
 </div>
 
-<div id="outline-container-org0dc6f57" class="outline-2">
-<h2 id="org0dc6f57">
+<div id="outline-container-orgee27609" class="outline-2">
+<h2 id="orgee27609">
 <span class="section-number-2">2</span> 啟動 ArchLinux 安裝程序</h2>
 <div class="outline-text-2" id="text-2">
 <p>
@@ -144,8 +144,8 @@
 </div>
 </div>
 
-<div id="outline-container-org4986108" class="outline-2">
-<h2 id="org4986108">
+<div id="outline-container-org0398831" class="outline-2">
+<h2 id="org0398831">
 <span class="section-number-2">3</span> 建立網絡連接</h2>
 <div class="outline-text-2" id="text-3">
 <p>
@@ -168,8 +168,8 @@ ping 一下看看網路連上了嗎？
 </div>
 </div>
 
-<div id="outline-container-org52f7c2c" class="outline-2">
-<h2 id="org52f7c2c">
+<div id="outline-container-org2b1bdb3" class="outline-2">
+<h2 id="org2b1bdb3">
 <span class="section-number-2">4</span> 準備磁碟機</h2>
 <div class="outline-text-2" id="text-4">
 <p>
@@ -177,8 +177,8 @@ ping 一下看看網路連上了嗎？
 </p>
 </div>
 
-<div id="outline-container-org33b73af" class="outline-3">
-<h3 id="org33b73af">
+<div id="outline-container-org69d4a70" class="outline-3">
+<h3 id="org69d4a70">
 <span class="section-number-3">4.1</span> 檢查分區狀況</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="highlight"><pre><span></span>lsblk -f
@@ -186,8 +186,8 @@ ping 一下看看網路連上了嗎？
 </div>
 </div>
 
-<div id="outline-container-org3148edc" class="outline-3">
-<h3 id="org3148edc">
+<div id="outline-container-org70c4493" class="outline-3">
+<h3 id="org70c4493">
 <span class="section-number-3">4.2</span> 格式化</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
@@ -199,8 +199,8 @@ ping 一下看看網路連上了嗎？
 </div>
 </div>
 
-<div id="outline-container-orge7cceef" class="outline-3">
-<h3 id="orge7cceef">
+<div id="outline-container-orgd579885" class="outline-3">
+<h3 id="orgd579885">
 <span class="section-number-3">4.3</span> 掛載分區</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
@@ -219,8 +219,8 @@ mount /dev/sda1 /mnt/home
 </div>
 </div>
 
-<div id="outline-container-org98dac17" class="outline-3">
-<h3 id="org98dac17">
+<div id="outline-container-org4ca6084" class="outline-3">
+<h3 id="org4ca6084">
 <span class="section-number-3">4.4</span> 建立 swap</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
@@ -228,8 +228,8 @@ mount /dev/sda1 /mnt/home
 </p>
 </div>
 
-<div id="outline-container-orgdfabc59" class="outline-4">
-<h4 id="orgdfabc59">
+<div id="outline-container-org5c6354c" class="outline-4">
+<h4 id="org5c6354c">
 <span class="section-number-4">4.4.1</span> 建立 swap file</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <p>
@@ -252,8 +252,8 @@ sudo nano /etc/fstab
 </div>
 </div>
 
-<div id="outline-container-org0daf220" class="outline-4">
-<h4 id="org0daf220">
+<div id="outline-container-orgc36a2c0" class="outline-4">
+<h4 id="orgc36a2c0">
 <span class="section-number-4">4.4.2</span> Remove swap file</h4>
 <div class="outline-text-4" id="text-4-4-2">
 <p>
@@ -274,13 +274,13 @@ rm -f /swapfile
 </div>
 </div>
 
-<div id="outline-container-org5d80c18" class="outline-2">
-<h2 id="org5d80c18">
+<div id="outline-container-org2fc2906" class="outline-2">
+<h2 id="org2fc2906">
 <span class="section-number-2">5</span> 配置安裝的環境</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org2952f05" class="outline-3">
-<h3 id="org2952f05">
+<div id="outline-container-org50b750f" class="outline-3">
+<h3 id="org50b750f">
 <span class="section-number-3">5.1</span> DNS setup (可不做)</h3>
 <div class="outline-text-3" id="text-5-1">
 <div class="highlight"><pre><span></span>nano /etc/resolv.conf
@@ -292,8 +292,8 @@ nameserver 8.8.8.8
 </div>
 </div>
 
-<div id="outline-container-orgece833d" class="outline-3">
-<h3 id="orgece833d">
+<div id="outline-container-orgcdc6b81" class="outline-3">
+<h3 id="orgcdc6b81">
 <span class="section-number-3">5.2</span> 選擇安裝鏡像</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
@@ -323,8 +323,8 @@ C-x:   exit
 </div>
 </div>
 
-<div id="outline-container-orgd348382" class="outline-2">
-<h2 id="orgd348382">
+<div id="outline-container-org7153dcf" class="outline-2">
+<h2 id="org7153dcf">
 <span class="section-number-2">6</span> 安裝基本系統</h2>
 <div class="outline-text-2" id="text-6">
 <div class="highlight"><pre><span></span>pacstrap -i /mnt base base-devel
@@ -346,8 +346,8 @@ run the following command: :
 </pre></div>
 </div>
 
-<div id="outline-container-orgdc7c46a" class="outline-3">
-<h3 id="orgdc7c46a">
+<div id="outline-container-org7c48903" class="outline-3">
+<h3 id="org7c48903">
 <span class="section-number-3">6.1</span> 生成 fstab</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
@@ -360,8 +360,8 @@ nano /mnt/etc/fstab   <span class="c1"># 檢查一下 fstab</span>
 </div>
 </div>
 
-<div id="outline-container-orgdd3fc1c" class="outline-3">
-<h3 id="orgdd3fc1c">
+<div id="outline-container-org31b3740" class="outline-3">
+<h3 id="org31b3740">
 <span class="section-number-3">6.2</span> Chroot 到新系統，並作基本配置</h3>
 <div class="outline-text-3" id="text-6-2">
 <div class="highlight"><pre><span></span>arch-chroot /mnt /bin/bash
@@ -369,8 +369,8 @@ nano /mnt/etc/fstab   <span class="c1"># 檢查一下 fstab</span>
 </div>
 </div>
 
-<div id="outline-container-org0a733cc" class="outline-3">
-<h3 id="org0a733cc">
+<div id="outline-container-orgf55c3a5" class="outline-3">
+<h3 id="orgf55c3a5">
 <span class="section-number-3">6.3</span> 配置 pacman</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="highlight"><pre><span></span>nano /etc/pacman.conf
@@ -391,8 +391,8 @@ Server = http://repo.archlinux.fr/$arch
 </div>
 </div>
 
-<div id="outline-container-orga38d92c" class="outline-3">
-<h3 id="orga38d92c">
+<div id="outline-container-orgd42be7d" class="outline-3">
+<h3 id="orgd42be7d">
 <span class="section-number-3">6.4</span> 更新系統，並安裝 yaourt</h3>
 <div class="outline-text-3" id="text-6-4">
 <div class="highlight"><pre><span></span>pacman -Syu
@@ -401,16 +401,16 @@ pacman -S yaourt
 </div>
 </div>
 
-<div id="outline-container-org165f889" class="outline-3">
-<h3 id="org165f889">
+<div id="outline-container-org036d737" class="outline-3">
+<h3 id="org036d737">
 <span class="section-number-3">6.5</span> 配置系統 Locale</h3>
 <div class="outline-text-3" id="text-6-5">
 <div class="highlight"><pre><span></span>nano /etc/locale.gen
 </pre></div>
 </div>
 
-<div id="outline-container-orgd13ab12" class="outline-4">
-<h4 id="orgd13ab12">
+<div id="outline-container-orga5e705d" class="outline-4">
+<h4 id="orga5e705d">
 <span class="section-number-4">6.5.1</span> 找到</h4>
 <div class="outline-text-4" id="text-6-5-1">
 <pre class="example">
@@ -425,8 +425,8 @@ zh_CN.UTF-8 UTF-8
 </div>
 </div>
 
-<div id="outline-container-org55bf227" class="outline-4">
-<h4 id="org55bf227">
+<div id="outline-container-org4d7e4be" class="outline-4">
+<h4 id="org4d7e4be">
 <span class="section-number-4">6.5.2</span> 使 locale 生效</h4>
 <div class="outline-text-4" id="text-6-5-2">
 <div class="highlight"><pre><span></span>locale-gen    <span class="c1">#使更改生效運行</span>
@@ -434,8 +434,8 @@ zh_CN.UTF-8 UTF-8
 </div>
 </div>
 
-<div id="outline-container-orgdbb1414" class="outline-4">
-<h4 id="orgdbb1414">
+<div id="outline-container-org43c5656" class="outline-4">
+<h4 id="org43c5656">
 <span class="section-number-4">6.5.3</span> 確認一下 locale</h4>
 <div class="outline-text-4" id="text-6-5-3">
 <div class="highlight"><pre><span></span>locale -a     <span class="c1">#確認一下開啟的 locale</span>
@@ -444,8 +444,8 @@ locale        <span class="c1">#目前的 locale</span>
 </div>
 </div>
 
-<div id="outline-container-org60e8220" class="outline-4">
-<h4 id="org60e8220">
+<div id="outline-container-org60ac7c8" class="outline-4">
+<h4 id="org60ac7c8">
 <span class="section-number-4">6.5.4</span> 全域 locale 設定：對整個系統有效</h4>
 <div class="outline-text-4" id="text-6-5-4">
 <div class="highlight"><pre><span></span>nano /etc/locale.conf
@@ -461,8 +461,8 @@ LANG=en_US.UTF-8
 </div>
 </div>
 
-<div id="outline-container-org8bdbf1a" class="outline-3">
-<h3 id="org8bdbf1a">
+<div id="outline-container-orgb154a05" class="outline-3">
+<h3 id="orgb154a05">
 <span class="section-number-3">6.6</span> 更改 console 字型</h3>
 <div class="outline-text-3" id="text-6-6">
 <p>
@@ -490,8 +490,8 @@ ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐�
 </div>
 </div>
 
-<div id="outline-container-org20ea7f1" class="outline-3">
-<h3 id="org20ea7f1">
+<div id="outline-container-org1ce4b1d" class="outline-3">
+<h3 id="org1ce4b1d">
 <span class="section-number-3">6.7</span> 配置系統時區</h3>
 <div class="outline-text-3" id="text-6-7">
 <p>
@@ -503,8 +503,8 @@ ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐�
 </div>
 </div>
 
-<div id="outline-container-org8f70753" class="outline-3">
-<h3 id="org8f70753">
+<div id="outline-container-orgcced015" class="outline-3">
+<h3 id="orgcced015">
 <span class="section-number-3">6.8</span> 時間調整</h3>
 <div class="outline-text-3" id="text-6-8">
 <p>
@@ -546,8 +546,8 @@ timedatectl set-ntp <span class="nb">true</span>
 </div>
 </div>
 
-<div id="outline-container-orgfb21b2d" class="outline-3">
-<h3 id="orgfb21b2d">
+<div id="outline-container-org6c30685" class="outline-3">
+<h3 id="org6c30685">
 <span class="section-number-3">6.9</span> 設置主機名稱</h3>
 <div class="outline-text-3" id="text-6-9">
 <div class="highlight"><pre><span></span>nano /etc/hostname
@@ -563,8 +563,8 @@ timedatectl set-ntp <span class="nb">true</span>
 </div>
 </div>
 
-<div id="outline-container-org4b8db03" class="outline-2">
-<h2 id="org4b8db03">
+<div id="outline-container-org37d2592" class="outline-2">
+<h2 id="org37d2592">
 <span class="section-number-2">7</span> 再一次設定網路</h2>
 <div class="outline-text-2" id="text-7">
 <p>
@@ -575,8 +575,8 @@ timedatectl set-ntp <span class="nb">true</span>
 </pre></div>
 </div>
 
-<div id="outline-container-orgcd78d1f" class="outline-3">
-<h3 id="orgcd78d1f">
+<div id="outline-container-org148fd1f" class="outline-3">
+<h3 id="org148fd1f">
 <span class="section-number-3">7.1</span> WIFI</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
@@ -585,8 +585,8 @@ timedatectl set-ntp <span class="nb">true</span>
 </div>
 </div>
 
-<div id="outline-container-orga8a01be" class="outline-3">
-<h3 id="orga8a01be">
+<div id="outline-container-orgd2cc4de" class="outline-3">
+<h3 id="orgd2cc4de">
 <span class="section-number-3">7.2</span> ADSL</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
@@ -638,8 +638,8 @@ to remove auto 'dial in' at boot.
 </div>
 </div>
 
-<div id="outline-container-orgdfa19a4" class="outline-2">
-<h2 id="orgdfa19a4">
+<div id="outline-container-org95827c7" class="outline-2">
+<h2 id="org95827c7">
 <span class="section-number-2">8</span> mkinitcpio</h2>
 <div class="outline-text-2" id="text-8">
 <p>
@@ -661,8 +661,8 @@ to remove auto 'dial in' at boot.
 </div>
 </div>
 
-<div id="outline-container-org04f2843" class="outline-2">
-<h2 id="org04f2843">
+<div id="outline-container-org30ce801" class="outline-2">
+<h2 id="org30ce801">
 <span class="section-number-2">9</span> Install and configure a bootloader</h2>
 <div class="outline-text-2" id="text-9">
 <p>
@@ -674,8 +674,8 @@ grub-install --target<span class="o">=</span>i386-pc --recheck /dev/sda  <span c
 </pre></div>
 </div>
 
-<div id="outline-container-org8eaaf06" class="outline-3">
-<h3 id="org8eaaf06">
+<div id="outline-container-orgf14b2aa" class="outline-3">
+<h3 id="orgf14b2aa">
 <span class="section-number-3">9.1</span> 自動尋找其它的 OS</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
@@ -698,8 +698,8 @@ grub-install --target<span class="o">=</span>i386-pc --recheck /dev/sda  <span c
 </div>
 </div>
 
-<div id="outline-container-orgf72fb59" class="outline-3">
-<h3 id="orgf72fb59">
+<div id="outline-container-orgc1cd4d1" class="outline-3">
+<h3 id="orgc1cd4d1">
 <span class="section-number-3">9.2</span> intel CPU 要安裝 microcode</h3>
 <div class="outline-text-3" id="text-9-2">
 <p>
@@ -711,8 +711,8 @@ grub-install --target<span class="o">=</span>i386-pc --recheck /dev/sda  <span c
 </div>
 </div>
 
-<div id="outline-container-orgcc5cb84" class="outline-3">
-<h3 id="orgcc5cb84">
+<div id="outline-container-org39cd95e" class="outline-3">
+<h3 id="org39cd95e">
 <span class="section-number-3">9.3</span> 自動產生 grub.cfg</h3>
 <div class="outline-text-3" id="text-9-3">
 <p>
@@ -725,8 +725,8 @@ grub-install --target<span class="o">=</span>i386-pc --recheck /dev/sda  <span c
 </div>
 </div>
 
-<div id="outline-container-org93840c4" class="outline-2">
-<h2 id="org93840c4">
+<div id="outline-container-org3cdc764" class="outline-2">
+<h2 id="org3cdc764">
 <span class="section-number-2">10</span> 重啓</h2>
 <div class="outline-text-2" id="text-10">
 <div class="highlight"><pre><span></span><span class="nb">exit</span>
@@ -735,8 +735,8 @@ reboot
 </pre></div>
 </div>
 
-<div id="outline-container-org78c4949" class="outline-3">
-<h3 id="org78c4949">
+<div id="outline-container-org6b26858" class="outline-3">
+<h3 id="org6b26858">
 <span class="section-number-3">10.1</span> 確認網路連線</h3>
 <div class="outline-text-3" id="text-10-1">
 <p>
@@ -754,8 +754,8 @@ systemctl start dhcpcd
 </div>
 </div>
 
-<div id="outline-container-org6bd1bac" class="outline-3">
-<h3 id="org6bd1bac">
+<div id="outline-container-orgec88724" class="outline-3">
+<h3 id="orgec88724">
 <span class="section-number-3">10.2</span> update system（可不做）</h3>
 <div class="outline-text-3" id="text-10-2">
 <div class="highlight"><pre><span></span>pacman -Syu
@@ -764,13 +764,13 @@ systemctl start dhcpcd
 </div>
 </div>
 
-<div id="outline-container-org9b75213" class="outline-2">
-<h2 id="org9b75213">
+<div id="outline-container-org7b6497d" class="outline-2">
+<h2 id="org7b6497d">
 <span class="section-number-2">11</span> post-installation</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-orgf309a17" class="outline-3">
-<h3 id="orgf309a17">
+<div id="outline-container-org9eaf4c1" class="outline-3">
+<h3 id="org9eaf4c1">
 <span class="section-number-3">11.1</span> 設置 Root 密碼並創建一般用戶</h3>
 <div class="outline-text-3" id="text-11-1">
 <div class="highlight"><pre><span></span>passwd
@@ -780,8 +780,8 @@ passwd username
 </div>
 </div>
 
-<div id="outline-container-org70bcc97" class="outline-3">
-<h3 id="org70bcc97">
+<div id="outline-container-org0f8f2ed" class="outline-3">
+<h3 id="org0f8f2ed">
 <span class="section-number-3">11.2</span> 安裝 Sudo</h3>
 <div class="outline-text-3" id="text-11-2">
 <div class="highlight"><pre><span></span>pacman -S sudo
@@ -811,12 +811,12 @@ passwd username
 </div>
 </div>
 
-<div id="outline-container-orga165bb1" class="outline-3">
-<h3 id="orga165bb1">
+<div id="outline-container-orgdbf321d" class="outline-3">
+<h3 id="orgdbf321d">
 <span class="section-number-3">11.3</span> 登出，並以新的用戶名稱登入</h3>
 </div>
-<div id="outline-container-org35f9cda" class="outline-3">
-<h3 id="org35f9cda">
+<div id="outline-container-org346e123" class="outline-3">
+<h3 id="org346e123">
 <span class="section-number-3">11.4</span> 設定聲音 alas</h3>
 <div class="outline-text-3" id="text-11-4">
 <p>
@@ -855,8 +855,8 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 </div>
 </div>
 
-<div id="outline-container-org658f531" class="outline-3">
-<h3 id="org658f531">
+<div id="outline-container-org1fa13ed" class="outline-3">
+<h3 id="org1fa13ed">
 <span class="section-number-3">11.5</span> 安裝 x11</h3>
 <div class="outline-text-3" id="text-11-5">
 <div class="highlight"><pre><span></span>pacman -S xorg-<span class="o">{</span>server,apps<span class="o">}</span> mesa
@@ -868,13 +868,13 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 </div>
 </div>
 
-<div id="outline-container-org39eec8d" class="outline-3">
-<h3 id="org39eec8d">
+<div id="outline-container-org8b7adb3" class="outline-3">
+<h3 id="org8b7adb3">
 <span class="section-number-3">11.6</span> 裝顯卡驅動</h3>
 <div class="outline-text-3" id="text-11-6">
 </div>
-<div id="outline-container-org03d3ffd" class="outline-4">
-<h4 id="org03d3ffd">
+<div id="outline-container-org00dc093" class="outline-4">
+<h4 id="org00dc093">
 <span class="section-number-4">11.6.1</span> ATi 用戶：</h4>
 <div class="outline-text-4" id="text-11-6-1">
 <p>
@@ -893,8 +893,8 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 </div>
 </div>
 
-<div id="outline-container-org0a6e2a7" class="outline-4">
-<h4 id="org0a6e2a7">
+<div id="outline-container-org59a120d" class="outline-4">
+<h4 id="org59a120d">
 <span class="section-number-4">11.6.2</span> intel 用戶：</h4>
 <div class="outline-text-4" id="text-11-6-2">
 <div class="highlight"><pre><span></span>pacman -S xf86-video-intel libav-intel-driver
@@ -903,8 +903,8 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 </div>
 </div>
 
-<div id="outline-container-org84bbb76" class="outline-3">
-<h3 id="org84bbb76">
+<div id="outline-container-org7084a3a" class="outline-3">
+<h3 id="org7084a3a">
 <span class="section-number-3">11.7</span> 安裝字體</h3>
 <div class="outline-text-3" id="text-11-7">
 <p>
@@ -917,8 +917,8 @@ yaourt -S adobe-source-<span class="o">{</span>code,sans,serif<span class="o">}<
 </div>
 </div>
 
-<div id="outline-container-orgd473f8e" class="outline-3">
-<h3 id="orgd473f8e">
+<div id="outline-container-org9dcee63" class="outline-3">
+<h3 id="org9dcee63">
 <span class="section-number-3">11.8</span> 讓 X 可以顯示中文</h3>
 <div class="outline-text-3" id="text-11-8">
 <div class="highlight"><pre><span></span>nano ~/.xinitrc
@@ -930,8 +930,8 @@ export LC_ALL="zh_TW.UTF-8"
 </div>
 </div>
 
-<div id="outline-container-orgc56c361" class="outline-3">
-<h3 id="orgc56c361">
+<div id="outline-container-org4fc9721" class="outline-3">
+<h3 id="org4fc9721">
 <span class="section-number-3">11.9</span> 將右邊的數字鍵盤預設爲方向鍵</h3>
 <div class="outline-text-3" id="text-11-9">
 <div class="highlight"><pre><span></span>yaourt -S numlockx
@@ -947,8 +947,8 @@ nano ~/.xinitrc
 </div>
 </div>
 
-<div id="outline-container-orgd2db27d" class="outline-3">
-<h3 id="orgd2db27d">
+<div id="outline-container-org95dbbd7" class="outline-3">
+<h3 id="org95dbbd7">
 <span class="section-number-3">11.10</span> 安裝桌面</h3>
 <div class="outline-text-3" id="text-11-10">
 <p>
@@ -986,8 +986,8 @@ nano ~/.xinitrc
 </div>
 </div>
 
-<div id="outline-container-orgab1c289" class="outline-3">
-<h3 id="orgab1c289">
+<div id="outline-container-org4590105" class="outline-3">
+<h3 id="org4590105">
 <span class="section-number-3">11.11</span> theme</h3>
 <div class="outline-text-3" id="text-11-11">
 <p>
@@ -1003,8 +1003,8 @@ Using Breeze theme and Flat Remix icon theme:
 </div>
 </div>
 
-<div id="outline-container-org6d10c0b" class="outline-3">
-<h3 id="org6d10c0b">
+<div id="outline-container-org04d05eb" class="outline-3">
+<h3 id="org04d05eb">
 <span class="section-number-3">11.12</span> 安裝中文輸入法</h3>
 <div class="outline-text-3" id="text-11-12">
 <p>
@@ -1016,8 +1016,8 @@ Using Breeze theme and Flat Remix icon theme:
 </div>
 </div>
 
-<div id="outline-container-org37a0d52" class="outline-3">
-<h3 id="org37a0d52">
+<div id="outline-container-org623bc4d" class="outline-3">
+<h3 id="org623bc4d">
 <span class="section-number-3">11.13</span> install google chrome</h3>
 <div class="outline-text-3" id="text-11-13">
 <div class="highlight"><pre><span></span>yaourt -S google-chrome
@@ -1025,8 +1025,8 @@ Using Breeze theme and Flat Remix icon theme:
 </div>
 </div>
 
-<div id="outline-container-org5c98afb" class="outline-3">
-<h3 id="org5c98afb">
+<div id="outline-container-orgb6ad3cf" class="outline-3">
+<h3 id="orgb6ad3cf">
 <span class="section-number-3">11.14</span> 安裝文字編輯器</h3>
 <div class="outline-text-3" id="text-11-14">
 <p>
@@ -1044,13 +1044,13 @@ Using Breeze theme and Flat Remix icon theme:
 </div>
 </div>
 
-<div id="outline-container-org7cb7663" class="outline-2">
-<h2 id="org7cb7663">
+<div id="outline-container-org676ce38" class="outline-2">
+<h2 id="org676ce38">
 <span class="section-number-2">12</span> issues</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-orgc02e9d5" class="outline-3">
-<h3 id="orgc02e9d5">
+<div id="outline-container-org07d1fbb" class="outline-3">
+<h3 id="org07d1fbb">
 <span class="section-number-3">12.1</span> kvm:disable by bios</h3>
 <div class="outline-text-3" id="text-12-1">
 <p>
@@ -1087,7 +1087,7 @@ iVT enable @ bios
                 <a href="../30-thinkings/" rel="prev" title="塞斯．卡拉曼：價值投資中的 30 個重要投資思想">上一篇</a>
             </li>
             <li class="next">
-                <a href="../post-install-for-htpc/" rel="next" title="post install for htpc">下一篇</a>
+                <a href="../post-installation-of-archlinux/" rel="next" title="Post-installation of Archlinux">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
         

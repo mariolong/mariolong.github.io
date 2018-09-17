@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：nix)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/nix.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+在 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
+我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
+在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
+&lt;/p&gt;
+
+&lt;div id="outline-container-org1a5f0f4" class="outline-2"&gt;
+&lt;h2 id="org1a5f0f4"&gt;install nix&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a5f0f4"&gt;
+&lt;p&gt;
+因為 miso 建議用 nix 管理 project，還是參考 &lt;a href="https://nixos.org/nix/manual/"&gt;Nix manual&lt;/a&gt; 試著把它裝起來。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl https://nixos.org/nix/install &lt;span class="p"&gt;|&lt;/span&gt; sh
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+安裝成功後，會有以下的訊息：
+&lt;/p&gt;
+&lt;pre class="example"&gt;
+Installation finished!  To ensure that the necessary environment
+variables are set, either log in again, or type
+
+  . /home/mario/.nix-profile/etc/profile.d/nix.sh
+&lt;/pre&gt;
+
+&lt;p&gt;
+在 &lt;code&gt;.profile&lt;/code&gt; 中，加上
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[[&lt;/span&gt; -f &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.nix-profile/etc/profile.d/nix.sh &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; . &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.nix-profile/etc/profile.d/nix.sh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+以後開機就可以使用 nix 的指令了。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7ea9181" class="outline-2"&gt;
+&lt;h2 id="org7ea9181"&gt;install stack, cabal, xmonad/taffybar, pandoc&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7ea9181"&gt;
+&lt;p&gt;
+還是可以用 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 的方法，而 cabal 可不安裝，用 stack 即可。BUT…
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org8d9ac47" class="outline-2"&gt;
+&lt;h2 id="org8d9ac47"&gt;install GHCJS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8d9ac47"&gt;
+&lt;p&gt;
+因為要先安裝 GHCJS 後，才能用 miso 寫程式。所以這步驟是必要的。
+&lt;/p&gt;
+
+&lt;p&gt;
+在 &lt;a href="https://mariolong.github.io/posts/install-ghcjs-archlinux/"&gt;Install ghcjs for ghc 8.4.3 on archlinux&lt;/a&gt;, 我會記錄了以 stack 安裝
+GHCJS，在過程中一定會安裝全域 cabal, 這會是個麻煩事。因為用 stack 管理
+miso 專案，則不能用全域 cabal，必須把全域 cabal 刪除。真困擾。
+&lt;/p&gt;
+
+&lt;p&gt;
+雖然可以用 nix 管理專案，只是功能強，意味著學習曲線比較陡吧。算了，還是乖乖學 nix。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgee4e49c" class="outline-2"&gt;
+&lt;h2 id="orgee4e49c"&gt;conclusion&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgee4e49c"&gt;
+&lt;p&gt;
+Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt;del&gt;也許先用 servant
+做 server 才是對的&lt;/del&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>cabal</category><category>haskell</category><category>linux</category><category>miso</category><category>nix</category><category>stack</category><guid>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</guid><pubDate>Fri, 14 Sep 2018 04:07:35 GMT</pubDate></item></channel></rss>

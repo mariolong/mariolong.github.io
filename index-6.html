@@ -75,140 +75,7 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/from-git-to-github/" class="u-url">from git to github</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/from-git-to-github/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-05-29T01:54:41Z" itemprop="datePublished" title="2015-05-29 01:54">2015-05-29 01:54</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/from-git-to-github/#disqus_thread" data-disqus-identifier="cache/posts/from-git-to-github.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>想辦法把一些東西放到 github，一方面是可以備份，一方面可以分享。
-當然，備份才是我的重點，順便分享給有需要的人。
-畢竟從 open source 得到很多，也該把這個過程記錄下來，讓有需要的人採用。</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<p><a class="reference external" href="https://help.github.com/articles/set-up-git/">Github help</a> 已經很寫得很清楚，重點是</p>
-<p>git
-git -global name
-git -global email</p>
-</div>
-<div class="section" id="id2">
-<h2>問題</h2>
-<div class="section" id="push-github">
-<h3>將已存在的專案 push 到 github</h3>
-<ol class="arabic simple">
-<li>先在 github 建一個 repostory，例如：emacs.d</li>
-<li>回到 local 端，下指令 git remote add <a class="reference external" href="https://github.com/mariolong/emacs.d.git">https://github.com/mariolong/emacs.d.git</a>
-</li>
-<li>git pull</li>
-<li>touch .gitignore</li>
-<li>git push -u origin master</li>
-</ol>
-</div>
-<div class="section" id="push">
-<h3>push 失敗</h3>
-<pre class="literal-block">
-$ git push -u origin master
-
-! [rejected]        master -&gt; master (non-fast-forward)
-error: failed to push some refs to 'https://github.com/mariolong/emacs.d.git'
-hint: Updates were rejected because a pushed branch tip is behind its remote
-hint: counterpart. Check out this branch and integrate the remote changes
-hint: (e.g. 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
-
-git checkout master
-git merge test
-git push -u origin master
-</pre>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fonts/" class="u-url">字型相關</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/fonts/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-05-27T13:48:41Z" itemprop="datePublished" title="2015-05-27 13:48">2015-05-27 13:48</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="posts/fonts/#disqus_thread" data-disqus-identifier="cache/posts/fonts.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p><strong>己經没有 [infinality-bundle] 了，這篇留作紀念。</strong></p>
-<p>系統看起來要好看，最重要的其實是字型，字型沒調好看起來就是怪怪的，不舒服。</p>
-<p>目前我的解法是參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Infinality">https://wiki.archlinux.org/index.php/Infinality</a> 設定整個系統的字型。</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<p>1. 增加公鑰</p>
-<pre class="literal-block">
-$ sudo pacman-key -r 962DDE58
-$ sudo pacman-key --lsign-key 962DDE58
-</pre>
-<p>2. 編輯 <tt class="docutils literal">/etc/pacman.conf</tt> ，加上</p>
-<pre class="literal-block">
-[infinality-bundle]
-Server = http://bohoomil.com/repo/$arch
-</pre>
-<p>3. 更新資料庫，並安裝 <tt class="docutils literal"><span class="pre">infinality-bundle</span></tt></p>
-<pre class="literal-block">
-$ yaourt -Syy
-$ yaourt -S infinality-bundle
-</pre>
-<ol class="arabic" start="4">
-<li>
-<p class="first">安裝字體，可以挑選 <a class="reference external" href="http://bohoomil.com/doc/05-fonts/">這裡</a> 有的。</p>
-<p>例如，想用 <tt class="docutils literal"><span class="pre">adobe-source-code-pro-fonts</span></tt> ，查到有 ttf-source-code-pro-ibx，
-那就可以安裝。</p>
-<pre class="literal-block">
-$ yaourt -S adobe-source-code-pro-fonts
-</pre>
-<p>目前我安裝的是以下字型：</p>
-<pre class="literal-block">
-$ yaourt -S ttf-tw ttf-dejavu ttf-oxygen ttf-liberation
-$ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts adobe-source-code-pro-fonts
-</pre>
-</li>
-<li>
-<p class="first">用 lxqt-config-apperance 調整字體渲染方式。</p>
-<p>自動產生 <tt class="docutils literal"><span class="pre">~/.config/fontconfig/fonts.conf</span></tt> 和 <tt class="docutils literal"><span class="pre">~/.config/fonts.conf</span></tt> 一樣的檔案。</p>
-</li>
-<li>
-<p class="first">微調 <tt class="docutils literal"><span class="pre">/etc/X11/xinit/xinitrc.d/infinality-settings.sh</span></tt></p>
-<p>設定 USE_STYLE="3"</p>
-</li>
-<li>
-<p class="first">重啟 X 看結果。</p>
-</li>
-</ol>
-</div>
-<div class="section" id="id3">
-<h2>結論</h2>
-<p>暫時就先這樣，有空再來調整吧。</p>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/m2ts-to-mp4/" class="u-url">M2TS to mp4 via ffmpeg</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/m2ts-to-mp4/" class="u-url">M2TS to mp4 via ffmpeg</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
@@ -230,28 +97,47 @@ $ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-so
 <div class="section" id="split">
 <h2>split</h2>
 <p>先將不要的片段切掉</p>
-<pre class="code text"><a name="rest_code_778517d1ec234c77a224588139920d8b-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-<a name="rest_code_778517d1ec234c77a224588139920d8b-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
+<pre class="code text"><a name="rest_code_61d2ca28376145bda88bdd56f9d43a6e-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+<a name="rest_code_61d2ca28376145bda88bdd56f9d43a6e-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
 </pre>
 </div>
 <div class="section" id="convert-m2ts-to-avi-for-concat">
 <h2>convert M2TS to avi for concat</h2>
 <p>轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
 有一個 frame 會交錯，影片會跳一下。</p>
-<pre class="code text"><a name="rest_code_a6486a36ab414ceba284f1f5dbab8f7c-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
-<a name="rest_code_a6486a36ab414ceba284f1f5dbab8f7c-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
+<pre class="code text"><a name="rest_code_c80020e8264a4612bdb29b39c8f7ed6c-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
+<a name="rest_code_c80020e8264a4612bdb29b39c8f7ed6c-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
 </pre>
 </div>
 <div class="section" id="id1">
 <h2>合併</h2>
 <p>將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。</p>
-<pre class="code text"><a name="rest_code_ac6726465d794342af3fa0fdcfbd1a2b-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_3b8ca6938c134a8c9de112bd47988270-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
 </pre>
 <p>或</p>
-<pre class="code text"><a name="rest_code_5370669254024201b34b7fc30c81b344-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_cfaa93dd2ac44764bc344647c9d50f8a-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
 </pre>
 </div>
 </div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mpv/" class="u-url">mpv</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/mpv/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-02-22T13:26:01Z" itemprop="datePublished" title="2015-02-22 13:26">2015-02-22 13:26</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/mpv/#disqus_thread" data-disqus-identifier="cache/posts/mpv.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>Write your post here.</p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/pip-python-library/" class="u-url">pip: python library</a></h1>
         <div class="metadata">
@@ -1060,6 +946,73 @@ convert in.gif -transparent white -white-threshold 95% out.png
 convert -density 600 p.pdf p-%2d.jpg
 convert -density 600 p.pdf -resize 25% p-%2d.png
 </pre>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/" class="u-url">generate mobi file by pandoc/kindlegen/calibre for my kindle 5</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-11-14T02:55:28Z" itemprop="datePublished" title="2014-11-14 02:55">2014-11-14 02:55</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/#disqus_thread" data-disqus-identifier="cache/posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>買了 kindle 5 看電子書。</p>
+<p>照慣例，思考著如何自動將網頁文章轉進我的電子書，讓我可以在閒暇時可以閱讀這些文章。</p>
+<div class="section" id="id1">
+<h2>工具：</h2>
+<ol class="arabic simple">
+<li>pandoc</li>
+<li>kindlegen</li>
+<li>calibre</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>流程：</h2>
+<p>pandoc 抓網頁資料</p>
+</div>
+<div class="section" id="id3">
+<h2>說明：</h2>
+<div class="section" id="pandoc">
+<h3>pandoc</h3>
+</div>
+<div class="section" id="kindlegen">
+<h3>kindlegen</h3>
+<p>從 <a class="reference external" href="http://www.amazon.com/gp/feature.html?docId=1000765211">官網</a> 下載後，直接解壓縮到一個目錄。</p>
+<p>目錄下的 kindlegen 是可執行檔，所以建一個連結到我的 <tt class="docutils literal">$PATH</tt> 中即可。</p>
+<p>kindlegen 可以轉的檔案，我是選用 epub，也就是 pandoc 轉出來的那個檔。</p>
+</div>
+<div class="section" id="kindle">
+<h3>傳到 kindle 上</h3>
+<div class="section" id="usb">
+<h4>USB</h4>
+</div>
+<div class="section" id="transferring-using-dropbox">
+<h4>Transferring Using Dropbox</h4>
+<p><a class="reference external" href="http://google.about.com/od/kindlefire/a/How-To-Put-Non-Amazon-Books-On-Your-Kindle-Fire.htm">http://google.about.com/od/kindlefire/a/How-To-Put-Non-Amazon-Books-On-Your-Kindle-Fire.htm</a></p>
+<p>I usually don't like to fiddle with plugging my Kindle into my laptop,
+so I use Dropbox to both store my library and transfer my eBooks to my devices.</p>
+<p>If you use Dropbox, you'll want to navigate to your eBook file and rather than just tapping to open it,
+you'll want to select the triangle to the right of the file name.</p>
+<p>Next, tap Export.</p>
+<p>Choose Save to SD Card (your Kindle doesn't actually have an SD card, but this gets you to the internal storage space).</p>
+<p>Select either Books (for .mobi files) or Documents (for .pdf, .txt, .doc, and other files).
+Tap Export.</p>
+<p>Once you've done this, you should restart your Kindle Fire. Your books will appear after that.
+If your book does not appear, double check that you waited for the book to fully copy to your Kindle's hard drive and
+double check that you chose the correct folder for the file format.</p>
+</div>
 </div>
 </div>
 </div>

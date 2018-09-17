@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：ffmpeg)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/ffmpeg.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:02:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>M2TS to mp4 via ffmpeg</title><link>https://mariolong.github.io/posts/m2ts-to-mp4/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;處理 Sony DV 拍出來的影片，還是用 ffmpeg。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：ffmpeg)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/ffmpeg.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>M2TS to mp4 via ffmpeg</title><link>https://mariolong.github.io/posts/m2ts-to-mp4/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;處理 Sony DV 拍出來的影片，還是用 ffmpeg。&lt;/p&gt;
 &lt;div class="section" id="split"&gt;
 &lt;h2&gt;split&lt;/h2&gt;
 &lt;p&gt;先將不要的片段切掉&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_778517d1ec234c77a224588139920d8b-1"&gt;&lt;/a&gt;ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-&lt;a name="rest_code_778517d1ec234c77a224588139920d8b-2"&gt;&lt;/a&gt;ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
+&lt;pre class="code text"&gt;&lt;a name="rest_code_61d2ca28376145bda88bdd56f9d43a6e-1"&gt;&lt;/a&gt;ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+&lt;a name="rest_code_61d2ca28376145bda88bdd56f9d43a6e-2"&gt;&lt;/a&gt;ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="convert-m2ts-to-avi-for-concat"&gt;
 &lt;h2&gt;convert M2TS to avi for concat&lt;/h2&gt;
 &lt;p&gt;轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
 有一個 frame 會交錯，影片會跳一下。&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_a6486a36ab414ceba284f1f5dbab8f7c-1"&gt;&lt;/a&gt;ffmpeg -i at.m2ts -q 0 at.avi
-&lt;a name="rest_code_a6486a36ab414ceba284f1f5dbab8f7c-2"&gt;&lt;/a&gt;ffmpeg -i bt.m2ts -q 0 bt.avi
+&lt;pre class="code text"&gt;&lt;a name="rest_code_c80020e8264a4612bdb29b39c8f7ed6c-1"&gt;&lt;/a&gt;ffmpeg -i at.m2ts -q 0 at.avi
+&lt;a name="rest_code_c80020e8264a4612bdb29b39c8f7ed6c-2"&gt;&lt;/a&gt;ffmpeg -i bt.m2ts -q 0 bt.avi
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;合併&lt;/h2&gt;
 &lt;p&gt;將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_ac6726465d794342af3fa0fdcfbd1a2b-1"&gt;&lt;/a&gt;ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
+&lt;pre class="code text"&gt;&lt;a name="rest_code_3b8ca6938c134a8c9de112bd47988270-1"&gt;&lt;/a&gt;ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
 &lt;/pre&gt;&lt;p&gt;或&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_5370669254024201b34b7fc30c81b344-1"&gt;&lt;/a&gt;cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
+&lt;pre class="code text"&gt;&lt;a name="rest_code_cfaa93dd2ac44764bc344647c9d50f8a-1"&gt;&lt;/a&gt;cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
 &lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><category>ffmpeg</category><guid>https://mariolong.github.io/posts/m2ts-to-mp4/</guid><pubDate>Mon, 04 May 2015 07:33:03 GMT</pubDate></item><item><title>ffmpeg 使用心得與整理</title><link>https://mariolong.github.io/posts/ffmpeg-xin-de/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div class="section" id="ffmpeg"&gt;
 &lt;h2&gt;ffmpeg 使用心得&lt;/h2&gt;
 &lt;p&gt;使用了一陣子的 FFMpeg 處理影片，越用越喜歡這套軟體。&lt;/p&gt;

@@ -8,7 +8,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/turn-on-smart/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
-<link rel="prev" href="../one-cup-black-coffee-every-day/" title="一天 1 杯黑咖啡，肝癌風險降 42％" type="text/html">
+<link rel="prev" href="../kodi-tv/" title="Kodi TV" type="text/html">
 <link rel="next" href="../time-to-drink-water/" title="這個時間喝水，輕鬆甩肉、防中風！ - 康健雜誌" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Turn on SMART to monitor HD">
@@ -129,17 +129,17 @@ To monitor for all possible SMART errors on all disk">
 ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - ArchWiki</a>
 </p>
 
-<div id="outline-container-org8f3e69a" class="outline-2">
-<h2 id="org8f3e69a">Install</h2>
-<div class="outline-text-2" id="text-org8f3e69a">
+<div id="outline-container-org49e10aa" class="outline-2">
+<h2 id="org49e10aa">Install</h2>
+<div class="outline-text-2" id="text-org49e10aa">
 <div class="highlight"><pre><span></span>yaourt -S smartmontools
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orga772981" class="outline-2">
-<h2 id="orga772981">start smartd</h2>
-<div class="outline-text-2" id="text-orga772981">
+<div id="outline-container-orgfcac952" class="outline-2">
+<h2 id="orgfcac952">start smartd</h2>
+<div class="outline-text-2" id="text-orgfcac952">
 <div class="highlight"><pre><span></span>systemctl start smartd
 </pre></div>
 
@@ -149,9 +149,9 @@ ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - Arch
 </div>
 </div>
 
-<div id="outline-container-org9790255" class="outline-2">
-<h2 id="org9790255">smartd.conf</h2>
-<div class="outline-text-2" id="text-org9790255">
+<div id="outline-container-org1b75a38" class="outline-2">
+<h2 id="org1b75a38">smartd.conf</h2>
+<div class="outline-text-2" id="text-org1b75a38">
 <p>
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -161,9 +161,9 @@ setting must be added in the configuration file.
 </pre></div>
 </div>
 
-<div id="outline-container-org5415b29" class="outline-3">
-<h3 id="org5415b29">auto mail</h3>
-<div class="outline-text-3" id="text-org5415b29">
+<div id="outline-container-org1c6efd2" class="outline-3">
+<h3 id="org1c6efd2">auto mail</h3>
+<div class="outline-text-3" id="text-org1c6efd2">
 <p>
 先依 <a href="https://dominicm.com/configure-email-notifications-on-arch-linux/">Configure Email Notifications on Arch Linux | DominicM</a> 設定 s-nail,
 再於 <code>/etc/smartd.conf</code> 加上以下指令
@@ -181,7 +181,7 @@ setting must be added in the configuration file.
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../one-cup-black-coffee-every-day/" rel="prev" title="一天 1 杯黑咖啡，肝癌風險降 42％">上一篇</a>
+                <a href="../kodi-tv/" rel="prev" title="Kodi TV">上一篇</a>
             </li>
             <li class="next">
                 <a href="../time-to-drink-water/" rel="next" title="這個時間喝水，輕鬆甩肉、防中風！ - 康健雜誌">下一篇</a>

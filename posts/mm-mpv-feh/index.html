@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>mm=mpv+feh | Simple Life</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://mariolong.github.io/posts/mm-mpv-feh/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
+<link rel="prev" href="../cancer-first-time/" title="鼻咽癌與我的初次相遇" type="text/html">
+<link rel="next" href="../using-dired/" title="Using dired in Emacs" type="text/html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:title" content="mm=mpv+feh">
+<meta property="og:url" content="https://mariolong.github.io/posts/mm-mpv-feh/">
+<meta property="og:description" content="用全螢幕幻燈片模式播放照片：
+
+
+feh -FD1 --auto-rotate
+
+
+
+單純播放照片和影片記錄而已
+
+
+
+mpv
+
+
+
+keyboard control
+
+
+LEFT and RIGHT
+
+
+Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see –hr-seek).
+
+
+UP and ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-05-29T09:57:04+08:00">
+<meta property="article:tag" content="feh">
+<meta property="article:tag" content="mm">
+<meta property="article:tag" content="mpv">
+</head>
+<body>
+
+	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+
+	<!-- Menubar -->
+
+	<div class="navbar navbar-static-top" id="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<a class="brand" href="https://mariolong.github.io/">
+
+						<span id="blog-title">Simple Life</span>
+				</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+<li>
+<a href="../../categories/cat_computer/">電腦</a>
+                </li>
+<li>
+<a href="../../categories/cat_investment/">投資</a>
+                </li>
+<li>
+<a href="../../categories/cat_life/">生活</a>
+                </li>
+<li>
+<a href="../../archive.html">歸檔</a>
+                </li>
+<li>
+<a href="../../rss.xml">訂閱</a>
+
+						
+					</li>
+</ul>
+<ul class="nav pull-right"></ul>
+</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Menubar -->
+	<div class="yue">
+		<div class="container-fluid" id="content" role="main">
+		<!--Body content-->
+			<div class="row-fluid">
+				<div class="span2"></div>
+				<div class="span8">
+					
+					
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">mm=mpv+feh</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Mario Long
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-29T09:57:04+08:00" itemprop="datePublished" title="2018-05-29 09:57">2018-05-29 09:57</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/mmpv+feh.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+用全螢幕幻燈片模式播放照片：
+</p>
+
+<div class="highlight"><pre><span></span>feh -FD1 --auto-rotate
+</pre></div>
+
+<p>
+單純播放照片和影片記錄而已
+</p>
+
+<div id="outline-container-org1371708" class="outline-2">
+<h2 id="org1371708">mpv</h2>
+<div class="outline-text-2" id="text-org1371708">
+</div>
+<div id="outline-container-org76b2a78" class="outline-3">
+<h3 id="org76b2a78">keyboard control</h3>
+<div class="outline-text-3" id="text-org76b2a78">
+<dl class="org-dl">
+<dt>LEFT and RIGHT</dt>
+<dd></dd>
+</dl>
+<p>
+Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see –hr-seek).
+</p>
+<dl class="org-dl">
+<dt>UP and DOWN</dt>
+<dd></dd>
+</dl>
+<p>
+Seek forward/backward 1 minute. Shift+arrow does a 5 second exact seek (see  –hr-seek).
+</p>
+<dl class="org-dl">
+<dt>Ctrl+LEFT and Ctrl+RIGHT</dt>
+<dd></dd>
+</dl>
+<p>
+Seek to the previous/next subtitle. Subject to some restrictions and might not always work; see  sub-seek command.
+</p>
+<dl class="org-dl">
+<dt>Ctrl+Shift+Left and Ctrl+Shift+Right</dt>
+<dd></dd>
+</dl>
+<p>
+Adjust subtitle delay so that the next or previous subtitle is displayed now. This is especially useful to sync subtitles to audio.
+</p>
+<dl class="org-dl">
+<dt>[ and ]</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase current playback speed by 10%.
+</p>
+<dl class="org-dl">
+<dt>{ and }</dt>
+<dd></dd>
+</dl>
+<p>
+Halve/double current playback speed.
+</p>
+<dl class="org-dl">
+<dt>BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Reset playback speed to normal.
+</p>
+<dl class="org-dl">
+<dt>Shift+BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Undo the last seek. This works only if the playlist entry was not changed. Hitting it a second time will go back to the original position. See revert-seek command for details.
+</p>
+<dl class="org-dl">
+<dt>Shift+Ctrl+BACKSPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Mark the current position. This will then be used by Shift+BACKSPACE as revert position (once you seek back, the marker will be reset). You can use this to seek around in the file and then return to the exact position where you left off.
+</p>
+<dl class="org-dl">
+<dt>&lt; and &gt;</dt>
+<dd></dd>
+</dl>
+<p>
+Go backward/forward in the playlist.
+</p>
+<dl class="org-dl">
+<dt>ENTER</dt>
+<dd></dd>
+</dl>
+<p>
+Go forward in the playlist.
+</p>
+<dl class="org-dl">
+<dt>p / SPACE</dt>
+<dd></dd>
+</dl>
+<p>
+Pause (pressing again unpauses).
+</p>
+<dl class="org-dl">
+<dt>.</dt>
+<dd></dd>
+</dl>
+<p>
+Step forward. Pressing once will pause, every consecutive press will play one frame and then go into pause mode again.
+</p>
+<dl class="org-dl">
+<dt>,</dt>
+<dd></dd>
+</dl>
+<p>
+Step backward. Pressing once will pause, every consecutive press will play one frame in reverse and then go into pause mode again.
+</p>
+<dl class="org-dl">
+<dt>q</dt>
+<dd></dd>
+</dl>
+<p>
+Stop playing and quit.
+</p>
+<dl class="org-dl">
+<dt>Q</dt>
+<dd></dd>
+</dl>
+<p>
+Like q, but store the current playback position. Playing the same file later will resume at the old playback position if possible.
+</p>
+<dl class="org-dl">
+<dt>/ and *</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase volume.
+</p>
+<dl class="org-dl">
+<dt>9 and 0</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase volume.
+</p>
+<dl class="org-dl">
+<dt>m</dt>
+<dd></dd>
+</dl>
+<p>
+Mute sound.
+</p>
+<dl class="org-dl">
+<dt>_</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available video tracks.
+</p>
+<dl class="org-dl">
+<dt>#</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available audio tracks.
+</p>
+<dl class="org-dl">
+<dt>f</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle fullscreen (see also –fs).
+</p>
+<dl class="org-dl">
+<dt>ESC</dt>
+<dd></dd>
+</dl>
+<p>
+Exit fullscreen mode.
+</p>
+<dl class="org-dl">
+<dt>T</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle stay-on-top (see also –ontop).
+</p>
+<dl class="org-dl">
+<dt>w and W</dt>
+<dd></dd>
+</dl>
+<p>
+Decrease/increase pan-and-scan range. The e key does the same as W currently, but use is discouraged.
+</p>
+<dl class="org-dl">
+<dt>o (also P)</dt>
+<dd></dd>
+</dl>
+<p>
+Show progression bar, elapsed time and total duration on the OSD.
+</p>
+<dl class="org-dl">
+<dt>O</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle OSD states between normal and playback time/duration.
+</p>
+<dl class="org-dl">
+<dt>v</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle subtitle visibility.
+</p>
+<dl class="org-dl">
+<dt>j and J</dt>
+<dd></dd>
+</dl>
+<p>
+Cycle through the available subtitles.
+</p>
+<dl class="org-dl">
+<dt>z and Z</dt>
+<dd></dd>
+</dl>
+<p>
+Adjust subtitle delay by +/- 0.1 seconds. The x key does the same as Z currently, but use is discouraged.
+</p>
+<dl class="org-dl">
+<dt>l</dt>
+<dd></dd>
+</dl>
+<p>
+Set/clear A-B loop points. See ab-loop command for details.
+</p>
+<dl class="org-dl">
+<dt>L</dt>
+<dd></dd>
+</dl>
+<p>
+Toggle infinite looping.
+Ctrl + and Ctrl -
+Adjust audio delay (A/V sync) by +/- 0.1 seconds.
+u
+Switch between applying no style overrides to SSA/ASS subtitles, and overriding them almost completely with the normal subtitle style. See  –sub-ass-override for more info.
+V
+Toggle subtitle VSFilter aspect compatibility mode. See  –sub-ass-vsfilter-aspect-compat for more info.
+r and R
+Move subtitles up/down. The t key does the same as R currently, but use is discouraged.
+s
+Take a screenshot.
+S
+Take a screenshot, without subtitles. (Whether this works depends on VO driver support.)
+Ctrl s
+Take a screenshot, as the window shows it (with subtitles, OSD, and scaled video).
+PGUP and PGDWN
+Seek to the beginning of the previous/next chapter. In most cases, "previous" will actually go to the beginning of the current chapter; see  –chapter-seek-threshold.
+Shift+PGUP and Shift+PGDWN
+Seek backward or forward by 10 minutes. (This used to be mapped to PGUP/PGDWN without Shift.)
+d
+Activate/deactivate deinterlacer.
+A
+Cycle aspect ratio override.
+Ctrl h
+Toggle hardware video decoding on/off.
+Alt+LEFT, Alt+RIGHT, Alt+UP, Alt+DOWN
+Move the video rectangle (panning).
+Alt + and Alt -
+Combining Alt with the + or - keys changes video zoom.
+Alt+BACKSPACE
+Reset the pan/zoom settings.
+F9
+Show the playlist and the current position in it (useful only if a UI window is used, broken on the terminal).
+F10
+Show the list of audio and subtitle streams (useful only if a UI window is used, broken on the terminal).
+(The following keys are valid only when using a video output that supports the corresponding adjustment.)
+</p>
+
+<p>
+1 and 2
+Adjust contrast.
+3 and 4
+Adjust brightness.
+5 and 6
+Adjust gamma.
+7 and 8
+Adjust saturation.
+Alt+0 (and command+0 on OSX)
+Resize video window to half its original size.
+Alt+1 (and command+1 on OSX)
+Resize video window to its original size.
+Alt+2 (and command+2 on OSX)
+Resize video window to double its original size.
+command + f (OSX only)
+Toggle fullscreen (see also –fs).
+(The following keys are valid if you have a keyboard with multimedia keys.)
+</p>
+
+<p>
+PAUSE
+Pause.
+STOP
+Stop playing and quit.
+PREVIOUS and NEXT
+Seek backward/forward 1 minute.
+If you miss some older key bindings, look at etc/restore-old-bindings.conf in the mpv git repository.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8930a08" class="outline-2">
+<h2 id="org8930a08">feh</h2>
+<div class="outline-text-2" id="text-org8930a08">
+</div>
+<div id="outline-container-org23d8901" class="outline-3">
+<h3 id="org23d8901">keyborad control</h3>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/feh/" rel="tag">feh</a></li>
+            <li><a class="tag p-category" href="../../categories/mm/" rel="tag">mm</a></li>
+            <li><a class="tag p-category" href="../../categories/mpv/" rel="tag">mpv</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../cancer-first-time/" rel="prev" title="鼻咽癌與我的初次相遇">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../using-dired/" rel="next" title="Using dired in Emacs">下一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simple-life",
+            disqus_url="https://mariolong.github.io/posts/mm-mpv-feh/",
+        disqus_title="mm=mpv+feh",
+        disqus_identifier="cache/posts/mmpv+feh.html",
+        disqus_config = function () {
+            this.language = "zh_tw";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+			</div>
+			<!--End of body content-->
+		</div>
+		<div class="footerbox">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</div>
+		
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+			moment.locale("zh-tw");
+			fancydates(0, "YYYY-MM-DD HH:mm");
+		</script><!-- end fancy dates -->
+</div>
+</body>
+</html>
