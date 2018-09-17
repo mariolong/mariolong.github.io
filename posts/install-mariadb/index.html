@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="install mariadb on archlinux">
@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/install-mariadb/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="install mariadb on archlinux">
 <meta name="author" content="Mario Long">
-<link rel="prev" href="../using-dired/" title="Using dired in Emacs" type="text/html">
+<link rel="prev" href="../cancer-first-time/" title="鼻咽癌與我的初次相遇" type="text/html">
 <link rel="next" href="../using-mariadb/" title="Using Mariadb" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Install Mariadb">
@@ -85,7 +85,10 @@
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2018-06-15T16:20:11+08:00" itemprop="datePublished" title="2018-06-15 16:20">2018-06-15 16:20</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2018-06-15T16:20:11+08:00" itemprop="datePublished" title="2018-06-15 16:20">2018-06-15 16:20</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/install-mariadb.html">Comments</a>
@@ -102,27 +105,24 @@
 Ref: <a href="https://wiki.archlinux.org/index.php/MySQL">MySQL - ArchWiki</a>
 </p>
 
-<div id="outline-container-org1c86d3d" class="outline-2">
-<h2 id="org1c86d3d">
-<span class="section-number-2">1</span> install mariadb</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org952d565" class="outline-2">
+<h2 id="org952d565">install mariadb</h2>
+<div class="outline-text-2" id="text-org952d565">
 <div class="highlight"><pre><span></span>yaourt -S mariadb
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org3fc3dca" class="outline-2">
-<h2 id="org3fc3dca">
-<span class="section-number-2">2</span> install and setup database</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org627723c" class="outline-2">
+<h2 id="org627723c">install and setup database</h2>
+<div class="outline-text-2" id="text-org627723c">
 <div class="highlight"><pre><span></span>sudo mysql_install_db --user<span class="o">=</span>mysql --basedir<span class="o">=</span>/usr --datadir<span class="o">=</span>/var/lib/mysql
 </pre></div>
 </div>
 
-<div id="outline-container-org9dbf135" class="outline-3">
-<h3 id="org9dbf135">
-<span class="section-number-3">2.1</span> message</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org601cad4" class="outline-3">
+<h3 id="org601cad4">message</h3>
+<div class="outline-text-3" id="text-org601cad4">
 <pre class="example">
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 To do so, start the server, then issue the following commands:
@@ -160,13 +160,12 @@ https://mariadb.org/get-involved/
 </div>
 </div>
 
-<div id="outline-container-orgac3e8af" class="outline-2">
-<h2 id="orgac3e8af">
-<span class="section-number-2">3</span> edit <code>/etc/mysql/my.cnf</code>
+<div id="outline-container-org824ff0a" class="outline-2">
+<h2 id="org824ff0a">edit <code>/etc/mysql/my.cnf</code>
 </h2>
-<div class="outline-text-2" id="text-3">
+<div class="outline-text-2" id="text-org824ff0a">
 <p>
-Tip: If you use something different from <i>var</i>lib/mysql for your data
+Tip: If you use something different from /var/lib/mysql for your data
 dir, you need to set <code>datadir=&lt;YOUR_DATADIR&gt;</code> under section <code>[mysqld]</code> of
 your <code>/etc/mysql/my.cnf</code>.  The following command will interactively
 guide you through a number of recommended security measures at the
@@ -175,19 +174,17 @@ database level:
 </div>
 </div>
 
-<div id="outline-container-org5cb2fad" class="outline-2">
-<h2 id="org5cb2fad">
-<span class="section-number-2">4</span> start/enable <code>mariadb.service</code> with systemd</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgd4f452c" class="outline-2">
+<h2 id="orgd4f452c">start/enable <code>mariadb.service</code> with systemd</h2>
+<div class="outline-text-2" id="text-orgd4f452c">
 <div class="highlight"><pre><span></span>sudo systemctl start mariadb
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org3460875" class="outline-2">
-<h2 id="org3460875">
-<span class="section-number-2">5</span> To start mysqld at boot time</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org9a57bf0" class="outline-2">
+<h2 id="org9a57bf0">To start mysqld at boot time</h2>
+<div class="outline-text-2" id="text-org9a57bf0">
 <p>
 you have to copy support-files/mysql.server to the right place for your system
 </p>
@@ -203,31 +200,29 @@ strongly recommended for production servers.
 </div>
 </div>
 
-<div id="outline-container-org2a3d6dc" class="outline-2">
-<h2 id="org2a3d6dc">
-<span class="section-number-2">6</span> Using UTF8MB4</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgbea6200" class="outline-2">
+<h2 id="orgbea6200">Using UTF8MB4</h2>
+<div class="outline-text-2" id="text-orgbea6200">
 <p>
 在 <code>/etc/mysql/my.cnf</code> 加上以下指令：
 </p>
 
-<div class="highlight"><pre><span></span><span class="k">[client]</span>
-<span class="na">default-character-set</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+<div class="highlight"><pre><span></span>[client]
+default-character-set = utf8mb4
 
-<span class="k">[mysqld]</span>
-<span class="na">collation_server</span> <span class="o">=</span> <span class="s">utf8mb4_unicode_ci</span>
-<span class="na">character_set_server</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+[mysqld]
+collation_server = utf8mb4_unicode_ci
+character_set_server = utf8mb4
 
-<span class="k">[mysql]</span>
-<span class="na">default-character-set</span> <span class="o">=</span> <span class="s">utf8mb4</span>
+[mysql]
+default-character-set = utf8mb4
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org91338b4" class="outline-2">
-<h2 id="org91338b4">
-<span class="section-number-2">7</span> 開啓自動補全</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org0a3588f" class="outline-2">
+<h2 id="org0a3588f">開啓自動補全</h2>
+<div class="outline-text-2" id="text-org0a3588f">
 <p>
 Note: Enabling this feature can make the client initialization longer.
 </p>
@@ -247,7 +242,7 @@ client.</p>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../using-dired/" rel="prev" title="Using dired in Emacs">上一篇</a>
+                <a href="../cancer-first-time/" rel="prev" title="鼻咽癌與我的初次相遇">上一篇</a>
             </li>
             <li class="next">
                 <a href="../using-mariadb/" rel="next" title="Using Mariadb">下一篇</a>

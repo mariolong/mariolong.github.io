@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Simple is beautiful. Note for health, computer and investment.">
@@ -75,12 +75,15 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/from-git-to-github/" class="u-url">from git to github</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/from-git-to-github/" class="u-url">from git to github</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/from-git-to-github/" rel="bookmark"><time class="published dt-published" datetime="2015-05-29T01:54:41Z" title="2015-05-29 01:54">2015-05-29 01:54</time></a></p>
+            <p class="dateline">
+            <a href="posts/from-git-to-github/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-05-29T01:54:41Z" itemprop="datePublished" title="2015-05-29 01:54">2015-05-29 01:54</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/from-git-to-github/#disqus_thread" data-disqus-identifier="cache/posts/from-git-to-github.html">Comments</a>
@@ -134,12 +137,15 @@ git push -u origin master
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/fonts/" class="u-url">字型相關</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fonts/" class="u-url">字型相關</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/fonts/" rel="bookmark"><time class="published dt-published" datetime="2015-05-27T13:48:41Z" title="2015-05-27 13:48">2015-05-27 13:48</time></a></p>
+            <p class="dateline">
+            <a href="posts/fonts/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-05-27T13:48:41Z" itemprop="datePublished" title="2015-05-27 13:48">2015-05-27 13:48</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/fonts/#disqus_thread" data-disqus-identifier="cache/posts/fonts.html">Comments</a>
@@ -202,12 +208,15 @@ $ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-so
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/m2ts-to-mp4/" class="u-url">M2TS to mp4 via ffmpeg</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/m2ts-to-mp4/" class="u-url">M2TS to mp4 via ffmpeg</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/m2ts-to-mp4/" rel="bookmark"><time class="published dt-published" datetime="2015-05-04T07:33:03Z" title="2015-05-04 07:33">2015-05-04 07:33</time></a></p>
+            <p class="dateline">
+            <a href="posts/m2ts-to-mp4/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-05-04T07:33:03Z" itemprop="datePublished" title="2015-05-04 07:33">2015-05-04 07:33</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/m2ts-to-mp4/#disqus_thread" data-disqus-identifier="cache/posts/m2ts-to-mp4.html">Comments</a>
@@ -221,35 +230,38 @@ $ yaourt -S adobe-source-han-sans-otc-fonts adobe-source-sans-pro-fonts adobe-so
 <div class="section" id="split">
 <h2>split</h2>
 <p>先將不要的片段切掉</p>
-<pre class="code text"><a name="rest_code_f83d9a4e342e41058730c107844bef16-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-<a name="rest_code_f83d9a4e342e41058730c107844bef16-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
+<pre class="code text"><a name="rest_code_b1f71c85081c4a7b90ace567831c6915-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+<a name="rest_code_b1f71c85081c4a7b90ace567831c6915-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
 </pre>
 </div>
 <div class="section" id="convert-m2ts-to-avi-for-concat">
 <h2>convert M2TS to avi for concat</h2>
 <p>轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
 有一個 frame 會交錯，影片會跳一下。</p>
-<pre class="code text"><a name="rest_code_b7867a81b05b49689c89a7f1ee664c5d-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
-<a name="rest_code_b7867a81b05b49689c89a7f1ee664c5d-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
+<pre class="code text"><a name="rest_code_adce2bf0356f4930bb8f0b546a0407b8-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
+<a name="rest_code_adce2bf0356f4930bb8f0b546a0407b8-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
 </pre>
 </div>
 <div class="section" id="id1">
 <h2>合併</h2>
 <p>將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。</p>
-<pre class="code text"><a name="rest_code_62069ca0d3084c6385a6f4877dbb14f4-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_cce16eddc6ba41de9719ccaacfe5f099-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
 </pre>
 <p>或</p>
-<pre class="code text"><a name="rest_code_71e0fbb44f0f4c08ac5211572ffa839a-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_cdbcc9870e304d8c955b516d7474dfb6-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
 </pre>
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pip-python-library/" class="u-url">pip: python library</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/pip-python-library/" class="u-url">pip: python library</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/pip-python-library/" rel="bookmark"><time class="published dt-published" datetime="2015-01-26T12:51:50Z" title="2015-01-26 12:51">2015-01-26 12:51</time></a></p>
+            <p class="dateline">
+            <a href="posts/pip-python-library/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-01-26T12:51:50Z" itemprop="datePublished" title="2015-01-26 12:51">2015-01-26 12:51</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/pip-python-library/#disqus_thread" data-disqus-identifier="cache/posts/pip-python-library.html">Comments</a>
@@ -269,12 +281,15 @@ $ sudo pip install "pep8==1.5.7"
 </pre>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/mplayer/" class="u-url">mplayer</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mplayer/" class="u-url">mplayer</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/mplayer/" rel="bookmark"><time class="published dt-published" datetime="2014-12-18T03:21:06Z" title="2014-12-18 03:21">2014-12-18 03:21</time></a></p>
+            <p class="dateline">
+            <a href="posts/mplayer/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-12-18T03:21:06Z" itemprop="datePublished" title="2014-12-18 03:21">2014-12-18 03:21</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/mplayer/#disqus_thread" data-disqus-identifier="cache/posts/mplayer.html">Comments</a>
@@ -396,12 +411,15 @@ myManageHook = composeAll
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/midnight-commander/" class="u-url">Midnight Commander</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/midnight-commander/" class="u-url">Midnight Commander</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/midnight-commander/" rel="bookmark"><time class="published dt-published" datetime="2014-12-17T06:23:00Z" title="2014-12-17 06:23">2014-12-17 06:23</time></a></p>
+            <p class="dateline">
+            <a href="posts/midnight-commander/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-12-17T06:23:00Z" itemprop="datePublished" title="2014-12-17 06:23">2014-12-17 06:23</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/midnight-commander/#disqus_thread" data-disqus-identifier="cache/posts/midnight-commander.html">Comments</a>
@@ -796,12 +814,15 @@ Alt-p takes you to the last entry, Alt-n takes you to the next one.</td>
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xterm/" class="u-url">xterm</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/xterm/" class="u-url">xterm</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/xterm/" rel="bookmark"><time class="published dt-published" datetime="2014-12-11T14:21:22Z" title="2014-12-11 14:21">2014-12-11 14:21</time></a></p>
+            <p class="dateline">
+            <a href="posts/xterm/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-12-11T14:21:22Z" itemprop="datePublished" title="2014-12-11 14:21">2014-12-11 14:21</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/xterm/#disqus_thread" data-disqus-identifier="cache/posts/xterm.html">Comments</a>
@@ -876,12 +897,15 @@ XTerm*scrollKey: true
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/lxqt%2Bxmonad%2Btaffybar/" class="u-url">我的桌面組合 lxqt+xmonad+taffybar</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/lxqt%2Bxmonad%2Btaffybar/" class="u-url">我的桌面組合 lxqt+xmonad+taffybar</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/lxqt%2Bxmonad%2Btaffybar/" rel="bookmark"><time class="published dt-published" datetime="2014-12-10T06:24:15Z" title="2014-12-10 06:24">2014-12-10 06:24</time></a></p>
+            <p class="dateline">
+            <a href="posts/lxqt%2Bxmonad%2Btaffybar/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-12-10T06:24:15Z" itemprop="datePublished" title="2014-12-10 06:24">2014-12-10 06:24</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/lxqt%2Bxmonad%2Btaffybar/#disqus_thread" data-disqus-identifier="cache/posts/lxqt+xmonad+taffybar.html">Comments</a>
@@ -938,12 +962,15 @@ workspaceSwitcher
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/garmin-kmz-kml-gpx-linux/" class="u-url">garmin kmz kml gpx linux</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/garmin-kmz-kml-gpx-linux/" class="u-url">garmin kmz kml gpx linux</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/garmin-kmz-kml-gpx-linux/" rel="bookmark"><time class="published dt-published" datetime="2014-12-10T03:00:40Z" title="2014-12-10 03:00">2014-12-10 03:00</time></a></p>
+            <p class="dateline">
+            <a href="posts/garmin-kmz-kml-gpx-linux/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-12-10T03:00:40Z" itemprop="datePublished" title="2014-12-10 03:00">2014-12-10 03:00</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/garmin-kmz-kml-gpx-linux/#disqus_thread" data-disqus-identifier="cache/posts/garmin-kmz-kml-gpx-linux.html">Comments</a>
@@ -992,12 +1019,15 @@ gpsbabel -i kml -o gpx map.kml
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/imagemagick/" class="u-url">imagemagick</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/imagemagick/" class="u-url">imagemagick</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/imagemagick/" rel="bookmark"><time class="published dt-published" datetime="2014-12-05T06:05:31Z" title="2014-12-05 06:05">2014-12-05 06:05</time></a></p>
+            <p class="dateline">
+            <a href="posts/imagemagick/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-12-05T06:05:31Z" itemprop="datePublished" title="2014-12-05 06:05">2014-12-05 06:05</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/imagemagick/#disqus_thread" data-disqus-identifier="cache/posts/imagemagick.html">Comments</a>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Simple is beautiful. Note for health, computer and investment.">
@@ -75,12 +75,15 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vim/" class="u-url">vim</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/vim/" class="u-url">vim</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/vim/" rel="bookmark"><time class="published dt-published" datetime="2014-04-21T11:39:39+08:00" title="2014-04-21 11:39">2014-04-21 11:39</time></a></p>
+            <p class="dateline">
+            <a href="posts/vim/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-04-21T11:39:39+08:00" itemprop="datePublished" title="2014-04-21 11:39">2014-04-21 11:39</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/vim/#disqus_thread" data-disqus-identifier="cache/posts/vim.html">Comments</a>
@@ -111,12 +114,15 @@ scrooloose/nerdtree</p>
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pacpl/" class="u-url">The Perl Audio Converter</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/pacpl/" class="u-url">The Perl Audio Converter</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/pacpl/" rel="bookmark"><time class="published dt-published" datetime="2014-04-08T09:13:56+08:00" title="2014-04-08 09:13">2014-04-08 09:13</time></a></p>
+            <p class="dateline">
+            <a href="posts/pacpl/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-04-08T09:13:56+08:00" itemprop="datePublished" title="2014-04-08 09:13">2014-04-08 09:13</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/pacpl/#disqus_thread" data-disqus-identifier="cache/posts/pacpl.html">Comments</a>
@@ -142,12 +148,15 @@ $ yaourt -S pacpl
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/kde/" class="u-url">KDE</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/kde/" class="u-url">KDE</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/kde/" rel="bookmark"><time class="published dt-published" datetime="2014-04-08T08:34:18+08:00" title="2014-04-08 08:34">2014-04-08 08:34</time></a></p>
+            <p class="dateline">
+            <a href="posts/kde/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-04-08T08:34:18+08:00" itemprop="datePublished" title="2014-04-08 08:34">2014-04-08 08:34</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/kde/#disqus_thread" data-disqus-identifier="cache/posts/kde.html">Comments</a>
@@ -178,7 +187,7 @@ yaourt -S --needed --noconfirm kdebase kdebase-workspace kde-l10n-zh_tw oxygen-g
 提到了 qtcurve，gtk-qt-engine 可惜都不適用。</p>
 <p>qtcurve 的樣子看起來是不錯，可惜，不支援 gtk3。造成 gtk3 的程式還是醜。</p>
 <p>最後，選用了 <a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B">oxygen-gtk</a> 的解決方案。</p>
-<pre class="code text"><a name="rest_code_0b777c70fab546d588f253e73afe6e54-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
+<pre class="code text"><a name="rest_code_d6edfb9258844294a59e60d33bf60982-1"></a>$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
 </pre>
 </div>
 <div class="section" id="qt4">
@@ -192,12 +201,12 @@ qtconfig-qt4
 <div class="section" id="stop-akonadi">
 <h3>stop akonadi</h3>
 <p>參考 <a class="reference external" href="http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable">http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable</a></p>
-<pre class="code text"><a name="rest_code_77460e3bda4540c6b73bcebe1b679ee1-1"></a>akonadictl stop
-<a name="rest_code_77460e3bda4540c6b73bcebe1b679ee1-2"></a>sudo systemctl stop mysqld
-<a name="rest_code_77460e3bda4540c6b73bcebe1b679ee1-3"></a>sudo systemctl disable mysqld
+<pre class="code text"><a name="rest_code_0dc8260c956a44e2a322677639af2a30-1"></a>akonadictl stop
+<a name="rest_code_0dc8260c956a44e2a322677639af2a30-2"></a>sudo systemctl stop mysqld
+<a name="rest_code_0dc8260c956a44e2a322677639af2a30-3"></a>sudo systemctl disable mysqld
 </pre>
 <p>修改 <tt class="docutils literal"><span class="pre">~/.config/akonadi/akonadiserverrc</span></tt></p>
-<pre class="code text"><a name="rest_code_3ea4f2d637884da5bc1961484b7dff12-1"></a>StartServer=false
+<pre class="code text"><a name="rest_code_66a35265e1924812a03923973a0eb578-1"></a>StartServer=false
 </pre>
 </div>
 <div class="section" id="cursor-theme">
@@ -205,13 +214,13 @@ qtconfig-qt4
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_Themes">https://wiki.archlinux.org/index.php/Cursor_Themes</a></p>
 <p>不知道什麼原因，滑鼠游標的型狀，老是會變成 x 的游標主題，做個小小的軟連結，讓游標好看一點。
 但我相信這個不是正解，只是 google 了好久，總找不到根本解法，先治標吧。</p>
-<pre class="code text"><a name="rest_code_787b78d3149d44c78dde96890548f477-1"></a>$ mkdir ~/.icons
-<a name="rest_code_787b78d3149d44c78dde96890548f477-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
-<a name="rest_code_787b78d3149d44c78dde96890548f477-3"></a># mkdir -p /usr/share/icons/default
-<a name="rest_code_787b78d3149d44c78dde96890548f477-4"></a># nano /usr/share/icons/default/index.theme
-<a name="rest_code_787b78d3149d44c78dde96890548f477-5"></a>
-<a name="rest_code_787b78d3149d44c78dde96890548f477-6"></a>[icon theme]
-<a name="rest_code_787b78d3149d44c78dde96890548f477-7"></a>Inherits=Oxygen_Black
+<pre class="code text"><a name="rest_code_61911e38ead3499aa0655417349d4323-1"></a>$ mkdir ~/.icons
+<a name="rest_code_61911e38ead3499aa0655417349d4323-2"></a>$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
+<a name="rest_code_61911e38ead3499aa0655417349d4323-3"></a># mkdir -p /usr/share/icons/default
+<a name="rest_code_61911e38ead3499aa0655417349d4323-4"></a># nano /usr/share/icons/default/index.theme
+<a name="rest_code_61911e38ead3499aa0655417349d4323-5"></a>
+<a name="rest_code_61911e38ead3499aa0655417349d4323-6"></a>[icon theme]
+<a name="rest_code_61911e38ead3499aa0655417349d4323-7"></a>Inherits=Oxygen_Black
 </pre>
 </div>
 <div class="section" id="id1">
@@ -289,12 +298,15 @@ systemctl disable getty@tty1.service
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/kate-KDE-Advance-Text-Edit/" class="u-url">Kate, KDE Advance Text Editor</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/kate-KDE-Advance-Text-Edit/" class="u-url">Kate, KDE Advance Text Editor</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/kate-KDE-Advance-Text-Edit/" rel="bookmark"><time class="published dt-published" datetime="2014-04-03T02:29:35+08:00" title="2014-04-03 02:29">2014-04-03 02:29</time></a></p>
+            <p class="dateline">
+            <a href="posts/kate-KDE-Advance-Text-Edit/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-04-03T02:29:35+08:00" itemprop="datePublished" title="2014-04-03 02:29">2014-04-03 02:29</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/kate-KDE-Advance-Text-Edit/#disqus_thread" data-disqus-identifier="cache/posts/kate-KDE-Advence-Text-edit.html">Comments</a>
@@ -340,12 +352,15 @@ yaourt -S kdesdk-kate
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cheng-shi-kai-fa-gong/" class="u-url">程式開發工具</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/cheng-shi-kai-fa-gong/" class="u-url">程式開發工具</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/cheng-shi-kai-fa-gong/" rel="bookmark"><time class="published dt-published" datetime="2014-03-19T05:29:35+08:00" title="2014-03-19 05:29">2014-03-19 05:29</time></a></p>
+            <p class="dateline">
+            <a href="posts/cheng-shi-kai-fa-gong/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-03-19T05:29:35+08:00" itemprop="datePublished" title="2014-03-19 05:29">2014-03-19 05:29</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/cheng-shi-kai-fa-gong/#disqus_thread" data-disqus-identifier="cache/posts/cheng-shi-kai-fa-gong.html">Comments</a>
@@ -364,7 +379,7 @@ yaourt -S kdesdk-kate
 <h2>版本控管</h2>
 <div class="section" id="id2">
 <h3>安裝</h3>
-<pre class="code text"><a name="rest_code_366b1068586040429d6c2bfe0c6a524f-1"></a>yaourt -S git qgit meld
+<pre class="code text"><a name="rest_code_3e6b348549674b829a6bbd94ad686262-1"></a>yaourt -S git qgit meld
 </pre>
 <p>qgit 可直接使用 meld 做文件比對。
 進 qgit，選擇工能表 Edit&gt;Setting&gt;General&gt;External diff tool，將此填入 meld 即可使用。</p>
@@ -372,12 +387,15 @@ yaourt -S kdesdk-kate
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ntpwang-lu-dui-shi/" class="u-url">ntp 網路對時</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ntpwang-lu-dui-shi/" class="u-url">ntp 網路對時</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/ntpwang-lu-dui-shi/" rel="bookmark"><time class="published dt-published" datetime="2014-03-09T08:25:28+08:00" title="2014-03-09 08:25">2014-03-09 08:25</time></a></p>
+            <p class="dateline">
+            <a href="posts/ntpwang-lu-dui-shi/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-03-09T08:25:28+08:00" itemprop="datePublished" title="2014-03-09 08:25">2014-03-09 08:25</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/ntpwang-lu-dui-shi/#disqus_thread" data-disqus-identifier="cache/posts/ntpwang-lu-dui-shi.html">Comments</a>
@@ -390,45 +408,45 @@ yaourt -S kdesdk-kate
 <p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon">https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon</a></p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<pre class="code text"><a name="rest_code_1c1b306c039a4b18b2439cf846814c61-1"></a>yaourt -S ntp
+<pre class="code text"><a name="rest_code_05864f067e2a4201b3f98f2fd0d49d92-1"></a>yaourt -S ntp
 </pre>
 </div>
 <div class="section" id="id2">
 <h2>配置</h2>
-<pre class="code text"><a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-1"></a>sudo nano /etc/ntp.conf
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-2"></a>
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-3"></a># Associate to public NTP pool servers; see http://www.pool.ntp.org/
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-4"></a>server 0.pool.ntp.org iburst
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-5"></a>server 1.pool.ntp.org iburst
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-6"></a>server 2.pool.ntp.org iburst
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-7"></a>server 3.pool.ntp.org iburst
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-8"></a>
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-9"></a># Only allow read-only access from localhost
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-10"></a>#restrict default noquery nopeer
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-11"></a>#restrict 127.0.0.1
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-12"></a>#restrict ::1
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-13"></a>
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-14"></a># Location of drift file
-<a name="rest_code_07d58f3fbb324452aaa28faee54cbe0d-15"></a>driftfile /var/lib/ntp/ntp.drift
+<pre class="code text"><a name="rest_code_49065fed0ae1475f88a8252495d2cf33-1"></a>sudo nano /etc/ntp.conf
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-2"></a>
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-3"></a># Associate to public NTP pool servers; see http://www.pool.ntp.org/
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-4"></a>server 0.pool.ntp.org iburst
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-5"></a>server 1.pool.ntp.org iburst
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-6"></a>server 2.pool.ntp.org iburst
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-7"></a>server 3.pool.ntp.org iburst
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-8"></a>
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-9"></a># Only allow read-only access from localhost
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-10"></a>#restrict default noquery nopeer
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-11"></a>#restrict 127.0.0.1
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-12"></a>#restrict ::1
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-13"></a>
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-14"></a># Location of drift file
+<a name="rest_code_49065fed0ae1475f88a8252495d2cf33-15"></a>driftfile /var/lib/ntp/ntp.drift
 </pre>
 <p>Write a oneshot systemd unit:</p>
-<pre class="code text"><a name="rest_code_10788f5651c14492847052512641769f-1"></a>sudo nano /etc/systemd/system/ntp-once.service
-<a name="rest_code_10788f5651c14492847052512641769f-2"></a>
-<a name="rest_code_10788f5651c14492847052512641769f-3"></a>[Unit]
-<a name="rest_code_10788f5651c14492847052512641769f-4"></a>Description=Network Time Service (once)
-<a name="rest_code_10788f5651c14492847052512641769f-5"></a>After=network.target nss-lookup.target
-<a name="rest_code_10788f5651c14492847052512641769f-6"></a>
-<a name="rest_code_10788f5651c14492847052512641769f-7"></a>[Service]
-<a name="rest_code_10788f5651c14492847052512641769f-8"></a>Type=oneshot
-<a name="rest_code_10788f5651c14492847052512641769f-9"></a>ExecStart=/usr/bin/ntpd -g -u ntp:ntp ; /usr/bin/hwclock -w
-<a name="rest_code_10788f5651c14492847052512641769f-10"></a>
-<a name="rest_code_10788f5651c14492847052512641769f-11"></a>[Install]
-<a name="rest_code_10788f5651c14492847052512641769f-12"></a>WantedBy=multi-user.target
+<pre class="code text"><a name="rest_code_b23c33bbc02841559db33cfb692ed65f-1"></a>sudo nano /etc/systemd/system/ntp-once.service
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-2"></a>
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-3"></a>[Unit]
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-4"></a>Description=Network Time Service (once)
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-5"></a>After=network.target nss-lookup.target
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-6"></a>
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-7"></a>[Service]
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-8"></a>Type=oneshot
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-9"></a>ExecStart=/usr/bin/ntpd -g -u ntp:ntp ; /usr/bin/hwclock -w
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-10"></a>
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-11"></a>[Install]
+<a name="rest_code_b23c33bbc02841559db33cfb692ed65f-12"></a>WantedBy=multi-user.target
 </pre>
 </div>
 <div class="section" id="id3">
 <h2>啟動</h2>
-<pre class="code text"><a name="rest_code_ef91c465c4e54d858697ab1ecfe79c71-1"></a>sudo systemctl enable ntp-once
+<pre class="code text"><a name="rest_code_cf6e851b89df48f6bffc33056953c8d4-1"></a>sudo systemctl enable ntp-once
 </pre>
 </div>
 <div class="section" id="install">
@@ -466,12 +484,15 @@ unable to bind to wildcard address 0.0.0.0 - another process may be running - EX
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/archlinux-hostapd-netcfg/" class="u-url">wireless AP 設定 （hostapd+netcfg/netctl）</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/archlinux-hostapd-netcfg/" class="u-url">wireless AP 設定 （hostapd+netcfg/netctl）</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/archlinux-hostapd-netcfg/" rel="bookmark"><time class="published dt-published" datetime="2014-03-07T11:13:56+08:00" title="2014-03-07 11:13">2014-03-07 11:13</time></a></p>
+            <p class="dateline">
+            <a href="posts/archlinux-hostapd-netcfg/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-03-07T11:13:56+08:00" itemprop="datePublished" title="2014-03-07 11:13">2014-03-07 11:13</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/archlinux-hostapd-netcfg/#disqus_thread" data-disqus-identifier="cache/posts/hostapd-netcfg.html">Comments</a>
@@ -487,114 +508,114 @@ unable to bind to wildcard address 0.0.0.0 - another process may be running - EX
 <p>完整的說明參考：<a class="reference external" href="http://guildwar23.blogspot.tw/2013/03/notebook-ap-arch-linux.html">http://guildwar23.blogspot.tw/2013/03/notebook-ap-arch-linux.html</a></p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<pre class="code text"><a name="rest_code_7bd765b729434532872fd875b381238e-1"></a>$ yaourt -S hostapd dnsmasq netcfg
-<a name="rest_code_7bd765b729434532872fd875b381238e-2"></a>$ yaourt -S netctl
+<pre class="code text"><a name="rest_code_92110fa06f6b485681ccaebf9cd5f577-1"></a>$ yaourt -S hostapd dnsmasq netcfg
+<a name="rest_code_92110fa06f6b485681ccaebf9cd5f577-2"></a>$ yaourt -S netctl
 </pre>
 </div>
 <div class="section" id="id2">
 <h2>配置</h2>
 <div class="section" id="hostapd">
 <h3>hostapd 設定檔</h3>
-<pre class="code text"><a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-1"></a>sudo nano /etc/hostapd/hostapd.conf
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-2"></a>
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-3"></a>interface=wlp0s18f2u1u4
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-4"></a>ssid=xxxxxxxx
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-5"></a>hw_mode=g
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-6"></a>channel=1
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-7"></a>wpa=2
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-8"></a>wpa_psk=b619ecf4c68e7d688e1a29cf2809ec3556a289eb655b859a893ae16933296f18
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-9"></a>wpa_key_mgmt=WPA-PSK
-<a name="rest_code_f3f6b949544f426dbb7397e51ab361fe-10"></a>rsn_pairwise=CCMP
+<pre class="code text"><a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-1"></a>sudo nano /etc/hostapd/hostapd.conf
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-2"></a>
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-3"></a>interface=wlp0s18f2u1u4
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-4"></a>ssid=xxxxxxxx
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-5"></a>hw_mode=g
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-6"></a>channel=1
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-7"></a>wpa=2
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-8"></a>wpa_psk=b619ecf4c68e7d688e1a29cf2809ec3556a289eb655b859a893ae16933296f18
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-9"></a>wpa_key_mgmt=WPA-PSK
+<a name="rest_code_060181fdc7af49a4a4ed9e7a0575cfe3-10"></a>rsn_pairwise=CCMP
 </pre>
 </div>
 <div class="section" id="dnsmasq">
 <h3>dnsmasq 設定檔</h3>
-<pre class="code text"><a name="rest_code_33531fdc910342d5a12baf3576b407a6-1"></a>$ sudo nano /etc/dnsmasq.conf
-<a name="rest_code_33531fdc910342d5a12baf3576b407a6-2"></a>
-<a name="rest_code_33531fdc910342d5a12baf3576b407a6-3"></a>port=0
-<a name="rest_code_33531fdc910342d5a12baf3576b407a6-4"></a>interface=wlp0s18f2u1u4
-<a name="rest_code_33531fdc910342d5a12baf3576b407a6-5"></a>listen-address=192.168.199.254
-<a name="rest_code_33531fdc910342d5a12baf3576b407a6-6"></a>dhcp-range=192.168.199.101,192.168.199.150,12h
-<a name="rest_code_33531fdc910342d5a12baf3576b407a6-7"></a>dhcp-option=6,168.95.192.1,168.95.1.1
+<pre class="code text"><a name="rest_code_4c8e07da128d4167bf72499f4d840626-1"></a>$ sudo nano /etc/dnsmasq.conf
+<a name="rest_code_4c8e07da128d4167bf72499f4d840626-2"></a>
+<a name="rest_code_4c8e07da128d4167bf72499f4d840626-3"></a>port=0
+<a name="rest_code_4c8e07da128d4167bf72499f4d840626-4"></a>interface=wlp0s18f2u1u4
+<a name="rest_code_4c8e07da128d4167bf72499f4d840626-5"></a>listen-address=192.168.199.254
+<a name="rest_code_4c8e07da128d4167bf72499f4d840626-6"></a>dhcp-range=192.168.199.101,192.168.199.150,12h
+<a name="rest_code_4c8e07da128d4167bf72499f4d840626-7"></a>dhcp-option=6,168.95.192.1,168.95.1.1
 </pre>
 </div>
 <div class="section" id="netcfg">
 <h3>netcfg 設定檔</h3>
-<pre class="code text"><a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-1"></a>sudo nano /etc/network.d/hostapd
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-2"></a>
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-3"></a>CONNECTION='ethernet'
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-4"></a>DESCRIPTION="wireless ap in master mode with hostapd"
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-5"></a>IP="static"
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-6"></a>ADDR="192.168.199.254"
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-7"></a>INTERFACE=wlp0s18f2u1u4
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-8"></a>SKIPNOCARRIER="yes"
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-9"></a>
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-10"></a>POST_UP="iptables -I FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -I FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=1; iptables -I INPUT -i wlp2s0u1
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-11"></a> -p udp --dport 67 -j ACCEPT; systemctl start hostapd; systemctl start dnsmasq"
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-12"></a>
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-13"></a>POST_DOWN="systemctl stop hostapd; systemctl stop dnsmasq; iptables -D FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -D FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=0; iptables -D INPUT -i wlp2s0u1
-<a name="rest_code_5c5ac118523c4b0b8995b45211d22fe7-14"></a> -p udp --dport 67 -j ACCEPT"
+<pre class="code text"><a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-1"></a>sudo nano /etc/network.d/hostapd
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-2"></a>
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-3"></a>CONNECTION='ethernet'
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-4"></a>DESCRIPTION="wireless ap in master mode with hostapd"
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-5"></a>IP="static"
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-6"></a>ADDR="192.168.199.254"
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-7"></a>INTERFACE=wlp0s18f2u1u4
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-8"></a>SKIPNOCARRIER="yes"
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-9"></a>
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-10"></a>POST_UP="iptables -I FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -I FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=1; iptables -I INPUT -i wlp2s0u1
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-11"></a> -p udp --dport 67 -j ACCEPT; systemctl start hostapd; systemctl start dnsmasq"
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-12"></a>
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-13"></a>POST_DOWN="systemctl stop hostapd; systemctl stop dnsmasq; iptables -D FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -D FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=0; iptables -D INPUT -i wlp2s0u1
+<a name="rest_code_61549eb19bba48dd9169c9b21fcbabe2-14"></a> -p udp --dport 67 -j ACCEPT"
 </pre>
 </div>
 <div class="section" id="wifiip">
 <h3>wifiip</h3>
 <p>設定 nat 和防火牆的 script，注意要用絕對路徑，不然開機時期，會找不到相對應的程式執行。</p>
-<pre class="code text"><a name="rest_code_429629729aef4e3795746f8567eea01f-1"></a>#!/bin/bash
-<a name="rest_code_429629729aef4e3795746f8567eea01f-2"></a>
-<a name="rest_code_429629729aef4e3795746f8567eea01f-3"></a>interface=wlp0s18f2u1u4
-<a name="rest_code_429629729aef4e3795746f8567eea01f-4"></a>
-<a name="rest_code_429629729aef4e3795746f8567eea01f-5"></a>iptables=/usr/bin/iptables
-<a name="rest_code_429629729aef4e3795746f8567eea01f-6"></a>ifconfig=/usr/bin/ifconfig
-<a name="rest_code_429629729aef4e3795746f8567eea01f-7"></a>sysctl=/usr/bin/sysctl
-<a name="rest_code_429629729aef4e3795746f8567eea01f-8"></a>
-<a name="rest_code_429629729aef4e3795746f8567eea01f-9"></a>wifi_on() {
-<a name="rest_code_429629729aef4e3795746f8567eea01f-10"></a>  ${iptables} -I FORWARD -s 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_429629729aef4e3795746f8567eea01f-11"></a>  ${iptables} -I FORWARD -d 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_429629729aef4e3795746f8567eea01f-12"></a>  ${iptables} -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
-<a name="rest_code_429629729aef4e3795746f8567eea01f-13"></a>  ${sysctl} -w net.ipv4.ip_forward=1
-<a name="rest_code_429629729aef4e3795746f8567eea01f-14"></a>  ${iptables} -I INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
-<a name="rest_code_429629729aef4e3795746f8567eea01f-15"></a>  ${ifconfig} ${interface} 192.168.199.1 netmask 255.255.255.0
-<a name="rest_code_429629729aef4e3795746f8567eea01f-16"></a>}
-<a name="rest_code_429629729aef4e3795746f8567eea01f-17"></a>
-<a name="rest_code_429629729aef4e3795746f8567eea01f-18"></a>wifi_off() {
-<a name="rest_code_429629729aef4e3795746f8567eea01f-19"></a>  ${iptables} -D FORWARD -s 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_429629729aef4e3795746f8567eea01f-20"></a>  ${iptables} -D FORWARD -d 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_429629729aef4e3795746f8567eea01f-21"></a>  ${iptables} -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
-<a name="rest_code_429629729aef4e3795746f8567eea01f-22"></a>  ${sysctl} -w net.ipv4.ip_forward=0
-<a name="rest_code_429629729aef4e3795746f8567eea01f-23"></a>  ${iptables} -D INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
-<a name="rest_code_429629729aef4e3795746f8567eea01f-24"></a>  ${ifconfig} ${interface} down
-<a name="rest_code_429629729aef4e3795746f8567eea01f-25"></a>}
-<a name="rest_code_429629729aef4e3795746f8567eea01f-26"></a>
-<a name="rest_code_429629729aef4e3795746f8567eea01f-27"></a>usage() {
-<a name="rest_code_429629729aef4e3795746f8567eea01f-28"></a>  echo "USAGE: wifiip [on|off]"
-<a name="rest_code_429629729aef4e3795746f8567eea01f-29"></a>}
-<a name="rest_code_429629729aef4e3795746f8567eea01f-30"></a>
-<a name="rest_code_429629729aef4e3795746f8567eea01f-31"></a>if (( $# &gt; 0 )); then
-<a name="rest_code_429629729aef4e3795746f8567eea01f-32"></a>  case "$1" in
-<a name="rest_code_429629729aef4e3795746f8567eea01f-33"></a>    "on")  wifi_on;;
-<a name="rest_code_429629729aef4e3795746f8567eea01f-34"></a>    "off") wifi_off;;
-<a name="rest_code_429629729aef4e3795746f8567eea01f-35"></a>    *)     usage
-<a name="rest_code_429629729aef4e3795746f8567eea01f-36"></a>           exit 64;;
-<a name="rest_code_429629729aef4e3795746f8567eea01f-37"></a>  esac
-<a name="rest_code_429629729aef4e3795746f8567eea01f-38"></a>  exit 0
-<a name="rest_code_429629729aef4e3795746f8567eea01f-39"></a>else
-<a name="rest_code_429629729aef4e3795746f8567eea01f-40"></a>  usage
-<a name="rest_code_429629729aef4e3795746f8567eea01f-41"></a>return 64
-<a name="rest_code_429629729aef4e3795746f8567eea01f-42"></a>fi
+<pre class="code text"><a name="rest_code_10965914580e451b88ebd25f4ec3c029-1"></a>#!/bin/bash
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-2"></a>
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-3"></a>interface=wlp0s18f2u1u4
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-4"></a>
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-5"></a>iptables=/usr/bin/iptables
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-6"></a>ifconfig=/usr/bin/ifconfig
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-7"></a>sysctl=/usr/bin/sysctl
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-8"></a>
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-9"></a>wifi_on() {
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-10"></a>  ${iptables} -I FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-11"></a>  ${iptables} -I FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-12"></a>  ${iptables} -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-13"></a>  ${sysctl} -w net.ipv4.ip_forward=1
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-14"></a>  ${iptables} -I INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-15"></a>  ${ifconfig} ${interface} 192.168.199.1 netmask 255.255.255.0
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-16"></a>}
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-17"></a>
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-18"></a>wifi_off() {
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-19"></a>  ${iptables} -D FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-20"></a>  ${iptables} -D FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-21"></a>  ${iptables} -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-22"></a>  ${sysctl} -w net.ipv4.ip_forward=0
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-23"></a>  ${iptables} -D INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-24"></a>  ${ifconfig} ${interface} down
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-25"></a>}
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-26"></a>
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-27"></a>usage() {
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-28"></a>  echo "USAGE: wifiip [on|off]"
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-29"></a>}
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-30"></a>
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-31"></a>if (( $# &gt; 0 )); then
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-32"></a>  case "$1" in
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-33"></a>    "on")  wifi_on;;
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-34"></a>    "off") wifi_off;;
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-35"></a>    *)     usage
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-36"></a>           exit 64;;
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-37"></a>  esac
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-38"></a>  exit 0
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-39"></a>else
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-40"></a>  usage
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-41"></a>return 64
+<a name="rest_code_10965914580e451b88ebd25f4ec3c029-42"></a>fi
 </pre>
 </div>
 <div class="section" id="netctl">
 <h3>netctl 設定檔</h3>
 <p>配置檔 <tt class="docutils literal">/etc/netctl/hostapd</tt></p>
-<pre class="code text"><a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-1"></a>Description="wireless ap in master mode with hostapd"
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-2"></a>Connection=ethernet
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-3"></a>Interface=wlp0s18f2u1u4
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-4"></a>IP=static
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-5"></a>Address="192.168.199.254"
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-6"></a>SkipNoCarrier="yes"
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-7"></a>
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-8"></a>ExecUpPost="/bin/wifiip on"
-<a name="rest_code_55e19de3f3ff48fa95719829de4ecb55-9"></a>ExecDownPre="/bin/wifiip off"
+<pre class="code text"><a name="rest_code_06eb577ea11449bb9f17550b08d4d424-1"></a>Description="wireless ap in master mode with hostapd"
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-2"></a>Connection=ethernet
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-3"></a>Interface=wlp0s18f2u1u4
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-4"></a>IP=static
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-5"></a>Address="192.168.199.254"
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-6"></a>SkipNoCarrier="yes"
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-7"></a>
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-8"></a>ExecUpPost="/bin/wifiip on"
+<a name="rest_code_06eb577ea11449bb9f17550b08d4d424-9"></a>ExecDownPre="/bin/wifiip off"
 </pre>
 </div>
 </div>
@@ -603,20 +624,20 @@ unable to bind to wildcard address 0.0.0.0 - another process may be running - EX
 <p>以下分別為啟動、重啟、停止、開機啟動</p>
 <div class="section" id="id4">
 <h3>啟動：</h3>
-<pre class="code text"><a name="rest_code_c6130ecee7b1438eb996fc974f93003f-1"></a>$ sudo netctl start hostapd
-<a name="rest_code_c6130ecee7b1438eb996fc974f93003f-2"></a>
-<a name="rest_code_c6130ecee7b1438eb996fc974f93003f-3"></a>$ sudo netcfg hostapd
-<a name="rest_code_c6130ecee7b1438eb996fc974f93003f-4"></a>或
-<a name="rest_code_c6130ecee7b1438eb996fc974f93003f-5"></a>$ sudo systemctl start netcfg@hostapd
+<pre class="code text"><a name="rest_code_267c648319a24f0782e32dcbb67bd69f-1"></a>$ sudo netctl start hostapd
+<a name="rest_code_267c648319a24f0782e32dcbb67bd69f-2"></a>
+<a name="rest_code_267c648319a24f0782e32dcbb67bd69f-3"></a>$ sudo netcfg hostapd
+<a name="rest_code_267c648319a24f0782e32dcbb67bd69f-4"></a>或
+<a name="rest_code_267c648319a24f0782e32dcbb67bd69f-5"></a>$ sudo systemctl start netcfg@hostapd
 </pre>
 </div>
 <div class="section" id="id5">
 <h3>關閉:</h3>
-<pre class="code text"><a name="rest_code_4f487b5c421f41fe94d0bd6ed5a16424-1"></a>$ sudo netctl stop hostapd
-<a name="rest_code_4f487b5c421f41fe94d0bd6ed5a16424-2"></a>
-<a name="rest_code_4f487b5c421f41fe94d0bd6ed5a16424-3"></a>$ sudo netcfg down hostapd
-<a name="rest_code_4f487b5c421f41fe94d0bd6ed5a16424-4"></a>或
-<a name="rest_code_4f487b5c421f41fe94d0bd6ed5a16424-5"></a>$ sudo systemctl stop netcfg@hostapd
+<pre class="code text"><a name="rest_code_9b191e2f181041cfa68828599726fbb8-1"></a>$ sudo netctl stop hostapd
+<a name="rest_code_9b191e2f181041cfa68828599726fbb8-2"></a>
+<a name="rest_code_9b191e2f181041cfa68828599726fbb8-3"></a>$ sudo netcfg down hostapd
+<a name="rest_code_9b191e2f181041cfa68828599726fbb8-4"></a>或
+<a name="rest_code_9b191e2f181041cfa68828599726fbb8-5"></a>$ sudo systemctl stop netcfg@hostapd
 </pre>
 </div>
 <div class="section" id="systemd">
@@ -645,21 +666,21 @@ $ systemctl enable dnsmasq
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/WPA_supplicant">https://wiki.archlinux.org/index.php/WPA_supplicant</a></p>
 <div class="section" id="id6">
 <h3>安裝：</h3>
-<pre class="code text"><a name="rest_code_3f367ba72dfd4a6d9a559311b4c77e1f-1"></a>yaourt -S wpa_supplicant
+<pre class="code text"><a name="rest_code_a4f345e7d239446ca0d904a2f512f6fd-1"></a>yaourt -S wpa_supplicant
 </pre>
 </div>
 <div class="section" id="id7">
 <h3>執行：</h3>
-<pre class="code text"><a name="rest_code_d00edc68f800448183bea45207bc99b5-1"></a>wpa_passphrase essid passphrase
+<pre class="code text"><a name="rest_code_22ef405d10e34a8cb728040035b5b0d7-1"></a>wpa_passphrase essid passphrase
 </pre>
 </div>
 <div class="section" id="id8">
 <h3>結果</h3>
-<pre class="code text"><a name="rest_code_496e47bc1a844064bc39f86c247dbfc8-1"></a>network={
-<a name="rest_code_496e47bc1a844064bc39f86c247dbfc8-2"></a>    ssid="essid"
-<a name="rest_code_496e47bc1a844064bc39f86c247dbfc8-3"></a>    #psk="passphrase"
-<a name="rest_code_496e47bc1a844064bc39f86c247dbfc8-4"></a>    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
-<a name="rest_code_496e47bc1a844064bc39f86c247dbfc8-5"></a>}
+<pre class="code text"><a name="rest_code_fb32e788ae7b4fba8ff54ac150f4ea13-1"></a>network={
+<a name="rest_code_fb32e788ae7b4fba8ff54ac150f4ea13-2"></a>    ssid="essid"
+<a name="rest_code_fb32e788ae7b4fba8ff54ac150f4ea13-3"></a>    #psk="passphrase"
+<a name="rest_code_fb32e788ae7b4fba8ff54ac150f4ea13-4"></a>    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
+<a name="rest_code_fb32e788ae7b4fba8ff54ac150f4ea13-5"></a>}
 </pre>
 </div>
 </div>
@@ -670,12 +691,15 @@ $ systemctl enable dnsmasq
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/archlinux-enable-cron/" class="u-url">archlinux enable cron</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/archlinux-enable-cron/" class="u-url">archlinux enable cron</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/archlinux-enable-cron/" rel="bookmark"><time class="published dt-published" datetime="2014-03-02T16:31:27+08:00" title="2014-03-02 16:31">2014-03-02 16:31</time></a></p>
+            <p class="dateline">
+            <a href="posts/archlinux-enable-cron/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-03-02T16:31:27+08:00" itemprop="datePublished" title="2014-03-02 16:31">2014-03-02 16:31</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/archlinux-enable-cron/#disqus_thread" data-disqus-identifier="cache/posts/archlinux-enable-cron.html">Comments</a>
@@ -695,24 +719,24 @@ $ systemctl enable dnsmasq
 <h2>Configuration</h2>
 <p>Activation and autostart</p>
 <p>cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:</p>
-<pre class="code text"><a name="rest_code_9e6b2cddefe942b78b9b323ebe0a7026-1"></a>$ systemctl is-enabled cronie
+<pre class="code text"><a name="rest_code_f0171f7023b94d7d8f37abbd64798e76-1"></a>$ systemctl is-enabled cronie
 </pre>
 <p>Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:</p>
-<pre class="code text"><a name="rest_code_c067630d374846f2be9d36d2e1377467-1"></a># systemctl start cronie
-<a name="rest_code_c067630d374846f2be9d36d2e1377467-2"></a># systemctl enable cronie
+<pre class="code text"><a name="rest_code_026a6935357644f1b116f4dfa44fadb5-1"></a># systemctl start cronie
+<a name="rest_code_026a6935357644f1b116f4dfa44fadb5-2"></a># systemctl enable cronie
 </pre>
 </div>
 <div class="section" id="default-editor">
 <h2>Default editor</h2>
 <p>To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:</p>
-<pre class="code text"><a name="rest_code_9da7918901df47f598f793fb56fa3cac-1"></a># /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_afbb16f83cb94601965052c2fe9e912c-1"></a># /etc/profile.d/nano-default-editor
 </pre>
 <p>加上：</p>
-<pre class="code text"><a name="rest_code_92ff6c6220ea43cd8eba93aa68eff3ef-1"></a>#!/bin/sh
-<a name="rest_code_92ff6c6220ea43cd8eba93aa68eff3ef-2"></a>export EDITOR=/usr/bin/nano
+<pre class="code text"><a name="rest_code_1c62dcc6f01e4b43be9f4aa49a409f8a-1"></a>#!/bin/sh
+<a name="rest_code_1c62dcc6f01e4b43be9f4aa49a409f8a-2"></a>export EDITOR=/usr/bin/nano
 </pre>
 <p>修改權限：</p>
-<pre class="code text"><a name="rest_code_cf267f462d904fa6a133dcd40a711783-1"></a>#chmod +x /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_6758f5003aca45e7b7a8bd8b9c0d8d6b-1"></a>#chmod +x /etc/profile.d/nano-default-editor
 </pre>
 </div>
 <div class="section" id="crontab-format">
@@ -786,12 +810,15 @@ Periodical settings can also be entered as in this crontab template:
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/bottlebeaker-session-management/" class="u-url">bottle+beaker session management</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/bottlebeaker-session-management/" class="u-url">bottle+beaker session management</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/bottlebeaker-session-management/" rel="bookmark"><time class="published dt-published" datetime="2014-02-22T09:39:50+08:00" title="2014-02-22 09:39">2014-02-22 09:39</time></a></p>
+            <p class="dateline">
+            <a href="posts/bottlebeaker-session-management/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-02-22T09:39:50+08:00" itemprop="datePublished" title="2014-02-22 09:39">2014-02-22 09:39</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/bottlebeaker-session-management/#disqus_thread" data-disqus-identifier="cache/posts/bottlebeaker-session-management.html">Comments</a>
@@ -802,64 +829,67 @@ Periodical settings can also be entered as in this crontab template:
     </header><div class="p-summary entry-summary">
     <div>
 <p>直接看程式碼：</p>
-<pre class="code python"><a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-1"></a><span class="kn">import</span> <span class="nn">beaker.middleware</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-2"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">mako_view</span> <span class="k">as</span> <span class="n">view</span><span class="p">,</span> <span class="n">mako_template</span> <span class="k">as</span> <span class="n">template</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-3"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">hook</span><span class="p">,</span> <span class="n">static_file</span><span class="p">,</span> <span class="n">request</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-4"></a><span class="kn">import</span> <span class="nn">bottle</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-5"></a>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-6"></a><span class="c1">## Beaker middleware</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-7"></a><span class="c1"># set up beaker session state middleware</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-8"></a><span class="n">_session_opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'session.type'</span><span class="p">:</span> <span class="s1">'memory'</span><span class="p">,</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-9"></a>                                 <span class="s1">'session.auto'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-10"></a>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-11"></a><span class="c1"># wrap the bottle app in a beaker</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-12"></a><span class="n">_app</span> <span class="o">=</span> <span class="n">beaker</span><span class="o">.</span><span class="n">middleware</span><span class="o">.</span><span class="n">SessionMiddleware</span><span class="p">(</span><span class="n">bottle</span><span class="o">.</span><span class="n">app</span><span class="p">(),</span> <span class="n">_session_opts</span><span class="p">)</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-13"></a>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-14"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-15"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-16"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-17"></a>        <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-18"></a>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-19"></a><span class="k">def</span> <span class="nf">_init_root</span><span class="p">():</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-20"></a>        <span class="k">if</span> <span class="s1">'user_session'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-21"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Something</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-22"></a>        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-23"></a>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-24"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-25"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'market.tmpl'</span><span class="p">)</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-26"></a><span class="k">def</span> <span class="nf">market</span><span class="p">():</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-27"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">_init_root</span><span class="p">()</span>
-<a name="rest_code_f45d9dbcc21a4e70acfa6fe240db2b0f-28"></a>        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_d933d79281e748dbb097ca55728ccffa-1"></a><span class="kn">import</span> <span class="nn">beaker.middleware</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-2"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">mako_view</span> <span class="k">as</span> <span class="n">view</span><span class="p">,</span> <span class="n">mako_template</span> <span class="k">as</span> <span class="n">template</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-3"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">hook</span><span class="p">,</span> <span class="n">static_file</span><span class="p">,</span> <span class="n">request</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-4"></a><span class="kn">import</span> <span class="nn">bottle</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-5"></a>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-6"></a><span class="c1">## Beaker middleware</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-7"></a><span class="c1"># set up beaker session state middleware</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-8"></a><span class="n">_session_opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'session.type'</span><span class="p">:</span> <span class="s1">'memory'</span><span class="p">,</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-9"></a>                                 <span class="s1">'session.auto'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-10"></a>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-11"></a><span class="c1"># wrap the bottle app in a beaker</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-12"></a><span class="n">_app</span> <span class="o">=</span> <span class="n">beaker</span><span class="o">.</span><span class="n">middleware</span><span class="o">.</span><span class="n">SessionMiddleware</span><span class="p">(</span><span class="n">bottle</span><span class="o">.</span><span class="n">app</span><span class="p">(),</span> <span class="n">_session_opts</span><span class="p">)</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-13"></a>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-14"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-15"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-16"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-17"></a>        <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-18"></a>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-19"></a><span class="k">def</span> <span class="nf">_init_root</span><span class="p">():</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-20"></a>        <span class="k">if</span> <span class="s1">'user_session'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">:</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-21"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Something</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-22"></a>        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-23"></a>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-24"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-25"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'market.tmpl'</span><span class="p">)</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-26"></a><span class="k">def</span> <span class="nf">market</span><span class="p">():</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-27"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">_init_root</span><span class="p">()</span>
+<a name="rest_code_d933d79281e748dbb097ca55728ccffa-28"></a>        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
 </pre>
 <p>其中 hook 這一段，設定只要有 request，就會先執行下面的程式：</p>
-<pre class="code python"><a name="rest_code_5f7e3e3d47304c61b7d4d69c5aab1d51-1"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
-<a name="rest_code_5f7e3e3d47304c61b7d4d69c5aab1d51-2"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
-<a name="rest_code_5f7e3e3d47304c61b7d4d69c5aab1d51-3"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
-<a name="rest_code_5f7e3e3d47304c61b7d4d69c5aab1d51-4"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
+<pre class="code python"><a name="rest_code_03e610dcaea049799cef11c4d9a0e7b0-1"></a><span class="c1"># hook request to make the beaker session easier to get to</span>
+<a name="rest_code_03e610dcaea049799cef11c4d9a0e7b0-2"></a><span class="nd">@hook</span><span class="p">(</span><span class="s1">'before_request'</span><span class="p">)</span>
+<a name="rest_code_03e610dcaea049799cef11c4d9a0e7b0-3"></a><span class="k">def</span> <span class="nf">_setup_request</span><span class="p">():</span>
+<a name="rest_code_03e610dcaea049799cef11c4d9a0e7b0-4"></a>                <span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'beaker.session'</span><span class="p">]</span>
 </pre>
 <p>在 route 中可以用下列方法取得 session 資料：</p>
-<pre class="code python"><a name="rest_code_8a66f2a768784cbd9e25fc6a8f765809-1"></a><span class="c1"># web server start here</span>
-<a name="rest_code_8a66f2a768784cbd9e25fc6a8f765809-2"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/stk/&lt;sid&gt;'</span><span class="p">)</span>
-<a name="rest_code_8a66f2a768784cbd9e25fc6a8f765809-3"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'stkinfo.tmpl'</span><span class="p">)</span>
-<a name="rest_code_8a66f2a768784cbd9e25fc6a8f765809-4"></a><span class="k">def</span> <span class="nf">stkinfo</span><span class="p">(</span><span class="n">sid</span><span class="p">):</span>
-<a name="rest_code_8a66f2a768784cbd9e25fc6a8f765809-5"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
-<a name="rest_code_8a66f2a768784cbd9e25fc6a8f765809-6"></a><span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_ac1d616719d14ec8b08c75375e3e4c5d-1"></a><span class="c1"># web server start here</span>
+<a name="rest_code_ac1d616719d14ec8b08c75375e3e4c5d-2"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/stk/&lt;sid&gt;'</span><span class="p">)</span>
+<a name="rest_code_ac1d616719d14ec8b08c75375e3e4c5d-3"></a><span class="nd">@view</span><span class="p">(</span><span class="s1">'stkinfo.tmpl'</span><span class="p">)</span>
+<a name="rest_code_ac1d616719d14ec8b08c75375e3e4c5d-4"></a><span class="k">def</span> <span class="nf">stkinfo</span><span class="p">(</span><span class="n">sid</span><span class="p">):</span>
+<a name="rest_code_ac1d616719d14ec8b08c75375e3e4c5d-5"></a>        <span class="n">_us</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">'user_session'</span><span class="p">]</span>
+<a name="rest_code_ac1d616719d14ec8b08c75375e3e4c5d-6"></a><span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">_us</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">)</span>
 </pre>
 <p>在程式檔的最後加上讓程式可以執行：</p>
-<pre class="code python"><a name="rest_code_4e093d7b81fb4262a5e689a32d71b072-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_4e093d7b81fb4262a5e689a32d71b072-2"></a>        <span class="n">bottle</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">_app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_4e093d7b81fb4262a5e689a32d71b072-3"></a><span class="k">else</span><span class="p">:</span>
-<a name="rest_code_4e093d7b81fb4262a5e689a32d71b072-4"></a>        <span class="n">application</span> <span class="o">=</span> <span class="n">_app</span>
+<pre class="code python"><a name="rest_code_03bc9e64004e4278896c0f87c26eab37-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_03bc9e64004e4278896c0f87c26eab37-2"></a>        <span class="n">bottle</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">_app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_03bc9e64004e4278896c0f87c26eab37-3"></a><span class="k">else</span><span class="p">:</span>
+<a name="rest_code_03bc9e64004e4278896c0f87c26eab37-4"></a>        <span class="n">application</span> <span class="o">=</span> <span class="n">_app</span>
 </pre>
 <p>其中 <tt class="docutils literal">application</tt> 是 python 和 uwsgi 溝通的物件，和 beaker 沒有關係。</p>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/bottlenginx-with-uwsgi/" class="u-url">bottle+nginx with uwsgi</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/bottlenginx-with-uwsgi/" class="u-url">bottle+nginx with uwsgi</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Mario Long
             </span></p>
-            <p class="dateline"><a href="posts/bottlenginx-with-uwsgi/" rel="bookmark"><time class="published dt-published" datetime="2014-02-08T13:35:29+08:00" title="2014-02-08 13:35">2014-02-08 13:35</time></a></p>
+            <p class="dateline">
+            <a href="posts/bottlenginx-with-uwsgi/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-02-08T13:35:29+08:00" itemprop="datePublished" title="2014-02-08 13:35">2014-02-08 13:35</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="posts/bottlenginx-with-uwsgi/#disqus_thread" data-disqus-identifier="cache/posts/bottlenginx-with-uwsgi.html">Comments</a>
@@ -870,22 +900,22 @@ Periodical settings can also be entered as in this crontab template:
     </header><div class="p-summary entry-summary">
     <div>
 <p>安裝 uwsgi</p>
-<pre class="code text"><a name="rest_code_52ea7cd5767c4899ad0e754b11e39d73-1"></a>sudo pip uwsgi
+<pre class="code text"><a name="rest_code_1eec44940804485e806e574c4ffb0e37-1"></a>sudo pip uwsgi
 </pre>
 <p>先寫一個小小的程式，測試一下。</p>
-<pre class="code python"><a name="rest_code_32f04d0985e64c06a5d538cde19882ee-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-3"></a>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-5"></a>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-9"></a>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-3"></a>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-5"></a>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-9"></a>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
 </pre>
 <p>啟動 uwsgi</p>
-<pre class="code text"><a name="rest_code_bf725f4ff8114a2a970f1f709aa8d015-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
+<pre class="code text"><a name="rest_code_4f3230a48232436ab2b9783f965bc3bf-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
 </pre>
 <p>進 browser 看看成功否？目前成功。</p>
 <p>接下來試 nginx 中啟動 uwsgi。</p>

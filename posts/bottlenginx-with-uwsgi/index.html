@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -97,7 +97,10 @@ uws">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-02-08T13:35:29+08:00" itemprop="datePublished" title="2014-02-08 13:35">2014-02-08 13:35</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-02-08T13:35:29+08:00" itemprop="datePublished" title="2014-02-08 13:35">2014-02-08 13:35</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/bottlenginx-with-uwsgi.html">Comments</a>
@@ -112,22 +115,22 @@ uws">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>安裝 uwsgi</p>
-<pre class="code text"><a name="rest_code_52ea7cd5767c4899ad0e754b11e39d73-1"></a>sudo pip uwsgi
+<pre class="code text"><a name="rest_code_1eec44940804485e806e574c4ffb0e37-1"></a>sudo pip uwsgi
 </pre>
 <p>先寫一個小小的程式，測試一下。</p>
-<pre class="code python"><a name="rest_code_32f04d0985e64c06a5d538cde19882ee-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-3"></a>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-5"></a>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-9"></a>
-<a name="rest_code_32f04d0985e64c06a5d538cde19882ee-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-3"></a>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-5"></a>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-9"></a>
+<a name="rest_code_d5c508ce5ec94cc2a29e1cfd3937f47d-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
 </pre>
 <p>啟動 uwsgi</p>
-<pre class="code text"><a name="rest_code_bf725f4ff8114a2a970f1f709aa8d015-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
+<pre class="code text"><a name="rest_code_4f3230a48232436ab2b9783f965bc3bf-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
 </pre>
 <p>進 browser 看看成功否？目前成功。</p>
 <p>接下來試 nginx 中啟動 uwsgi。</p>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -94,7 +94,10 @@ rubyripper 有 gtk2 圖形介面的 rrip_gui 和命令列式的 rrip_cli 。
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2013-11-02T18:05:13+08:00" itemprop="datePublished" title="2013-11-02 18:05">2013-11-02 18:05</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-11-02T18:05:13+08:00" itemprop="datePublished" title="2013-11-02 18:05">2013-11-02 18:05</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/cd-ripper-rubyripper.html">Comments</a>
@@ -121,38 +124,38 @@ $ yaourt -S rubyripper-git
 <h2>Setup</h2>
 <p>rubyripper 有 gtk2 圖形介面的 <tt class="docutils literal">rrip_gui</tt> 和命令列式的 <tt class="docutils literal">rrip_cli</tt> 。</p>
 <p>以下是命令列的設定：</p>
-<pre class="code text"><a name="rest_code_f4fe482134954964b7662b38ec36744c-1"></a>*** RUBYRIPPER SETTINGS ***
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-2"></a>
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-3"></a>** ENCODING **
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-4"></a>1)  flac [ ] , settings: --best -V
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-5"></a>2)  vorbis [ ] , settings: -q 4
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-6"></a>3)  mp3 [ ] , settings: -V 3 --id3v2-only
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-7"></a>4)  wav [*]
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-8"></a>5)  other [], settings:
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-9"></a>6)  playlist support [ ]
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-10"></a>7)  encode while ripping [1]
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-11"></a>
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-12"></a>** RIPPING **
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-13"></a>8)  cdrom : /dev/sr0 with offset 6
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-14"></a>   **Find your offset at http://www.accuraterip.com/driveoffsets.htm.
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-15"></a>   **Your drive model is shown in the logfile.
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-16"></a>9)  passing extra cdparanoia parameters : -Z
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-17"></a>10) match all chunks : 2
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-18"></a>11) match erroneous chunks : 10
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-19"></a>12) maximum trials : 80
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-20"></a>13) eject disc after ripping [*]
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-21"></a>
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-22"></a>** NAMING SCHEME **
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-23"></a>14) base directory : /home/mariolong/cd-rip
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-24"></a>15) standard scheme: %a (%y) %b/%n-%t
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-25"></a>16) various artist scheme: %f/%va (%y) %b/%n-%a-%t
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-26"></a>
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-27"></a>** FREEDB  **
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-28"></a>17) fetch cd info with freedb [*]
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-29"></a>18) always use first hit [*]
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-30"></a>19) site = http://freedb.freedb.org/~cddb/cddb.cgi
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-31"></a>20) username = anonymous
-<a name="rest_code_f4fe482134954964b7662b38ec36744c-32"></a>21) hostname = my_secret.com
+<pre class="code text"><a name="rest_code_8964a10b77df424a86cf159613c92f5f-1"></a>*** RUBYRIPPER SETTINGS ***
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-2"></a>
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-3"></a>** ENCODING **
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-4"></a>1)  flac [ ] , settings: --best -V
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-5"></a>2)  vorbis [ ] , settings: -q 4
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-6"></a>3)  mp3 [ ] , settings: -V 3 --id3v2-only
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-7"></a>4)  wav [*]
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-8"></a>5)  other [], settings:
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-9"></a>6)  playlist support [ ]
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-10"></a>7)  encode while ripping [1]
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-11"></a>
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-12"></a>** RIPPING **
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-13"></a>8)  cdrom : /dev/sr0 with offset 6
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-14"></a>   **Find your offset at http://www.accuraterip.com/driveoffsets.htm.
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-15"></a>   **Your drive model is shown in the logfile.
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-16"></a>9)  passing extra cdparanoia parameters : -Z
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-17"></a>10) match all chunks : 2
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-18"></a>11) match erroneous chunks : 10
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-19"></a>12) maximum trials : 80
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-20"></a>13) eject disc after ripping [*]
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-21"></a>
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-22"></a>** NAMING SCHEME **
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-23"></a>14) base directory : /home/mariolong/cd-rip
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-24"></a>15) standard scheme: %a (%y) %b/%n-%t
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-25"></a>16) various artist scheme: %f/%va (%y) %b/%n-%a-%t
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-26"></a>
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-27"></a>** FREEDB  **
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-28"></a>17) fetch cd info with freedb [*]
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-29"></a>18) always use first hit [*]
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-30"></a>19) site = http://freedb.freedb.org/~cddb/cddb.cgi
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-31"></a>20) username = anonymous
+<a name="rest_code_8964a10b77df424a86cf159613c92f5f-32"></a>21) hostname = my_secret.com
 </pre>
 <p>比較重要的是下面幾個參數：</p>
 <p><tt class="docutils literal">9)  passing extra cdparanoia parameters : <span class="pre">-Z</span></tt> 不使用 cdparanoia 的糾錯，
@@ -194,21 +197,21 @@ EAC 將會使用這些樣本並繼續。</p>
 <h2>轉檔+tag</h2>
 <div class="section" id="pacpl">
 <h3>pacpl</h3>
-<pre class="code text"><a name="rest_code_f836b4669fa6457383a9c9ac15ad706c-1"></a>$ yaourt -S pacpl
-<a name="rest_code_f836b4669fa6457383a9c9ac15ad706c-2"></a>
-<a name="rest_code_f836b4669fa6457383a9c9ac15ad706c-3"></a>$ pacpl -t aiff *.wav
+<pre class="code text"><a name="rest_code_0ba35cec095843ca8a34a74a0cea6f9a-1"></a>$ yaourt -S pacpl
+<a name="rest_code_0ba35cec095843ca8a34a74a0cea6f9a-2"></a>
+<a name="rest_code_0ba35cec095843ca8a34a74a0cea6f9a-3"></a>$ pacpl -t aiff *.wav
 </pre>
 <p>wav 轉成 aiff 檔，檔案內容和 itunes 轉成的 aiff 是一樣的。</p>
 <p>不用 ffmpeg 轉的原因是：無論有沒有用 -c:a copy 這個參數，轉出來的內容和 itunes 轉出來的不一樣。</p>
 <p>轉成 mp3</p>
-<pre class="code text"><a name="rest_code_32fda46ed94b4743a76074db9d96a74e-1"></a>pacpl -t mp3 --bitrate 192 *.aiff
+<pre class="code text"><a name="rest_code_5b8d720292dd421aa5a21918c64e8f0c-1"></a>pacpl -t mp3 --bitrate 192 *.aiff
 </pre>
 </div>
 <div class="section" id="kid3">
 <h3>kid3</h3>
 <p>不要用 kid3-qt。</p>
 <p>用 kid3 可以編寫 aiff 的 tag，可以多檔同時編輯，方便的很。</p>
-<pre class="code text"><a name="rest_code_b65456ce20244c668eb1525b0eca2f20-1"></a>$ yaourt -S kid3
+<pre class="code text"><a name="rest_code_77b8ad95366f4897840b6a05ef90500a-1"></a>$ yaourt -S kid3
 </pre>
 <p>最重要的是，itunes 和 mpd 均可讀出這 2 個程式處理過的 aiff 檔。</p>
 <p>太棒了。</p>

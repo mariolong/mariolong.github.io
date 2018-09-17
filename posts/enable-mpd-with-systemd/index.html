@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -88,7 +88,10 @@ fatal_error: Can't create db file in &quot;/var/lib/mpd&quot;:">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2013-11-26T14:17:33+08:00" itemprop="datePublished" title="2013-11-26 14:17">2013-11-26 14:17</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-11-26T14:17:33+08:00" itemprop="datePublished" title="2013-11-26 14:17">2013-11-26 14:17</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/enable-mpd-with-systemd.html">Comments</a>
@@ -103,22 +106,22 @@ fatal_error: Can't create db file in &quot;/var/lib/mpd&quot;:">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>error message:</p>
-<pre class="code text"><a name="rest_code_c924d70bcd5743b08cf79f354f53eab3-1"></a>$ systemctl --user status mpd.service
-<a name="rest_code_c924d70bcd5743b08cf79f354f53eab3-2"></a>Failed to issue method call: Process /bin/false exited with status 1
-<a name="rest_code_c924d70bcd5743b08cf79f354f53eab3-3"></a>
-<a name="rest_code_c924d70bcd5743b08cf79f354f53eab3-4"></a>$ sudo journalctl -u mpd
-<a name="rest_code_c924d70bcd5743b08cf79f354f53eab3-5"></a>fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
+<pre class="code text"><a name="rest_code_02c8028e443641ed82622b1d9208c442-1"></a>$ systemctl --user status mpd.service
+<a name="rest_code_02c8028e443641ed82622b1d9208c442-2"></a>Failed to issue method call: Process /bin/false exited with status 1
+<a name="rest_code_02c8028e443641ed82622b1d9208c442-3"></a>
+<a name="rest_code_02c8028e443641ed82622b1d9208c442-4"></a>$ sudo journalctl -u mpd
+<a name="rest_code_02c8028e443641ed82622b1d9208c442-5"></a>fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
 </pre>
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206">https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206</a> 後，
 解決了這個問題。</p>
 <p>下這個指令：</p>
-<pre class="code text"><a name="rest_code_28bf1e42e9e441cc9acffc9663b6645d-1"></a># sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
+<pre class="code text"><a name="rest_code_eab9e32f6ec64b95b54d10f4b5ce06a1-1"></a># sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
 </pre>
 <p>2014-3-14 update：現在不必用上述的方法囉。</p>
 <p>加環境變數的檔：</p>
-<pre class="code text"><a name="rest_code_6f43bfac2fa24733bf062751aa5c33b1-1"></a># EDIT /etc/systemd/system/user@.service.d/environment.conf
-<a name="rest_code_6f43bfac2fa24733bf062751aa5c33b1-2"></a>[Service]
-<a name="rest_code_6f43bfac2fa24733bf062751aa5c33b1-3"></a>Environment=DISPLAY=:0
+<pre class="code text"><a name="rest_code_e0700d0f3c844b46828c3f997c55cc44-1"></a># EDIT /etc/systemd/system/user@.service.d/environment.conf
+<a name="rest_code_e0700d0f3c844b46828c3f997c55cc44-2"></a>[Service]
+<a name="rest_code_e0700d0f3c844b46828c3f997c55cc44-3"></a>Environment=DISPLAY=:0
 </pre>
 <p><strong>2014-4-3 update</strong> : 為何這個 install 標題在這個位置？因為以上都是過去的故事了。
 還是把它留著，免得下次又重做這些不必要做的事。</p>
@@ -134,20 +137,20 @@ yaourt -S mpd ncmpcpp mpdris2-git cantata cdparanoia
 nano ~/.config/systemd/user/mpd.service
 </pre>
 <p>內容如下：</p>
-<pre class="code text"><a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-1"></a>[Unit]
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-2"></a>Description=Music Player Daemon
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-3"></a>
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-4"></a>[Service]
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-5"></a>Nice=-10
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-6"></a>ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-7"></a>ExecStop=/usr/bin/mpd --kill
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-8"></a>
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-9"></a>[Install]
-<a name="rest_code_d76687f92ff14f8b8f7f9d4d13eae96a-10"></a>WantedBy=default.target
+<pre class="code text"><a name="rest_code_5d0df3add76c450faee36520c5ab368d-1"></a>[Unit]
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-2"></a>Description=Music Player Daemon
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-3"></a>
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-4"></a>[Service]
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-5"></a>Nice=-10
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-6"></a>ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-7"></a>ExecStop=/usr/bin/mpd --kill
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-8"></a>
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-9"></a>[Install]
+<a name="rest_code_5d0df3add76c450faee36520c5ab368d-10"></a>WantedBy=default.target
 </pre>
 <p>把 mpd 開起來吧，不必 reboot！</p>
-<pre class="code text"><a name="rest_code_2c95a3298a4542a4971f2dd8e3469d90-1"></a>$ systemctl --user start mpd
-<a name="rest_code_2c95a3298a4542a4971f2dd8e3469d90-2"></a>$ systemctl --user enable mpd
+<pre class="code text"><a name="rest_code_408b5c81136e4e0dbcfab4c827fdfb78-1"></a>$ systemctl --user start mpd
+<a name="rest_code_408b5c81136e4e0dbcfab4c827fdfb78-2"></a>$ systemctl --user enable mpd
 </pre>
 <p>在 KDE 中使用 mpd-client，比較好用的 ncmpcpp 和 cantata。</p>
 <p>ncmpcpp 配置起來也是「落落長」的故事。</p>

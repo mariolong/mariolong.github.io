@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -92,7 +92,10 @@ $ yaourt -S gnome gnome-extra ibus-rime ibus-chewing
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2013-10-24T12:57:19+08:00" itemprop="datePublished" title="2013-10-24 12:57">2013-10-24 12:57</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-10-24T12:57:19+08:00" itemprop="datePublished" title="2013-10-24 12:57">2013-10-24 12:57</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/gnomean-zhuang-ji-lu.html">Comments</a>
@@ -125,76 +128,76 @@ $ yaourt -S gnome gnome-extra ibus-rime ibus-chewing
 <p>我目前覺得 gnome 3.10 和 IBus 整合的不錯，使用上沒有什麼問題。
 但是，預設的字型實在是太小了，不改不行。
 目前只能直接改 gnome-shell 的 css 檔：</p>
-<pre class="code text"><a name="rest_code_8a9770221c904746a01899c6c521bc44-1"></a>$ sudo nano /usr/share/gnome-shell/theme/gnome-shell.css
+<pre class="code text"><a name="rest_code_8baf3416392640dfa5db495388538f49-1"></a>$ sudo nano /usr/share/gnome-shell/theme/gnome-shell.css
 </pre>
 <p>找到</p>
-<pre class="code text"><a name="rest_code_b7cd4e1a27064018b82c819389d1bf4e-1"></a>/* default text style */
-<a name="rest_code_b7cd4e1a27064018b82c819389d1bf4e-2"></a>stage {
-<a name="rest_code_b7cd4e1a27064018b82c819389d1bf4e-3"></a>font-family: sans-serif;
-<a name="rest_code_b7cd4e1a27064018b82c819389d1bf4e-4"></a>font-size: 11pt;
-<a name="rest_code_b7cd4e1a27064018b82c819389d1bf4e-5"></a>color: white;
-<a name="rest_code_b7cd4e1a27064018b82c819389d1bf4e-6"></a>}
+<pre class="code text"><a name="rest_code_e95b7eb4cce84e37a306d4556ece46d8-1"></a>/* default text style */
+<a name="rest_code_e95b7eb4cce84e37a306d4556ece46d8-2"></a>stage {
+<a name="rest_code_e95b7eb4cce84e37a306d4556ece46d8-3"></a>font-family: sans-serif;
+<a name="rest_code_e95b7eb4cce84e37a306d4556ece46d8-4"></a>font-size: 11pt;
+<a name="rest_code_e95b7eb4cce84e37a306d4556ece46d8-5"></a>color: white;
+<a name="rest_code_e95b7eb4cce84e37a306d4556ece46d8-6"></a>}
 </pre>
 <p>和</p>
-<pre class="code text"><a name="rest_code_74bcdb3189b7447393898c4fe1425e44-1"></a>/* IBus Candidate Popup */
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-2"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-3"></a>.candidate-popup-content {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-4"></a>padding: 0.2em;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-5"></a>spacing: 0.2em;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-6"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-7"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-8"></a>.candidate-popup-text {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-9"></a>font-size: 18pt;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-10"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-11"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-12"></a>.candidate-index {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-13"></a>font-size: 14pt;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-14"></a>padding: 0 0.5em 0 0;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-15"></a>color: #cccccc;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-16"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-17"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-18"></a>.candidate-label {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-19"></a>font-size:22px;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-20"></a>letter-spacing: 1px;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-21"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-22"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-23"></a>.candidate-box {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-24"></a>padding: 0.2em 0.5em 0.2em 0.5em;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-25"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-26"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-27"></a>.candidate-box:selected {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-28"></a>border-radius: 4px;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-29"></a>background-color: rgba(255,255,255,0.2);
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-30"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-31"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-32"></a>.candidate-box:hover {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-33"></a>border-radius: 4px;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-34"></a>background-color: rgba(255,255,255,0.1);
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-35"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-36"></a>.candidate-page-button-box {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-37"></a>height: 2em;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-38"></a>width: 80px;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-39"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-40"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-41"></a>.vertical .candidate-page-button-box {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-42"></a>padding-top: 0.5em;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-43"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-44"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-45"></a>.horizontal .candidate-page-button-box {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-46"></a>padding-left: 0.5em;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-47"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-48"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-49"></a>.candidate-page-button-previous {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-50"></a>border-radius: 4px 0px 0px 4px;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-51"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-52"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-53"></a>.candidate-page-button-next {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-54"></a>border-radius: 0px 4px 4px 0px;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-55"></a>}
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-56"></a>
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-57"></a>.candidate-page-button-icon {
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-58"></a>icon-size: 1em;
-<a name="rest_code_74bcdb3189b7447393898c4fe1425e44-59"></a>}
+<pre class="code text"><a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-1"></a>/* IBus Candidate Popup */
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-2"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-3"></a>.candidate-popup-content {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-4"></a>padding: 0.2em;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-5"></a>spacing: 0.2em;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-6"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-7"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-8"></a>.candidate-popup-text {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-9"></a>font-size: 18pt;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-10"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-11"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-12"></a>.candidate-index {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-13"></a>font-size: 14pt;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-14"></a>padding: 0 0.5em 0 0;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-15"></a>color: #cccccc;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-16"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-17"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-18"></a>.candidate-label {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-19"></a>font-size:22px;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-20"></a>letter-spacing: 1px;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-21"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-22"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-23"></a>.candidate-box {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-24"></a>padding: 0.2em 0.5em 0.2em 0.5em;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-25"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-26"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-27"></a>.candidate-box:selected {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-28"></a>border-radius: 4px;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-29"></a>background-color: rgba(255,255,255,0.2);
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-30"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-31"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-32"></a>.candidate-box:hover {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-33"></a>border-radius: 4px;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-34"></a>background-color: rgba(255,255,255,0.1);
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-35"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-36"></a>.candidate-page-button-box {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-37"></a>height: 2em;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-38"></a>width: 80px;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-39"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-40"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-41"></a>.vertical .candidate-page-button-box {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-42"></a>padding-top: 0.5em;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-43"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-44"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-45"></a>.horizontal .candidate-page-button-box {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-46"></a>padding-left: 0.5em;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-47"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-48"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-49"></a>.candidate-page-button-previous {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-50"></a>border-radius: 4px 0px 0px 4px;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-51"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-52"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-53"></a>.candidate-page-button-next {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-54"></a>border-radius: 0px 4px 4px 0px;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-55"></a>}
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-56"></a>
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-57"></a>.candidate-page-button-icon {
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-58"></a>icon-size: 1em;
+<a name="rest_code_bc8883cd6e73475c8b9e4cf57f9a966a-59"></a>}
 </pre>
 <p>重啟 gnome shell，OK。</p>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -84,7 +84,10 @@ Here are the installation steps, including for a systemd managed u">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2013-12-17T19:56:42+08:00" itemprop="datePublished" title="2013-12-17 19:56">2013-12-17 19:56</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-12-17T19:56:42+08:00" itemprop="datePublished" title="2013-12-17 19:56">2013-12-17 19:56</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/autologin-without-dm.html">Comments</a>
@@ -109,35 +112,35 @@ yaourt -S xlogin-git
 <li>Create the following two files. 準備 D-BUS。</li>
 </ol>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.socket</tt> containing:</p>
-<pre class="code text"><a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-1"></a>[Unit]
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-2"></a>Description=D-Bus Message Bus Socket
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-3"></a>Before=sockets.target
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-4"></a>
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-5"></a>[Socket]
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-7"></a>
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-8"></a>[Install]
-<a name="rest_code_f82a48da5fc24377bd8d48dae8e7be7b-9"></a>WantedBy=default.target
+<pre class="code text"><a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-1"></a>[Unit]
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-2"></a>Description=D-Bus Message Bus Socket
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-3"></a>Before=sockets.target
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-4"></a>
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-5"></a>[Socket]
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-7"></a>
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-8"></a>[Install]
+<a name="rest_code_ff58cbfe5c594d1b9eb7d81828877c72-9"></a>WantedBy=default.target
 </pre>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.service</tt> containing:</p>
-<pre class="code text"><a name="rest_code_450b8100ed8d4beead20aa593d98c13e-1"></a>[Unit]
-<a name="rest_code_450b8100ed8d4beead20aa593d98c13e-2"></a>Description=D-Bus Message Bus
-<a name="rest_code_450b8100ed8d4beead20aa593d98c13e-3"></a>Requires=dbus.socket
-<a name="rest_code_450b8100ed8d4beead20aa593d98c13e-4"></a>
-<a name="rest_code_450b8100ed8d4beead20aa593d98c13e-5"></a>[Service]
-<a name="rest_code_450b8100ed8d4beead20aa593d98c13e-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
-<a name="rest_code_450b8100ed8d4beead20aa593d98c13e-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
+<pre class="code text"><a name="rest_code_334a2241db2e4296b4bb1d6cdac43913-1"></a>[Unit]
+<a name="rest_code_334a2241db2e4296b4bb1d6cdac43913-2"></a>Description=D-Bus Message Bus
+<a name="rest_code_334a2241db2e4296b4bb1d6cdac43913-3"></a>Requires=dbus.socket
+<a name="rest_code_334a2241db2e4296b4bb1d6cdac43913-4"></a>
+<a name="rest_code_334a2241db2e4296b4bb1d6cdac43913-5"></a>[Service]
+<a name="rest_code_334a2241db2e4296b4bb1d6cdac43913-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+<a name="rest_code_334a2241db2e4296b4bb1d6cdac43913-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
 </pre>
 <ol class="arabic simple" start="3">
 <li>Run (as root) <tt class="docutils literal">systemctl <span class="pre">--global</span> enable dbus.socket</tt> .</li>
 <li>Set up your .xinitrc and make sure it has the following near the top.</li>
 </ol>
-<pre class="code text"><a name="rest_code_99ad98002ec249fb98a8c6051b08bd98-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
-<a name="rest_code_99ad98002ec249fb98a8c6051b08bd98-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
-<a name="rest_code_99ad98002ec249fb98a8c6051b08bd98-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
-<a name="rest_code_99ad98002ec249fb98a8c6051b08bd98-4"></a>    done
-<a name="rest_code_99ad98002ec249fb98a8c6051b08bd98-5"></a>    unset f
-<a name="rest_code_99ad98002ec249fb98a8c6051b08bd98-6"></a>fi
+<pre class="code text"><a name="rest_code_b24ead8db42e4e1fb811898432f1511f-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
+<a name="rest_code_b24ead8db42e4e1fb811898432f1511f-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
+<a name="rest_code_b24ead8db42e4e1fb811898432f1511f-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
+<a name="rest_code_b24ead8db42e4e1fb811898432f1511f-4"></a>    done
+<a name="rest_code_b24ead8db42e4e1fb811898432f1511f-5"></a>    unset f
+<a name="rest_code_b24ead8db42e4e1fb811898432f1511f-6"></a>fi
 </pre>
 <p>Running your <tt class="docutils literal">.xinitrc</tt> should not return,
 so either have wait as the last command in your <tt class="docutils literal">.xinitrc</tt>,
@@ -146,9 +149,9 @@ or add <tt class="docutils literal">exec</tt> to the last command that will be c
 <ol class="arabic simple" start="5">
 <li>Include the following in your <tt class="docutils literal">.bashrc</tt> .</li>
 </ol>
-<pre class="code text"><a name="rest_code_70034c5f43f7404aadc70e858a80babb-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
-<a name="rest_code_70034c5f43f7404aadc70e858a80babb-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
-<a name="rest_code_70034c5f43f7404aadc70e858a80babb-3"></a>done
+<pre class="code text"><a name="rest_code_14c8df6c2b7c4460968fa53c7bb42dca-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
+<a name="rest_code_14c8df6c2b7c4460968fa53c7bb42dca-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
+<a name="rest_code_14c8df6c2b7c4460968fa53c7bb42dca-3"></a>done
 </pre>
 <p>6. Run (as root) <tt class="docutils literal">systemctl enable <span class="pre">xlogin@&lt;username&gt;</span></tt> for automatic login at boot,
 or <tt class="docutils literal">systemctl start <span class="pre">xlogin@&lt;username&gt;</span></tt> for launching a graphical user session (on tty7).</p>

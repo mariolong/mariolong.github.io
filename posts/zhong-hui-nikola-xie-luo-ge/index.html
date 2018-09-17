@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="writing blogger using by nikola again.">
@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="writing blogger using by nikola again.">
 <meta name="author" content="Mario Long">
-<link rel="prev" href="../install-haskell-applications/" title="Install Haskell Applications" type="text/html">
+<link rel="prev" href="../alsa-equaler/" title="alsa equaler" type="text/html">
 <link rel="next" href="../eat-fruit-as-empty-stomach/" title="【謠言】愛惜大腸，空腹吃水果" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="部落格，重回 nikola+org-mode">
@@ -84,7 +84,10 @@
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2018-05-14T09:32:19+08:00" itemprop="datePublished" title="2018-05-14 09:32">2018-05-14 09:32</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2018-05-14T09:32:19+08:00" itemprop="datePublished" title="2018-05-14 09:32">2018-05-14 09:32</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/zhong-hui-nikola-xie-luo-ge.html">Comments</a>
@@ -101,51 +104,51 @@
 <h2>目錄</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org17be9df">1. 安裝</a></li>
+<li><a href="#org7bb973c">1. 安裝</a></li>
 <li>
-<a href="#orga9d1042">2. 設定</a>
+<a href="#org6941d4b">2. 設定</a>
 <ul>
-<li><a href="#org2b0b5ea">2.1. configuration file</a></li>
-<li><a href="#org970bdbb">2.2. theme</a></li>
+<li><a href="#orga04015c">2.1. configuration file</a></li>
+<li><a href="#org6dd0649">2.2. theme</a></li>
 <li>
-<a href="#org1599e49">2.3. 用 <code>nikola github_deploy</code> 快速發佈文章</a>
+<a href="#org659a948">2.3. 用 <code>nikola github_deploy</code> 快速發佈文章</a>
 <ul>
-<li><a href="#org2d22d07">2.3.1. 在 nikola github_deploy 之前</a></li>
+<li><a href="#org896c2bb">2.3.1. 在 nikola github_deploy 之前</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#org21c10a7">3. 用 org-mode 寫文章</a>
+<a href="#org943edb9">3. 用 org-mode 寫文章</a>
 <ul>
 <li>
-<a href="#org9776c76">3.1. 修改 /orgmode/init.el</a>
+<a href="#org09fb27c">3.1. 修改 /orgmode/init.el</a>
 <ul>
-<li><a href="#org72e5eb4">3.1.1. 刪除不必要的空白</a></li>
-<li><a href="#org854c2a9">3.1.2. Convert inline verbatim to kbd when HTML export</a></li>
-<li><a href="#org4db8586">3.1.3. 在 Inline verbatim and code 不要空白</a></li>
-<li><a href="#org6bf70ca">3.1.4. 用 pygment 幫程式碼著色</a></li>
+<li><a href="#org4205acb">3.1.1. 刪除不必要的空白</a></li>
+<li><a href="#orgb16784d">3.1.2. Convert inline verbatim to kbd when HTML export</a></li>
+<li><a href="#orgc65e9ed">3.1.3. 在 Inline verbatim and code 不要空白</a></li>
+<li><a href="#orga1590b4">3.1.4. 用 pygment 幫程式碼著色</a></li>
 </ul>
 </li>
 <li>
-<a href="#orgf608ed1">3.2. 揷入圖片</a>
+<a href="#orgcfa1a52">3.2. 揷入圖片</a>
 <ul>
-<li><a href="#orgbfc5d74">3.2.1. 利用 Google Drive 取得 Google Photos 的照片</a></li>
+<li><a href="#orgc32ed2e">3.2.1. 利用 Google Drive 取得 Google Photos 的照片</a></li>
 </ul>
 </li>
-<li><a href="#org928d927">3.3. 圖片連結 (Image URLs)</a></li>
+<li><a href="#org9b69107">3.3. 圖片連結 (Image URLs)</a></li>
 <li>
-<a href="#org0c6465b">3.4. plain list</a>
+<a href="#orga78fcc4">3.4. plain list</a>
 <ul>
-<li><a href="#orgc7edb17">3.4.1. Lord of the Rings</a></li>
+<li><a href="#orga73a000">3.4.1. Lord of the Rings</a></li>
 </ul>
 </li>
-<li><a href="#org39ad7bd">3.5. Subscripts and superscripts</a></li>
-<li><a href="#org718886f">3.6. Teasers</a></li>
-<li><a href="#orgdc4fc7b">3.7. text block</a></li>
+<li><a href="#org22516bd">3.5. Subscripts and superscripts</a></li>
+<li><a href="#orgab792cb">3.6. Teasers</a></li>
+<li><a href="#orgba1a57b">3.7. text block</a></li>
 </ul>
 </li>
-<li><a href="#org9f67a48">4. 開始使用</a></li>
+<li><a href="#orgf694483">4. 開始使用</a></li>
 </ul>
 </div>
 </div>
@@ -153,8 +156,8 @@
 掙扎了許久，還是先用 <a href="https://getnikola.com/">nikola</a> 記錄一些事，畢竟比較熟悉，能快一點上手。
 </p>
 <!-- TEASER_END -->
-<div id="outline-container-org17be9df" class="outline-2">
-<h2 id="org17be9df">
+<div id="outline-container-org7bb973c" class="outline-2">
+<h2 id="org7bb973c">
 <span class="section-number-2">1</span> 安裝</h2>
 <div class="outline-text-2" id="text-1">
 <div class="highlight"><pre><span></span>sudo pip install nikola webassets ghp_import
@@ -166,8 +169,8 @@
 </div>
 </div>
 
-<div id="outline-container-orga9d1042" class="outline-2">
-<h2 id="orga9d1042">
+<div id="outline-container-org6941d4b" class="outline-2">
+<h2 id="org6941d4b">
 <span class="section-number-2">2</span> 設定</h2>
 <div class="outline-text-2" id="text-2">
 <p>
@@ -179,8 +182,8 @@
 </pre></div>
 </div>
 
-<div id="outline-container-org2b0b5ea" class="outline-3">
-<h3 id="org2b0b5ea">
+<div id="outline-container-orga04015c" class="outline-3">
+<h3 id="orga04015c">
 <span class="section-number-3">2.1</span> configuration file</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
@@ -189,17 +192,18 @@
 </div>
 </div>
 
-<div id="outline-container-org970bdbb" class="outline-3">
-<h3 id="org970bdbb">
+<div id="outline-container-org6dd0649" class="outline-3">
+<h3 id="org6dd0649">
 <span class="section-number-3">2.2</span> theme</h3>
 <div class="outline-text-3" id="text-2-2">
-<div class="highlight"><pre><span></span>nikola theme install bootstrap
+<div class="highlight"><pre><span></span>nikola theme -l
+nikola theme install &lt;theme-name&gt;
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org1599e49" class="outline-3">
-<h3 id="org1599e49">
+<div id="outline-container-org659a948" class="outline-3">
+<h3 id="org659a948">
 <span class="section-number-3">2.3</span> 用 <code>nikola github_deploy</code> 快速發佈文章</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
@@ -253,10 +257,10 @@ automatically committed to and pushed. We recommend setting it to
 Create a <code>.gitignore</code> file. We recommend adding at least the following entries:
 </p>
 
-<div class="highlight"><pre><span></span>   <span class="na">cache</span>
-   <span class="na">.doit.db</span>
-   <span class="na">__pycache__</span>
-   <span class="na">output</span>
+<div class="highlight"><pre><span></span>   cache
+   .doit.db
+   __pycache__
+   output
 </pre></div>
 
 <p>
@@ -273,8 +277,8 @@ within a few minutes.</li>
 </ol>
 </div>
 
-<div id="outline-container-org2d22d07" class="outline-4">
-<h4 id="org2d22d07">
+<div id="outline-container-org896c2bb" class="outline-4">
+<h4 id="org896c2bb">
 <span class="section-number-4">2.3.1</span> 在 nikola github_deploy 之前</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
@@ -284,14 +288,14 @@ within a few minutes.</li>
 
 <ol class="org-ol">
 <li>
-<a id="orgb0ced49"></a>install ghp_import2<br><div class="outline-text-5" id="text-2-3-1-1">
+<a id="orgbfbabf6"></a>install ghp_import2<br><div class="outline-text-5" id="text-2-3-1-1">
 <div class="highlight"><pre><span></span>sudo pip install ghp_import2
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="org24b62c4"></a>install and setup ssh<br><div class="outline-text-5" id="text-2-3-1-2">
+<a id="orga70ec7e"></a>install and setup ssh<br><div class="outline-text-5" id="text-2-3-1-2">
 <p>
 為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
 </p>
@@ -299,14 +303,14 @@ within a few minutes.</li>
 
 <ol class="org-ol">
 <li>
-<a id="org204660b"></a>install openssh<br><div class="outline-text-6" id="text-2-3-1-2-1">
+<a id="org6595b15"></a>install openssh<br><div class="outline-text-6" id="text-2-3-1-2-1">
 <div class="highlight"><pre><span></span>yaourt -S openssh
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="org6c60286"></a>follow github help page to add ssh connect to github<br><div class="outline-text-6" id="text-2-3-1-2-2">
+<a id="org2a4536e"></a>follow github help page to add ssh connect to github<br><div class="outline-text-6" id="text-2-3-1-2-2">
 <p>
 參考了以下文章設定 SSH：
 </p>
@@ -341,7 +345,7 @@ b. 將 ssh key 加到 github 中依 <a href="https://help.github.com/articles/ad
 </li>
 
 <li>
-<a id="org3abbc0d"></a>確定以 ssh 連上 github (不能是 https 型式)<br><div class="outline-text-5" id="text-2-3-1-3">
+<a id="org424b789"></a>確定以 ssh 連上 github (不能是 https 型式)<br><div class="outline-text-5" id="text-2-3-1-3">
 <div class="highlight"><pre><span></span>$ git remote -v
 origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>fetch<span class="o">)</span>
 origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>push<span class="o">)</span>
@@ -360,8 +364,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </div>
 </div>
 
-<div id="outline-container-org21c10a7" class="outline-2">
-<h2 id="org21c10a7">
+<div id="outline-container-org943edb9" class="outline-2">
+<h2 id="org943edb9">
 <span class="section-number-2">3</span> 用 org-mode 寫文章</h2>
 <div class="outline-text-2" id="text-3">
 <p>
@@ -372,8 +376,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </pre></div>
 </div>
 
-<div id="outline-container-org9776c76" class="outline-3">
-<h3 id="org9776c76">
+<div id="outline-container-org09fb27c" class="outline-3">
+<h3 id="org09fb27c">
 <span class="section-number-3">3.1</span> 修改 /orgmode/init.el</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
@@ -381,8 +385,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </p>
 </div>
 
-<div id="outline-container-org72e5eb4" class="outline-4">
-<h4 id="org72e5eb4">
+<div id="outline-container-org4205acb" class="outline-4">
+<h4 id="org4205acb">
 <span class="section-number-4">3.1.1</span> 刪除不必要的空白</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
@@ -406,8 +410,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </div>
 </div>
 
-<div id="outline-container-org854c2a9" class="outline-4">
-<h4 id="org854c2a9">
+<div id="outline-container-orgb16784d" class="outline-4">
+<h4 id="orgb16784d">
 <span class="section-number-4">3.1.2</span> Convert inline verbatim to kbd when HTML export</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
@@ -433,8 +437,8 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </div>
 </div>
 
-<div id="outline-container-org4db8586" class="outline-4">
-<h4 id="org4db8586">
+<div id="outline-container-orgc65e9ed" class="outline-4">
+<h4 id="orgc65e9ed">
 <span class="section-number-4">3.1.3</span> 在 Inline verbatim and code 不要空白</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
@@ -510,14 +514,14 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </div>
 </div>
 
-<div id="outline-container-org6bf70ca" class="outline-4">
-<h4 id="org6bf70ca">
+<div id="outline-container-orga1590b4" class="outline-4">
+<h4 id="orga1590b4">
 <span class="section-number-4">3.1.4</span> 用 pygment 幫程式碼著色</h4>
 <div class="outline-text-4" id="text-3-1-4">
 </div>
 <ol class="org-ol">
 <li>
-<a id="org2091a9e"></a>如果不想以 pygments 高亮程式碼<br><div class="outline-text-5" id="text-3-1-4-1">
+<a id="org0b84572"></a>如果不想以 pygments 高亮程式碼<br><div class="outline-text-5" id="text-3-1-4-1">
 <p>
 在 <code>init.el</code> 設定 <code>nikola-use-pygments</code> 為 <code>nil</code>.
 </p>
@@ -527,7 +531,7 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </li>
 
 <li>
-<a id="org489ea4f"></a>產生 pygments.css<br><div class="outline-text-5" id="text-3-1-4-2">
+<a id="orgc5eaf5e"></a>產生 pygments.css<br><div class="outline-text-5" id="text-3-1-4-2">
 <div class="highlight"><pre><span></span>$ <span class="nb">cd</span> themes/your-theme-name/assets/css
 $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </pre></div>
@@ -535,7 +539,7 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="orgb986813"></a>設定 pygments 可支援的語言<br><div class="outline-text-5" id="text-3-1-4-3">
+<a id="orgdb3cde9"></a>設定 pygments 可支援的語言<br><div class="outline-text-5" id="text-3-1-4-3">
 <p>
 我目前加上 ini, systemd, shell.
 可參考 <a href="http://orgmode.org/worg/org-contrib/babel/languages.html">Babel: Languages</a> 和 <a href="http://pygments.org/docs/lexers/">Available lexers — Pygments</a> 增減。
@@ -557,7 +561,7 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="org13bb5d8"></a>程式碼縮排<br><div class="outline-text-5" id="text-3-1-4-4">
+<a id="org7653eb7"></a>程式碼縮排<br><div class="outline-text-5" id="text-3-1-4-4">
 <p>
 如果要保留整體縮排，加上：
 </p>
@@ -572,7 +576,7 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="org2fa9599"></a>如果不想用 pygments<br><div class="outline-text-5" id="text-3-1-4-5">
+<a id="orgcb05d8e"></a>如果不想用 pygments<br><div class="outline-text-5" id="text-3-1-4-5">
 <p>
 其實我根本不想用 pygments，只想用內定的高亮型式。於是找到 <code>init.el</code> 把 <code>org-html-src-block</code> 函數刪掉。
 </p>
@@ -593,8 +597,8 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </div>
 </div>
 
-<div id="outline-container-orgf608ed1" class="outline-3">
-<h3 id="orgf608ed1">
+<div id="outline-container-orgcfa1a52" class="outline-3">
+<h3 id="orgcfa1a52">
 <span class="section-number-3">3.2</span> 揷入圖片</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
@@ -602,8 +606,8 @@ $ pygmentize -S emacs -a .highlight -f html &gt; pygments.css
 </p>
 </div>
 
-<div id="outline-container-orgbfc5d74" class="outline-4">
-<h4 id="orgbfc5d74">
+<div id="outline-container-orgc32ed2e" class="outline-4">
+<h4 id="orgc32ed2e">
 <span class="section-number-4">3.2.1</span> 利用 Google Drive 取得 Google Photos 的照片</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
@@ -659,8 +663,8 @@ https://drive.google.com/open?id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm
 </div>
 </div>
 
-<div id="outline-container-org928d927" class="outline-3">
-<h3 id="org928d927">
+<div id="outline-container-org9b69107" class="outline-3">
+<h3 id="org9b69107">
 <span class="section-number-3">3.3</span> 圖片連結 (Image URLs)</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
@@ -686,13 +690,13 @@ In order to correctly generate image urls, you may write
 </div>
 </div>
 
-<div id="outline-container-org0c6465b" class="outline-3">
-<h3 id="org0c6465b">
+<div id="outline-container-orga78fcc4" class="outline-3">
+<h3 id="orga78fcc4">
 <span class="section-number-3">3.4</span> plain list</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-orgc7edb17" class="outline-4">
-<h4 id="orgc7edb17">
+<div id="outline-container-orga73a000" class="outline-4">
+<h4 id="orga73a000">
 <span class="section-number-4">3.4.1</span> Lord of the Rings</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
@@ -733,8 +737,8 @@ him very well from his role as Mikey Walsh in The Goonies.
 </div>
 </div>
 
-<div id="outline-container-org39ad7bd" class="outline-3">
-<h3 id="org39ad7bd">
+<div id="outline-container-org22516bd" class="outline-3">
+<h3 id="org22516bd">
 <span class="section-number-3">3.5</span> Subscripts and superscripts</h3>
 <div class="outline-text-3" id="text-3-5">
 <div class="highlight"><pre><span></span>#+OPTIONS: ^:{}
@@ -757,8 +761,8 @@ a_{sub}b^{sup}
 </div>
 </div>
 
-<div id="outline-container-org718886f" class="outline-3">
-<h3 id="org718886f">
+<div id="outline-container-orgab792cb" class="outline-3">
+<h3 id="orgab792cb">
 <span class="section-number-3">3.6</span> Teasers</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
@@ -768,8 +772,8 @@ and use #+HTML: &lt;!– TEASER_END –&gt; to generate &lt;!– TEASER_END –&
 </div>
 </div>
 
-<div id="outline-container-orgdc4fc7b" class="outline-3">
-<h3 id="orgdc4fc7b">
+<div id="outline-container-orgba1a57b" class="outline-3">
+<h3 id="orgba1a57b">
 <span class="section-number-3">3.7</span> text block</h3>
 <div class="outline-text-3" id="text-3-7">
 <div class="highlight"><pre><span></span>shell commands
@@ -805,8 +809,8 @@ but not any simpler
 </div>
 </div>
 </div>
-<div id="outline-container-org9f67a48" class="outline-2">
-<h2 id="org9f67a48">
+<div id="outline-container-orgf694483" class="outline-2">
+<h2 id="orgf694483">
 <span class="section-number-2">4</span> 開始使用</h2>
 <div class="outline-text-2" id="text-4">
 <p>
@@ -842,7 +846,7 @@ but not any simpler
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../install-haskell-applications/" rel="prev" title="Install Haskell Applications">上一篇</a>
+                <a href="../alsa-equaler/" rel="prev" title="alsa equaler">上一篇</a>
             </li>
             <li class="next">
                 <a href="../eat-fruit-as-empty-stomach/" rel="next" title="【謠言】愛惜大腸，空腹吃水果">下一篇</a>

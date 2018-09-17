@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
+<html lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -85,7 +85,10 @@ cronie is installed by default as part of the base group. Other cron implementat
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Mario Long
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2014-03-02T16:31:27+08:00" itemprop="datePublished" title="2014-03-02 16:31">2014-03-02 16:31</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-03-02T16:31:27+08:00" itemprop="datePublished" title="2014-03-02 16:31">2014-03-02 16:31</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/archlinux-enable-cron.html">Comments</a>
@@ -109,24 +112,24 @@ cronie is installed by default as part of the base group. Other cron implementat
 <h2>Configuration</h2>
 <p>Activation and autostart</p>
 <p>cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:</p>
-<pre class="code text"><a name="rest_code_9e6b2cddefe942b78b9b323ebe0a7026-1"></a>$ systemctl is-enabled cronie
+<pre class="code text"><a name="rest_code_f0171f7023b94d7d8f37abbd64798e76-1"></a>$ systemctl is-enabled cronie
 </pre>
 <p>Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:</p>
-<pre class="code text"><a name="rest_code_c067630d374846f2be9d36d2e1377467-1"></a># systemctl start cronie
-<a name="rest_code_c067630d374846f2be9d36d2e1377467-2"></a># systemctl enable cronie
+<pre class="code text"><a name="rest_code_026a6935357644f1b116f4dfa44fadb5-1"></a># systemctl start cronie
+<a name="rest_code_026a6935357644f1b116f4dfa44fadb5-2"></a># systemctl enable cronie
 </pre>
 </div>
 <div class="section" id="default-editor">
 <h2>Default editor</h2>
 <p>To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:</p>
-<pre class="code text"><a name="rest_code_9da7918901df47f598f793fb56fa3cac-1"></a># /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_afbb16f83cb94601965052c2fe9e912c-1"></a># /etc/profile.d/nano-default-editor
 </pre>
 <p>加上：</p>
-<pre class="code text"><a name="rest_code_92ff6c6220ea43cd8eba93aa68eff3ef-1"></a>#!/bin/sh
-<a name="rest_code_92ff6c6220ea43cd8eba93aa68eff3ef-2"></a>export EDITOR=/usr/bin/nano
+<pre class="code text"><a name="rest_code_1c62dcc6f01e4b43be9f4aa49a409f8a-1"></a>#!/bin/sh
+<a name="rest_code_1c62dcc6f01e4b43be9f4aa49a409f8a-2"></a>export EDITOR=/usr/bin/nano
 </pre>
 <p>修改權限：</p>
-<pre class="code text"><a name="rest_code_cf267f462d904fa6a133dcd40a711783-1"></a>#chmod +x /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_6758f5003aca45e7b7a8bd8b9c0d8d6b-1"></a>#chmod +x /etc/profile.d/nano-default-editor
 </pre>
 </div>
 <div class="section" id="crontab-format">
