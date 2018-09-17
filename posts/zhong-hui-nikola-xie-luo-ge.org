@@ -253,7 +253,7 @@ change =verbatim= to =kbd=
 **** 產生 pygments.css
 #+BEGIN_SRC sh
 $ cd themes/your-theme-name/assets/css
-$ pygmentize -S emacs -a .highlight -f html > pygments.css
+$ pygmentize -S default -a .highlight -f html > pygments.css
 #+END_SRC
 
 **** 設定 pygments 可支援的語言
@@ -438,3 +438,6 @@ nikola github_deploy
 #+END_SRC
 
 一切都就緒了，那就開始專心寫文章吧！
+
+註：在 st 下指令，會在 ~<div class="src-sh">~ 前多加 ~[?1h=~，在 xterm
+下就不會，不知為何？
