@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：kde)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/kde.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>KDE</title><link>https://mariolong.github.io/posts/kde/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;大約 2012 年 11 月，正式開始了 linux 之旅。一開始用的是 Archlinux，到現在還是用它。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：kde)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/kde.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 14:01:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>KDE</title><link>https://mariolong.github.io/posts/kde/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;大約 2012 年 11 月，正式開始了 linux 之旅。一開始用的是 Archlinux，到現在還是用它。&lt;/p&gt;
 &lt;p&gt;桌面，一直用的是 LXDE，後來換成 GNOME 3.10 約 2 個星期，又換到 KDE。
 到了 KDE 才發現 linux 的桌也可以做得很好用。現階段的 KDE，比 GNOME 穩定得多，也比較好看、有質感。&lt;/p&gt;
 &lt;p&gt;記錄一下我的 KDE 系統。&lt;/p&gt;
@@ -20,7 +20,7 @@ yaourt -S --needed --noconfirm kdebase kdebase-workspace kde-l10n-zh_tw oxygen-g
 提到了 qtcurve，gtk-qt-engine 可惜都不適用。&lt;/p&gt;
 &lt;p&gt;qtcurve 的樣子看起來是不錯，可惜，不支援 gtk3。造成 gtk3 的程式還是醜。&lt;/p&gt;
 &lt;p&gt;最後，選用了 &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B"&gt;oxygen-gtk&lt;/a&gt; 的解決方案。&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_e5572dba224947c8a64170c2417e24d5-1"&gt;&lt;/a&gt;$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
+&lt;pre class="code text"&gt;&lt;a name="rest_code_67a8020306d7430193f3d1c13207fbd1-1"&gt;&lt;/a&gt;$ yaourt -S oxygen-gtk{2,3} kde-gtk-config
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="qt4"&gt;
 &lt;h3&gt;設定 qt4 程式外觀&lt;/h3&gt;
@@ -33,24 +33,24 @@ qtconfig-qt4
 &lt;div class="section" id="stop-akonadi"&gt;
 &lt;h3&gt;stop akonadi&lt;/h3&gt;
 &lt;p&gt;參考 &lt;a class="reference external" href="http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable"&gt;http://userbase.kde.org/Akonadi/zh-tw#ApplicationTable&lt;/a&gt;&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_a23ded850e284d93a4a6c33c3f971700-1"&gt;&lt;/a&gt;akonadictl stop
-&lt;a name="rest_code_a23ded850e284d93a4a6c33c3f971700-2"&gt;&lt;/a&gt;sudo systemctl stop mysqld
-&lt;a name="rest_code_a23ded850e284d93a4a6c33c3f971700-3"&gt;&lt;/a&gt;sudo systemctl disable mysqld
+&lt;pre class="code text"&gt;&lt;a name="rest_code_8ccfce4e6a804ff2ad257fb7b617f2ee-1"&gt;&lt;/a&gt;akonadictl stop
+&lt;a name="rest_code_8ccfce4e6a804ff2ad257fb7b617f2ee-2"&gt;&lt;/a&gt;sudo systemctl stop mysqld
+&lt;a name="rest_code_8ccfce4e6a804ff2ad257fb7b617f2ee-3"&gt;&lt;/a&gt;sudo systemctl disable mysqld
 &lt;/pre&gt;&lt;p&gt;修改 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/akonadi/akonadiserverrc&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_5676f6780522461982b6dae0418b1232-1"&gt;&lt;/a&gt;StartServer=false
+&lt;pre class="code text"&gt;&lt;a name="rest_code_6601768466804656b3aefed8f2f41baa-1"&gt;&lt;/a&gt;StartServer=false
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="cursor-theme"&gt;
 &lt;h3&gt;cursor theme&lt;/h3&gt;
 &lt;p&gt;參考：&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Cursor_Themes"&gt;https://wiki.archlinux.org/index.php/Cursor_Themes&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;不知道什麼原因，滑鼠游標的型狀，老是會變成 x 的游標主題，做個小小的軟連結，讓游標好看一點。
 但我相信這個不是正解，只是 google 了好久，總找不到根本解法，先治標吧。&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_85c0e1383c5f44458ef1cea38577a7d8-1"&gt;&lt;/a&gt;$ mkdir ~/.icons
-&lt;a name="rest_code_85c0e1383c5f44458ef1cea38577a7d8-2"&gt;&lt;/a&gt;$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
-&lt;a name="rest_code_85c0e1383c5f44458ef1cea38577a7d8-3"&gt;&lt;/a&gt;# mkdir -p /usr/share/icons/default
-&lt;a name="rest_code_85c0e1383c5f44458ef1cea38577a7d8-4"&gt;&lt;/a&gt;# nano /usr/share/icons/default/index.theme
-&lt;a name="rest_code_85c0e1383c5f44458ef1cea38577a7d8-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_85c0e1383c5f44458ef1cea38577a7d8-6"&gt;&lt;/a&gt;[icon theme]
-&lt;a name="rest_code_85c0e1383c5f44458ef1cea38577a7d8-7"&gt;&lt;/a&gt;Inherits=Oxygen_Black
+&lt;pre class="code text"&gt;&lt;a name="rest_code_937cdc998e79408a8b17f59dc578cbe6-1"&gt;&lt;/a&gt;$ mkdir ~/.icons
+&lt;a name="rest_code_937cdc998e79408a8b17f59dc578cbe6-2"&gt;&lt;/a&gt;$ ln -s /usr/share/icons/default.kde4 ~/.icons/default
+&lt;a name="rest_code_937cdc998e79408a8b17f59dc578cbe6-3"&gt;&lt;/a&gt;# mkdir -p /usr/share/icons/default
+&lt;a name="rest_code_937cdc998e79408a8b17f59dc578cbe6-4"&gt;&lt;/a&gt;# nano /usr/share/icons/default/index.theme
+&lt;a name="rest_code_937cdc998e79408a8b17f59dc578cbe6-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_937cdc998e79408a8b17f59dc578cbe6-6"&gt;&lt;/a&gt;[icon theme]
+&lt;a name="rest_code_937cdc998e79408a8b17f59dc578cbe6-7"&gt;&lt;/a&gt;Inherits=Oxygen_Black
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h3&gt;中文輸入法：嘸蝦米&lt;/h3&gt;

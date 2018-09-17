@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：archlinux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/archlinux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Mariadb</title><link>https://mariolong.github.io/posts/install-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：archlinux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/archlinux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 14:01:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Mariadb</title><link>https://mariolong.github.io/posts/install-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 Ref: &lt;a href="https://wiki.archlinux.org/index.php/MySQL"&gt;MySQL - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org67b9b15" class="outline-2"&gt;
-&lt;h2 id="org67b9b15"&gt;install mariadb&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org67b9b15"&gt;
+&lt;div id="outline-container-org0497782" class="outline-2"&gt;
+&lt;h2 id="org0497782"&gt;install mariadb&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0497782"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1588c17" class="outline-2"&gt;
-&lt;h2 id="org1588c17"&gt;install and setup database&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1588c17"&gt;
+&lt;div id="outline-container-orgcfc53e4" class="outline-2"&gt;
+&lt;h2 id="orgcfc53e4"&gt;install and setup database&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcfc53e4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_install_db --user&lt;span class="o"&gt;=&lt;/span&gt;mysql --basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr --datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org73d5c84" class="outline-3"&gt;
-&lt;h3 id="org73d5c84"&gt;message&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org73d5c84"&gt;
+&lt;div id="outline-container-org5f6c699" class="outline-3"&gt;
+&lt;h3 id="org5f6c699"&gt;message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5f6c699"&gt;
 &lt;pre class="example"&gt;
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 To do so, start the server, then issue the following commands:
@@ -58,9 +58,9 @@ https://mariadb.org/get-involved/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga884e3d" class="outline-2"&gt;
-&lt;h2 id="orga884e3d"&gt;edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga884e3d"&gt;
+&lt;div id="outline-container-orgd7c0bb4" class="outline-2"&gt;
+&lt;h2 id="orgd7c0bb4"&gt;edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd7c0bb4"&gt;
 &lt;p&gt;
 Tip: If you use something different from /var/lib/mysql for your data
 dir, you need to set &lt;code&gt;datadir=&amp;lt;YOUR_DATADIR&amp;gt;&lt;/code&gt; under section &lt;code&gt;[mysqld]&lt;/code&gt; of
@@ -71,17 +71,17 @@ database level:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2fbc189" class="outline-2"&gt;
-&lt;h2 id="org2fbc189"&gt;start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2fbc189"&gt;
+&lt;div id="outline-container-org16cc9f7" class="outline-2"&gt;
+&lt;h2 id="org16cc9f7"&gt;start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org16cc9f7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org662f629" class="outline-2"&gt;
-&lt;h2 id="org662f629"&gt;To start mysqld at boot time&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org662f629"&gt;
+&lt;div id="outline-container-orgf128629" class="outline-2"&gt;
+&lt;h2 id="orgf128629"&gt;To start mysqld at boot time&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf128629"&gt;
 &lt;p&gt;
 you have to copy support-files/mysql.server to the right place for your system
 &lt;/p&gt;
@@ -97,9 +97,9 @@ strongly recommended for production servers.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc533291" class="outline-2"&gt;
-&lt;h2 id="orgc533291"&gt;Using UTF8MB4&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc533291"&gt;
+&lt;div id="outline-container-orgb26bb54" class="outline-2"&gt;
+&lt;h2 id="orgb26bb54"&gt;Using UTF8MB4&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb26bb54"&gt;
 &lt;p&gt;
 在 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; 加上以下指令：
 &lt;/p&gt;
@@ -117,9 +117,9 @@ default-character-set = utf8mb4
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org06eecd8" class="outline-2"&gt;
-&lt;h2 id="org06eecd8"&gt;開啓自動補全&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org06eecd8"&gt;
+&lt;div id="outline-container-orgb42e283" class="outline-2"&gt;
+&lt;h2 id="orgb42e283"&gt;開啓自動補全&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb42e283"&gt;
 &lt;p&gt;
 Note: Enabling this feature can make the client initialization longer.
 &lt;/p&gt;

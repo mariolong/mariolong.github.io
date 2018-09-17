@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：thinkings)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/thinkings.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>安全邊際大師 — 克拉爾曼的價值投資思想解讀</title><link>https://mariolong.github.io/posts/safe-margin-thinkings/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：thinkings)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/thinkings.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 14:01:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>安全邊際大師 — 克拉爾曼的價值投資思想解讀</title><link>https://mariolong.github.io/posts/safe-margin-thinkings/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 來源：&lt;a href="https://www.stockfeel.com.tw/%E5%AE%89%E5%85%A8%E9%82%8A%E9%9A%9B%E5%A4%A7%E5%B8%AB-%E5%8D%A1%E6%8B%89%E6%9B%BC%E7%9A%84%E5%83%B9%E5%80%BC%E6%8A%95%E8%B3%87%E6%80%9D%E6%83%B3%E8%A7%A3%E8%AE%80/"&gt;安全邊際大師 — 克拉爾曼的價值投資思想解讀 - StockFeel 股感知識庫 StockFeel 股感知識庫&lt;/a&gt;
 &lt;/p&gt;
 
@@ -11,9 +11,9 @@
 今天想來介紹一位我佩服至極的低調大神 — 對沖基金經理賽思‧克拉爾曼 (Seth Klarman) 。他和他的對沖基金 Baupost  妖嬈的業績神話我就不多廢話了，有興趣的可以參見拙作&lt;a href="https://xueqiu.com/9598793634/75342840"&gt;像對沖基金經理那樣去思考：事件驅動交易以及扯一點關於價值投資的淡&lt;/a&gt;，本文僅僅想對他的一些投資思想與哲學做一個簡單梳理。當然其思想體系博大精深，我也只是說個部分，如果以後有機會，我們再來狗尾續貂。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org93d73a5" class="outline-2"&gt;
-&lt;h2 id="org93d73a5"&gt;一、從一個關於投機的小寓言故事說起&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org93d73a5"&gt;
+&lt;div id="outline-container-org01ef720" class="outline-2"&gt;
+&lt;h2 id="org01ef720"&gt;一、從一個關於投機的小寓言故事說起&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org01ef720"&gt;
 &lt;p&gt;
 在遙遠的加利福尼亞共和國，有一個美如畫的海邊小鎮叫蒙特雷 (Monterey) ，其附近海域在一百年前曾是沙丁魚扎堆的大漁場。於是靠海吃海，小鎮的漁業與罐頭食品業生意昌隆。然而天有不測風雲，出於某種不可解釋的神奇力量，二戰以後那裡的沙丁魚紛紛神秘消失，但岸邊上的食品加工廠都是有很高的沉沒成本的呀，機器廠房哪能閒置，含著淚也要把工開；於是沙丁魚價格被炒，沙丁魚罐頭的價格也隨之旱地拔蔥。
 &lt;/p&gt;
@@ -36,9 +36,9 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb9bdd7f" class="outline-2"&gt;
-&lt;h2 id="orgb9bdd7f"&gt;二、克拉爾曼談價值投資&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb9bdd7f"&gt;
+&lt;div id="outline-container-orgd35c6fc" class="outline-2"&gt;
+&lt;h2 id="orgd35c6fc"&gt;二、克拉爾曼談價值投資&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd35c6fc"&gt;
 &lt;p&gt;
 在為班傑明·葛拉漢老爺子的《證券投資》 (Security Analysis) 第六版所做的序言裡，克拉爾曼談了談他眼中的價值投資：什麼叫價值投資，是以資產的價值以下的價格進行投資，留出足夠的安全邊際 — 而安全邊際的使命，是在你的血汗錢與你的失算、出錯、厄運和經濟與市場本身的風雲詭譎之間搭起緩衝區域。
 &lt;/p&gt;
@@ -69,9 +69,9 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org05912bf" class="outline-2"&gt;
-&lt;h2 id="org05912bf"&gt;三、“最安全邊際”&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org05912bf"&gt;
+&lt;div id="outline-container-orgf083091" class="outline-2"&gt;
+&lt;h2 id="orgf083091"&gt;三、“最安全邊際”&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf083091"&gt;
 &lt;p&gt;
 有人問巴菲特，投資裡有沒有四字真言送給我們這平凡人啊？這其實是個很基礎的問題，但巴菲特還真就想了想，鄭重其事地回答說：有，送你四個字，安全邊際。他認為這是投資裡最重要的四個漢字 (或三個單詞 margin of safety) 。於是我們就聽到了鋪天蓋地對“安全邊際”的喧嘩與騷動。我知道對於很多人而言都聽得都噁心了，但我也知道對於很多人而言未必知道這個四字真言的確切含義。
 &lt;/p&gt;
@@ -164,9 +164,9 @@ Lackawanna 鐵路公司。至 1987 年年末，當時 Erie Lackawanna 的股價�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org38f0a97" class="outline-2"&gt;
-&lt;h2 id="org38f0a97"&gt;四、一定要警惕偽價值投資的這股妖風&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org38f0a97"&gt;
+&lt;div id="outline-container-org608af6a" class="outline-2"&gt;
+&lt;h2 id="org608af6a"&gt;四、一定要警惕偽價值投資的這股妖風&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org608af6a"&gt;
 &lt;p&gt;
 事先說明不做任何道德判斷，偽價值投資不是偽君子。偽價值投資不一定是故意偽的，有可能你也真心想價值投資，但是理解有偏差或者能力跟不上，結果沒投對；也有可能號稱自己是價值投資，但是打心眼裡其實根本不相信那一套，並不行價值投資之事。但是這些都沒什麼，無關乎道德，最多就虧點自己的錢；最可恥的是那些以價值投資作為幌子來吸引資產，而其投資哲學事實上與價值投資沒有半毛錢關係的基金經理，克拉爾曼給他們貼了一個標籤 — 投資變色龍；罵完了他想想覺得意猶未盡，於是又多貼了一張標籤 — 江湖老神棍。
 &lt;/p&gt;

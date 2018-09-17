@@ -121,9 +121,9 @@ Environment=L">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-org82996de" class="outline-2">
-<h2 id="org82996de">install</h2>
-<div class="outline-text-2" id="text-org82996de">
+    <div id="outline-container-org2c9213f" class="outline-2">
+<h2 id="org2c9213f">install</h2>
+<div class="outline-text-2" id="text-org2c9213f">
 <p>
 因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 <code>aur/dropbox</code>
 </p>
@@ -133,13 +133,13 @@ Environment=L">
 </div>
 </div>
 
-<div id="outline-container-orgdaff61f" class="outline-2">
-<h2 id="orgdaff61f">config dropbox.service</h2>
-<div class="outline-text-2" id="text-orgdaff61f">
+<div id="outline-container-orge9f5b0f" class="outline-2">
+<h2 id="orge9f5b0f">config dropbox.service</h2>
+<div class="outline-text-2" id="text-orge9f5b0f">
 </div>
-<div id="outline-container-orgf9519d0" class="outline-3">
-<h3 id="orgf9519d0">setup environment variables</h3>
-<div class="outline-text-3" id="text-orgf9519d0">
+<div id="outline-container-org80f7df5" class="outline-3">
+<h3 id="org80f7df5">setup environment variables</h3>
+<div class="outline-text-3" id="text-org80f7df5">
 <p>
 為了正確顯示，要加上以下命令：
 </p>
@@ -150,9 +150,9 @@ Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 QT_STYLE_OVERRIDE=GTK+
 </div>
 </div>
 
-<div id="outline-container-org816ba79" class="outline-3">
-<h3 id="org816ba79">set Restart=no in dropbox.service</h3>
-<div class="outline-text-3" id="text-org816ba79">
+<div id="outline-container-orga5cc446" class="outline-3">
+<h3 id="orga5cc446">set Restart=no in dropbox.service</h3>
+<div class="outline-text-3" id="text-orga5cc446">
 <p>
 根據 <a href="https://gitlab.com/yan12125/aur/issues/21">Dropbox kill/restart loop when started at boot via systemd</a>，在
 dropbox.service 中，特別加上
@@ -163,9 +163,9 @@ dropbox.service 中，特別加上
 </div>
 </div>
 
-<div id="outline-container-org40ef91e" class="outline-3">
-<h3 id="org40ef91e">final dropbox.service</h3>
-<div class="outline-text-3" id="text-org40ef91e">
+<div id="outline-container-org8896c6d" class="outline-3">
+<h3 id="org8896c6d">final dropbox.service</h3>
+<div class="outline-text-3" id="text-org8896c6d">
 <div class="highlight"><pre><span></span>[Unit]
 Description=Dropbox for systemd/user
 
@@ -185,9 +185,9 @@ WantedBy=default.target
 </div>
 </div>
 
-<div id="outline-container-orgc454fdb" class="outline-2">
-<h2 id="orgc454fdb">start dropbox</h2>
-<div class="outline-text-2" id="text-orgc454fdb">
+<div id="outline-container-org5a1a98d" class="outline-2">
+<h2 id="org5a1a98d">start dropbox</h2>
+<div class="outline-text-2" id="text-org5a1a98d">
 <p>
 最後執行
 </p>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 13:49:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 14:01:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 在 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
 我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
 在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org1a5f0f4" class="outline-2"&gt;
-&lt;h2 id="org1a5f0f4"&gt;install nix&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1a5f0f4"&gt;
+&lt;div id="outline-container-org9cf9451" class="outline-2"&gt;
+&lt;h2 id="org9cf9451"&gt;install nix&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9cf9451"&gt;
 &lt;p&gt;
 因為 miso 建議用 nix 管理 project，還是參考 &lt;a href="https://nixos.org/nix/manual/"&gt;Nix manual&lt;/a&gt; 試著把它裝起來。
 &lt;/p&gt;
@@ -36,18 +36,18 @@ variables are set, either log in again, or type
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7ea9181" class="outline-2"&gt;
-&lt;h2 id="org7ea9181"&gt;install stack, cabal, xmonad/taffybar, pandoc&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7ea9181"&gt;
+&lt;div id="outline-container-orga6c4c21" class="outline-2"&gt;
+&lt;h2 id="orga6c4c21"&gt;install stack, cabal, xmonad/taffybar, pandoc&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga6c4c21"&gt;
 &lt;p&gt;
 還是可以用 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 的方法，而 cabal 可不安裝，用 stack 即可。BUT…
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8d9ac47" class="outline-2"&gt;
-&lt;h2 id="org8d9ac47"&gt;install GHCJS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8d9ac47"&gt;
+&lt;div id="outline-container-orge112704" class="outline-2"&gt;
+&lt;h2 id="orge112704"&gt;install GHCJS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge112704"&gt;
 &lt;p&gt;
 因為要先安裝 GHCJS 後，才能用 miso 寫程式。所以這步驟是必要的。
 &lt;/p&gt;
@@ -64,16 +64,16 @@ miso 專案，則不能用全域 cabal，必須把全域 cabal 刪除。真困�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgee4e49c" class="outline-2"&gt;
-&lt;h2 id="orgee4e49c"&gt;conclusion&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgee4e49c"&gt;
+&lt;div id="outline-container-orgcd14b56" class="outline-2"&gt;
+&lt;h2 id="orgcd14b56"&gt;conclusion&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcd14b56"&gt;
 &lt;p&gt;
 Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt;del&gt;也許先用 servant
 做 server 才是對的&lt;/del&gt;。&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>cabal</category><category>haskell</category><category>linux</category><category>miso</category><category>nix</category><category>stack</category><guid>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</guid><pubDate>Fri, 14 Sep 2018 04:07:35 GMT</pubDate></item><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org82996de" class="outline-2"&gt;
-&lt;h2 id="org82996de"&gt;install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org82996de"&gt;
+&lt;/div&gt;</description><category>cabal</category><category>haskell</category><category>linux</category><category>miso</category><category>nix</category><category>stack</category><guid>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</guid><pubDate>Fri, 14 Sep 2018 04:07:35 GMT</pubDate></item><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org2c9213f" class="outline-2"&gt;
+&lt;h2 id="org2c9213f"&gt;install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2c9213f"&gt;
 &lt;p&gt;
 因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 &lt;code&gt;aur/dropbox&lt;/code&gt;
 &lt;/p&gt;
@@ -83,13 +83,13 @@ Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdaff61f" class="outline-2"&gt;
-&lt;h2 id="orgdaff61f"&gt;config dropbox.service&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdaff61f"&gt;
+&lt;div id="outline-container-orge9f5b0f" class="outline-2"&gt;
+&lt;h2 id="orge9f5b0f"&gt;config dropbox.service&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge9f5b0f"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgf9519d0" class="outline-3"&gt;
-&lt;h3 id="orgf9519d0"&gt;setup environment variables&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf9519d0"&gt;
+&lt;div id="outline-container-org80f7df5" class="outline-3"&gt;
+&lt;h3 id="org80f7df5"&gt;setup environment variables&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org80f7df5"&gt;
 &lt;p&gt;
 為了正確顯示，要加上以下命令：
 &lt;/p&gt;
@@ -100,9 +100,9 @@ Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 QT_STYLE_OVERRIDE=GTK+
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org816ba79" class="outline-3"&gt;
-&lt;h3 id="org816ba79"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org816ba79"&gt;
+&lt;div id="outline-container-orga5cc446" class="outline-3"&gt;
+&lt;h3 id="orga5cc446"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga5cc446"&gt;
 &lt;p&gt;
 根據 &lt;a href="https://gitlab.com/yan12125/aur/issues/21"&gt;Dropbox kill/restart loop when started at boot via systemd&lt;/a&gt;，在
 dropbox.service 中，特別加上
@@ -113,9 +113,9 @@ dropbox.service 中，特別加上
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org40ef91e" class="outline-3"&gt;
-&lt;h3 id="org40ef91e"&gt;final dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org40ef91e"&gt;
+&lt;div id="outline-container-org8896c6d" class="outline-3"&gt;
+&lt;h3 id="org8896c6d"&gt;final dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8896c6d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[Unit]
 Description=Dropbox for systemd/user
 
@@ -135,9 +135,9 @@ WantedBy=default.target
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc454fdb" class="outline-2"&gt;
-&lt;h2 id="orgc454fdb"&gt;start dropbox&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc454fdb"&gt;
+&lt;div id="outline-container-org5a1a98d" class="outline-2"&gt;
+&lt;h2 id="org5a1a98d"&gt;start dropbox&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5a1a98d"&gt;
 &lt;p&gt;
 最後執行
 &lt;/p&gt;
@@ -155,9 +155,9 @@ or/and
 &lt;p&gt;
 即可。&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>dropbox</category><category>linux</category><guid>https://mariolong.github.io/posts/dropbox/</guid><pubDate>Fri, 07 Sep 2018 04:18:23 GMT</pubDate></item><item><title>Fish 用法記錄</title><link>https://mariolong.github.io/posts/fish-usage/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orgcf115ae" class="outline-2"&gt;
-&lt;h2 id="orgcf115ae"&gt;&lt;a href="https://codeyarns.com/2015/05/29/directory-history-in-the-fish-shell/"&gt;Directory history in the Fish shell&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgcf115ae"&gt;
+&lt;/div&gt;</description><category>dropbox</category><category>linux</category><guid>https://mariolong.github.io/posts/dropbox/</guid><pubDate>Fri, 07 Sep 2018 04:18:23 GMT</pubDate></item><item><title>Fish 用法記錄</title><link>https://mariolong.github.io/posts/fish-usage/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org8c61137" class="outline-2"&gt;
+&lt;h2 id="org8c61137"&gt;&lt;a href="https://codeyarns.com/2015/05/29/directory-history-in-the-fish-shell/"&gt;Directory history in the Fish shell&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8c61137"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;code&gt;dirh&lt;/code&gt; : 目錄歷史&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;prevd&lt;/code&gt; : 到前一目錄&lt;/li&gt;
@@ -172,17 +172,17 @@ or/and
 The Glorious Glasgow Haskell Compilation System, version &lt;span class="m"&gt;8&lt;/span&gt;.4.3
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div id="outline-container-org4c6bc81" class="outline-2"&gt;
-&lt;h2 id="org4c6bc81"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4c6bc81"&gt;
+&lt;div id="outline-container-orgafa1d11" class="outline-2"&gt;
+&lt;h2 id="orgafa1d11"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgafa1d11"&gt;
 &lt;p&gt;
 參考 &lt;a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4"&gt;GitHub - ghcjs/ghcjs at ghc-8.4&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org21902db" class="outline-3"&gt;
-&lt;h3 id="org21902db"&gt;getting and preparing the source tree&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org21902db"&gt;
+&lt;div id="outline-container-org4f8f490" class="outline-3"&gt;
+&lt;h3 id="org4f8f490"&gt;getting and preparing the source tree&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4f8f490"&gt;
 &lt;p&gt;
 add this step: &lt;code&gt;git checkout ghc-8.4&lt;/code&gt;
 &lt;/p&gt;
@@ -196,17 +196,17 @@ git submodule update --init --recursive
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcb7a0d7" class="outline-3"&gt;
-&lt;h3 id="orgcb7a0d7"&gt;building the compiler&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcb7a0d7"&gt;
+&lt;div id="outline-container-org734ff0c" class="outline-3"&gt;
+&lt;h3 id="org734ff0c"&gt;building the compiler&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org734ff0c"&gt;
 &lt;p&gt;
 You can use &lt;code&gt;cabal-install&lt;/code&gt; &lt;b&gt;and&lt;/b&gt; &lt;code&gt;stack&lt;/code&gt; to set up a build environment that contains these packages.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org57b8c7a" class="outline-4"&gt;
-&lt;h4 id="org57b8c7a"&gt;install cabal&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org57b8c7a"&gt;
+&lt;div id="outline-container-org62d6cce" class="outline-4"&gt;
+&lt;h4 id="org62d6cce"&gt;install cabal&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org62d6cce"&gt;
 &lt;p&gt;
 because GHCJS need cabal, so install it.
 &lt;/p&gt;
@@ -217,18 +217,18 @@ cabal update
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org67e31d9" class="outline-4"&gt;
-&lt;h4 id="org67e31d9"&gt;Cabal new-build (x)&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org67e31d9"&gt;
+&lt;div id="outline-container-orge10045e" class="outline-4"&gt;
+&lt;h4 id="orge10045e"&gt;Cabal new-build (x)&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge10045e"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal new-configure
 cabal new-build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org81aa830" class="outline-4"&gt;
-&lt;h4 id="org81aa830"&gt;link to executables (x) &lt;a id="org6c64c91"&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org81aa830"&gt;
+&lt;div id="outline-container-org2f471ee" class="outline-4"&gt;
+&lt;h4 id="org2f471ee"&gt;link to executables (x) &lt;a id="orgbf51856"&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org2f471ee"&gt;
 &lt;p&gt;
 &lt;b&gt;DON'T DO THIS, IT IS NOT NECESSARY&lt;/b&gt;
 &lt;/p&gt;
@@ -254,20 +254,20 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org16a07dd" class="outline-4"&gt;
-&lt;h4 id="org16a07dd"&gt;stack&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org16a07dd"&gt;
+&lt;div id="outline-container-org0c0f3c1" class="outline-4"&gt;
+&lt;h4 id="org0c0f3c1"&gt;stack&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org0c0f3c1"&gt;
 &lt;/div&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a id="org252e1e6"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org252e1e6"&gt;
+&lt;li&gt;&lt;a id="org5a8b0fa"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org5a8b0fa"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="orge32da7d"&gt;&lt;/a&gt;DON'T DO THIS (x)&lt;br&gt;
-&lt;div class="outline-text-5" id="text-orge32da7d"&gt;
+&lt;li&gt;&lt;a id="orge417937"&gt;&lt;/a&gt;DON'T DO THIS (x)&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orge417937"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -275,9 +275,9 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdee5e61" class="outline-4"&gt;
-&lt;h4 id="orgdee5e61"&gt;install haddock (x)&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgdee5e61"&gt;
+&lt;div id="outline-container-orgb255605" class="outline-4"&gt;
+&lt;h4 id="orgb255605"&gt;install haddock (x)&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgb255605"&gt;
 &lt;p&gt;
 when run ghcjs-boot, it will display following error message:
 &lt;/p&gt;
@@ -289,7 +289,7 @@ when run ghcjs-boot, it will display following error message:
 &lt;p&gt;
 I have no idea to solve this problem after execute following
 statements. My decision is ignoring above error message and don't execute
-section &lt;a href="https://mariolong.github.io/posts/install-ghcjs-archlinux/#org6c64c91"&gt;"link to executables"&lt;/a&gt;. Re-install GHCJS again.
+section &lt;a href="https://mariolong.github.io/posts/install-ghcjs-archlinux/#orgbf51856"&gt;"link to executables"&lt;/a&gt;. Re-install GHCJS again.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal install haddock
@@ -300,9 +300,9 @@ stack haddock
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga2221c3" class="outline-3"&gt;
-&lt;h3 id="orga2221c3"&gt;Booting GHCJS&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga2221c3"&gt;
+&lt;div id="outline-container-org646ef24" class="outline-3"&gt;
+&lt;h3 id="org646ef24"&gt;Booting GHCJS&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org646ef24"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghcjs-boot
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -315,9 +315,9 @@ the &lt;code&gt;makePackages.sh&lt;/code&gt; script and included in a source dis
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org09341aa" class="outline-3"&gt;
-&lt;h3 id="org09341aa"&gt;Test&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org09341aa"&gt;
+&lt;div id="outline-container-orgc083b32" class="outline-3"&gt;
+&lt;h3 id="orgc083b32"&gt;Test&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc083b32"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'main = putStrLn "Hello World!"'&lt;/span&gt; &amp;gt; helloWorld.hs
 $ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghcjs -o helloWorld helloWorld.hs
 $ node helloWorld.jsexe/all.js
@@ -336,9 +336,9 @@ But these steps are work for me to install ghcjs with ghc-8.4.3
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4387d73" class="outline-2"&gt;
-&lt;h2 id="org4387d73"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4387d73"&gt;
+&lt;div id="outline-container-orgee6243e" class="outline-2"&gt;
+&lt;h2 id="orgee6243e"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgee6243e"&gt;
 &lt;p&gt;
 this is not work.
 &lt;/p&gt;
@@ -374,17 +374,17 @@ Hello world!
 ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org49e10aa" class="outline-2"&gt;
-&lt;h2 id="org49e10aa"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org49e10aa"&gt;
+&lt;div id="outline-container-org4150820" class="outline-2"&gt;
+&lt;h2 id="org4150820"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4150820"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S smartmontools
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfcac952" class="outline-2"&gt;
-&lt;h2 id="orgfcac952"&gt;start smartd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfcac952"&gt;
+&lt;div id="outline-container-org1208b8e" class="outline-2"&gt;
+&lt;h2 id="org1208b8e"&gt;start smartd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1208b8e"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start smartd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -394,9 +394,9 @@ ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1b75a38" class="outline-2"&gt;
-&lt;h2 id="org1b75a38"&gt;smartd.conf&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b75a38"&gt;
+&lt;div id="outline-container-org0bbdf6e" class="outline-2"&gt;
+&lt;h2 id="org0bbdf6e"&gt;smartd.conf&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0bbdf6e"&gt;
 &lt;p&gt;
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -406,9 +406,9 @@ setting must be added in the configuration file.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1c6efd2" class="outline-3"&gt;
-&lt;h3 id="org1c6efd2"&gt;auto mail&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1c6efd2"&gt;
+&lt;div id="outline-container-org6512097" class="outline-3"&gt;
+&lt;h3 id="org6512097"&gt;auto mail&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6512097"&gt;
 &lt;p&gt;
 先依 &lt;a href="https://dominicm.com/configure-email-notifications-on-arch-linux/"&gt;Configure Email Notifications on Arch Linux | DominicM&lt;/a&gt; 設定 s-nail,
 再於 &lt;code&gt;/etc/smartd.conf&lt;/code&gt; 加上以下指令
@@ -422,45 +422,45 @@ setting must be added in the configuration file.
 &lt;h2&gt;目錄&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgc3bdd5d"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgf5bc36f"&gt;2. 設定&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orga86ff36"&gt;1. 安裝&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org14d3de6"&gt;2. 設定&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgda23d42"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org63fdc6b"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org766abf3"&gt;2.3. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org9670470"&gt;2.1. configuration file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orga1a3188"&gt;2.2. theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org5195596"&gt;2.3. 用 &lt;code&gt;nikola github_deploy&lt;/code&gt; 快速發佈文章&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orge4563bc"&gt;2.3.1. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org02ce522"&gt;2.3.1. 在 nikola github_deploy 之前&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org3b82d90"&gt;3. 用 org-mode 寫文章&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org02e065f"&gt;3. 用 org-mode 寫文章&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orge6eaf90"&gt;3.1. 修改 /orgmode/init.el&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org56b3391"&gt;3.1. 修改 /orgmode/init.el&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org8838a7e"&gt;3.1.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org5d76200"&gt;3.1.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org99f5b36"&gt;3.1.3. 在 Inline verbatim and code 不要空白&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org8f67e41"&gt;3.1.4. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgaa16e32"&gt;3.1.1. 刪除不必要的空白&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgb76b04a"&gt;3.1.2. Convert inline verbatim to kbd when HTML export&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org7889ae5"&gt;3.1.3. 在 Inline verbatim and code 不要空白&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org260b354"&gt;3.1.4. 用 pygment 幫程式碼著色&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgf12a996"&gt;3.2. 揷入圖片&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org1aef039"&gt;3.2. 揷入圖片&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgd550a9a"&gt;3.2.1. 利用 Google Drive 取得 Google Photos 的照片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org19ca217"&gt;3.2.1. 利用 Google Drive 取得 Google Photos 的照片&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org37f8c35"&gt;3.3. 圖片連結 (Image URLs)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgda58c24"&gt;3.4. plain list&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org76748a7"&gt;3.3. 圖片連結 (Image URLs)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0e91433"&gt;3.4. plain list&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org7d56e27"&gt;3.4.1. Lord of the Rings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgcffaae3"&gt;3.4.1. Lord of the Rings&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgbfe25f6"&gt;3.5. Subscripts and superscripts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgb351f12"&gt;3.6. Teasers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org5c9dd4e"&gt;3.7. text block&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org49f4049"&gt;3.5. Subscripts and superscripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#orgbab5c20"&gt;3.6. Teasers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org0cf8b61"&gt;3.7. text block&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org42857d3"&gt;4. 開始使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/#org9e247f5"&gt;4. 開始使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -472,17 +472,17 @@ setting must be added in the configuration file.
 Archlinux WIKI 的 &lt;a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture"&gt;Advanced linux Sound Architecture&lt;/a&gt; 已說明等化器的安裝及設定，照做即可。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org5834ab2" class="outline-2"&gt;
-&lt;h2 id="org5834ab2"&gt;install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5834ab2"&gt;
+&lt;div id="outline-container-org947ab60" class="outline-2"&gt;
+&lt;h2 id="org947ab60"&gt;install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org947ab60"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsaequal
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgca91a78" class="outline-2"&gt;
-&lt;h2 id="orgca91a78"&gt;config&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgca91a78"&gt;
+&lt;div id="outline-container-orge87550f" class="outline-2"&gt;
+&lt;h2 id="orge87550f"&gt;config&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge87550f"&gt;
 &lt;p&gt;
 在 &lt;kbd&gt;/etc/asound.conf&lt;/kbd&gt; 加上以下設定：
 &lt;/p&gt;
@@ -515,18 +515,18 @@ pcm.!default {
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfcc39a8" class="outline-2"&gt;
-&lt;h2 id="orgfcc39a8"&gt;reboot&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfcc39a8"&gt;
+&lt;div id="outline-container-orga33134e" class="outline-2"&gt;
+&lt;h2 id="orga33134e"&gt;reboot&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga33134e"&gt;
 &lt;p&gt;
 讓 alsa 可用等化器
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org910db45" class="outline-2"&gt;
-&lt;h2 id="org910db45"&gt;調整等化器&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org910db45"&gt;
+&lt;div id="outline-container-org6d5187c" class="outline-2"&gt;
+&lt;h2 id="org6d5187c"&gt;調整等化器&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6d5187c"&gt;
 &lt;p&gt;
 執行
 &lt;/p&gt;
@@ -539,9 +539,9 @@ PS. 用 Q,W,E,Z,X,C 可分別調整左右聲道的音量。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2fa84f6" class="outline-2"&gt;
-&lt;h2 id="org2fa84f6"&gt;mpd issue&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2fa84f6"&gt;
+&lt;div id="outline-container-orga000620" class="outline-2"&gt;
+&lt;h2 id="orga000620"&gt;mpd issue&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga000620"&gt;
 &lt;p&gt;
 總是會連不上 mpd server，後來在 WIKI 中讀到一段話：
 &lt;/p&gt;
@@ -588,14 +588,14 @@ mpd 即可使用，瞎打誤撞。
 htpc
 &lt;/p&gt;
 
-&lt;div id="outline-container-org9e328ba" class="outline-2"&gt;
-&lt;h2 id="org9e328ba"&gt;kodi&lt;/h2&gt;
+&lt;div id="outline-container-org970449f" class="outline-2"&gt;
+&lt;h2 id="org970449f"&gt;kodi&lt;/h2&gt;
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org8ddfeff" class="outline-2"&gt;
-&lt;h2 id="org8ddfeff"&gt;wifi&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8ddfeff"&gt;
+&lt;div id="outline-container-orgfecd358" class="outline-2"&gt;
+&lt;h2 id="orgfecd358"&gt;wifi&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfecd358"&gt;
 &lt;p&gt;
 wifi-menu
 &lt;/p&gt;
@@ -618,31 +618,31 @@ netctl &lt;span class="nb"&gt;enable&lt;/span&gt; &amp;lt;wifi-service&amp;gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb57af08" class="outline-2"&gt;
-&lt;h2 id="orgb57af08"&gt;auto mount removable device by udiskie&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb57af08"&gt;
+&lt;div id="outline-container-org4bfd4e4" class="outline-2"&gt;
+&lt;h2 id="org4bfd4e4"&gt;auto mount removable device by udiskie&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4bfd4e4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S udiskie
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org3d5d8ae" class="outline-2"&gt;
-&lt;h2 id="org3d5d8ae"&gt;issues&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3d5d8ae"&gt;
+&lt;div id="outline-container-org915db0d" class="outline-2"&gt;
+&lt;h2 id="org915db0d"&gt;issues&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org915db0d"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2e1f00c" class="outline-3"&gt;
-&lt;h3 id="org2e1f00c"&gt;alsa&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2e1f00c"&gt;
+&lt;div id="outline-container-org8a66882" class="outline-3"&gt;
+&lt;h3 id="org8a66882"&gt;alsa&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8a66882"&gt;
 &lt;pre class="example"&gt;
 snd_.._intel index = 1
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9b52fd4" class="outline-3"&gt;
-&lt;h3 id="org9b52fd4"&gt;default.config&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9b52fd4"&gt;
+&lt;div id="outline-container-org10c413e" class="outline-3"&gt;
+&lt;h3 id="org10c413e"&gt;default.config&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org10c413e"&gt;
 &lt;pre class="example"&gt;
 need_root_right = no
 &lt;/pre&gt;
@@ -653,22 +653,22 @@ need_root_right = no
 recommendations - ArchWiki&lt;/a&gt; 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgb498cfa" class="outline-2"&gt;
-&lt;h2 id="orgb498cfa"&gt;haskell&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb498cfa"&gt;
+&lt;div id="outline-container-orgb03e4a3" class="outline-2"&gt;
+&lt;h2 id="orgb03e4a3"&gt;haskell&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb03e4a3"&gt;
 &lt;p&gt;
 安裝的方法參看 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications"&gt;Install Haskell Applications&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8f8c133" class="outline-2"&gt;
-&lt;h2 id="org8f8c133"&gt;桌面及外觀&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8f8c133"&gt;
+&lt;div id="outline-container-org4d15b5d" class="outline-2"&gt;
+&lt;h2 id="org4d15b5d"&gt;桌面及外觀&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4d15b5d"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5874982" class="outline-3"&gt;
-&lt;h3 id="org5874982"&gt;theme&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5874982"&gt;
+&lt;div id="outline-container-org700383a" class="outline-3"&gt;
+&lt;h3 id="org700383a"&gt;theme&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org700383a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S breeze&lt;span class="o"&gt;{&lt;/span&gt;,-kde4,-gtk&lt;span class="o"&gt;}&lt;/span&gt; flat-remix-git lxappearance
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -678,9 +678,9 @@ Using Breeze theme and Flat Remix icon theme
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5fd62da" class="outline-3"&gt;
-&lt;h3 id="org5fd62da"&gt;lxappearance&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5fd62da"&gt;
+&lt;div id="outline-container-org76343ca" class="outline-3"&gt;
+&lt;h3 id="org76343ca"&gt;lxappearance&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org76343ca"&gt;
 &lt;p&gt;
 用 lxappearance 修改 gtk 程式的外觀。
 &lt;/p&gt;
@@ -691,9 +691,9 @@ Using Breeze theme and Flat Remix icon theme
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org529f6bb" class="outline-3"&gt;
-&lt;h3 id="org529f6bb"&gt;oblogout and screen lock&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org529f6bb"&gt;
+&lt;div id="outline-container-org73e984c" class="outline-3"&gt;
+&lt;h3 id="org73e984c"&gt;oblogout and screen lock&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org73e984c"&gt;
 &lt;p&gt;
 &lt;a href="https://wiki.archlinux.org/index.php/Oblogout"&gt;https://wiki.archlinux.org/index.php/Oblogout&lt;/a&gt;
 &lt;/p&gt;
@@ -742,9 +742,9 @@ lock = slock
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org543375e" class="outline-2"&gt;
-&lt;h2 id="org543375e"&gt;system&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org543375e"&gt;
+&lt;div id="outline-container-org8dd11bf" class="outline-2"&gt;
+&lt;h2 id="org8dd11bf"&gt;system&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8dd11bf"&gt;
 &lt;p&gt;
 DPMS: display power manpage system
 slock: screen saver
@@ -752,13 +752,13 @@ slock: screen saver
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org016151b" class="outline-2"&gt;
-&lt;h2 id="org016151b"&gt;網路&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org016151b"&gt;
+&lt;div id="outline-container-orgc3704f4" class="outline-2"&gt;
+&lt;h2 id="orgc3704f4"&gt;網路&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc3704f4"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2363b49" class="outline-3"&gt;
-&lt;h3 id="org2363b49"&gt;dropbox&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2363b49"&gt;
+&lt;div id="outline-container-org91fe400" class="outline-3"&gt;
+&lt;h3 id="org91fe400"&gt;dropbox&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org91fe400"&gt;
 &lt;p&gt;
 dropbox 在 archlinux.fr 中
 &lt;/p&gt;
@@ -768,18 +768,18 @@ dropbox 在 archlinux.fr 中
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4200495" class="outline-3"&gt;
-&lt;h3 id="org4200495"&gt;qbittorrent&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org4200495"&gt;
+&lt;div id="outline-container-org5d8c958" class="outline-3"&gt;
+&lt;h3 id="org5d8c958"&gt;qbittorrent&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5d8c958"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S qbittorrent
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2a3ddd1" class="outline-2"&gt;
-&lt;h2 id="org2a3ddd1"&gt;檔案管理&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2a3ddd1"&gt;
+&lt;div id="outline-container-org8aa025c" class="outline-2"&gt;
+&lt;h2 id="org8aa025c"&gt;檔案管理&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8aa025c"&gt;
 &lt;p&gt;
 using mc and pcmanfm-qt
 &lt;/p&gt;
@@ -788,17 +788,17 @@ using mc and pcmanfm-qt
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org87e9e52" class="outline-3"&gt;
-&lt;h3 id="org87e9e52"&gt;pcmanfm-qt&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org87e9e52"&gt;
+&lt;div id="outline-container-orga49fd4d" class="outline-3"&gt;
+&lt;h3 id="orga49fd4d"&gt;pcmanfm-qt&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga49fd4d"&gt;
 &lt;p&gt;
 使用 pcmanfm-qt, for mtp 傳送檔案 and dropbox
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3c42f6f" class="outline-4"&gt;
-&lt;h4 id="org3c42f6f"&gt;issues&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3c42f6f"&gt;
+&lt;div id="outline-container-org5e8f3d0" class="outline-4"&gt;
+&lt;h4 id="org5e8f3d0"&gt;issues&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org5e8f3d0"&gt;
 &lt;p&gt;
 error message:
 &lt;/p&gt;
@@ -817,9 +817,9 @@ fix this problem:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdb6311c" class="outline-3"&gt;
-&lt;h3 id="orgdb6311c"&gt;mc&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgdb6311c"&gt;
+&lt;div id="outline-container-org90590b8" class="outline-3"&gt;
+&lt;h3 id="org90590b8"&gt;mc&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org90590b8"&gt;
 &lt;p&gt;
 midnight-commander like norton commander
 &lt;/p&gt;
@@ -827,34 +827,34 @@ midnight-commander like norton commander
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5660949" class="outline-2"&gt;
-&lt;h2 id="org5660949"&gt;影音&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5660949"&gt;
+&lt;div id="outline-container-orgb1c13c3" class="outline-2"&gt;
+&lt;h2 id="orgb1c13c3"&gt;影音&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb1c13c3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsa-utils mpd mpc ncmpcpp mpv ffmpeg sox kodi kid3 aegisub
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge591fa2" class="outline-3"&gt;
-&lt;h3 id="orge591fa2"&gt;alsa&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge591fa2"&gt;
+&lt;div id="outline-container-org27ccdad" class="outline-3"&gt;
+&lt;h3 id="org27ccdad"&gt;alsa&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org27ccdad"&gt;
 &lt;p&gt;
 聲音
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5eb19c9" class="outline-3"&gt;
-&lt;h3 id="org5eb19c9"&gt;mpd, mpc, ncmpcpp&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5eb19c9"&gt;
+&lt;div id="outline-container-org64dd49b" class="outline-3"&gt;
+&lt;h3 id="org64dd49b"&gt;mpd, mpc, ncmpcpp&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org64dd49b"&gt;
 &lt;p&gt;
 音樂背景播放
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org077e8e6" class="outline-3"&gt;
-&lt;h3 id="org077e8e6"&gt;mpv&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org077e8e6"&gt;
+&lt;div id="outline-container-org92cdbc2" class="outline-3"&gt;
+&lt;h3 id="org92cdbc2"&gt;mpv&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org92cdbc2"&gt;
 &lt;p&gt;
 影片播放
 &lt;/p&gt;
@@ -865,27 +865,27 @@ mpv dvd://
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd9f6fbc" class="outline-3"&gt;
-&lt;h3 id="orgd9f6fbc"&gt;kodi&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd9f6fbc"&gt;
+&lt;div id="outline-container-org00b1c26" class="outline-3"&gt;
+&lt;h3 id="org00b1c26"&gt;kodi&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org00b1c26"&gt;
 &lt;p&gt;
 影片管理
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgde45896" class="outline-3"&gt;
-&lt;h3 id="orgde45896"&gt;aegisub&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgde45896"&gt;
+&lt;div id="outline-container-org88d5229" class="outline-3"&gt;
+&lt;h3 id="org88d5229"&gt;aegisub&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org88d5229"&gt;
 &lt;p&gt;
 字幕處理
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb0a0ebc" class="outline-3"&gt;
-&lt;h3 id="orgb0a0ebc"&gt;ffmpeg&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb0a0ebc"&gt;
+&lt;div id="outline-container-org6d2e2b1" class="outline-3"&gt;
+&lt;h3 id="org6d2e2b1"&gt;ffmpeg&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6d2e2b1"&gt;
 &lt;p&gt;
 影片處理
 2-pass to control file size
@@ -893,21 +893,21 @@ mpv dvd://
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org28b4cb5" class="outline-3"&gt;
-&lt;h3 id="org28b4cb5"&gt;dvdbackup&lt;/h3&gt;
+&lt;div id="outline-container-org184863e" class="outline-3"&gt;
+&lt;h3 id="org184863e"&gt;dvdbackup&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgacc093d" class="outline-3"&gt;
-&lt;h3 id="orgacc093d"&gt;sox&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgacc093d"&gt;
+&lt;div id="outline-container-org0314cfe" class="outline-3"&gt;
+&lt;h3 id="org0314cfe"&gt;sox&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0314cfe"&gt;
 &lt;p&gt;
 wav 轉 aiff
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org626b88f" class="outline-3"&gt;
-&lt;h3 id="org626b88f"&gt;kid3&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org626b88f"&gt;
+&lt;div id="outline-container-orgaf84086" class="outline-3"&gt;
+&lt;h3 id="orgaf84086"&gt;kid3&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgaf84086"&gt;
 &lt;p&gt;
 音檔加 tag
 &lt;/p&gt;
@@ -915,13 +915,13 @@ wav 轉 aiff
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9ecbef5" class="outline-2"&gt;
-&lt;h2 id="org9ecbef5"&gt;其它工具&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ecbef5"&gt;
+&lt;div id="outline-container-orgcf652c7" class="outline-2"&gt;
+&lt;h2 id="orgcf652c7"&gt;其它工具&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcf652c7"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1f691b0" class="outline-3"&gt;
-&lt;h3 id="org1f691b0"&gt;emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1f691b0"&gt;
+&lt;div id="outline-container-org9212717" class="outline-3"&gt;
+&lt;h3 id="org9212717"&gt;emacs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9212717"&gt;
 &lt;p&gt;
 ripgrep
 opencc: using s2twp.json
@@ -929,17 +929,17 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb17734e" class="outline-3"&gt;
-&lt;h3 id="orgb17734e"&gt;meld&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb17734e"&gt;
+&lt;div id="outline-container-orgaedb844" class="outline-3"&gt;
+&lt;h3 id="orgaedb844"&gt;meld&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgaedb844"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S meld
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf482c63" class="outline-3"&gt;
-&lt;h3 id="orgf482c63"&gt;albert&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf482c63"&gt;
+&lt;div id="outline-container-org9227fc4" class="outline-3"&gt;
+&lt;h3 id="org9227fc4"&gt;albert&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9227fc4"&gt;
 &lt;p&gt;
 應用程式快速啓動器
 &lt;/p&gt;
@@ -949,17 +949,17 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org54f2d4e" class="outline-3"&gt;
-&lt;h3 id="org54f2d4e"&gt;speedcrunch (calculator)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org54f2d4e"&gt;
+&lt;div id="outline-container-orgf4ed9ff" class="outline-3"&gt;
+&lt;h3 id="orgf4ed9ff"&gt;speedcrunch (calculator)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf4ed9ff"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S speedcrunch
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgede318b" class="outline-3"&gt;
-&lt;h3 id="orgede318b"&gt;calibre&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgede318b"&gt;
+&lt;div id="outline-container-orgad5a962" class="outline-3"&gt;
+&lt;h3 id="orgad5a962"&gt;calibre&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgad5a962"&gt;
 &lt;p&gt;
 管理電子書，我只用來管理我的 kindle
 &lt;/p&gt;
@@ -968,20 +968,20 @@ opencc: using s2twp.json
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org5241275" class="outline-3"&gt;
-&lt;h3 id="org5241275"&gt;nikola&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5241275"&gt;
+&lt;div id="outline-container-org6e7e4e9" class="outline-3"&gt;
+&lt;h3 id="org6e7e4e9"&gt;nikola&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6e7e4e9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install nikola Pygments
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7a8c50b" class="outline-3"&gt;
-&lt;h3 id="org7a8c50b"&gt;htop&lt;/h3&gt;
+&lt;div id="outline-container-orgf55a669" class="outline-3"&gt;
+&lt;h3 id="orgf55a669"&gt;htop&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org96fc09c" class="outline-3"&gt;
-&lt;h3 id="org96fc09c"&gt;gnash&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org96fc09c"&gt;
+&lt;div id="outline-container-org8e18d9f" class="outline-3"&gt;
+&lt;h3 id="org8e18d9f"&gt;gnash&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8e18d9f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S gnash-git
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -992,20 +992,20 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org75fd73a" class="outline-2"&gt;
-&lt;h2 id="org75fd73a"&gt;programming&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org75fd73a"&gt;
+&lt;div id="outline-container-orgf8232c6" class="outline-2"&gt;
+&lt;h2 id="orgf8232c6"&gt;programming&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf8232c6"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org298260c" class="outline-3"&gt;
-&lt;h3 id="org298260c"&gt;python and depending modules&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org298260c"&gt;
+&lt;div id="outline-container-org66d3d60" class="outline-3"&gt;
+&lt;h3 id="org66d3d60"&gt;python and depending modules&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org66d3d60"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S python python-pip
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7525106" class="outline-3"&gt;
-&lt;h3 id="org7525106"&gt;systemd timers&lt;/h3&gt;
+&lt;div id="outline-container-orgc0acdcf" class="outline-3"&gt;
+&lt;h3 id="orgc0acdcf"&gt;systemd timers&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>haskell</category><category>linux</category><category>taffybar</category><category>xmonad</category><guid>https://mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item><item><title>Install Arch linux (2017)</title><link>https://mariolong.github.io/posts/install-arch-linux-2017/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 原本的 Beginners' Guide 改成了 &lt;a href="https://wiki.archlinux.org/index.php/installation_guide"&gt;Installation guide&lt;/a&gt; ，文件結構比較清楚，但是保證不適合初次安裝 archlinux 的人閱讀，也不適合一步步之執行。
@@ -1015,8 +1015,8 @@ opencc: using s2twp.json
 這次安裝，把目前系統應有的指令再記録下來，以備參閱。與上次安裝時所用的指令，差異不大。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgacbb69b" class="outline-2"&gt;
-&lt;h2 id="orgacbb69b"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 製作開機片（CD、USB、硬碟）啓動&lt;/h2&gt;
+&lt;div id="outline-container-orge51aabe" class="outline-2"&gt;
+&lt;h2 id="orge51aabe"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 製作開機片（CD、USB、硬碟）啓動&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
 從 &lt;a href="https://www.archlinux.org/download/"&gt;Arch linux Downloads&lt;/a&gt; 下載 archlinux.iso，建議用 bt 方式下載比較快。
@@ -1031,8 +1031,8 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgee27609" class="outline-2"&gt;
-&lt;h2 id="orgee27609"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 啟動 ArchLinux 安裝程序&lt;/h2&gt;
+&lt;div id="outline-container-org8577360" class="outline-2"&gt;
+&lt;h2 id="org8577360"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 啟動 ArchLinux 安裝程序&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 重新以 USB 開機，選擇從主選單中選擇 "Boot Arch linux" 並按
@@ -1041,8 +1041,8 @@ opencc: using s2twp.json
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0398831" class="outline-2"&gt;
-&lt;h2 id="org0398831"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 建立網絡連接&lt;/h2&gt;
+&lt;div id="outline-container-orged582da" class="outline-2"&gt;
+&lt;h2 id="orged582da"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 建立網絡連接&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
 &lt;p&gt;
 &lt;code&gt;ping 8.8.8.8&lt;/code&gt; 看看有没有網路，没有網路就啓動 &lt;code&gt;dhcpcd&lt;/code&gt;:
@@ -1064,24 +1064,24 @@ ping 一下看看網路連上了嗎？
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2b1bdb3" class="outline-2"&gt;
-&lt;h2 id="org2b1bdb3"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 準備磁碟機&lt;/h2&gt;
+&lt;div id="outline-container-org85fc764" class="outline-2"&gt;
+&lt;h2 id="org85fc764"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 準備磁碟機&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-4"&gt;
 &lt;p&gt;
 因為先安裝 windows 10，已經將磁碟分割好了。
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org69d4a70" class="outline-3"&gt;
-&lt;h3 id="org69d4a70"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; 檢查分區狀況&lt;/h3&gt;
+&lt;div id="outline-container-org6293943" class="outline-3"&gt;
+&lt;h3 id="org6293943"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; 檢查分區狀況&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-4-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsblk -f
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org70c4493" class="outline-3"&gt;
-&lt;h3 id="org70c4493"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; 格式化&lt;/h3&gt;
+&lt;div id="outline-container-orgbca9718" class="outline-3"&gt;
+&lt;h3 id="orgbca9718"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; 格式化&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-4-2"&gt;
 &lt;p&gt;
 格式化目標 partition，免得有不可預期的狀況
@@ -1092,8 +1092,8 @@ ping 一下看看網路連上了嗎？
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd579885" class="outline-3"&gt;
-&lt;h3 id="orgd579885"&gt;&lt;span class="section-number-3"&gt;4.3&lt;/span&gt; 掛載分區&lt;/h3&gt;
+&lt;div id="outline-container-org909bce3" class="outline-3"&gt;
+&lt;h3 id="org909bce3"&gt;&lt;span class="section-number-3"&gt;4.3&lt;/span&gt; 掛載分區&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-4-3"&gt;
 &lt;p&gt;
 先掛載 root 區 :
@@ -1111,16 +1111,16 @@ mount /dev/sda1 /mnt/home
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4ca6084" class="outline-3"&gt;
-&lt;h3 id="org4ca6084"&gt;&lt;span class="section-number-3"&gt;4.4&lt;/span&gt; 建立 swap&lt;/h3&gt;
+&lt;div id="outline-container-orgc09f47c" class="outline-3"&gt;
+&lt;h3 id="orgc09f47c"&gt;&lt;span class="section-number-3"&gt;4.4&lt;/span&gt; 建立 swap&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-4-4"&gt;
 &lt;p&gt;
 現在的 RAM 都很大，這個可以不用裝了。目前安裝了 16G 的 RAM。
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5c6354c" class="outline-4"&gt;
-&lt;h4 id="org5c6354c"&gt;&lt;span class="section-number-4"&gt;4.4.1&lt;/span&gt; 建立 swap file&lt;/h4&gt;
+&lt;div id="outline-container-org8eccaaa" class="outline-4"&gt;
+&lt;h4 id="org8eccaaa"&gt;&lt;span class="section-number-4"&gt;4.4.1&lt;/span&gt; 建立 swap file&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-4-4-1"&gt;
 &lt;p&gt;
 如果真的要裝 swap，可用檔案取代，方便好管理。 :
@@ -1142,8 +1142,8 @@ sudo nano /etc/fstab
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc36a2c0" class="outline-4"&gt;
-&lt;h4 id="orgc36a2c0"&gt;&lt;span class="section-number-4"&gt;4.4.2&lt;/span&gt; Remove swap file&lt;/h4&gt;
+&lt;div id="outline-container-org43ee1a5" class="outline-4"&gt;
+&lt;h4 id="org43ee1a5"&gt;&lt;span class="section-number-4"&gt;4.4.2&lt;/span&gt; Remove swap file&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-4-4-2"&gt;
 &lt;p&gt;
 如果不用 swap，刪了就是。
@@ -1163,12 +1163,12 @@ rm -f /swapfile
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2fc2906" class="outline-2"&gt;
-&lt;h2 id="org2fc2906"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 配置安裝的環境&lt;/h2&gt;
+&lt;div id="outline-container-orgcca7297" class="outline-2"&gt;
+&lt;h2 id="orgcca7297"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 配置安裝的環境&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-5"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org50b750f" class="outline-3"&gt;
-&lt;h3 id="org50b750f"&gt;&lt;span class="section-number-3"&gt;5.1&lt;/span&gt; DNS setup (可不做)&lt;/h3&gt;
+&lt;div id="outline-container-org08af0ce" class="outline-3"&gt;
+&lt;h3 id="org08af0ce"&gt;&lt;span class="section-number-3"&gt;5.1&lt;/span&gt; DNS setup (可不做)&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-5-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/resolv.conf
 &lt;/pre&gt;&lt;/div&gt;
@@ -1179,8 +1179,8 @@ nameserver 8.8.8.8
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcdc6b81" class="outline-3"&gt;
-&lt;h3 id="orgcdc6b81"&gt;&lt;span class="section-number-3"&gt;5.2&lt;/span&gt; 選擇安裝鏡像&lt;/h3&gt;
+&lt;div id="outline-container-orgf25f35e" class="outline-3"&gt;
+&lt;h3 id="orgf25f35e"&gt;&lt;span class="section-number-3"&gt;5.2&lt;/span&gt; 選擇安裝鏡像&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-5-2"&gt;
 &lt;p&gt;
 安裝前需要編輯 &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt;, 將最想使用的鏡像放到前面：
@@ -1209,8 +1209,8 @@ C-x:   exit
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7153dcf" class="outline-2"&gt;
-&lt;h2 id="org7153dcf"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; 安裝基本系統&lt;/h2&gt;
+&lt;div id="outline-container-orgce750e6" class="outline-2"&gt;
+&lt;h2 id="orgce750e6"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; 安裝基本系統&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacstrap -i /mnt base base-devel
 &lt;/pre&gt;&lt;/div&gt;
@@ -1231,8 +1231,8 @@ run the following command: :
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7c48903" class="outline-3"&gt;
-&lt;h3 id="org7c48903"&gt;&lt;span class="section-number-3"&gt;6.1&lt;/span&gt; 生成 fstab&lt;/h3&gt;
+&lt;div id="outline-container-orgb953bd6" class="outline-3"&gt;
+&lt;h3 id="orgb953bd6"&gt;&lt;span class="section-number-3"&gt;6.1&lt;/span&gt; 生成 fstab&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-1"&gt;
 &lt;p&gt;
 這個一定要做，不然後頭會很麻煩。 :
@@ -1244,16 +1244,16 @@ nano /mnt/etc/fstab   &lt;span class="c1"&gt;# 檢查一下 fstab&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org31b3740" class="outline-3"&gt;
-&lt;h3 id="org31b3740"&gt;&lt;span class="section-number-3"&gt;6.2&lt;/span&gt; Chroot 到新系統，並作基本配置&lt;/h3&gt;
+&lt;div id="outline-container-orgd8bfede" class="outline-3"&gt;
+&lt;h3 id="orgd8bfede"&gt;&lt;span class="section-number-3"&gt;6.2&lt;/span&gt; Chroot 到新系統，並作基本配置&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;arch-chroot /mnt /bin/bash
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf55c3a5" class="outline-3"&gt;
-&lt;h3 id="orgf55c3a5"&gt;&lt;span class="section-number-3"&gt;6.3&lt;/span&gt; 配置 pacman&lt;/h3&gt;
+&lt;div id="outline-container-org8aeca5f" class="outline-3"&gt;
+&lt;h3 id="org8aeca5f"&gt;&lt;span class="section-number-3"&gt;6.3&lt;/span&gt; 配置 pacman&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/pacman.conf
 &lt;/pre&gt;&lt;/div&gt;
@@ -1273,8 +1273,8 @@ Server = http://repo.archlinux.fr/$arch
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd42be7d" class="outline-3"&gt;
-&lt;h3 id="orgd42be7d"&gt;&lt;span class="section-number-3"&gt;6.4&lt;/span&gt; 更新系統，並安裝 yaourt&lt;/h3&gt;
+&lt;div id="outline-container-orgd0332de" class="outline-3"&gt;
+&lt;h3 id="orgd0332de"&gt;&lt;span class="section-number-3"&gt;6.4&lt;/span&gt; 更新系統，並安裝 yaourt&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -Syu
 pacman -S yaourt
@@ -1282,15 +1282,15 @@ pacman -S yaourt
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org036d737" class="outline-3"&gt;
-&lt;h3 id="org036d737"&gt;&lt;span class="section-number-3"&gt;6.5&lt;/span&gt; 配置系統 Locale&lt;/h3&gt;
+&lt;div id="outline-container-orgbf2c97b" class="outline-3"&gt;
+&lt;h3 id="orgbf2c97b"&gt;&lt;span class="section-number-3"&gt;6.5&lt;/span&gt; 配置系統 Locale&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/locale.gen
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga5e705d" class="outline-4"&gt;
-&lt;h4 id="orga5e705d"&gt;&lt;span class="section-number-4"&gt;6.5.1&lt;/span&gt; 找到&lt;/h4&gt;
+&lt;div id="outline-container-org677aebd" class="outline-4"&gt;
+&lt;h4 id="org677aebd"&gt;&lt;span class="section-number-4"&gt;6.5.1&lt;/span&gt; 找到&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-6-5-1"&gt;
 &lt;pre class="example"&gt;
 en_US.UTF-8 UTF-8
@@ -1304,16 +1304,16 @@ zh_CN.UTF-8 UTF-8
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4d7e4be" class="outline-4"&gt;
-&lt;h4 id="org4d7e4be"&gt;&lt;span class="section-number-4"&gt;6.5.2&lt;/span&gt; 使 locale 生效&lt;/h4&gt;
+&lt;div id="outline-container-org81e9fff" class="outline-4"&gt;
+&lt;h4 id="org81e9fff"&gt;&lt;span class="section-number-4"&gt;6.5.2&lt;/span&gt; 使 locale 生效&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-6-5-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;locale-gen    &lt;span class="c1"&gt;#使更改生效運行&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org43c5656" class="outline-4"&gt;
-&lt;h4 id="org43c5656"&gt;&lt;span class="section-number-4"&gt;6.5.3&lt;/span&gt; 確認一下 locale&lt;/h4&gt;
+&lt;div id="outline-container-org053a769" class="outline-4"&gt;
+&lt;h4 id="org053a769"&gt;&lt;span class="section-number-4"&gt;6.5.3&lt;/span&gt; 確認一下 locale&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-6-5-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;locale -a     &lt;span class="c1"&gt;#確認一下開啟的 locale&lt;/span&gt;
 locale        &lt;span class="c1"&gt;#目前的 locale&lt;/span&gt;
@@ -1321,8 +1321,8 @@ locale        &lt;span class="c1"&gt;#目前的 locale&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org60ac7c8" class="outline-4"&gt;
-&lt;h4 id="org60ac7c8"&gt;&lt;span class="section-number-4"&gt;6.5.4&lt;/span&gt; 全域 locale 設定：對整個系統有效&lt;/h4&gt;
+&lt;div id="outline-container-org67be5ed" class="outline-4"&gt;
+&lt;h4 id="org67be5ed"&gt;&lt;span class="section-number-4"&gt;6.5.4&lt;/span&gt; 全域 locale 設定：對整個系統有效&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-6-5-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/locale.conf
 &lt;/pre&gt;&lt;/div&gt;
@@ -1337,8 +1337,8 @@ LANG=en_US.UTF-8
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb154a05" class="outline-3"&gt;
-&lt;h3 id="orgb154a05"&gt;&lt;span class="section-number-3"&gt;6.6&lt;/span&gt; 更改 console 字型&lt;/h3&gt;
+&lt;div id="outline-container-org06ecd51" class="outline-3"&gt;
+&lt;h3 id="org06ecd51"&gt;&lt;span class="section-number-3"&gt;6.6&lt;/span&gt; 更改 console 字型&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-6"&gt;
 &lt;p&gt;
 把字改大一點，眼睛比較不吃力。先安裝字型，再設定字型。
@@ -1367,8 +1367,8 @@ ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1ce4b1d" class="outline-3"&gt;
-&lt;h3 id="org1ce4b1d"&gt;&lt;span class="section-number-3"&gt;6.7&lt;/span&gt; 配置系統時區&lt;/h3&gt;
+&lt;div id="outline-container-org94844f7" class="outline-3"&gt;
+&lt;h3 id="org94844f7"&gt;&lt;span class="section-number-3"&gt;6.7&lt;/span&gt; 配置系統時區&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-7"&gt;
 &lt;p&gt;
 可用的時區位於目錄 &lt;code&gt;/usr/share/zoneinfo/&lt;/code&gt; 下，可以 &lt;code&gt;ls&lt;/code&gt; 一下。用以下指令配置系統時區：
@@ -1379,8 +1379,8 @@ ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgcced015" class="outline-3"&gt;
-&lt;h3 id="orgcced015"&gt;&lt;span class="section-number-3"&gt;6.8&lt;/span&gt; 時間調整&lt;/h3&gt;
+&lt;div id="outline-container-org32f5437" class="outline-3"&gt;
+&lt;h3 id="org32f5437"&gt;&lt;span class="section-number-3"&gt;6.8&lt;/span&gt; 時間調整&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-8"&gt;
 &lt;p&gt;
 為了與 windows 雙重開機 (dual boot)，最好做以下動作：
@@ -1420,8 +1420,8 @@ timedatectl set-ntp &lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6c30685" class="outline-3"&gt;
-&lt;h3 id="org6c30685"&gt;&lt;span class="section-number-3"&gt;6.9&lt;/span&gt; 設置主機名稱&lt;/h3&gt;
+&lt;div id="outline-container-orgbb14349" class="outline-3"&gt;
+&lt;h3 id="orgbb14349"&gt;&lt;span class="section-number-3"&gt;6.9&lt;/span&gt; 設置主機名稱&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/hostname
 &lt;/pre&gt;&lt;/div&gt;
@@ -1436,8 +1436,8 @@ timedatectl set-ntp &lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org37d2592" class="outline-2"&gt;
-&lt;h2 id="org37d2592"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 再一次設定網路&lt;/h2&gt;
+&lt;div id="outline-container-org64436e2" class="outline-2"&gt;
+&lt;h2 id="org64436e2"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 再一次設定網路&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-7"&gt;
 &lt;p&gt;
 簡單啓動 &lt;code&gt;dhcpcd&lt;/code&gt; :
@@ -1447,8 +1447,8 @@ timedatectl set-ntp &lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org148fd1f" class="outline-3"&gt;
-&lt;h3 id="org148fd1f"&gt;&lt;span class="section-number-3"&gt;7.1&lt;/span&gt; WIFI&lt;/h3&gt;
+&lt;div id="outline-container-orgcf4c87d" class="outline-3"&gt;
+&lt;h3 id="orgcf4c87d"&gt;&lt;span class="section-number-3"&gt;7.1&lt;/span&gt; WIFI&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-1"&gt;
 &lt;p&gt;
 用 &lt;code&gt;netctl&lt;/code&gt; 啓動 wifi
@@ -1456,8 +1456,8 @@ timedatectl set-ntp &lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd2cc4de" class="outline-3"&gt;
-&lt;h3 id="orgd2cc4de"&gt;&lt;span class="section-number-3"&gt;7.2&lt;/span&gt; ADSL&lt;/h3&gt;
+&lt;div id="outline-container-org8c9e068" class="outline-3"&gt;
+&lt;h3 id="org8c9e068"&gt;&lt;span class="section-number-3"&gt;7.2&lt;/span&gt; ADSL&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-7-2"&gt;
 &lt;p&gt;
 如果要用 ADSL，則這個很重要，不然重開機時，就會沒網路可用。
@@ -1508,8 +1508,8 @@ to remove auto 'dial in' at boot.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org95827c7" class="outline-2"&gt;
-&lt;h2 id="org95827c7"&gt;&lt;span class="section-number-2"&gt;8&lt;/span&gt; mkinitcpio&lt;/h2&gt;
+&lt;div id="outline-container-orgf2d2194" class="outline-2"&gt;
+&lt;h2 id="orgf2d2194"&gt;&lt;span class="section-number-2"&gt;8&lt;/span&gt; mkinitcpio&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-8"&gt;
 &lt;p&gt;
 增加 lvm2 到 hooks 後，執行 &lt;code&gt;mkinitcpio&lt;/code&gt; :
@@ -1530,8 +1530,8 @@ to remove auto 'dial in' at boot.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org30ce801" class="outline-2"&gt;
-&lt;h2 id="org30ce801"&gt;&lt;span class="section-number-2"&gt;9&lt;/span&gt; Install and configure a bootloader&lt;/h2&gt;
+&lt;div id="outline-container-org2b922a2" class="outline-2"&gt;
+&lt;h2 id="org2b922a2"&gt;&lt;span class="section-number-2"&gt;9&lt;/span&gt; Install and configure a bootloader&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-9"&gt;
 &lt;p&gt;
 Install the grub-bios package and then run grub-install:
@@ -1542,8 +1542,8 @@ grub-install --target&lt;span class="o"&gt;=&lt;/span&gt;i386-pc --recheck /dev/
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf14b2aa" class="outline-3"&gt;
-&lt;h3 id="orgf14b2aa"&gt;&lt;span class="section-number-3"&gt;9.1&lt;/span&gt; 自動尋找其它的 OS&lt;/h3&gt;
+&lt;div id="outline-container-org38b3416" class="outline-3"&gt;
+&lt;h3 id="org38b3416"&gt;&lt;span class="section-number-3"&gt;9.1&lt;/span&gt; 自動尋找其它的 OS&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-9-1"&gt;
 &lt;p&gt;
 如果有其他的 OS，這個就很重要。
@@ -1565,8 +1565,8 @@ grub-install --target&lt;span class="o"&gt;=&lt;/span&gt;i386-pc --recheck /dev/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc1cd4d1" class="outline-3"&gt;
-&lt;h3 id="orgc1cd4d1"&gt;&lt;span class="section-number-3"&gt;9.2&lt;/span&gt; intel CPU 要安裝 microcode&lt;/h3&gt;
+&lt;div id="outline-container-org74e5b66" class="outline-3"&gt;
+&lt;h3 id="org74e5b66"&gt;&lt;span class="section-number-3"&gt;9.2&lt;/span&gt; intel CPU 要安裝 microcode&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-9-2"&gt;
 &lt;p&gt;
 這步要在 grub-mkconfig 之前做：
@@ -1577,8 +1577,8 @@ grub-install --target&lt;span class="o"&gt;=&lt;/span&gt;i386-pc --recheck /dev/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org39cd95e" class="outline-3"&gt;
-&lt;h3 id="org39cd95e"&gt;&lt;span class="section-number-3"&gt;9.3&lt;/span&gt; 自動產生 grub.cfg&lt;/h3&gt;
+&lt;div id="outline-container-org34ac6f2" class="outline-3"&gt;
+&lt;h3 id="org34ac6f2"&gt;&lt;span class="section-number-3"&gt;9.3&lt;/span&gt; 自動產生 grub.cfg&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-9-3"&gt;
 &lt;p&gt;
 這個一定要做，不然重開機時，就等著進 grub shell，很麻煩。
@@ -1590,8 +1590,8 @@ grub-install --target&lt;span class="o"&gt;=&lt;/span&gt;i386-pc --recheck /dev/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3cdc764" class="outline-2"&gt;
-&lt;h2 id="org3cdc764"&gt;&lt;span class="section-number-2"&gt;10&lt;/span&gt; 重啓&lt;/h2&gt;
+&lt;div id="outline-container-org4c913d2" class="outline-2"&gt;
+&lt;h2 id="org4c913d2"&gt;&lt;span class="section-number-2"&gt;10&lt;/span&gt; 重啓&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-10"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
 umount /mnt
@@ -1599,8 +1599,8 @@ reboot
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6b26858" class="outline-3"&gt;
-&lt;h3 id="org6b26858"&gt;&lt;span class="section-number-3"&gt;10.1&lt;/span&gt; 確認網路連線&lt;/h3&gt;
+&lt;div id="outline-container-org2e2bb8d" class="outline-3"&gt;
+&lt;h3 id="org2e2bb8d"&gt;&lt;span class="section-number-3"&gt;10.1&lt;/span&gt; 確認網路連線&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-10-1"&gt;
 &lt;p&gt;
 root 重啓後，ping 一下看看網路連上了嗎？如果沒有，手動連線。
@@ -1617,8 +1617,8 @@ systemctl start dhcpcd
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgec88724" class="outline-3"&gt;
-&lt;h3 id="orgec88724"&gt;&lt;span class="section-number-3"&gt;10.2&lt;/span&gt; update system（可不做）&lt;/h3&gt;
+&lt;div id="outline-container-orgbae3703" class="outline-3"&gt;
+&lt;h3 id="orgbae3703"&gt;&lt;span class="section-number-3"&gt;10.2&lt;/span&gt; update system（可不做）&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-10-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -Syu
 &lt;/pre&gt;&lt;/div&gt;
@@ -1626,12 +1626,12 @@ systemctl start dhcpcd
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7b6497d" class="outline-2"&gt;
-&lt;h2 id="org7b6497d"&gt;&lt;span class="section-number-2"&gt;11&lt;/span&gt; post-installation&lt;/h2&gt;
+&lt;div id="outline-container-orgc55e23c" class="outline-2"&gt;
+&lt;h2 id="orgc55e23c"&gt;&lt;span class="section-number-2"&gt;11&lt;/span&gt; post-installation&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-11"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9eaf4c1" class="outline-3"&gt;
-&lt;h3 id="org9eaf4c1"&gt;&lt;span class="section-number-3"&gt;11.1&lt;/span&gt; 設置 Root 密碼並創建一般用戶&lt;/h3&gt;
+&lt;div id="outline-container-orgdf83a2e" class="outline-3"&gt;
+&lt;h3 id="orgdf83a2e"&gt;&lt;span class="section-number-3"&gt;11.1&lt;/span&gt; 設置 Root 密碼並創建一般用戶&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;passwd
 useradd -m -s /bin/bash  -g users -G video,storage,optical,lp,scanner,games,wheel username
@@ -1640,8 +1640,8 @@ passwd username
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0f8f2ed" class="outline-3"&gt;
-&lt;h3 id="org0f8f2ed"&gt;&lt;span class="section-number-3"&gt;11.2&lt;/span&gt; 安裝 Sudo&lt;/h3&gt;
+&lt;div id="outline-container-org2b9178b" class="outline-3"&gt;
+&lt;h3 id="org2b9178b"&gt;&lt;span class="section-number-3"&gt;11.2&lt;/span&gt; 安裝 Sudo&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S sudo
 &lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;nano visudo
@@ -1670,11 +1670,11 @@ passwd username
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdbf321d" class="outline-3"&gt;
-&lt;h3 id="orgdbf321d"&gt;&lt;span class="section-number-3"&gt;11.3&lt;/span&gt; 登出，並以新的用戶名稱登入&lt;/h3&gt;
+&lt;div id="outline-container-orga8c4908" class="outline-3"&gt;
+&lt;h3 id="orga8c4908"&gt;&lt;span class="section-number-3"&gt;11.3&lt;/span&gt; 登出，並以新的用戶名稱登入&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org346e123" class="outline-3"&gt;
-&lt;h3 id="org346e123"&gt;&lt;span class="section-number-3"&gt;11.4&lt;/span&gt; 設定聲音 alas&lt;/h3&gt;
+&lt;div id="outline-container-org88c120c" class="outline-3"&gt;
+&lt;h3 id="org88c120c"&gt;&lt;span class="section-number-3"&gt;11.4&lt;/span&gt; 設定聲音 alas&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-4"&gt;
 &lt;p&gt;
 安裝音效驅動，直接用 alas，不要考慮太多。
@@ -1712,8 +1712,8 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1fa13ed" class="outline-3"&gt;
-&lt;h3 id="org1fa13ed"&gt;&lt;span class="section-number-3"&gt;11.5&lt;/span&gt; 安裝 x11&lt;/h3&gt;
+&lt;div id="outline-container-org4fd0356" class="outline-3"&gt;
+&lt;h3 id="org4fd0356"&gt;&lt;span class="section-number-3"&gt;11.5&lt;/span&gt; 安裝 x11&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S xorg-&lt;span class="o"&gt;{&lt;/span&gt;server,apps&lt;span class="o"&gt;}&lt;/span&gt; mesa
 &lt;/pre&gt;&lt;/div&gt;
@@ -1724,12 +1724,12 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8b7adb3" class="outline-3"&gt;
-&lt;h3 id="org8b7adb3"&gt;&lt;span class="section-number-3"&gt;11.6&lt;/span&gt; 裝顯卡驅動&lt;/h3&gt;
+&lt;div id="outline-container-org89d925d" class="outline-3"&gt;
+&lt;h3 id="org89d925d"&gt;&lt;span class="section-number-3"&gt;11.6&lt;/span&gt; 裝顯卡驅動&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-6"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org00dc093" class="outline-4"&gt;
-&lt;h4 id="org00dc093"&gt;&lt;span class="section-number-4"&gt;11.6.1&lt;/span&gt; ATi 用戶：&lt;/h4&gt;
+&lt;div id="outline-container-orgcaca950" class="outline-4"&gt;
+&lt;h4 id="orgcaca950"&gt;&lt;span class="section-number-4"&gt;11.6.1&lt;/span&gt; ATi 用戶：&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-11-6-1"&gt;
 &lt;p&gt;
 直接裝開源驅動
@@ -1747,8 +1747,8 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org59a120d" class="outline-4"&gt;
-&lt;h4 id="org59a120d"&gt;&lt;span class="section-number-4"&gt;11.6.2&lt;/span&gt; intel 用戶：&lt;/h4&gt;
+&lt;div id="outline-container-org861bdd4" class="outline-4"&gt;
+&lt;h4 id="org861bdd4"&gt;&lt;span class="section-number-4"&gt;11.6.2&lt;/span&gt; intel 用戶：&lt;/h4&gt;
 &lt;div class="outline-text-4" id="text-11-6-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S xf86-video-intel libav-intel-driver
 &lt;/pre&gt;&lt;/div&gt;
@@ -1756,8 +1756,8 @@ alsa 預設是靜音，以 alsamixer 手動打開聲音：
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7084a3a" class="outline-3"&gt;
-&lt;h3 id="org7084a3a"&gt;&lt;span class="section-number-3"&gt;11.7&lt;/span&gt; 安裝字體&lt;/h3&gt;
+&lt;div id="outline-container-org1ee0ea0" class="outline-3"&gt;
+&lt;h3 id="org1ee0ea0"&gt;&lt;span class="section-number-3"&gt;11.7&lt;/span&gt; 安裝字體&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-7"&gt;
 &lt;p&gt;
 加上 &lt;code&gt;ttf-liberation&lt;/code&gt; 修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝 &lt;code&gt;ttf-hanazono&lt;/code&gt;
@@ -1769,8 +1769,8 @@ yaourt -S adobe-source-&lt;span class="o"&gt;{&lt;/span&gt;code,sans,serif&lt;sp
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9dcee63" class="outline-3"&gt;
-&lt;h3 id="org9dcee63"&gt;&lt;span class="section-number-3"&gt;11.8&lt;/span&gt; 讓 X 可以顯示中文&lt;/h3&gt;
+&lt;div id="outline-container-orgf79401c" class="outline-3"&gt;
+&lt;h3 id="orgf79401c"&gt;&lt;span class="section-number-3"&gt;11.8&lt;/span&gt; 讓 X 可以顯示中文&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano ~/.xinitrc
 &lt;/pre&gt;&lt;/div&gt;
@@ -1781,8 +1781,8 @@ export LC_ALL="zh_TW.UTF-8"
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4fc9721" class="outline-3"&gt;
-&lt;h3 id="org4fc9721"&gt;&lt;span class="section-number-3"&gt;11.9&lt;/span&gt; 將右邊的數字鍵盤預設爲方向鍵&lt;/h3&gt;
+&lt;div id="outline-container-orgcfd28f6" class="outline-3"&gt;
+&lt;h3 id="orgcfd28f6"&gt;&lt;span class="section-number-3"&gt;11.9&lt;/span&gt; 將右邊的數字鍵盤預設爲方向鍵&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-9"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S numlockx
 nano ~/.xinitrc
@@ -1797,8 +1797,8 @@ nano ~/.xinitrc
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org95dbbd7" class="outline-3"&gt;
-&lt;h3 id="org95dbbd7"&gt;&lt;span class="section-number-3"&gt;11.10&lt;/span&gt; 安裝桌面&lt;/h3&gt;
+&lt;div id="outline-container-org2632a1e" class="outline-3"&gt;
+&lt;h3 id="org2632a1e"&gt;&lt;span class="section-number-3"&gt;11.10&lt;/span&gt; 安裝桌面&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-10"&gt;
 &lt;p&gt;
 目前使用 lxqt + xmonad。lxqt
@@ -1835,8 +1835,8 @@ nano ~/.xinitrc
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4590105" class="outline-3"&gt;
-&lt;h3 id="org4590105"&gt;&lt;span class="section-number-3"&gt;11.11&lt;/span&gt; theme&lt;/h3&gt;
+&lt;div id="outline-container-org9a4a662" class="outline-3"&gt;
+&lt;h3 id="org9a4a662"&gt;&lt;span class="section-number-3"&gt;11.11&lt;/span&gt; theme&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-11"&gt;
 &lt;p&gt;
 Using Breeze theme and Flat Remix icon theme:
@@ -1851,8 +1851,8 @@ Using Breeze theme and Flat Remix icon theme:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org04d05eb" class="outline-3"&gt;
-&lt;h3 id="org04d05eb"&gt;&lt;span class="section-number-3"&gt;11.12&lt;/span&gt; 安裝中文輸入法&lt;/h3&gt;
+&lt;div id="outline-container-orgffa0170" class="outline-3"&gt;
+&lt;h3 id="orgffa0170"&gt;&lt;span class="section-number-3"&gt;11.12&lt;/span&gt; 安裝中文輸入法&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-12"&gt;
 &lt;p&gt;
 沒有其它選擇，就用 fcitx。
@@ -1863,16 +1863,16 @@ Using Breeze theme and Flat Remix icon theme:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org623bc4d" class="outline-3"&gt;
-&lt;h3 id="org623bc4d"&gt;&lt;span class="section-number-3"&gt;11.13&lt;/span&gt; install google chrome&lt;/h3&gt;
+&lt;div id="outline-container-orgc3a0640" class="outline-3"&gt;
+&lt;h3 id="orgc3a0640"&gt;&lt;span class="section-number-3"&gt;11.13&lt;/span&gt; install google chrome&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-13"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S google-chrome
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb6ad3cf" class="outline-3"&gt;
-&lt;h3 id="orgb6ad3cf"&gt;&lt;span class="section-number-3"&gt;11.14&lt;/span&gt; 安裝文字編輯器&lt;/h3&gt;
+&lt;div id="outline-container-org2ab91ff" class="outline-3"&gt;
+&lt;h3 id="org2ab91ff"&gt;&lt;span class="section-number-3"&gt;11.14&lt;/span&gt; 安裝文字編輯器&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-11-14"&gt;
 &lt;p&gt;
 現在已經沒有別的選擇了，只能用 emacs
@@ -1889,12 +1889,12 @@ Using Breeze theme and Flat Remix icon theme:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org676ce38" class="outline-2"&gt;
-&lt;h2 id="org676ce38"&gt;&lt;span class="section-number-2"&gt;12&lt;/span&gt; issues&lt;/h2&gt;
+&lt;div id="outline-container-org45f7109" class="outline-2"&gt;
+&lt;h2 id="org45f7109"&gt;&lt;span class="section-number-2"&gt;12&lt;/span&gt; issues&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-12"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org07d1fbb" class="outline-3"&gt;
-&lt;h3 id="org07d1fbb"&gt;&lt;span class="section-number-3"&gt;12.1&lt;/span&gt; kvm:disable by bios&lt;/h3&gt;
+&lt;div id="outline-container-org1736295" class="outline-3"&gt;
+&lt;h3 id="org1736295"&gt;&lt;span class="section-number-3"&gt;12.1&lt;/span&gt; kvm:disable by bios&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-12-1"&gt;
 &lt;p&gt;
 iVT enable @ bios

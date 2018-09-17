@@ -97,82 +97,82 @@
 很大材小用吧。</p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<pre class="code text"><a name="rest_code_59bb942feec44e2ba63b82dacab85b9d-1"></a>yaourt -S nginx
+<pre class="code text"><a name="rest_code_f9caa09745714a87b3ca73d450d33edf-1"></a>yaourt -S nginx
 </pre>
 </div>
 <div class="section" id="id2">
 <h2>配置</h2>
-<pre class="code text"><a name="rest_code_3c0cfbd5cc884ce8be7d6aa5b8d17562-1"></a>sudo nano /etc/nginx/nginx.conf
+<pre class="code text"><a name="rest_code_31594badd944410d87260bcf2b1fc1cc-1"></a>sudo nano /etc/nginx/nginx.conf
 </pre>
 <p>預設的 nginx.conf 的結構很單純。<tt class="docutils literal">$ grep <span class="pre">-v</span> '#' /etc/nginx/nginx.conf</tt></p>
-<pre class="code text"><a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-1"></a>worker_processes  1;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-2"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-3"></a>events {
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-4"></a>    worker_connections  1024;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-5"></a>}
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-6"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-7"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-8"></a>http {
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-9"></a>    include       mime.types;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-10"></a>    default_type  application/octet-stream;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-11"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-12"></a>    sendfile        on;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-13"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-14"></a>    keepalive_timeout  65;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-15"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-16"></a>    server {
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-17"></a>        listen       80;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-18"></a>        server_name  localhost;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-19"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-20"></a>        location / {
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-21"></a>            root   /usr/share/nginx/html;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-22"></a>            index  index.html index.htm;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-23"></a>        }
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-24"></a>
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-25"></a>        error_page   500 502 503 504  /50x.html;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-26"></a>        location = /50x.html {
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-27"></a>            root   /usr/share/nginx/html;
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-28"></a>        }
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-29"></a>    }
-<a name="rest_code_22d6cf0adc5e46ffae53bc9ee883d82b-30"></a>}
+<pre class="code text"><a name="rest_code_589b538cf07e4210b3075f2256356d64-1"></a>worker_processes  1;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-2"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-3"></a>events {
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-4"></a>    worker_connections  1024;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-5"></a>}
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-6"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-7"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-8"></a>http {
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-9"></a>    include       mime.types;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-10"></a>    default_type  application/octet-stream;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-11"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-12"></a>    sendfile        on;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-13"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-14"></a>    keepalive_timeout  65;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-15"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-16"></a>    server {
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-17"></a>        listen       80;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-18"></a>        server_name  localhost;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-19"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-20"></a>        location / {
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-21"></a>            root   /usr/share/nginx/html;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-22"></a>            index  index.html index.htm;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-23"></a>        }
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-24"></a>
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-25"></a>        error_page   500 502 503 504  /50x.html;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-26"></a>        location = /50x.html {
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-27"></a>            root   /usr/share/nginx/html;
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-28"></a>        }
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-29"></a>    }
+<a name="rest_code_589b538cf07e4210b3075f2256356d64-30"></a>}
 </pre>
 <p>以下是我的設定</p>
-<pre class="code text"><a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-1"></a>worker_processes  1;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-2"></a>
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-3"></a>events {
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-4"></a>    worker_connections  1024;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-5"></a>}
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-6"></a>
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-7"></a>http {
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-8"></a>    include       mime.types;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-9"></a>    default_type  application/octet-stream;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-10"></a>
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-11"></a>    sendfile        on;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-12"></a>    keepalive_timeout  65;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-13"></a>
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-14"></a>    server {
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-15"></a>        listen       8000;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-16"></a>        server_name  localhost;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-17"></a>        location / {
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-18"></a>            root   /home/mariolong/Programing/wen-de-www/www/output;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-19"></a>            index  index.html index.htm;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-20"></a>        }
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-21"></a>        error_page   500 502 503 504  /50x.html;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-22"></a>        location = /50x.html {
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-23"></a>            root   /usr/share/nginx/html;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-24"></a>        }
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-25"></a>    }
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-26"></a>
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-27"></a>    server {
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-28"></a>        listen       8088;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-29"></a>        server_name  localhost;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-30"></a>
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-31"></a>        location / {
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-32"></a>            root /home/mariolong/Documents/myBlog/output;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-33"></a>            index  index.html index.htm;
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-34"></a>        }
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-35"></a>    }
-<a name="rest_code_2ee0d81fe119471ea818f4143dfd777a-36"></a>}
+<pre class="code text"><a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-1"></a>worker_processes  1;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-2"></a>
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-3"></a>events {
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-4"></a>    worker_connections  1024;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-5"></a>}
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-6"></a>
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-7"></a>http {
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-8"></a>    include       mime.types;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-9"></a>    default_type  application/octet-stream;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-10"></a>
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-11"></a>    sendfile        on;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-12"></a>    keepalive_timeout  65;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-13"></a>
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-14"></a>    server {
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-15"></a>        listen       8000;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-16"></a>        server_name  localhost;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-17"></a>        location / {
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-18"></a>            root   /home/mariolong/Programing/wen-de-www/www/output;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-19"></a>            index  index.html index.htm;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-20"></a>        }
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-21"></a>        error_page   500 502 503 504  /50x.html;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-22"></a>        location = /50x.html {
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-23"></a>            root   /usr/share/nginx/html;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-24"></a>        }
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-25"></a>    }
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-26"></a>
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-27"></a>    server {
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-28"></a>        listen       8088;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-29"></a>        server_name  localhost;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-30"></a>
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-31"></a>        location / {
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-32"></a>            root /home/mariolong/Documents/myBlog/output;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-33"></a>            index  index.html index.htm;
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-34"></a>        }
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-35"></a>    }
+<a name="rest_code_4c5e09e709ac4bd4bc469137fd46bb51-36"></a>}
 </pre>
 <p>如此配置好，文章寫好後，只要 <tt class="docutils literal">nikola build</tt> 即可，不必再 <tt class="docutils literal">nikola serve</tt>。</p>
 <p>回到 browser 中，直接訪問文章就好，方便多了。</p>
@@ -180,10 +180,10 @@
 <div class="section" id="id3">
 <h2>啟動</h2>
 <p>以下分別為啟動、重啟、停止、開機啟動</p>
-<pre class="code text"><a name="rest_code_e969f4cfb5d4478589dee1fde75bf409-1"></a>sudo systemctl start nginx
-<a name="rest_code_e969f4cfb5d4478589dee1fde75bf409-2"></a>sudo systemctl restart nginx
-<a name="rest_code_e969f4cfb5d4478589dee1fde75bf409-3"></a>sudo systemctl stop nginx
-<a name="rest_code_e969f4cfb5d4478589dee1fde75bf409-4"></a>sudo systemctl enable nginx
+<pre class="code text"><a name="rest_code_5c2b16bb0788427a893e940478e51242-1"></a>sudo systemctl start nginx
+<a name="rest_code_5c2b16bb0788427a893e940478e51242-2"></a>sudo systemctl restart nginx
+<a name="rest_code_5c2b16bb0788427a893e940478e51242-3"></a>sudo systemctl stop nginx
+<a name="rest_code_5c2b16bb0788427a893e940478e51242-4"></a>sudo systemctl enable nginx
 </pre>
 </div>
 <div class="section" id="id4">
@@ -253,35 +253,35 @@ yaourt -S xlogin-git
 <li>Create the following two files. 準備 D-BUS。</li>
 </ol>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.socket</tt> containing:</p>
-<pre class="code text"><a name="rest_code_3d052d65647c43c7bb2cb340f4401771-1"></a>[Unit]
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-2"></a>Description=D-Bus Message Bus Socket
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-3"></a>Before=sockets.target
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-4"></a>
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-5"></a>[Socket]
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-7"></a>
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-8"></a>[Install]
-<a name="rest_code_3d052d65647c43c7bb2cb340f4401771-9"></a>WantedBy=default.target
+<pre class="code text"><a name="rest_code_3777e62548a14bcebedffe461df07067-1"></a>[Unit]
+<a name="rest_code_3777e62548a14bcebedffe461df07067-2"></a>Description=D-Bus Message Bus Socket
+<a name="rest_code_3777e62548a14bcebedffe461df07067-3"></a>Before=sockets.target
+<a name="rest_code_3777e62548a14bcebedffe461df07067-4"></a>
+<a name="rest_code_3777e62548a14bcebedffe461df07067-5"></a>[Socket]
+<a name="rest_code_3777e62548a14bcebedffe461df07067-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
+<a name="rest_code_3777e62548a14bcebedffe461df07067-7"></a>
+<a name="rest_code_3777e62548a14bcebedffe461df07067-8"></a>[Install]
+<a name="rest_code_3777e62548a14bcebedffe461df07067-9"></a>WantedBy=default.target
 </pre>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.service</tt> containing:</p>
-<pre class="code text"><a name="rest_code_e0d6f0c0cb534a74ad6865e8d9bdbb07-1"></a>[Unit]
-<a name="rest_code_e0d6f0c0cb534a74ad6865e8d9bdbb07-2"></a>Description=D-Bus Message Bus
-<a name="rest_code_e0d6f0c0cb534a74ad6865e8d9bdbb07-3"></a>Requires=dbus.socket
-<a name="rest_code_e0d6f0c0cb534a74ad6865e8d9bdbb07-4"></a>
-<a name="rest_code_e0d6f0c0cb534a74ad6865e8d9bdbb07-5"></a>[Service]
-<a name="rest_code_e0d6f0c0cb534a74ad6865e8d9bdbb07-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
-<a name="rest_code_e0d6f0c0cb534a74ad6865e8d9bdbb07-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
+<pre class="code text"><a name="rest_code_ea5ef23383484959ba9aa12d9fa4f83c-1"></a>[Unit]
+<a name="rest_code_ea5ef23383484959ba9aa12d9fa4f83c-2"></a>Description=D-Bus Message Bus
+<a name="rest_code_ea5ef23383484959ba9aa12d9fa4f83c-3"></a>Requires=dbus.socket
+<a name="rest_code_ea5ef23383484959ba9aa12d9fa4f83c-4"></a>
+<a name="rest_code_ea5ef23383484959ba9aa12d9fa4f83c-5"></a>[Service]
+<a name="rest_code_ea5ef23383484959ba9aa12d9fa4f83c-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+<a name="rest_code_ea5ef23383484959ba9aa12d9fa4f83c-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
 </pre>
 <ol class="arabic simple" start="3">
 <li>Run (as root) <tt class="docutils literal">systemctl <span class="pre">--global</span> enable dbus.socket</tt> .</li>
 <li>Set up your .xinitrc and make sure it has the following near the top.</li>
 </ol>
-<pre class="code text"><a name="rest_code_7244f73ed4ca4355bc248b6a6de4855b-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
-<a name="rest_code_7244f73ed4ca4355bc248b6a6de4855b-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
-<a name="rest_code_7244f73ed4ca4355bc248b6a6de4855b-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
-<a name="rest_code_7244f73ed4ca4355bc248b6a6de4855b-4"></a>    done
-<a name="rest_code_7244f73ed4ca4355bc248b6a6de4855b-5"></a>    unset f
-<a name="rest_code_7244f73ed4ca4355bc248b6a6de4855b-6"></a>fi
+<pre class="code text"><a name="rest_code_8bf26a91373c411eabc196e26c49e818-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
+<a name="rest_code_8bf26a91373c411eabc196e26c49e818-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
+<a name="rest_code_8bf26a91373c411eabc196e26c49e818-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
+<a name="rest_code_8bf26a91373c411eabc196e26c49e818-4"></a>    done
+<a name="rest_code_8bf26a91373c411eabc196e26c49e818-5"></a>    unset f
+<a name="rest_code_8bf26a91373c411eabc196e26c49e818-6"></a>fi
 </pre>
 <p>Running your <tt class="docutils literal">.xinitrc</tt> should not return,
 so either have wait as the last command in your <tt class="docutils literal">.xinitrc</tt>,
@@ -290,9 +290,9 @@ or add <tt class="docutils literal">exec</tt> to the last command that will be c
 <ol class="arabic simple" start="5">
 <li>Include the following in your <tt class="docutils literal">.bashrc</tt> .</li>
 </ol>
-<pre class="code text"><a name="rest_code_8fcfc4e9906448b28c2c4340b16587c8-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
-<a name="rest_code_8fcfc4e9906448b28c2c4340b16587c8-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
-<a name="rest_code_8fcfc4e9906448b28c2c4340b16587c8-3"></a>done
+<pre class="code text"><a name="rest_code_792c9f5c30424518be5ec0f715e22e96-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
+<a name="rest_code_792c9f5c30424518be5ec0f715e22e96-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
+<a name="rest_code_792c9f5c30424518be5ec0f715e22e96-3"></a>done
 </pre>
 <p>6. Run (as root) <tt class="docutils literal">systemctl enable <span class="pre">xlogin@&lt;username&gt;</span></tt> for automatic login at boot,
 or <tt class="docutils literal">systemctl start <span class="pre">xlogin@&lt;username&gt;</span></tt> for launching a graphical user session (on tty7).</p>
@@ -492,22 +492,22 @@ rm -rf $PREFIX/lib/xmonad-contrib-$VERSION</p>
     </header><div class="p-summary entry-summary">
     <div>
 <p>error message:</p>
-<pre class="code text"><a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-1"></a>$ systemctl --user status mpd.service
-<a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-2"></a>Failed to issue method call: Process /bin/false exited with status 1
-<a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-3"></a>
-<a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-4"></a>$ sudo journalctl -u mpd
-<a name="rest_code_8d3fffc4aead43e7bb7f843ace5feba8-5"></a>fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
+<pre class="code text"><a name="rest_code_e2320992e681440897271fe39a4007e3-1"></a>$ systemctl --user status mpd.service
+<a name="rest_code_e2320992e681440897271fe39a4007e3-2"></a>Failed to issue method call: Process /bin/false exited with status 1
+<a name="rest_code_e2320992e681440897271fe39a4007e3-3"></a>
+<a name="rest_code_e2320992e681440897271fe39a4007e3-4"></a>$ sudo journalctl -u mpd
+<a name="rest_code_e2320992e681440897271fe39a4007e3-5"></a>fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
 </pre>
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206">https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206</a> 後，
 解決了這個問題。</p>
 <p>下這個指令：</p>
-<pre class="code text"><a name="rest_code_7a24fb21c18d4ab99af289096ccd9e95-1"></a># sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
+<pre class="code text"><a name="rest_code_c1c56ddc782a4412943c0e6f264016aa-1"></a># sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
 </pre>
 <p>2014-3-14 update：現在不必用上述的方法囉。</p>
 <p>加環境變數的檔：</p>
-<pre class="code text"><a name="rest_code_7acfa52c648f4683adddc86d959af712-1"></a># EDIT /etc/systemd/system/user@.service.d/environment.conf
-<a name="rest_code_7acfa52c648f4683adddc86d959af712-2"></a>[Service]
-<a name="rest_code_7acfa52c648f4683adddc86d959af712-3"></a>Environment=DISPLAY=:0
+<pre class="code text"><a name="rest_code_ac2df984c3b14a48bb159cdae0b82704-1"></a># EDIT /etc/systemd/system/user@.service.d/environment.conf
+<a name="rest_code_ac2df984c3b14a48bb159cdae0b82704-2"></a>[Service]
+<a name="rest_code_ac2df984c3b14a48bb159cdae0b82704-3"></a>Environment=DISPLAY=:0
 </pre>
 <p><strong>2014-4-3 update</strong> : 為何這個 install 標題在這個位置？因為以上都是過去的故事了。
 還是把它留著，免得下次又重做這些不必要做的事。</p>
@@ -523,20 +523,20 @@ yaourt -S mpd ncmpcpp mpdris2-git cantata cdparanoia
 nano ~/.config/systemd/user/mpd.service
 </pre>
 <p>內容如下：</p>
-<pre class="code text"><a name="rest_code_c6b172c330494fc383cb39497dada361-1"></a>[Unit]
-<a name="rest_code_c6b172c330494fc383cb39497dada361-2"></a>Description=Music Player Daemon
-<a name="rest_code_c6b172c330494fc383cb39497dada361-3"></a>
-<a name="rest_code_c6b172c330494fc383cb39497dada361-4"></a>[Service]
-<a name="rest_code_c6b172c330494fc383cb39497dada361-5"></a>Nice=-10
-<a name="rest_code_c6b172c330494fc383cb39497dada361-6"></a>ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
-<a name="rest_code_c6b172c330494fc383cb39497dada361-7"></a>ExecStop=/usr/bin/mpd --kill
-<a name="rest_code_c6b172c330494fc383cb39497dada361-8"></a>
-<a name="rest_code_c6b172c330494fc383cb39497dada361-9"></a>[Install]
-<a name="rest_code_c6b172c330494fc383cb39497dada361-10"></a>WantedBy=default.target
+<pre class="code text"><a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-1"></a>[Unit]
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-2"></a>Description=Music Player Daemon
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-3"></a>
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-4"></a>[Service]
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-5"></a>Nice=-10
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-6"></a>ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-7"></a>ExecStop=/usr/bin/mpd --kill
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-8"></a>
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-9"></a>[Install]
+<a name="rest_code_cc72f822bdfa44f18ba30fbb4ddbe73c-10"></a>WantedBy=default.target
 </pre>
 <p>把 mpd 開起來吧，不必 reboot！</p>
-<pre class="code text"><a name="rest_code_6db30b0ba71a49c98f9bc4de995ca865-1"></a>$ systemctl --user start mpd
-<a name="rest_code_6db30b0ba71a49c98f9bc4de995ca865-2"></a>$ systemctl --user enable mpd
+<pre class="code text"><a name="rest_code_645e4fe651bd4322bfd95c22d600a32f-1"></a>$ systemctl --user start mpd
+<a name="rest_code_645e4fe651bd4322bfd95c22d600a32f-2"></a>$ systemctl --user enable mpd
 </pre>
 <p>在 KDE 中使用 mpd-client，比較好用的 ncmpcpp 和 cantata。</p>
 <p>ncmpcpp 配置起來也是「落落長」的故事。</p>
@@ -570,111 +570,111 @@ nano ~/.config/systemd/user/mpd.service
 <p>為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。</p>
 <div class="section" id="install-lftp">
 <h2>install lftp</h2>
-<pre class="code text"><a name="rest_code_c838359d679d44fab96214b97f935f4e-1"></a>$ yaourt -S lftp
+<pre class="code text"><a name="rest_code_36284a160e5d4e03be94f9613bff9fee-1"></a>$ yaourt -S lftp
 </pre>
 </div>
 <div class="section" id="create-backup-lftp">
 <h2>create backup.lftp</h2>
-<pre class="code text"><a name="rest_code_377b55507406430da5390e3b79c3c7e5-1"></a>open &lt;host url&gt;
-<a name="rest_code_377b55507406430da5390e3b79c3c7e5-2"></a>user user-id user-pwd
-<a name="rest_code_377b55507406430da5390e3b79c3c7e5-3"></a>lcd local-dir/
-<a name="rest_code_377b55507406430da5390e3b79c3c7e5-4"></a>cd host-dir/
-<a name="rest_code_377b55507406430da5390e3b79c3c7e5-5"></a>mirro -Rnc
-<a name="rest_code_377b55507406430da5390e3b79c3c7e5-6"></a>exit
+<pre class="code text"><a name="rest_code_22d4c87c2bc2416da3cd99f58a77301e-1"></a>open &lt;host url&gt;
+<a name="rest_code_22d4c87c2bc2416da3cd99f58a77301e-2"></a>user user-id user-pwd
+<a name="rest_code_22d4c87c2bc2416da3cd99f58a77301e-3"></a>lcd local-dir/
+<a name="rest_code_22d4c87c2bc2416da3cd99f58a77301e-4"></a>cd host-dir/
+<a name="rest_code_22d4c87c2bc2416da3cd99f58a77301e-5"></a>mirro -Rnc
+<a name="rest_code_22d4c87c2bc2416da3cd99f58a77301e-6"></a>exit
 </pre>
 </div>
 <div class="section" id="execute-backup-lftp">
 <h2>execute backup.lftp</h2>
-<pre class="code text"><a name="rest_code_08c3f717f6f449a7bf42e307c0484932-1"></a>$ lftp -f backup.lftp
+<pre class="code text"><a name="rest_code_6443d3720bd1437683c45d73b411318d-1"></a>$ lftp -f backup.lftp
 </pre>
 </div>
 <div class="section" id="reference">
 <h2>reference:</h2>
-<pre class="code text"><a name="rest_code_11c6e354663f4d019b1bd32914c289c1-1"></a>mirror [OPTS] [source [target]]
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-2"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-3"></a>       Mirror specified source directory to local target directory. If  the  target  directory  ends
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-4"></a>       with  a  slash  (except the root), the source base name is appended to target directory name.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-5"></a>       Source and/or target can be URLs pointing to directories.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-6"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-7"></a>            -c,      --continue                continue a mirror job if possible
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-8"></a>            -e,      --delete                  delete files not present at remote site
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-9"></a>                     --delete-first            delete old files before transferring new ones
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-10"></a>                     --depth-first             descend into subdirectories before transferring files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-11"></a>            -s,      --allow-suid              set suid/sgid bits according to remote site
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-12"></a>                     --allow-chown             try to set owner and group on files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-13"></a>                     --ascii                   use ascii mode transfers (implies --ignore-size)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-14"></a>                     --ignore-time             ignore time when deciding whether to download
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-15"></a>                     --ignore-size             ignore size when deciding whether to download
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-16"></a>                     --only-missing            download only missing files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-17"></a>                     --only-existing           download only files already existing at target
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-18"></a>            -n,      --only-newer              download only newer files (-c won't work)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-19"></a>                     --no-empty-dirs           don't    create    empty     directories     (implies
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-20"></a>                                               --depth-first)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-21"></a>            -r,      --no-recursion            don't go to subdirectories
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-22"></a>                     --no-symlinks             don't create symbolic links
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-23"></a>            -p,      --no-perms                don't set file permissions
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-24"></a>                     --no-umask                don't apply umask to file modes
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-25"></a>            -R,      --reverse                 reverse mirror (put files)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-26"></a>            -L,      --dereference             download symbolic links as files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-27"></a>            -N,      --newer-than=SPEC         download only files newer than specified time
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-28"></a>                     --older-than=SPEC         download only files older than specified time
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-29"></a>                     --size-range=RANGE        download only files with size in specified range
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-30"></a>            -P,      --parallel[=N]            download N files in parallel
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-31"></a>                     --use-pget[-n=N]          use pget to transfer every single file
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-32"></a>                     --on-change=CMD           execute the command if anything has been changed
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-33"></a>                     --loop                    repeat mirror until no changes found
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-34"></a>            -i RX,   --include=RX              include matching files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-35"></a>            -x RX,   --exclude=RX              exclude matching files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-36"></a>            -I GP,   --include-glob=GP         include matching files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-37"></a>            -X GP,   --exclude-glob=GP         exclude matching files
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-38"></a>            -f FILE, --file=FILE               mirror   a   single   file  or  globbed  group  (e.g.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-39"></a>                                               /path/to/*.txt)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-40"></a>            -O DIR,  --target-directory=DIR    target base path or URL
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-41"></a>            -v,      --verbose[=level]         verbose operation
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-42"></a>                     --log=FILE                write lftp commands being executed to FILE
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-43"></a>                     --script=FILE             write lftp commands to FILE, but don't execute them
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-44"></a>                     --just-print, --dry-run   same as --script=-
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-45"></a>                     --use-cache               use cached directory listings
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-46"></a>                     --Remove-source-files     remove files after transfer (use with caution)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-47"></a>            -a                                 same as --allow-chown --allow-suid --no-umask
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-48"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-49"></a>       When using -R, the source directory is local and the target is remote.  If the target  direc‐
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-50"></a>       tory is omitted, base name of the source directory is used.  If both directories are omitted,
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-51"></a>       current local and remote directories are used.  If the target directory  ends  with  a  slash
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-52"></a>       (except the root directory) then base name of the source directory is appended.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-53"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-54"></a>       RX is an extended regular expression, just like in egrep(1).
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-55"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-56"></a>       GP is a glob pattern, e.g. `*.zip'.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-57"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-58"></a>       Include  and  exclude options can be specified multiple times. It means that a file or direc‐
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-59"></a>       tory would be mirrored if it matches an include and does not  match  to  excludes  after  the
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-60"></a>       include,  or  does not match anything and the first check is exclude. Directories are matched
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-61"></a>       with a slash appended.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-62"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-63"></a>       Note that symbolic links are not created when uploading to remote server, because ftp  proto‐
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-64"></a>       col  cannot  do  it. To upload files the links refer to, use `mirror -RL' command (treat sym‐
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-65"></a>       bolic links as files).
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-66"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-67"></a>       For options --newer-than and --older-than you can either specify a file or time specification
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-68"></a>       like that used by at(1) command, e.g.  `now-7days' or `week ago'. If you specify a file, then
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-69"></a>       modification time of that file will be used.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-70"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-71"></a>       Verbosity level can be selected using --verbose=level option or by several -v  options,  e.g.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-72"></a>       -vvv. Levels are:
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-73"></a>            0 - no output (default)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-74"></a>            1 - print actions
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-75"></a>            2 - +print not deleted file names (when -e is not specified)
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-76"></a>            3 - +print directory names which are mirrored
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-77"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-78"></a>       --only-newer  turns  off  file size comparison and uploads/downloads only newer files even if
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-79"></a>       size is different. By default older files are transferred and replace newer ones.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-80"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-81"></a>       You can mirror between two servers if you specify URLs instead of directories.  FXP  is  used
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-82"></a>       automatically for transfers between ftp servers, if possible.
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-83"></a>
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-84"></a>       Some  ftp  servers  hide  dot-files by default (e.g. .htaccess), and show them only when LIST
-<a name="rest_code_11c6e354663f4d019b1bd32914c289c1-85"></a>       command is used with -a option. In such case try to use `set ftp:list-options -a'.
+<pre class="code text"><a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-1"></a>mirror [OPTS] [source [target]]
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-2"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-3"></a>       Mirror specified source directory to local target directory. If  the  target  directory  ends
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-4"></a>       with  a  slash  (except the root), the source base name is appended to target directory name.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-5"></a>       Source and/or target can be URLs pointing to directories.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-6"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-7"></a>            -c,      --continue                continue a mirror job if possible
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-8"></a>            -e,      --delete                  delete files not present at remote site
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-9"></a>                     --delete-first            delete old files before transferring new ones
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-10"></a>                     --depth-first             descend into subdirectories before transferring files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-11"></a>            -s,      --allow-suid              set suid/sgid bits according to remote site
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-12"></a>                     --allow-chown             try to set owner and group on files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-13"></a>                     --ascii                   use ascii mode transfers (implies --ignore-size)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-14"></a>                     --ignore-time             ignore time when deciding whether to download
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-15"></a>                     --ignore-size             ignore size when deciding whether to download
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-16"></a>                     --only-missing            download only missing files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-17"></a>                     --only-existing           download only files already existing at target
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-18"></a>            -n,      --only-newer              download only newer files (-c won't work)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-19"></a>                     --no-empty-dirs           don't    create    empty     directories     (implies
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-20"></a>                                               --depth-first)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-21"></a>            -r,      --no-recursion            don't go to subdirectories
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-22"></a>                     --no-symlinks             don't create symbolic links
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-23"></a>            -p,      --no-perms                don't set file permissions
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-24"></a>                     --no-umask                don't apply umask to file modes
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-25"></a>            -R,      --reverse                 reverse mirror (put files)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-26"></a>            -L,      --dereference             download symbolic links as files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-27"></a>            -N,      --newer-than=SPEC         download only files newer than specified time
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-28"></a>                     --older-than=SPEC         download only files older than specified time
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-29"></a>                     --size-range=RANGE        download only files with size in specified range
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-30"></a>            -P,      --parallel[=N]            download N files in parallel
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-31"></a>                     --use-pget[-n=N]          use pget to transfer every single file
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-32"></a>                     --on-change=CMD           execute the command if anything has been changed
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-33"></a>                     --loop                    repeat mirror until no changes found
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-34"></a>            -i RX,   --include=RX              include matching files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-35"></a>            -x RX,   --exclude=RX              exclude matching files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-36"></a>            -I GP,   --include-glob=GP         include matching files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-37"></a>            -X GP,   --exclude-glob=GP         exclude matching files
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-38"></a>            -f FILE, --file=FILE               mirror   a   single   file  or  globbed  group  (e.g.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-39"></a>                                               /path/to/*.txt)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-40"></a>            -O DIR,  --target-directory=DIR    target base path or URL
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-41"></a>            -v,      --verbose[=level]         verbose operation
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-42"></a>                     --log=FILE                write lftp commands being executed to FILE
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-43"></a>                     --script=FILE             write lftp commands to FILE, but don't execute them
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-44"></a>                     --just-print, --dry-run   same as --script=-
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-45"></a>                     --use-cache               use cached directory listings
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-46"></a>                     --Remove-source-files     remove files after transfer (use with caution)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-47"></a>            -a                                 same as --allow-chown --allow-suid --no-umask
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-48"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-49"></a>       When using -R, the source directory is local and the target is remote.  If the target  direc‐
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-50"></a>       tory is omitted, base name of the source directory is used.  If both directories are omitted,
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-51"></a>       current local and remote directories are used.  If the target directory  ends  with  a  slash
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-52"></a>       (except the root directory) then base name of the source directory is appended.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-53"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-54"></a>       RX is an extended regular expression, just like in egrep(1).
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-55"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-56"></a>       GP is a glob pattern, e.g. `*.zip'.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-57"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-58"></a>       Include  and  exclude options can be specified multiple times. It means that a file or direc‐
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-59"></a>       tory would be mirrored if it matches an include and does not  match  to  excludes  after  the
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-60"></a>       include,  or  does not match anything and the first check is exclude. Directories are matched
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-61"></a>       with a slash appended.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-62"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-63"></a>       Note that symbolic links are not created when uploading to remote server, because ftp  proto‐
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-64"></a>       col  cannot  do  it. To upload files the links refer to, use `mirror -RL' command (treat sym‐
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-65"></a>       bolic links as files).
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-66"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-67"></a>       For options --newer-than and --older-than you can either specify a file or time specification
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-68"></a>       like that used by at(1) command, e.g.  `now-7days' or `week ago'. If you specify a file, then
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-69"></a>       modification time of that file will be used.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-70"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-71"></a>       Verbosity level can be selected using --verbose=level option or by several -v  options,  e.g.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-72"></a>       -vvv. Levels are:
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-73"></a>            0 - no output (default)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-74"></a>            1 - print actions
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-75"></a>            2 - +print not deleted file names (when -e is not specified)
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-76"></a>            3 - +print directory names which are mirrored
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-77"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-78"></a>       --only-newer  turns  off  file size comparison and uploads/downloads only newer files even if
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-79"></a>       size is different. By default older files are transferred and replace newer ones.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-80"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-81"></a>       You can mirror between two servers if you specify URLs instead of directories.  FXP  is  used
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-82"></a>       automatically for transfers between ftp servers, if possible.
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-83"></a>
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-84"></a>       Some  ftp  servers  hide  dot-files by default (e.g. .htaccess), and show them only when LIST
+<a name="rest_code_a0fb2bc4aa424b8bb9a032926a2a9cfb-85"></a>       command is used with -a option. In such case try to use `set ftp:list-options -a'.
 </pre>
 </div>
 </div>
@@ -701,15 +701,15 @@ nano ~/.config/systemd/user/mpd.service
 <p>To disable blank screen after 10 minutes of inactivity,
 create a file in /etc/X11/xorg.conf.d called custom.conf with this code:</p>
 <p>快建立這個檔案試試。</p>
-<pre class="code text"><a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-2"></a>
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-3"></a>Section "ServerFlags"
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-4"></a>    # disable low-level screensaver and screen DPMS poweroff
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-5"></a>    Option "BlankTime"  "0"
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-6"></a>    Option "StandbyTime" "0"
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-7"></a>    Option "SuspendTime" "0"
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-8"></a>    Option "OffTime"  "0"
-<a name="rest_code_5397e6483bc14cd7ae9ce78d86dbab29-9"></a>EndSection
+<pre class="code text"><a name="rest_code_8db94d0874e241baae2101bce8e247c9-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-2"></a>
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-3"></a>Section "ServerFlags"
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-4"></a>    # disable low-level screensaver and screen DPMS poweroff
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-5"></a>    Option "BlankTime"  "0"
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-6"></a>    Option "StandbyTime" "0"
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-7"></a>    Option "SuspendTime" "0"
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-8"></a>    Option "OffTime"  "0"
+<a name="rest_code_8db94d0874e241baae2101bce8e247c9-9"></a>EndSection
 </pre>
 <p>趕快記下來，試試看。</p>
 </div>
