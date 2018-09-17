@@ -2,7 +2,7 @@
 .. title: Install ghcjs for ghc 8.4.3 on archlinux
 .. slug: install-ghcjs-archlinux
 .. date: 2018-09-04 08:22:35 UTC+08:00
-.. status: draft
+.. status:
 .. tags: linux, haskell, ghcjs
 .. category: computer
 .. link:
@@ -17,13 +17,13 @@ ghc --version
 The Glorious Glasgow Haskell Compilation System, version 8.4.3
 #+END_SRC
 
-* Install steps
+* Install
 
 參考 [[https://github.com/ghcjs/ghcjs/tree/ghc-8.4][GitHub - ghcjs/ghcjs at ghc-8.4]]
 
 ** getting and preparing the source tree
 
-add step ~git checkout ghc-8.4~
+add this step: ~git checkout ghc-8.4~
 
 #+BEGIN_SRC sh
 git clone https://github.com/ghcjs/ghcjs.git
@@ -37,16 +37,22 @@ git submodule update --init --recursive
 
 You can use ~cabal-install~ *and* ~stack~ to set up a build environment that contains these packages.
 
-*** Cabal new-build
+*** install cabal
+because GHCJS need cabal, so install it.
 
 #+BEGIN_SRC sh
 stack install cabal-install
 cabal update
+#+END_SRC
+
+*** Cabal new-build (x)
+
+#+BEGIN_SRC sh
 cabal new-configure
 cabal new-build
 #+END_SRC
 
-*** link to executables
+*** link to executables (x) <<link-to-executables>>
 
 *DON'T DO THIS, IT IS NOT NECESSARY*
 
@@ -67,11 +73,6 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 #+END_SRC
 
 *** stack
-**** DON'T DO THIS
-
-#+BEGIN_SRC sh
-stack build
-#+END_SRC
 
 **** DO THIS
 
@@ -79,17 +80,25 @@ stack build
 stack install
 #+END_SRC
 
-*** install haddock
+**** DON'T DO THIS (x)
 
-*error message: Haddock's resource directory does not exist!*
+#+BEGIN_SRC sh
+stack build
+#+END_SRC
 
-this step is useless for above error message.
+*** install haddock (x)
+
+when run ghcjs-boot, it will display following error message:
+
+~Haddock's resource directory does not exist!~
+
+I have no idea to solve this problem after execute following
+statements. My decision is ignoring above error message and don't execute
+section [[link-to-executables]["link to executables"]]. Re-install GHCJS again.
 
 #+BEGIN_SRC sh
 cabal install haddock
-#+END_SRC
 
-#+BEGIN_SRC sh
 stack haddock
 #+END_SRC
 

@@ -1,0 +1,58 @@
+#+BEGIN_COMMENT
+.. title: Install stack, cabal and nix for writing miso project
+.. slug: install-stack-cabal-nix-for-miso
+.. date: 2018-09-14 12:07:35 UTC+08:00
+.. status: draft
+.. tags: linux, haskell, miso, stack, cabal, nix
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+在 [[../install-haskell-applications/][Install Haskell Applications]] 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
+我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
+在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
+
+* install nix
+
+因為 miso 建議用 nix 管理 project，還是參考 [[https://nixos.org/nix/manual/][Nix manual]] 試著把它裝起來。
+
+#+BEGIN_SRC sh
+curl https://nixos.org/nix/install | sh
+#+END_SRC
+
+安裝成功後，會有以下的訊息：
+#+BEGIN_EXAMPLE
+Installation finished!  To ensure that the necessary environment
+variables are set, either log in again, or type
+
+  . /home/mario/.nix-profile/etc/profile.d/nix.sh
+#+END_EXAMPLE
+
+在 ~.profile~ 中，加上
+#+BEGIN_SRC sh
+[[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh
+#+END_SRC
+以後開機就可以使用 nix 的指令了。
+
+* install stack, cabal, xmonad/taffybar, pandoc
+
+還是可以用 [[../install-haskell-applications/][Install Haskell Applications]] 的方法，而 cabal 可不安裝，用 stack 即可。BUT...
+
+* install GHCJS
+
+因為要先安裝 GHCJS 後，才能用 miso 寫程式。所以這步驟是必要的。
+
+在 [[../install-ghcjs-archlinux/][Install ghcjs for ghc 8.4.3 on archlinux]], 我會記錄了以 stack 安裝
+GHCJS，在過程中一定會安裝全域 cabal, 這會是個麻煩事。因為用 stack 管理
+miso 專案，則不能用全域 cabal，必須把全域 cabal 刪除。真困擾。
+
+雖然可以用 nix 管理專案，只是功能強，意味著學習曲線比較陡吧。算了，還
+是乖乖學 nix。
+
+* conclusion
+Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。+也許先用 servant
+做 server 才是對的+。

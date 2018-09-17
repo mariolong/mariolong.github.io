@@ -1,0 +1,41 @@
+#+BEGIN_COMMENT
+.. title: 大新倉頡輸入法
+.. slug: da-xin-new-cj
+.. date: 2018-09-06 15:55:10 UTC+08:00
+.. status: draft
+.. tags: 倉頡
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: num:nil toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+
+用了 2 年的「龍倉」，總覺得打五碼，真的不習慣，還是打四碼比較快。今天
+決定換「大新」，碼表在[[http://hyperrate.com/thread.php?tid=343][此下載]]。經過一個下午的努力，終於完工。試用了一會
+兒，真的很後悔，應該早一點用「大新」：真是快，一下就上手，幾乎沒有困難，
+有倉頡的底子，學「大新」真是容易，又順心。
+
+* 記錄與倉頡不同的地方：
+先讀[[http://www.eztyping.com.tw/learn_cj_upd.htm][倉頡、速成使用者瞬間昇級表]]，再看下列一些特別的：
+- 字根多了「言(z)、彳(u)、禾(;)、食(;)、穴(jj)」，不難記。
+- 拆碼變成了 4 碼，也比較單純：
+  + 整體【頭尾、頭尾】，例(omn)、含(oir)
+  + 連體字（取１、２、尾碼），如：連(yjj)，應(igp)
+  + 拆碼要訣：拆碼有困惑時，頭、尾劃圈（○），輕鬆取碼。如：映(alk)
+- 一碼多字，加; ，倉(oir;)
+- 字根加; ，竹(h;)、日(a;)
+- 一字碼可以先記，不難：
+  + 國(w)民(p)與(x)大(k)會(z)不(f)可(r)以(v)有(b)不(f)法(e)的(h)行(u)為(i)
+  + 這(y)對(t)成(s)年(q)人(o)在(g)家(j)業(c)中(l)是(a)大(k)來(d)發(n)的(d)一(m)年(q)
+- 常用符號：http://www.eztyping.com.tw/learn_smileys.htm
+  + 兩下分號;; ：○◎※§☆★
+  + 一次括號 「」
+  + 兩次括號 『』
+  + 標點直接打，如：，。／、；
+- 麻(idd)、麼(idvi)的字根，一律用 id..，不再有 ic...
+- 簡碼字根，有些字的字根，可能有簡單或快速的打法。
+  + 石(m)：碼(msf)、硃(mhd)
+  + 穴(jj)：空(jjm)

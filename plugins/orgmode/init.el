@@ -15,15 +15,8 @@
 ;;; Add any custom configuration that you would like to 'conf.el'.
 (setq nikola-use-pygments t
       org-export-with-toc nil
-	  org-export-with-section-numbers t
-	  org-html-postamble nil
-	  ;; org-src-preserve-indentation nil
+      org-export-with-section-numbers nil
       org-startup-folded 'showeverything)
-
-;; Inhibit the "Indentation variables are now local." message.
-(require 'sh-script)
-(setq sh-make-vars-local nil)
-(sh-reset-indent-vars-to-global-values)
 
 ;; Load additional configuration from conf.el
 (let ((conf (expand-file-name "conf.el" (file-name-directory load-file-name))))
@@ -66,7 +59,6 @@
     ("awk" . "awk")
     ("c" . "c")
     ("c++" . "cpp")
-	("conf" . "ini")
     ("cpp" . "cpp")
     ("clojure" . "clojure")
     ("css" . "css")
@@ -76,7 +68,6 @@
     ("gnuplot" . "gnuplot")
     ("groovy" . "groovy")
     ("haskell" . "haskell")
-	("ini" . "ini")
     ("java" . "java")
     ("js" . "js")
     ("julia" . "julia")
@@ -84,11 +75,9 @@
     ("lisp" . "lisp")
     ("makefile" . "makefile")
     ("matlab" . "matlab")
-	("mysql" . "mysql")
-	("mscgen" . "mscgen")
+    ("mscgen" . "mscgen")
     ("ocaml" . "ocaml")
     ("octave" . "octave")
-	("pacmanconf" . "pacmanconf")
     ("perl" . "perl")
     ("picolisp" . "scheme")
     ("python" . "python")
@@ -97,7 +86,6 @@
     ("sass" . "sass")
     ("scala" . "scala")
     ("scheme" . "scheme")
-	("systemd" . "sv")
     ("sh" . "sh")
 	("shell" . "sh")
     ("sql" . "sql")
@@ -136,9 +124,8 @@ specified location."
   (with-current-buffer (find-file infile)
     (org-macro-replace-all nikola-macro-templates)
     (org-html-export-as-html nil nil t t)
-	(write-file outfile nil)))
+    (write-file outfile nil)))
 
-;; https://coldnew.github.io/a1ed40e3/
 (defadvice org-html-paragraph (before org-html-paragraph-advice
                                       (paragraph contents info) activate)
   "Join consecutive Chinese lines into a single long line without
@@ -151,13 +138,15 @@ unwanted space when exporting org-mode to html."
             "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" origin-contents)))
 	(ad-set-arg 1 fixed-contents)))
 
-(setq org-html-text-markup-alist '((bold . "<b>%s</b>")
-								   (code . "<code>%s</code>")
-								   (italic . "<i>%s</i>")
-								   (strike-through . "<del>%s</del>")
-								   (underline . "<span class=\"underline\">%s</span>")
-								   (verbatim . "<kbd>%s</kbd>")))
+(eval-after-load 'ox-html
+  '(setq org-html-text-markup-alist
+         '((bold . "<b>%s</b>")
+           (code . "<code>%s</code>")
+           (italic . "<i>%s</i>")
+           (strike-through . "<del>%s</del>")
+           (underline . "<span class=\"underline\">%s</span>")
+           (verbatim . "<kbd>%s</kbd>"))))
 
-(setcar org-emphasis-regexp-components (concat " \t('\"{[:multibyte:]"))
-(setcar (nthcdr 1 org-emphasis-regexp-components) (concat "[:multibyte:]- \t.,:!?;'\")}\\"))
+(setcar org-emphasis-regexp-components "- \t('\"{[:multibyte:]")
+(setcar (nthcdr 1 org-emphasis-regexp-components) "[:multibyte:]- \t.,:!?;'\")}\\[")
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)

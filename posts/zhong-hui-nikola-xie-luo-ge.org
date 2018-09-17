@@ -12,7 +12,7 @@
 #+OPTIONS: toc:3 num:t ^:{}
 
 掙扎了許久，還是先用 [[https://getnikola.com/][nikola]] 記錄一些事，畢竟比較熟悉，能快一點上手。
- {{{TEASER_END}}}
+{{{TEASER_END}}}
 * 安裝
 #+BEGIN_SRC sh
 sudo pip install nikola webassets ghp_import
@@ -34,7 +34,8 @@ cd <blog-name>
 
 ** theme
 #+BEGIN_SRC sh
-nikola theme install bootstrap
+nikola theme -l
+nikola theme install <theme-name>
 #+END_SRC
 
 ** 用 ~nikola github_deploy~ 快速發佈文章

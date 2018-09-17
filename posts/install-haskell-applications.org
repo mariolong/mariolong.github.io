@@ -2,18 +2,20 @@
 .. title: Install Haskell Applications
 .. slug: install-haskell-applications
 .. date: 2018-04-28 19:16:44 UTC+08:00
+.. status: draft
 .. tags: haskell, xmonad, pandoc
 .. category: computer
 .. link:
 .. description:
 .. type: text
-.. options: toc:nil ^:{}
 #+END_COMMENT
+#+OPTIONS: num:nil toc:nil ^:{}
+#+LANGUAGE: zh-TW
 
 * 前言
 
 在 archlinux 上想用 haskell 真不是一件容易的事，因為可用的方法太多，不好選擇。
-{{{TEASER_END}}}
+
 不管如何，終於把 haskell 的開發環境設好，也順利完成了第一支小程式，可
 以抓網頁上目前最新的電影表列，並以 gmail 通知。
 
@@ -37,7 +39,7 @@ archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版
 但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
 [[pandoc-source][(update 2018/9/11: install from source maybe a good choice.)]]
 
-如果要用 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安
+如果要用 GHCJS 和 nix/Miso，又不能安裝全域的 cabal-install，只好又回到 stack 安
 裝 pandoc，排列組合還真多樣化。這個問題以後再說，暫時不用 nix/Miso.
 
 最後決定的方法是：
@@ -159,7 +161,6 @@ cabal install taffybar-0.4.6
 cabal install pandoc
 #+END_SRC
 
-
 ** uninstall application that install by stack
 
 example for uninstalling hoogle
@@ -196,7 +197,6 @@ rm path/to/hoogle
 #+END_SRC
 
 * Issues
-
 ** system tray 中 dropbox 的字型太小
 dropbox 是 QT application，taffybar 是 gtk application，所以要調整一下，我用的法子是加上環境變數：
 

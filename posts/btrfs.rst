@@ -2,7 +2,7 @@
 .. link:
 .. title: btrfs 使用筆記
 .. tags: btrfs, linux
-.. categroy: computer
+.. category: computer
 .. description:
 .. date: 2013/04/28 12:43:24
 

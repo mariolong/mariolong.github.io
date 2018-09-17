@@ -2,7 +2,7 @@
 .. title: Turn on SMART to monitor HD
 .. slug: turn-on-smart
 .. date: 2018-07-11 21:40:06 UTC+08:00
-.. status: draft
+.. status:
 .. tags: smart, linux
 .. category: computer
 .. link:

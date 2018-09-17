@@ -2,7 +2,7 @@
 .. title: 我所知道的鄭曼青先生
 .. slug: zheng-manqing-as-i-know
 .. date: 2018-09-10 15:01:51 UTC+08:00
-.. status: draft
+.. status:
 .. tags: tai-ji
 .. category: life
 .. link:
