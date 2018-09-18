@@ -38,7 +38,6 @@ windows 做不到這一點，總是安裝了一堆不想用的東西，刪又刪
 - VGA :: Radeon HD 7730/8730
 
 * 常用工具
-
 ** 外觀
 
 *** xmonad & taffybar
