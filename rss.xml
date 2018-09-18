@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>simple life, computer and investment</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 06:59:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>simple life, computer and investment</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 07:18:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 在 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
 我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
 在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
@@ -244,9 +244,9 @@ or/and
 用了 2 年的「龍倉」，總覺得打五碼，真的不習慣，還是打四碼比較快。今天決定換「大新」，碼表在&lt;a href="http://hyperrate.com/thread.php?tid=343"&gt;此下載&lt;/a&gt;。經過一個下午的努力，終於完工。試用了一會兒，真的很後悔，應該早一點用「大新」：真是快，一下就上手，幾乎沒有困難，有倉頡的底子，學「大新」真是容易，又順心。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orge9bafb2" class="outline-2"&gt;
-&lt;h2 id="orge9bafb2"&gt;記錄與倉頡不同的地方：&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge9bafb2"&gt;
+&lt;div id="outline-container-org79bddae" class="outline-2"&gt;
+&lt;h2 id="org79bddae"&gt;記錄與倉頡不同的地方：&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org79bddae"&gt;
 &lt;p&gt;
 先讀&lt;a href="http://www.eztyping.com.tw/learn_cj_upd.htm"&gt;倉頡、速成使用者瞬間昇級表&lt;/a&gt;，再看下列一些特別的：
 &lt;/p&gt;
@@ -258,8 +258,8 @@ or/and
 &lt;li&gt;連體字（取１、２、尾碼），如：連(yjj)，應(igp)&lt;/li&gt;
 &lt;li&gt;拆碼要訣：拆碼有困惑時，頭、尾劃圈（○），輕鬆取碼。如：映(alk)&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;一碼多字，加; ，倉(oir;)&lt;/li&gt;
-&lt;li&gt;字根加; ，竹(h;)、日(a;)&lt;/li&gt;
+&lt;li&gt;一碼多字，加 ;：倉(oir;)&lt;/li&gt;
+&lt;li&gt;字根加 ;：竹(h;)、日(a;)&lt;/li&gt;
 &lt;li&gt;一字碼可以先記，不難：
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;國(w)民(p)與(x)大(k)會(z)不(f)可(r)以(v)有(b)不(f)法(e)的(h)行(u)為(i)&lt;/li&gt;
