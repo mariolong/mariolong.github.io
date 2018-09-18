@@ -1490,9 +1490,9 @@ h4,h5,h6 {
   padding-bottom: 0.25em;
 }
 
-.metadata {
-  font-size:0.95em;
-  margin-bottom:1em;
+article .metadata {
+  font-size: 0.9em;
+  margin-bottom: 0.25em;
 }
 
 pre.literal-block,
@@ -1512,7 +1512,8 @@ article.h-entry {
 }
 
 .postindex h1 {
-  margin-top: 2rem;
+  margin-top: 2em;
+  margin-bottom: 0.25em;
 }
 
 .postlist .listdate::before {
@@ -1521,7 +1522,7 @@ article.h-entry {
 
 .postlist .listdate::after {
   content: "";
- }
+}
 
 #table-of-contents h2 {
   padding-left: 0.6em;

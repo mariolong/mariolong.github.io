@@ -78,24 +78,25 @@
         
     <div class="postindex">
             <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/an-zhuang-nginx/" class="u-url">在 Archlinux 安裝 nginx</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/an-zhuang-nginx/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-02-07T11:13:56+08:00" itemprop="datePublished" title="2014-02-07 11:13">2014-02-07 11:13</time></a>
-            </p>
-                        <p class="commentline">
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/an-zhuang-nginx/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-02-07T11:13:56+08:00" itemprop="datePublished" title="2014-02-07 11:13">2014-02-07 11:13</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/an-zhuang-nginx/#disqus_thread" data-disqus-identifier="cache/posts/an-zhuang-nginx.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				用 nikola 寫了些 blog，裝上 nginx 只是為了能在 localhost 看看這些文章。
+
+				</header><div class="p-summary entry-summary">
+					
+					用 nikola 寫了些 blog，裝上 nginx 只是為了能在 localhost 看看這些文章。
 很大材小用吧。
 
 安裝
@@ -105,512 +106,129 @@ yaourt -S nginx
 配置
 sudo nano /etc/nginx/nginx.conf
 預設的 nginx.c
-				<a href="posts/an-zhuang-nginx/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p>用 nikola 寫了些 blog，裝上 nginx 只是為了能在 localhost 看看這些文章。
-很大材小用吧。</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<pre class="code text"><a name="rest_code_3008b3a0bc724661be356d665763f412-1"></a>yaourt -S nginx
-</pre></div>
-<div class="section" id="id2">
-<h2>配置</h2>
-<pre class="code text"><a name="rest_code_2b2227e55cd24bbd96f705a6bd11b866-1"></a>sudo nano /etc/nginx/nginx.conf
-</pre><p>預設的 nginx.conf 的結構很單純。<tt class="docutils literal">$ grep <span class="pre">-v</span> '#' /etc/nginx/nginx.conf</tt></p>
-<pre class="code text"><a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-1"></a>worker_processes  1;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-2"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-3"></a>events {
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-4"></a>    worker_connections  1024;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-5"></a>}
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-6"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-7"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-8"></a>http {
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-9"></a>    include       mime.types;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-10"></a>    default_type  application/octet-stream;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-11"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-12"></a>    sendfile        on;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-13"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-14"></a>    keepalive_timeout  65;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-15"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-16"></a>    server {
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-17"></a>        listen       80;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-18"></a>        server_name  localhost;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-19"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-20"></a>        location / {
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-21"></a>            root   /usr/share/nginx/html;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-22"></a>            index  index.html index.htm;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-23"></a>        }
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-24"></a>
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-25"></a>        error_page   500 502 503 504  /50x.html;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-26"></a>        location = /50x.html {
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-27"></a>            root   /usr/share/nginx/html;
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-28"></a>        }
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-29"></a>    }
-<a name="rest_code_ac4820fa4d2a47f080645b9e407f7ea9-30"></a>}
-</pre><p>以下是我的設定</p>
-<pre class="code text"><a name="rest_code_a0d12f82629a4387b900144fc77f408e-1"></a>worker_processes  1;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-2"></a>
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-3"></a>events {
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-4"></a>    worker_connections  1024;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-5"></a>}
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-6"></a>
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-7"></a>http {
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-8"></a>    include       mime.types;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-9"></a>    default_type  application/octet-stream;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-10"></a>
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-11"></a>    sendfile        on;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-12"></a>    keepalive_timeout  65;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-13"></a>
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-14"></a>    server {
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-15"></a>        listen       8000;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-16"></a>        server_name  localhost;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-17"></a>        location / {
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-18"></a>            root   /home/mariolong/Programing/wen-de-www/www/output;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-19"></a>            index  index.html index.htm;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-20"></a>        }
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-21"></a>        error_page   500 502 503 504  /50x.html;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-22"></a>        location = /50x.html {
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-23"></a>            root   /usr/share/nginx/html;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-24"></a>        }
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-25"></a>    }
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-26"></a>
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-27"></a>    server {
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-28"></a>        listen       8088;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-29"></a>        server_name  localhost;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-30"></a>
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-31"></a>        location / {
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-32"></a>            root /home/mariolong/Documents/myBlog/output;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-33"></a>            index  index.html index.htm;
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-34"></a>        }
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-35"></a>    }
-<a name="rest_code_a0d12f82629a4387b900144fc77f408e-36"></a>}
-</pre><p>如此配置好，文章寫好後，只要 <tt class="docutils literal">nikola build</tt> 即可，不必再 <tt class="docutils literal">nikola serve</tt>。</p>
-<p>回到 browser 中，直接訪問文章就好，方便多了。</p>
-</div>
-<div class="section" id="id3">
-<h2>啟動</h2>
-<p>以下分別為啟動、重啟、停止、開機啟動</p>
-<pre class="code text"><a name="rest_code_e53fa96435304a3d803ddab4c0d4a482-1"></a>sudo systemctl start nginx
-<a name="rest_code_e53fa96435304a3d803ddab4c0d4a482-2"></a>sudo systemctl restart nginx
-<a name="rest_code_e53fa96435304a3d803ddab4c0d4a482-3"></a>sudo systemctl stop nginx
-<a name="rest_code_e53fa96435304a3d803ddab4c0d4a482-4"></a>sudo systemctl enable nginx
-</pre></div>
-<div class="section" id="id4">
-<h2>結論</h2>
-<p>在 archlinux 中用 nginx 真是容易。
-當然，這個只是我玩玩而已，可不能當成生產環境。</p>
-<p>下一個要處理的是 bottle 和 nginx 合作的網頁程式。</p>
-</div></div>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/lightworks-on-archlinux/" class="u-url">lightworks on Archlinux</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/lightworks-on-archlinux/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-02-02T18:51:39+08:00" itemprop="datePublished" title="2014-02-02 18:51">2014-02-02 18:51</time></a>
-            </p>
-                        <p class="commentline">
+					<a href="posts/an-zhuang-nginx/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/lightworks-on-archlinux/" class="u-url">lightworks on Archlinux</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/lightworks-on-archlinux/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-02-02T18:51:39+08:00" itemprop="datePublished" title="2014-02-02 18:51">2014-02-02 18:51</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/lightworks-on-archlinux/#disqus_thread" data-disqus-identifier="cache/posts/lightworks-on-archlinux.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				lightworks 連結
+
+				</header><div class="p-summary entry-summary">
+					
+					lightworks 連結
 Description
 This is a Lightworks PKGBUILD for Arch linux.
 Howto:
 First Download lightworks-11.5-1-x86_64.pkg.tar.x
-				<a href="posts/lightworks-on-archlinux/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p><a class="reference external" href="http://sourceforge.net/projects/lwks-arch/">lightworks 連結</a></p>
-<p>Description
-This is a Lightworks PKGBUILD for Arch linux.</p>
-<p>Howto:</p>
-<p>First Download lightworks-11.5-1-x86_64.pkg.tar.xz</p>
-<p>Then open your Terminal and install it:
-$ sudo pacman -U lightworks-11.5-1-x86_64.pkg.tar.xz</p>
-<p>Register your User on <a class="reference external" href="http://www.lwks.com/">http://www.lwks.com/</a>
-and launch Lightworks.</p>
-<p>Tested on Antergos, Enjoy.</p></div>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/autologin-without-dm/" class="u-url">Autologin without DM</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/autologin-without-dm/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-12-17T19:56:42+08:00" itemprop="datePublished" title="2013-12-17 19:56">2013-12-17 19:56</time></a>
-            </p>
-                        <p class="commentline">
+					<a href="posts/lightworks-on-archlinux/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/autologin-without-dm/" class="u-url">Autologin without DM</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/autologin-without-dm/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-12-17T19:56:42+08:00" itemprop="datePublished" title="2013-12-17 19:56">2013-12-17 19:56</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/autologin-without-dm/#disqus_thread" data-disqus-identifier="cache/posts/autologin-without-dm.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				From here: https://bbs.archlinux.org/viewtopic.php?id=147913&amp;p=3
-and check the status on https://github.com/joukewitteveen/xlogi
-				<a href="posts/autologin-without-dm/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
 
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p>From here: <a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=147913&amp;p=3">https://bbs.archlinux.org/viewtopic.php?id=147913&amp;p=3</a></p>
-<p>and check the status on <a class="reference external" href="https://github.com/joukewitteveen/xlogin.git">https://github.com/joukewitteveen/xlogin.git</a></p>
-<p>Here are the installation steps, including for a systemd managed user dbus session instance.</p>
-<p>1. Install xlogin-git from the AUR.</p>
-<pre class="literal-block">
-yaourt -S xlogin-git
-</pre>
-<ol class="arabic simple" start="2">
-<li>Create the following two files. 準備 D-BUS。</li>
-</ol>
-<p><tt class="docutils literal">/etc/systemd/user/dbus.socket</tt> containing:</p>
-<pre class="code text"><a name="rest_code_23771c95360f48f7b3ce27172858c2e4-1"></a>[Unit]
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-2"></a>Description=D-Bus Message Bus Socket
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-3"></a>Before=sockets.target
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-4"></a>
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-5"></a>[Socket]
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-7"></a>
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-8"></a>[Install]
-<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-9"></a>WantedBy=default.target
-</pre><p><tt class="docutils literal">/etc/systemd/user/dbus.service</tt> containing:</p>
-<pre class="code text"><a name="rest_code_27bc470471a9412faf22813d8f37fa19-1"></a>[Unit]
-<a name="rest_code_27bc470471a9412faf22813d8f37fa19-2"></a>Description=D-Bus Message Bus
-<a name="rest_code_27bc470471a9412faf22813d8f37fa19-3"></a>Requires=dbus.socket
-<a name="rest_code_27bc470471a9412faf22813d8f37fa19-4"></a>
-<a name="rest_code_27bc470471a9412faf22813d8f37fa19-5"></a>[Service]
-<a name="rest_code_27bc470471a9412faf22813d8f37fa19-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
-<a name="rest_code_27bc470471a9412faf22813d8f37fa19-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
-</pre><ol class="arabic simple" start="3">
-<li>Run (as root) <tt class="docutils literal">systemctl <span class="pre">--global</span> enable dbus.socket</tt> .</li>
-<li>Set up your .xinitrc and make sure it has the following near the top.</li>
-</ol>
-<pre class="code text"><a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
-<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
-<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
-<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-4"></a>    done
-<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-5"></a>    unset f
-<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-6"></a>fi
-</pre><p>Running your <tt class="docutils literal">.xinitrc</tt> should not return,
-so either have wait as the last command in your <tt class="docutils literal">.xinitrc</tt>,
-or add <tt class="docutils literal">exec</tt> to the last command that will be called and which should not return
-(your window manager, for instance).</p>
-<ol class="arabic simple" start="5">
-<li>Include the following in your <tt class="docutils literal">.bashrc</tt> .</li>
-</ol>
-<pre class="code text"><a name="rest_code_ca2fee109dc34d4e8c0c1e9dde4cc4aa-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
-<a name="rest_code_ca2fee109dc34d4e8c0c1e9dde4cc4aa-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
-<a name="rest_code_ca2fee109dc34d4e8c0c1e9dde4cc4aa-3"></a>done
-</pre><p>6. Run (as root) <tt class="docutils literal">systemctl enable <span class="pre">xlogin@&lt;username&gt;</span></tt> for automatic login at boot,
-or <tt class="docutils literal">systemctl start <span class="pre">xlogin@&lt;username&gt;</span></tt> for launching a graphical user session (on tty7).</p>
-<p>The user session lives entirely inside a systemd scope and everything in the user session should work just fine.</p>
-<p>The above may look hard, but is not.</p>
-<p>P.S.
-The <tt class="docutils literal"><span class="pre">xorg-xinit</span></tt> package is not required for this method.</p></div>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/tiling-window-manager-xmonad-with-kde/" class="u-url">Tiling window manager - Xmonad with KDE</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/tiling-window-manager-xmonad-with-kde/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-12-02T09:10:51+08:00" itemprop="datePublished" title="2013-12-02 09:10">2013-12-02 09:10</time></a>
-            </p>
-                        <p class="commentline">
+				</header><div class="p-summary entry-summary">
+					
+					From here: https://bbs.archlinux.org/viewtopic.php?id=147913&amp;p=3
+and check the status on https://github.com/joukewitteveen/xlogi
+					<a href="posts/autologin-without-dm/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/tiling-window-manager-xmonad-with-kde/" class="u-url">Tiling window manager - Xmonad with KDE</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/tiling-window-manager-xmonad-with-kde/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-12-02T09:10:51+08:00" itemprop="datePublished" title="2013-12-02 09:10">2013-12-02 09:10</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/tiling-window-manager-xmonad-with-kde/#disqus_thread" data-disqus-identifier="cache/posts/tiling-window-manager-xmonad-with-kde.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				update: 2014-10-15, 2014-4-29
+
+				</header><div class="p-summary entry-summary">
+					
+					update: 2014-10-15, 2014-4-29
 為何沒事要來折騰這個玩意兒？實在是用過一下子的平鋪式視窗後，真的會著迷。
 不過可用的 TWM 其實也不多，會選 xmonad 是因為 haskell，沒寫過這種程式，
 就試看看吧，反正好玩好玩。
 
-				<a href="posts/tiling-window-manager-xmonad-with-kde/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p>update: 2014-10-15, 2014-4-29</p>
-<p>為何沒事要來折騰這個玩意兒？實在是用過一下子的平鋪式視窗後，真的會著迷。
-不過可用的 TWM 其實也不多，會選 xmonad 是因為 haskell，沒寫過這種程式，
-就試看看吧，反正好玩好玩。</p>
-<div class="section" id="installation">
-<h2>Installation</h2>
-<p>安裝的方法參看 <a class="reference external" href="/posts/haskell-programs/">安裝 haskell 程式</a></p>
-<p>安裝好了，先看看 <a class="reference external" href="http://xmonad.org/tour.html">官網上的教學</a> ，感覺
-一下這個視窗管理員。</p>
-<p>最重要的是進了桌面後，必須知道接下來要做的事，所以先看看有那些預設的熱
-鍵。等到系統用熟了，再來考慮強大的自訂功能。</p>
-</div>
-<div class="section" id="id2">
-<h2>熱鍵</h2>
-<div class="section" id="id3">
-<h3>預設熱鍵</h3>
-<p>先看預設的熱鍵，熟悉一下如何操作，想要改，等用熟了再說。man 一下就可以看到預設的熱鍵。</p>
-<pre class="literal-block">
-$ man xmonad
-</pre>
-<p>其中有一段是說熱鍵，表列如下：</p>
-<dl class="docutils">
-<dt>mod-shift-return</dt>
-<dd>呼叫終端機</dd>
-<dt>mod-p</dt>
-<dd>[.] 呼叫 dmenu（預設是 mod-p，改成 mod-d）</dd>
-<dt>mod-shift-p</dt>
-<dd>[x] Launch gmrun，不好用</dd>
-<dt>mod-shift-c</dt>
-<dd>關閉目前焦點視窗</dd>
-<dt>mod-space</dt>
-<dd>循環切換目前工作區的布局</dd>
-<dt>mod-shift-space</dt>
-<dd>將目前工作區回復成預設的布局</dd>
-<dt>mod-n</dt>
-<dd>[?] Resize viewed windows to the correct size</dd>
-<dt>mod-tab or mod-j</dt>
-<dd>將焦點移到下一個視窗</dd>
-<dt>mod-shift-tab or mod-k</dt>
-<dd>將焦點移到前一個視窗</dd>
-<dt>mod-m</dt>
-<dd>將焦點移到主視窗（只移動焦點）</dd>
-<dt>mod-return</dt>
-<dd>移動焦點視窗，放到主視窗的位置（是移動視窗）</dd>
-<dt>mod-shift-j</dt>
-<dd>移動焦點視窗，到下一個視窗的位置</dd>
-<dt>mod-shift-k</dt>
-<dd>移動焦點視窗，到上一個視窗的位置</dd>
-<dt>mod-h</dt>
-<dd>向左/上變動視窗邊界（縮小主視窗）</dd>
-<dt>mod-l</dt>
-<dd>向右/下變動視窗邊界（擴大主視窗）</dd>
-<dt>mod-comma</dt>
-<dd>增加主視窗區的視窗數</dd>
-<dt>mod-period</dt>
-<dd>減少主視窗區的視窗數</dd>
-<dt>mod-t</dt>
-<dd>將視窗變回平鋪式</dd>
-<dt>mod-[1..9]</dt>
-<dd>切換到第 N 個工作區</dd>
-<dt>mod-shift-[1..9]</dt>
-<dd>將目前視窗移動到第 N 個工作區</dd>
-<dt>mod-shift-q</dt>
-<dd>離開 xmonad</dd>
-<dt>mod-q</dt>
-<dd>重啟 xmonad</dd>
-<dt>mod-shift-slash</dt>
-<dd>Run xmessage with a summary of the default keybindings (useful for beginners)</dd>
-<dt>mod+left button</dt>
-<dd>floating window</dd>
-<dt>mod+right button</dt>
-<dd>resize floating window</dd>
-</dl>
-</div>
-<div class="section" id="id4">
-<h3>自行定義的熱鍵</h3>
-<dl class="docutils">
-<dt>mod-&lt;up&gt;</dt>
-<dd>上一個非空的工作區</dd>
-<dt>mod-&lt;down&gt;</dt>
-<dd>下一個非空的工作區</dd>
-</dl>
-<!-- mod-shift-x
-    主視窗區左右交換顯示
-
-mod-shift-y
-    主視窗上下交換顯示 -->
-</article>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>配置</h2>
-<p>主要的工作是寫 ~/.xmonad/xmonad.hs，網上有一點點的配置檔可用。還是要研
-究一下 haskell 的語法，比較好寫配置檔。</p>
-<div class="section" id="kde">
-<h3>和 KDE 共舞</h3>
-<ol class="arabic simple">
-<li>設定成只有 1 個桌面 open the KDE Control Center, select Desktop &gt;
-Multiple desktops, and set the number of desktops to 1.</li>
-</ol>
-<p>2. 在 ~/.bashrc 中加上</p>
-<pre class="literal-block">
-export KDEWM=/usr/bin/xmonad
-</pre>
-<ol class="arabic simple" start="3">
-<li>重開機，會進入以 xmonad 為 wm 的 KDE 環境。</li>
-</ol>
-<p>雖然會有一點不習慣，但整個系統的整合性是好的。</p>
-</div>
-<div class="section" id="id6">
-<h3>獨立的工作環境</h3>
-<p>在 ~/.xinitrc 中加上</p>
-<pre class="literal-block">
-exec xmonad
-</pre>
-<p>重開機即可執行 xmonad。因為它只是一個 wm，所以還是要找一些 trayer, dmenu 之類的程式一起，才能組成一個良好的工作環境。</p>
-</div>
-</div>
-<div class="section" id="xmonad-hs">
-<h2>寫 xmonad.hs</h2>
-<p><a class="reference external" href="http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Config-Desktop.html">http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Config-Desktop.html</a></p>
-<p>kde1 &lt;<a class="reference external" href="http://www.haskell.org/haskellwiki/Xmonad/Using_xmonad_in_KDE">http://www.haskell.org/haskellwiki/Xmonad/Using_xmonad_in_KDE</a>&gt;</p>
-<p>kde3 &lt;<a class="reference external" href="https://github.com/shl/xmonad.hs/blob/master/xmonad.hs-KDE">https://github.com/shl/xmonad.hs/blob/master/xmonad.hs-KDE</a>&gt;</p>
-<p><a class="reference external" href="http://xmonad.org/manpage.html">http://xmonad.org/manpage.html</a></p>
-<p>放在 ~/.xmonad</p>
-<pre class="literal-block">
-$ ln -sf kde3.hs xmonad.hs
-</pre>
-<div class="section" id="window-class-name">
-<h3>取得 window 的 class name</h3>
-<ol class="arabic simple">
-<li>terminal 執行 <tt class="docutils literal">xprop</tt>
-</li>
-<li>將十字游標移到要取得 class name 的視窗上，按下左鍵，即可得到 class name 和 title name</li>
-</ol>
-</div>
-</div>
-<div class="section" id="how-do-i-uninstall-xmonad">
-<h2>2.5 How do I uninstall xmonad?</h2>
-<p>If you have installed xmonad using your package manager, then just use it.
-The following applies if you have built xmonad from source code (either darcs or stable release).
-Let's assume you've installed xmonad to</p>
-<p>the $PREFIX (that is, gave --prefix=$PREFIX argument to Setup.lhs configure). If unsure, try your</p>
-<p>$HOME and /usr/local as $PREFIX.</p>
-<p>rm  -f $PREFIX/bin/xmonad
-rm -rf $HOME/.xmonad
-rm -rf $PREFIX/lib/xmonad-$VERSION
-# If you have installed XMonadContrib:
-rm -rf $PREFIX/lib/xmonad-contrib-$VERSION</p>
-<p>very cool configuration file for xmonad</p>
-<p><a class="reference external" href="http://www.linuxandlife.com/2011/11/how-to-configure-xmonad-arch-linux.html">http://www.linuxandlife.com/2011/11/how-to-configure-xmonad-arch-linux.html</a></p>
-</div>
-</div>
-                 </div>
-			--&gt;
-            
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/enable-mpd-with-systemd/" class="u-url">enable mpd with systemd</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/enable-mpd-with-systemd/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-26T14:17:33+08:00" itemprop="datePublished" title="2013-11-26 14:17">2013-11-26 14:17</time></a>
-            </p>
-                        <p class="commentline">
+					<a href="posts/tiling-window-manager-xmonad-with-kde/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/enable-mpd-with-systemd/" class="u-url">enable mpd with systemd</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/enable-mpd-with-systemd/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-11-26T14:17:33+08:00" itemprop="datePublished" title="2013-11-26 14:17">2013-11-26 14:17</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/enable-mpd-with-systemd/#disqus_thread" data-disqus-identifier="cache/posts/enable-mpd-with-systemd.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				error message:
+
+				</header><div class="p-summary entry-summary">
+					
+					error message:
 $ systemctl --user status mpd.service
 Failed to issue method call: Process /bin/false exited with status 1
 
 $ sud
-				<a href="posts/enable-mpd-with-systemd/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p>error message:</p>
-<pre class="code text"><a name="rest_code_a6ead8bac7954ca0bcc72052528fd642-1"></a>$ systemctl --user status mpd.service
-<a name="rest_code_a6ead8bac7954ca0bcc72052528fd642-2"></a>Failed to issue method call: Process /bin/false exited with status 1
-<a name="rest_code_a6ead8bac7954ca0bcc72052528fd642-3"></a>
-<a name="rest_code_a6ead8bac7954ca0bcc72052528fd642-4"></a>$ sudo journalctl -u mpd
-<a name="rest_code_a6ead8bac7954ca0bcc72052528fd642-5"></a>fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
-</pre><p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206">https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206</a> 後，
-解決了這個問題。</p>
-<p>下這個指令：</p>
-<pre class="code text"><a name="rest_code_288650e49c1c491d9868a65c35676ea2-1"></a># sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
-</pre><p>2014-3-14 update：現在不必用上述的方法囉。</p>
-<p>加環境變數的檔：</p>
-<pre class="code text"><a name="rest_code_9d3c12bfe8b9401baea1b797d067a30d-1"></a># EDIT /etc/systemd/system/user@.service.d/environment.conf
-<a name="rest_code_9d3c12bfe8b9401baea1b797d067a30d-2"></a>[Service]
-<a name="rest_code_9d3c12bfe8b9401baea1b797d067a30d-3"></a>Environment=DISPLAY=:0
-</pre><p><strong>2014-4-3 update</strong> : 為何這個 install 標題在這個位置？因為以上都是過去的故事了。
-還是把它留著，免得下次又重做這些不必要做的事。</p>
-<div class="section" id="install">
-<h2>install</h2>
-<pre class="literal-block">
-yaourt -S mpd ncmpcpp mpdris2-git cantata cdparanoia
-</pre>
-</div>
-<div class="section" id="id1">
-<h2>配置</h2>
-<pre class="literal-block">
-nano ~/.config/systemd/user/mpd.service
-</pre>
-<p>內容如下：</p>
-<pre class="code text"><a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-1"></a>[Unit]
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-2"></a>Description=Music Player Daemon
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-3"></a>
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-4"></a>[Service]
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-5"></a>Nice=-10
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-6"></a>ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-7"></a>ExecStop=/usr/bin/mpd --kill
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-8"></a>
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-9"></a>[Install]
-<a name="rest_code_1708e7ec2b2d4274822ba9561a17530e-10"></a>WantedBy=default.target
-</pre><p>把 mpd 開起來吧，不必 reboot！</p>
-<pre class="code text"><a name="rest_code_4f6ec9b5a1ae45d083b7537c30fa1950-1"></a>$ systemctl --user start mpd
-<a name="rest_code_4f6ec9b5a1ae45d083b7537c30fa1950-2"></a>$ systemctl --user enable mpd
-</pre><p>在 KDE 中使用 mpd-client，比較好用的 ncmpcpp 和 cantata。</p>
-<p>ncmpcpp 配置起來也是「落落長」的故事。</p>
-</div>
-<div class="section" id="cantata">
-<h2>cantata 設定</h2>
-<p>cantata 要連上 mpd 其實也沒有什麼設定，只要把 config cantata &gt; collection &gt; Music folder 的值設為 mpd 的設定檔位置即可：例如我的是 <tt class="docutils literal"><span class="pre">/home/mario/.mpd</span></tt>。</p>
-<p>如此 cantata 就自動連上 mpd，可以操控 mpd 的播放。</p>
-<p>config cantata &gt; playback &gt; playback stop on exit 要取消掉，不然關了 cantata 就沒音樂了。</p>
-</div></div>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/using-lftp-upload-website/" class="u-url">Using lftp upload website</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/using-lftp-upload-website/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-14T11:35:13+08:00" itemprop="datePublished" title="2013-11-14 11:35">2013-11-14 11:35</time></a>
-            </p>
-                        <p class="commentline">
+					<a href="posts/enable-mpd-with-systemd/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/using-lftp-upload-website/" class="u-url">Using lftp upload website</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/using-lftp-upload-website/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-11-14T11:35:13+08:00" itemprop="datePublished" title="2013-11-14 11:35">2013-11-14 11:35</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/using-lftp-upload-website/#disqus_thread" data-disqus-identifier="cache/posts/using-lftp-upload-website.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。
+
+				</header><div class="p-summary entry-summary">
+					
+					為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。
 
 install lftp
 $ yaourt -S lftp
@@ -620,484 +238,135 @@ create backup.lftp
 open <host url>
 user user-id user-pwd
 l
-				<a href="posts/using-lftp-upload-website/"><br>[ ... 繼續閱讀 ]</a>
-			</host>
+					<a href="posts/using-lftp-upload-website/"><br>[ ... 繼續閱讀 ]</a>
+				</host>
 </div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p>為了將寫好的靜態網頁上傳到 server 上，用 lftp 真的很簡單。</p>
-<div class="section" id="install-lftp">
-<h2>install lftp</h2>
-<pre class="code text"><a name="rest_code_e906e6e0027844ac85b1dfe15a842ac6-1"></a>$ yaourt -S lftp
-</pre></div>
-<div class="section" id="create-backup-lftp">
-<h2>create backup.lftp</h2>
-<pre class="code text"><a name="rest_code_118dc291874442338f4e758d4b7d4045-1"></a>open &lt;host url&gt;
-<a name="rest_code_118dc291874442338f4e758d4b7d4045-2"></a>user user-id user-pwd
-<a name="rest_code_118dc291874442338f4e758d4b7d4045-3"></a>lcd local-dir/
-<a name="rest_code_118dc291874442338f4e758d4b7d4045-4"></a>cd host-dir/
-<a name="rest_code_118dc291874442338f4e758d4b7d4045-5"></a>mirro -Rnc
-<a name="rest_code_118dc291874442338f4e758d4b7d4045-6"></a>exit
-</pre></div>
-<div class="section" id="execute-backup-lftp">
-<h2>execute backup.lftp</h2>
-<pre class="code text"><a name="rest_code_1e634d6441554b15990ec222b0adaa31-1"></a>$ lftp -f backup.lftp
-</pre></div>
-<div class="section" id="reference">
-<h2>reference:</h2>
-<pre class="code text"><a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-1"></a>mirror [OPTS] [source [target]]
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-2"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-3"></a>       Mirror specified source directory to local target directory. If  the  target  directory  ends
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-4"></a>       with  a  slash  (except the root), the source base name is appended to target directory name.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-5"></a>       Source and/or target can be URLs pointing to directories.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-6"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-7"></a>            -c,      --continue                continue a mirror job if possible
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-8"></a>            -e,      --delete                  delete files not present at remote site
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-9"></a>                     --delete-first            delete old files before transferring new ones
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-10"></a>                     --depth-first             descend into subdirectories before transferring files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-11"></a>            -s,      --allow-suid              set suid/sgid bits according to remote site
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-12"></a>                     --allow-chown             try to set owner and group on files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-13"></a>                     --ascii                   use ascii mode transfers (implies --ignore-size)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-14"></a>                     --ignore-time             ignore time when deciding whether to download
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-15"></a>                     --ignore-size             ignore size when deciding whether to download
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-16"></a>                     --only-missing            download only missing files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-17"></a>                     --only-existing           download only files already existing at target
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-18"></a>            -n,      --only-newer              download only newer files (-c won't work)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-19"></a>                     --no-empty-dirs           don't    create    empty     directories     (implies
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-20"></a>                                               --depth-first)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-21"></a>            -r,      --no-recursion            don't go to subdirectories
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-22"></a>                     --no-symlinks             don't create symbolic links
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-23"></a>            -p,      --no-perms                don't set file permissions
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-24"></a>                     --no-umask                don't apply umask to file modes
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-25"></a>            -R,      --reverse                 reverse mirror (put files)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-26"></a>            -L,      --dereference             download symbolic links as files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-27"></a>            -N,      --newer-than=SPEC         download only files newer than specified time
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-28"></a>                     --older-than=SPEC         download only files older than specified time
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-29"></a>                     --size-range=RANGE        download only files with size in specified range
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-30"></a>            -P,      --parallel[=N]            download N files in parallel
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-31"></a>                     --use-pget[-n=N]          use pget to transfer every single file
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-32"></a>                     --on-change=CMD           execute the command if anything has been changed
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-33"></a>                     --loop                    repeat mirror until no changes found
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-34"></a>            -i RX,   --include=RX              include matching files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-35"></a>            -x RX,   --exclude=RX              exclude matching files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-36"></a>            -I GP,   --include-glob=GP         include matching files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-37"></a>            -X GP,   --exclude-glob=GP         exclude matching files
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-38"></a>            -f FILE, --file=FILE               mirror   a   single   file  or  globbed  group  (e.g.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-39"></a>                                               /path/to/*.txt)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-40"></a>            -O DIR,  --target-directory=DIR    target base path or URL
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-41"></a>            -v,      --verbose[=level]         verbose operation
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-42"></a>                     --log=FILE                write lftp commands being executed to FILE
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-43"></a>                     --script=FILE             write lftp commands to FILE, but don't execute them
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-44"></a>                     --just-print, --dry-run   same as --script=-
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-45"></a>                     --use-cache               use cached directory listings
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-46"></a>                     --Remove-source-files     remove files after transfer (use with caution)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-47"></a>            -a                                 same as --allow-chown --allow-suid --no-umask
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-48"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-49"></a>       When using -R, the source directory is local and the target is remote.  If the target  direc‐
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-50"></a>       tory is omitted, base name of the source directory is used.  If both directories are omitted,
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-51"></a>       current local and remote directories are used.  If the target directory  ends  with  a  slash
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-52"></a>       (except the root directory) then base name of the source directory is appended.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-53"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-54"></a>       RX is an extended regular expression, just like in egrep(1).
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-55"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-56"></a>       GP is a glob pattern, e.g. `*.zip'.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-57"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-58"></a>       Include  and  exclude options can be specified multiple times. It means that a file or direc‐
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-59"></a>       tory would be mirrored if it matches an include and does not  match  to  excludes  after  the
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-60"></a>       include,  or  does not match anything and the first check is exclude. Directories are matched
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-61"></a>       with a slash appended.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-62"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-63"></a>       Note that symbolic links are not created when uploading to remote server, because ftp  proto‐
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-64"></a>       col  cannot  do  it. To upload files the links refer to, use `mirror -RL' command (treat sym‐
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-65"></a>       bolic links as files).
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-66"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-67"></a>       For options --newer-than and --older-than you can either specify a file or time specification
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-68"></a>       like that used by at(1) command, e.g.  `now-7days' or `week ago'. If you specify a file, then
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-69"></a>       modification time of that file will be used.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-70"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-71"></a>       Verbosity level can be selected using --verbose=level option or by several -v  options,  e.g.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-72"></a>       -vvv. Levels are:
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-73"></a>            0 - no output (default)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-74"></a>            1 - print actions
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-75"></a>            2 - +print not deleted file names (when -e is not specified)
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-76"></a>            3 - +print directory names which are mirrored
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-77"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-78"></a>       --only-newer  turns  off  file size comparison and uploads/downloads only newer files even if
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-79"></a>       size is different. By default older files are transferred and replace newer ones.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-80"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-81"></a>       You can mirror between two servers if you specify URLs instead of directories.  FXP  is  used
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-82"></a>       automatically for transfers between ftp servers, if possible.
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-83"></a>
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-84"></a>       Some  ftp  servers  hide  dot-files by default (e.g. .htaccess), and show them only when LIST
-<a name="rest_code_1238e8d481fb4bf692174c15ea7d0d6e-85"></a>       command is used with -a option. In such case try to use `set ftp:list-options -a'.
-</pre></div></div>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/disable-low-level-screensaver/" class="u-url">Disable low-level screensaver and screen DPMS poweroff</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/disable-low-level-screensaver/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-13T18:47:01+08:00" itemprop="datePublished" title="2013-11-13 18:47">2013-11-13 18:47</time></a>
-            </p>
-                        <p class="commentline">
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/disable-low-level-screensaver/" class="u-url">Disable low-level screensaver and screen DPMS poweroff</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/disable-low-level-screensaver/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-11-13T18:47:01+08:00" itemprop="datePublished" title="2013-11-13 18:47">2013-11-13 18:47</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/disable-low-level-screensaver/#disqus_thread" data-disqus-identifier="cache/posts/disable-low-level-screensaver.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				Disable Blank Screen After 10 Minutes
+
+				</header><div class="p-summary entry-summary">
+					
+					Disable Blank Screen After 10 Minutes
 To disable blank screen after 10 minutes of inactivity,
 create a file in /etc/X11/xorg.con
-				<a href="posts/disable-low-level-screensaver/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p><strong>Disable Blank Screen After 10 Minutes</strong></p>
-<p>To disable blank screen after 10 minutes of inactivity,
-create a file in /etc/X11/xorg.conf.d called custom.conf with this code:</p>
-<p>快建立這個檔案試試。</p>
-<pre class="code text"><a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-2"></a>
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-3"></a>Section "ServerFlags"
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-4"></a>    # disable low-level screensaver and screen DPMS poweroff
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-5"></a>    Option "BlankTime"  "0"
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-6"></a>    Option "StandbyTime" "0"
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-7"></a>    Option "SuspendTime" "0"
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-8"></a>    Option "OffTime"  "0"
-<a name="rest_code_7e823bdfbe6647e5a4bc7e165e9c687a-9"></a>EndSection
-</pre><p>趕快記下來，試試看。</p></div>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/linuxhao-hao-wan/" class="u-url">linux 好好玩</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/linuxhao-hao-wan/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-12T14:22:09+08:00" itemprop="datePublished" title="2013-11-12 14:22">2013-11-12 14:22</time></a>
-            </p>
-                        <p class="commentline">
+					<a href="posts/disable-low-level-screensaver/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/linuxhao-hao-wan/" class="u-url">linux 好好玩</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/linuxhao-hao-wan/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-11-12T14:22:09+08:00" itemprop="datePublished" title="2013-11-12 14:22">2013-11-12 14:22</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/linuxhao-hao-wan/#disqus_thread" data-disqus-identifier="cache/posts/linuxhao-hao-wan.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				為什麼要用 linux？ 剛開始是不想再被 windows 綁架，windows 慢啊。
+
+				</header><div class="p-summary entry-summary">
+					
+					為什麼要用 linux？ 剛開始是不想再被 windows 綁架，windows 慢啊。
 用了之後發現，linux 真的很強大，工作的過程中，比較能掌握細節，每一次開機都覺得很有成就感。
 而且，用命令列下指令，效率較高。
 只是學習曲線比較陡峭，要花不少時間
-				<a href="posts/linuxhao-hao-wan/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><p>為什麼要用 linux？ 剛開始是不想再被 windows 綁架，windows 慢啊。
-用了之後發現，linux 真的很強大，工作的過程中，比較能掌握細節，每一次開機都覺得很有成就感。
-而且，用命令列下指令，效率較高。
-只是學習曲線比較陡峭，要花不少時間找資料。
-還好，現在有 google 大神可以幫忙。</p>
-<p>為什麼用 Archlinux？ 只是因為可以只安裝想要的東西，不必裝一堆用不到的功能。
-如果選 ubuntu，那不如回去用 windows 就好了。
-既然要學 linux，就學得深入點兒，搞清楚 linux 內部是如何運作的。</p>
-<p>2013-5-13 update：從內核 3.6 開始用，到現在 3.9.2，只有一個感覺：快啊。
-linux 的內核進步越來越快，用的資源反而變少了。
-程式軟體執行的速度也越來越快，只有一個「爽」字可以形容。</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<p>我選用的是 Archlinux，安裝方式參看 <a class="reference external" href="/posts/install-arch-linux/">Install Arch Linux</a> 。</p>
-<p>目前選用的桌面是 <a class="reference external" href="/posts/kde/">KDE</a>。
-剛開始玩 linux 時，用的是 lxde，後來用了 2 個星期的 Gnome 3，想用 digikam 就裝了 kde。
-雖然 KDE 總會有一些惱人的小狀況發生，但還是比較喜歡這個桌面系統。最主要的原因有兩個：</p>
-<ul class="simple">
-<li>各軟體的整合性比較好。</li>
-<li>喜歡用的軟體大部份是 kde/qt。</li>
-</ul>
-<p>試過 <a class="reference external" href="/posts/tiling-window-manager-xmonad-with-kde/">Tiling window manager - Xmonad with KDE</a> ，這個 twm 真的讓人覺得很快意，有機會的話，要把這 2 個整合起來。</p>
-<p>常用軟體：</p>
-<pre class="literal-block">
-$ yaourt -S ntfs-3g dosfstools gparted mpd mpdris2-git pacpl vlc ffmpeg aegisub google-chrome youtube-dl qbittorrent lftp imagemagick rsync qgit meld opencc python-pip nginx
-
-$ sudo pip install nikola requests webassets bottle uwsgi beaker
-</pre>
-</div>
-<div class="section" id="id2">
-<h2>桌面</h2>
-<p>kde</p>
-<p>lxqt+xmonad: 這是目前使用的組合</p>
-</div>
-<div class="section" id="id3">
-<h2>影音</h2>
-<div class="section" id="audio">
-<h3>audio</h3>
-<p>音樂播放： <a class="reference external" href="/posts/enable-mpd-with-systemd/">enable mpd with systemd</a> ，linux 下唯一選擇 mpd。</p>
-<p>cd ripper： <a class="reference external" href="/posts/cd-ripper-rubyripper/">CD ripper: rubyripper</a> 。不過已經放棄 linux 的 ripper，還是用 EAC。</p>
-<p>pacpl：快速轉檔程式，通常用來將 wav 轉成 aiff。appleless 不適用，不過要轉 appleless 就用 itunes。</p>
-<p>kid3：KDE 下編輯音樂檔 tags 的工具，這是目前用過最好用的，尤其是對 aiff 的支援，可同時適用於 itunes 和 mpd。</p>
-</div>
-<div class="section" id="movies">
-<h3>movies</h3>
-<p>xbmc</p>
-<p>vlc</p>
-<p>ffmpeg: <a class="reference external" href="/posts/ffmpeg-xin-de/">ffmpeg 使用心得與整理</a></p>
-<p>aegisub: 字幕編輯，我只用來把 srt 轉 ass，並設定字型和大小。</p>
-<p><a class="reference external" href="/posts/dvd-backup/">DVD backup</a></p>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>生活記錄</h2>
-<p>digiKam: 同時管理照片和影片，號稱 linux 上最強大的照片管理軟體。</p>
-<p>不過我現在不用這個龐大而笨重的軟體，改用 kdegraphics-gwenview 這個比較快速的 viewer，
-搭配 dolphine 就很好用了。</p>
-<p><strong>2014-4-5 update:</strong> 真的放棄在 linux 中管理這些生活記錄，看看圖就好了，要管理、處理生活照片，還是回到 windows 下吧。
-linux 只做備份工作，當然可以用 gwenview 和 dolphine 看看圖檔、照片。</p>
-<p>phototnic: 有趣的看圖程式。</p>
-<p>openshot: 製作影片的工具，簡單好用，但很容易無預警地結束程式，等待 V2 版。</p>
-<p>imagemagick：好強的轉檔程式，可轉成 pdf。</p>
-<p>lightwork: 強大的編輯影片工具。參看 <a class="reference external" href="/posts/lightworks-on-archlinux/">lightworks on Archlinux</a> 。
-還沒有做出作品來，整個工作流程看起來挺繁複的。</p>
-</div>
-<div class="section" id="id5">
-<h2>網路工具</h2>
-<p>wifi-ap: <a class="reference external" href="/posts/archlinux-hostapd-netcfg/">wireless AP 設定 （hostapd+netcfg/netctl）</a></p>
-<p>lftp: <a class="reference external" href="/posts/using-lftp-upload-website/">Using lftp upload website</a></p>
-<p>qBittorrent</p>
-<p>youtube-dl： <tt class="docutils literal">pip install <span class="pre">youtube-dl</span></tt></p>
-<p>google-chrome:</p>
-<pre class="literal-block">
-google-chrome 的新可選依賴
-ttf-liberation: fix fonts for some PDFs
-</pre>
-</div>
-<div class="section" id="id6">
-<h2>系統工具</h2>
-<p>lvm2: <a class="reference external" href="/posts/LVM-on-archlinux/">LVM on Archlinux</a></p>
-<p>gvfs + gvfs-mpt: 為了我的 HTC 手機，要裝這個，才好把照片、影片傳到電腦中處理。
-在 KDE 中不必用這 2 隻程式，要用 kio-mtp。</p>
-<p>ntfs-3g dosfstools gparted 磁碟有關的工具。</p>
-<p>rsync: 超強大的備份工具。</p>
-<p>systemd-timesyncd:</p>
-</div>
-<div class="section" id="id7">
-<h2>軟體開發工具</h2>
-<p>python</p>
-<p>geany: <a class="reference external" href="/posts/geany-xin-de/">Geany 使用心得</a></p>
-<p>kate: <a class="reference external" href="/posts/kate-KDE-Advance-Text-Edit/">Kate, KDE Advance Text Editor</a></p>
-<p>vim: 2014-4-20 終於決定開始進入 <a class="reference external" href="/posts/vim/">vim</a> 的世界，看看這個號稱有史以來最好的文字編輯器，究竟好在什麼地方？</p>
-<p>emacs: 2014-4-30 開始試用 emacs 之後，其它的文字編輯都不想用了，真是強到不知道如何形容，
-基本操作記錄於 <a class="reference external" href="/posts/emacsjiao-xue-zhi-yin/">emacs 教學指引</a> 。</p>
-<p>git/qgit：版本管理</p>
-<p>meld：視覺化本文差異分析</p>
-<p>sqliteman: 用 kate 之後，這個就用不著了。因為 kate 有一個 sql 強悍的外掛。
-emacs 中直接用 SQLi，什麼都可以用，就是介面醜了點，因為純命令列。</p>
-<p>nginx: <a class="reference external" href="/posts/an-zhuang-nginx/">在 Archlinux 安裝 nginx</a></p>
-<p>bottle+uwsgi: <a class="reference external" href="/posts/bottlenginx-with-uwsgi/">bottle+nginx with uwsgi</a></p>
-</div>
-<div class="section" id="id8">
-<h2>寫寫文章分享</h2>
-<p>寫些文章是做個記錄，記錄這一陣子的心得。</p>
-<div class="section" id="nikola">
-<h3>nikola</h3>
-<p>用 reStructureText 寫文章，將文章轉成靜態網頁的工具。</p>
-<pre class="literal-block">
-yaourt -S python-pip
-sudo pip install nikola requests webassets bottle uwsgi beaker
-</pre>
-<p>上面安裝的 python 程式，主要是 nikola 和 stock 要用的 pyhton 程式庫。</p>
-</div>
-<div class="section" id="python">
-<h3>Python</h3>
-<p>重新安裝全部的 python packages</p>
-<pre class="literal-block">
-一 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U
-</pre>
-</div>
-<div class="section" id="pandoc">
-<h3>pandoc</h3>
-<p>多種檔案格式互轉。我常用的是 html, epub, reSstructureText。主要的工作是將綱路上的文章轉到我的 greenbook 上閱讀。</p>
-<pre class="literal-block">
-yaourt -S ghc alex happy cabal-install
-sudo cabal update
-sudo cabal install --global pandoc
-</pre>
-<p>opencc: 可以將簡體中文轉成繁體的工具。</p>
-</div>
-<div class="section" id="id9">
-<h3>小工具</h3>
-<p>kcalc: 小小計算機，可綁快捷鍵</p>
-<pre class="literal-block">
-yaourt -S kdeutils-kcalc
-</pre>
-</div>
-</div></div>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/cd-ripper-rubyripper/" class="u-url">CD ripper: rubyripper</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/cd-ripper-rubyripper/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-02T18:05:13+08:00" itemprop="datePublished" title="2013-11-02 18:05">2013-11-02 18:05</time></a>
-            </p>
-                        <p class="commentline">
+					<a href="posts/linuxhao-hao-wan/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/cd-ripper-rubyripper/" class="u-url">CD ripper: rubyripper</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/cd-ripper-rubyripper/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-11-02T18:05:13+08:00" itemprop="datePublished" title="2013-11-02 18:05">2013-11-02 18:05</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/cd-ripper-rubyripper/#disqus_thread" data-disqus-identifier="cache/posts/cd-ripper-rubyripper.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				原本打算用 abcde rip CD。試 rip 了幾片，聽起來的聲音實在是差太多，真的受不了，只好再找合用的。
+
+				</header><div class="p-summary entry-summary">
+					
+					原本打算用 abcde rip CD。試 rip 了幾片，聽起來的聲音實在是差太多，真的受不了，只好再找合用的。
 有人說，rubyripper 是除了 EAC 之外，最好的選擇，那就試試看吧。
 
 
 Install
 
 $ yaourt -S rubyripp
-				<a href="posts/cd-ripper-rubyripper/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <body><div><p>原本打算用 abcde rip CD。試 rip 了幾片，聽起來的聲音實在是差太多，真的受不了，只好再找合用的。
-有人說，rubyripper 是除了 EAC 之外，最好的選擇，那就試試看吧。</p>
-<p class="more"><a href="/posts/cd-ripper-rubyripper/"> more …</a></p></div></body>
-                 </div>
-			-->
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ibusfcitxshu-ru-fa-she-ding/" class="u-url">ibus,fcitx 輸入法設定</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Mario Long
-                    </span></p>
-            <p class="dateline">
-            <a href="posts/ibusfcitxshu-ru-fa-she-ding/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-11-01T18:50:21+08:00" itemprop="datePublished" title="2013-11-01 18:50">2013-11-01 18:50</time></a>
-            </p>
-                        <p class="commentline">
+					<a href="posts/cd-ripper-rubyripper/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/ibusfcitxshu-ru-fa-she-ding/" class="u-url">ibus,fcitx 輸入法設定</a></h1>
+					<div class="metadata">
+						<!-- <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+							 Mario Long
+							 </span></p> -->
+						<p class="dateline">
+							<a href="posts/ibusfcitxshu-ru-fa-she-ding/" rel="bookmark">
+								<time class="published dt-published" datetime="2013-11-01T18:50:21+08:00" itemprop="datePublished" title="2013-11-01 18:50">2013-11-01 18:50</time></a>
+						</p>
+							<p class="commentline">
         
     <a href="posts/ibusfcitxshu-ru-fa-she-ding/#disqus_thread" data-disqus-identifier="cache/posts/ibusfcitxshu-ru-fa-she-ding.html">Comments</a>
 
 
-                </p>
+					</p>
 </div>
-            </header><div class="p-summary entry-summary">
-				
-				ibus
+
+				</header><div class="p-summary entry-summary">
+					
+					ibus
 GNOME 3.10 中，IBus 是整合在一起，裝了 GNOME，IBus 就安裝好。
 剩下的只是安裝自己要的輸入法。
 
 $ yaourt -S ibus-rime ibus-chewing
 
 IBus 的字形大小，預設的太小，參考 gnome
-				<a href="posts/ibusfcitxshu-ru-fa-she-ding/"><br>[ ... 繼續閱讀 ]</a>
-			</div>
-
-			<!--
-				 <div class="p-summary entry-summary">
-				 <div><div class="section" id="ibus">
-<h2>ibus</h2>
-<p>GNOME 3.10 中，IBus 是整合在一起，裝了 GNOME，IBus 就安裝好。
-剩下的只是安裝自己要的輸入法。</p>
-<pre class="literal-block">
-$ yaourt -S ibus-rime ibus-chewing
-</pre>
-<p>IBus 的字形大小，預設的太小，參考 <a class="reference external" href="/posts/gnomean-zhuang-ji-lu/">gnome 安裝記錄</a> 修改。</p>
-<p>[2013-11-1] 拼音的 rime 實在不是我的最愛，自動選字，常常不是我想要的，現在還是回到「嘸蝦米」。
-參考 <a href="/posts/ibusfcitxshu-ru-fa-she-ding/#id1"><span class="problematic" id="id2">:doc:`IBus-Boshiamy`</span></a> 。</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 12); <em><a href="/posts/ibusfcitxshu-ru-fa-she-ding/#id2">backlink</a></em></p>
-"IBus-Boshiamy" slug doesn't exist.</div>
+					<a href="posts/ibusfcitxshu-ru-fa-she-ding/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article>
 </div>
-<div class="section" id="fcitx">
-<h2>fcitx 【中州韻】和【新酷音】</h2>
-<p>在 LXDE 中，ibus 和 google-chrome 衝突，暫時先切到 <a class="reference external" href="https://wiki.archlinux.org/index.php/Fcitx">fcitx</a> 。</p>
-<p>[2013-11-01] 用 GNOME 3.10，IBus 和 google-chrome 配合良好。</p>
-<p>至少到目前爲止，fcitx 和我的系統 (LXDE) 配合度很良好。
-在 Archlinux 中 <a class="reference external" href="https://www.archlinux.org/packages/community/i686/fcitx-rime/">fcitx-rime</a>
-看來也有人維護，那就繼續用吧。</p>
-<div class="section" id="id4">
-<h3>安裝【中州韻】和【新酷音】：</h3>
-<pre class="literal-block">
-$ yaourt -S fcitx fcitx-rime fcitx-chewing fcitx-configtool fcitx-gtk{2,3} fcitx-qt
-</pre>
-<p>不必用 fcitx-rime-git。</p>
-</div>
-<div class="section" id="id5">
-<h3>配置</h3>
-<p>在 <cite>~/.xinitrc</cite> 增加一行：</p>
-<pre class="literal-block">
-fcitx &amp;
-</pre>
-<p>在 <cite>~/.bashrc</cite> 加上：</p>
-<pre class="literal-block">
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-</pre>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>fcitx 的嘸蝦米</h2>
-<p>fcitx
-還是比較好用，使用說明參考 <a class="reference external" href="http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?viewmode=compact&amp;type=&amp;topic_id=53570&amp;forum=8">(推薦)在 fcitx 輸入法下，(boshiamy)嘸蝦米的使用最為順暢、穩定!（新酷音、m17n、倉頡、輕鬆法亦適用）</a> 。</p>
-<div class="section" id="kde-fcitx">
-<h3>KDE 安裝 fcitx + 嘸蝦米 + 酷音</h3>
-<pre class="literal-block">
-yaourt -S fcitx-im fcitx-table-extra fcitx-chewing kdeplasma-addons-applets-kimpanel kcm-fcitx fcitx-qt5
-</pre>
-</div>
-<div class="section" id="id7">
-<h3>配置</h3>
-<p>在 <cite>~/.xinitrc</cite> 增加一行：</p>
-<pre class="literal-block">
-fcitx &amp;
-</pre>
-<p>在 <cite>~/.bashrc</cite> 加上：</p>
-<pre class="literal-block">
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-</pre>
-</div>
-<div class="section" id="id8">
-<h3>自行加詞</h3>
-<p>參考： <a class="reference external" href="http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?topic_id=58540&amp;forum=22&amp;post_id=257328#forumpost257328">(推薦)在 fcitx 下的好用自製碼表工具，mb2txt 與 txt2mb（嘸蝦篇）</a></p>
-<p>命令：</p>
-<pre class="literal-block">
-cd ~/.config/fcitx/table
-mb2txt boshiamy.mb &gt; boshiamy.txt
-</pre>
-<p>編輯 boshiamy.txt，加上想要的詞。編好後，轉成嘸蝦米的碼表：</p>
-<pre class="literal-block">
-txt2mb boshiamy.txt boshiamy.mb
-</pre>
-<p>在中文的輸入環境下，切換到嘸蝦米，按 Ctrl+5，以讀取新表，即可使用新定義的詞。</p>
-</div>
-</div></div>
-                 </div>
-			-->
-            </article><ul class="pager postindexpager clearfix">
+    
+        <ul class="pager postindexpager clearfix">
 <li class="previous"><a href="index-3.html" rel="prev">較新的文章</a></li>
             <li class="next"><a href="index-1.html" rel="next">較舊的文章</a></li>
         </ul>
-<script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+<script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+		<!--End of body content-->
+
+
+		<footer id="footer">
 			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 			
-		</footer><script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+		</footer>
+</div>
+</div>
+
+
+        <script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("zh-tw");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>
