@@ -8038,6 +8038,6 @@ li {
 }
 
 .listtitle {
-  margin-left: 2em;
-  text-indent: -2em;
+  /* margin-left: 2em; */
+  /* text-indent: -2em; */
  }
