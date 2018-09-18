@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：WD)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/wd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:17:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>為 windows 10，換一顆硬碟</title><link>https://mariolong.github.io/posts/replace-new-hard-disk/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：WD)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/wd.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:58:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>為 windows 10，換一顆硬碟</title><link>https://mariolong.github.io/posts/replace-new-hard-disk/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 昨晚，開啓 windows 10 時，速度變得很慢，等了好久，好不容易才進入
 windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org23fd78c" class="outline-2"&gt;
-&lt;h2 id="org23fd78c"&gt;SMART check&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org23fd78c"&gt;
+&lt;div id="outline-container-org2bc0f3a" class="outline-2"&gt;
+&lt;h2 id="org2bc0f3a"&gt;SMART check&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2bc0f3a"&gt;
 &lt;p&gt;
 用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
 &lt;/p&gt;
@@ -86,9 +86,9 @@ unable to complete, or interface CRC (with ICRC).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd1db045" class="outline-2"&gt;
-&lt;h2 id="orgd1db045"&gt;裝上新的硬碟&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd1db045"&gt;
+&lt;div id="outline-container-org9df7472" class="outline-2"&gt;
+&lt;h2 id="org9df7472"&gt;裝上新的硬碟&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9df7472"&gt;
 &lt;p&gt;
 過程如下：
 &lt;/p&gt;

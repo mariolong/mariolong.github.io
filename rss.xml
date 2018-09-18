@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>simple life, computer and investment</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:45:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life</title><link>https://github.com/mariolong/mariolong.github.io/</link><description>simple life, computer and investment</description><atom:link href="https://mariolong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:58:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 在 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
 我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
 在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org0c05948" class="outline-2"&gt;
-&lt;h2 id="org0c05948"&gt;install nix&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0c05948"&gt;
+&lt;div id="outline-container-orge81f540" class="outline-2"&gt;
+&lt;h2 id="orge81f540"&gt;install nix&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge81f540"&gt;
 &lt;p&gt;
 因為 miso 建議用 nix 管理 project，還是參考 &lt;a href="https://nixos.org/nix/manual/"&gt;Nix manual&lt;/a&gt; 試著把它裝起來。
 &lt;/p&gt;
@@ -36,18 +36,18 @@ variables are set, either log in again, or type
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb7b5776" class="outline-2"&gt;
-&lt;h2 id="orgb7b5776"&gt;install stack, cabal, xmonad/taffybar, pandoc&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb7b5776"&gt;
+&lt;div id="outline-container-org07115f2" class="outline-2"&gt;
+&lt;h2 id="org07115f2"&gt;install stack, cabal, xmonad/taffybar, pandoc&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org07115f2"&gt;
 &lt;p&gt;
 還是可以用 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 的方法，而 cabal 可不安裝，用 stack 即可。BUT…
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga5183b4" class="outline-2"&gt;
-&lt;h2 id="orga5183b4"&gt;install GHCJS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga5183b4"&gt;
+&lt;div id="outline-container-orgf3244b9" class="outline-2"&gt;
+&lt;h2 id="orgf3244b9"&gt;install GHCJS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf3244b9"&gt;
 &lt;p&gt;
 因為要先安裝 GHCJS 後，才能用 miso 寫程式。所以這步驟是必要的。
 &lt;/p&gt;
@@ -64,9 +64,9 @@ miso 專案，則不能用全域 cabal，必須把全域 cabal 刪除。真困�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7fa6dae" class="outline-2"&gt;
-&lt;h2 id="org7fa6dae"&gt;conclusion&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7fa6dae"&gt;
+&lt;div id="outline-container-orgd74bf42" class="outline-2"&gt;
+&lt;h2 id="orgd74bf42"&gt;conclusion&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd74bf42"&gt;
 &lt;p&gt;
 Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt;del&gt;也許先用 servant
 做 server 才是對的&lt;/del&gt;。&lt;/p&gt;
@@ -108,57 +108,57 @@ Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt
 &lt;/p&gt;
 
 
-&lt;div id="outline-container-orga9a0f25" class="outline-2"&gt;
-&lt;h2 id="orga9a0f25"&gt;《太極拳體用全書》&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga9a0f25"&gt;
+&lt;div id="outline-container-org306d753" class="outline-2"&gt;
+&lt;h2 id="org306d753"&gt;《太極拳體用全書》&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org306d753"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge6162a7" class="outline-3"&gt;
-&lt;h3 id="orge6162a7"&gt;鄭序&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge6162a7"&gt;
+&lt;div id="outline-container-org64d975b" class="outline-3"&gt;
+&lt;h3 id="org64d975b"&gt;鄭序&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org64d975b"&gt;
 &lt;p&gt;
 天下唯至剛乃能制至柔。亦唯至柔乃能制至剛。易曰。剛柔相摩。八卦相盪。書曰。沈潛剛克。高明柔克。詩曰。剛亦不茹。柔亦不吐。然則剛柔之用。理無二致。何老氏獨言天下之至柔。馳騁天下之至堅。又曰。柔弱勝剛強。余甚疑之。宋末有張真人三峯者。創爲太極柔拳之術。所謂&lt;b&gt;有氣則無力。無氣則純剛&lt;/b&gt;。異哉言乎。以視老氏之說。其理更不同。余尤惑焉。何則。不用力固已柔矣。未聞有不用氣也。若不用氣。何復有力。而至於純剛乎。癸亥。岳任北京美術專門學校教授。有同事劉庸臣者。擅斯術。以岳體羸弱。勉之學習。甫逾月。輒嬰事輟。未得其趣。庚午春。岳因創辦中國文藝學院。操勞過度。甚至咯血。因復與同事趙仲博。葉大密。研習斯術。不一月。病霍然。而身體遂日見強健。於是昕タ研求。鍥而不舍。兩年之間。與有力十倍於我者較。則數勝矣。始信柔之足以勝剛。然未知有不用氣之妙也。壬申正月。岳在濮公秋丞家。得晤楊師澄甫。秋翁介岳。執贄於門。承澄師之教導。&lt;b&gt;口授內功。始知有不用氣之羲矣。不用氣。則我處順。而人處逆。唯順則柔。柔之所以克剛者。漸也。剛之所以克柔者。驟也。驟者易見。故易敗。漸者難覺。故常勝。不用氣者。柔之至也。惟至柔。故能成至剛&lt;/b&gt;。余至是遂恍然大悟。於真人與老氏之說。大易摩盪之訓。究竟一理。雖然。岳猶恐聞吾言者。亦如岳昔日之滋惑。其將何以釋而證之。乃與同門匡克明。共請於澄師曰。曩者師法相承。悉憑口授指示。未有專書。與其懷寶以祕其傳。何如筆之於書以傳後世。澄師曰然。爰將體用之妙法。盡啟其橐鑰。攝圖列說。縷析條分。幷及劍法槍法等。各有運斤成風之妙。編述成書。分爲二集。世之欲攝生養性者。手各一編。瞭如指掌。非僅可以釋疑解惑而已。自強強國之術。其在斯乎。其在斯乎。癸酉閏端陽。永嘉鄭岳謹序
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org96f4451" class="outline-3"&gt;
-&lt;h3 id="org96f4451"&gt;自序&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org96f4451"&gt;
+&lt;div id="outline-container-org2e4c491" class="outline-3"&gt;
+&lt;h3 id="org2e4c491"&gt;自序&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2e4c491"&gt;
 &lt;p&gt;
 余幼時。見先大父祿禪公。率諸父及諸從遊者。日從事於太極拳。或單練。或對習。昕夕不輟。心竊疑之。以為是一人敵。項籍所不屑學者。余他日當學萬人敵。稍長先伯父玻侯公。命余從之學。於是向之所疑者 不復能隱,則直陳 之。先大夫健侯公怒斥之曰。惡。是何言。汝大父以此世吾家。若乃欲墜箕裘歟。先大父亟止之曰。此不能折服孺子也。以手撫余曰。居。吾語汝。吾之習此而教人者。非以敵人。乃以衞身。非以用世。乃以救國。今之君子。祇知國之弊在貧。而未知國之病在弱也。是故謀國是者。競籌救貧之策。未聞有振衰起頹之圖。惟其通國皆病夫。誰復勝此重任。積弱斯貧。貧實原於弱也。攷各國之致強。莫不強民為初步。歐美之雄偉英挺無論矣。即島國侏儒。亦孰非短小而精悍。以吾國人之鳩形鵠面當之。勝負之決。庸待蓍龜。然則救國之道。自當以救弱為急務。舍此不圖。抑亦末矣。余自幼即以救弱為己任。嘗見賣解者。其精神體魄。固不遜於外人所謂大力士武士道者。余大喜叩其術。祕不以告。乃知中國自有強身之術。而一弱至此。豈無故哉。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org106a469" class="outline-3"&gt;
-&lt;h3 id="org106a469"&gt;例言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org106a469"&gt;
+&lt;div id="outline-container-orgbd51a9a" class="outline-3"&gt;
+&lt;h3 id="orgbd51a9a"&gt;例言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbd51a9a"&gt;
 &lt;p&gt;
 太極拳本易之太極八卦。曰理。曰氣。白象。以演成。孔子所謂範圍天地之化而不過。豈能出於理氣象乎。惟理氣象乃太極拳之所胚胎也。三者得能兼備。而體用全矣。然象則取法太極八卦。氣則不出於陰陽剛柔。理則主宰變易不易。以窮其化。&lt;b&gt;學者尤宜先求其象。以養其氣。久之自然能得其理矣&lt;/b&gt;。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org544d9c6" class="outline-3"&gt;
-&lt;h3 id="org544d9c6"&gt;例言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org544d9c6"&gt;
+&lt;div id="outline-container-org368e78e" class="outline-3"&gt;
+&lt;h3 id="org368e78e"&gt;例言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org368e78e"&gt;
 &lt;p&gt;
 太極拳之主體。貴在動靜有常。故練時舉步之高低。伸手之疾徐。運動之輕重。進退之伸縮。氣息之宏細。顧盼之左右上下。腰頂背腹之俯仰。須知各有常度。不可忽高忽低。忽疾忽徐。忽輕忽重。忽伸忽縮。忽宏忽細。忽左右上下俯仰之不匀也。惟步之高低。手之疾徐。如能得有常度。則亦不必拘其高低疾徐之有一定法則也。&lt;b&gt;(平整勻均)&lt;/b&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orged41cb1" class="outline-3"&gt;
-&lt;h3 id="orged41cb1"&gt;例言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orged41cb1"&gt;
+&lt;div id="outline-container-orgbc2574c" class="outline-3"&gt;
+&lt;h3 id="orgbc2574c"&gt;例言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbc2574c"&gt;
 &lt;p&gt;
 太極拳要點。凡十有三。曰&lt;b&gt;沈肩垂肘。含胸拔背。氣沈丹田。虚靈頂勁。鬆腰胯。分虚實。上下相隨。用意不用カ。內外相合。意氣相連。動中求靜。動靜合一。式式均匀&lt;/b&gt;。此十三點。凡一動作。皆要注意。不可無一式中。而無此十三要點之觀念。缺一不可。學者希留意參合也。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>tai-ji</category><guid>https://mariolong.github.io/posts/zheng-manqing-as-i-know/</guid><pubDate>Mon, 10 Sep 2018 07:01:51 GMT</pubDate></item><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org0bae4d9" class="outline-2"&gt;
-&lt;h2 id="org0bae4d9"&gt;install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0bae4d9"&gt;
+&lt;/div&gt;</description><category>tai-ji</category><guid>https://mariolong.github.io/posts/zheng-manqing-as-i-know/</guid><pubDate>Mon, 10 Sep 2018 07:01:51 GMT</pubDate></item><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orgdcebc23" class="outline-2"&gt;
+&lt;h2 id="orgdcebc23"&gt;install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdcebc23"&gt;
 &lt;p&gt;
 因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 &lt;code&gt;aur/dropbox&lt;/code&gt;
 &lt;/p&gt;
@@ -168,13 +168,13 @@ Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org574fdec" class="outline-2"&gt;
-&lt;h2 id="org574fdec"&gt;config dropbox.service&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org574fdec"&gt;
+&lt;div id="outline-container-org491286e" class="outline-2"&gt;
+&lt;h2 id="org491286e"&gt;config dropbox.service&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org491286e"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgea6d2ac" class="outline-3"&gt;
-&lt;h3 id="orgea6d2ac"&gt;setup environment variables&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgea6d2ac"&gt;
+&lt;div id="outline-container-org23fba89" class="outline-3"&gt;
+&lt;h3 id="org23fba89"&gt;setup environment variables&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org23fba89"&gt;
 &lt;p&gt;
 為了正確顯示，要加上以下命令：
 &lt;/p&gt;
@@ -185,9 +185,9 @@ Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 QT_STYLE_OVERRIDE=GTK+
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org752317c" class="outline-3"&gt;
-&lt;h3 id="org752317c"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org752317c"&gt;
+&lt;div id="outline-container-orgee464c4" class="outline-3"&gt;
+&lt;h3 id="orgee464c4"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgee464c4"&gt;
 &lt;p&gt;
 根據 &lt;a href="https://gitlab.com/yan12125/aur/issues/21"&gt;Dropbox kill/restart loop when started at boot via systemd&lt;/a&gt;，在
 dropbox.service 中，特別加上
@@ -198,9 +198,9 @@ dropbox.service 中，特別加上
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga7f1362" class="outline-3"&gt;
-&lt;h3 id="orga7f1362"&gt;final dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga7f1362"&gt;
+&lt;div id="outline-container-orgd87d073" class="outline-3"&gt;
+&lt;h3 id="orgd87d073"&gt;final dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd87d073"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[Unit]
 Description=Dropbox for systemd/user
 
@@ -220,9 +220,9 @@ WantedBy=default.target
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0785a25" class="outline-2"&gt;
-&lt;h2 id="org0785a25"&gt;start dropbox&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0785a25"&gt;
+&lt;div id="outline-container-orgb53b094" class="outline-2"&gt;
+&lt;h2 id="orgb53b094"&gt;start dropbox&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb53b094"&gt;
 &lt;p&gt;
 最後執行
 &lt;/p&gt;
@@ -244,9 +244,9 @@ or/and
 用了 2 年的「龍倉」，總覺得打五碼，真的不習慣，還是打四碼比較快。今天決定換「大新」，碼表在&lt;a href="http://hyperrate.com/thread.php?tid=343"&gt;此下載&lt;/a&gt;。經過一個下午的努力，終於完工。試用了一會兒，真的很後悔，應該早一點用「大新」：真是快，一下就上手，幾乎沒有困難，有倉頡的底子，學「大新」真是容易，又順心。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgd5369c0" class="outline-2"&gt;
-&lt;h2 id="orgd5369c0"&gt;記錄與倉頡不同的地方：&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd5369c0"&gt;
+&lt;div id="outline-container-org19eb5c1" class="outline-2"&gt;
+&lt;h2 id="org19eb5c1"&gt;記錄與倉頡不同的地方：&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org19eb5c1"&gt;
 &lt;p&gt;
 先讀&lt;a href="http://www.eztyping.com.tw/learn_cj_upd.htm"&gt;倉頡、速成使用者瞬間昇級表&lt;/a&gt;，再看下列一些特別的：
 &lt;/p&gt;
@@ -299,17 +299,17 @@ or/and
 The Glorious Glasgow Haskell Compilation System, version &lt;span class="m"&gt;8&lt;/span&gt;.4.3
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div id="outline-container-org34bd7d7" class="outline-2"&gt;
-&lt;h2 id="org34bd7d7"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org34bd7d7"&gt;
+&lt;div id="outline-container-org6ffe2e8" class="outline-2"&gt;
+&lt;h2 id="org6ffe2e8"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6ffe2e8"&gt;
 &lt;p&gt;
 參考 &lt;a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4"&gt;GitHub - ghcjs/ghcjs at ghc-8.4&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb177ca5" class="outline-3"&gt;
-&lt;h3 id="orgb177ca5"&gt;getting and preparing the source tree&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb177ca5"&gt;
+&lt;div id="outline-container-org0752ffd" class="outline-3"&gt;
+&lt;h3 id="org0752ffd"&gt;getting and preparing the source tree&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0752ffd"&gt;
 &lt;p&gt;
 add this step: &lt;code&gt;git checkout ghc-8.4&lt;/code&gt;
 &lt;/p&gt;
@@ -323,17 +323,17 @@ git submodule update --init --recursive
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org61a826b" class="outline-3"&gt;
-&lt;h3 id="org61a826b"&gt;building the compiler&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org61a826b"&gt;
+&lt;div id="outline-container-org09ead21" class="outline-3"&gt;
+&lt;h3 id="org09ead21"&gt;building the compiler&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org09ead21"&gt;
 &lt;p&gt;
 You can use &lt;code&gt;cabal-install&lt;/code&gt; &lt;b&gt;and&lt;/b&gt; &lt;code&gt;stack&lt;/code&gt; to set up a build environment that contains these packages.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3e53a4d" class="outline-4"&gt;
-&lt;h4 id="org3e53a4d"&gt;install cabal&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3e53a4d"&gt;
+&lt;div id="outline-container-org7769215" class="outline-4"&gt;
+&lt;h4 id="org7769215"&gt;install cabal&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org7769215"&gt;
 &lt;p&gt;
 because GHCJS need cabal, so install it.
 &lt;/p&gt;
@@ -344,18 +344,18 @@ cabal update
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfeb9229" class="outline-4"&gt;
-&lt;h4 id="orgfeb9229"&gt;Cabal new-build (x)&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgfeb9229"&gt;
+&lt;div id="outline-container-org3ccd344" class="outline-4"&gt;
+&lt;h4 id="org3ccd344"&gt;Cabal new-build (x)&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org3ccd344"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal new-configure
 cabal new-build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org30687a2" class="outline-4"&gt;
-&lt;h4 id="org30687a2"&gt;link to executables (x) &lt;a id="org8860ecb"&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org30687a2"&gt;
+&lt;div id="outline-container-orga3b902e" class="outline-4"&gt;
+&lt;h4 id="orga3b902e"&gt;link to executables (x) &lt;a id="org1f0eb0f"&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orga3b902e"&gt;
 &lt;p&gt;
 &lt;b&gt;DON'T DO THIS, IT IS NOT NECESSARY&lt;/b&gt;
 &lt;/p&gt;
@@ -381,20 +381,20 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3600657" class="outline-4"&gt;
-&lt;h4 id="org3600657"&gt;stack&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3600657"&gt;
+&lt;div id="outline-container-orgeffb65b" class="outline-4"&gt;
+&lt;h4 id="orgeffb65b"&gt;stack&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgeffb65b"&gt;
 &lt;/div&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a id="org41cf95d"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org41cf95d"&gt;
+&lt;li&gt;&lt;a id="org3fe8088"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org3fe8088"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="org25daaff"&gt;&lt;/a&gt;DON'T DO THIS (x)&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org25daaff"&gt;
+&lt;li&gt;&lt;a id="org287e93a"&gt;&lt;/a&gt;DON'T DO THIS (x)&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org287e93a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -402,9 +402,9 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org744e592" class="outline-4"&gt;
-&lt;h4 id="org744e592"&gt;install haddock (x)&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org744e592"&gt;
+&lt;div id="outline-container-orge1c9d06" class="outline-4"&gt;
+&lt;h4 id="orge1c9d06"&gt;install haddock (x)&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge1c9d06"&gt;
 &lt;p&gt;
 when run ghcjs-boot, it will display following error message:
 &lt;/p&gt;
@@ -416,7 +416,7 @@ when run ghcjs-boot, it will display following error message:
 &lt;p&gt;
 I have no idea to solve this problem after execute following
 statements. My decision is ignoring above error message and don't execute
-section &lt;a href="https://mariolong.github.io/posts/install-ghcjs-archlinux/#org8860ecb"&gt;"link to executables"&lt;/a&gt;. Re-install GHCJS again.
+section &lt;a href="https://mariolong.github.io/posts/install-ghcjs-archlinux/#org1f0eb0f"&gt;"link to executables"&lt;/a&gt;. Re-install GHCJS again.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal install haddock
@@ -427,9 +427,9 @@ stack haddock
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge28bd94" class="outline-3"&gt;
-&lt;h3 id="orge28bd94"&gt;Booting GHCJS&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge28bd94"&gt;
+&lt;div id="outline-container-org7ca63ed" class="outline-3"&gt;
+&lt;h3 id="org7ca63ed"&gt;Booting GHCJS&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7ca63ed"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghcjs-boot
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -442,9 +442,9 @@ the &lt;code&gt;makePackages.sh&lt;/code&gt; script and included in a source dis
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6c6a3c6" class="outline-3"&gt;
-&lt;h3 id="org6c6a3c6"&gt;Test&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6c6a3c6"&gt;
+&lt;div id="outline-container-orgab902d8" class="outline-3"&gt;
+&lt;h3 id="orgab902d8"&gt;Test&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgab902d8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'main = putStrLn "Hello World!"'&lt;/span&gt; &amp;gt; helloWorld.hs
 $ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghcjs -o helloWorld helloWorld.hs
 $ node helloWorld.jsexe/all.js
@@ -463,9 +463,9 @@ But these steps are work for me to install ghcjs with ghc-8.4.3
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org421ced1" class="outline-2"&gt;
-&lt;h2 id="org421ced1"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org421ced1"&gt;
+&lt;div id="outline-container-orgfcbc4e0" class="outline-2"&gt;
+&lt;h2 id="orgfcbc4e0"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfcbc4e0"&gt;
 &lt;p&gt;
 this is not work.
 &lt;/p&gt;
@@ -508,9 +508,9 @@ Hello world!
 &lt;p&gt;
 【原文】如下：
 &lt;/p&gt;
-&lt;div id="outline-container-org68ec796" class="outline-2"&gt;
-&lt;h2 id="org68ec796"&gt;輔助療法幫助調養身體&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org68ec796"&gt;
+&lt;div id="outline-container-org836b383" class="outline-2"&gt;
+&lt;h2 id="org836b383"&gt;輔助療法幫助調養身體&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org836b383"&gt;
 &lt;p&gt;
 美國國家衛生研究院於 1998 年成立癌症輔助療法辦法室，目的在促進輔助醫療與正統醫療間的互動，任務之一就是希望找到抗癌輔助食品。
 &lt;/p&gt;
@@ -541,9 +541,9 @@ Hello world!
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2526283" class="outline-2"&gt;
-&lt;h2 id="org2526283"&gt;含氧量夠，身體才有足夠力量抗癌&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2526283"&gt;
+&lt;div id="outline-container-org881e6aa" class="outline-2"&gt;
+&lt;h2 id="org881e6aa"&gt;含氧量夠，身體才有足夠力量抗癌&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org881e6aa"&gt;
 &lt;p&gt;
 我們要經常有意識地讓身體做深呼吸。懷著要將體內毒素排出的心情呼氣，然後慢慢把空氣吸進來。以呼氣時縮腹，吸氣時鼓腹的要領，進行腹式呼吸。
 &lt;/p&gt;
@@ -582,9 +582,9 @@ Hello world!
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd886703" class="outline-2"&gt;
-&lt;h2 id="orgd886703"&gt;運動能讓細胞一直處於高能量狀態&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd886703"&gt;
+&lt;div id="outline-container-org5a7470d" class="outline-2"&gt;
+&lt;h2 id="org5a7470d"&gt;運動能讓細胞一直處於高能量狀態&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5a7470d"&gt;
 &lt;p&gt;
 運動的好處有很多，我們可以從三個層面來告訴自己為什麼一定要運動。
 &lt;/p&gt;
@@ -610,9 +610,9 @@ Hello world!
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfab491b" class="outline-2"&gt;
-&lt;h2 id="orgfab491b"&gt;慢走&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfab491b"&gt;
+&lt;div id="outline-container-orga5af5ce" class="outline-2"&gt;
+&lt;h2 id="orga5af5ce"&gt;慢走&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga5af5ce"&gt;
 &lt;p&gt;
 骨癌手術後在病床上的那段日子，忍受著身體的劇痛，每天打針、吊點滴、吃藥、讀書之外，太太每天還要求我陪她出去散步。起初，這件事讓我相當的惱火。我雖然幸運的不必截肢，但是開刀之後，傷口還未完全復原，走路一拐一拐的，對重視儀表的我來說，總覺得這樣看起來很醜，很丟臉。但太太不死心，一再要求我陪她散步。
 &lt;/p&gt;
@@ -653,9 +653,9 @@ Hello world!
 對巴菲特投資思想發展階段的劃分，一般都是合夥公司階段為早期，控股波克夏 (Berkshire Hathaway) 後至八十年末為中期，九十年代後至今為後期。其劃分方法是根據公司的組織形式和經營模式，有一定道理，但嚴格從他個人投資思想的進化脈絡來看不夠準確。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org86d2acf" class="outline-2"&gt;
-&lt;h2 id="org86d2acf"&gt;第一階段 (早期) 1949-1971 年 (19-41 歲)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org86d2acf"&gt;
+&lt;div id="outline-container-orge1b441a" class="outline-2"&gt;
+&lt;h2 id="orge1b441a"&gt;第一階段 (早期) 1949-1971 年 (19-41 歲)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge1b441a"&gt;
 &lt;p&gt;
 從年代看主要集中在五六十年代。投資風格是葛拉漢 (Benjamin Graham ) 式的安全邊際法，被後人稱為“價值投資法”，巴菲特自己則戲稱為只買便宜貨的“雪茄煙蒂”投資法。
 &lt;/p&gt;
@@ -732,9 +732,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge1bb3de" class="outline-2"&gt;
-&lt;h2 id="orge1bb3de"&gt;第二階段 (中期) 1972-1989 (42-59 歲)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge1bb3de"&gt;
+&lt;div id="outline-container-org3398044" class="outline-2"&gt;
+&lt;h2 id="org3398044"&gt;第二階段 (中期) 1972-1989 (42-59 歲)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3398044"&gt;
 &lt;p&gt;
 1972 年 1 月 3 日，巴菲特接受蒙格的建議，用 2500 萬美元收購了喜詩糖果 (See’s Candies) 公司，以此為開端，蒙格就不斷地推動著巴菲特向為質量付出代價的方向前進。
 &lt;/p&gt;
@@ -774,9 +774,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd0c7bb4" class="outline-2"&gt;
-&lt;h2 id="orgd0c7bb4"&gt;第三階段 (後期) 1990 至今 (60 歲以來)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd0c7bb4"&gt;
+&lt;div id="outline-container-org617ae89" class="outline-2"&gt;
+&lt;h2 id="org617ae89"&gt;第三階段 (後期) 1990 至今 (60 歲以來)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org617ae89"&gt;
 &lt;p&gt;
 即 1990 年代以來。還可以有一種更加精確的劃分方法 — 1995 年 (65 歲) 至今為巴菲特後期。有蒙格的話為證：“過了 65 歲之後，華倫的投資技巧真是百尺竿頭，更進一步。”
 &lt;/p&gt;
@@ -795,9 +795,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org813b5b2" class="outline-3"&gt;
-&lt;h3 id="org813b5b2"&gt;“護城河”概念的提出&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org813b5b2"&gt;
+&lt;div id="outline-container-orgf03637d" class="outline-3"&gt;
+&lt;h3 id="orgf03637d"&gt;“護城河”概念的提出&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf03637d"&gt;
 &lt;p&gt;
 標誌著巴菲特評估企業長期競爭優勢和內在價值的藝術更加成熟。1993 年巴菲特在致股東信中首次提出了“護城河”概念。他說：“最近幾年可樂和吉列 (Gillette) 刮鬍刀在全球的市場份額實際上還在增加。
 &lt;/p&gt;
@@ -816,9 +816,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd4b54dd" class="outline-3"&gt;
-&lt;h3 id="orgd4b54dd"&gt;投資戰略的轉變&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd4b54dd"&gt;
+&lt;div id="outline-container-org438b029" class="outline-3"&gt;
+&lt;h3 id="org438b029"&gt;投資戰略的轉變&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org438b029"&gt;
 &lt;p&gt;
 一個轉變：“由於波克夏的資產迅速膨脹，以及會明顯影響我們業績的投資空間急劇收縮，使得我們必須做出精明的決策。因此我們採用了一種僅需要幾次精明 — 而不是過於精明 — 的戰略，事實上，每年有一個好主意對我們來說就夠了。”這意味著巴菲特採取更加集中持股的投資戰略。
 &lt;/p&gt;
@@ -829,9 +829,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3bb2581" class="outline-3"&gt;
-&lt;h3 id="org3bb2581"&gt;“揮棒”概念的發展&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3bb2581"&gt;
+&lt;div id="outline-container-org1e74cf3" class="outline-3"&gt;
+&lt;h3 id="org1e74cf3"&gt;“揮棒”概念的發展&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1e74cf3"&gt;
 &lt;p&gt;
 美國超級擊球手威廉姆斯在所寫的《打擊科學》一書中解釋了自己的擊球技巧。它將擊球區分成 77 個單元，每個單元代表一個棒球，只有當球處在最好的單元時 (幸運區)，他才會揮棒擊球，即使這樣做會面臨三振出局的風險，因為處在最差位置的球將嚴重降低他的成功率。
 &lt;/p&gt;
@@ -842,9 +842,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc6daab6" class="outline-3"&gt;
-&lt;h3 id="orgc6daab6"&gt;三類業務的區分&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc6daab6"&gt;
+&lt;div id="outline-container-orgcbde92d" class="outline-3"&gt;
+&lt;h3 id="orgcbde92d"&gt;三類業務的區分&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgcbde92d"&gt;
 &lt;p&gt;
 巴菲特在 2007 年的致股東信中對偉大 (卓越)、優秀和可憎三類業務做了傳神劃分。
 &lt;/p&gt;
@@ -859,9 +859,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga020875" class="outline-3"&gt;
-&lt;h3 id="orga020875"&gt;跨國投資和收購的突破&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga020875"&gt;
+&lt;div id="outline-container-org1de2747" class="outline-3"&gt;
+&lt;h3 id="org1de2747"&gt;跨國投資和收購的突破&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1de2747"&gt;
 &lt;p&gt;
 巴菲特的首次跨國投資是 1991 年投資英國的酒精類飲料公司健力士 (Guinness) ；最有代表性的跨國投資則是 2003 年投資中石油近 5 億美元；最有代表性的跨國收購則是 2006 年以 40 億美元購買以色列伊斯卡爾金屬製品公司 80% 的股份，這是巴菲特在美國以外進行的最大一筆投資交易，也是以色列歷史上來自海外的最大一筆投資。
 &lt;/p&gt;
@@ -873,9 +873,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org85db00b" class="outline-3"&gt;
-&lt;h3 id="org85db00b"&gt;非常規投資更加多樣化&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org85db00b"&gt;
+&lt;div id="outline-container-orgaeb47c7" class="outline-3"&gt;
+&lt;h3 id="orgaeb47c7"&gt;非常規投資更加多樣化&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgaeb47c7"&gt;
 &lt;p&gt;
 鼓鼓囊囊的錢包，迫使巴菲特在非常規投資又有了新的突破和發展。在 1991 年透過私募的方式投資了 3 億美元的美國運通俗稱“Percs”的股票，在投資的前三年可以領取一筆特別的股利，在 1994 年 8 月以前轉換成普通股；1994-1995 年建立了 4570 萬桶部位的石油的衍生合約；1997 年購買了 1.112 億盎司的白銀；1997 年購買了 46 億美元以帳面攤銷的長期美國零息債券；2002 年首度進入外匯市場投資，截至
 2004 年底總計持有 214 億美元的外匯部位，投資組合遍佈十二種外幣；同時於同年涉足以歐元為單位垃圾債券市場，至 2006 年總值達
@@ -895,13 +895,13 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 來源：&lt;a href="https://www.stockfeel.com.tw/%E5%85%A8%E7%90%8310%E4%BD%8D%E6%9C%80%E9%A0%82%E5%B0%96%E6%8A%95%E8%B3%87%E5%AE%B6%E7%9A%84%E4%BA%A4%E6%98%93%E6%80%9D%E6%83%B3/"&gt;全球 10 位最頂尖投資家的交易思想 - StockFeel 股感知識庫 StockFeel 股感知識庫&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org0a418d0" class="outline-2"&gt;
-&lt;h2 id="org0a418d0"&gt;伯納德・巴魯克（Bernard Baruch）&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0a418d0"&gt;
+&lt;div id="outline-container-orgfee0419" class="outline-2"&gt;
+&lt;h2 id="orgfee0419"&gt;伯納德・巴魯克（Bernard Baruch）&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfee0419"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc21ab62" class="outline-3"&gt;
-&lt;h3 id="orgc21ab62"&gt;經歷了美國 1929 年股災仍能積累幾千萬美元財富的大投資家&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc21ab62"&gt;
+&lt;div id="outline-container-org6cdbafb" class="outline-3"&gt;
+&lt;h3 id="org6cdbafb"&gt;經歷了美國 1929 年股災仍能積累幾千萬美元財富的大投資家&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6cdbafb"&gt;
 &lt;p&gt;
 一位具有傳奇色彩的風險投資家，一位曾經征服了華爾街，後又征服了華盛頓的最著名、最受人敬慕的人物。1897 年以 300 美元做風險投資起家，32 歲積累了 320 萬元的財富，經歷 1929 到 1933 年經濟大蕭條之後，仍能積累起幾千萬美元的財富。巴魯克是那個時代少有的幾位“既賺了錢又保存了勝利果實的大炒家”。
 &lt;/p&gt;
@@ -921,9 +921,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org826a96c" class="outline-3"&gt;
-&lt;h3 id="org826a96c"&gt;“群眾永遠是錯的”是巴魯克投資哲學的第一要義&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org826a96c"&gt;
+&lt;div id="outline-container-org547971a" class="outline-3"&gt;
+&lt;h3 id="org547971a"&gt;“群眾永遠是錯的”是巴魯克投資哲學的第一要義&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org547971a"&gt;
 &lt;p&gt;
 巴魯克的一個經典小故事：有一天，他在華爾街上擦鞋，擦鞋童向他提供了股票賺錢的秘訣。巴魯克一回到辦公室就把所有的股票全部拋出去了。
 &lt;/p&gt;
@@ -939,9 +939,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgca8e422" class="outline-3"&gt;
-&lt;h3 id="orgca8e422"&gt;巴魯克的投資十守則&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgca8e422"&gt;
+&lt;div id="outline-container-org3b2db9d" class="outline-3"&gt;
+&lt;h3 id="org3b2db9d"&gt;巴魯克的投資十守則&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3b2db9d"&gt;
 &lt;p&gt;
 巴魯克提出的投資十守則，看起來平淡無奇，運用起來穩紮穩打，非常有效。
 &lt;/p&gt;
@@ -992,9 +992,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd81975b" class="outline-3"&gt;
-&lt;h3 id="orgd81975b"&gt;巴魯克的最經典名言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd81975b"&gt;
+&lt;div id="outline-container-org0b960d4" class="outline-3"&gt;
+&lt;h3 id="org0b960d4"&gt;巴魯克的最經典名言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0b960d4"&gt;
 &lt;p&gt;
 我個人認為巴魯克的下面這句名言是其最經典的。巴魯克說：“如果投機者一半的時間是正確的，他很幸運。假如一個人意識到他所犯的錯誤，並且立即放棄虧損，那麼，他在 10 次中做對了 3 或 4 次，就可以為他帶來財富。”
 &lt;/p&gt;
@@ -1006,9 +1006,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgeae4cc4" class="outline-3"&gt;
-&lt;h3 id="orgeae4cc4"&gt;巴魯克的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgeae4cc4"&gt;
+&lt;div id="outline-container-orge31becb" class="outline-3"&gt;
+&lt;h3 id="orge31becb"&gt;巴魯克的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge31becb"&gt;
 &lt;p&gt;
 1、《A Philosophy for Our Time》（1954 年）
 &lt;/p&gt;
@@ -1032,9 +1032,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc248eee" class="outline-2"&gt;
-&lt;h2 id="orgc248eee"&gt;世界上最偉大的交易者：李佛摩&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc248eee"&gt;
+&lt;div id="outline-container-orgac50af2" class="outline-2"&gt;
+&lt;h2 id="orgac50af2"&gt;世界上最偉大的交易者：李佛摩&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgac50af2"&gt;
 &lt;p&gt;
 李佛摩在 15 歲的時候開始股票交易，堪稱世界上最偉大的交易者。他在美國股票市場上四起四落，驚心動魄的戰史，以及他表現出來的驚人意志力和智慧，至今仍令人們十分敬佩。
 &lt;/p&gt;
@@ -1048,9 +1048,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb5bb388" class="outline-3"&gt;
-&lt;h3 id="orgb5bb388"&gt;《股票作手回憶錄》是各方公認的經典投資書籍&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb5bb388"&gt;
+&lt;div id="outline-container-org6eb6ef5" class="outline-3"&gt;
+&lt;h3 id="org6eb6ef5"&gt;《股票作手回憶錄》是各方公認的經典投資書籍&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6eb6ef5"&gt;
 &lt;p&gt;
 無論是投機者，還是價值投資者，都認為以李佛摩生平為背景的一本書《股票作手回憶錄》是一本投資經典書籍。這是非常非常難得的。因為價值投資者認為的好書，投機者往往不屑一顧，反之亦然。
 &lt;/p&gt;
@@ -1061,9 +1061,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbb7dffb" class="outline-3"&gt;
-&lt;h3 id="orgbb7dffb"&gt;李佛摩的交易策略&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgbb7dffb"&gt;
+&lt;div id="outline-container-orgd1c58b9" class="outline-3"&gt;
+&lt;h3 id="orgd1c58b9"&gt;李佛摩的交易策略&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd1c58b9"&gt;
 &lt;p&gt;
 李佛摩這位隱逸天才的那些富有革命性的交易策略，今天的人們仍然在使用。Livermore 的交易策略是在自己多年的股票交易經歷中逐步形成的。其中最重要的一些策略，我總結概述如下：
 &lt;/p&gt;
@@ -1094,9 +1094,9 @@ Express) 中，並持股長達 4 年，在隨後的 5 年時間裡，美國運�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfc547eb" class="outline-3"&gt;
-&lt;h3 id="orgfc547eb"&gt;像李佛摩那樣進行交易&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfc547eb"&gt;
+&lt;div id="outline-container-org3e2019c" class="outline-3"&gt;
+&lt;h3 id="org3e2019c"&gt;像李佛摩那樣進行交易&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3e2019c"&gt;
 &lt;p&gt;
 Richard Smitten 根據李佛摩的私人文件和對其家人的訪談，提供了他對李佛摩交易方法的深刻看法。
 &lt;/p&gt;
@@ -1108,9 +1108,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3a603b5" class="outline-3"&gt;
-&lt;h3 id="org3a603b5"&gt;李佛摩關於人性的經典名言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3a603b5"&gt;
+&lt;div id="outline-container-org67d1861" class="outline-3"&gt;
+&lt;h3 id="org67d1861"&gt;李佛摩關於人性的經典名言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org67d1861"&gt;
 &lt;p&gt;
 記住，驅動股市的不是理智、邏輯或純經濟因素，驅動股市的是從來不會改變的人的本性。它不會改變，因為它是我們的本性。
 &lt;/p&gt;
@@ -1121,9 +1121,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge05ee46" class="outline-3"&gt;
-&lt;h3 id="orge05ee46"&gt;李佛摩的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge05ee46"&gt;
+&lt;div id="outline-container-org35c37c3" class="outline-3"&gt;
+&lt;h3 id="org35c37c3"&gt;李佛摩的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org35c37c3"&gt;
 &lt;p&gt;
 1、《Reminiscences of a Stock Operator》，1923 年首次出版，作者 Edwin Lefevre。
 &lt;/p&gt;
@@ -1147,9 +1147,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgec94f71" class="outline-2"&gt;
-&lt;h2 id="orgec94f71"&gt;葛拉漢：證券分析之父&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgec94f71"&gt;
+&lt;div id="outline-container-orge2620f7" class="outline-2"&gt;
+&lt;h2 id="orge2620f7"&gt;葛拉漢：證券分析之父&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge2620f7"&gt;
 &lt;p&gt;
 葛拉漢作為一代宗師，他的金融分析學說和思想在投資領域產生了極為巨大的震動，影響了幾乎三代重要的投資者，如今活躍在華爾街的數十位上億的投資管理人都自稱為葛拉漢的信徒，他享有“華爾街教父”的美譽。
 &lt;/p&gt;
@@ -1171,9 +1171,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2033150" class="outline-3"&gt;
-&lt;h3 id="org2033150"&gt;葛拉漢的投資理念&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2033150"&gt;
+&lt;div id="outline-container-org35dcdd4" class="outline-3"&gt;
+&lt;h3 id="org35dcdd4"&gt;葛拉漢的投資理念&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org35dcdd4"&gt;
 &lt;p&gt;
 葛拉漢的投資理念就是依據價值分析法在股票長期處於低價時買進，而在價格合適時賣出，“讓別人去賺多餘的利潤”。
 &lt;/p&gt;
@@ -1184,9 +1184,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc1941be" class="outline-3"&gt;
-&lt;h3 id="orgc1941be"&gt;葛拉漢的投資要點&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc1941be"&gt;
+&lt;div id="outline-container-orgfd3f248" class="outline-3"&gt;
+&lt;h3 id="orgfd3f248"&gt;葛拉漢的投資要點&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfd3f248"&gt;
 &lt;p&gt;
 人們經常記得股神巴菲特(Warren Buffett)說過這樣的話：“第一，不要虧錢，第二，永遠記住第一點。”其實，這是巴菲特的老師葛拉漢本人總結的投資要點。
 &lt;/p&gt;
@@ -1201,9 +1201,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4f5ae60" class="outline-3"&gt;
-&lt;h3 id="org4f5ae60"&gt;葛拉漢去世前宣布不再信奉基本分析，值得認真思考&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org4f5ae60"&gt;
+&lt;div id="outline-container-org1dcb712" class="outline-3"&gt;
+&lt;h3 id="org1dcb712"&gt;葛拉漢去世前宣布不再信奉基本分析，值得認真思考&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1dcb712"&gt;
 &lt;p&gt;
 葛拉漢去世前不久，在接受美國《財務分析師》雜誌訪談中，宣布他不再信奉基本分析派，最終相信“有效市場”理論。
 &lt;/p&gt;
@@ -1214,9 +1214,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1782267" class="outline-3"&gt;
-&lt;h3 id="org1782267"&gt;葛拉漢的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1782267"&gt;
+&lt;div id="outline-container-org69bda9a" class="outline-3"&gt;
+&lt;h3 id="org69bda9a"&gt;葛拉漢的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org69bda9a"&gt;
 &lt;p&gt;
 1、《證券分析》，1934 年初版，作者 Benjamin Graham，David Dodd。
 &lt;/p&gt;
@@ -1233,9 +1233,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org398b327" class="outline-2"&gt;
-&lt;h2 id="org398b327"&gt;是川銀藏：令巴菲特、索羅斯推崇備至的人物？&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org398b327"&gt;
+&lt;div id="outline-container-org7b45ca2" class="outline-2"&gt;
+&lt;h2 id="org7b45ca2"&gt;是川銀藏：令巴菲特、索羅斯推崇備至的人物？&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7b45ca2"&gt;
 &lt;p&gt;
 1897 年，是川銀藏生於日本兵庫縣，在我選的 18 位最偉大的投資家中是唯一的非歐美人士。
 &lt;/p&gt;
@@ -1269,9 +1269,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org21b159f" class="outline-3"&gt;
-&lt;h3 id="org21b159f"&gt;是川銀藏致勝股市的三件法寶&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org21b159f"&gt;
+&lt;div id="outline-container-org053cacc" class="outline-3"&gt;
+&lt;h3 id="org053cacc"&gt;是川銀藏致勝股市的三件法寶&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org053cacc"&gt;
 &lt;p&gt;
 據《股神：是川銀藏》一書陳述，是川銀藏致勝股市的三件法寶是：（1）只吃八分飽，（2）烏龜三原則，（3）股市投資五原則。
 &lt;/p&gt;
@@ -1350,9 +1350,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org975380d" class="outline-3"&gt;
-&lt;h3 id="org975380d"&gt;是川銀藏的經典名言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org975380d"&gt;
+&lt;div id="outline-container-orgfec9d9f" class="outline-3"&gt;
+&lt;h3 id="orgfec9d9f"&gt;是川銀藏的經典名言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfec9d9f"&gt;
 &lt;p&gt;
 我個人選擇的是川銀藏的經典名言如下：
 &lt;/p&gt;
@@ -1367,9 +1367,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7f9e754" class="outline-3"&gt;
-&lt;h3 id="org7f9e754"&gt;是川銀藏的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7f9e754"&gt;
+&lt;div id="outline-container-org4f951ab" class="outline-3"&gt;
+&lt;h3 id="org4f951ab"&gt;是川銀藏的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4f951ab"&gt;
 &lt;p&gt;
 1、是川銀藏 93 歲時撰寫的自傳《股市之神：是川銀藏》。
 &lt;/p&gt;
@@ -1385,9 +1385,9 @@ Richard Smitten 在他的著作中總結了李佛摩的市場規則、時機規�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1b24459" class="outline-2"&gt;
-&lt;h2 id="org1b24459"&gt;安全度過 1929 年股災的投資家&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b24459"&gt;
+&lt;div id="outline-container-orga960dbc" class="outline-2"&gt;
+&lt;h2 id="orga960dbc"&gt;安全度過 1929 年股災的投資家&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga960dbc"&gt;
 &lt;p&gt;
 Gerald M. Loeb 於 1899 年出生於舊金山，1921 年開始證券投資，他幾乎終身都在 EF Hutton 工作，後來終於成為這家券商的副總裁。
 &lt;/p&gt;
@@ -1405,9 +1405,9 @@ Loeb 是一位安全度過 1929 年股災的投資家，他發現 1929 年股市
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgeb9f29e" class="outline-3"&gt;
-&lt;h3 id="orgeb9f29e"&gt;股票市場中最重要的一個因素就是大眾心理&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgeb9f29e"&gt;
+&lt;div id="outline-container-orge051589" class="outline-3"&gt;
+&lt;h3 id="orge051589"&gt;股票市場中最重要的一個因素就是大眾心理&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge051589"&gt;
 &lt;p&gt;
 Loeb 進入我選的 18 位最偉大的投資家，可能與我個人的投資偏好與投資哲學有關係。我個人認為，影響股價波動最重要的一個因素是心理因素。而 Loeb 在 1935 年就出版的《投資存亡戰》裡就已經明確指出：在日趨成型的股票市場中最重要的一個因素就是大眾心理。
 &lt;/p&gt;
@@ -1422,9 +1422,9 @@ Loeb 說：“形成證券市場形態的唯一的但非常重要的因素就是
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1b5382e" class="outline-3"&gt;
-&lt;h3 id="org1b5382e"&gt;Gerald M. Loeb 的著作《投資存亡戰》名列十大投資經典&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1b5382e"&gt;
+&lt;div id="outline-container-org9a7c77e" class="outline-3"&gt;
+&lt;h3 id="org9a7c77e"&gt;Gerald M. Loeb 的著作《投資存亡戰》名列十大投資經典&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9a7c77e"&gt;
 &lt;p&gt;
 Gerald M. Loeb 於 1935 年出版了著作《投資生存戰》（The Battle for Investment Survival），很快成為暢銷書，初版就賣出了 20 餘萬冊。該書與價值投資的經典書籍《證券分析》（Security Analysis）（1934 年初版，作者 Benjamin Graham，David Dodd）幾乎同時出版上架。《投資生存戰》於 1936 年、1937 年、1943 年、1952 年、1953 年、1955 年、1956 年、1957 年、1965 年和 1996 年進行了重版。重版次數之多，相當罕見。
 &lt;/p&gt;
@@ -1439,9 +1439,9 @@ Gerald M. Loeb 於 1935 年出版了著作《投資生存戰》（The Battle for
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org48722ea" class="outline-3"&gt;
-&lt;h3 id="org48722ea"&gt;Gerald M. Loeb 的最經典名言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org48722ea"&gt;
+&lt;div id="outline-container-orgb66040f" class="outline-3"&gt;
+&lt;h3 id="orgb66040f"&gt;Gerald M. Loeb 的最經典名言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb66040f"&gt;
 &lt;p&gt;
 我個人選擇的 Gerald M. Loeb 的最經典名言：在過去 40 年中，我在華爾街上所學到的最重要的事情是認識到每個人都是那麼的無知，而且自己也是那麼的無知。
 &lt;/p&gt;
@@ -1452,9 +1452,9 @@ Gerald M. Loeb 於 1935 年出版了著作《投資生存戰》（The Battle for
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orged59dcb" class="outline-3"&gt;
-&lt;h3 id="orged59dcb"&gt;Gerald M. Loeb 的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orged59dcb"&gt;
+&lt;div id="outline-container-org7df3db6" class="outline-3"&gt;
+&lt;h3 id="org7df3db6"&gt;Gerald M. Loeb 的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7df3db6"&gt;
 &lt;p&gt;
 1、《The Battle for Investment Survival》，1935 年初版，作者 Gerald M. Loeb。
 &lt;/p&gt;
@@ -1470,9 +1470,9 @@ Gerald M. Loeb 於 1935 年出版了著作《投資生存戰》（The Battle for
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfbb5be5" class="outline-2"&gt;
-&lt;h2 id="orgfbb5be5"&gt;最偉大的贏利記錄：68 年的投資生涯，沒有一年賠過錢&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfbb5be5"&gt;
+&lt;div id="outline-container-org589e1ba" class="outline-2"&gt;
+&lt;h2 id="org589e1ba"&gt;最偉大的贏利記錄：68 年的投資生涯，沒有一年賠過錢&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org589e1ba"&gt;
 &lt;p&gt;
 美國共同基金之父 Roy R. Neuberger，在 68 年的投資生涯中，沒有一年賠過錢。我個人的感覺：這一歷史恐怕會是前無古人後無來者、無人能夠打破。巴菲特過去 51 年的投資生涯中，也有一年是虧損的。
 &lt;/p&gt;
@@ -1486,9 +1486,9 @@ Neuberger 沒有讀過大學，也沒有上過商業學校，被業內人士稱�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org39ddc44" class="outline-3"&gt;
-&lt;h3 id="org39ddc44"&gt;Neuberger 的成功投資十原則&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org39ddc44"&gt;
+&lt;div id="outline-container-orgffd61ad" class="outline-3"&gt;
+&lt;h3 id="orgffd61ad"&gt;Neuberger 的成功投資十原則&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgffd61ad"&gt;
 &lt;p&gt;
 紐柏格從幾百件實際教訓中歸納了十條最重要的法則。在近 70 年的投資和交易中，他一直遵守安，這十條法則使他受益匪淺。
 &lt;/p&gt;
@@ -1615,9 +1615,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org23044da" class="outline-3"&gt;
-&lt;h3 id="org23044da"&gt;羅伊・紐柏格的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org23044da"&gt;
+&lt;div id="outline-container-org7d9592c" class="outline-3"&gt;
+&lt;h3 id="org7d9592c"&gt;羅伊・紐柏格的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7d9592c"&gt;
 &lt;p&gt;
 自傳《So Far，So Good：The First 94 Years》。
 &lt;/p&gt;
@@ -1625,9 +1625,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf05e93b" class="outline-2"&gt;
-&lt;h2 id="orgf05e93b"&gt;安德烈・科斯托蘭尼：我最崇拜的投資家&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf05e93b"&gt;
+&lt;div id="outline-container-org342d9d6" class="outline-2"&gt;
+&lt;h2 id="org342d9d6"&gt;安德烈・科斯托蘭尼：我最崇拜的投資家&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org342d9d6"&gt;
 &lt;p&gt;
 眾多最偉大的投資家中，我最崇拜的是安德烈・科斯托蘭尼。我認為自己的投資哲學與科斯托蘭尼最為接近，或者說，科斯托蘭尼的投資哲學對我現在的投資理念的烙印最深。
 &lt;/p&gt;
@@ -1641,9 +1641,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgad7985c" class="outline-3"&gt;
-&lt;h3 id="orgad7985c"&gt;安德烈・科斯托蘭尼的投資哲學&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgad7985c"&gt;
+&lt;div id="outline-container-org3b524ae" class="outline-3"&gt;
+&lt;h3 id="org3b524ae"&gt;安德烈・科斯托蘭尼的投資哲學&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3b524ae"&gt;
 &lt;ol class="org-ol"&gt;
 &lt;li&gt;科斯托蘭尼關於長期走勢的觀點&lt;/li&gt;
 &lt;/ol&gt;
@@ -1694,9 +1694,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org620b9f8" class="outline-3"&gt;
-&lt;h3 id="org620b9f8"&gt;安德烈・科斯托蘭尼的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org620b9f8"&gt;
+&lt;div id="outline-container-orge80929e" class="outline-3"&gt;
+&lt;h3 id="orge80929e"&gt;安德烈・科斯托蘭尼的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge80929e"&gt;
 &lt;p&gt;
 科斯托蘭尼一共有 13 本著作，中譯本我已經看到出版了 6 本。
 &lt;/p&gt;
@@ -1728,9 +1728,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdcaa5c4" class="outline-2"&gt;
-&lt;h2 id="orgdcaa5c4"&gt;菲利普・費雪（Philip A. Fisher）&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdcaa5c4"&gt;
+&lt;div id="outline-container-org0e88ee6" class="outline-2"&gt;
+&lt;h2 id="org0e88ee6"&gt;菲利普・費雪（Philip A. Fisher）&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0e88ee6"&gt;
 &lt;p&gt;
 菲利普・費雪：成長股價值投資策略之父
 &lt;/p&gt;
@@ -1745,9 +1745,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org8bdc133" class="outline-3"&gt;
-&lt;h3 id="org8bdc133"&gt;菲利普・費雪：股神巴菲特的老師&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8bdc133"&gt;
+&lt;div id="outline-container-orgd30bf74" class="outline-3"&gt;
+&lt;h3 id="orgd30bf74"&gt;菲利普・費雪：股神巴菲特的老師&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd30bf74"&gt;
 &lt;p&gt;
 巴菲特讀了費舍 1958 年出版的《怎樣選擇成長股》（Common Stocks and Uncommon Profits）這本書後，就開始尋找書的作者。巴菲特說：“當我和他見面的時候，我對他這個人和他的思想都留下了深刻的印象。他和葛拉漢很像，他表現得謙虛而大方，是一個很特別的老師。 ”巴菲特指出，葛拉漢和費雪的投資方法不同，但是，這兩種方法“在投資界並行”。
 &lt;/p&gt;
@@ -1758,9 +1758,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org052b0ef" class="outline-3"&gt;
-&lt;h3 id="org052b0ef"&gt;菲利普・費雪的投資哲學&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org052b0ef"&gt;
+&lt;div id="outline-container-org9303e3b" class="outline-3"&gt;
+&lt;h3 id="org9303e3b"&gt;菲利普・費雪的投資哲學&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9303e3b"&gt;
 &lt;p&gt;
 費雪是一個成長型股票投資人，他的投資哲學是尋找能夠成長、再成長的公司股票，而且以合理的價格買進後，幾乎不再賣出。
 &lt;/p&gt;
@@ -1791,9 +1791,9 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org612d7ad" class="outline-3"&gt;
-&lt;h3 id="org612d7ad"&gt;菲利普・費雪的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org612d7ad"&gt;
+&lt;div id="outline-container-org5ddc5b7" class="outline-3"&gt;
+&lt;h3 id="org5ddc5b7"&gt;菲利普・費雪的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5ddc5b7"&gt;
 &lt;p&gt;
 菲利普・費雪的著作是《Common Stocks and Uncommon Profits and Other Writings》。
 &lt;/p&gt;
@@ -1817,13 +1817,13 @@ Neuberger 說：根據形勢的變化改變自己的思維方式是有必要的�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge568cde" class="outline-2"&gt;
-&lt;h2 id="orge568cde"&gt;Shelby Collum Davis&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge568cde"&gt;
+&lt;div id="outline-container-org803f2b6" class="outline-2"&gt;
+&lt;h2 id="org803f2b6"&gt;Shelby Collum Davis&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org803f2b6"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgf0f69fb" class="outline-3"&gt;
-&lt;h3 id="orgf0f69fb"&gt;最偉大的家族投資家&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf0f69fb"&gt;
+&lt;div id="outline-container-org2a49e6c" class="outline-3"&gt;
+&lt;h3 id="org2a49e6c"&gt;最偉大的家族投資家&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2a49e6c"&gt;
 &lt;p&gt;
 Davis 家族是美國少見具三代投資傳承的家族之一。第一代的 Shelby Collum Davis，在 1940 年代即是美國著名的投資人。第二代的 Shelby
 Davis、第三代的 Chris Davis 及 Andrew Davis 均是華爾街很著名的基金經理。
@@ -1856,9 +1856,9 @@ Davis、第三代的 Chris Davis 及 Andrew Davis 均是華爾街很著名的基
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org36df0a8" class="outline-3"&gt;
-&lt;h3 id="org36df0a8"&gt;相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org36df0a8"&gt;
+&lt;div id="outline-container-orgd8296df" class="outline-3"&gt;
+&lt;h3 id="orgd8296df"&gt;相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd8296df"&gt;
 &lt;p&gt;
 《Davis Dynasty》這本書的作者是與彼得・林區合著三本暢銷書的 John Rothchild，彼得・林區為該書作序。
 &lt;/p&gt;
@@ -1866,9 +1866,9 @@ Davis、第三代的 Chris Davis 及 Andrew Davis 均是華爾街很著名的基
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdb08c24" class="outline-2"&gt;
-&lt;h2 id="orgdb08c24"&gt;約翰・坦伯頓（John Templeton）&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdb08c24"&gt;
+&lt;div id="outline-container-orgb66ef6e" class="outline-2"&gt;
+&lt;h2 id="orgb66ef6e"&gt;約翰・坦伯頓（John Templeton）&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb66ef6e"&gt;
 &lt;p&gt;
 約翰・坦伯頓：全球投資之父
 &lt;/p&gt;
@@ -1887,9 +1887,9 @@ Davis、第三代的 Chris Davis 及 Andrew Davis 均是華爾街很著名的基
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org10be4fa" class="outline-3"&gt;
-&lt;h3 id="org10be4fa"&gt;坦伯頓的傳世名言&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org10be4fa"&gt;
+&lt;div id="outline-container-org22c29b2" class="outline-3"&gt;
+&lt;h3 id="org22c29b2"&gt;坦伯頓的傳世名言&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org22c29b2"&gt;
 &lt;p&gt;
 “拒絕將技術分析作為一種投資方法，你必須是一位基本面投資者才能在這個市場上獲得真正成功。”
 &lt;/p&gt;
@@ -1908,9 +1908,9 @@ Davis、第三代的 Chris Davis 及 Andrew Davis 均是華爾街很著名的基
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge5b497f" class="outline-3"&gt;
-&lt;h3 id="orge5b497f"&gt;坦伯頓的相關著作&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge5b497f"&gt;
+&lt;div id="outline-container-org86ce299" class="outline-3"&gt;
+&lt;h3 id="org86ce299"&gt;坦伯頓的相關著作&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org86ce299"&gt;
 &lt;p&gt;
 “Spiritual Investments: Wall Street Wisdom From The Career Of Sir John Templeton" by Gary D. Moore (1998)。
 &lt;/p&gt;
@@ -1933,9 +1933,9 @@ Templeton and James Ellison (1992)。
 今天想來介紹一位我佩服至極的低調大神 — 對沖基金經理賽思‧克拉爾曼 (Seth Klarman) 。他和他的對沖基金 Baupost  妖嬈的業績神話我就不多廢話了，有興趣的可以參見拙作&lt;a href="https://xueqiu.com/9598793634/75342840"&gt;像對沖基金經理那樣去思考：事件驅動交易以及扯一點關於價值投資的淡&lt;/a&gt;，本文僅僅想對他的一些投資思想與哲學做一個簡單梳理。當然其思想體系博大精深，我也只是說個部分，如果以後有機會，我們再來狗尾續貂。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgbb101c2" class="outline-2"&gt;
-&lt;h2 id="orgbb101c2"&gt;一、從一個關於投機的小寓言故事說起&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbb101c2"&gt;
+&lt;div id="outline-container-orgf2c980b" class="outline-2"&gt;
+&lt;h2 id="orgf2c980b"&gt;一、從一個關於投機的小寓言故事說起&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf2c980b"&gt;
 &lt;p&gt;
 在遙遠的加利福尼亞共和國，有一個美如畫的海邊小鎮叫蒙特雷 (Monterey) ，其附近海域在一百年前曾是沙丁魚扎堆的大漁場。於是靠海吃海，小鎮的漁業與罐頭食品業生意昌隆。然而天有不測風雲，出於某種不可解釋的神奇力量，二戰以後那裡的沙丁魚紛紛神秘消失，但岸邊上的食品加工廠都是有很高的沉沒成本的呀，機器廠房哪能閒置，含著淚也要把工開；於是沙丁魚價格被炒，沙丁魚罐頭的價格也隨之旱地拔蔥。
 &lt;/p&gt;
@@ -1958,9 +1958,9 @@ Templeton and James Ellison (1992)。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org934536c" class="outline-2"&gt;
-&lt;h2 id="org934536c"&gt;二、克拉爾曼談價值投資&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org934536c"&gt;
+&lt;div id="outline-container-org0af033c" class="outline-2"&gt;
+&lt;h2 id="org0af033c"&gt;二、克拉爾曼談價值投資&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0af033c"&gt;
 &lt;p&gt;
 在為班傑明·葛拉漢老爺子的《證券投資》 (Security Analysis) 第六版所做的序言裡，克拉爾曼談了談他眼中的價值投資：什麼叫價值投資，是以資產的價值以下的價格進行投資，留出足夠的安全邊際 — 而安全邊際的使命，是在你的血汗錢與你的失算、出錯、厄運和經濟與市場本身的風雲詭譎之間搭起緩衝區域。
 &lt;/p&gt;
@@ -1991,9 +1991,9 @@ Templeton and James Ellison (1992)。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbcc1eef" class="outline-2"&gt;
-&lt;h2 id="orgbcc1eef"&gt;三、“最安全邊際”&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbcc1eef"&gt;
+&lt;div id="outline-container-orgb213b2d" class="outline-2"&gt;
+&lt;h2 id="orgb213b2d"&gt;三、“最安全邊際”&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb213b2d"&gt;
 &lt;p&gt;
 有人問巴菲特，投資裡有沒有四字真言送給我們這平凡人啊？這其實是個很基礎的問題，但巴菲特還真就想了想，鄭重其事地回答說：有，送你四個字，安全邊際。他認為這是投資裡最重要的四個漢字 (或三個單詞 margin of safety) 。於是我們就聽到了鋪天蓋地對“安全邊際”的喧嘩與騷動。我知道對於很多人而言都聽得都噁心了，但我也知道對於很多人而言未必知道這個四字真言的確切含義。
 &lt;/p&gt;
@@ -2086,9 +2086,9 @@ Lackawanna 鐵路公司。至 1987 年年末，當時 Erie Lackawanna 的股價�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org88dc85a" class="outline-2"&gt;
-&lt;h2 id="org88dc85a"&gt;四、一定要警惕偽價值投資的這股妖風&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org88dc85a"&gt;
+&lt;div id="outline-container-org0c6699f" class="outline-2"&gt;
+&lt;h2 id="org0c6699f"&gt;四、一定要警惕偽價值投資的這股妖風&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0c6699f"&gt;
 &lt;p&gt;
 事先說明不做任何道德判斷，偽價值投資不是偽君子。偽價值投資不一定是故意偽的，有可能你也真心想價值投資，但是理解有偏差或者能力跟不上，結果沒投對；也有可能號稱自己是價值投資，但是打心眼裡其實根本不相信那一套，並不行價值投資之事。但是這些都沒什麼，無關乎道德，最多就虧點自己的錢；最可恥的是那些以價值投資作為幌子來吸引資產，而其投資哲學事實上與價值投資沒有半毛錢關係的基金經理，克拉爾曼給他們貼了一個標籤 — 投資變色龍；罵完了他想想覺得意猶未盡，於是又多貼了一張標籤 — 江湖老神棍。
 &lt;/p&gt;

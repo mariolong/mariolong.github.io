@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：login)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/login.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:17:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Autologin without DM</title><link>https://mariolong.github.io/posts/autologin-without-dm/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;From here: &lt;a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=147913&amp;amp;p=3"&gt;https://bbs.archlinux.org/viewtopic.php?id=147913&amp;amp;p=3&lt;/a&gt;&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：login)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/login.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:58:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Autologin without DM</title><link>https://mariolong.github.io/posts/autologin-without-dm/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;From here: &lt;a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=147913&amp;amp;p=3"&gt;https://bbs.archlinux.org/viewtopic.php?id=147913&amp;amp;p=3&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;and check the status on &lt;a class="reference external" href="https://github.com/joukewitteveen/xlogin.git"&gt;https://github.com/joukewitteveen/xlogin.git&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Here are the installation steps, including for a systemd managed user dbus session instance.&lt;/p&gt;
 &lt;p&gt;1. Install xlogin-git from the AUR.&lt;/p&gt;
@@ -10,33 +10,33 @@ yaourt -S xlogin-git
 &lt;li&gt;Create the following two files. 準備 D-BUS。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;/etc/systemd/user/dbus.socket&lt;/tt&gt; containing:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-1"&gt;&lt;/a&gt;[Unit]
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-2"&gt;&lt;/a&gt;Description=D-Bus Message Bus Socket
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-3"&gt;&lt;/a&gt;Before=sockets.target
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-5"&gt;&lt;/a&gt;[Socket]
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-6"&gt;&lt;/a&gt;ListenStream=/run/user/%U/dbus/user_bus_socket
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-8"&gt;&lt;/a&gt;[Install]
-&lt;a name="rest_code_20b1a80273184ad8a6196ee80871e9f2-9"&gt;&lt;/a&gt;WantedBy=default.target
+&lt;pre class="code text"&gt;&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-1"&gt;&lt;/a&gt;[Unit]
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-2"&gt;&lt;/a&gt;Description=D-Bus Message Bus Socket
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-3"&gt;&lt;/a&gt;Before=sockets.target
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-5"&gt;&lt;/a&gt;[Socket]
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-6"&gt;&lt;/a&gt;ListenStream=/run/user/%U/dbus/user_bus_socket
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-8"&gt;&lt;/a&gt;[Install]
+&lt;a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-9"&gt;&lt;/a&gt;WantedBy=default.target
 &lt;/pre&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;/etc/systemd/user/dbus.service&lt;/tt&gt; containing:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_33a96b1cd0784de0875401533ae2533c-1"&gt;&lt;/a&gt;[Unit]
-&lt;a name="rest_code_33a96b1cd0784de0875401533ae2533c-2"&gt;&lt;/a&gt;Description=D-Bus Message Bus
-&lt;a name="rest_code_33a96b1cd0784de0875401533ae2533c-3"&gt;&lt;/a&gt;Requires=dbus.socket
-&lt;a name="rest_code_33a96b1cd0784de0875401533ae2533c-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_33a96b1cd0784de0875401533ae2533c-5"&gt;&lt;/a&gt;[Service]
-&lt;a name="rest_code_33a96b1cd0784de0875401533ae2533c-6"&gt;&lt;/a&gt;ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
-&lt;a name="rest_code_33a96b1cd0784de0875401533ae2533c-7"&gt;&lt;/a&gt;ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
+&lt;pre class="code text"&gt;&lt;a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-1"&gt;&lt;/a&gt;[Unit]
+&lt;a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-2"&gt;&lt;/a&gt;Description=D-Bus Message Bus
+&lt;a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-3"&gt;&lt;/a&gt;Requires=dbus.socket
+&lt;a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-5"&gt;&lt;/a&gt;[Service]
+&lt;a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-6"&gt;&lt;/a&gt;ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+&lt;a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-7"&gt;&lt;/a&gt;ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
 &lt;/pre&gt;&lt;ol class="arabic simple" start="3"&gt;
 &lt;li&gt;Run (as root) &lt;tt class="docutils literal"&gt;systemctl &lt;span class="pre"&gt;--global&lt;/span&gt; enable dbus.socket&lt;/tt&gt; .&lt;/li&gt;
 &lt;li&gt;Set up your .xinitrc and make sure it has the following near the top.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_efd7ded3e00b4bbd92383f74214066fc-1"&gt;&lt;/a&gt;if [ -d /etc/X11/xinit/xinitrc.d ]; then
-&lt;a name="rest_code_efd7ded3e00b4bbd92383f74214066fc-2"&gt;&lt;/a&gt;    for f in /etc/X11/xinit/xinitrc.d/*; do
-&lt;a name="rest_code_efd7ded3e00b4bbd92383f74214066fc-3"&gt;&lt;/a&gt;        [ -x "$f" ] &amp;amp;&amp;amp; . "$f"
-&lt;a name="rest_code_efd7ded3e00b4bbd92383f74214066fc-4"&gt;&lt;/a&gt;    done
-&lt;a name="rest_code_efd7ded3e00b4bbd92383f74214066fc-5"&gt;&lt;/a&gt;    unset f
-&lt;a name="rest_code_efd7ded3e00b4bbd92383f74214066fc-6"&gt;&lt;/a&gt;fi
+&lt;pre class="code text"&gt;&lt;a name="rest_code_29511d950b0d4298b8de9ed5e4019286-1"&gt;&lt;/a&gt;if [ -d /etc/X11/xinit/xinitrc.d ]; then
+&lt;a name="rest_code_29511d950b0d4298b8de9ed5e4019286-2"&gt;&lt;/a&gt;    for f in /etc/X11/xinit/xinitrc.d/*; do
+&lt;a name="rest_code_29511d950b0d4298b8de9ed5e4019286-3"&gt;&lt;/a&gt;        [ -x "$f" ] &amp;amp;&amp;amp; . "$f"
+&lt;a name="rest_code_29511d950b0d4298b8de9ed5e4019286-4"&gt;&lt;/a&gt;    done
+&lt;a name="rest_code_29511d950b0d4298b8de9ed5e4019286-5"&gt;&lt;/a&gt;    unset f
+&lt;a name="rest_code_29511d950b0d4298b8de9ed5e4019286-6"&gt;&lt;/a&gt;fi
 &lt;/pre&gt;&lt;p&gt;Running your &lt;tt class="docutils literal"&gt;.xinitrc&lt;/tt&gt; should not return,
 so either have wait as the last command in your &lt;tt class="docutils literal"&gt;.xinitrc&lt;/tt&gt;,
 or add &lt;tt class="docutils literal"&gt;exec&lt;/tt&gt; to the last command that will be called and which should not return
@@ -44,9 +44,9 @@ or add &lt;tt class="docutils literal"&gt;exec&lt;/tt&gt; to the last command th
 &lt;ol class="arabic simple" start="5"&gt;
 &lt;li&gt;Include the following in your &lt;tt class="docutils literal"&gt;.bashrc&lt;/tt&gt; .&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_77805fb6518b4fcdb3b9bfd8a0e4d0ce-1"&gt;&lt;/a&gt;for sd_cmd in systemctl systemd-analyze systemd-run; do
-&lt;a name="rest_code_77805fb6518b4fcdb3b9bfd8a0e4d0ce-2"&gt;&lt;/a&gt;    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
-&lt;a name="rest_code_77805fb6518b4fcdb3b9bfd8a0e4d0ce-3"&gt;&lt;/a&gt;done
+&lt;pre class="code text"&gt;&lt;a name="rest_code_af0a39189bf046478d07d2ab47dbed7b-1"&gt;&lt;/a&gt;for sd_cmd in systemctl systemd-analyze systemd-run; do
+&lt;a name="rest_code_af0a39189bf046478d07d2ab47dbed7b-2"&gt;&lt;/a&gt;    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
+&lt;a name="rest_code_af0a39189bf046478d07d2ab47dbed7b-3"&gt;&lt;/a&gt;done
 &lt;/pre&gt;&lt;p&gt;6. Run (as root) &lt;tt class="docutils literal"&gt;systemctl enable &lt;span class="pre"&gt;xlogin@&amp;lt;username&amp;gt;&lt;/span&gt;&lt;/tt&gt; for automatic login at boot,
 or &lt;tt class="docutils literal"&gt;systemctl start &lt;span class="pre"&gt;xlogin@&amp;lt;username&amp;gt;&lt;/span&gt;&lt;/tt&gt; for launching a graphical user session (on tty7).&lt;/p&gt;
 &lt;p&gt;The user session lives entirely inside a systemd scope and everything in the user session should work just fine.&lt;/p&gt;

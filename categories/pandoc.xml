@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：pandoc)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/pandoc.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:17:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org347c690" class="outline-2"&gt;
-&lt;h2 id="org347c690"&gt;前言&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org347c690"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：pandoc)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/pandoc.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:58:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Haskell Applications</title><link>https://mariolong.github.io/posts/install-haskell-applications/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org4915972" class="outline-2"&gt;
+&lt;h2 id="org4915972"&gt;前言&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4915972"&gt;
 &lt;p&gt;
 在 archlinux 上想用 haskell 真不是一件容易的事，因為可用的方法太多，不好選擇。
 &lt;/p&gt;
@@ -17,9 +17,9 @@ Python 寫的，精簡許多，可讀性也較高。這裡不比較 haskell 和 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org476a786" class="outline-2"&gt;
-&lt;h2 id="org476a786"&gt;安裝&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org476a786"&gt;
+&lt;div id="outline-container-org9f22edb" class="outline-2"&gt;
+&lt;h2 id="org9f22edb"&gt;安裝&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9f22edb"&gt;
 &lt;p&gt;
 archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版 haskell
 用的是 dynamic-link, 問題多多。另外也不用 ArchHaskell repository, 原因是其中 Application 的版本比較舊。
@@ -35,7 +35,7 @@ archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版
 
 &lt;p&gt;
 但是 cabal 中的 pandoc 版本比較新，所以還是用 cabal 安裝 pandoc。
-&lt;a href="https://mariolong.github.io/posts/install-haskell-applications/#org4e75b34"&gt;(update 2018/9/11: install from source maybe a good choice.)&lt;/a&gt;
+&lt;a href="https://mariolong.github.io/posts/install-haskell-applications/#orgeeb37af"&gt;(update 2018/9/11: install from source maybe a good choice.)&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -53,9 +53,9 @@ archlinux 上安裝 haskell 真的要小心，因為 8.0.2 版以後，官方版
 &lt;/ol&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7edaa86" class="outline-3"&gt;
-&lt;h3 id="org7edaa86"&gt;install ghc, stack&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7edaa86"&gt;
+&lt;div id="outline-container-orgdec030a" class="outline-3"&gt;
+&lt;h3 id="orgdec030a"&gt;install ghc, stack&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgdec030a"&gt;
 &lt;p&gt;
 &lt;a href="https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux"&gt;https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux&lt;/a&gt;
 &lt;/p&gt;
@@ -69,18 +69,18 @@ stack setup --system-ghc
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org48221c7" class="outline-3"&gt;
-&lt;h3 id="org48221c7"&gt;install happy alex&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org48221c7"&gt;
+&lt;div id="outline-container-org173e842" class="outline-3"&gt;
+&lt;h3 id="org173e842"&gt;install happy alex&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org173e842"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install happy
 stack install alex
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfe88b9a" class="outline-3"&gt;
-&lt;h3 id="orgfe88b9a"&gt;install cabal&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfe88b9a"&gt;
+&lt;div id="outline-container-orgea3a161" class="outline-3"&gt;
+&lt;h3 id="orgea3a161"&gt;install cabal&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgea3a161"&gt;
 &lt;p&gt;
 &lt;a href="https://wiki.archlinux.org/index.php/Haskell#Building_statically_linked_packages_with_Cabal_.28without_using_shared_libraries.29"&gt;Building statically linked packages with Cabal (without using shared libraries)&lt;/a&gt;
 &lt;/p&gt;
@@ -90,22 +90,22 @@ stack install alex
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org604f00d" class="outline-3"&gt;
-&lt;h3 id="org604f00d"&gt;install pandoc&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org604f00d"&gt;
+&lt;div id="outline-container-orgc3e6389" class="outline-3"&gt;
+&lt;h3 id="orgc3e6389"&gt;install pandoc&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc3e6389"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga62abce" class="outline-4"&gt;
-&lt;h4 id="orga62abce"&gt;install pandoc by cabal&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orga62abce"&gt;
+&lt;div id="outline-container-org09fb1de" class="outline-4"&gt;
+&lt;h4 id="org09fb1de"&gt;install pandoc by cabal&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org09fb1de"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal update
 cabal install pandoc
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge6289ff" class="outline-4"&gt;
-&lt;h4 id="orge6289ff"&gt;&lt;a id="org4e75b34"&gt;&lt;/a&gt; install pandoc from source&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orge6289ff"&gt;
+&lt;div id="outline-container-orgd6cbe15" class="outline-4"&gt;
+&lt;h4 id="orgd6cbe15"&gt;&lt;a id="orgeeb37af"&gt;&lt;/a&gt; install pandoc from source&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgd6cbe15"&gt;
 &lt;p&gt;
 &lt;a href="https://github.com/jgm/pandoc"&gt;GitHub - jgm/pandoc: Universal markup converter&lt;/a&gt;
 &lt;/p&gt;
@@ -118,9 +118,9 @@ stack install
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgca78bdf" class="outline-3"&gt;
-&lt;h3 id="orgca78bdf"&gt;install taffybar, xmonad, xomnad-contrib&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgca78bdf"&gt;
+&lt;div id="outline-container-org7c7d356" class="outline-3"&gt;
+&lt;h3 id="org7c7d356"&gt;install taffybar, xmonad, xomnad-contrib&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7c7d356"&gt;
 &lt;p&gt;
 taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯。即使硬上，taffybar 的顯示高度也不對。因此暫時不用，等 ghc 8.4.2 release
 了再試 taffybar-2.x.x。
@@ -135,29 +135,29 @@ taffybar 1.x.x 以上的，會用到 haskell-gi. 用 ghc 8.2.2 編譯會報錯�
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb1905d0" class="outline-4"&gt;
-&lt;h4 id="orgb1905d0"&gt;自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgb1905d0"&gt;
+&lt;div id="outline-container-org90c3933" class="outline-4"&gt;
+&lt;h4 id="org90c3933"&gt;自行編譯 taffybar-0.4.6 和 xmonad/xmonad-contrib&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org90c3933"&gt;
 &lt;/div&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a id="org52ef916"&gt;&lt;/a&gt;fork and download taffybar from github and checkout v0.4.6&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org52ef916"&gt;
+&lt;li&gt;&lt;a id="org370c922"&gt;&lt;/a&gt;fork and download taffybar from github and checkout v0.4.6&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org370c922"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/taffybar/taffybar.git
 git checkout v0.4.6
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="orgb8ff3f3"&gt;&lt;/a&gt;copy &lt;code&gt;xmonad.hs&lt;/code&gt; and &lt;code&gt;taffybar.hs&lt;/code&gt; to &lt;code&gt;taffybar&lt;/code&gt; directory.&lt;br&gt;
-&lt;div class="outline-text-5" id="text-orgb8ff3f3"&gt;
+&lt;li&gt;&lt;a id="org1781089"&gt;&lt;/a&gt;copy &lt;code&gt;xmonad.hs&lt;/code&gt; and &lt;code&gt;taffybar.hs&lt;/code&gt; to &lt;code&gt;taffybar&lt;/code&gt; directory.&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org1781089"&gt;
 &lt;p&gt;
 否則 recompile config file 時，會找不到需要的模組。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="orgdfbdac2"&gt;&lt;/a&gt;adding stack.yaml and setup stack project&lt;br&gt;
-&lt;div class="outline-text-5" id="text-orgdfbdac2"&gt;
+&lt;li&gt;&lt;a id="org34c223c"&gt;&lt;/a&gt;adding stack.yaml and setup stack project&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org34c223c"&gt;
 &lt;ol class="org-ol"&gt;
 &lt;li&gt;產生 &lt;code&gt;stack.yaml&lt;/code&gt; ：&lt;/li&gt;
 &lt;/ol&gt;
@@ -181,8 +181,8 @@ git checkout v0.4.6
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="org95bdbf2"&gt;&lt;/a&gt;stack build/install taffybar&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org95bdbf2"&gt;
+&lt;li&gt;&lt;a id="orgc4f8ee3"&gt;&lt;/a&gt;stack build/install taffybar&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orgc4f8ee3"&gt;
 &lt;p&gt;
 自動安裝 taffybar 和 xomnad 和 xmonad-contrib
 &lt;/p&gt;
@@ -192,8 +192,8 @@ git checkout v0.4.6
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="orgb59c2ff"&gt;&lt;/a&gt;修改 config&lt;br&gt;
-&lt;div class="outline-text-5" id="text-orgb59c2ff"&gt;
+&lt;li&gt;&lt;a id="org1529791"&gt;&lt;/a&gt;修改 config&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org1529791"&gt;
 &lt;p&gt;
 修改 config 後，要重新編譯 config
 &lt;/p&gt;
@@ -207,18 +207,18 @@ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- xmonad --restart
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdce4907" class="outline-4"&gt;
-&lt;h4 id="orgdce4907"&gt;haskell-taffybar at ArchHaskell&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgdce4907"&gt;
+&lt;div id="outline-container-org3019d6d" class="outline-4"&gt;
+&lt;h4 id="org3019d6d"&gt;haskell-taffybar at ArchHaskell&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org3019d6d"&gt;
 &lt;p&gt;
 用 ArchHaskell 中的 taffybar，是 0.4.6 版，穩定，可用。問題是：ghc-8.0.2，其它的 haskell 工具都是舊版，intero 也不能用。所以只能放棄用 ArchHaskell
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org87d32cd" class="outline-4"&gt;
-&lt;h4 id="org87d32cd"&gt;cabal install taffybar-0.4.6&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org87d32cd"&gt;
+&lt;div id="outline-container-org3f02724" class="outline-4"&gt;
+&lt;h4 id="org3f02724"&gt;cabal install taffybar-0.4.6&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org3f02724"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal update
 cabal install happy alex haddock c2hs
 cabal install taffybar-0.4.6
@@ -228,25 +228,25 @@ cabal install pandoc
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge2432d8" class="outline-3"&gt;
-&lt;h3 id="orge2432d8"&gt;uninstall application that install by stack&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge2432d8"&gt;
+&lt;div id="outline-container-org2529432" class="outline-3"&gt;
+&lt;h3 id="org2529432"&gt;uninstall application that install by stack&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2529432"&gt;
 &lt;p&gt;
 example for uninstalling hoogle
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3ca06fd" class="outline-4"&gt;
-&lt;h4 id="org3ca06fd"&gt;install and uninstall hoogle&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3ca06fd"&gt;
+&lt;div id="outline-container-org081d97a" class="outline-4"&gt;
+&lt;h4 id="org081d97a"&gt;install and uninstall hoogle&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org081d97a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install hoogle
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgaf842d0" class="outline-4"&gt;
-&lt;h4 id="orgaf842d0"&gt;get package id&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgaf842d0"&gt;
+&lt;div id="outline-container-orga8f4870" class="outline-4"&gt;
+&lt;h4 id="orga8f4870"&gt;get package id&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orga8f4870"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghc-pkg field hoogle id
 &lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="example"&gt;
@@ -255,17 +255,17 @@ id: hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf02ca26" class="outline-4"&gt;
-&lt;h4 id="orgf02ca26"&gt;unregister hoogle&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgf02ca26"&gt;
+&lt;div id="outline-container-orgfeb3427" class="outline-4"&gt;
+&lt;h4 id="orgfeb3427"&gt;unregister hoogle&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgfeb3427"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack &lt;span class="nb"&gt;exec&lt;/span&gt; ghc-pkg unregister hoogle-5.0.17.3-DVHxSnbAVal4N1574XLQck
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2bd641f" class="outline-4"&gt;
-&lt;h4 id="org2bd641f"&gt;find path to hoogle&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org2bd641f"&gt;
+&lt;div id="outline-container-orgad407cc" class="outline-4"&gt;
+&lt;h4 id="orgad407cc"&gt;find path to hoogle&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgad407cc"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;which hoogle
 &lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="example"&gt;
@@ -274,9 +274,9 @@ path/to/hoogle
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org84c0110" class="outline-4"&gt;
-&lt;h4 id="org84c0110"&gt;remove hoogle&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org84c0110"&gt;
+&lt;div id="outline-container-org894a87d" class="outline-4"&gt;
+&lt;h4 id="org894a87d"&gt;remove hoogle&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org894a87d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rm path/to/hoogle
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -284,13 +284,13 @@ path/to/hoogle
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd5ad872" class="outline-2"&gt;
-&lt;h2 id="orgd5ad872"&gt;Issues&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd5ad872"&gt;
+&lt;div id="outline-container-org217f2f7" class="outline-2"&gt;
+&lt;h2 id="org217f2f7"&gt;Issues&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org217f2f7"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0751d7a" class="outline-3"&gt;
-&lt;h3 id="org0751d7a"&gt;system tray 中 dropbox 的字型太小&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org0751d7a"&gt;
+&lt;div id="outline-container-org46b546b" class="outline-3"&gt;
+&lt;h3 id="org46b546b"&gt;system tray 中 dropbox 的字型太小&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org46b546b"&gt;
 &lt;p&gt;
 dropbox 是 QT application，taffybar 是 gtk application，所以要調整一下，我用的法子是加上環境變數：
 &lt;/p&gt;

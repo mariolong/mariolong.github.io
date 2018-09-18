@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:45:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：computer)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/cat_computer.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:58:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 在 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
 我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
 在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
 &lt;/p&gt;
 
-&lt;div id="outline-container-org0c05948" class="outline-2"&gt;
-&lt;h2 id="org0c05948"&gt;install nix&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0c05948"&gt;
+&lt;div id="outline-container-orge81f540" class="outline-2"&gt;
+&lt;h2 id="orge81f540"&gt;install nix&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge81f540"&gt;
 &lt;p&gt;
 因為 miso 建議用 nix 管理 project，還是參考 &lt;a href="https://nixos.org/nix/manual/"&gt;Nix manual&lt;/a&gt; 試著把它裝起來。
 &lt;/p&gt;
@@ -36,18 +36,18 @@ variables are set, either log in again, or type
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb7b5776" class="outline-2"&gt;
-&lt;h2 id="orgb7b5776"&gt;install stack, cabal, xmonad/taffybar, pandoc&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb7b5776"&gt;
+&lt;div id="outline-container-org07115f2" class="outline-2"&gt;
+&lt;h2 id="org07115f2"&gt;install stack, cabal, xmonad/taffybar, pandoc&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org07115f2"&gt;
 &lt;p&gt;
 還是可以用 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 的方法，而 cabal 可不安裝，用 stack 即可。BUT…
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga5183b4" class="outline-2"&gt;
-&lt;h2 id="orga5183b4"&gt;install GHCJS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga5183b4"&gt;
+&lt;div id="outline-container-orgf3244b9" class="outline-2"&gt;
+&lt;h2 id="orgf3244b9"&gt;install GHCJS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf3244b9"&gt;
 &lt;p&gt;
 因為要先安裝 GHCJS 後，才能用 miso 寫程式。所以這步驟是必要的。
 &lt;/p&gt;
@@ -64,16 +64,16 @@ miso 專案，則不能用全域 cabal，必須把全域 cabal 刪除。真困�
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7fa6dae" class="outline-2"&gt;
-&lt;h2 id="org7fa6dae"&gt;conclusion&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7fa6dae"&gt;
+&lt;div id="outline-container-orgd74bf42" class="outline-2"&gt;
+&lt;h2 id="orgd74bf42"&gt;conclusion&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd74bf42"&gt;
 &lt;p&gt;
 Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt;del&gt;也許先用 servant
 做 server 才是對的&lt;/del&gt;。&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>cabal</category><category>haskell</category><category>linux</category><category>miso</category><category>nix</category><category>stack</category><guid>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</guid><pubDate>Fri, 14 Sep 2018 04:07:35 GMT</pubDate></item><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org0bae4d9" class="outline-2"&gt;
-&lt;h2 id="org0bae4d9"&gt;install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0bae4d9"&gt;
+&lt;/div&gt;</description><category>cabal</category><category>haskell</category><category>linux</category><category>miso</category><category>nix</category><category>stack</category><guid>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</guid><pubDate>Fri, 14 Sep 2018 04:07:35 GMT</pubDate></item><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orgdcebc23" class="outline-2"&gt;
+&lt;h2 id="orgdcebc23"&gt;install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdcebc23"&gt;
 &lt;p&gt;
 因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 &lt;code&gt;aur/dropbox&lt;/code&gt;
 &lt;/p&gt;
@@ -83,13 +83,13 @@ Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。&lt
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org574fdec" class="outline-2"&gt;
-&lt;h2 id="org574fdec"&gt;config dropbox.service&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org574fdec"&gt;
+&lt;div id="outline-container-org491286e" class="outline-2"&gt;
+&lt;h2 id="org491286e"&gt;config dropbox.service&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org491286e"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgea6d2ac" class="outline-3"&gt;
-&lt;h3 id="orgea6d2ac"&gt;setup environment variables&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgea6d2ac"&gt;
+&lt;div id="outline-container-org23fba89" class="outline-3"&gt;
+&lt;h3 id="org23fba89"&gt;setup environment variables&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org23fba89"&gt;
 &lt;p&gt;
 為了正確顯示，要加上以下命令：
 &lt;/p&gt;
@@ -100,9 +100,9 @@ Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 QT_STYLE_OVERRIDE=GTK+
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org752317c" class="outline-3"&gt;
-&lt;h3 id="org752317c"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org752317c"&gt;
+&lt;div id="outline-container-orgee464c4" class="outline-3"&gt;
+&lt;h3 id="orgee464c4"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgee464c4"&gt;
 &lt;p&gt;
 根據 &lt;a href="https://gitlab.com/yan12125/aur/issues/21"&gt;Dropbox kill/restart loop when started at boot via systemd&lt;/a&gt;，在
 dropbox.service 中，特別加上
@@ -113,9 +113,9 @@ dropbox.service 中，特別加上
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga7f1362" class="outline-3"&gt;
-&lt;h3 id="orga7f1362"&gt;final dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga7f1362"&gt;
+&lt;div id="outline-container-orgd87d073" class="outline-3"&gt;
+&lt;h3 id="orgd87d073"&gt;final dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd87d073"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[Unit]
 Description=Dropbox for systemd/user
 
@@ -135,9 +135,9 @@ WantedBy=default.target
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0785a25" class="outline-2"&gt;
-&lt;h2 id="org0785a25"&gt;start dropbox&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0785a25"&gt;
+&lt;div id="outline-container-orgb53b094" class="outline-2"&gt;
+&lt;h2 id="orgb53b094"&gt;start dropbox&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb53b094"&gt;
 &lt;p&gt;
 最後執行
 &lt;/p&gt;
@@ -159,9 +159,9 @@ or/and
 用了 2 年的「龍倉」，總覺得打五碼，真的不習慣，還是打四碼比較快。今天決定換「大新」，碼表在&lt;a href="http://hyperrate.com/thread.php?tid=343"&gt;此下載&lt;/a&gt;。經過一個下午的努力，終於完工。試用了一會兒，真的很後悔，應該早一點用「大新」：真是快，一下就上手，幾乎沒有困難，有倉頡的底子，學「大新」真是容易，又順心。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgd5369c0" class="outline-2"&gt;
-&lt;h2 id="orgd5369c0"&gt;記錄與倉頡不同的地方：&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd5369c0"&gt;
+&lt;div id="outline-container-org19eb5c1" class="outline-2"&gt;
+&lt;h2 id="org19eb5c1"&gt;記錄與倉頡不同的地方：&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org19eb5c1"&gt;
 &lt;p&gt;
 先讀&lt;a href="http://www.eztyping.com.tw/learn_cj_upd.htm"&gt;倉頡、速成使用者瞬間昇級表&lt;/a&gt;，再看下列一些特別的：
 &lt;/p&gt;
@@ -214,17 +214,17 @@ or/and
 The Glorious Glasgow Haskell Compilation System, version &lt;span class="m"&gt;8&lt;/span&gt;.4.3
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div id="outline-container-org34bd7d7" class="outline-2"&gt;
-&lt;h2 id="org34bd7d7"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org34bd7d7"&gt;
+&lt;div id="outline-container-org6ffe2e8" class="outline-2"&gt;
+&lt;h2 id="org6ffe2e8"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6ffe2e8"&gt;
 &lt;p&gt;
 參考 &lt;a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4"&gt;GitHub - ghcjs/ghcjs at ghc-8.4&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb177ca5" class="outline-3"&gt;
-&lt;h3 id="orgb177ca5"&gt;getting and preparing the source tree&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb177ca5"&gt;
+&lt;div id="outline-container-org0752ffd" class="outline-3"&gt;
+&lt;h3 id="org0752ffd"&gt;getting and preparing the source tree&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0752ffd"&gt;
 &lt;p&gt;
 add this step: &lt;code&gt;git checkout ghc-8.4&lt;/code&gt;
 &lt;/p&gt;
@@ -238,17 +238,17 @@ git submodule update --init --recursive
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org61a826b" class="outline-3"&gt;
-&lt;h3 id="org61a826b"&gt;building the compiler&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org61a826b"&gt;
+&lt;div id="outline-container-org09ead21" class="outline-3"&gt;
+&lt;h3 id="org09ead21"&gt;building the compiler&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org09ead21"&gt;
 &lt;p&gt;
 You can use &lt;code&gt;cabal-install&lt;/code&gt; &lt;b&gt;and&lt;/b&gt; &lt;code&gt;stack&lt;/code&gt; to set up a build environment that contains these packages.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3e53a4d" class="outline-4"&gt;
-&lt;h4 id="org3e53a4d"&gt;install cabal&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3e53a4d"&gt;
+&lt;div id="outline-container-org7769215" class="outline-4"&gt;
+&lt;h4 id="org7769215"&gt;install cabal&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org7769215"&gt;
 &lt;p&gt;
 because GHCJS need cabal, so install it.
 &lt;/p&gt;
@@ -259,18 +259,18 @@ cabal update
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfeb9229" class="outline-4"&gt;
-&lt;h4 id="orgfeb9229"&gt;Cabal new-build (x)&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgfeb9229"&gt;
+&lt;div id="outline-container-org3ccd344" class="outline-4"&gt;
+&lt;h4 id="org3ccd344"&gt;Cabal new-build (x)&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org3ccd344"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal new-configure
 cabal new-build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org30687a2" class="outline-4"&gt;
-&lt;h4 id="org30687a2"&gt;link to executables (x) &lt;a id="org8860ecb"&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org30687a2"&gt;
+&lt;div id="outline-container-orga3b902e" class="outline-4"&gt;
+&lt;h4 id="orga3b902e"&gt;link to executables (x) &lt;a id="org1f0eb0f"&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orga3b902e"&gt;
 &lt;p&gt;
 &lt;b&gt;DON'T DO THIS, IT IS NOT NECESSARY&lt;/b&gt;
 &lt;/p&gt;
@@ -296,20 +296,20 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3600657" class="outline-4"&gt;
-&lt;h4 id="org3600657"&gt;stack&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org3600657"&gt;
+&lt;div id="outline-container-orgeffb65b" class="outline-4"&gt;
+&lt;h4 id="orgeffb65b"&gt;stack&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgeffb65b"&gt;
 &lt;/div&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a id="org41cf95d"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org41cf95d"&gt;
+&lt;li&gt;&lt;a id="org3fe8088"&gt;&lt;/a&gt;DO THIS&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org3fe8088"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack install
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="org25daaff"&gt;&lt;/a&gt;DON'T DO THIS (x)&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org25daaff"&gt;
+&lt;li&gt;&lt;a id="org287e93a"&gt;&lt;/a&gt;DON'T DO THIS (x)&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org287e93a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stack build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -317,9 +317,9 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org744e592" class="outline-4"&gt;
-&lt;h4 id="org744e592"&gt;install haddock (x)&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org744e592"&gt;
+&lt;div id="outline-container-orge1c9d06" class="outline-4"&gt;
+&lt;h4 id="orge1c9d06"&gt;install haddock (x)&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge1c9d06"&gt;
 &lt;p&gt;
 when run ghcjs-boot, it will display following error message:
 &lt;/p&gt;
@@ -331,7 +331,7 @@ when run ghcjs-boot, it will display following error message:
 &lt;p&gt;
 I have no idea to solve this problem after execute following
 statements. My decision is ignoring above error message and don't execute
-section &lt;a href="https://mariolong.github.io/posts/install-ghcjs-archlinux/#org8860ecb"&gt;"link to executables"&lt;/a&gt;. Re-install GHCJS again.
+section &lt;a href="https://mariolong.github.io/posts/install-ghcjs-archlinux/#org1f0eb0f"&gt;"link to executables"&lt;/a&gt;. Re-install GHCJS again.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cabal install haddock
@@ -342,9 +342,9 @@ stack haddock
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge28bd94" class="outline-3"&gt;
-&lt;h3 id="orge28bd94"&gt;Booting GHCJS&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge28bd94"&gt;
+&lt;div id="outline-container-org7ca63ed" class="outline-3"&gt;
+&lt;h3 id="org7ca63ed"&gt;Booting GHCJS&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7ca63ed"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghcjs-boot
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -357,9 +357,9 @@ the &lt;code&gt;makePackages.sh&lt;/code&gt; script and included in a source dis
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6c6a3c6" class="outline-3"&gt;
-&lt;h3 id="org6c6a3c6"&gt;Test&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6c6a3c6"&gt;
+&lt;div id="outline-container-orgab902d8" class="outline-3"&gt;
+&lt;h3 id="orgab902d8"&gt;Test&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgab902d8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'main = putStrLn "Hello World!"'&lt;/span&gt; &amp;gt; helloWorld.hs
 $ stack &lt;span class="nb"&gt;exec&lt;/span&gt; -- ghcjs -o helloWorld helloWorld.hs
 $ node helloWorld.jsexe/all.js
@@ -378,9 +378,9 @@ But these steps are work for me to install ghcjs with ghc-8.4.3
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org421ced1" class="outline-2"&gt;
-&lt;h2 id="org421ced1"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org421ced1"&gt;
+&lt;div id="outline-container-orgfcbc4e0" class="outline-2"&gt;
+&lt;h2 id="orgfcbc4e0"&gt;參考 &lt;a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html"&gt;Peachful Space - ghcjs on Arch Linux&lt;/a&gt; 和以下指令：(FAIL)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfcbc4e0"&gt;
 &lt;p&gt;
 this is not work.
 &lt;/p&gt;
@@ -416,17 +416,17 @@ Hello world!
 ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org8e33b2f" class="outline-2"&gt;
-&lt;h2 id="org8e33b2f"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8e33b2f"&gt;
+&lt;div id="outline-container-org4bb6889" class="outline-2"&gt;
+&lt;h2 id="org4bb6889"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4bb6889"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S smartmontools
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfdca578" class="outline-2"&gt;
-&lt;h2 id="orgfdca578"&gt;start smartd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfdca578"&gt;
+&lt;div id="outline-container-orga6908e2" class="outline-2"&gt;
+&lt;h2 id="orga6908e2"&gt;start smartd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga6908e2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start smartd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -436,9 +436,9 @@ ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org980cdf1" class="outline-2"&gt;
-&lt;h2 id="org980cdf1"&gt;smartd.conf&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org980cdf1"&gt;
+&lt;div id="outline-container-orgeb09229" class="outline-2"&gt;
+&lt;h2 id="orgeb09229"&gt;smartd.conf&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgeb09229"&gt;
 &lt;p&gt;
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -448,9 +448,9 @@ setting must be added in the configuration file.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org361be0d" class="outline-3"&gt;
-&lt;h3 id="org361be0d"&gt;auto mail&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org361be0d"&gt;
+&lt;div id="outline-container-org42660d8" class="outline-3"&gt;
+&lt;h3 id="org42660d8"&gt;auto mail&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org42660d8"&gt;
 &lt;p&gt;
 先依 &lt;a href="https://dominicm.com/configure-email-notifications-on-arch-linux/"&gt;Configure Email Notifications on Arch Linux | DominicM&lt;/a&gt; 設定 s-nail,
 再於 &lt;code&gt;/etc/smartd.conf&lt;/code&gt; 加上以下指令
@@ -469,26 +469,26 @@ setting must be added in the configuration file.
 &lt;/p&gt;
 
 
-&lt;div id="outline-container-orgb0349b2" class="outline-2"&gt;
-&lt;h2 id="orgb0349b2"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb0349b2"&gt;
+&lt;div id="outline-container-org5aa3a7d" class="outline-2"&gt;
+&lt;h2 id="org5aa3a7d"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5aa3a7d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S tvheadend kodi-addon-hts-pvrmanager kodi-addon-pvr-hts --noconfirm
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0a89478" class="outline-2"&gt;
-&lt;h2 id="org0a89478"&gt;start/enable&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0a89478"&gt;
+&lt;div id="outline-container-org6b368f3" class="outline-2"&gt;
+&lt;h2 id="org6b368f3"&gt;start/enable&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6b368f3"&gt;
 &lt;p&gt;
 Once Tvheadend is installed start/enable the tvheadend.service.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6232a04" class="outline-2"&gt;
-&lt;h2 id="org6232a04"&gt;Configuration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6232a04"&gt;
+&lt;div id="outline-container-org45b6336" class="outline-2"&gt;
+&lt;h2 id="org45b6336"&gt;Configuration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org45b6336"&gt;
 &lt;p&gt;
 Once the service is running, configuration of Tvheadend is done through a web interface on &lt;code&gt;localhost:9981&lt;/code&gt;.
 &lt;/p&gt;
@@ -500,21 +500,21 @@ The service should automatically generate Tvheadend username and passwords that 
 emacs version 26.1 systemd support
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgf253ca0" class="outline-2"&gt;
-&lt;h2 id="orgf253ca0"&gt;設定&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf253ca0"&gt;
+&lt;div id="outline-container-orgae40f8b" class="outline-2"&gt;
+&lt;h2 id="orgae40f8b"&gt;設定&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgae40f8b"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org0c9fe32" class="outline-3"&gt;
-&lt;h3 id="org0c9fe32"&gt;start emacs via systemd&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org0c9fe32"&gt;
+&lt;div id="outline-container-orgb12957b" class="outline-3"&gt;
+&lt;h3 id="orgb12957b"&gt;start emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb12957b"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org66744d5" class="outline-3"&gt;
-&lt;h3 id="org66744d5"&gt;emacs.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org66744d5"&gt;
+&lt;div id="outline-container-orgc462593" class="outline-3"&gt;
+&lt;h3 id="orgc462593"&gt;emacs.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc462593"&gt;
 &lt;p&gt;
 還是要設定一下 emacs.service.
 &lt;/p&gt;
@@ -527,9 +527,9 @@ emacs version 26.1 systemd support
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd91e50b" class="outline-4"&gt;
-&lt;h4 id="orgd91e50b"&gt;中文輸入法&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orgd91e50b"&gt;
+&lt;div id="outline-container-org25abdac" class="outline-4"&gt;
+&lt;h4 id="org25abdac"&gt;中文輸入法&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org25abdac"&gt;
 &lt;p&gt;
 在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
 &lt;/p&gt;
@@ -541,9 +541,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0f56b37" class="outline-4"&gt;
-&lt;h4 id="org0f56b37"&gt;shell term&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org0f56b37"&gt;
+&lt;div id="outline-container-org184e26f" class="outline-4"&gt;
+&lt;h4 id="org184e26f"&gt;shell term&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org184e26f"&gt;
 &lt;p&gt;
 設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
 &lt;/p&gt;
@@ -553,9 +553,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge5dfc09" class="outline-4"&gt;
-&lt;h4 id="orge5dfc09"&gt;final emacs.service&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-orge5dfc09"&gt;
+&lt;div id="outline-container-org00b9054" class="outline-4"&gt;
+&lt;h4 id="org00b9054"&gt;final emacs.service&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org00b9054"&gt;
 &lt;p&gt;
 最後 emacs.service 的設定。
 &lt;/p&gt;
@@ -583,9 +583,9 @@ WantedBy=default.target
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org675f91a" class="outline-3"&gt;
-&lt;h3 id="org675f91a"&gt;修改 init.el&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org675f91a"&gt;
+&lt;div id="outline-container-orga7763fb" class="outline-3"&gt;
+&lt;h3 id="orga7763fb"&gt;修改 init.el&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga7763fb"&gt;
 &lt;p&gt;
 package server is unnecessary. 可以刪除。
 &lt;/p&gt;
@@ -599,9 +599,9 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org05443f4" class="outline-3"&gt;
-&lt;h3 id="org05443f4"&gt;restart emacs via systemd&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org05443f4"&gt;
+&lt;div id="outline-container-orgd69a886" class="outline-3"&gt;
+&lt;h3 id="orgd69a886"&gt;restart emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd69a886"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -619,15 +619,15 @@ Restart=on-failure
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb23f5f2" class="outline-2"&gt;
-&lt;h2 id="orgb23f5f2"&gt;結語&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb23f5f2"&gt;
+&lt;div id="outline-container-org518ebee" class="outline-2"&gt;
+&lt;h2 id="org518ebee"&gt;結語&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org518ebee"&gt;
 &lt;p&gt;
 emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org11351e4" class="outline-2"&gt;
-&lt;h2 id="org11351e4"&gt;change root password&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org11351e4"&gt;
+&lt;/div&gt;</description><category>emacs</category><category>systemd</category><guid>https://mariolong.github.io/posts/start-emacs-with-systemd/</guid><pubDate>Sun, 17 Jun 2018 05:49:50 GMT</pubDate></item><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orgef3dcfe" class="outline-2"&gt;
+&lt;h2 id="orgef3dcfe"&gt;change root password&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgef3dcfe"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysql&amp;gt; use mysql;
 mysql&amp;gt; UPDATE user SET Password=PASSWORD("password") WHERE User='root';
 mysql&amp;gt; flush privileges;
@@ -636,13 +636,13 @@ mysql&amp;gt; quit
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf3255fd" class="outline-2"&gt;
-&lt;h2 id="orgf3255fd"&gt;commands&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf3255fd"&gt;
+&lt;div id="outline-container-orgf29aa2b" class="outline-2"&gt;
+&lt;h2 id="orgf29aa2b"&gt;commands&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf29aa2b"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb834210" class="outline-3"&gt;
-&lt;h3 id="orgb834210"&gt;create user&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb834210"&gt;
+&lt;div id="outline-container-org1d0e3ba" class="outline-3"&gt;
+&lt;h3 id="org1d0e3ba"&gt;create user&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1d0e3ba"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysql&amp;gt; CREATE USER 'stock'@'localhost' IDENTIFIED BY 'password';
 mysql&amp;gt; GRANT ALL PRIVILEGES ON stock.* TO 'stock'@'localhost' WITH GRANT OPTION;
 mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
@@ -656,9 +656,9 @@ mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org23745d4" class="outline-3"&gt;
-&lt;h3 id="org23745d4"&gt;show database*s*&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org23745d4"&gt;
+&lt;div id="outline-container-org37aec55" class="outline-3"&gt;
+&lt;h3 id="org37aec55"&gt;show database*s*&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org37aec55"&gt;
 &lt;p&gt;
 &lt;b&gt;注意&lt;/b&gt;: database 和 table 的名稱，在 linux 中會區分大小寫。
 &lt;/p&gt;
@@ -668,9 +668,9 @@ mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org343d24e" class="outline-3"&gt;
-&lt;h3 id="org343d24e"&gt;use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org343d24e"&gt;
+&lt;div id="outline-container-org48a1691" class="outline-3"&gt;
+&lt;h3 id="org48a1691"&gt;use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org48a1691"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;USE stock
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -679,24 +679,24 @@ mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
 Ref: &lt;a href="https://wiki.archlinux.org/index.php/MySQL"&gt;MySQL - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org84181fa" class="outline-2"&gt;
-&lt;h2 id="org84181fa"&gt;install mariadb&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org84181fa"&gt;
+&lt;div id="outline-container-org57c9a1a" class="outline-2"&gt;
+&lt;h2 id="org57c9a1a"&gt;install mariadb&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org57c9a1a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfb3eafe" class="outline-2"&gt;
-&lt;h2 id="orgfb3eafe"&gt;install and setup database&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfb3eafe"&gt;
+&lt;div id="outline-container-orgfe5e933" class="outline-2"&gt;
+&lt;h2 id="orgfe5e933"&gt;install and setup database&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfe5e933"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_install_db --user&lt;span class="o"&gt;=&lt;/span&gt;mysql --basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr --datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org578fdb1" class="outline-3"&gt;
-&lt;h3 id="org578fdb1"&gt;message&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org578fdb1"&gt;
+&lt;div id="outline-container-org57e2228" class="outline-3"&gt;
+&lt;h3 id="org57e2228"&gt;message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org57e2228"&gt;
 &lt;pre class="example"&gt;
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 To do so, start the server, then issue the following commands:
@@ -734,9 +734,9 @@ https://mariadb.org/get-involved/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7f9629a" class="outline-2"&gt;
-&lt;h2 id="org7f9629a"&gt;edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7f9629a"&gt;
+&lt;div id="outline-container-orgb48bdb6" class="outline-2"&gt;
+&lt;h2 id="orgb48bdb6"&gt;edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb48bdb6"&gt;
 &lt;p&gt;
 Tip: If you use something different from /var/lib/mysql for your data
 dir, you need to set &lt;code&gt;datadir=&amp;lt;YOUR_DATADIR&amp;gt;&lt;/code&gt; under section &lt;code&gt;[mysqld]&lt;/code&gt; of
@@ -747,17 +747,17 @@ database level:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc8d546a" class="outline-2"&gt;
-&lt;h2 id="orgc8d546a"&gt;start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc8d546a"&gt;
+&lt;div id="outline-container-orgda2d780" class="outline-2"&gt;
+&lt;h2 id="orgda2d780"&gt;start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgda2d780"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9e92b5b" class="outline-2"&gt;
-&lt;h2 id="org9e92b5b"&gt;To start mysqld at boot time&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9e92b5b"&gt;
+&lt;div id="outline-container-org51543b3" class="outline-2"&gt;
+&lt;h2 id="org51543b3"&gt;To start mysqld at boot time&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org51543b3"&gt;
 &lt;p&gt;
 you have to copy support-files/mysql.server to the right place for your system
 &lt;/p&gt;
@@ -773,9 +773,9 @@ strongly recommended for production servers.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org887c08d" class="outline-2"&gt;
-&lt;h2 id="org887c08d"&gt;Using UTF8MB4&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org887c08d"&gt;
+&lt;div id="outline-container-org6ecd4ff" class="outline-2"&gt;
+&lt;h2 id="org6ecd4ff"&gt;Using UTF8MB4&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6ecd4ff"&gt;
 &lt;p&gt;
 在 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; 加上以下指令：
 &lt;/p&gt;
@@ -793,9 +793,9 @@ default-character-set = utf8mb4
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge164055" class="outline-2"&gt;
-&lt;h2 id="orge164055"&gt;開啓自動補全&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge164055"&gt;
+&lt;div id="outline-container-orgbf51165" class="outline-2"&gt;
+&lt;h2 id="orgbf51165"&gt;開啓自動補全&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbf51165"&gt;
 &lt;p&gt;
 Note: Enabling this feature can make the client initialization longer.
 &lt;/p&gt;

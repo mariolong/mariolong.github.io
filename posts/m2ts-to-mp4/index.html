@@ -112,25 +112,25 @@ convert M2TS to avi for concat
 <div class="section" id="split">
 <h2>split</h2>
 <p>先將不要的片段切掉</p>
-<pre class="code text"><a name="rest_code_5cf9a835ad5e473ca2a2b996447d6a34-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-<a name="rest_code_5cf9a835ad5e473ca2a2b996447d6a34-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
+<pre class="code text"><a name="rest_code_038c997f6ee0415fb9cb6d1338d4f6cc-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+<a name="rest_code_038c997f6ee0415fb9cb6d1338d4f6cc-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
 </pre>
 </div>
 <div class="section" id="convert-m2ts-to-avi-for-concat">
 <h2>convert M2TS to avi for concat</h2>
 <p>轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
 有一個 frame 會交錯，影片會跳一下。</p>
-<pre class="code text"><a name="rest_code_78d0f7dac0df4e3d8ae6e0e08b5cc3b8-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
-<a name="rest_code_78d0f7dac0df4e3d8ae6e0e08b5cc3b8-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
+<pre class="code text"><a name="rest_code_2c48eceeef0b4f29881a94c62c62fa01-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
+<a name="rest_code_2c48eceeef0b4f29881a94c62c62fa01-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
 </pre>
 </div>
 <div class="section" id="id1">
 <h2>合併</h2>
 <p>將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。</p>
-<pre class="code text"><a name="rest_code_26f4724a648e4806ad394808755d159a-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_6633661fff9545139b37b8a41f686c7a-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
 </pre>
 <p>或</p>
-<pre class="code text"><a name="rest_code_d7357b62e1674b279c37e6f1270980b9-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_da6b12baf1c343638de872139cf00fb7-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
 </pre>
 </div>
 </div>

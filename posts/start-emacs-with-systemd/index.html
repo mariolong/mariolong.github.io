@@ -126,21 +126,21 @@ emacs.service
 emacs version 26.1 systemd support
 </p>
 
-<div id="outline-container-orgf253ca0" class="outline-2">
-<h2 id="orgf253ca0">設定</h2>
-<div class="outline-text-2" id="text-orgf253ca0">
+<div id="outline-container-orgae40f8b" class="outline-2">
+<h2 id="orgae40f8b">設定</h2>
+<div class="outline-text-2" id="text-orgae40f8b">
 </div>
-<div id="outline-container-org0c9fe32" class="outline-3">
-<h3 id="org0c9fe32">start emacs via systemd</h3>
-<div class="outline-text-3" id="text-org0c9fe32">
+<div id="outline-container-orgb12957b" class="outline-3">
+<h3 id="orgb12957b">start emacs via systemd</h3>
+<div class="outline-text-3" id="text-orgb12957b">
 <div class="highlight"><pre><span></span>systemdctl --user start emacs
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org66744d5" class="outline-3">
-<h3 id="org66744d5">emacs.service</h3>
-<div class="outline-text-3" id="text-org66744d5">
+<div id="outline-container-orgc462593" class="outline-3">
+<h3 id="orgc462593">emacs.service</h3>
+<div class="outline-text-3" id="text-orgc462593">
 <p>
 還是要設定一下 emacs.service.
 </p>
@@ -153,9 +153,9 @@ emacs version 26.1 systemd support
 </pre></div>
 </div>
 
-<div id="outline-container-orgd91e50b" class="outline-4">
-<h4 id="orgd91e50b">中文輸入法</h4>
-<div class="outline-text-4" id="text-orgd91e50b">
+<div id="outline-container-org25abdac" class="outline-4">
+<h4 id="org25abdac">中文輸入法</h4>
+<div class="outline-text-4" id="text-org25abdac">
 <p>
 在 <code>emacs.service</code> 中加上以下指令，才能在 emacs 中使用 fcitx.
 </p>
@@ -167,9 +167,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 </div>
 </div>
 
-<div id="outline-container-org0f56b37" class="outline-4">
-<h4 id="org0f56b37">shell term</h4>
-<div class="outline-text-4" id="text-org0f56b37">
+<div id="outline-container-org184e26f" class="outline-4">
+<h4 id="org184e26f">shell term</h4>
+<div class="outline-text-4" id="text-org184e26f">
 <p>
 設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
 </p>
@@ -179,9 +179,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 </div>
 </div>
 
-<div id="outline-container-orge5dfc09" class="outline-4">
-<h4 id="orge5dfc09">final emacs.service</h4>
-<div class="outline-text-4" id="text-orge5dfc09">
+<div id="outline-container-org00b9054" class="outline-4">
+<h4 id="org00b9054">final emacs.service</h4>
+<div class="outline-text-4" id="text-org00b9054">
 <p>
 最後 emacs.service 的設定。
 </p>
@@ -209,9 +209,9 @@ WantedBy=default.target
 </div>
 </div>
 
-<div id="outline-container-org675f91a" class="outline-3">
-<h3 id="org675f91a">修改 init.el</h3>
-<div class="outline-text-3" id="text-org675f91a">
+<div id="outline-container-orga7763fb" class="outline-3">
+<h3 id="orga7763fb">修改 init.el</h3>
+<div class="outline-text-3" id="text-orga7763fb">
 <p>
 package server is unnecessary. 可以刪除。
 </p>
@@ -225,9 +225,9 @@ package server is unnecessary. 可以刪除。
 </div>
 </div>
 
-<div id="outline-container-org05443f4" class="outline-3">
-<h3 id="org05443f4">restart emacs via systemd</h3>
-<div class="outline-text-3" id="text-org05443f4">
+<div id="outline-container-orgd69a886" class="outline-3">
+<h3 id="orgd69a886">restart emacs via systemd</h3>
+<div class="outline-text-3" id="text-orgd69a886">
 <div class="highlight"><pre><span></span>systemdctl --user restart emacs
 </pre></div>
 
@@ -245,9 +245,9 @@ Restart=on-failure
 </div>
 </div>
 
-<div id="outline-container-orgb23f5f2" class="outline-2">
-<h2 id="orgb23f5f2">結語</h2>
-<div class="outline-text-2" id="text-orgb23f5f2">
+<div id="outline-container-org518ebee" class="outline-2">
+<h2 id="org518ebee">結語</h2>
+<div class="outline-text-2" id="text-org518ebee">
 <p>
 emacs 26.1 支援 systemd 真的不錯。</p>
 </div>
