@@ -113,24 +113,24 @@ cronie is installed by default as part of the base group. Other cron implementat
 <h2>Configuration</h2>
 <p>Activation and autostart</p>
 <p>cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:</p>
-<pre class="code text"><a name="rest_code_1e3fdbf6308f4f349ce228461fd0541a-1"></a>$ systemctl is-enabled cronie
+<pre class="code text"><a name="rest_code_1243ed7292c845f0bf72d2e8ea8eceef-1"></a>$ systemctl is-enabled cronie
 </pre>
 <p>Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:</p>
-<pre class="code text"><a name="rest_code_f8798f686bdd4826ab54e65fe8d2445c-1"></a># systemctl start cronie
-<a name="rest_code_f8798f686bdd4826ab54e65fe8d2445c-2"></a># systemctl enable cronie
+<pre class="code text"><a name="rest_code_ddcb5a6009b2473da57ee3e75c0046af-1"></a># systemctl start cronie
+<a name="rest_code_ddcb5a6009b2473da57ee3e75c0046af-2"></a># systemctl enable cronie
 </pre>
 </div>
 <div class="section" id="default-editor">
 <h2>Default editor</h2>
 <p>To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:</p>
-<pre class="code text"><a name="rest_code_4837ec2a772c4f5a8af309912c9c0ebd-1"></a># /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_1eaf71753b58480c9f9d21c15e3faddb-1"></a># /etc/profile.d/nano-default-editor
 </pre>
 <p>加上：</p>
-<pre class="code text"><a name="rest_code_f7ed7cd7aa344fe8bd8fb0dca83d8d1f-1"></a>#!/bin/sh
-<a name="rest_code_f7ed7cd7aa344fe8bd8fb0dca83d8d1f-2"></a>export EDITOR=/usr/bin/nano
+<pre class="code text"><a name="rest_code_80140e6f5e504c3590453944f468225b-1"></a>#!/bin/sh
+<a name="rest_code_80140e6f5e504c3590453944f468225b-2"></a>export EDITOR=/usr/bin/nano
 </pre>
 <p>修改權限：</p>
-<pre class="code text"><a name="rest_code_205a5257250a403daf9ed1f5689fae7a-1"></a>#chmod +x /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_692ec60dd43a4859a1628243f54a7f36-1"></a>#chmod +x /etc/profile.d/nano-default-editor
 </pre>
 </div>
 <div class="section" id="crontab-format">

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：dired)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/dired.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 01:54:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：dired)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/dired.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:17:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using dired in Emacs</title><link>https://mariolong.github.io/posts/using-dired/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 dired 真是好用，記錄我的使用流程
 &lt;/p&gt;
 
-&lt;div id="outline-container-org7f7b88a" class="outline-2"&gt;
-&lt;h2 id="org7f7b88a"&gt;dired basic&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7f7b88a"&gt;
+&lt;div id="outline-container-orga967a9f" class="outline-2"&gt;
+&lt;h2 id="orga967a9f"&gt;dired basic&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga967a9f"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org865d05a" class="outline-3"&gt;
-&lt;h3 id="org865d05a"&gt;enter dired&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org865d05a"&gt;
+&lt;div id="outline-container-org5a6dfb9" class="outline-3"&gt;
+&lt;h3 id="org5a6dfb9"&gt;enter dired&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5a6dfb9"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
 &lt;kbd&gt;C-x C-f &amp;lt;enter&amp;gt;&lt;/kbd&gt;
@@ -17,18 +17,18 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgde4ecc6" class="outline-3"&gt;
-&lt;h3 id="orgde4ecc6"&gt;exit dired&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgde4ecc6"&gt;
+&lt;div id="outline-container-org5b7c9ec" class="outline-3"&gt;
+&lt;h3 id="org5b7c9ec"&gt;exit dired&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5b7c9ec"&gt;
 &lt;p&gt;
 &lt;kbd&gt;q&lt;/kbd&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org41c0ec3" class="outline-3"&gt;
-&lt;h3 id="org41c0ec3"&gt;操作檔案&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org41c0ec3"&gt;
+&lt;div id="outline-container-org12a47bf" class="outline-3"&gt;
+&lt;h3 id="org12a47bf"&gt;操作檔案&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org12a47bf"&gt;
 &lt;p&gt;
 &lt;kbd&gt;d&lt;/kbd&gt;
 &lt;kbd&gt;m&lt;/kbd&gt; mark
@@ -43,9 +43,9 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc14043a" class="outline-3"&gt;
-&lt;h3 id="orgc14043a"&gt;edit file name/mode like edit text&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc14043a"&gt;
+&lt;div id="outline-container-orge88acb6" class="outline-3"&gt;
+&lt;h3 id="orge88acb6"&gt;edit file name/mode like edit text&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge88acb6"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x C-q&lt;/kbd&gt;
 &lt;/p&gt;
@@ -54,26 +54,26 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-orgfbe17d8" class="outline-2"&gt;
-&lt;h2 id="orgfbe17d8"&gt;顯示&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfbe17d8"&gt;
+&lt;div id="outline-container-orgbb3b945" class="outline-2"&gt;
+&lt;h2 id="orgbb3b945"&gt;顯示&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbb3b945"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb9967dc" class="outline-3"&gt;
-&lt;h3 id="orgb9967dc"&gt;&lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
+&lt;div id="outline-container-orge1afa42" class="outline-3"&gt;
+&lt;h3 id="orge1afa42"&gt;&lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org514f576" class="outline-3"&gt;
-&lt;h3 id="org514f576"&gt;&lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
+&lt;div id="outline-container-org21930b3" class="outline-3"&gt;
+&lt;h3 id="org21930b3"&gt;&lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org750eb95" class="outline-3"&gt;
-&lt;h3 id="org750eb95"&gt;auto revert&lt;/h3&gt;
+&lt;div id="outline-container-org14ddf35" class="outline-3"&gt;
+&lt;h3 id="org14ddf35"&gt;auto revert&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org78673e7" class="outline-2"&gt;
-&lt;h2 id="org78673e7"&gt;進階使用&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org78673e7"&gt;
+&lt;div id="outline-container-orgde1c4ec" class="outline-2"&gt;
+&lt;h2 id="orgde1c4ec"&gt;進階使用&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgde1c4ec"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org3d519e9" class="outline-3"&gt;
-&lt;h3 id="org3d519e9"&gt;像 Norton command/Midnight commander 一/copy/move files like NC/MC&lt;/h3&gt;
+&lt;div id="outline-container-org5eb18af" class="outline-3"&gt;
+&lt;h3 id="org5eb18af"&gt;像 Norton command/Midnight commander 一/copy/move files like NC/MC&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item></channel></rss>

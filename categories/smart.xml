@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：smart)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/smart.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 01:54:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Turn on SMART to monitor HD</title><link>https://mariolong.github.io/posts/turn-on-smart/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：smart)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/smart.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:17:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Turn on SMART to monitor HD</title><link>https://mariolong.github.io/posts/turn-on-smart/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgdc8533d" class="outline-2"&gt;
-&lt;h2 id="orgdc8533d"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdc8533d"&gt;
+&lt;div id="outline-container-org8e33b2f" class="outline-2"&gt;
+&lt;h2 id="org8e33b2f"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8e33b2f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S smartmontools
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2f4f0fc" class="outline-2"&gt;
-&lt;h2 id="org2f4f0fc"&gt;start smartd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2f4f0fc"&gt;
+&lt;div id="outline-container-orgfdca578" class="outline-2"&gt;
+&lt;h2 id="orgfdca578"&gt;start smartd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfdca578"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start smartd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -23,9 +23,9 @@ ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgca58e62" class="outline-2"&gt;
-&lt;h2 id="orgca58e62"&gt;smartd.conf&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgca58e62"&gt;
+&lt;div id="outline-container-org980cdf1" class="outline-2"&gt;
+&lt;h2 id="org980cdf1"&gt;smartd.conf&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org980cdf1"&gt;
 &lt;p&gt;
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -35,9 +35,9 @@ setting must be added in the configuration file.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdb652fb" class="outline-3"&gt;
-&lt;h3 id="orgdb652fb"&gt;auto mail&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgdb652fb"&gt;
+&lt;div id="outline-container-org361be0d" class="outline-3"&gt;
+&lt;h3 id="org361be0d"&gt;auto mail&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org361be0d"&gt;
 &lt;p&gt;
 先依 &lt;a href="https://dominicm.com/configure-email-notifications-on-arch-linux/"&gt;Configure Email Notifications on Arch Linux | DominicM&lt;/a&gt; 設定 s-nail,
 再於 &lt;code&gt;/etc/smartd.conf&lt;/code&gt; 加上以下指令
@@ -52,9 +52,9 @@ setting must be added in the configuration file.
 windows 畫面。也不用檢查，就是讀 D 槽時變得很慢。前幾天才想換一個大一點的硬碟，它，立刻就出問題，讓我不得不換，真玄了。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgc5694ae" class="outline-2"&gt;
-&lt;h2 id="orgc5694ae"&gt;SMART check&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc5694ae"&gt;
+&lt;div id="outline-container-org23fd78c" class="outline-2"&gt;
+&lt;h2 id="org23fd78c"&gt;SMART check&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org23fd78c"&gt;
 &lt;p&gt;
 用 linux 讀這硬碟，還是很正常。用 smartctl 檢查，是有 error log，為了資料的安全起見，還是換吧。
 &lt;/p&gt;
@@ -134,9 +134,9 @@ unable to complete, or interface CRC (with ICRC).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgfb1c34b" class="outline-2"&gt;
-&lt;h2 id="orgfb1c34b"&gt;裝上新的硬碟&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfb1c34b"&gt;
+&lt;div id="outline-container-orgd1db045" class="outline-2"&gt;
+&lt;h2 id="orgd1db045"&gt;裝上新的硬碟&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd1db045"&gt;
 &lt;p&gt;
 過程如下：
 &lt;/p&gt;

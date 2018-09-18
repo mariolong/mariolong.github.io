@@ -110,114 +110,114 @@
 <p>完整的說明參考：<a class="reference external" href="http://guildwar23.blogspot.tw/2013/03/notebook-ap-arch-linux.html">http://guildwar23.blogspot.tw/2013/03/notebook-ap-arch-linux.html</a></p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<pre class="code text"><a name="rest_code_7aa8aa74c96443f6a5bdc371f5b18954-1"></a>$ yaourt -S hostapd dnsmasq netcfg
-<a name="rest_code_7aa8aa74c96443f6a5bdc371f5b18954-2"></a>$ yaourt -S netctl
+<pre class="code text"><a name="rest_code_a2c150020de3415982ddecba5bc3d485-1"></a>$ yaourt -S hostapd dnsmasq netcfg
+<a name="rest_code_a2c150020de3415982ddecba5bc3d485-2"></a>$ yaourt -S netctl
 </pre>
 </div>
 <div class="section" id="id2">
 <h2>配置</h2>
 <div class="section" id="hostapd">
 <h3>hostapd 設定檔</h3>
-<pre class="code text"><a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-1"></a>sudo nano /etc/hostapd/hostapd.conf
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-2"></a>
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-3"></a>interface=wlp0s18f2u1u4
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-4"></a>ssid=xxxxxxxx
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-5"></a>hw_mode=g
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-6"></a>channel=1
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-7"></a>wpa=2
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-8"></a>wpa_psk=b619ecf4c68e7d688e1a29cf2809ec3556a289eb655b859a893ae16933296f18
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-9"></a>wpa_key_mgmt=WPA-PSK
-<a name="rest_code_d361784e2f5a4ac487cb00da0fbc172e-10"></a>rsn_pairwise=CCMP
+<pre class="code text"><a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-1"></a>sudo nano /etc/hostapd/hostapd.conf
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-2"></a>
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-3"></a>interface=wlp0s18f2u1u4
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-4"></a>ssid=xxxxxxxx
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-5"></a>hw_mode=g
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-6"></a>channel=1
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-7"></a>wpa=2
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-8"></a>wpa_psk=b619ecf4c68e7d688e1a29cf2809ec3556a289eb655b859a893ae16933296f18
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-9"></a>wpa_key_mgmt=WPA-PSK
+<a name="rest_code_1b19fcb2cb5f4e87acc14ba734aaf4d3-10"></a>rsn_pairwise=CCMP
 </pre>
 </div>
 <div class="section" id="dnsmasq">
 <h3>dnsmasq 設定檔</h3>
-<pre class="code text"><a name="rest_code_769427abd3f74cd08b444c289bcbb8c8-1"></a>$ sudo nano /etc/dnsmasq.conf
-<a name="rest_code_769427abd3f74cd08b444c289bcbb8c8-2"></a>
-<a name="rest_code_769427abd3f74cd08b444c289bcbb8c8-3"></a>port=0
-<a name="rest_code_769427abd3f74cd08b444c289bcbb8c8-4"></a>interface=wlp0s18f2u1u4
-<a name="rest_code_769427abd3f74cd08b444c289bcbb8c8-5"></a>listen-address=192.168.199.254
-<a name="rest_code_769427abd3f74cd08b444c289bcbb8c8-6"></a>dhcp-range=192.168.199.101,192.168.199.150,12h
-<a name="rest_code_769427abd3f74cd08b444c289bcbb8c8-7"></a>dhcp-option=6,168.95.192.1,168.95.1.1
+<pre class="code text"><a name="rest_code_5440cfc236824d1780cc8d4671e06e76-1"></a>$ sudo nano /etc/dnsmasq.conf
+<a name="rest_code_5440cfc236824d1780cc8d4671e06e76-2"></a>
+<a name="rest_code_5440cfc236824d1780cc8d4671e06e76-3"></a>port=0
+<a name="rest_code_5440cfc236824d1780cc8d4671e06e76-4"></a>interface=wlp0s18f2u1u4
+<a name="rest_code_5440cfc236824d1780cc8d4671e06e76-5"></a>listen-address=192.168.199.254
+<a name="rest_code_5440cfc236824d1780cc8d4671e06e76-6"></a>dhcp-range=192.168.199.101,192.168.199.150,12h
+<a name="rest_code_5440cfc236824d1780cc8d4671e06e76-7"></a>dhcp-option=6,168.95.192.1,168.95.1.1
 </pre>
 </div>
 <div class="section" id="netcfg">
 <h3>netcfg 設定檔</h3>
-<pre class="code text"><a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-1"></a>sudo nano /etc/network.d/hostapd
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-2"></a>
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-3"></a>CONNECTION='ethernet'
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-4"></a>DESCRIPTION="wireless ap in master mode with hostapd"
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-5"></a>IP="static"
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-6"></a>ADDR="192.168.199.254"
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-7"></a>INTERFACE=wlp0s18f2u1u4
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-8"></a>SKIPNOCARRIER="yes"
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-9"></a>
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-10"></a>POST_UP="iptables -I FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -I FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=1; iptables -I INPUT -i wlp2s0u1
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-11"></a> -p udp --dport 67 -j ACCEPT; systemctl start hostapd; systemctl start dnsmasq"
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-12"></a>
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-13"></a>POST_DOWN="systemctl stop hostapd; systemctl stop dnsmasq; iptables -D FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -D FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=0; iptables -D INPUT -i wlp2s0u1
-<a name="rest_code_74a41b78ef064d41ac19bdc7d21b6197-14"></a> -p udp --dport 67 -j ACCEPT"
+<pre class="code text"><a name="rest_code_91dfd20bd3fa435699c40a09fae48535-1"></a>sudo nano /etc/network.d/hostapd
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-2"></a>
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-3"></a>CONNECTION='ethernet'
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-4"></a>DESCRIPTION="wireless ap in master mode with hostapd"
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-5"></a>IP="static"
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-6"></a>ADDR="192.168.199.254"
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-7"></a>INTERFACE=wlp0s18f2u1u4
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-8"></a>SKIPNOCARRIER="yes"
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-9"></a>
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-10"></a>POST_UP="iptables -I FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -I FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=1; iptables -I INPUT -i wlp2s0u1
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-11"></a> -p udp --dport 67 -j ACCEPT; systemctl start hostapd; systemctl start dnsmasq"
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-12"></a>
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-13"></a>POST_DOWN="systemctl stop hostapd; systemctl stop dnsmasq; iptables -D FORWARD -s 192.168.199.0/24 -j ACCEPT; iptables -D FORWARD -d 192.168.199.0/24 -j ACCEPT; iptables -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=0; iptables -D INPUT -i wlp2s0u1
+<a name="rest_code_91dfd20bd3fa435699c40a09fae48535-14"></a> -p udp --dport 67 -j ACCEPT"
 </pre>
 </div>
 <div class="section" id="wifiip">
 <h3>wifiip</h3>
 <p>設定 nat 和防火牆的 script，注意要用絕對路徑，不然開機時期，會找不到相對應的程式執行。</p>
-<pre class="code text"><a name="rest_code_e6747753c54f43f498a79743067d555a-1"></a>#!/bin/bash
-<a name="rest_code_e6747753c54f43f498a79743067d555a-2"></a>
-<a name="rest_code_e6747753c54f43f498a79743067d555a-3"></a>interface=wlp0s18f2u1u4
-<a name="rest_code_e6747753c54f43f498a79743067d555a-4"></a>
-<a name="rest_code_e6747753c54f43f498a79743067d555a-5"></a>iptables=/usr/bin/iptables
-<a name="rest_code_e6747753c54f43f498a79743067d555a-6"></a>ifconfig=/usr/bin/ifconfig
-<a name="rest_code_e6747753c54f43f498a79743067d555a-7"></a>sysctl=/usr/bin/sysctl
-<a name="rest_code_e6747753c54f43f498a79743067d555a-8"></a>
-<a name="rest_code_e6747753c54f43f498a79743067d555a-9"></a>wifi_on() {
-<a name="rest_code_e6747753c54f43f498a79743067d555a-10"></a>  ${iptables} -I FORWARD -s 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_e6747753c54f43f498a79743067d555a-11"></a>  ${iptables} -I FORWARD -d 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_e6747753c54f43f498a79743067d555a-12"></a>  ${iptables} -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
-<a name="rest_code_e6747753c54f43f498a79743067d555a-13"></a>  ${sysctl} -w net.ipv4.ip_forward=1
-<a name="rest_code_e6747753c54f43f498a79743067d555a-14"></a>  ${iptables} -I INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
-<a name="rest_code_e6747753c54f43f498a79743067d555a-15"></a>  ${ifconfig} ${interface} 192.168.199.1 netmask 255.255.255.0
-<a name="rest_code_e6747753c54f43f498a79743067d555a-16"></a>}
-<a name="rest_code_e6747753c54f43f498a79743067d555a-17"></a>
-<a name="rest_code_e6747753c54f43f498a79743067d555a-18"></a>wifi_off() {
-<a name="rest_code_e6747753c54f43f498a79743067d555a-19"></a>  ${iptables} -D FORWARD -s 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_e6747753c54f43f498a79743067d555a-20"></a>  ${iptables} -D FORWARD -d 192.168.199.0/24 -j ACCEPT
-<a name="rest_code_e6747753c54f43f498a79743067d555a-21"></a>  ${iptables} -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
-<a name="rest_code_e6747753c54f43f498a79743067d555a-22"></a>  ${sysctl} -w net.ipv4.ip_forward=0
-<a name="rest_code_e6747753c54f43f498a79743067d555a-23"></a>  ${iptables} -D INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
-<a name="rest_code_e6747753c54f43f498a79743067d555a-24"></a>  ${ifconfig} ${interface} down
-<a name="rest_code_e6747753c54f43f498a79743067d555a-25"></a>}
-<a name="rest_code_e6747753c54f43f498a79743067d555a-26"></a>
-<a name="rest_code_e6747753c54f43f498a79743067d555a-27"></a>usage() {
-<a name="rest_code_e6747753c54f43f498a79743067d555a-28"></a>  echo "USAGE: wifiip [on|off]"
-<a name="rest_code_e6747753c54f43f498a79743067d555a-29"></a>}
-<a name="rest_code_e6747753c54f43f498a79743067d555a-30"></a>
-<a name="rest_code_e6747753c54f43f498a79743067d555a-31"></a>if (( $# &gt; 0 )); then
-<a name="rest_code_e6747753c54f43f498a79743067d555a-32"></a>  case "$1" in
-<a name="rest_code_e6747753c54f43f498a79743067d555a-33"></a>    "on")  wifi_on;;
-<a name="rest_code_e6747753c54f43f498a79743067d555a-34"></a>    "off") wifi_off;;
-<a name="rest_code_e6747753c54f43f498a79743067d555a-35"></a>    *)     usage
-<a name="rest_code_e6747753c54f43f498a79743067d555a-36"></a>           exit 64;;
-<a name="rest_code_e6747753c54f43f498a79743067d555a-37"></a>  esac
-<a name="rest_code_e6747753c54f43f498a79743067d555a-38"></a>  exit 0
-<a name="rest_code_e6747753c54f43f498a79743067d555a-39"></a>else
-<a name="rest_code_e6747753c54f43f498a79743067d555a-40"></a>  usage
-<a name="rest_code_e6747753c54f43f498a79743067d555a-41"></a>return 64
-<a name="rest_code_e6747753c54f43f498a79743067d555a-42"></a>fi
+<pre class="code text"><a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-1"></a>#!/bin/bash
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-2"></a>
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-3"></a>interface=wlp0s18f2u1u4
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-4"></a>
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-5"></a>iptables=/usr/bin/iptables
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-6"></a>ifconfig=/usr/bin/ifconfig
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-7"></a>sysctl=/usr/bin/sysctl
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-8"></a>
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-9"></a>wifi_on() {
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-10"></a>  ${iptables} -I FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-11"></a>  ${iptables} -I FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-12"></a>  ${iptables} -t nat -I POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-13"></a>  ${sysctl} -w net.ipv4.ip_forward=1
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-14"></a>  ${iptables} -I INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-15"></a>  ${ifconfig} ${interface} 192.168.199.1 netmask 255.255.255.0
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-16"></a>}
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-17"></a>
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-18"></a>wifi_off() {
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-19"></a>  ${iptables} -D FORWARD -s 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-20"></a>  ${iptables} -D FORWARD -d 192.168.199.0/24 -j ACCEPT
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-21"></a>  ${iptables} -t nat -D POSTROUTING -o ppp0 -s 192.168.199.0/24 -j MASQUERADE
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-22"></a>  ${sysctl} -w net.ipv4.ip_forward=0
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-23"></a>  ${iptables} -D INPUT -i ${interface} -p udp --dport 67 -j ACCEPT
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-24"></a>  ${ifconfig} ${interface} down
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-25"></a>}
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-26"></a>
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-27"></a>usage() {
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-28"></a>  echo "USAGE: wifiip [on|off]"
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-29"></a>}
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-30"></a>
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-31"></a>if (( $# &gt; 0 )); then
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-32"></a>  case "$1" in
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-33"></a>    "on")  wifi_on;;
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-34"></a>    "off") wifi_off;;
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-35"></a>    *)     usage
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-36"></a>           exit 64;;
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-37"></a>  esac
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-38"></a>  exit 0
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-39"></a>else
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-40"></a>  usage
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-41"></a>return 64
+<a name="rest_code_2a98007a2f2b4c8c9bdc6b3adea1d839-42"></a>fi
 </pre>
 </div>
 <div class="section" id="netctl">
 <h3>netctl 設定檔</h3>
 <p>配置檔 <tt class="docutils literal">/etc/netctl/hostapd</tt></p>
-<pre class="code text"><a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-1"></a>Description="wireless ap in master mode with hostapd"
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-2"></a>Connection=ethernet
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-3"></a>Interface=wlp0s18f2u1u4
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-4"></a>IP=static
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-5"></a>Address="192.168.199.254"
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-6"></a>SkipNoCarrier="yes"
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-7"></a>
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-8"></a>ExecUpPost="/bin/wifiip on"
-<a name="rest_code_242b1eee9d8d43e789650d8ce84dd2c8-9"></a>ExecDownPre="/bin/wifiip off"
+<pre class="code text"><a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-1"></a>Description="wireless ap in master mode with hostapd"
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-2"></a>Connection=ethernet
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-3"></a>Interface=wlp0s18f2u1u4
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-4"></a>IP=static
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-5"></a>Address="192.168.199.254"
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-6"></a>SkipNoCarrier="yes"
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-7"></a>
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-8"></a>ExecUpPost="/bin/wifiip on"
+<a name="rest_code_21ceca72ffb94c82aab7e6d789835ff6-9"></a>ExecDownPre="/bin/wifiip off"
 </pre>
 </div>
 </div>
@@ -226,20 +226,20 @@
 <p>以下分別為啟動、重啟、停止、開機啟動</p>
 <div class="section" id="id4">
 <h3>啟動：</h3>
-<pre class="code text"><a name="rest_code_a0188128d7764f1b8795ae1d153fc0a8-1"></a>$ sudo netctl start hostapd
-<a name="rest_code_a0188128d7764f1b8795ae1d153fc0a8-2"></a>
-<a name="rest_code_a0188128d7764f1b8795ae1d153fc0a8-3"></a>$ sudo netcfg hostapd
-<a name="rest_code_a0188128d7764f1b8795ae1d153fc0a8-4"></a>或
-<a name="rest_code_a0188128d7764f1b8795ae1d153fc0a8-5"></a>$ sudo systemctl start netcfg@hostapd
+<pre class="code text"><a name="rest_code_fcabc409cff44d88b9bf8f82811d8dc6-1"></a>$ sudo netctl start hostapd
+<a name="rest_code_fcabc409cff44d88b9bf8f82811d8dc6-2"></a>
+<a name="rest_code_fcabc409cff44d88b9bf8f82811d8dc6-3"></a>$ sudo netcfg hostapd
+<a name="rest_code_fcabc409cff44d88b9bf8f82811d8dc6-4"></a>或
+<a name="rest_code_fcabc409cff44d88b9bf8f82811d8dc6-5"></a>$ sudo systemctl start netcfg@hostapd
 </pre>
 </div>
 <div class="section" id="id5">
 <h3>關閉:</h3>
-<pre class="code text"><a name="rest_code_40433a4ca48e4372aaf29998fbdeec50-1"></a>$ sudo netctl stop hostapd
-<a name="rest_code_40433a4ca48e4372aaf29998fbdeec50-2"></a>
-<a name="rest_code_40433a4ca48e4372aaf29998fbdeec50-3"></a>$ sudo netcfg down hostapd
-<a name="rest_code_40433a4ca48e4372aaf29998fbdeec50-4"></a>或
-<a name="rest_code_40433a4ca48e4372aaf29998fbdeec50-5"></a>$ sudo systemctl stop netcfg@hostapd
+<pre class="code text"><a name="rest_code_35027cdc41c9442aaf0f97ebdbce1fba-1"></a>$ sudo netctl stop hostapd
+<a name="rest_code_35027cdc41c9442aaf0f97ebdbce1fba-2"></a>
+<a name="rest_code_35027cdc41c9442aaf0f97ebdbce1fba-3"></a>$ sudo netcfg down hostapd
+<a name="rest_code_35027cdc41c9442aaf0f97ebdbce1fba-4"></a>或
+<a name="rest_code_35027cdc41c9442aaf0f97ebdbce1fba-5"></a>$ sudo systemctl stop netcfg@hostapd
 </pre>
 </div>
 <div class="section" id="systemd">
@@ -268,21 +268,21 @@ $ systemctl enable dnsmasq
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/WPA_supplicant">https://wiki.archlinux.org/index.php/WPA_supplicant</a></p>
 <div class="section" id="id6">
 <h3>安裝：</h3>
-<pre class="code text"><a name="rest_code_71e51a8866c645129ebe5195baa1ff90-1"></a>yaourt -S wpa_supplicant
+<pre class="code text"><a name="rest_code_279304e21f784adca377cff2d6faa128-1"></a>yaourt -S wpa_supplicant
 </pre>
 </div>
 <div class="section" id="id7">
 <h3>執行：</h3>
-<pre class="code text"><a name="rest_code_ae20e0b17e3241b586738856c5b72693-1"></a>wpa_passphrase essid passphrase
+<pre class="code text"><a name="rest_code_132bface101c49c4a6154e00c41cf389-1"></a>wpa_passphrase essid passphrase
 </pre>
 </div>
 <div class="section" id="id8">
 <h3>結果</h3>
-<pre class="code text"><a name="rest_code_34c8b022cda344bdaec6df1447c957e9-1"></a>network={
-<a name="rest_code_34c8b022cda344bdaec6df1447c957e9-2"></a>    ssid="essid"
-<a name="rest_code_34c8b022cda344bdaec6df1447c957e9-3"></a>    #psk="passphrase"
-<a name="rest_code_34c8b022cda344bdaec6df1447c957e9-4"></a>    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
-<a name="rest_code_34c8b022cda344bdaec6df1447c957e9-5"></a>}
+<pre class="code text"><a name="rest_code_382aedbde98c496c83c44b92f0758c8d-1"></a>network={
+<a name="rest_code_382aedbde98c496c83c44b92f0758c8d-2"></a>    ssid="essid"
+<a name="rest_code_382aedbde98c496c83c44b92f0758c8d-3"></a>    #psk="passphrase"
+<a name="rest_code_382aedbde98c496c83c44b92f0758c8d-4"></a>    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
+<a name="rest_code_382aedbde98c496c83c44b92f0758c8d-5"></a>}
 </pre>
 </div>
 </div>

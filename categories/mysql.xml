@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mysql)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 01:54:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orgd12a1df" class="outline-2"&gt;
-&lt;h2 id="orgd12a1df"&gt;change root password&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd12a1df"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mysql)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:17:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using Mariadb</title><link>https://mariolong.github.io/posts/using-mariadb/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-org11351e4" class="outline-2"&gt;
+&lt;h2 id="org11351e4"&gt;change root password&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org11351e4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysql&amp;gt; use mysql;
 mysql&amp;gt; UPDATE user SET Password=PASSWORD("password") WHERE User='root';
 mysql&amp;gt; flush privileges;
@@ -10,13 +10,13 @@ mysql&amp;gt; quit
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgdb956d4" class="outline-2"&gt;
-&lt;h2 id="orgdb956d4"&gt;commands&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdb956d4"&gt;
+&lt;div id="outline-container-orgf3255fd" class="outline-2"&gt;
+&lt;h2 id="orgf3255fd"&gt;commands&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf3255fd"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org7844d19" class="outline-3"&gt;
-&lt;h3 id="org7844d19"&gt;create user&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7844d19"&gt;
+&lt;div id="outline-container-orgb834210" class="outline-3"&gt;
+&lt;h3 id="orgb834210"&gt;create user&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb834210"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysql&amp;gt; CREATE USER 'stock'@'localhost' IDENTIFIED BY 'password';
 mysql&amp;gt; GRANT ALL PRIVILEGES ON stock.* TO 'stock'@'localhost' WITH GRANT OPTION;
 mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
@@ -30,9 +30,9 @@ mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgacb5972" class="outline-3"&gt;
-&lt;h3 id="orgacb5972"&gt;show database*s*&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgacb5972"&gt;
+&lt;div id="outline-container-org23745d4" class="outline-3"&gt;
+&lt;h3 id="org23745d4"&gt;show database*s*&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org23745d4"&gt;
 &lt;p&gt;
 &lt;b&gt;注意&lt;/b&gt;: database 和 table 的名稱，在 linux 中會區分大小寫。
 &lt;/p&gt;
@@ -42,9 +42,9 @@ mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1b9ec9e" class="outline-3"&gt;
-&lt;h3 id="org1b9ec9e"&gt;use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1b9ec9e"&gt;
+&lt;div id="outline-container-org343d24e" class="outline-3"&gt;
+&lt;h3 id="org343d24e"&gt;use &amp;lt;db-name&amp;gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org343d24e"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;USE stock
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -53,24 +53,24 @@ mysql&amp;gt; SHOW GRANTS FOR 'stock'@'localhost';
 Ref: &lt;a href="https://wiki.archlinux.org/index.php/MySQL"&gt;MySQL - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org4eb1036" class="outline-2"&gt;
-&lt;h2 id="org4eb1036"&gt;install mariadb&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4eb1036"&gt;
+&lt;div id="outline-container-org84181fa" class="outline-2"&gt;
+&lt;h2 id="org84181fa"&gt;install mariadb&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org84181fa"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb353447" class="outline-2"&gt;
-&lt;h2 id="orgb353447"&gt;install and setup database&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb353447"&gt;
+&lt;div id="outline-container-orgfb3eafe" class="outline-2"&gt;
+&lt;h2 id="orgfb3eafe"&gt;install and setup database&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfb3eafe"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mysql_install_db --user&lt;span class="o"&gt;=&lt;/span&gt;mysql --basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr --datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7ebb1d6" class="outline-3"&gt;
-&lt;h3 id="org7ebb1d6"&gt;message&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7ebb1d6"&gt;
+&lt;div id="outline-container-org578fdb1" class="outline-3"&gt;
+&lt;h3 id="org578fdb1"&gt;message&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org578fdb1"&gt;
 &lt;pre class="example"&gt;
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 To do so, start the server, then issue the following commands:
@@ -108,9 +108,9 @@ https://mariadb.org/get-involved/
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org80ac831" class="outline-2"&gt;
-&lt;h2 id="org80ac831"&gt;edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org80ac831"&gt;
+&lt;div id="outline-container-org7f9629a" class="outline-2"&gt;
+&lt;h2 id="org7f9629a"&gt;edit &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7f9629a"&gt;
 &lt;p&gt;
 Tip: If you use something different from /var/lib/mysql for your data
 dir, you need to set &lt;code&gt;datadir=&amp;lt;YOUR_DATADIR&amp;gt;&lt;/code&gt; under section &lt;code&gt;[mysqld]&lt;/code&gt; of
@@ -121,17 +121,17 @@ database level:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org14bab65" class="outline-2"&gt;
-&lt;h2 id="org14bab65"&gt;start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org14bab65"&gt;
+&lt;div id="outline-container-orgc8d546a" class="outline-2"&gt;
+&lt;h2 id="orgc8d546a"&gt;start/enable &lt;code&gt;mariadb.service&lt;/code&gt; with systemd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc8d546a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start mariadb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9bdba0c" class="outline-2"&gt;
-&lt;h2 id="org9bdba0c"&gt;To start mysqld at boot time&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9bdba0c"&gt;
+&lt;div id="outline-container-org9e92b5b" class="outline-2"&gt;
+&lt;h2 id="org9e92b5b"&gt;To start mysqld at boot time&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9e92b5b"&gt;
 &lt;p&gt;
 you have to copy support-files/mysql.server to the right place for your system
 &lt;/p&gt;
@@ -147,9 +147,9 @@ strongly recommended for production servers.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc602cbe" class="outline-2"&gt;
-&lt;h2 id="orgc602cbe"&gt;Using UTF8MB4&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc602cbe"&gt;
+&lt;div id="outline-container-org887c08d" class="outline-2"&gt;
+&lt;h2 id="org887c08d"&gt;Using UTF8MB4&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org887c08d"&gt;
 &lt;p&gt;
 在 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt; 加上以下指令：
 &lt;/p&gt;
@@ -167,9 +167,9 @@ default-character-set = utf8mb4
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3677bb2" class="outline-2"&gt;
-&lt;h2 id="org3677bb2"&gt;開啓自動補全&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3677bb2"&gt;
+&lt;div id="outline-container-orge164055" class="outline-2"&gt;
+&lt;h2 id="orge164055"&gt;開啓自動補全&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge164055"&gt;
 &lt;p&gt;
 Note: Enabling this feature can make the client initialization longer.
 &lt;/p&gt;

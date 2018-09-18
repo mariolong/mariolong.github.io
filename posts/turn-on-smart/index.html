@@ -130,17 +130,17 @@ To monitor for all possible SMART errors on all disk">
 ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - ArchWiki</a>
 </p>
 
-<div id="outline-container-orgdc8533d" class="outline-2">
-<h2 id="orgdc8533d">Install</h2>
-<div class="outline-text-2" id="text-orgdc8533d">
+<div id="outline-container-org8e33b2f" class="outline-2">
+<h2 id="org8e33b2f">Install</h2>
+<div class="outline-text-2" id="text-org8e33b2f">
 <div class="highlight"><pre><span></span>yaourt -S smartmontools
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org2f4f0fc" class="outline-2">
-<h2 id="org2f4f0fc">start smartd</h2>
-<div class="outline-text-2" id="text-org2f4f0fc">
+<div id="outline-container-orgfdca578" class="outline-2">
+<h2 id="orgfdca578">start smartd</h2>
+<div class="outline-text-2" id="text-orgfdca578">
 <div class="highlight"><pre><span></span>systemctl start smartd
 </pre></div>
 
@@ -150,9 +150,9 @@ ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - Arch
 </div>
 </div>
 
-<div id="outline-container-orgca58e62" class="outline-2">
-<h2 id="orgca58e62">smartd.conf</h2>
-<div class="outline-text-2" id="text-orgca58e62">
+<div id="outline-container-org980cdf1" class="outline-2">
+<h2 id="org980cdf1">smartd.conf</h2>
+<div class="outline-text-2" id="text-org980cdf1">
 <p>
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -162,9 +162,9 @@ setting must be added in the configuration file.
 </pre></div>
 </div>
 
-<div id="outline-container-orgdb652fb" class="outline-3">
-<h3 id="orgdb652fb">auto mail</h3>
-<div class="outline-text-3" id="text-orgdb652fb">
+<div id="outline-container-org361be0d" class="outline-3">
+<h3 id="org361be0d">auto mail</h3>
+<div class="outline-text-3" id="text-org361be0d">
 <p>
 先依 <a href="https://dominicm.com/configure-email-notifications-on-arch-linux/">Configure Email Notifications on Arch Linux | DominicM</a> 設定 s-nail,
 再於 <code>/etc/smartd.conf</code> 加上以下指令

@@ -107,22 +107,22 @@ fatal_error: Can't create db file in &quot;/var/lib/mpd&quot;:">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>error message:</p>
-<pre class="code text"><a name="rest_code_98262c1594dc4982b65b2ef6f2004fd5-1"></a>$ systemctl --user status mpd.service
-<a name="rest_code_98262c1594dc4982b65b2ef6f2004fd5-2"></a>Failed to issue method call: Process /bin/false exited with status 1
-<a name="rest_code_98262c1594dc4982b65b2ef6f2004fd5-3"></a>
-<a name="rest_code_98262c1594dc4982b65b2ef6f2004fd5-4"></a>$ sudo journalctl -u mpd
-<a name="rest_code_98262c1594dc4982b65b2ef6f2004fd5-5"></a>fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
+<pre class="code text"><a name="rest_code_35d20e8dd32b43018e80f15f28819bfb-1"></a>$ systemctl --user status mpd.service
+<a name="rest_code_35d20e8dd32b43018e80f15f28819bfb-2"></a>Failed to issue method call: Process /bin/false exited with status 1
+<a name="rest_code_35d20e8dd32b43018e80f15f28819bfb-3"></a>
+<a name="rest_code_35d20e8dd32b43018e80f15f28819bfb-4"></a>$ sudo journalctl -u mpd
+<a name="rest_code_35d20e8dd32b43018e80f15f28819bfb-5"></a>fatal_error: Can't create db file in "/var/lib/mpd": Permission denied
 </pre>
 <p>參考：<a class="reference external" href="https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206">https://wiki.archlinux.org/index.php/Systemd/User#Setup_since_systemd_206</a> 後，
 解決了這個問題。</p>
 <p>下這個指令：</p>
-<pre class="code text"><a name="rest_code_df2d718cd57d45ca94dedb6a9161bed3-1"></a># sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
+<pre class="code text"><a name="rest_code_a3a41ab2bc1a415b928f1a976362df1f-1"></a># sed -i s/system-auth/system-login/g /etc/pam.d/systemd-user
 </pre>
 <p>2014-3-14 update：現在不必用上述的方法囉。</p>
 <p>加環境變數的檔：</p>
-<pre class="code text"><a name="rest_code_e556a40467414347bfd8825d746616ca-1"></a># EDIT /etc/systemd/system/user@.service.d/environment.conf
-<a name="rest_code_e556a40467414347bfd8825d746616ca-2"></a>[Service]
-<a name="rest_code_e556a40467414347bfd8825d746616ca-3"></a>Environment=DISPLAY=:0
+<pre class="code text"><a name="rest_code_c893a091b51e4a678518cd42eb5944eb-1"></a># EDIT /etc/systemd/system/user@.service.d/environment.conf
+<a name="rest_code_c893a091b51e4a678518cd42eb5944eb-2"></a>[Service]
+<a name="rest_code_c893a091b51e4a678518cd42eb5944eb-3"></a>Environment=DISPLAY=:0
 </pre>
 <p><strong>2014-4-3 update</strong> : 為何這個 install 標題在這個位置？因為以上都是過去的故事了。
 還是把它留著，免得下次又重做這些不必要做的事。</p>
@@ -138,20 +138,20 @@ yaourt -S mpd ncmpcpp mpdris2-git cantata cdparanoia
 nano ~/.config/systemd/user/mpd.service
 </pre>
 <p>內容如下：</p>
-<pre class="code text"><a name="rest_code_db4b7f4f847f402dab484b6e663b1541-1"></a>[Unit]
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-2"></a>Description=Music Player Daemon
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-3"></a>
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-4"></a>[Service]
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-5"></a>Nice=-10
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-6"></a>ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-7"></a>ExecStop=/usr/bin/mpd --kill
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-8"></a>
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-9"></a>[Install]
-<a name="rest_code_db4b7f4f847f402dab484b6e663b1541-10"></a>WantedBy=default.target
+<pre class="code text"><a name="rest_code_04c02f9c84a0478989c27909c07542d1-1"></a>[Unit]
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-2"></a>Description=Music Player Daemon
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-3"></a>
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-4"></a>[Service]
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-5"></a>Nice=-10
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-6"></a>ExecStart=/usr/bin/mpd --no-daemon /home/mario/.mpdconf
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-7"></a>ExecStop=/usr/bin/mpd --kill
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-8"></a>
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-9"></a>[Install]
+<a name="rest_code_04c02f9c84a0478989c27909c07542d1-10"></a>WantedBy=default.target
 </pre>
 <p>把 mpd 開起來吧，不必 reboot！</p>
-<pre class="code text"><a name="rest_code_b8ced4bd6ac443fc9f061e4b7c3332f7-1"></a>$ systemctl --user start mpd
-<a name="rest_code_b8ced4bd6ac443fc9f061e4b7c3332f7-2"></a>$ systemctl --user enable mpd
+<pre class="code text"><a name="rest_code_5ccf2c7f865e4584a6d87ee7d66defb6-1"></a>$ systemctl --user start mpd
+<a name="rest_code_5ccf2c7f865e4584a6d87ee7d66defb6-2"></a>$ systemctl --user enable mpd
 </pre>
 <p>在 KDE 中使用 mpd-client，比較好用的 ncmpcpp 和 cantata。</p>
 <p>ncmpcpp 配置起來也是「落落長」的故事。</p>

@@ -107,15 +107,15 @@ create a file in /etc/X11/xorg.conf.d called custom.conf with this code:
 <p>To disable blank screen after 10 minutes of inactivity,
 create a file in /etc/X11/xorg.conf.d called custom.conf with this code:</p>
 <p>快建立這個檔案試試。</p>
-<pre class="code text"><a name="rest_code_aa231742a2c4488d95627993d0c786bc-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-2"></a>
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-3"></a>Section "ServerFlags"
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-4"></a>    # disable low-level screensaver and screen DPMS poweroff
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-5"></a>    Option "BlankTime"  "0"
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-6"></a>    Option "StandbyTime" "0"
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-7"></a>    Option "SuspendTime" "0"
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-8"></a>    Option "OffTime"  "0"
-<a name="rest_code_aa231742a2c4488d95627993d0c786bc-9"></a>EndSection
+<pre class="code text"><a name="rest_code_b95c231ca830497899ad8778e95fb7fc-1"></a>＄ nano  /etc/X11/xorg.conf.d/custom.conf
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-2"></a>
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-3"></a>Section "ServerFlags"
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-4"></a>    # disable low-level screensaver and screen DPMS poweroff
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-5"></a>    Option "BlankTime"  "0"
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-6"></a>    Option "StandbyTime" "0"
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-7"></a>    Option "SuspendTime" "0"
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-8"></a>    Option "OffTime"  "0"
+<a name="rest_code_b95c231ca830497899ad8778e95fb7fc-9"></a>EndSection
 </pre>
 <p>趕快記下來，試試看。</p>
 </div>
