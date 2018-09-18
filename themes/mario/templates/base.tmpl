@@ -60,38 +60,41 @@ ${template_hooks['extra_head']()}
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-					${template_hooks['page_header']()}
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				${template_hooks['page_header']()}
+				<div class="yue">
 					<%block name="content"></%block>
 				</div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			${content_footer}
-			${template_hooks['page_footer']()}
-		</div>
-		${base.late_load_js()}
-		<script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
-		<!-- fancy dates -->
-		<script>
-			moment.locale("${momentjs_locales[lang]}");
-			fancydates(${date_fanciness}, ${js_date_format});
-		</script>
-		<!-- end fancy dates -->
-		<%block name="extra_js"></%block>
-		% if annotations and post and not post.meta('noannotations'):
-			${notes.code()}
-		% elif not annotations and post and post.meta('annotations'):
-			${notes.code()}
-		% endif
-		${body_end}
-		${template_hooks['body_end']()}
+		<!--End of body content-->
 	</div>
+
+	<div class="footerbox">
+		${content_footer}
+		${template_hooks['page_footer']()}
+	</div>
+
+	${base.late_load_js()}
+	<script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+	<!-- fancy dates -->
+	<script>
+		moment.locale("${momentjs_locales[lang]}");
+		fancydates(${date_fanciness}, ${js_date_format});
+	</script>
+	<!-- end fancy dates -->
+	<%block name="extra_js"></%block>
+	% if annotations and post and not post.meta('noannotations'):
+			${notes.code()}
+	% elif not annotations and post and post.meta('annotations'):
+		${notes.code()}
+	% endif
+	${body_end}
+	${template_hooks['body_end']()}
 </body>
 </html>

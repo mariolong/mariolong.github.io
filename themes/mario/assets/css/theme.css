@@ -119,8 +119,8 @@ article.post-micro {
 }
 
 .metadata p:before,
-.postlist .listdate:before {
-    content: " — ";
+.listdate:before {
+  content: " — ";
 }
 
 .metadata p:first-of-type:before {
