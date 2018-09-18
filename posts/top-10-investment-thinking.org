@@ -9,8 +9,9 @@
 .. description:
 .. type: text
 #+END_COMMENT
-#+OPTIONS: toc:nil ^:{}
+#+OPTIONS: toc:1 num:t ^:{}
 #+LANGUAGE: zh-TW
+
 #+TITLE: 全球 10 位最頂尖投資家的交易思想
 #+AUTHOR: 撲克投資家
 

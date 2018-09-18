@@ -1284,7 +1284,7 @@ COPY_SOURCES = False
 # USE_BUNDLES = True
 
 # Plugins you don't want to use. Be careful :-)
-# DISABLED_PLUGINS = ["render_galleries"]
+DISABLED_PLUGINS = ["render_galleries", "robots"]
 
 # Special settings to disable only parts of the indexes plugin.
 # Use with care.
@@ -1341,7 +1341,24 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {'blog_sidebar': """\
+<div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>This is the Bootstrap Blog theme by @mdo, adapted for Nikola by @Kwpolska.
+  And this sidebar is completely customizable — you can put anything you want
+  here!</p>
+</div>
+<div class="sidebar-module">
+  <h4>Links</h4>
+  <ol class="list-unstyled">
+    <li><a href="http://getbootstrap.com/examples/blog/">Bootstrap Blog Theme</a></li>
+    <li><a href="https://getnikola.com/">Nikola</a></li>
+    <li><a href="https://twitter.com/mdo">@mdo</a></li>
+    <li><a href="https://twitter.com/Kwpolska">@Kwpolska</a></li>
+    <li><a href="https://twitter.com/GetNikola">@GetNikola</a></li>
+  </ol>
+</div>
+"""}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be

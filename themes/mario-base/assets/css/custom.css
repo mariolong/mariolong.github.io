@@ -1,16 +1,3 @@
-.yue {
-  font: 400 22px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
-  color: #444443;
-}
-
-.windows .yue {
-  font-size: 22px;
-}
-
-.yue li {
-  line-height: inherit;
-}
-
 .brand #blog-title {
   font-size: 1.75em;
 }
@@ -100,23 +87,12 @@ article.h-entry {
   margin-top: 2rem;
 }
 
-.postlist .listdate::before {
+.postlist .listdate:before {
   content: "";
 }
 
-.postlist .listdate::after {
-  content: "";
- }
-
-#table-of-contents h2 {
-  padding-left: 0.6em;
-}
-
-#table-of-contents a {
-  color: inherit;
-}
-#table-of-contents li {
-  list-style-type: none;
+li {
+  line-height: inherit;
 }
 
 .listtitle {
