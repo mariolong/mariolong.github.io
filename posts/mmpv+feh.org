@@ -151,4 +151,63 @@ If you miss some older key bindings, look at etc/restore-old-bindings.conf in th
 
 
 * feh
+
+** install
+
+#+BEGIN_SRC sh
+yaourt -S feh xorg-xev
+#+END_SRC
+
 ** keyborad control
+
+配置檔位於 ~~/.config/feh/keys~
+
+#+BEGIN_SRC config
+# feh key configuration.
+# Comments start with a # sign, do not use them mid-line.
+# Each line must be blank, a comment, or a key definition.
+#
+# key definition: <action name> <key1> [<key2> [<key3>]]
+#
+# Each <key> is an X11 keysym (as output by xev) with optional modifier.
+# For instance, C-x would be Ctrl+X, or 4-space Mod4+Space
+
+#menu_parent h Left
+#menu_child  l Right
+#menu_down   j Down
+#menu_up     k Up
+#menu_select space Return
+
+toggle_exif o
+
+# Same for image navigation ...
+prev_img j Left
+next_img k Right
+# jump_first home
+# jump_last end
+# jump_fwd
+# jump_back
+toggle_pause space p
+
+# maintain image
+remove
+delete C-Delete
+orient_3 C-j
+orient_1 C-k
+
+# zooming
+zoom_in       l KP_Add
+zoom_out      h KP_Subtract
+zoom_default  semicolon KP_Multiply
+zoom_fit      i KP_Divide
+
+# and image movement
+scroll_up     e
+scroll_down   d
+scroll_left   s
+scroll_right  f
+
+# I only hit these accidentaly
+save_image
+save_filelist
+#+END_SRC
