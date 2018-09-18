@@ -71,13 +71,14 @@
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-					
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Install Mariadb</a></h1>
 
@@ -105,24 +106,24 @@
 Ref: <a href="https://wiki.archlinux.org/index.php/MySQL">MySQL - ArchWiki</a>
 </p>
 
-<div id="outline-container-org0497782" class="outline-2">
-<h2 id="org0497782">install mariadb</h2>
-<div class="outline-text-2" id="text-org0497782">
+<div id="outline-container-org4eb1036" class="outline-2">
+<h2 id="org4eb1036">install mariadb</h2>
+<div class="outline-text-2" id="text-org4eb1036">
 <div class="highlight"><pre><span></span>yaourt -S mariadb
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orgcfc53e4" class="outline-2">
-<h2 id="orgcfc53e4">install and setup database</h2>
-<div class="outline-text-2" id="text-orgcfc53e4">
+<div id="outline-container-orgb353447" class="outline-2">
+<h2 id="orgb353447">install and setup database</h2>
+<div class="outline-text-2" id="text-orgb353447">
 <div class="highlight"><pre><span></span>sudo mysql_install_db --user<span class="o">=</span>mysql --basedir<span class="o">=</span>/usr --datadir<span class="o">=</span>/var/lib/mysql
 </pre></div>
 </div>
 
-<div id="outline-container-org5f6c699" class="outline-3">
-<h3 id="org5f6c699">message</h3>
-<div class="outline-text-3" id="text-org5f6c699">
+<div id="outline-container-org7ebb1d6" class="outline-3">
+<h3 id="org7ebb1d6">message</h3>
+<div class="outline-text-3" id="text-org7ebb1d6">
 <pre class="example">
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 To do so, start the server, then issue the following commands:
@@ -160,10 +161,10 @@ https://mariadb.org/get-involved/
 </div>
 </div>
 
-<div id="outline-container-orgd7c0bb4" class="outline-2">
-<h2 id="orgd7c0bb4">edit <code>/etc/mysql/my.cnf</code>
+<div id="outline-container-org80ac831" class="outline-2">
+<h2 id="org80ac831">edit <code>/etc/mysql/my.cnf</code>
 </h2>
-<div class="outline-text-2" id="text-orgd7c0bb4">
+<div class="outline-text-2" id="text-org80ac831">
 <p>
 Tip: If you use something different from /var/lib/mysql for your data
 dir, you need to set <code>datadir=&lt;YOUR_DATADIR&gt;</code> under section <code>[mysqld]</code> of
@@ -174,17 +175,17 @@ database level:
 </div>
 </div>
 
-<div id="outline-container-org16cc9f7" class="outline-2">
-<h2 id="org16cc9f7">start/enable <code>mariadb.service</code> with systemd</h2>
-<div class="outline-text-2" id="text-org16cc9f7">
+<div id="outline-container-org14bab65" class="outline-2">
+<h2 id="org14bab65">start/enable <code>mariadb.service</code> with systemd</h2>
+<div class="outline-text-2" id="text-org14bab65">
 <div class="highlight"><pre><span></span>sudo systemctl start mariadb
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orgf128629" class="outline-2">
-<h2 id="orgf128629">To start mysqld at boot time</h2>
-<div class="outline-text-2" id="text-orgf128629">
+<div id="outline-container-org9bdba0c" class="outline-2">
+<h2 id="org9bdba0c">To start mysqld at boot time</h2>
+<div class="outline-text-2" id="text-org9bdba0c">
 <p>
 you have to copy support-files/mysql.server to the right place for your system
 </p>
@@ -200,9 +201,9 @@ strongly recommended for production servers.
 </div>
 </div>
 
-<div id="outline-container-orgb26bb54" class="outline-2">
-<h2 id="orgb26bb54">Using UTF8MB4</h2>
-<div class="outline-text-2" id="text-orgb26bb54">
+<div id="outline-container-orgc602cbe" class="outline-2">
+<h2 id="orgc602cbe">Using UTF8MB4</h2>
+<div class="outline-text-2" id="text-orgc602cbe">
 <p>
 在 <code>/etc/mysql/my.cnf</code> 加上以下指令：
 </p>
@@ -220,9 +221,9 @@ default-character-set = utf8mb4
 </div>
 </div>
 
-<div id="outline-container-orgb42e283" class="outline-2">
-<h2 id="orgb42e283">開啓自動補全</h2>
-<div class="outline-text-2" id="text-orgb42e283">
+<div id="outline-container-org3677bb2" class="outline-2">
+<h2 id="org3677bb2">開啓自動補全</h2>
+<div class="outline-text-2" id="text-org3677bb2">
 <p>
 Note: Enabling this feature can make the client initialization longer.
 </p>
@@ -272,17 +273,19 @@ client.</p>
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>

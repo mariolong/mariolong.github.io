@@ -95,13 +95,14 @@ To monitor for all possible SMART errors on all disk">
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-					
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Turn on SMART to monitor HD</a></h1>
 
@@ -129,17 +130,17 @@ To monitor for all possible SMART errors on all disk">
 ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - ArchWiki</a>
 </p>
 
-<div id="outline-container-org4150820" class="outline-2">
-<h2 id="org4150820">Install</h2>
-<div class="outline-text-2" id="text-org4150820">
+<div id="outline-container-orgdc8533d" class="outline-2">
+<h2 id="orgdc8533d">Install</h2>
+<div class="outline-text-2" id="text-orgdc8533d">
 <div class="highlight"><pre><span></span>yaourt -S smartmontools
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org1208b8e" class="outline-2">
-<h2 id="org1208b8e">start smartd</h2>
-<div class="outline-text-2" id="text-org1208b8e">
+<div id="outline-container-org2f4f0fc" class="outline-2">
+<h2 id="org2f4f0fc">start smartd</h2>
+<div class="outline-text-2" id="text-org2f4f0fc">
 <div class="highlight"><pre><span></span>systemctl start smartd
 </pre></div>
 
@@ -149,9 +150,9 @@ ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - Arch
 </div>
 </div>
 
-<div id="outline-container-org0bbdf6e" class="outline-2">
-<h2 id="org0bbdf6e">smartd.conf</h2>
-<div class="outline-text-2" id="text-org0bbdf6e">
+<div id="outline-container-orgca58e62" class="outline-2">
+<h2 id="orgca58e62">smartd.conf</h2>
+<div class="outline-text-2" id="text-orgca58e62">
 <p>
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -161,9 +162,9 @@ setting must be added in the configuration file.
 </pre></div>
 </div>
 
-<div id="outline-container-org6512097" class="outline-3">
-<h3 id="org6512097">auto mail</h3>
-<div class="outline-text-3" id="text-org6512097">
+<div id="outline-container-orgdb652fb" class="outline-3">
+<h3 id="orgdb652fb">auto mail</h3>
+<div class="outline-text-3" id="text-orgdb652fb">
 <p>
 先依 <a href="https://dominicm.com/configure-email-notifications-on-arch-linux/">Configure Email Notifications on Arch Linux | DominicM</a> 設定 s-nail,
 再於 <code>/etc/smartd.conf</code> 加上以下指令
@@ -211,17 +212,19 @@ setting must be added in the configuration file.
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>

@@ -83,13 +83,14 @@ uws">
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-					
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">bottle+nginx with uwsgi</a></h1>
 
@@ -115,22 +116,22 @@ uws">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>安裝 uwsgi</p>
-<pre class="code text"><a name="rest_code_d0010c136e504877854b98c88ce45470-1"></a>sudo pip uwsgi
+<pre class="code text"><a name="rest_code_3bd3052e1fd549a6b9db87763659c5bc-1"></a>sudo pip uwsgi
 </pre>
 <p>先寫一個小小的程式，測試一下。</p>
-<pre class="code python"><a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-1"></a><span class="ch">#!/usr/bin/env python</span>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-3"></a>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-5"></a>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-9"></a>
-<a name="rest_code_e125341dce064b12b7b3ef5bd5acdd97-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_eda71b53ede24bc08925a6377f1d0691-1"></a><span class="ch">#!/usr/bin/env python</span>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-3"></a>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-4"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">app</span>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-5"></a>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-6"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-7"></a><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-8"></a>    <span class="k">return</span><span class="p">(</span> <span class="s2">"Hello world"</span> <span class="p">)</span>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-9"></a>
+<a name="rest_code_eda71b53ede24bc08925a6377f1d0691-10"></a><span class="n">application</span> <span class="o">=</span> <span class="n">app</span><span class="p">()</span>
 </pre>
 <p>啟動 uwsgi</p>
-<pre class="code text"><a name="rest_code_d8cb2d408f944d82845a5666743976c8-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
+<pre class="code text"><a name="rest_code_a65ef3ce185b4ea290fecb77a4c6704c-1"></a>uwsgi --http :8001 --wsgi-file wsgi-test.py --chdir /path/to/wsgi-test.py
 </pre>
 <p>進 browser 看看成功否？目前成功。</p>
 <p>接下來試 nginx 中啟動 uwsgi。</p>
@@ -173,17 +174,19 @@ uws">
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>

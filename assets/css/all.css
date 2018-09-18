@@ -506,8 +506,8 @@ article.post-micro {
 }
 
 .metadata p:before,
-.postlist .listdate:before {
-    content: " — ";
+.listdate:before {
+  content: " — ";
 }
 
 .metadata p:first-of-type:before {
@@ -592,7 +592,7 @@ article.post-micro {
 }
 
 .brand #blog-title {
-  font-size: 2em;
+  font-size: 1.75em;
 }
 
 header {
@@ -617,7 +617,6 @@ ul.postlist>li {
   margin-bottom: 0.5em;
 }
 
-
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -626,47 +625,58 @@ html {
 
 body {
   font-size: 22px;
-  line-height: 1.75em;
+  /* line-height: 1.75em; */
   height:100%;
   max-width: 1200px;
   min-width: 320px;
   margin:0 auto 0;
 }
 
-
 h1{
-  font-size:2em;
-  text-align:center;
+  font-size:1.5em;
+  /* text-align:center; */
   margin-top:2em;
   margin-bottom:0.5em;
 }
 
 h2,h3{
-  font-size:1.5em;
+  font-size:1.25em;
   padding-bottom: 0.25em;
   margin-top: 1em;
   margin-bottom: 1em;
-}
-
-h4,h5,h6 {
-  font-size:1.25em;
-  padding-bottom: 0.25em;
 }
 
 h2 {
   border-bottom: #777777 1px solid;
 }
 
+h4,h5,h6 {
+  font-size:1.125em;
+  padding-bottom: 0.25em;
+}
+
 .metadata {
-  text-align:center;
-  font-size:0.9em;
-  margin-bottom:2.5em;
+  font-size:0.95em;
+  margin-bottom:1em;
 }
 
 pre.literal-block,
 pre.code {
-  font-size: 0.9em;
+  font-size: 0.95em;
   margin-right: 0em;
   margin-left: 0em;
+}
+
+article.h-entry {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry-content a{
+  color: #0088cc
+}
+
+li {
+  line-height: inherit;
 }
 

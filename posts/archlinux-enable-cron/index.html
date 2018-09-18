@@ -71,13 +71,14 @@ cronie is installed by default as part of the base group. Other cron implementat
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-					
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">archlinux enable cron</a></h1>
 
@@ -112,24 +113,24 @@ cronie is installed by default as part of the base group. Other cron implementat
 <h2>Configuration</h2>
 <p>Activation and autostart</p>
 <p>cron provided implementation cronie is not enabled by default in new Arch installs. This can be checked by looking at the log in /var/log/ or by issuing:</p>
-<pre class="code text"><a name="rest_code_116379d9758a437683770d76cd19419d-1"></a>$ systemctl is-enabled cronie
+<pre class="code text"><a name="rest_code_1e3fdbf6308f4f349ce228461fd0541a-1"></a>$ systemctl is-enabled cronie
 </pre>
 <p>Therefore, cronie systemd service must be started and enabled via systemctl prior or after setting the first cron job:</p>
-<pre class="code text"><a name="rest_code_edb3559d0f974d1d9499e6a69e973ee7-1"></a># systemctl start cronie
-<a name="rest_code_edb3559d0f974d1d9499e6a69e973ee7-2"></a># systemctl enable cronie
+<pre class="code text"><a name="rest_code_f8798f686bdd4826ab54e65fe8d2445c-1"></a># systemctl start cronie
+<a name="rest_code_f8798f686bdd4826ab54e65fe8d2445c-2"></a># systemctl enable cronie
 </pre>
 </div>
 <div class="section" id="default-editor">
 <h2>Default editor</h2>
 <p>To use an alternate default editor, define the EDITOR environment variablee it in a shell initialization script (vim-default-editor is available for vim users). For example:</p>
-<pre class="code text"><a name="rest_code_80972bfce47a4f0fb3629fed9fecda2b-1"></a># /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_4837ec2a772c4f5a8af309912c9c0ebd-1"></a># /etc/profile.d/nano-default-editor
 </pre>
 <p>加上：</p>
-<pre class="code text"><a name="rest_code_a3b5fcb4766345df83647e80214b4689-1"></a>#!/bin/sh
-<a name="rest_code_a3b5fcb4766345df83647e80214b4689-2"></a>export EDITOR=/usr/bin/nano
+<pre class="code text"><a name="rest_code_f7ed7cd7aa344fe8bd8fb0dca83d8d1f-1"></a>#!/bin/sh
+<a name="rest_code_f7ed7cd7aa344fe8bd8fb0dca83d8d1f-2"></a>export EDITOR=/usr/bin/nano
 </pre>
 <p>修改權限：</p>
-<pre class="code text"><a name="rest_code_02893ebadb784298938001bb750ae50a-1"></a>#chmod +x /etc/profile.d/nano-default-editor
+<pre class="code text"><a name="rest_code_205a5257250a403daf9ed1f5689fae7a-1"></a>#chmod +x /etc/profile.d/nano-default-editor
 </pre>
 </div>
 <div class="section" id="crontab-format">
@@ -239,17 +240,19 @@ Periodical settings can also be entered as in this crontab template:
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>

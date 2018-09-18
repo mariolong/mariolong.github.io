@@ -61,963 +61,308 @@
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
-					
+	
+		
 
-    
-
-
-    
-<div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/m2ts-to-mp4/" class="u-url">M2TS to mp4 via ffmpeg</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/m2ts-to-mp4/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-05-04T07:33:03Z" itemprop="datePublished" title="2015-05-04 07:33">2015-05-04 07:33</time></a>
-            </p>
-                <p class="commentline">
+	
+		
+	<div class="postindex">
+			<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/m2ts-to-mp4/" class="u-url">M2TS to mp4 via ffmpeg</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/m2ts-to-mp4/" rel="bookmark">
+								<time class="published dt-published" datetime="2015-05-04T07:33:03Z" itemprop="datePublished" title="2015-05-04 07:33">2015-05-04 07:33</time></a></p>
+							<p class="commentline">
         
     <a href="posts/m2ts-to-mp4/#disqus_thread" data-disqus-identifier="cache/posts/m2ts-to-mp4.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>處理 Sony DV 拍出來的影片，還是用 ffmpeg。</p>
-<div class="section" id="split">
-<h2>split</h2>
-<p>先將不要的片段切掉</p>
-<pre class="code text"><a name="rest_code_6477366f2a1e4d44aa8c1af3ccdfa5fa-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-<a name="rest_code_6477366f2a1e4d44aa8c1af3ccdfa5fa-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
-</pre>
-</div>
-<div class="section" id="convert-m2ts-to-avi-for-concat">
-<h2>convert M2TS to avi for concat</h2>
-<p>轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
-有一個 frame 會交錯，影片會跳一下。</p>
-<pre class="code text"><a name="rest_code_0dcced0fd2d64424893de762c59a0317-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
-<a name="rest_code_0dcced0fd2d64424893de762c59a0317-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
-</pre>
-</div>
-<div class="section" id="id1">
-<h2>合併</h2>
-<p>將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。</p>
-<pre class="code text"><a name="rest_code_e55f2bd24d1d4062b0fa1a665f2f37c6-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
-</pre>
-<p>或</p>
-<pre class="code text"><a name="rest_code_9032b91abf984b44a659924e698f1b8c-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
-</pre>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mpv/" class="u-url">mpv</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/mpv/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-02-22T13:26:01Z" itemprop="datePublished" title="2015-02-22 13:26">2015-02-22 13:26</time></a>
-            </p>
-                <p class="commentline">
+				</header><div class="p-summary entry-summary">
+					
+					處理 Sony DV 拍出來的影片，還是用 ffmpeg。
+
+split
+先將不要的片段切掉
+ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+ffmpeg -i a.m2ts -c copy -ss 15 -t 2
+					<a href="posts/m2ts-to-mp4/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mpv/" class="u-url">mpv</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/mpv/" rel="bookmark">
+								<time class="published dt-published" datetime="2015-02-22T13:26:01Z" itemprop="datePublished" title="2015-02-22 13:26">2015-02-22 13:26</time></a></p>
+							<p class="commentline">
         
     <a href="posts/mpv/#disqus_thread" data-disqus-identifier="cache/posts/mpv.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>Write your post here.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/pip-python-library/" class="u-url">pip: python library</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/pip-python-library/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-01-26T12:51:50Z" itemprop="datePublished" title="2015-01-26 12:51">2015-01-26 12:51</time></a>
-            </p>
-                <p class="commentline">
+				</header><div class="p-summary entry-summary">
+					
+					Write your post here.
+					<a href="posts/mpv/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/pip-python-library/" class="u-url">pip: python library</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/pip-python-library/" rel="bookmark">
+								<time class="published dt-published" datetime="2015-01-26T12:51:50Z" itemprop="datePublished" title="2015-01-26 12:51">2015-01-26 12:51</time></a></p>
+							<p class="commentline">
         
     <a href="posts/pip-python-library/#disqus_thread" data-disqus-identifier="cache/posts/pip-python-library.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>全部重新安裝已安裝的 python 程式</p>
-<pre class="literal-block">
+				</header><div class="p-summary entry-summary">
+					
+					全部重新安裝已安裝的 python 程式
+
 $ pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U
-</pre>
-<p>安裝特定版本的套件</p>
-<pre class="literal-block">
-$ sudo pip install "pep8==1.5.7"
-</pre>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mplayer/" class="u-url">mplayer</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/mplayer/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-18T03:21:06Z" itemprop="datePublished" title="2014-12-18 03:21">2014-12-18 03:21</time></a>
-            </p>
-                <p class="commentline">
+
+安裝特定版本的套件
+
+$ sudo pip 
+					<a href="posts/pip-python-library/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mplayer/" class="u-url">mplayer</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/mplayer/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-12-18T03:21:06Z" itemprop="datePublished" title="2014-12-18 03:21">2014-12-18 03:21</time></a></p>
+							<p class="commentline">
         
     <a href="posts/mplayer/#disqus_thread" data-disqus-identifier="cache/posts/mplayer.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>我用的 wm 是 xmonad，想在每個螢幕上都能觀看同一部影片，故花了點時間研究 mplayer。</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<pre class="literal-block">
+				</header><div class="p-summary entry-summary">
+					
+					我用的 wm 是 xmonad，想在每個螢幕上都能觀看同一部影片，故花了點時間研究 mplayer。
+
+安裝
+
 $ yaourt -S mplayer
-</pre>
-<p>很可惜，我的顯示太舊，沒有支援 vaapi，否則就裝 mplayer-vaapi，用硬體加速囉。</p>
-</div>
-<div class="section" id="id2">
-<h2>配置</h2>
-<p>配置檔 <tt class="docutils literal"><span class="pre">~/.mplayer/config</span></tt></p>
-<pre class="literal-block">
-# Set subtitle file encoding.
-unicode=yes
-utf8=yes
 
-# set the window size to 640*y
-xy=640
+很可惜，我的顯示太舊，沒有支援 vaapi，否則就裝 mplayer-vaapi，用硬體加速囉。
 
-# put the window to most right-bottom of screen
-geometry=-10-10
-</pre>
-<ul class="simple">
-<li>字幕檔編碼都是 utf-8</li>
-<li>預設視窗大小 640，一開啟放在螢幕的右下角。</li>
-</ul>
-<div class="section" id="xmonad-hs">
-<h3>xmonad.hs</h3>
-<pre class="literal-block">
-import XMonad.Actions.CopyWindow (copyToAll) -- useful for mplayer
 
-myManageHook :: ManageHook
-myManageHook = composeAll
-    [ className =? "MPlayer" --&gt; doFloatToAll
-    , isFullscreen --&gt; doFullFloat
-    ]
-  where
-    doFloatToAll = doFloat &lt;+&gt; doF copyToAll -- floating window and copy it to all workspace
-</pre>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>操作</h2>
-<p>只用鍵盤操作是我的目標，參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/MPlayer">https://wiki.archlinux.org/index.php/MPlayer</a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top">
-<tr class="field">
-<th class="field-name">q 或 &lt;ESC&gt;:</th>
-<td class="field-body">離開</td>
-</tr>
-<tr class="field">
-<th class="field-name">f:</th>
-<td class="field-body">全螢幕</td>
-</tr>
-<tr class="field">
-<th class="field-name">p 或 &lt;SPC&gt;:</th>
-<td class="field-body">播放/暫停</td>
-</tr>
-<tr class="field">
-<th class="field-name">&lt;Left&gt;/&lt;right&gt;:</th>
-<td class="field-body">前進/後退 10 秒</td>
-</tr>
-<tr class="field">
-<th class="field-name">&lt;Up&gt;/&lt;Down&gt;:</th>
-<td class="field-body">前進/後退 1 分鐘</td>
-</tr>
-<tr class="field">
-<th class="field-name">&lt;PgUp&gt;/&lt;PgDn&gt;:</th>
-<td class="field-body">前進/後退 10 分鐘</td>
-</tr>
-<tr class="field">
-<th class="field-name">o:</th>
-<td class="field-body">切換目前播放時間，總片長</td>
-</tr>
-<tr class="field">
-<th class="field-name">I:</th>
-<td class="field-body">顯示檔名</td>
-</tr>
-<tr class="field">
-<th class="field-name">j:</th>
-<td class="field-body">字幕切換</td>
-</tr>
-<tr class="field">
-<th class="field-name">#:</th>
-<td class="field-body">音軌切換</td>
-</tr>
-<tr class="field">
-<th class="field-name">m:</th>
-<td class="field-body">靜音切換</td>
-</tr>
-<tr class="field">
-<th class="field-name">9 或 /:</th>
-<td class="field-body">降低音量</td>
-</tr>
-<tr class="field">
-<th class="field-name">0 或 *:</th>
-<td class="field-body">增加音量</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="id4">
-<h2>結語</h2>
-<p>現在，可以用 mc 執行影片檔，mc 呼叫 mplayer，自動在螢幕的右下角播放影片。
-如果要移動視窗可以用 M + Button 1。</p>
-<p>目前的配置符合我的需求，如有其它需求就再花點時間研究。</p>
-<p>原本想用 vlc，但是配置 mplayer 比較快速、簡單，就先玩這個，有時間再來研究 vlc。</p>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/midnight-commander/" class="u-url">Midnight Commander</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/midnight-commander/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-17T06:23:00Z" itemprop="datePublished" title="2014-12-17 06:23">2014-12-17 06:23</time></a>
-            </p>
-                <p class="commentline">
+
+					<a href="posts/mplayer/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/midnight-commander/" class="u-url">Midnight Commander</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/midnight-commander/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-12-17T06:23:00Z" itemprop="datePublished" title="2014-12-17 06:23">2014-12-17 06:23</time></a></p>
+							<p class="commentline">
         
     <a href="posts/midnight-commander/#disqus_thread" data-disqus-identifier="cache/posts/midnight-commander.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<pre class="literal-block">
+				</header><div class="p-summary entry-summary">
+					
+					安裝
+
 $ yaourt -S mc
-</pre>
+
+
+
+配置
+編輯 ~/.config/mc/mc.ext 或 <f9> -&gt; Command -&gt; 編緝擴充檔，調出配置檔。
+然後，在此檔中找相對應的副檔名，做些修改。
+
+epub viewer
+用 python 寫個
+					<a href="posts/midnight-commander/"><br>[ ... 繼續閱讀 ]</a>
+				</f9>
 </div>
-<div class="section" id="id2">
-<h2>配置</h2>
-<p>編輯 <tt class="docutils literal"><span class="pre">~/.config/mc/mc.ext</span></tt> 或 &lt;F9&gt; -&gt; Command -&gt; 編緝擴充檔，調出配置檔。
-然後，在此檔中找相對應的副檔名，做些修改。</p>
-<div class="section" id="epub-viewer">
-<h3>epub viewer</h3>
-<p>用 python 寫個小程式，可以顯示 epub 的內容。</p>
-<pre class="literal-block">
-# Epub
-shell/i/.epub
-    Open=/usr/lib/mc/ext.d/doc.sh open epub
-    # View=%view{ascii} /usr/lib/mc/ext.d/doc.sh view epub
-    View=%view{ascii} /usr/bin/python /mnt/lvm-data/Programing/epub/epubinfo.py %f
-</pre>
-</div>
-<div class="section" id="mpv">
-<h3>以 mpv 開啟影像檔</h3>
-<pre class="literal-block">
-include/video
-    Open=(mpv %f &gt;/dev/null 2&gt;&amp;1 &amp;)   # for mpv
-</pre>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>鍵盤操作</h2>
-<p>mc 的鍵盤操作，有點類似 emacs。</p>
-<dl class="docutils">
-<dt>Ctrl-g</dt>
-<dd>中斷目前作業，如果有作業花了太久的時間，按下 C-g 吧。</dd>
-</dl>
-<div class="section" id="miscellaneous-keys">
-<h3>Miscellaneous Keys</h3>
-<p>類似 lynx 的方向鍵用法，很好用。要先去 Options &gt; panel options 中設定</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top">
-<tr class="field">
-<th class="field-name">left:</th>
-<td class="field-body">回到上一層目錄</td>
-</tr>
-<tr class="field">
-<th class="field-name">right,return:</th>
-<td class="field-body">進目錄或開檔</td>
-</tr>
-<tr class="field">
-<th class="field-name">Enter:</th>
-<td class="field-body">if there is some text in the command line (the one at the bottom of the panels), then that command is executed.
-If there is no text in the command line then if the selection bar is over a directory
-the Midnight Commander does a chdir(2) to the selected directory and reloads the information on the panel;
-if the selection is an executable file then it is executed.
-Finally, if the extension of the selected file name matches one of the extensions in the extensions file
-then the corresponding command is executed.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-l:</th>
-<td class="field-body">重畫 MC</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x c:</th>
-<td class="field-body">run the <tt class="docutils literal">Chmod</tt> command on a file or on the tagged files.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x o:</th>
-<td class="field-body">run the <tt class="docutils literal">Chown</tt> command on the current file or on the tagged files.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x l:</th>
-<td class="field-body">run the link command.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x s:</th>
-<td class="field-body">run the symbolic link command.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x i:</th>
-<td class="field-body">set the other panel display mode to information.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x q:</th>
-<td class="field-body">set the other panel display mode to quick view.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x !:</th>
-<td class="field-body">execute the External panelize command.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x h:</th>
-<td class="field-body">run the add directory to hotlist command.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-!:</th>
-<td class="field-body">executes the Filtered view command, described in the view command.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-?:</th>
-<td class="field-body">executes the Find file command.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-c:</th>
-<td class="field-body">快速切換目錄。必須知道完整的目錄名稱，實務上可能並不好用。</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-o:</th>
-<td class="field-body">when the program is being run in the linux or FreeBSD console or under an xterm, it will show you the output of the previous command. When ran on the linux console, the Midnight Commander uses an external program (cons.saver) to handle saving and restoring of information on the screen.
-When the subshell support is compiled in, you can type C-o at any time and you will be taken back to the Midnight Commander main screen, to return to your application just type C-o. If you have an application suspended by using this trick, you won't be able to execute other programs from the Midnight Commander until you terminate the suspended application.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="directory-panels">
-<h3>directory panels</h3>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top">
-<tr class="field">
-<th class="field-name">Tab, C-i:</th>
-<td class="field-body">切換 panel</td>
-</tr>
-<tr class="field">
-<th class="field-name">Insert, C-t:</th>
-<td class="field-body">to tag files you may use the Insert key (the kich1 terminfo sequence). To untag files, just retag a tagged file.</td>
-</tr>
-<tr class="field">
-<th class="field-name">M-e:</th>
-<td class="field-body">選擇編碼</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">Alt-g, Alt-r, Alt-j:</th></tr>
-<tr class="field">
-<td> </td>
-<td class="field-body">used to select the top file in a panel, the middle file and the bottom one, respectively.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-s, Alt-s:</th>
-<td class="field-body">尋找目前目錄下的檔案。可連續按 C-s 連續尋找。</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-t:</th>
-<td class="field-body">切換表列模式。</td>
-</tr>
-</tbody>
-</table>
-<p>:C-: 書籤</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top"><tr class="field">
-<th class="field-name">+:</th>
-<td class="field-body">(plus) this is used to select (tag) a group of files.
-The Midnight Commander will prompt for a selection options.
-When Files only checkbox is on, only files will be selected.
-If Files only is off, as files as directories will be selected.
-When Shell Patterns checkbox is on, the regular expression is much like the filename globbing
-in the shell (* standing for zero or more characters and ? standing for one character).
-If Shell Patterns is off, then the tagging of files is done with normal regular expressions (see ed (1)).
-When Case sensitive checkbox is on, the selection will be case sensitive characters.
-If Case sensitive is off, the case will be ignored.</td>
-</tr></tbody>
-</table>
-<p>:: (backslash) use the "" key to unselect a group of files. This is the opposite of the Plus key.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top">
-<tr class="field">
-<th class="field-name">up-key, C-p:</th>
-<td class="field-body">move the selection bar to the previous entry in the panel.</td>
-</tr>
-<tr class="field">
-<th class="field-name">down-key, C-n:</th>
-<td class="field-body">move the selection bar to the next entry in the panel.</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">home, a1, Alt-&lt;:</th></tr>
-<tr class="field">
-<td> </td>
-<td class="field-body">move the selection bar to the first entry in the panel.</td>
-</tr>
-<tr class="field">
-<th class="field-name">end, c1, Alt-&gt;:</th>
-<td class="field-body">move the selection bar to the last entry in the panel.</td>
-</tr>
-<tr class="field">
-<th class="field-name">next-page, C-v:</th>
-<td class="field-body">move the selection bar one page down.</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">prev-page, Alt-v:</th></tr>
-<tr class="field">
-<td> </td>
-<td class="field-body">move the selection bar one page up.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-o:</th>
-<td class="field-body">If the currently selected file is a directory, load that directory on the other panel
-and moves the selection to the next file.
-If the currently selected file is not a directory, load the parent directory on the other panel
-and moves the selection to the next file.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-i:</th>
-<td class="field-body">在另一個 panel 中，開啟目前 panel 的目錄</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">C-PageUp, C-PageDown:</th></tr>
-<tr class="field">
-<td> </td>
-<td class="field-body">only when supported by the terminal:
-change to ".." and to the currently selected directory respectively.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-y:</th>
-<td class="field-body">moves to the previous directory in the history, equivalent to clicking the &lt; with the mouse.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-u:</th>
-<td class="field-body">moves to the next directory in the history, equivalent to clicking the &gt; with the mouse.</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">Alt-Shift-h, Alt-H:</th></tr>
-<tr class="field">
-<td> </td>
-<td class="field-body">displays the directory history, equivalent to depressing the 'v' with the mouse.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="shell-command-line">
-<h3>Shell Command Line</h3>
-<p>This section lists keys which are useful to avoid excessive typing when entering shell commands.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top">
-<tr class="field">
-<th class="field-name">Alt-Enter:</th>
-<td class="field-body">copy the currently selected file name to the command line.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-Enter:</th>
-<td class="field-body">same a Alt-Enter. May not work on remote systems and some terminals.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-Shift-Enter:</th>
-<td class="field-body">copy the full path name of the currently selected file to the command line.
-May not work on remote systems and some terminals.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-Tab:</th>
-<td class="field-body">does the filename, command, variable, username and hostname completion for you.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x t, C-x C-t:</th>
-<td class="field-body">copy the tagged files (or if there are no tagged files, the selected file) of the current panel (C-x t)
-or of the other panel (C-x C-t) to the command line.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-x p, C-x C-p:</th>
-<td class="field-body">the first key sequence copies the current path name to the command line,
-and the second one copies the unselected panel's path name to the command line.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-q:</th>
-<td class="field-body">the quote command can be used to insert characters that are otherwise interpreted by the Midnight Commander
-(like the '+' symbol)</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-p, Alt-n:</th>
-<td class="field-body">use these keys to browse through the command history.
-Alt-p takes you to the last entry, Alt-n takes you to the next one.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-h:</th>
-<td class="field-body">displays the history for the current input line.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="general-movement-keys">
-<h3>General Movement Keys</h3>
-<p>The help viewer, the file viewer and the directory tree use common code to handle moving. Therefore they accept exactly the same keys. Each of them also accepts some keys of its own.</p>
-<p>Other parts of the Midnight Commander use some of the same movement keys, so this section may be of use for those parts too.</p>
-<p>Up, C-p
-moves one line backward.
-Down, C-n
-moves one line forward.
-Prev Page, Page Up, Alt-v
-moves one page up.
-Next Page, Page Down, C-v
-moves one page down.
-Home, A1
-moves to the beginning.
-End, C1
-move to the end.
-The help viewer and the file viewer accept the following keys in addition the to ones mentioned above:
-b, C-b, C-h, Backspace, Delete
-moves one page up.
-Space bar
-moves one page down.
-u, d
-moves one half of a page up or down.</p>
-<p>g, G</p>
-<p>moves to the beginning or to the end.</p>
-<p>Input Line Keys</p>
-<p>The input lines (they are used for the command line and for the query dialogs in the program) accept these keys:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name">
-<col class="field-body">
-<tbody valign="top">
-<tr class="field">
-<th class="field-name">C-a:</th>
-<td class="field-body">puts the cursor at the beginning of line.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-e:</th>
-<td class="field-body">puts the cursor at the end of the line.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-b, move-left:</th>
-<td class="field-body">move the cursor one position left.</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">C-f, move-right:</th></tr>
-<tr class="field">
-<td> </td>
-<td class="field-body">move the cursor one position right.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-f:</th>
-<td class="field-body">moves one word forward.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-b:</th>
-<td class="field-body">moves one word backward.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-h, backspace:</th>
-<td class="field-body">delete the previous character.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-d, Delete:</th>
-<td class="field-body">delete the character in the point (over the cursor).</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-@:</th>
-<td class="field-body">sets the mark for cutting.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-w:</th>
-<td class="field-body">copies the text between the cursor and the mark to a kill buffer and removes the text from the input line.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-w:</th>
-<td class="field-body">copies the text between the cursor and the mark to a kill buffer.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-y:</th>
-<td class="field-body">yanks back the contents of the kill buffer.</td>
-</tr>
-<tr class="field">
-<th class="field-name">C-k:</th>
-<td class="field-body">kills the text from the cursor to the end of the line.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-p, Alt-n:</th>
-<td class="field-body">Use these keys to browse through the command history.
-Alt-p takes you to the last entry, Alt-n takes you to the next one.</td>
-</tr>
-<tr class="field"><th class="field-name" colspan="2">Alt-C-h, Alt-Backspace:</th></tr>
-<tr class="field">
-<td> </td>
-<td class="field-body">delete one word backward.</td>
-</tr>
-<tr class="field">
-<th class="field-name">Alt-Tab:</th>
-<td class="field-body">does the filename, command, variable, username and hostname completion for you.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/xterm/" class="u-url">xterm</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/xterm/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-11T14:21:22Z" itemprop="datePublished" title="2014-12-11 14:21">2014-12-11 14:21</time></a>
-            </p>
-                <p class="commentline">
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/xterm/" class="u-url">xterm</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/xterm/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-12-11T14:21:22Z" itemprop="datePublished" title="2014-12-11 14:21">2014-12-11 14:21</time></a></p>
+							<p class="commentline">
         
     <a href="posts/xterm/#disqus_thread" data-disqus-identifier="cache/posts/xterm.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>因為要用 synapse，又不知如何讓 urxvt 和 synapse 合作，所以裝上了 xterm。</p>
-<p>用了之後，發現比起 urxvt，不僅速度快，而且佔用的記憶體也少得多，字體顯示也比較漂亮。</p>
-<p>urxvt 會突然不能顯示的問題，也許就迎刃而解了吧？再觀察幾天看看。</p>
-<p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Xterm">https://wiki.archlinux.org/index.php/Xterm</a></p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<pre class="literal-block">
-$ yaourt -S xterm
-</pre>
-<p>就這個，沒別的。</p>
-</div>
-<div class="section" id="id2">
-<h2>配置</h2>
-<p>與 urxvt 一樣，xterm 的設定也放在 ~/.Xresource 中。</p>
-<p>有了配置 urxvt 的經驗後，這次配置 xterm 就快得多了，幾乎都是用 urxvt 的設定。</p>
-<div class="section" id="id3">
-<h3>256 色</h3>
-<p>不要設定環境變數 TERM，讓 xterm 去自動設定。不然 MC 會以為 term 不是 256 色的終端模擬器。</p>
-<pre class="literal-block">
-XTerm*termName: xterm-256color
-</pre>
-</div>
-<div class="section" id="utf-8">
-<h3>編碼改為 utf-8</h3>
-<pre class="literal-block">
-XTerm*locale: true
-XTerm*utf8Title: true
-</pre>
-</div>
-<div class="section" id="id4">
-<h3>中英文字型</h3>
-<p>安裝固定字寬和中文字型</p>
-<pre class="literal-block">
-$ yaourt -S adobe-source-code-pro-fonts adobe-source-han-sans-otc-fonts
-</pre>
-<p>設定字型</p>
-<pre class="literal-block">
-XTerm*faceName: Source Code Pro
-XTerm*faceNameDoublesize: xft:Source Hans Sans:style=Regular
-XTerm*faceSize: 16
-</pre>
-</div>
-<div class="section" id="id5">
-<h3>透明背景</h3>
-<p>~/.xinitrc 中加上</p>
-<pre class="literal-block">
-compton &amp;
-</pre>
-<p>在 ~/.bashrc 中加上</p>
-<pre class="literal-block">
-[ -n "$XTERM_VERSION" ] &amp;&amp; transset-df -a 0.97 &gt;/dev/null
-</pre>
-</div>
-<div class="section" id="id6">
-<h3>不捲動</h3>
-<p>有時要觀看輸出的內容，可是程式還是一直在執行，也一直在底部列印訊息。
-這時就想要把資料停在目前觀看的範圍，不會隨著程式輸出，一直跳到輸出列。</p>
-<pre class="literal-block">
-XTerm*scrollTtyOutput: false
-XTerm*scrollKey: true
-</pre>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/lxqt%2Bxmonad%2Btaffybar/" class="u-url">我的桌面組合 lxqt+xmonad+taffybar</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/lxqt%2Bxmonad%2Btaffybar/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-10T06:24:15Z" itemprop="datePublished" title="2014-12-10 06:24">2014-12-10 06:24</time></a>
-            </p>
-                <p class="commentline">
+				</header><div class="p-summary entry-summary">
+					
+					因為要用 synapse，又不知如何讓 urxvt 和 synapse 合作，所以裝上了 xterm。
+用了之後，發現比起 urxvt，不僅速度快，而且佔用的記憶體也少得多，字體顯示也比較漂亮。
+urxvt 會突然不能顯示的問題，也許就迎刃而解了吧？再觀察
+					<a href="posts/xterm/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/lxqt%2Bxmonad%2Btaffybar/" class="u-url">我的桌面組合 lxqt+xmonad+taffybar</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/lxqt%2Bxmonad%2Btaffybar/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-12-10T06:24:15Z" itemprop="datePublished" title="2014-12-10 06:24">2014-12-10 06:24</time></a></p>
+							<p class="commentline">
         
     <a href="posts/lxqt%2Bxmonad%2Btaffybar/#disqus_thread" data-disqus-identifier="cache/posts/lxqt+xmonad+taffybar.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>目前選擇的桌面是 lxqt，取其輕快美。嗯，相對於 lxde 是漂亮多了。</p>
-<p>視窗管理用 xmonad，可全時鍵盤操作，配置自由度非常高。</p>
-<p>panel 用的是 taffybar，原因是 lxqt-panel 的 workspace-switcher 和
-xmonad 配合有問題，不得不研究一個可用的 panel。配置好了這個 panel 後，即
-使後來 lxqt-panel 修復，也不想再換回 lxqt-panel。</p>
-<p>呃，有點孤芳自賞，或說是敝帚自珍吧。</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<div class="section" id="lxqt">
-<h3>安裝、配置 lxqt</h3>
-<p>參看 <a class="reference external" href="posts/lxqt/">lxqt</a></p>
-</div>
-<div class="section" id="xmonad">
-<h3>安裝 xmonad::</h3>
-<blockquote>
-$ cabal install xmonad xmonad-contrib taffybar</blockquote>
-</div>
-</div>
-<div class="section" id="id2">
-<h2>配置</h2>
-<div class="section" id="id3">
-<h3>lxqt</h3>
-<p>參看 <a class="reference external" href="posts/lxqt/">lxqt</a></p>
-</div>
-<div class="section" id="id4">
-<h3>xmonad</h3>
-<blockquote>
-DoAndShift
-google-chrome
-FullFloat
-xterm</blockquote>
-</div>
-<div class="section" id="taffybar">
-<h3>taffybar</h3>
-<blockquote>
-theme
-clock
-calendar
-network
-appLauncher
-workspaceSwitcher
-<a class="reference external" href="posts/show-volume-icon-on-systray/">Show volume icon on systray</a>
-</blockquote>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/garmin-kmz-kml-gpx-linux/" class="u-url">garmin kmz kml gpx linux</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/garmin-kmz-kml-gpx-linux/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-10T03:00:40Z" itemprop="datePublished" title="2014-12-10 03:00">2014-12-10 03:00</time></a>
-            </p>
-                <p class="commentline">
+				</header><div class="p-summary entry-summary">
+					
+					目前選擇的桌面是 lxqt，取其輕快美。嗯，相對於 lxde 是漂亮多了。
+視窗管理用 xmonad，可全時鍵盤操作，配置自由度非常高。
+panel 用的是 taffybar，原因是 lxqt-panel 的 workspace-switcher 和
+xm
+					<a href="posts/lxqt%2Bxmonad%2Btaffybar/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/garmin-kmz-kml-gpx-linux/" class="u-url">garmin kmz kml gpx linux</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/garmin-kmz-kml-gpx-linux/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-12-10T03:00:40Z" itemprop="datePublished" title="2014-12-10 03:00">2014-12-10 03:00</time></a></p>
+							<p class="commentline">
         
     <a href="posts/garmin-kmz-kml-gpx-linux/#disqus_thread" data-disqus-identifier="cache/posts/garmin-kmz-kml-gpx-linux.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>買台了新的 Garmin u52，記錄我如何在 linux 中，將 google map 中的旅行規畫，上傳到這台 Garmin。</p>
-<div class="section" id="id1">
-<h2>流程</h2>
-<div class="section" id="kmz">
-<h3>下載 kmz</h3>
-<p>google map 中進到「我的地圖」，將地圖上的景點下載成 kmz。</p>
-<p>BaseCamp 是沒有辦法直接將 kmz 匯入後轉成 gpx，所以要另外想辦法。</p>
-</div>
-<div class="section" id="kmz-kml">
-<h3>kmz 轉成 kml</h3>
-<p>其實 kmz 就是 kml 的壓縮檔。先改附加檔名為 zip，再解壓縮，找到 <tt class="docutils literal">*.kml</tt> 檔，這個就是我們可以轉的檔。</p>
-<pre class="literal-block">
-cp map.kmz map.zip
-7z x map.zip
-</pre>
-</div>
-<div class="section" id="kml-gpx">
-<h3>kml 轉成 gpx</h3>
-<p>先安裝 <tt class="docutils literal">gpsbabel</tt> ，用下列指令轉檔。</p>
-<pre class="literal-block">
-gpsbabel -i kml -o gpx map.kml
-</pre>
-<p>如此可轉出 <tt class="docutils literal">map.gpx</tt></p>
-</div>
-<div class="section" id="gpx-garmin">
-<h3>將 gpx 存到 Garmin 中</h3>
-<p>最後，Garmin 以 USB 連上電腦，將剛轉好的 map.gpx 存到 GARMIN/GPX 目錄下, Garmin 重開機。
-如此，航點就這樣轉進了 Garmin。</p>
-<p>完工。</p>
-</div>
-</div>
-<div class="section" id="garmin">
-<h2>Garmin 更新地圖和軟體</h2>
-<p>要更新地圖或升級軟體，回到 Windows 下處理很方便。</p>
-<p>進 myGarmin 官網，找到下載地圖和軟體的地方點下去，然後照著指示去做，
-沒有難度。</p>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/imagemagick/" class="u-url">imagemagick</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/imagemagick/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-12-05T06:05:31Z" itemprop="datePublished" title="2014-12-05 06:05">2014-12-05 06:05</time></a>
-            </p>
-                <p class="commentline">
+				</header><div class="p-summary entry-summary">
+					
+					買台了新的 Garmin u52，記錄我如何在 linux 中，將 google map 中的旅行規畫，上傳到這台 Garmin。
+
+流程
+
+下載 kmz
+google map 中進到「我的地圖」，將地圖上的景點下載成 kmz。
+BaseCamp 是沒有辦
+					<a href="posts/garmin-kmz-kml-gpx-linux/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/imagemagick/" class="u-url">imagemagick</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/imagemagick/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-12-05T06:05:31Z" itemprop="datePublished" title="2014-12-05 06:05">2014-12-05 06:05</time></a></p>
+							<p class="commentline">
         
     <a href="posts/imagemagick/#disqus_thread" data-disqus-identifier="cache/posts/imagemagick.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>用了好一陣子的 imagemagick，真的覺的很不錯，記錄一些指令備忘</p>
-<div class="section" id="id1">
-<h2>安裝</h2>
-<pre class="literal-block">
+				</header><div class="p-summary entry-summary">
+					
+					用了好一陣子的 imagemagick，真的覺的很不錯，記錄一些指令備忘
+
+安裝
+
 yaourt -S imagemagick ghostscript
-</pre>
-<p>其中 ghostscript 可處理 pdf 檔</p>
-</div>
-<div class="section" id="id2">
-<h2>指令</h2>
-<div class="section" id="id3">
-<h3>去背</h3>
-<pre class="literal-block">
-convert in.gif -transparent white -white-threshold 95% out.png
-</pre>
-<p><tt class="docutils literal"><span class="pre">-transparent</span> white</tt> 是將白色當成背景而去掉。但有時背景不夠白，就加上 <tt class="docutils literal"><span class="pre">-white-threshold</span> 95%</tt> 這段。</p>
-</div>
-<div class="section" id="pdf-to-jpg-png">
-<h3>pdf to jpg/png</h3>
-<pre class="literal-block">
-convert -density 600 p.pdf p-%2d.jpg
-convert -density 600 p.pdf -resize 25% p-%2d.png
-</pre>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/" class="u-url">generate mobi file by pandoc/kindlegen/calibre for my kindle 5</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-11-14T02:55:28Z" itemprop="datePublished" title="2014-11-14 02:55">2014-11-14 02:55</time></a>
-            </p>
-                <p class="commentline">
+
+其中 ghostscript 可處理 pdf 檔
+
+
+指令
+
+去背
+
+convert in.gif -
+					<a href="posts/imagemagick/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/" class="u-url">generate mobi file by pandoc/kindlegen/calibre for my kindle 5</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/" rel="bookmark">
+								<time class="published dt-published" datetime="2014-11-14T02:55:28Z" itemprop="datePublished" title="2014-11-14 02:55">2014-11-14 02:55</time></a></p>
+							<p class="commentline">
         
     <a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/#disqus_thread" data-disqus-identifier="cache/posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>買了 kindle 5 看電子書。</p>
-<p>照慣例，思考著如何自動將網頁文章轉進我的電子書，讓我可以在閒暇時可以閱讀這些文章。</p>
-<div class="section" id="id1">
-<h2>工具：</h2>
-<ol class="arabic simple">
-<li>pandoc</li>
-<li>kindlegen</li>
-<li>calibre</li>
-</ol>
-</div>
-<div class="section" id="id2">
-<h2>流程：</h2>
-<p>pandoc 抓網頁資料</p>
-</div>
-<div class="section" id="id3">
-<h2>說明：</h2>
-<div class="section" id="pandoc">
-<h3>pandoc</h3>
-</div>
-<div class="section" id="kindlegen">
-<h3>kindlegen</h3>
-<p>從 <a class="reference external" href="http://www.amazon.com/gp/feature.html?docId=1000765211">官網</a> 下載後，直接解壓縮到一個目錄。</p>
-<p>目錄下的 kindlegen 是可執行檔，所以建一個連結到我的 <tt class="docutils literal">$PATH</tt> 中即可。</p>
-<p>kindlegen 可以轉的檔案，我是選用 epub，也就是 pandoc 轉出來的那個檔。</p>
-</div>
-<div class="section" id="kindle">
-<h3>傳到 kindle 上</h3>
-<div class="section" id="usb">
-<h4>USB</h4>
-</div>
-<div class="section" id="transferring-using-dropbox">
-<h4>Transferring Using Dropbox</h4>
-<p><a class="reference external" href="http://google.about.com/od/kindlefire/a/How-To-Put-Non-Amazon-Books-On-Your-Kindle-Fire.htm">http://google.about.com/od/kindlefire/a/How-To-Put-Non-Amazon-Books-On-Your-Kindle-Fire.htm</a></p>
-<p>I usually don't like to fiddle with plugging my Kindle into my laptop,
-so I use Dropbox to both store my library and transfer my eBooks to my devices.</p>
-<p>If you use Dropbox, you'll want to navigate to your eBook file and rather than just tapping to open it,
-you'll want to select the triangle to the right of the file name.</p>
-<p>Next, tap Export.</p>
-<p>Choose Save to SD Card (your Kindle doesn't actually have an SD card, but this gets you to the internal storage space).</p>
-<p>Select either Books (for .mobi files) or Documents (for .pdf, .txt, .doc, and other files).
-Tap Export.</p>
-<p>Once you've done this, you should restart your Kindle Fire. Your books will appear after that.
-If your book does not appear, double check that you waited for the book to fully copy to your Kindle's hard drive and
-double check that you chose the correct folder for the file format.</p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article>
+				</header><div class="p-summary entry-summary">
+					
+					買了 kindle 5 看電子書。
+照慣例，思考著如何自動將網頁文章轉進我的電子書，讓我可以在閒暇時可以閱讀這些文章。
+
+工具：
+
+pandoc
+kindlegen
+calibre
+
+
+
+流程：
+pandoc 抓網頁資料
+
+
+說明：
+
+pandoc
+
+
+k
+					<a href="posts/generate-mobi-file-by-pandockindlegencalibre-for-my-kindle-5/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
@@ -1030,17 +375,19 @@ double check that you chose the correct folder for the file format.</p>
         </ul></nav><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>

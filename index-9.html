@@ -61,2653 +61,331 @@
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
-					
+	
+		
 
-    
-
-
-    
-<div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/alsa-equaler/" class="u-url">alsa equaler</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/alsa-equaler/" rel="bookmark">
-            <time class="published dt-published" datetime="2018-01-15T06:20:29+08:00" itemprop="datePublished" title="2018-01-15 06:20">2018-01-15 06:20</time></a>
-            </p>
-                <p class="commentline">
+	
+		
+	<div class="postindex">
+			<article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/alsa-equaler/" class="u-url">alsa equaler</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/alsa-equaler/" rel="bookmark">
+								<time class="published dt-published" datetime="2018-01-15T06:20:29+08:00" itemprop="datePublished" title="2018-01-15 06:20">2018-01-15 06:20</time></a></p>
+							<p class="commentline">
         
     <a href="posts/alsa-equaler/#disqus_thread" data-disqus-identifier="cache/posts/alsa-equaler.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>
-音響要好聲，空間才是王道<sup><a id="fnr.1" class="footref" href="posts/alsa-equaler/#fn.1">1</a></sup>，没有 DRC 前，先試試等化器<sup><a id="fnr.2" class="footref" href="posts/alsa-equaler/#fn.2">2</a></sup>，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
-Archlinux WIKI 的 <a href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture">Advanced linux Sound Architecture</a> 已說明等化器的安裝及設定，照做即可。
-</p>
-
-<div id="outline-container-org947ab60" class="outline-2">
-<h2 id="org947ab60">install</h2>
-<div class="outline-text-2" id="text-org947ab60">
-<div class="highlight"><pre><span></span>yaourt -S alsaequal
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orge87550f" class="outline-2">
-<h2 id="orge87550f">config</h2>
-<div class="outline-text-2" id="text-orge87550f">
-<p>
-在 <kbd>/etc/asound.conf</kbd> 加上以下設定：
-</p>
-
-<pre class="example">
-ctl.equal {
-    type equal;
-}
-
-pcm.plugequal {
-    type equal;
-    # Modify the line below if you do not
-    # want to use sound card 0.
-    #slave.pcm "plughw:0,0";
-    # by default we want to play from more sources at time:
-    slave.pcm "plug:dmix";
-}
-
-# pcm.equal {
-# If you do not want the equalizer to be your
-# default soundcard comment the following
-# line and uncomment the above line. (You can
-# choose it as the output device by addressing
-# it with specific apps,eg mpg123 -a equal 06.Back_In_Black.mp3)
-pcm.!default {
-    type plug;
-    slave.pcm plugequal;
-}
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orga33134e" class="outline-2">
-<h2 id="orga33134e">reboot</h2>
-<div class="outline-text-2" id="text-orga33134e">
-<p>
-讓 alsa 可用等化器
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6d5187c" class="outline-2">
-<h2 id="org6d5187c">調整等化器</h2>
-<div class="outline-text-2" id="text-org6d5187c">
-<p>
-執行
-</p>
-<div class="highlight"><pre><span></span>alsamixer -D equal
-</pre></div>
-
-<p>
-PS. 用 Q,W,E,Z,X,C 可分別調整左右聲道的音量。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga000620" class="outline-2">
-<h2 id="orga000620">mpd issue</h2>
-<div class="outline-text-2" id="text-orga000620">
-<p>
-總是會連不上 mpd server，後來在 WIKI 中讀到一段話：
-</p>
-
-<blockquote>
-<p>
-Note that configuration file is different for each user (until not
-specified else) it is saved in ~/.alsaequal.bin. so if you want to use
-ALSAEqual with mpd or another software running under different user,
-you can configure it using
-</p>
-
-<p>
-$ su mpd -c 'alsamixer -D equal'
-</p>
-
-<p>
-or for example, you can make a symlink to your .alsaequal.bin in his
-home…
-</p>
-</blockquote>
-
-<p>
-我在 <kbd>/root</kbd> 目錄下，建一個連到主目錄 <kbd>.alsaequal.bin</kbd> 的連結，
-mpd 即可使用，瞎打誤撞。
-</p>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" class="footnum" href="posts/alsa-equaler/#fnr.1">1</a></sup><div class="footpara"><p class="footpara">
-<a href="http://www.miaofoundry.url.tw/products-and-services/DRC/">音樂再生首要難題 – 空間</a>
-</p></div>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" class="footnum" href="posts/alsa-equaler/#fnr.2">2</a></sup><div class="footpara"><p class="footpara">
-<a href="http://www.miaofoundry.url.tw/products-and-services/DRC/whats/DRC-vs-others/">等化器(EQ)</a>
-</p></div>
-</div>
-
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/post-install-for-htpc/" class="u-url">post install for htpc</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/post-install-for-htpc/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-12-29T01:14:13-08:00" itemprop="datePublished" title="2017-12-29 01:14">2017-12-29 01:14</time></a>
-            </p>
-                <p class="commentline">
+				</header><div class="p-summary entry-summary">
+					
+					音響要好聲，空間才是王道1，没有 DRC 前，先試試等化器2，也許調一調就可用啦。在 archlinuxl 中，我用的是 alsa 的架構播放音樂，
+Archlinux WIKI 的 Advanced linux Sound Architecture 已說
+					<a href="posts/alsa-equaler/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/post-install-for-htpc/" class="u-url">post install for htpc</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/post-install-for-htpc/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-12-29T01:14:13-08:00" itemprop="datePublished" title="2017-12-29 01:14">2017-12-29 01:14</time></a></p>
+							<p class="commentline">
         
     <a href="posts/post-install-for-htpc/#disqus_thread" data-disqus-identifier="cache/posts/post-install-for-htpc.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>
-htpc
-</p>
-
-<div id="outline-container-org970449f" class="outline-2">
-<h2 id="org970449f">kodi</h2>
-</div>
+				</header><div class="p-summary entry-summary">
+					
+					htpc
 
 
-<div id="outline-container-orgfecd358" class="outline-2">
-<h2 id="orgfecd358">wifi</h2>
-<div class="outline-text-2" id="text-orgfecd358">
-<p>
+
+kodi
+
+
+
+
+wifi
+
+
 wifi-menu
-</p>
-<div class="highlight"><pre><span></span>yaourt -S wpa_supplicant dialog
-</pre></div>
 
-<p>
+yaourt -S wpa_supplicant dialog
+
+
+
 setup wifi using wifi-menu
-</p>
-<div class="highlight"><pre><span></span>ip link
-&lt;interface&gt;
-</pre></div>
 
-<div class="highlight"><pre><span></span>wifi-menu &lt;interface&gt;
-</pre></div>
-
-<div class="highlight"><pre><span></span>netctl start &lt;wifi-service&gt;
-netctl <span class="nb">enable</span> &lt;wifi-service&gt;
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org4bfd4e4" class="outline-2">
-<h2 id="org4bfd4e4">auto mount removable device by udiskie</h2>
-<div class="outline-text-2" id="text-org4bfd4e4">
-<div class="highlight"><pre><span></span>yaourt -S udiskie
-</pre></div>
-</div>
-</div>
+ip link
+<interface>
 
 
-<div id="outline-container-org915db0d" class="outline-2">
-<h2 id="org915db0d">issues</h2>
-<div class="outline-text-2" id="text-org915db0d">
+wifi-men
+					<a href="posts/post-install-for-htpc/"><br>[ ... 繼續閱讀 ]</a>
+				</interface>
 </div>
-<div id="outline-container-org8a66882" class="outline-3">
-<h3 id="org8a66882">alsa</h3>
-<div class="outline-text-3" id="text-org8a66882">
-<pre class="example">
-snd_.._intel index = 1
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org10c413e" class="outline-3">
-<h3 id="org10c413e">default.config</h3>
-<div class="outline-text-3" id="text-org10c413e">
-<pre class="example">
-need_root_right = no
-</pre>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/post-installation-of-archlinux/" class="u-url">Post-installation of Archlinux</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/post-installation-of-archlinux/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-11-26T23:28:36-08:00" itemprop="datePublished" title="2017-11-26 23:28">2017-11-26 23:28</time></a>
-            </p>
-                <p class="commentline">
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/post-installation-of-archlinux/" class="u-url">Post-installation of Archlinux</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/post-installation-of-archlinux/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-11-26T23:28:36-08:00" itemprop="datePublished" title="2017-11-26 23:28">2017-11-26 23:28</time></a></p>
+							<p class="commentline">
         
     <a href="posts/post-installation-of-archlinux/#disqus_thread" data-disqus-identifier="cache/posts/post-installation-of-archlinux.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>
-首先依 <a href="posts/install-arch-linux-2017">Install Arch linux (2017)</a> 將基本系統裝好，接著參考 <a href="https://wiki.archlinux.org/index.php/General_recommendations">General
-recommendations - ArchWiki</a> 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
-</p>
+				</header><div class="p-summary entry-summary">
+					
+					首先依 Install Arch linux (2017) 將基本系統裝好，接著參考 General
+recommendations - ArchWiki 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
 
-<div id="outline-container-orgb03e4a3" class="outline-2">
-<h2 id="orgb03e4a3">haskell</h2>
-<div class="outline-text-2" id="text-orgb03e4a3">
-<p>
-安裝的方法參看 <a href="posts/install-haskell-applications">Install Haskell Applications</a>
-</p>
-</div>
-</div>
 
-<div id="outline-container-org4d15b5d" class="outline-2">
-<h2 id="org4d15b5d">桌面及外觀</h2>
-<div class="outline-text-2" id="text-org4d15b5d">
-</div>
-<div id="outline-container-org700383a" class="outline-3">
-<h3 id="org700383a">theme</h3>
-<div class="outline-text-3" id="text-org700383a">
-<div class="highlight"><pre><span></span>yaourt -S breeze<span class="o">{</span>,-kde4,-gtk<span class="o">}</span> flat-remix-git lxappearance
-</pre></div>
 
-<p>
-Using Breeze theme and Flat Remix icon theme
-</p>
-</div>
-</div>
+haskell
 
-<div id="outline-container-org76343ca" class="outline-3">
-<h3 id="org76343ca">lxappearance</h3>
-<div class="outline-text-3" id="text-org76343ca">
-<p>
-用 lxappearance 修改 gtk 程式的外觀。
-</p>
 
-<p>
-尤其是 google chrome 書籤列的字體，可能太小。這時即可用 lxappearance 調整字型和大小。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org73e984c" class="outline-3">
-<h3 id="org73e984c">oblogout and screen lock</h3>
-<div class="outline-text-3" id="text-org73e984c">
-<p>
-<a href="https://wiki.archlinux.org/index.php/Oblogout">https://wiki.archlinux.org/index.php/Oblogout</a>
-</p>
-
-<p>
-oblogout is an optional, configurable logout script that presents a
-graphical interface (i.e. buttons) to cancel, logout, restart,
-shutdown, suspend, hibernate, and lock the screen.
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S oblogout
-
-sudo nano /etc/oblogout.conf
-</pre></div>
-
-<p>
-修改 [looks] 中的 buttons，以顯示按鈕。
-</p>
-
-<div class="highlight"><pre><span></span>[looks]
-buttons = cancel, restart, shutdown, lock
-</pre></div>
-
-<p>
-修改 [shortcuts] 中不用的命令刪掉。
-</p>
-
-<div class="highlight"><pre><span></span>[shortcuts]
-cancel = Escape
-shutdown = S
-restart = R
-#suspend = U
-#logout = L
-lock = K
-#hibernate = H
-</pre></div>
-
-<p>
-修改 [commands] 中的命令。
-</p>
-
-<div class="highlight"><pre><span></span>[commands]
-lock = slock
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org8dd11bf" class="outline-2">
-<h2 id="org8dd11bf">system</h2>
-<div class="outline-text-2" id="text-org8dd11bf">
-<p>
-DPMS: display power manpage system
-slock: screen saver
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgc3704f4" class="outline-2">
-<h2 id="orgc3704f4">網路</h2>
-<div class="outline-text-2" id="text-orgc3704f4">
-</div>
-<div id="outline-container-org91fe400" class="outline-3">
-<h3 id="org91fe400">dropbox</h3>
-<div class="outline-text-3" id="text-org91fe400">
-<p>
-dropbox 在 archlinux.fr 中
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S dropbox perl-file-mimeinfo
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org5d8c958" class="outline-3">
-<h3 id="org5d8c958">qbittorrent</h3>
-<div class="outline-text-3" id="text-org5d8c958">
-<div class="highlight"><pre><span></span>yaourt -S qbittorrent
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org8aa025c" class="outline-2">
-<h2 id="org8aa025c">檔案管理</h2>
-<div class="outline-text-2" id="text-org8aa025c">
-<p>
-using mc and pcmanfm-qt
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S mc pcmanfm-qt gvfs-mtp
-</pre></div>
-</div>
-
-<div id="outline-container-orga49fd4d" class="outline-3">
-<h3 id="orga49fd4d">pcmanfm-qt</h3>
-<div class="outline-text-3" id="text-orga49fd4d">
-<p>
-使用 pcmanfm-qt, for mtp 傳送檔案 and dropbox
-</p>
-</div>
-
-<div id="outline-container-org5e8f3d0" class="outline-4">
-<h4 id="org5e8f3d0">issues</h4>
-<div class="outline-text-4" id="text-org5e8f3d0">
-<p>
-error message:
-</p>
-
-<pre class="example">
-/usr/bin/xdg-open: line 922: pcmanfm: command not found
-</pre>
-
-<p>
-fix this problem:
-</p>
-
-<div class="highlight"><pre><span></span>sudo ln -s /usr/bin/pcmanfm-qt /usr/bin/pcmanfm
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org90590b8" class="outline-3">
-<h3 id="org90590b8">mc</h3>
-<div class="outline-text-3" id="text-org90590b8">
-<p>
-midnight-commander like norton commander
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgb1c13c3" class="outline-2">
-<h2 id="orgb1c13c3">影音</h2>
-<div class="outline-text-2" id="text-orgb1c13c3">
-<div class="highlight"><pre><span></span>yaourt -S alsa-utils mpd mpc ncmpcpp mpv ffmpeg sox kodi kid3 aegisub
-</pre></div>
-</div>
-
-<div id="outline-container-org27ccdad" class="outline-3">
-<h3 id="org27ccdad">alsa</h3>
-<div class="outline-text-3" id="text-org27ccdad">
-<p>
-聲音
-</p>
-</div>
-</div>
-
-<div id="outline-container-org64dd49b" class="outline-3">
-<h3 id="org64dd49b">mpd, mpc, ncmpcpp</h3>
-<div class="outline-text-3" id="text-org64dd49b">
-<p>
-音樂背景播放
-</p>
-</div>
-</div>
-
-<div id="outline-container-org92cdbc2" class="outline-3">
-<h3 id="org92cdbc2">mpv</h3>
-<div class="outline-text-3" id="text-org92cdbc2">
-<p>
-影片播放
-</p>
-
-<div class="highlight"><pre><span></span>mpv cdda://
-mpv dvd://
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org00b1c26" class="outline-3">
-<h3 id="org00b1c26">kodi</h3>
-<div class="outline-text-3" id="text-org00b1c26">
-<p>
-影片管理
-</p>
-</div>
-</div>
-
-<div id="outline-container-org88d5229" class="outline-3">
-<h3 id="org88d5229">aegisub</h3>
-<div class="outline-text-3" id="text-org88d5229">
-<p>
-字幕處理
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6d2e2b1" class="outline-3">
-<h3 id="org6d2e2b1">ffmpeg</h3>
-<div class="outline-text-3" id="text-org6d2e2b1">
-<p>
-影片處理
-2-pass to control file size
-</p>
-</div>
-</div>
-
-<div id="outline-container-org184863e" class="outline-3">
-<h3 id="org184863e">dvdbackup</h3>
-</div>
-<div id="outline-container-org0314cfe" class="outline-3">
-<h3 id="org0314cfe">sox</h3>
-<div class="outline-text-3" id="text-org0314cfe">
-<p>
-wav 轉 aiff
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgaf84086" class="outline-3">
-<h3 id="orgaf84086">kid3</h3>
-<div class="outline-text-3" id="text-orgaf84086">
-<p>
-音檔加 tag
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgcf652c7" class="outline-2">
-<h2 id="orgcf652c7">其它工具</h2>
-<div class="outline-text-2" id="text-orgcf652c7">
-</div>
-<div id="outline-container-org9212717" class="outline-3">
-<h3 id="org9212717">emacs</h3>
-<div class="outline-text-3" id="text-org9212717">
-<p>
-ripgrep
-opencc: using s2twp.json
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgaedb844" class="outline-3">
-<h3 id="orgaedb844">meld</h3>
-<div class="outline-text-3" id="text-orgaedb844">
-<div class="highlight"><pre><span></span>yaourt -S meld
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org9227fc4" class="outline-3">
-<h3 id="org9227fc4">albert</h3>
-<div class="outline-text-3" id="text-org9227fc4">
-<p>
-應用程式快速啓動器
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S albert qt5-graphicaleffects qt5-quickcontrols
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgf4ed9ff" class="outline-3">
-<h3 id="orgf4ed9ff">speedcrunch (calculator)</h3>
-<div class="outline-text-3" id="text-orgf4ed9ff">
-<div class="highlight"><pre><span></span>yaourt -S speedcrunch
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgad5a962" class="outline-3">
-<h3 id="orgad5a962">calibre</h3>
-<div class="outline-text-3" id="text-orgad5a962">
-<p>
-管理電子書，我只用來管理我的 kindle
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S calibre
-</pre></div>
-</div>
-</div>
-<div id="outline-container-org6e7e4e9" class="outline-3">
-<h3 id="org6e7e4e9">nikola</h3>
-<div class="outline-text-3" id="text-org6e7e4e9">
-<div class="highlight"><pre><span></span>pip install nikola Pygments
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgf55a669" class="outline-3">
-<h3 id="orgf55a669">htop</h3>
-</div>
-<div id="outline-container-org8e18d9f" class="outline-3">
-<h3 id="org8e18d9f">gnash</h3>
-<div class="outline-text-3" id="text-org8e18d9f">
-<div class="highlight"><pre><span></span>yaourt -S gnash-git
-</pre></div>
-
-<p>
-可讀 .swf 檔
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf8232c6" class="outline-2">
-<h2 id="orgf8232c6">programming</h2>
-<div class="outline-text-2" id="text-orgf8232c6">
-</div>
-<div id="outline-container-org66d3d60" class="outline-3">
-<h3 id="org66d3d60">python and depending modules</h3>
-<div class="outline-text-3" id="text-org66d3d60">
-<div class="highlight"><pre><span></span>yaourt -S python python-pip
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgc0acdcf" class="outline-3">
-<h3 id="orgc0acdcf">systemd timers</h3>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/install-arch-linux-2017/" class="u-url">Install Arch linux (2017)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/install-arch-linux-2017/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-11-20T17:00:00+08:00" itemprop="datePublished" title="2017-11-20 17:00">2017-11-20 17:00</time></a>
-            </p>
-                <p class="commentline">
+安裝的方法參看
+					<a href="posts/post-installation-of-archlinux/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/install-arch-linux-2017/" class="u-url">Install Arch linux (2017)</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/install-arch-linux-2017/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-11-20T17:00:00+08:00" itemprop="datePublished" title="2017-11-20 17:00">2017-11-20 17:00</time></a></p>
+							<p class="commentline">
         
     <a href="posts/install-arch-linux-2017/#disqus_thread" data-disqus-identifier="cache/posts/install-archlinux-2017.html">Comments</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-原本的 Beginners' Guide 改成了 <a href="https://wiki.archlinux.org/index.php/installation_guide">Installation guide</a> ，文件結構比較清楚，但是保證不適合初次安裝 archlinux 的人閱讀，也不適合一步步之執行。
-</p>
-
-<p>
-這次安裝，把目前系統應有的指令再記録下來，以備參閱。與上次安裝時所用的指令，差異不大。
-</p>
-
-<div id="outline-container-orge51aabe" class="outline-2">
-<h2 id="orge51aabe">
-<span class="section-number-2">1</span> 製作開機片（CD、USB、硬碟）啓動</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-從 <a href="https://www.archlinux.org/download/">Arch linux Downloads</a> 下載 archlinux.iso，建議用 bt 方式下載比較快。
-</p>
-
-<p>
-參考 <a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media">USB flash installation media</a> 製作開機片 :
-</p>
-
-<div class="highlight"><pre><span></span>dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span>/path/to/archlinux.iso <span class="nv">of</span><span class="o">=</span>/dev/sdx <span class="nv">status</span><span class="o">=</span>progress <span class="o">&amp;&amp;</span> sync
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org8577360" class="outline-2">
-<h2 id="org8577360">
-<span class="section-number-2">2</span> 啟動 ArchLinux 安裝程序</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-重新以 USB 開機，選擇從主選單中選擇 "Boot Arch linux" 並按
-&lt;enter&gt;，系統將加載並給出登錄提示，自動以 'root' 登錄。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orged582da" class="outline-2">
-<h2 id="orged582da">
-<span class="section-number-2">3</span> 建立網絡連接</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-<code>ping 8.8.8.8</code> 看看有没有網路，没有網路就啓動 <code>dhcpcd</code>:
-</p>
-
-<div class="highlight"><pre><span></span>systemctl start dhcpcd
-</pre></div>
-
-<p>
-若要用 wifi 則用:
-</p>
-
-<div class="highlight"><pre><span></span>wifi-menu -o profile-name
-</pre></div>
-
-<p>
-ping 一下看看網路連上了嗎？
-</p>
-</div>
-</div>
-
-<div id="outline-container-org85fc764" class="outline-2">
-<h2 id="org85fc764">
-<span class="section-number-2">4</span> 準備磁碟機</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-因為先安裝 windows 10，已經將磁碟分割好了。
-</p>
-</div>
-
-<div id="outline-container-org6293943" class="outline-3">
-<h3 id="org6293943">
-<span class="section-number-3">4.1</span> 檢查分區狀況</h3>
-<div class="outline-text-3" id="text-4-1">
-<div class="highlight"><pre><span></span>lsblk -f
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgbca9718" class="outline-3">
-<h3 id="orgbca9718">
-<span class="section-number-3">4.2</span> 格式化</h3>
-<div class="outline-text-3" id="text-4-2">
-<p>
-格式化目標 partition，免得有不可預期的狀況
-</p>
-
-<div class="highlight"><pre><span></span>mkfs.ext4 -L LABLE /dev/sdax
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org909bce3" class="outline-3">
-<h3 id="org909bce3">
-<span class="section-number-3">4.3</span> 掛載分區</h3>
-<div class="outline-text-3" id="text-4-3">
-<p>
-先掛載 root 區 :
-</p>
-<div class="highlight"><pre><span></span>mount /dev/sdaX /mnt
-</pre></div>
-
-<p>
-再掛載其他分區，/home 最好獨立分區。 :
-</p>
-
-<div class="highlight"><pre><span></span>mkdir /mnt/home
-mount /dev/sda1 /mnt/home
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgc09f47c" class="outline-3">
-<h3 id="orgc09f47c">
-<span class="section-number-3">4.4</span> 建立 swap</h3>
-<div class="outline-text-3" id="text-4-4">
-<p>
-現在的 RAM 都很大，這個可以不用裝了。目前安裝了 16G 的 RAM。
-</p>
-</div>
-
-<div id="outline-container-org8eccaaa" class="outline-4">
-<h4 id="org8eccaaa">
-<span class="section-number-4">4.4.1</span> 建立 swap file</h4>
-<div class="outline-text-4" id="text-4-4-1">
-<p>
-如果真的要裝 swap，可用檔案取代，方便好管理。 :
-</p>
-<div class="highlight"><pre><span></span>fallocate -l 16G /swapfile
-sudo chmod <span class="m">600</span> /swapfile
-mkswap /swapfile
-sudo mkswap /swapfile
-swapon /swpfile
-sudo swapon /swapfile
-sudo nano /etc/fstab
-</pre></div>
-
-<p>
-在 fstab 中加入 :
-</p>
-<div class="highlight"><pre><span></span>/swapfile none swap defaults 0 0
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org43ee1a5" class="outline-4">
-<h4 id="org43ee1a5">
-<span class="section-number-4">4.4.2</span> Remove swap file</h4>
-<div class="outline-text-4" id="text-4-4-2">
-<p>
-如果不用 swap，刪了就是。
-</p>
-
-<p>
-<b>Warning:</b> swap is managed by systemd and will be reenabled by it after
-some time. To remove a swap file, the current swap file must be turned
-off. :
-</p>
-
-<div class="highlight"><pre><span></span>swapoff -a
-rm -f /swapfile
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgcca7297" class="outline-2">
-<h2 id="orgcca7297">
-<span class="section-number-2">5</span> 配置安裝的環境</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-org08af0ce" class="outline-3">
-<h3 id="org08af0ce">
-<span class="section-number-3">5.1</span> DNS setup (可不做)</h3>
-<div class="outline-text-3" id="text-5-1">
-<div class="highlight"><pre><span></span>nano /etc/resolv.conf
-</pre></div>
-
-<div class="highlight"><pre><span></span>nameserver 168.95.1.1
-nameserver 8.8.8.8
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgf25f35e" class="outline-3">
-<h3 id="orgf25f35e">
-<span class="section-number-3">5.2</span> 選擇安裝鏡像</h3>
-<div class="outline-text-3" id="text-5-2">
-<p>
-安裝前需要編輯 <code>/etc/pacman.d/mirrorlist</code>, 將最想使用的鏡像放到前面：
-</p>
-
-<div class="highlight"><pre><span></span>nano /etc/pacman.d/mirrorlist
-</pre></div>
-
-<p>
-nano 簡單指令 :
-</p>
-
-<pre class="example">
-Alt-6: copy line
-C-u:   paste
-C-x:   exit
-</pre>
-
-<p>
-原則上，改過 mirrorlist 就執行以下指令(可不做)： :
-</p>
-
-<div class="highlight"><pre><span></span>pacman -Syy
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgce750e6" class="outline-2">
-<h2 id="orgce750e6">
-<span class="section-number-2">6</span> 安裝基本系統</h2>
-<div class="outline-text-2" id="text-6">
-<div class="highlight"><pre><span></span>pacstrap -i /mnt base base-devel
-</pre></div>
-
-<p>
-if pacman complains that error: :
-</p>
-
-<pre class="example">
-failed to commit transaction (invalid or corrupted package)
-</pre>
-
-<p>
-run the following command: :
-</p>
-
-<div class="highlight"><pre><span></span>pacman-key --init <span class="o">&amp;&amp;</span> pacman-key --populate archlinux
-</pre></div>
-</div>
-
-<div id="outline-container-orgb953bd6" class="outline-3">
-<h3 id="orgb953bd6">
-<span class="section-number-3">6.1</span> 生成 fstab</h3>
-<div class="outline-text-3" id="text-6-1">
-<p>
-這個一定要做，不然後頭會很麻煩。 :
-</p>
-
-<div class="highlight"><pre><span></span>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
-nano /mnt/etc/fstab   <span class="c1"># 檢查一下 fstab</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgd8bfede" class="outline-3">
-<h3 id="orgd8bfede">
-<span class="section-number-3">6.2</span> Chroot 到新系統，並作基本配置</h3>
-<div class="outline-text-3" id="text-6-2">
-<div class="highlight"><pre><span></span>arch-chroot /mnt /bin/bash
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org8aeca5f" class="outline-3">
-<h3 id="org8aeca5f">
-<span class="section-number-3">6.3</span> 配置 pacman</h3>
-<div class="outline-text-3" id="text-6-3">
-<div class="highlight"><pre><span></span>nano /etc/pacman.conf
-</pre></div>
-
-<p>
-爲了安裝 yaourt，到最後空白處加上： :
-</p>
-
-<div class="highlight"><pre><span></span>[archlinuxfr]
-SigLevel = Never    # add: 2013/04/28
-Server = http://repo.archlinux.fr/$arch
-</pre></div>
-
-<p>
-一般使用者用 [core], [extra] 與 [community]。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgd0332de" class="outline-3">
-<h3 id="orgd0332de">
-<span class="section-number-3">6.4</span> 更新系統，並安裝 yaourt</h3>
-<div class="outline-text-3" id="text-6-4">
-<div class="highlight"><pre><span></span>pacman -Syu
-pacman -S yaourt
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgbf2c97b" class="outline-3">
-<h3 id="orgbf2c97b">
-<span class="section-number-3">6.5</span> 配置系統 Locale</h3>
-<div class="outline-text-3" id="text-6-5">
-<div class="highlight"><pre><span></span>nano /etc/locale.gen
-</pre></div>
-</div>
-
-<div id="outline-container-org677aebd" class="outline-4">
-<h4 id="org677aebd">
-<span class="section-number-4">6.5.1</span> 找到</h4>
-<div class="outline-text-4" id="text-6-5-1">
-<pre class="example">
-en_US.UTF-8 UTF-8
-zh_TW.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8
-</pre>
-
-<p>
-把以上全部打開。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org81e9fff" class="outline-4">
-<h4 id="org81e9fff">
-<span class="section-number-4">6.5.2</span> 使 locale 生效</h4>
-<div class="outline-text-4" id="text-6-5-2">
-<div class="highlight"><pre><span></span>locale-gen    <span class="c1">#使更改生效運行</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org053a769" class="outline-4">
-<h4 id="org053a769">
-<span class="section-number-4">6.5.3</span> 確認一下 locale</h4>
-<div class="outline-text-4" id="text-6-5-3">
-<div class="highlight"><pre><span></span>locale -a     <span class="c1">#確認一下開啟的 locale</span>
-locale        <span class="c1">#目前的 locale</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org67be5ed" class="outline-4">
-<h4 id="org67be5ed">
-<span class="section-number-4">6.5.4</span> 全域 locale 設定：對整個系統有效</h4>
-<div class="outline-text-4" id="text-6-5-4">
-<div class="highlight"><pre><span></span>nano /etc/locale.conf
-</pre></div>
-
-<p>
-修改 <code>LANG</code>, 主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
-</p>
-<pre class="example">
-LANG=en_US.UTF-8
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org06ecd51" class="outline-3">
-<h3 id="org06ecd51">
-<span class="section-number-3">6.6</span> 更改 console 字型</h3>
-<div class="outline-text-3" id="text-6-6">
-<p>
-把字改大一點，眼睛比較不吃力。先安裝字型，再設定字型。
-</p>
-
-<div class="highlight"><pre><span></span>pacman -S terminus-font
-setconsolefont ter-128n
-</pre></div>
-
-<p>
-The FONT variable in <code>/etc/vconsole.conf</code> is used to set the font at boot, persistently for all consoles.<sup><a id="fnr.1" class="footref" href="posts/install-arch-linux-2017/#fn.1">1</a></sup></p>
-
-<div class="highlight"><pre><span></span>nano /etc/vconsole.conf
-</pre></div>
-<p>
-加上
-</p>
-<div class="highlight"><pre><span></span>FONT=ter-128n
-FONT_MAP=8859-1
-</pre></div>
-
-<p>
-ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐語言」<sup><a id="fnr.2" class="footref" href="posts/install-arch-linux-2017/#fn.2">2</a></sup></p>
-</div>
-</div>
-
-<div id="outline-container-org94844f7" class="outline-3">
-<h3 id="org94844f7">
-<span class="section-number-3">6.7</span> 配置系統時區</h3>
-<div class="outline-text-3" id="text-6-7">
-<p>
-可用的時區位於目錄 <code>/usr/share/zoneinfo/</code> 下，可以 <code>ls</code> 一下。用以下指令配置系統時區：
-</p>
-
-<div class="highlight"><pre><span></span>ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org32f5437" class="outline-3">
-<h3 id="org32f5437">
-<span class="section-number-3">6.8</span> 時間調整</h3>
-<div class="outline-text-3" id="text-6-8">
-<p>
-為了與 windows 雙重開機 (dual boot)，最好做以下動作：
-</p>
-
-<ol class="org-ol">
-<li>
-<p>
-修改 windows 的登錄檔，用 regedit 加上一個 DWORD(32 bits) 的機碼
-RealTimeIsUniversal，將其值設為 1，位置如下:
-</p>
-
-<pre class="example">
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal
-</pre>
-</li>
-
-<li>在 windows 中關掉「網路自動對時」的功能。</li>
-</ol>
-<p>
-當然，以上的動作要回到 windows 才能執行。
-</p>
-
-<p>
-在 linux 中，只需執行：
-</p>
-
-<div class="highlight"><pre><span></span>timedatectl set-local-rtc <span class="nb">false</span>
-timedatectl set-ntp <span class="nb">true</span>
-</pre></div>
-
-<p>
-並將 utc 時間寫入 BIOS 中即可。
-</p>
-
-<div class="highlight"><pre><span></span>hwclock --systohc --utc
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgbb14349" class="outline-3">
-<h3 id="orgbb14349">
-<span class="section-number-3">6.9</span> 設置主機名稱</h3>
-<div class="outline-text-3" id="text-6-9">
-<div class="highlight"><pre><span></span>nano /etc/hostname
-</pre></div>
-
-<p>
-加入
-</p>
-
-<div class="highlight"><pre><span></span>hostname
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org64436e2" class="outline-2">
-<h2 id="org64436e2">
-<span class="section-number-2">7</span> 再一次設定網路</h2>
-<div class="outline-text-2" id="text-7">
-<p>
-簡單啓動 <code>dhcpcd</code> :
-</p>
-
-<div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> dhcpcd
-</pre></div>
-</div>
-
-<div id="outline-container-orgcf4c87d" class="outline-3">
-<h3 id="orgcf4c87d">
-<span class="section-number-3">7.1</span> WIFI</h3>
-<div class="outline-text-3" id="text-7-1">
-<p>
-用 <code>netctl</code> 啓動 wifi
-</p>
-</div>
-</div>
-
-<div id="outline-container-org8c9e068" class="outline-3">
-<h3 id="org8c9e068">
-<span class="section-number-3">7.2</span> ADSL</h3>
-<div class="outline-text-3" id="text-7-2">
-<p>
-如果要用 ADSL，則這個很重要，不然重開機時，就會沒網路可用。
-</p>
-
-<p>
-install the network card that is supposed to be connected to the
-DSL-Modem into your computer. After adding your newly installed
-network card to the modules.conf/modprobe.conf install therp-pppoe
-package :
-</p>
-
-<div class="highlight"><pre><span></span>pacman -S rp-pppoe
-pppoe-setup
-</pre></div>
-
-<p>
-run the <code>pppoe-setup</code> script to configure your connection After you have
-entered all the data, you can connect and disconnect your line with :
-</p>
-
-<div class="highlight"><pre><span></span>systemctl start adsl
-</pre></div>
-
-<p>
-and:
-</p>
-<div class="highlight"><pre><span></span>systemctl stop adsl
-</pre></div>
-
-<p>
-respectively. The setup is usually easy and straightforward, but feel
-free to read the manpages for hints. If you want to automatically 'dial
-in' at boot, issue command :
-</p>
-
-<div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> adsl
-</pre></div>
-<p>
-or
-</p>
-<div class="highlight"><pre><span></span>systemctl disable adsl
-</pre></div>
-<p>
-to remove auto 'dial in' at boot.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf2d2194" class="outline-2">
-<h2 id="orgf2d2194">
-<span class="section-number-2">8</span> mkinitcpio</h2>
-<div class="outline-text-2" id="text-8">
-<p>
-增加 lvm2 到 hooks 後，執行 <code>mkinitcpio</code> :
-</p>
-
-<div class="highlight"><pre><span></span>nano /etc/mkinitcpio.conf
-</pre></div>
-<p>
-修改
-</p>
-<div class="highlight"><pre><span></span>HOOKS=(... udev ... block lvm2 filesystems ...)
-</pre></div>
-<p>
-再執行
-</p>
-<div class="highlight"><pre><span></span>mkinitcpio -p linux
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org2b922a2" class="outline-2">
-<h2 id="org2b922a2">
-<span class="section-number-2">9</span> Install and configure a bootloader</h2>
-<div class="outline-text-2" id="text-9">
-<p>
-Install the grub-bios package and then run grub-install:
-</p>
-
-<div class="highlight"><pre><span></span>pacman -S grub-bios  <span class="c1">## 安裝 grub-bios</span>
-grub-install --target<span class="o">=</span>i386-pc --recheck /dev/sda  <span class="c1">## 安裝到 boot 區</span>
-</pre></div>
-</div>
-
-<div id="outline-container-org38b3416" class="outline-3">
-<h3 id="org38b3416">
-<span class="section-number-3">9.1</span> 自動尋找其它的 OS</h3>
-<div class="outline-text-3" id="text-9-1">
-<p>
-如果有其他的 OS，這個就很重要。
-</p>
-
-<div class="highlight"><pre><span></span>pacman -S os-prober
-</pre></div>
-
-<p>
-或是直接在 /etc/grub.d/40\<sub>custom</sub> 加上以下指令：
-</p>
-
-<div class="highlight"><pre><span></span>menuentry "Windows 10" --class windows --class os {
-  insmod ntfs
-  search --no-floppy --set=root --fs-uuid $your_uuid_here$
-  ntldr /bootmgr
-}
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org74e5b66" class="outline-3">
-<h3 id="org74e5b66">
-<span class="section-number-3">9.2</span> intel CPU 要安裝 microcode</h3>
-<div class="outline-text-3" id="text-9-2">
-<p>
-這步要在 grub-mkconfig 之前做：
-</p>
-
-<div class="highlight"><pre><span></span>pacman -S intel-ucode
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org34ac6f2" class="outline-3">
-<h3 id="org34ac6f2">
-<span class="section-number-3">9.3</span> 自動產生 grub.cfg</h3>
-<div class="outline-text-3" id="text-9-3">
-<p>
-這個一定要做，不然重開機時，就等著進 grub shell，很麻煩。
-</p>
-
-<div class="highlight"><pre><span></span>grub-mkconfig -o /boot/grub/grub.cfg
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org4c913d2" class="outline-2">
-<h2 id="org4c913d2">
-<span class="section-number-2">10</span> 重啓</h2>
-<div class="outline-text-2" id="text-10">
-<div class="highlight"><pre><span></span><span class="nb">exit</span>
-umount /mnt
-reboot
-</pre></div>
-</div>
-
-<div id="outline-container-org2e2bb8d" class="outline-3">
-<h3 id="org2e2bb8d">
-<span class="section-number-3">10.1</span> 確認網路連線</h3>
-<div class="outline-text-3" id="text-10-1">
-<p>
-root 重啓後，ping 一下看看網路連上了嗎？如果沒有，手動連線。
-</p>
-
-<div class="highlight"><pre><span></span>ping <span class="m">8</span>.8.8.8
-systemctl start dhcpcd
-</pre></div>
-<p>
-或
-</p>
-<div class="highlight"><pre><span></span>netctl start &lt;wifi-profile-name&gt;
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgbae3703" class="outline-3">
-<h3 id="orgbae3703">
-<span class="section-number-3">10.2</span> update system（可不做）</h3>
-<div class="outline-text-3" id="text-10-2">
-<div class="highlight"><pre><span></span>pacman -Syu
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgc55e23c" class="outline-2">
-<h2 id="orgc55e23c">
-<span class="section-number-2">11</span> post-installation</h2>
-<div class="outline-text-2" id="text-11">
-</div>
-<div id="outline-container-orgdf83a2e" class="outline-3">
-<h3 id="orgdf83a2e">
-<span class="section-number-3">11.1</span> 設置 Root 密碼並創建一般用戶</h3>
-<div class="outline-text-3" id="text-11-1">
-<div class="highlight"><pre><span></span>passwd
-useradd -m -s /bin/bash  -g users -G video,storage,optical,lp,scanner,games,wheel username
-passwd username
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org2b9178b" class="outline-3">
-<h3 id="org2b9178b">
-<span class="section-number-3">11.2</span> 安裝 Sudo</h3>
-<div class="outline-text-3" id="text-11-2">
-<div class="highlight"><pre><span></span>pacman -S sudo
-<span class="nv">EDITOR</span><span class="o">=</span>nano visudo
-</pre></div>
-
-<p>
-允許 wheel 用戶組成員無密碼使用 sudo：
-</p>
-
-<div class="highlight"><pre><span></span>visudo
-</pre></div>
-
-<p>
-輸入
-</p>
-
-<div class="highlight"><pre><span></span>%wheel ALL=(ALL) NOPASSWD:ALL
-</pre></div>
-
-<p>
-再來是設定 sudo，隨便找一個空白行加上：
-</p>
-
-<div class="highlight"><pre><span></span>username ALL=(ALL) ALL
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orga8c4908" class="outline-3">
-<h3 id="orga8c4908">
-<span class="section-number-3">11.3</span> 登出，並以新的用戶名稱登入</h3>
-</div>
-<div id="outline-container-org88c120c" class="outline-3">
-<h3 id="org88c120c">
-<span class="section-number-3">11.4</span> 設定聲音 alas</h3>
-<div class="outline-text-3" id="text-11-4">
-<p>
-安裝音效驅動，直接用 alas，不要考慮太多。
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S alsa-utils
-</pre></div>
-
-<p>
-將帳號加入音效使用權：
-</p>
-<div class="highlight"><pre><span></span>sudo gpasswd -a username audio
-</pre></div>
-
-<p>
-alsa 預設是靜音，以 alsamixer 手動打開聲音：
-</p>
-
-<div class="highlight"><pre><span></span>alsamixer
-</pre></div>
-
-<p>
-或者命令列直接開啓：
-</p>
-
-<div class="highlight"><pre><span></span>amixer sset Master unmute
-</pre></div>
-
-<p>
-測試一下有沒有聲音：
-</p>
-
-<div class="highlight"><pre><span></span>speaker-test -c <span class="m">2</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org4fd0356" class="outline-3">
-<h3 id="org4fd0356">
-<span class="section-number-3">11.5</span> 安裝 x11</h3>
-<div class="outline-text-3" id="text-11-5">
-<div class="highlight"><pre><span></span>pacman -S xorg-<span class="o">{</span>server,apps<span class="o">}</span> mesa
-</pre></div>
-
-<p>
-因為要用 <code>xlogin</code>，所以 <code>xorg-xinit</code> 可以不用裝了。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org89d925d" class="outline-3">
-<h3 id="org89d925d">
-<span class="section-number-3">11.6</span> 裝顯卡驅動</h3>
-<div class="outline-text-3" id="text-11-6">
-</div>
-<div id="outline-container-orgcaca950" class="outline-4">
-<h4 id="orgcaca950">
-<span class="section-number-4">11.6.1</span> ATi 用戶：</h4>
-<div class="outline-text-4" id="text-11-6-1">
-<p>
-直接裝開源驅動
-</p>
-
-<div class="highlight"><pre><span></span>pacman -S xf86-video-amdgpu
-</pre></div>
-
-<p>
-或是用舊的
-</p>
-
-<div class="highlight"><pre><span></span>pacman -S xf86-video-ati
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org861bdd4" class="outline-4">
-<h4 id="org861bdd4">
-<span class="section-number-4">11.6.2</span> intel 用戶：</h4>
-<div class="outline-text-4" id="text-11-6-2">
-<div class="highlight"><pre><span></span>pacman -S xf86-video-intel libav-intel-driver
-</pre></div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org1ee0ea0" class="outline-3">
-<h3 id="org1ee0ea0">
-<span class="section-number-3">11.7</span> 安裝字體</h3>
-<div class="outline-text-3" id="text-11-7">
-<p>
-加上 <code>ttf-liberation</code> 修正部份 PDF 字型，此為 google-chrome 新的依賴。為了罕見字，加裝 <code>ttf-hanazono</code>
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono
-yaourt -S adobe-source-<span class="o">{</span>code,sans,serif<span class="o">}</span>-pro-fonts adobe-source-han-<span class="o">{</span>sans,serif<span class="o">}</span>-<span class="o">{</span>cn,jp,kr,otc,tw<span class="o">}</span>-fonts
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgf79401c" class="outline-3">
-<h3 id="orgf79401c">
-<span class="section-number-3">11.8</span> 讓 X 可以顯示中文</h3>
-<div class="outline-text-3" id="text-11-8">
-<div class="highlight"><pre><span></span>nano ~/.xinitrc
-</pre></div>
-
-<div class="highlight"><pre><span></span>export LANG=zh_TW.UTF-8
-export LC_ALL="zh_TW.UTF-8"
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgcfd28f6" class="outline-3">
-<h3 id="orgcfd28f6">
-<span class="section-number-3">11.9</span> 將右邊的數字鍵盤預設爲方向鍵</h3>
-<div class="outline-text-3" id="text-11-9">
-<div class="highlight"><pre><span></span>yaourt -S numlockx
-nano ~/.xinitrc
-</pre></div>
-
-<p>
-增加
-</p>
-
-<div class="highlight"><pre><span></span>numlockx &amp;
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org2632a1e" class="outline-3">
-<h3 id="org2632a1e">
-<span class="section-number-3">11.10</span> 安裝桌面</h3>
-<div class="outline-text-3" id="text-11-10">
-<p>
-目前使用 lxqt + xmonad。lxqt
-</p>
-
-<p>
-安裝 lxqt:
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S lxqt
-</pre></div>
-
-<p>
-先修改 <code>/etc/pacman.conf</code>:
-</p>
-
-<p>
-然後在 <code>[community]</code> 之前加上:
-</p>
-
-<div class="highlight"><pre><span></span>[haskell-core]
-    Server = http://xsounds.org/~haskell/core/$arch
-</pre></div>
-
-<p>
-接著才可安裝 xmonad 和 taffybar:
-</p>
-<div class="highlight"><pre><span></span>yaourt -S haskell-xmonad haskell-xmonad-contrib haskell-taffybar
-</pre></div>
-
-<p>
-<b>UPDATE</b>: 要用 <a href="posts/install-haskell-applications">install haskell application</a> 這篇安裝 xmonad 和 taffybar.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org9a4a662" class="outline-3">
-<h3 id="org9a4a662">
-<span class="section-number-3">11.11</span> theme</h3>
-<div class="outline-text-3" id="text-11-11">
-<p>
-Using Breeze theme and Flat Remix icon theme:
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S breeze<span class="o">{</span>,-kde4,-gtk<span class="o">}</span> flat-remix-git lxappearance
-</pre></div>
-
-<p>
-進 <code>lxappearance</code> 設定 theme and icon theme
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgffa0170" class="outline-3">
-<h3 id="orgffa0170">
-<span class="section-number-3">11.12</span> 安裝中文輸入法</h3>
-<div class="outline-text-3" id="text-11-12">
-<p>
-沒有其它選擇，就用 fcitx。
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S fcitx-im fcitx-configtool fcitx-chewing
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgc3a0640" class="outline-3">
-<h3 id="orgc3a0640">
-<span class="section-number-3">11.13</span> install google chrome</h3>
-<div class="outline-text-3" id="text-11-13">
-<div class="highlight"><pre><span></span>yaourt -S google-chrome
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-org2ab91ff" class="outline-3">
-<h3 id="org2ab91ff">
-<span class="section-number-3">11.14</span> 安裝文字編輯器</h3>
-<div class="outline-text-3" id="text-11-14">
-<p>
-現在已經沒有別的選擇了，只能用 emacs
-這個神的編輯器，因為她實在是太強大了，讓我不忍放棄她。
-</p>
-
-<div class="highlight"><pre><span></span>yaourt -S emacs
-</pre></div>
-
-<p>
-可用的系統成型了，但是還是要再參考 <a href="posts/post-installation-of-archlinux">Post-installation of Archlinux</a> 有許多需要再調整的。
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org45f7109" class="outline-2">
-<h2 id="org45f7109">
-<span class="section-number-2">12</span> issues</h2>
-<div class="outline-text-2" id="text-12">
-</div>
-<div id="outline-container-org1736295" class="outline-3">
-<h3 id="org1736295">
-<span class="section-number-3">12.1</span> kvm:disable by bios</h3>
-<div class="outline-text-3" id="text-12-1">
-<p>
-iVT enable @ bios
-</p>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef">
-<sup><a id="fn.1" class="footnum" href="posts/install-arch-linux-2017/#fnr.1">1</a></sup><div class="footpara"><p class="footpara">
-<a href="https://wiki.archlinux.org/index.php/Fonts#Console_fonts">https://wiki.archlinux.org/index.php/Fonts#Console_fonts</a>
-</p></div>
-</div>
-
-<div class="footdef">
-<sup><a id="fn.2" class="footnum" href="posts/install-arch-linux-2017/#fnr.2">2</a></sup><div class="footpara"><p class="footpara">
-<a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859-1">https://zh.wikipedia.org/wiki/ISO/IEC_8859-1</a>
-</p></div>
-</div>
-
-
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/30-thinkings/" class="u-url">塞斯．卡拉曼：價值投資中的 30 個重要投資思想</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/30-thinkings/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-08-29T16:54:00+08:00" itemprop="datePublished" title="2017-08-29 16:54">2017-08-29 16:54</time></a>
-            </p>
-                <p class="commentline">
+					</p>
+</div>
+				</header><div class="p-summary entry-summary">
+					
+					原本的 Beginners' Guide 改成了 Installation guide ，文件結構比較清楚，但是保證不適合初次安裝 archlinux 的人閱讀，也不適合一步步之執行。
+
+
+
+這次安裝，把目前系統應有的指令再記録下來，以備參閱。與上次安裝時
+					<a href="posts/install-arch-linux-2017/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/30-thinkings/" class="u-url">塞斯．卡拉曼：價值投資中的 30 個重要投資思想</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/30-thinkings/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-08-29T16:54:00+08:00" itemprop="datePublished" title="2017-08-29 16:54">2017-08-29 16:54</time></a></p>
+							<p class="commentline">
         
     <a href="posts/30-thinkings/#disqus_thread" data-disqus-identifier="cache/posts/30.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="posts/30-thinkings/#orgffd90ad">一、價值投資並不簡單</a></li>
-<li><a href="posts/30-thinkings/#orgca70f37">二、價值投資者的特性</a></li>
-<li><a href="posts/30-thinkings/#org4d1cb71">三、投資者的最大敵人</a></li>
-<li><a href="posts/30-thinkings/#org1b8a500">四、一切皆與思維模式有關</a></li>
-<li><a href="posts/30-thinkings/#org6391b6b">五、別找市場先生要建議</a></li>
-<li><a href="posts/30-thinkings/#org561861d">六、股價 VS 商業真相</a></li>
-<li><a href="posts/30-thinkings/#orga0c730c">七、股價 VS 價值</a></li>
-<li><a href="posts/30-thinkings/#orga8ff441">八、情緒會擾亂投資</a></li>
-<li><a href="posts/30-thinkings/#org7061146">九、股市≠賺快錢的地方</a></li>
-<li><a href="posts/30-thinkings/#org238c365">十、股市的循環</a></li>
-<li><a href="posts/30-thinkings/#orgfbf5ba4">十一、投資大鱷是如何失誤的，他們的表現為何弱於大盤？</a></li>
-<li><a href="posts/30-thinkings/#org064a293">十二、短期相對回報的德比大戰</a></li>
-<li><a href="posts/30-thinkings/#org553e572">十三、首先，避免虧錢華倫．巴菲特經常說投資的首要定律就是「不要虧錢」，第二條則是：「永遠牢記第一條。」</a></li>
-<li><a href="posts/30-thinkings/#org3c2e669">十四、臨時價格波動的相關性</a></li>
-<li><a href="posts/30-thinkings/#org4364030">十五、合理持續的收益&gt;驚人卻不穩定的收益</a></li>
-<li><a href="posts/30-thinkings/#org5072ee0">十六、為最壞的情況做打算</a></li>
-<li><a href="posts/30-thinkings/#org6016a81">十七、注重過程，而非結果</a></li>
-<li><a href="posts/30-thinkings/#org74e71c3">十八、等待最佳的擊球機會</a></li>
-<li><a href="posts/30-thinkings/#org3c98447">十九、商業估值的複雜性</a></li>
-<li><a href="posts/30-thinkings/#orgdefeab7">二十、對估值精益求精？</a></li>
-<li><a href="posts/30-thinkings/#org4232be3">二十一、為什麼需要安全邊際？</a></li>
-<li><a href="posts/30-thinkings/#orgab55704">二十二、需要多大的安全邊際？</a></li>
-<li><a href="posts/30-thinkings/#org3d030a6">二十三、價值投資的三要素</a></li>
-<li><a href="posts/30-thinkings/#org99cda05">二十四、為成長性多付太多</a></li>
-<li><a href="posts/30-thinkings/#org7fb3219">二十五、成長性「詐騙」有投資者經常在評估未來時過於樂觀。</a></li>
-<li><a href="posts/30-thinkings/#orgc7b3af2">二十六、保守主義和成長性投資</a></li>
-<li><a href="posts/30-thinkings/#org0feaf19">二十七、要做多少研究和分析才算夠？</a></li>
-<li><a href="posts/30-thinkings/#org566e4e9">二十八、價值投資與反向思維</a></li>
-<li><a href="posts/30-thinkings/#org3ec4a15">二十九、指數謬論</a></li>
-<li><a href="posts/30-thinkings/#orgbc6c0a7">三十、危險之地</a></li>
-</ul>
-</div>
-</div>
-<p>
-來源：<a href="http://wawafinanceessais.blogspot.com/2017/08/30.html">汪汪財經：塞斯．卡拉曼：價值投資中的 30 個重要投資思想</a>
-</p>
+				</header><div class="p-summary entry-summary">
+					
+					Table of Contents
 
-<p>
-塞思．卡拉曼是 Baupost 基金公司總裁，對價值投資有深刻研究，代表作有《安全邊際》。由其管理的 BaupostGroup , 在過去 30 年中，在只用 5 成倉位的情況下，完成了年復合增長率 20% 的奇蹟。
-</p>
 
-<p>
-塞斯卡拉曼《安全邊際》中的 30 個重要思想
-</p>
-
-<div id="outline-container-orgffd90ad" class="outline-2">
-<h2 id="orgffd90ad">一、價值投資並不簡單</h2>
-<div class="outline-text-2" id="text-orgffd90ad">
-<p>
-價值投資需要投入大量精力和努力，非一般嚴格的紀律，還有長期投資的視野。只有少數人投入了做價值投資者所需的時間和精力，但這裡面能建立起合適的投資觀並成功的人就更少了。就像大多數八年級的代數學生一樣，一些投資者只是簡單地記了幾個公式或者規則就覺得自己天下無敵了，但很多時候他們並不知道自己到底在幹什麼。想要在金融市場和經濟周期中獲得長期的成功，單純只靠觀察總結出幾條規則來是不夠的。
-</p>
-
-<p>
-投資的世界裡太多事情變得太快，所以我們需要明白<b>規則</b>背後的基本原理，這樣才能知道為什麼有些事情會發生，有些事情不。價值投資不是靠長時間的學習和實踐就能學習和掌握的，這種投資理念，要麼（天生適合你，所以）你一下子就能學會，要麼你一輩子都無法真正得其精髓。理解價值投資很簡單，實操卻很難。價值投資者也不是精於分析超複雜數據的巫師，他們也不會編寫出複雜的電腦模型去發現潛在價值，尋找優質的投資機會。最難的部分是自律，還有判斷。價值投資者需要強大的自律能力去拒絕那些不那麼優質的投資誘惑，需要足夠的耐心去等待真正優秀的機會，並且可以準確判斷現在是不是最佳時機，該出手時就出手。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgca70f37" class="outline-2">
-<h2 id="orgca70f37">二、價值投資者的特性</h2>
-<div class="outline-text-2" id="text-orgca70f37">
-<p>
-自律，直到找到划算的投資機會再出手，這使價值投資者們看起來很像風險厭惡者。自律對於他們來說是必需的，他們面臨的最大挑戰就是如何保持這份自律。價值投資者意味著總是遠離人群，挑戰常規，甚至頂著盛行的投資風向逆行，這條路不可謂不孤獨。在長期市場估值偏高的時間段裡，價投者的表現有時和其他的投資者、或者整個市場比起來都會不盡如人意，甚至“可怕”。但長期來看，價值投資非常成功，所以你們會發現很少有價投者會放棄這種投資理念。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org4d1cb71" class="outline-2">
-<h2 id="org4d1cb71">三、投資者的最大敵人</h2>
-<div class="outline-text-2" id="text-org4d1cb71">
-<p>
-如果有投資者可以成功預測市場未來的走向，他們肯定永遠都不會去當價值投資者。誠然，當證券的價格穩步上升時，價投本身就是一個缺陷；不受歡迎的證券漲得沒有公眾喜歡的幅度大。另外，當被高估的市場被正確估值時，價投者也是討不了巧的，因為他們很快就會需要賣掉手上的票。所以，當價投者的最佳時機是市場下行時。那些原先只關注上行因素的投資者們正在吞盲目樂觀的苦果，這種時候，任何導致下行的風險因素都會被看得很重，而價投者因為用了一定的安全邊際來投資，所以能夠保護他們免受市場下行的巨大損失。能夠預測市場未來的投資者應該全副投入，用借來的錢，在市場上行之時進入，再在它下跌之前出來。不幸的是，許多投資者雖然聲稱自己有這樣的能力，但實際上並沒有。（至少我個人是從來沒見過一個。）對於那些明白自己做不到預測市場的人，我非常推薦價值投資，這在所有的投資環境裡都是一個安全又成功的策略。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org1b8a500" class="outline-2">
-<h2 id="org1b8a500">四、一切皆與思維模式有關</h2>
-<div class="outline-text-2" id="text-org1b8a500">
-<p>
-成功的投資需要建立起合適的思維模式。投資是嚴肅的，絕非兒戲。假如你參與到金融市場中來，很重要的一點就是你所有的動作都應該是以一個投資者的角度出發，而不是觀察者，確定你明白這兩者的區別。無疑，投資者能說得出百事可樂和畢加索的區別：百事可樂是投資對象，而畢加索的作品則是收藏對象。當你把辛辛苦苦存下來的錢和未來的金融證券放在有風險的地方時，不了解兩者區別的代價會非常非常高。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6391b6b" class="outline-2">
-<h2 id="org6391b6b">五、別找市場先生要建議</h2>
-<div class="outline-text-2" id="text-org6391b6b">
-<p>
-有些投資者——其實是觀察者會從市場先生那兒尋求投資建議——這是不對的。當他們發現市場先生給一個票定價偏低，就會忘記市場先生本身是不理性的事實，忘記自己曾經對這些票的真正價值做出的估算而瘋狂賣掉自己手上持有的貨。當他們看到市場先生給某個票提價時，又會因相信他無所不曉而跟著高價位買入。但事實是，市場先生什麼都不懂，他誕生於成千上萬投資者賣出買入的行為之中，而很多時候這些投資者的行為卻並非出於投資原理。衝動的投資者和觀察者會無可避免地遭受損失；但深知市場先生間歇性無理取鬧這種特性的投資者，則可以利用這一點，在長期的投資獲得成功。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org561861d" class="outline-2">
-<h2 id="org561861d">六、股價 VS 商業真相</h2>
-<div class="outline-text-2" id="text-org561861d">
-<p>
-路易斯．洛溫斯坦(LouisLowenstein)已經警告過我們，不要把一個公司在商業上真正取得的成功和在股市上取得的成功搞混。一個公司的股價上漲不代表它發展狀況良好，同樣地，股價下跌也不代表一定是它公司業務發展不好或者價值下跌。所以投資者一定要學會分辨股價波動和潛在商業真相。投資者們如果發現整體的趨勢是大家都在盲目地跟風買入或賣出，那麼他們一定要抵擋住這股趨勢才行。當然你不能無視市場，因為市場裡蘊含著投資機會，忽視它等於犯錯，但你一定要為自己著想，不要讓市場牽著你的鼻子走。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga0c730c" class="outline-2">
-<h2 id="orga0c730c">七、股價 VS 價值</h2>
-<div class="outline-text-2" id="text-orga0c730c">
-<p>
-價值與價格掛鉤，但並不只取決於其價格，為此要多留意你的投資決策。如果你將市場先生看作投資機會的創造者，會為你創造那些價格和公司價值不符的投資機會，那你就有了成為價值投資者的先決條件。但你如果減持把市場先生看作是你的投資顧問，那我建議你還是僱別人來為你打理錢財比較好。股票價格會因為各種原因而變動，你無法判斷現在的股價反映了什麼樣的預期，所以投資者們必須要透過股價看企業本身的商業價值，在投資過程中不斷比較這兩者。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga8ff441" class="outline-2">
-<h2 id="orga8ff441">八、情緒會擾亂投資</h2>
-<div class="outline-text-2" id="text-orga8ff441">
-<p>
-不成功的投資者都被情緒支配。他們不會冷靜理智地面對市場波動，出於貪婪和恐懼，他們會很不理智。想必我們都認識一些平時舉止負責、從容不迫，但在投資時會進入「狂暴狀態」的人。他們會把自己經過很多個月，甚至很多年的辛勤工作和自律存下來的錢在短短幾分鐘之內就投資掉。這些人在買一個音響或者照相機之前會願意讀上好幾本消費者指南，前往比較很多家店，但卻不願意花點兒時間去好好研究從他的一個朋友那兒聽說的股票。在購買電子攝像產品時的理性在投資股市的時候反而沒有了。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org7061146" class="outline-2">
-<h2 id="org7061146">九、股市≠賺快錢的地方</h2>
-<div class="outline-text-2" id="text-org7061146">
-<p>
-許多不成功的投資者把股市當成一個無須努力就能賺快錢的地方，而不是一個投資資本以求更好收益的地方。誰都想毫不費力地賺快錢，但是這種想法恰恰完美反映了投資者們的貪婪。貪婪促使他們去尋求投資成功的捷徑。他們並不打算讓財富慢慢積累，而是想靠著一些“新鮮”的消息快速生財。他們也不會停下來想想，給他們消息的那些人是怎麼能夠不違法就獲得這些消息的？為什麼？如果真的如此有價值，為什麼會對他們公開？貪婪同樣表現為盲目樂觀，更隱形一點的，則會表現為面對壞消息來臨時懈怠。最終，貪婪會使投資者們把他們的目標從「獲得長期收益」變成「短期獲利」。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org238c365" class="outline-2">
-<h2 id="org238c365">十、股市的循環</h2>
-<div class="outline-text-2" id="text-org238c365">
-<p>
-市場上所有的流行趨勢終會完結。股價最終會變得太高，供應最終會趕上需求，然後趕超需求，天花板就會來臨，接下來就會下行。投資熱點總是有循環的，投資者們也一定會接受它們。公正來說，要分辨一個趨勢只是投資界的熱點還是現實的商業潮流並不容易。實際上，許多投資熱點就誕生於商業潮流，這種趨勢是理應反映在股價上的。但是，當股價上升到一個超過它本身估值的水平時，這個潮流就會變得危險。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgfbf5ba4" class="outline-2">
-<h2 id="orgfbf5ba4">十一、投資大鱷是如何失誤的，他們的表現為何弱於大盤？</h2>
-<div class="outline-text-2" id="text-orgfbf5ba4">
-<p>
-如果忽略機構投資者可能帶來的可怕後果的話，他們的行為其實還挺搞笑的。他們搜刮投資者們辛辛苦苦賺回來的數十億錢財，然後在沒有經過深度研究和分析就進行一個又一個的投資。現在盛行的心態就是要一致從眾。人們可以接受隨大流帶來的平庸，無法接受特立獨行時面臨跑輸大盤的風險。投資經理們這種追求短期收益的心態使得「機構投資者」變成了一個充滿矛盾的稱謂。
-</p>
-
-<p>
-許多投資經理的報酬模式不是基於他們做出的成績，而是基於他們管理的資金佔比資金總額的多少。這就會刺激他們想要不斷擴大自己管理的資金量，這樣就能產生更多的費用。但實際上從機構的角度出發來看，提升資金的投資回報率才是獲利最高的途徑，（所以經理們的心態）使機構們愈發難獲得好的投資表現。但本來投資經理們只要調整自己的行為偏好，這種機構與客戶之間的矛盾就完全可以解決。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org064a293" class="outline-2">
-<h2 id="org064a293">十二、短期相對回報的德比大戰</h2>
-<div class="outline-text-2" id="text-org064a293">
-<p>
-就像追著自己尾巴轉圈的狗狗，絕大多數機構投資者都被困在追求短期相對回報的德比大戰中。有一個機構裡的基金經理們的表現甚至要按小時計費；不計其數的經理每天的業績都要被拿來和其他公司的同行比較。頻繁的對比和排名只會更加強化他們想要追求短期投資收益的觀點。如果他們的短期收益表現很差，就要受罰，所以也可以理解為什麼想要他們維持長期投資的信念很難。如果他們堅持長期收益的做法，很可能就會失業。不了解機構投資者們的這個特性就去盲目投資，就好比在異國自駕行卻不帶地圖。你可能最後還是會到達一開始的目的地，但旅程所需的時間肯定更長，你還得承擔途中迷路的風險。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org553e572" class="outline-2">
-<h2 id="org553e572">十三、首先，避免虧錢華倫．巴菲特經常說投資的首要定律就是「不要虧錢」，第二條則是：「永遠牢記第一條。」</h2>
-<div class="outline-text-2" id="text-org553e572">
-<p>
-我也認為避免虧錢應是每個投資者的首要目標，但這不是說投資者不應承受一丁點兒虧錢的風險。“不要虧錢”更多地是指在往後的幾年中一個人的投資組合不要導致資本大量流失。沒有人想要承受損失，你也無法通過檢驗絕大多數投資者和投機者的行為來證明。我們絕大多數人都有強烈的投機衝動，免費午餐的誘惑總是強烈的，特別是身邊的人好像都已經吃到了。當別人都在貪婪地追逐利益，經紀人又在給你推薦時下最熱的 IPO 股票時，你是很難靜下心來想想虧錢的風險的。但依然，避免虧錢，是保證你炒股賺錢的篤定之法。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org3c2e669" class="outline-2">
-<h2 id="org3c2e669">十四、臨時價格波動的相關性</h2>
-<div class="outline-text-2" id="text-org3c2e669">
-<p>
-投資一個股票有可能會給你造成永久性的損失，也有可能其股價會出現臨時性的波動，這種波動和公司背後的潛在價值並無關係。很多投資者把股價的波動看作巨大的風險：只要股價下跌，不管這家公司根基如何，他們都會覺得它岌岌可危。但價格的臨時波動真的有風險嗎？有，但這和那些會造成永久損失的投資不一樣，而且這種風險只對特定情況裡的某些投資者有效。
-</p>
-
-<p>
-當然，要去分辨短期的供求關係帶來的價格波動和企業根基受損帶來的價值變化，是很難的。事實只有在真正發生了之後才會變得明顯。顯然，投資者可以避免買高了或者買入之後公司其價值就發生退化，但不可能不面對股價的短期波動。實際上，他們應該知道價格波動一定會存在，如果他們一丁點兒的波動都接受不了，那還是別炒股了。如果你真的以折扣價買到了一個有價值的股票，短期的價格波動有影響麼？長期來看，沒有太大影響，一個公司的價值最後總會在其股價上真實反映出來的。
-</p>
-
-<p>
-諷刺的是，長期來看股價會上升，這和短期市場對股價的走向影響正好相反。也就是說短期價格下滑其實增加了長期投資者們的收益。但在幾個情況下，長期投資者也會對關注短期價格波動，比如，那些急於賣股票的人就要受市場價格擺佈。成功投資者的一個訣竅就是，想賣的時候再賣，而不是被迫賣。還有，如果他們買的那個公司真的有問題時，投資者們也應該關注其股價變動。如果一個公司近期必須要靠籌集更多資金存活，那它將出現的股價變動某種程度上也決定了那些投資了這個公司的股票或者債券的人的命運。
-</p>
-
-<p>
-第三種情況則是市場先生有時候（會通過股價波動來創造）非常誘人的買賣機會。（股價下跌時，）如果你手上有現金，你就可以在此類機會中獲益。但如果市場下行的時候你所有錢都已經投了進去，你的投資組合價值很可能會下降，因為你失去了用較低價格買入優質股票的獲益機會。這就是機會成本，就是說你不得不放棄了未來可能出現的好機會。如果你手上的股票流動性和市場性很差，那這個機會成本就更高。買入流動性不足的股票會使你錯失更好的投資機會。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org4364030" class="outline-2">
-<h2 id="org4364030">十五、合理持續的收益&gt;驚人卻不穩定的收益</h2>
-<div class="outline-text-2" id="text-org4364030">
-<p>
-看重複利的一個必然結果就是，只要損失慘重一次，就很難恢復。這能一下子毀掉一個人多年成功的投資成果。換句話說，對於一個投資者而言，在有限風險的情況下獲取持續良好的回報比在風險相對較大的情況下獲得不穩定且有時「波瀾壯闊」的回報可能要更好一些。比如，一個在過去十年保持年收益率為 16%的投資者和一個前九年每年都賺 20%然後最後一年損失掉 15%的投資者相比，前者可能最後賺的錢要更多。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org5072ee0" class="outline-2">
-<h2 id="org5072ee0">十六、為最壞的情況做打算</h2>
-<div class="outline-text-2" id="text-org5072ee0">
-<p>
-避免虧錢的原則會使投資者在任何情況都生存下來甚至壯大。但壞運氣總會到來，人不可能永不犯錯。精明、有遠見的投資者相信金融災難總會到來，並以此為前提管理自己的組合。逆境無法被預測，所以必要的時候，一定要放棄一些短期的回報，當作應對逆境繳納上的保險。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6016a81" class="outline-2">
-<h2 id="org6016a81">十七、注重過程，而非結果</h2>
-<div class="outline-text-2" id="text-org6016a81">
-<p>
-許多投資者給自己設定了一個具體的回報率目標，這是錯誤的。不幸的是，定了目標不代表就一定會實現。也就是說，不管你定了什麼目標，最後都有可能不達標。如果你將市場先生看作投資機會的創造者，會為你創造那些價格和公司價值不符的投資機會，那你就有了成為價值投資者的先決條件。假設你給自己定了一個每年賺 15%的目標，但它並不會教你如何才能達標。投資回報和你的努力程度或者意願的強烈程度不是直接正相關的。一個挖溝的工人加班一小時可以拿到更多錢，計件工完成的件數越多，賺得越多。但對於投資者來說，不是你思考得更努力或者投入更多時間就可以獲得更多回報。投資者所能做的，只能是持續堅持自律嚴格的方法。假以時日，一定會有回報。與其設定一個具體的投資回報率，就算它看起來很合理，都不如盯著風險（不要讓自己虧大錢）。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org74e71c3" class="outline-2">
-<h2 id="org74e71c3">十八、等待最佳的擊球機會</h2>
-<div class="outline-text-2" id="text-org74e71c3">
-<p>
-華倫．巴菲特曾經用棒球類比價投者的自律。一個長期導向型的投資者就好比擊球手，比賽中沒有出現好球，也沒有出現壞球的時候，擊球手可以對幾十個，甚至幾百個擊球機會無動於衷，其中不乏別人看到很可能就會揮棒的機會。價投者就是比賽的學習者，不論擊中與否，他們都從每一次揮棒中學習經驗。他們不會受別人的表現影響，只關注自己的成績如何。他們有無盡的耐心，願意等，直到一次絕佳的擊球機會出現在他們面前——一個被低估了的投資機會。價投者不會投資那些他們沒有十分把握的，或者那些風險奇大的公司。和價投者不同，絕大多數的機構投資者有強烈的慾望一直滿倉。
-</p>
-
-<p>
-他們表現得好像裁判一直在讓他們揮棒似的，因此他們迫切地感到自己應該每球必揮，為了揮棒的頻率犧牲了選擇揮棒的效率。許多個人投資者就像業餘玩家，單純地無法分辨哪一個才是好的擊球機會。缺乏鑑別力的個人投資者和受限的機構投資者，當得知許多市場參與者也和他們一樣，感覺自己應該頻繁揮棒的時候，也能從中獲得安慰。對於價投者來說，擊球不只應在擊打區域內，還應該在他的「甜蜜點」裡。
-</p>
-
-<p>
-當投資者沒有被迫在時機成熟前投資的時候，表現才最好。有時候機會來了，但他們可能依然不揮棒，因為在一個普遍估值偏高的市場裡，最便宜的那個股票也依然是被高估的。一個安全的投資機會如果有 10%的回報率和一個同樣安全但是回報率有 15%
-的投資機會，你肯定會想要選擇後者。有時，許多好機會接踵而至。比如在一個普遍恐慌的市場裡，被低估的股票數量就會上升，被低估的程度也會上升。相對的，一個普遍看漲的市場裡，被低估的股票數量和程度都會下降。當好機會充足時，價投者就可以從中認真篩選出他們覺得最具吸引力的機會。但是，當好機會稀缺時，價投者一定要表現出強大的自律性，這樣才能保證估值的過程沒有錯誤，不會花多了錢。就是說，投資者應該永遠避免打壞球。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org3c98447" class="outline-2">
-<h2 id="org3c98447">十九、商業估值的複雜性</h2>
-<div class="outline-text-2" id="text-org3c98447">
-<p>
-如果你覺得能看透任何一項投資決策背後的所有特性和邏輯的話，那你就大錯特錯了。總會有問題沒人回答，該問的問題也經常沒人問。就算現在能夠完美地了解某一項投資決策，但還是要知道，絕大部分投資決策所依據的未來結果都是不可預測的。就算一項投資中的所有細節都被知道了，但一個公司的價值也不是刻在石頭上人盡皆知的，這才是最複雜的地方。如果公司價值可以保持恆定，股價就像行星一樣繞著價值轉，那投資就會變得簡單得多。如果你不確定一個公司的價值，那你怎麼能確定你是以折扣價買入其股票呢？答案就是，不能。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgdefeab7" class="outline-2">
-<h2 id="orgdefeab7">二十、對估值精益求精？</h2>
-<div class="outline-text-2" id="text-orgdefeab7">
-<p>
-許多投資者堅持在投資過程中做到精確估值，在一個充滿不確定性的世界裡精益求精，但問題是，一個公司是不可能被精確估值的。公佈出來的賬面價值，收益和現金流說到底都只是根據一套相對嚴格的標準和實踐做出來的合理的會計猜測，它更多的追求一致性而不是為了反映公司的經濟價值。預測出來的數據也不會那麼精確，幾千美元的房子都很難準確估價，更何況是給所處環境龐大又復雜的公司估值？我們無法給公司正確估值，而且公司價值也總是在變，它會隨著大量的宏觀、微觀以及市場相關的因素不停波動。
-</p>
-
-<p>
-在任意一個靜止的時間節點，投資者都無法精確估出公司的價值，更何況還要隨著時間變化結合所有可能影響估價的因素來不斷調整他們的估計？所以，想要精確給一個公司估值，只會得出非常不准確的數字。而問題是，大家總會把「可以精確估值」和「“可以準確估值」搞混。任何人，只要有計算器，就可以算淨現值(NPV)和內部收益率(IRR)。電子製表工具的出現讓人們以為自己能夠做出精確深度的分析了，殊不知這種計算過程是非常隨意的，從而進一步惡化了這個問題。大家都覺得產出很重要，但卻經常忽略在生產過程中，「垃圾進，垃圾出」才是正確寫照。
-</p>
-
-<p>
-在《證券分析》中，葛拉漢和大衛．多德就討論過價值區間的概念：「證券分析最關鍵的一點不要痴迷計算一個證券精確的內在價值。你只需要確信其 <b>價值足夠</b> ，比如說，去保護其債券價格或者股票價格相對其價值來說不要太高或太低，就好了。目標是這個的話，對 <b>內在價值有一個模糊大概的估算就夠了</b> 。」的確，葛拉漢經常會去算每股淨運營資金的指標，用來大概估算一個公司流動價值。他頻繁使用這個粗略估算的指標，恰恰就是在無聲地向大家承認，他也沒有辦法給一個公司進行更精確的估值了。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org4232be3" class="outline-2">
-<h2 id="org4232be3">二十一、為什麼需要安全邊際？</h2>
-<div class="outline-text-2" id="text-org4232be3">
-<p>
-價值投資需要投資者時時自律，如此才能以非常划算的價格買到實際價值遠高於此的股票，並且能一直抓著不賣，直到其價值被更多地認可。「划算」是整個過程的關鍵。由於投資和科學一樣有藝術，所以投資者需要安全邊際。考慮到在這個複雜、無法預測又變換迅速的世界裡，人人都有可能犯錯、運氣不好，還可能遭遇激烈的市場波動等因素，當你能夠以遠低於一支股票真實價值的價格買它的時候，你就算是有了安全邊際了。葛拉漢說過：「安全邊際的大小取決於你付的錢。任何一個股票，假設某一個價位時安全邊際很大，再高一點的時候就變小了，再高一點，就沒有安全邊際了。」價投者需要安全邊際，這樣才有空間承受長時間累計下來估值不准、運氣不好或者分析錯誤所帶來的損失。安全邊際是必須的，因為：
-</p>
-
-<ul class="org-ul">
-<li>** 估值是一項藝術，沒法精準；</li>
-<li>** 未來是無法預測的；</li>
-<li>** 投資者也是人，是人就會犯錯</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgab55704" class="outline-2">
-<h2 id="orgab55704">二十二、需要多大的安全邊際？</h2>
-<div class="outline-text-2" id="text-orgab55704">
-<p>
-答案因人而異。你覺得自己的運氣會有多壞？能承受多壞的運氣？你能接受的商業價值波動幅度是多少？你能忍受多嚴重的錯誤？歸根結底就是，你有多少可輸？絕大多數投資者買股票的時候不會考慮安全邊際。那些把股票看作一張張能拿來交易的紙的機構投資者和總是滿倉的投資者是無法獲得安全邊際的。總是盲從市場趨勢和潮流的貪婪個人投資者亦如此。而那些買了華爾街承銷的股票或者金融市場衍生品的投資者能獲得的唯一安全邊際則往往是危險的。那麼投資者如何確保獲得安全邊際？
-</p>
-
-<ul class="org-ul">
-<li>永遠要以超級划算的價格買入實際價值高得多的股票，比起無形資產嗎，應更偏好有形資產（但這也不是說那些擁有大量無形資產的公司中就沒有好的投資機會了）；</li>
-<li>當出現了更划算的股票時，替換掉現在手中的；</li>
-<li>當某個股票的真實價值開始反映到股價上來時，賣掉換成錢，如有必要，一直抓著，直到你發現新的好的投資機會。</li>
-</ul>
-<p>
-投資者們需要搞明白的，不僅是自己手上的票是否被低估了，還有為什麼被低估？當你再沒有理由繼續持有某個股票時，你就要搞明白當初為什麼買，現在為什麼賣？找那些會有催化劑的股票，而且是能夠直接加速企業真實價值體現的催化劑。優先看那些管理層優秀，並且管理層自己也持有公司股票的公司。最後，當情況允許，前景不錯時，差異化你的持股，套期保值。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org3d030a6" class="outline-2">
-<h2 id="org3d030a6">二十三、價值投資的三要素</h2>
-<div class="outline-text-2" id="text-org3d030a6">
-</div>
-<div id="outline-container-org662e5f9" class="outline-3">
-<h3 id="org662e5f9">1.自下而上：</h3>
-<div class="outline-text-3" id="text-org662e5f9">
-<p>
-價值投資中自下而上的策略就是，通過基本面分析找投資機會，每次找一個。價投者會一個一個找有沒有划算的股票，就公司自身分析其每一個情況。這個策略可以被簡單描述為：“買個划算的股票，然後等。”投資者一定要學習給企業估值，這樣在看到機會的時候才能抓住。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org128df05" class="outline-3">
-<h3 id="org128df05">2.絕對回報導向：</h3>
-<div class="outline-text-3" id="text-org128df05">
-<p>
-絕大部分的機構投資者和許多個人投資者採用的都是相對回報導向的做法。他們投資的目標要麼就是表現比市場好，要麼么就是比其他投資者好，卻顯然不關心他們的絕對回報是正的還是負的。通常，較好的相對回報，特別是短期的相對回報，可以通過模仿別人或嘗試看透別人將要採取的行動來獲得。相反地​​，價值投資者一定是絕對回報導向的。他們只關心回報是否達到了自己的投資目標，而不是去和整體市場或者其他投資者比。好的絕對回報要靠買入被低估的股票，在其真實價值被更多地認可時賣掉。對於大多數投資者來說，絕對收益才是真正要緊的。
-</p>
-
-<p>
-說到底，你又花不了「相對收益」（因為相對收益不是實打實賺到的錢）。絕對收益導向的投資者通常會看問題的角度通常會比相對收益導向的投資者更長遠。一個相對收益導向的投資者是無法忍受表現長時間弱於大盤的，所以他們就會去買時下流行的股票。因為不這麼做會影響他們的短期投資表現。事實上，相對收益導向的投資者會有可能避開那些長期的絕對收益會很好，但有可能會讓他們面臨近期的表現弱於大盤的投資機會。相反，絕對收益導向的投資者就更喜歡那些不那麼被大眾喜歡的股票，這些股票需要更多時間才會有回報，但虧錢分風險也更小。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga85d702" class="outline-3">
-<h3 id="orga85d702">3.風險與回報：</h3>
-<div class="outline-text-3" id="text-orga85d702">
-<p>
-當別的投資者都要全神貫注地計算他們能賺多少時，其實全然不關心他們可能會虧多少。但價投者既關心回報，也關心風險。風險就是每個投資者分析的某個投資行為會虧錢的可能性。勘探一個油井時發現它就只是一口枯井，這就叫風險。債券違約，股價跳水，這都是風險。但是，當油井噴湧，債券按時履約，股價強勢反彈時，我們投資時就可以說毫無風險麼？當然不是。事實是，在大多數情況下，就算是在事後試圖總結一項投資的風險，也沒法比做決定時了解得更多。投資者們想要抵消風險，能做的其實很少：足夠多樣化自己的持有；在適當的時候套期保值；投資時尋找一定的安全邊際。正因為我們不會，也沒法得知投資可能出現的所有風險，我們才需要努力保證自己用折扣價買股票。追求划算的買賣，可以在出問題的時候提供緩衝的保護。
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org99cda05" class="outline-2">
-<h2 id="org99cda05">二十四、為成長性多付太多</h2>
-<div class="outline-text-2" id="text-org99cda05">
-<p>
-太多太多的投資者只根據自己對一個公司未來成長性的預測就決定投資這個公司。說到底，一個公司賺錢更快，它的現值就更高。但是成長性導向的投資者會面臨幾個難題。首先，這些投資者對自己預測未來的能力經常都太過自信。第二，那些快速成長的公司，投資者對它們的年增長率的細微差別都會在給公司估值的時候帶來巨大不同。還有，當很多人都想要買成長性好的股票時，這個統一化的行為就很可能會抬升把公司股價抬到一個超出其根基的水平上。
-</p>
-
-<p>
-「商業名人堂」的成員總走馬燈地換，總會有投資者被金錢誘惑，因為自己現在的強健表現就做出過於樂觀的預測，這樣往往會使他們為一個中等的公司多付錢。投資增長性還有一個難題，就是這個導向的投資者把成長性簡化成一個簡單的數字。但是實際上，一個公司的成長由許多許多動態部分組成，而每個部分的可預測性都不同。舉個例子，對於任何公司來說，收入增長可以有很多種意思，可以是總人口可預見性的增長帶來的銷售量增長，或者是消費者對此產品的使用率上升，或者是市場份額上升，有可能是產品的普及性提高，或者就是價格上升。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org7fb3219" class="outline-2">
-<h2 id="org7fb3219">二十五、成長性「詐騙」有投資者經常在評估未來時過於樂觀。</h2>
-<div class="outline-text-2" id="text-org7fb3219">
-<p>
-一個很好的例子就是大家看到公司沖銷行為時的反應。這個會計行為使公司可以完全自行進行內部賬目的清理，可以馬上擺脫自己賬面上的不良資產、收不回來的應收賬款、壞賬、以及任何公司在進行沖銷時隨之而來重新調整的支出。這種行為是典型的受華爾街分析師和投資者一致歡迎的行為。壞賬沖銷過的公司可以交出一份更好的成績單，回報更好，利潤增長幅度更高。然後，這個“粉飾”過的結果就會被算入對未來的預測中，進一步推高其股票價格。然而，投資者不應該輕易把這個公司的壞賬歷史也隨之一筆勾銷。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgc7b3af2" class="outline-2">
-<h2 id="orgc7b3af2">二十六、保守主義和成長性投資</h2>
-<div class="outline-text-2" id="text-orgc7b3af2">
-<p>
-價投者應該如何去分析和預測不可知的未來？唯一的答案就是保守主義。所有的預測都有可能犯錯，樂觀的人總是把自己置於危險的枝幹上。對於他們這種情況，每一件事情就一定要在正軌上，不然損失就會持續。但是保守的預期就可以很容易達到甚至超過。價投者應該保守地預期，然後以極大的折扣價入手價值遠高於其股價的股票。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org0feaf19" class="outline-2">
-<h2 id="org0feaf19">二十七、要做多少研究和分析才算夠？</h2>
-<div class="outline-text-2" id="text-org0feaf19">
-<p>
-有些投資者在做某項投資之前巴不得自己完美掌握了相關的所有知識，他們研究這些公司，直到他們已經對公司瞭如指掌。他們去研究行業和競爭情況，去聯繫公司的前僱員，行業資訊和分析師，自己去熟悉頂尖的經營管理知識。他們分析公司過去十年，甚至更久之前的財務報表和股價走勢。這份勤奮令人佩服，但有兩個缺點。
-</p>
-
-<ol class="org-ol">
-<li>不管你做了多少研究，有一些信息你就是找不到，所以投資者要學會接受不足的信息，而不是企圖得知所有。</li>
-<li>就算一個投資者可以獲知一個公司的所有信息，他/她的投資也不一定會因此獲利。當然，這不是說基本面分析就沒用了。它肯定有用。大部分投資者力求確定性和精確性，避免難以獲得信息的情況，殊不知都在做無用功。低價總會伴隨極高的不確定性。當不確定性被解決的時候，價格也會水漲船高。不要等知道所有信息了才投資，這樣的投資者可以經常獲利。他們承受的不確定性的風險，最後也能為他們帶來豐厚的回報。</li>
-</ol>
-<p>
-當其他投資者還在苦苦鑽研公司之前一個還沒應答的細節問題時，他們很可能就錯失了用極低價買入一個有安全邊際的股票的機會了。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org566e4e9" class="outline-2">
-<h2 id="org566e4e9">二十八、價值投資與反向思維</h2>
-<div class="outline-text-2" id="text-org566e4e9">
-<p>
-從本質上來說，價投者就是「唱反調」的人。不被大家喜歡的股票才有可能被低估，流行的股票則幾乎從來不會出現這種情況。「羊群」買的就是被喜愛的股票。由於大家對它們的預計都很樂觀，這些股票的價格已經被抬得很高了，不大可能有還沒被發現的價值了。如果大家都買的股票是沒有價值的，那哪裡有？在他們賣掉的、沒有發現的、或者忽視的股票裡。當人們都在賣一個股票時，它的股價就會暴跌到不合理的程度。而那些被忽視的、沒有名氣的、或者新上市的股票也有可能因為同樣的原因而被低估。
-</p>
-
-<p>
-投資者會覺得很難成為一個「唱反調」”的人，因為他們從來不知道自己到底是不是對的，以及何時才會被證明是對的。由於和大家背道而馳，他們在開始階段幾乎都會被看作是做錯的那方，還會承受損失。相反，「羊群」裡的成員在相當一段時間裡則表現得似乎是正確的那方。相比起其他人，唱反調的人不僅在最初，甚至在隨後的一段時間裡都會看起來做錯了，因為潮流可以無視公司的真實價值而持續很久。然而，和大家持相反意見也不總是湊效的。當一個眾所周知的觀點不會對眼前的事造成影響時，就算逆流而上也不會獲得什麼意外收穫。就好比大家總是覺得明天會有太陽，但其實這個觀點本身並不會影響之後的結果。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org3ec4a15" class="outline-2">
-<h2 id="org3ec4a15">二十九、指數謬論</h2>
-<div class="outline-text-2" id="text-org3ec4a15">
-<p>
-對於價投者來說，做指數這個概念是非常愚蠢，甚至非常有危害性的。華倫．巴菲特發現，「任何一種形勢的比賽，金融的、腦力的或者體力的，如果有一個競爭對手能讓你切實體會到任何嘗試都是無意義的話，其實是一件極大的好事」。我認為隨著時間過去，價值投資者終究會表現得強於大盤，而其他那些企圖與之比肩的人都是懶惰或短視的。
-</p>
-
-<p>
-做指數是一個有著危險缺陷的策略，理由有幾個。第一，當越來越多的投資者採用這個策略時，它就失去了作用。雖然指數化思想在有效市場上是可以實施的，但是採用這個方法的投資者越多，市場就會變得越來越沒有效率，因為越來越少的投資者去研究以及做基本面分析了。當指數里有一個或者更多的股票由於破產或者被收購而需要被替換時，另外一個問題就會出現。
-</p>
-
-<p>
-為了跟上自己指數的表現，投資者會傾向於滿倉買入指數裡的組成股票，而那些被替換進來的股票也一定會馬上被成千上萬的指數組合型基金經理買。由於缺乏流動性，一個新股票被加進去指數的第一天，由於指數者的哄搶，股價往往會高漲。但是這個公司的根基並沒有任何改變，也沒有什麼新的東西使它變得比前一天更有價值。實際上，就只是因為這個股票被加進了指數里，人們就願意為它支付更多。更重要的是，正如巴菲特所說：「因為編制指數獲得了成功，於是強化了指數本身的表現，於是又反過來促進更多的編制指數行為，於是一個自我強化的反饋迴路產生了」。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgbc6c0a7" class="outline-2">
-<h2 id="orgbc6c0a7">三十、危險之地</h2>
-<div class="outline-text-2" id="text-orgbc6c0a7">
-<p>
-對於投資者來說，華爾街可以是很危險的。你只能在那兒做生意，但你一定要時刻戒備。華爾街人的標準行為就是追求最大化的個人利益。這個導嚮往往是短期的。你要承認這一點，接受它，與它共事。如果你能在和華爾街精英們做生意時牢記這一點，你就可以成長。但如果你指著華爾街來幫你，你就永遠別想著能投資成功了。
-</p>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/my-linux/" class="u-url">My simple linux</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/my-linux/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-08-20T09:57:04+08:00" itemprop="datePublished" title="2017-08-20 09:57">2017-08-20 09:57</time></a>
-            </p>
-                <p class="commentline">
+一、價值投資並不簡單
+二、價值投資者的特性
+三、投資者的最大敵人
+四、一切皆與思維模式有關
+五、別找市場先生要建議
+六、股價 VS 商業真相
+七、股價 VS 價值
+八、情緒會擾亂投資
+九、股市≠賺快錢的地方
+十、股市
+					<a href="posts/30-thinkings/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/my-linux/" class="u-url">My simple linux</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/my-linux/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-08-20T09:57:04+08:00" itemprop="datePublished" title="2017-08-20 09:57">2017-08-20 09:57</time></a></p>
+							<p class="commentline">
         
     <a href="posts/my-linux/#disqus_thread" data-disqus-identifier="cache/posts/my-linux.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div id="table-of-contents">
-<h2>目錄</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="posts/my-linux/#org30bc9f5">前言</a></li>
-<li><a href="posts/my-linux/#orgcecab6c">配備</a></li>
-<li>
-<a href="posts/my-linux/#orgf9b7550">常用工具</a>
-<ul>
-<li><a href="posts/my-linux/#org32983f2">外觀</a></li>
-<li><a href="posts/my-linux/#orgc8663a2">entrainment</a></li>
-<li><a href="posts/my-linux/#org5d8227f">programming</a></li>
-<li><a href="posts/my-linux/#orgbc82ca7">network/internet</a></li>
-<li><a href="posts/my-linux/#org0e6bb4f">blog</a></li>
-<li><a href="posts/my-linux/#org06293b7">utilities</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org30bc9f5" class="outline-2">
-<h2 id="org30bc9f5">前言</h2>
-<div class="outline-text-2" id="text-org30bc9f5">
-<p>
-我的電腦已經是 8 年前的老電腦。一般人是打怪耗時間，要性能强電腦。我打的怪是「工作流程」不斷地改善。而我又喜歡命令列和文字模式，需要的效能不必太高，只要能顯示即可。
-</p>
-
-<p>
-工作環境一切單純，不必要的程序都不想載入記憶體，精簡而有效率地完成我的工作才是王道。
-</p>
-
-<p>
-windows 做不到這一點，總是安裝了一堆不想用的東西，刪又刪不掉。
-</p>
-
-<p>
-因此，最後決定使用 linux 搞定一切。但如此就有太多的設定要記住，這個部落格只是記錄一些想法，流程和設定，免得忘記，還要重新查過。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgcecab6c" class="outline-2">
-<h2 id="orgcecab6c">配備</h2>
-<div class="outline-text-2" id="text-orgcecab6c">
-<dl class="org-dl">
-<dt>CPU</dt>
-<dd><ul class="org-ul">
-<li>AMD Phenom(tm) II X4 945 Processor</li>
-<li>size: 800MHz</li>
-<li>capacity: 3GHz</li>
-</ul></dd>
-<dt>MB</dt>
-<dd>ASUS M4A78 PRO</dd>
-<dt>RAM</dt>
-<dd>4G DDR2</dd>
-<dt>SSD</dt>
-<dd>SanDisk 128GB</dd>
-<dt>VGA</dt>
-<dd>Radeon HD 7730/8730</dd>
-</dl>
-</div>
-</div>
-
-<div id="outline-container-orgf9b7550" class="outline-2">
-<h2 id="orgf9b7550">常用工具</h2>
-<div class="outline-text-2" id="text-orgf9b7550">
-</div>
-<div id="outline-container-org32983f2" class="outline-3">
-<h3 id="org32983f2">外觀</h3>
-<div class="outline-text-3" id="text-org32983f2">
-</div>
-<div id="outline-container-orgdfd39d1" class="outline-4">
-<h4 id="orgdfd39d1">xmonad &amp; taffybar</h4>
-<div class="outline-text-4" id="text-orgdfd39d1">
-<p>
-github: <a href="https://github.com/mariolong/xmonad">https://github.com/mariolong/xmonad</a>
-</p>
+				</header><div class="p-summary entry-summary">
+					
+					目錄
 
 
-<p>
-using haskellarch
-don't use cabal to install packages
-</p>
-</div>
-</div>
+前言
+配備
+常用工具
 
-<div id="outline-container-org581b23a" class="outline-4">
-<h4 id="org581b23a">gtk qt  configurations</h4>
-</div>
+外觀
+entrainment
+programming
+network/internet
+blog
+utilities
 
-<div id="outline-container-orgf915095" class="outline-4">
-<h4 id="orgf915095">mouse icon theme</h4>
-</div>
 
-<div id="outline-container-org0635feb" class="outline-4">
-<h4 id="org0635feb">font/font config</h4>
-</div>
-</div>
 
-<div id="outline-container-orgc8663a2" class="outline-3">
-<h3 id="orgc8663a2">entrainment</h3>
-<div class="outline-text-3" id="text-orgc8663a2">
-</div>
-<div id="outline-container-orgb86c42e" class="outline-4">
-<h4 id="orgb86c42e">mpd/mpc</h4>
-</div>
 
-<div id="outline-container-orgeb2a133" class="outline-4">
-<h4 id="orgeb2a133">kodi</h4>
-</div>
 
-<div id="outline-container-org408c8ae" class="outline-4">
-<h4 id="org408c8ae">mpv</h4>
-</div>
 
-<div id="outline-container-orga70ec30" class="outline-4">
-<h4 id="orga70ec30">feh</h4>
-</div>
-</div>
 
-<div id="outline-container-org5d8227f" class="outline-3">
-<h3 id="org5d8227f">programming</h3>
-<div class="outline-text-3" id="text-org5d8227f">
-</div>
-<div id="outline-container-orgc061b53" class="outline-4">
-<h4 id="orgc061b53">git</h4>
-</div>
+前言
 
-<div id="outline-container-org8eb3091" class="outline-4">
-<h4 id="org8eb3091">python/pip</h4>
-<div class="outline-text-4" id="text-org8eb3091">
-<p>
-udiskie
-nikola requests lxml
-elpy jedi yapf
-chardet unicode cherrpy mako blist bottle beaker
-hangups
-</p>
-</div>
-</div>
 
-<div id="outline-container-orgc562157" class="outline-4">
-<h4 id="orgc562157">haskell</h4>
-</div>
-</div>
-
-<div id="outline-container-orgbc82ca7" class="outline-3">
-<h3 id="orgbc82ca7">network/internet</h3>
-<div class="outline-text-3" id="text-orgbc82ca7">
-</div>
-<div id="outline-container-orgb6f270a" class="outline-4">
-<h4 id="orgb6f270a">dropbox</h4>
-</div>
-
-<div id="outline-container-orge16eced" class="outline-4">
-<h4 id="orge16eced">chrome</h4>
-</div>
-</div>
-
-<div id="outline-container-org0e6bb4f" class="outline-3">
-<h3 id="org0e6bb4f">blog</h3>
-<div class="outline-text-3" id="text-org0e6bb4f">
-</div>
-<div id="outline-container-org6e9dda7" class="outline-4">
-<h4 id="org6e9dda7">hexo</h4>
-</div>
-
-<div id="outline-container-orgc16ce97" class="outline-4">
-<h4 id="orgc16ce97">nikola</h4>
-</div>
-</div>
-
-<div id="outline-container-org06293b7" class="outline-3">
-<h3 id="org06293b7">utilities</h3>
-<div class="outline-text-3" id="text-org06293b7">
-</div>
-<div id="outline-container-orgbc8f524" class="outline-4">
-<h4 id="orgbc8f524">emacs</h4>
-</div>
-
-<div id="outline-container-orgb18b2d1" class="outline-4">
-<h4 id="orgb18b2d1">mc</h4>
-</div>
-
-<div id="outline-container-org8d7c29f" class="outline-4">
-<h4 id="org8d7c29f">pandoc</h4>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fruit-win-cancer/" class="u-url">水果戰勝癌症</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/fruit-win-cancer/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-08-10T10:24:46-08:00" itemprop="datePublished" title="2017-08-10 10:24">2017-08-10 10:24</time></a>
-            </p>
-                <p class="commentline">
+我的電腦已經是 8 年前的老電腦。一般人是打怪耗時間，要性能强電腦。我打的怪是「
+					<a href="posts/my-linux/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fruit-win-cancer/" class="u-url">水果戰勝癌症</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/fruit-win-cancer/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-08-10T10:24:46-08:00" itemprop="datePublished" title="2017-08-10 10:24">2017-08-10 10:24</time></a></p>
+							<p class="commentline">
         
     <a href="posts/fruit-win-cancer/#disqus_thread" data-disqus-identifier="cache/posts/fruit-win-cancer.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>
-來源：<a href="http://health.businessweekly.com.tw/AArticleM.aspx?id=ARTL000093890">20 年戰勝 3 癌！醫師每天早上喝一杯「抗癌五彩蔬果汁」，常保體質弱鹼性</a>
-</p>
+				</header><div class="p-summary entry-summary">
+					
+					來源：20 年戰勝 3 癌！醫師每天早上喝一杯「抗癌五彩蔬果汁」，常保體質弱鹼性
 
-<ul class="org-ul">
-<li>人：心臟內科醫師，從小又是運動健將，但罹患癌症，而且還接連三種癌症！巨大細胞癌（骨癌）、腎臟癌與甲狀腺癌。</li>
-<li>時：抗癌 20 年</li>
-<li>法：CAM 整合療法，
-<ul class="org-ul">
-<li>早餐前，我會先喝一杯抗癌蔬果汁</li>
-<li>早餐，多半是三明治加牛奶，或是清粥小菜等簡單的食物，常保體質弱鹼性。</li>
-<li>鹼性食物多以青菜類為主；酸性食物是魚、肉、蛋和甜食等</li>
-<li>不必太過勉強進行全素的飲食。</li>
-</ul>
-</li>
 
-<li>每天在吃早餐前，我會先喝一杯蔬果汁來增加維他命 C、消化酵素，以及攝取植化素。
-<ul class="org-ul">
-<li>所以我並未特別去買有機品，而是換個方式，設法將蔬菜、水果的殘留農藥去掉。</li>
-<li>我特別喜歡在黃昏市場採買，而且一定挑當季盛產的蔬果</li>
-<li>「抗癌五彩蔬果汁」，組合比例是 3 種蔬菜＋2 種水果，或是 3 種水果＋2 種蔬菜。蔬果種類主要有：花椰菜、高麗菜、蕃茄、蘋果與鳳梨等。</li>
-</ul>
-</li>
-</ul>
-<p>
-附錄一篇空腹吃水果勝癌症，是從 line 直接轉出，來處不明，全文收錄於後。重點一句話： <b>常吃水果，空腹吃</b>
-</p>
 
-<div id="outline-container-org6ecb118" class="outline-2">
-<h2 id="org6ecb118">附錄</h2>
-<div class="outline-text-2" id="text-org6ecb118">
-</div>
-<div id="outline-container-org6762ae4" class="outline-3">
-<h3 id="org6762ae4">空腹吃水果勝癌症</h3>
-<div class="outline-text-3" id="text-org6762ae4">
-<p>
-台大郭銘雄(璁錡)醫師-生死的智慧，演講非常精采
-</p>
-</div>
+人：心臟內科醫師，從小又是運動健將，但罹患癌症，而且還接連三種癌症！巨大細胞癌（骨癌）、腎臟癌與甲狀腺癌。
+時：抗癌 20 年
+法：CAM 整合療法，
 
-<div id="outline-container-org30c7adf" class="outline-4">
-<h4 id="org30c7adf">空腹吃水果……(尤其是蘋果)</h4>
-<div class="outline-text-4" id="text-org30c7adf">
-<p>
-多虧了有關這個水果和果汁的電子郵件，它告訴了一個治癒癌症的戰略。我的成功率為 80%。 癌症病人死不了了，不管你信還是不信，治療方法終於找到了。對那些用常規療法治療癌症而死亡的患者，我深表遺憾。他們中沒幾個存活 5
-年, 大多數用常規療法的人僅活兩三年而已。常規療法沒有任何作用，因為不用常規療法治，病人也活兩三年。癌症病人一旦用了化療或放療，他們的細胞就中毒了。就衰弱了。癌細胞就會因沒有強壯的抗體而得以迅速擴散。
-</p>
-</div>
-</div>
-
-<div id="outline-container-org7a532cb" class="outline-4">
-<h4 id="org7a532cb">常吃水果</h4>
-<div class="outline-text-4" id="text-org7a532cb">
-<p>
-一說到吃水果，我們就想到把水果 切成塊，大快朵頤。其實，沒那麼簡單。要講究吃水果的方法和時間。什麼是正確方法呢？千萬別再飯後吃水果，一定要空腹吃鮮果。這樣水果會起到身體殺毒作用，起到提供身體能量，消肥減瘦作用，以及參與生化活動的作用。鮮果是重要食物。試想，你在吃兩片麵包後，又吃了一片水果。本來水果是要透過胃壁進入腸子的，但被食物擋住了。與此同時，胃發酵，變酸，水果一接觸到它們, 配著胃酸，整個食物就壞了。你會聽到有人抱怨：我一吃西瓜就愛打嗝兒，我一吃榴槤就脹肚， 我一吃香蕉愛拉稀，等等。那是因為水果與胃中腐敗的食物混合後產生的氣體造成的。但是你空腹吃水果，就不會出像上述情況。白頭髮，禿頭謝頂，神經緊張，缺覺黑眼圈，在你空腹吃鮮果以後，以上症狀一概消失。
-</p>
-
-<p>
-郭銘雄(璁錡)博士研究：因所有的水果到了身體變成鹼性，所以像桔子、檸檬這樣味道酸酸的水果，還是都屬於鹼性食物。只要正確掌握吃水果的時間，你就掌握了問題的關鍵，讓水果助你美容，長壽，健康，富有活力，幸福和苗條。當你想喝果汁，就喝鮮果汁，別喝罐裝果汁。也不要將水果或果汁加熱，否則除了味道尚存，其他所有營養全部流失。 吃完整的水果比喝果汁好。如果非要喝果汁，那就慢慢地一口一口地喝。讓果汁與唾液充分混合後再咽下。你還可以連續三天只吃水果不吃它物，這樣你的身體得以清洗，容光煥發，眾人驚喜。
-</p>
-
-<p>
-奇異果（獼猴桃）：小而精，富含鉀，鎂。維生素 E，和纖維質。維 C 含量是桔子的兩倍。
-</p>
-
-<p>
-一天一個蘋果，醫生找不到我。蘋果雖含維 C 低， 但它富含抗氧化劑並可提高維 C 的活性，從而有利於降低結腸癌，心臟病和中風的發病率。
-</p>
-
-<p>
-每日吃 2-4 個桔子：可抗感冒。降膽固醇，預防或化解腎結石，降低結腸癌風險。
-</p>
-
-<p>
-西瓜：含水 92%，是解渴最佳食品。所含大量的穀胱甘?能強化免疫系統。還含有關鍵的番茄紅素，抗癌氧化劑，維 C， 以及鉀。
-</p>
-
-<p>
-芭樂和木瓜是維 C 冠軍。芭樂還含有高纖維，能治便秘。木瓜富含糊蘿蔔素，對眼睛有好處。
-</p>
-
-<p>
-飯後喝涼水等於得癌症 。相信嗎？涼水能將剛吸收的油質立刻變成固態，從而影響消化。固態油脂在酸的作用，變成小碎塊，比固體食物更易於被腸道吸收，並附著在腸子的內壁。很快形成脂肪，導致癌的生成。所以餐後要喝熱飲。
-</p>
-
-<p>
-如果將此文轉發 10 人，你至少救活一人的生命，甚至是你自己。
-</p>
-
-<p>
-郭銘雄(璁錡)
-</p>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/coffe-cancer/" class="u-url">咖啡致癌？防癌！</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/coffe-cancer/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-08-09T15:29:47+08:00" itemprop="datePublished" title="2017-08-09 15:29">2017-08-09 15:29</time></a>
-            </p>
-                <p class="commentline">
+早餐前，我會先
+					<a href="posts/fruit-win-cancer/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/coffe-cancer/" class="u-url">咖啡致癌？防癌！</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/coffe-cancer/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-08-09T15:29:47+08:00" itemprop="datePublished" title="2017-08-09 15:29">2017-08-09 15:29</time></a></p>
+							<p class="commentline">
         
     <a href="posts/coffe-cancer/#disqus_thread" data-disqus-identifier="cache/posts/coffe-cancer.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>
-為了確認咖啡會不會致癌，特別花了點時間 google 一下，沒想到結論是真的出人意表。
-</p>
+				</header><div class="p-summary entry-summary">
+					
+					為了確認咖啡會不會致癌，特別花了點時間 google 一下，沒想到結論是真的出人意表。
 
-<dl class="org-dl">
-<dt>致癌</dt>
-<dd>咖啡炒焙過程中所產生的 <span class="underline">丙烯醯胺</span> 是 2B 級致癌物，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。但 2B 等級表示在動物實驗中有觀察到癌症的風險，但在流行病學研究證據不足。</dd>
 
-<dt>抗癌</dt>
-<dd>咖啡有多種抗氧化成分與植化素，可能有助預防多種癌症。科學家認為飲用「非常燙」（超過 65℃）的飲料才是可能致癌的原因，因為有研究顯示這個行為和食道癌相關。</dd>
-</dl>
-<p>
-建議：
-</p>
-<ol class="org-ol">
-<li>一天不超過三杯</li>
-<li>早飯後和午飯後喝</li>
-<li>孕婦、乳母、兒童不適宜喝咖啡</li>
-<li>不要喝即溶咖啡，要選現磨的</li>
-<li>加牛奶</li>
-</ol>
-<p>
-文章表列如下：
-</p>
 
-<p>
-<a href="https://nommagazine.com/%E5%92%96%E5%95%A1%E8%87%B4%E7%99%8C%EF%BC%9F%E9%82%84%E6%98%AF%E6%8A%97%E7%99%8C%EF%BC%9F/">咖啡致癌？還是抗癌？ - NOM Magazine</a>
-</p>
-
-<p>
-發現咖啡炒焙過程中所產生的 <span class="underline">丙烯醯胺</span> 為 2B 級致癌物在動物實驗中觀察到有癌症的風險，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。
-</p>
-
-<p>
-不少研究發現咖啡也可能有助於預防癌症：近年來不少研究發現咖啡也可能有助於預防癌症，例如：咖啡中含有綠原酸、咖啡因、咖啡醇（cafestol）、咖啡豆醇（kahweol）以及葫蘆巴鹼（Trigonelline）等多種抗氧化成分與植化素，尤其是咖啡因、綠原酸等，都是很強的抗氧化劑，可減少致癌的機率。
-</p>
-
-<p>
-<a href="https://read01.com/kBmBkd.html#.WYrMEIF-XqA">喝咖啡到底是致癌還是抗癌 - 壹讀</a>
-</p>
-
-<p>
-據英國《星期日泰晤士報》報導，聯合國的一項研究發現，對喝咖啡的人而言，在日常攝入的致癌化學物質丙烯醯胺中，有三分之一來自於咖啡。丙烯醯胺是在烹調過程中產生的，尤其是在油炸和烘烤的高溫過程中。油炸土豆條和土豆片、餅乾和麵包中都含有很高的丙烯醯胺。現在人們發現，烘烤咖啡豆也會產生相當數量的丙烯醯胺。
-</p>
-
-<p>
-而義大利科學家研究了自 1996 年至 2012 年間 3153 名患者的病例資料，並發現，每天喝三杯咖啡可使患肝癌的風險降低 50%。此外，咖啡有助於肝再生，並降低肝硬化的風險。
-</p>
-
-<p>
-如果單單只靠一種食物去抗癌，這種想法以及做法都是不切實際的，養成良好的生活習慣以及合理的膳食搭配再加以堅持鍛鍊身體才是保證我們擁有一個健康的身體最切合實際的做法。
-</p>
-
-<ul class="org-ul">
-<li>建議上班族什麼時間喝咖啡？每天喝多少為宜？</li>
-<li>哪些人不宜喝咖啡？</li>
-<li>營養師教你選購更健康的咖啡</li>
-<li>現磨咖啡喝的時候要用牛奶代替奶精，少量加糖</li>
-</ul>
-<p>
-<a href="http://cisc.twbbs.org/lib/addon.php?act=post&amp;id=3877">咖啡可以防癌嗎？-財團法人臺灣癌症臨床研究發展基金會</a>
-</p>
-
-<p>
-咖啡的成分相當複雜，大家所熟知的咖啡因裡面，含有綠原酸（chlorogenic
-acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂（kahweol）等抗氧化物，因此咖啡可謂富含營養素且沒有熱量的健康飲料，但是，它也含有致癌的 <span class="underline">丙烯醯胺</span> (acrylamide)成分，所以，多喝咖啡是否有害健康呢？
-</p>
-
-<p>
-咖啡有益健康嗎？
-</p>
-<ul class="org-ul">
-<li>咖啡可以減少自殺率</li>
-<li>降低罹患憂鬱症、阿茲海默症、心臟病以及減少腦中風之風險</li>
-<li>在韓國，也有研究指出每天喝 3～5 杯咖啡比不喝咖啡者可以減少心血管疾病。</li>
-<li>但最近一篇研究指出，只要不大量飲用，咖啡與糖尿病、腦中風、心臟病的發生率並沒有全然的關係</li>
-</ul>
-<p>
-咖啡可以防癌嗎？
-</p>
-<ol class="org-ol">
-<li>每天喝 1～2 杯咖啡可以減少 15%因疾病死亡的風險，3～4 杯則減少 24%</li>
-<li>子宮內膜癌</li>
-<li>神經膠質瘤</li>
-<li>頭頸部癌症
-<ul class="org-ul">
-<li>每天喝 1 杯咖啡可以減少 5%發生口腔、咽喉、頭頸、食道癌的風險</li>
-<li>每天喝 4 杯咖啡可以降低罹患頭頸部癌症 39%的風險</li>
-<li>每天飲用 3 杯以上比只飲用 1 杯可以減少 36%口腔癌的風險，但是對於喉癌及食道癌就沒有預防的效果。</li>
-</ul>
-</li>
-
-<li>肝癌
-<ul class="org-ul">
-<li>每天攝取咖啡 3 杯也可以減少 29% 罹患肝癌的風險</li>
-<li>攝取更多則比沒有飲用咖啡習慣者減少 42%</li>
-</ul>
-</li>
-<li>攝護腺癌
-<ul class="org-ul">
-<li>每天飲用 5 杯咖啡可以減少 59%攝護腺癌的風險。</li>
-<li>一天喝 6 杯以上者可以減少攝護腺癌 6%之風險。</li>
-<li>每天飲用咖啡可以減少攝護腺癌病人惡化或復發之風險</li>
-</ul>
-</li>
-
-<li>大腸癌
-<ul class="org-ul">
-<li>有 16%每天飲用咖啡 4 杯以上者可以減少大腸癌－特別是近側部位的大腸癌發生。</li>
-</ul>
-</li>
-
-<li>乳癌
-<ul class="org-ul">
-<li>更年期後之女性每天增加 2 杯咖啡，可以減少 2%罹患乳癌之風險－－尤其是有 BRCA1 基因突變者</li>
-<li>帶有 BRCA1 基因的女性，不喝咖啡與每天飲用咖啡 3、4～5、6 杯以上者，其發生乳癌的機率分別降到 100%、90%、75%、31%</li>
-<li>但 BRCA2 基因突變者則無此現象，其作用機制未明。</li>
-</ul>
-</li>
-</ol>
-<p>
-已經罹患癌症的病人，是否可以喝咖啡呢？
-</p>
-<ul class="org-ul">
-<li>大量飲用咖啡的結腸癌患者比不喝咖啡的結腸癌患者有較低的復發或死亡的風險。</li>
-<li>每天飲用 4 杯咖啡的癌症患者復發/死亡的可能性降低 52%，飲用三杯者降低 31%</li>
-</ul>
-<p>
-孕婦及準備懷孕者可以喝咖啡嗎？
-</p>
-<ul class="org-ul">
-<li>在懷孕的初期不宜飲用過多的咖啡，每天飲用 2 杯（約 200 毫克咖啡因）可能導致流產的機率增加了 2 倍</li>
-</ul>
-<p>
-大量飲用咖啡，反而會引發神經過敏導致心悸、心臟疾病、高血壓或者焦慮的副作用，所以，每天喝咖啡以不超過 3 杯為限
-</p>
-
-<p>
-<a href="https://m.cn.nytstyle.com/health/20160616/15well-coffee-may-protect-against-cancer-who-concludes/zh-hant/">世衛組織為咖啡「翻案」：不僅不致癌，還防癌 - 紐約時報 國際生活</a>
-</p>
-
-<p>
-喝咖啡有助於預防某些癌症。數十年來，很多研究發現這種飲料具有很多健康益處。喝咖啡和茶的一項意外風險。他們說，喝「很熱的」飲料「可能致癌」
-</p>
-
-<p>
-<a href="https://www.everydayhealth.com.tw/article/12513">咖啡不致癌還防癌！太燙才是致癌原因 | 溫度 | 肝癌 | 早安健康</a>
-</p>
-
-<ul class="org-ul">
-<li>咖啡不太可能導致乳癌、前列腺癌和胰臟癌等癌症。</li>
-<li>喝咖啡也可能減低肝癌及子宮癌發生率</li>
-<li>每天喝下的每一杯咖啡，能夠減少 15%肝癌風險。</li>
-<li>1991 年時，研究小組曾將咖啡分類為「可能致癌」，但之後許多研究卻證實，規律飲用咖啡的人，心臟病、第二型糖尿病、神經疾病以及數種癌症的發生率都較低。</li>
-<li>在 2015 年發布的飲食準則中，有強烈證據顯示每天喝 3~5 杯的咖啡並不會對身體造成傷害</li>
-<li>適量喝咖啡反而有可能幫助減少慢性病</li>
-<li>喝咖啡能夠預防多種癌症。</li>
-</ul>
-<p>
-<a href="https://kknews.cc/health/en8xy.html">喝咖啡真的會致癌嗎？真相只有一個丨漲知識 - 每日頭條</a>
-</p>
-
-<p>
-國際癌症研究機構的專家發現，過熱飲品可能會引發食管癌。「過熱」指的是飲品溫度在 65°C 以上。世衛：非常熱的飲料被列入 2A 致癌物
-</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/" class="u-url">生命中最重要的事</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-08-08T17:39:03+08:00" itemprop="datePublished" title="2017-08-08 17:39">2017-08-08 17:39</time></a>
-            </p>
-                <p class="commentline">
+致癌咖啡炒焙過程中所產生的 丙烯醯胺 是 2B 級致癌物，就是導致咖啡可能致癌的原因，尤其是即溶咖啡。但 2B 等級表示在動物實驗中有觀察到癌症的風險，但在流行病
+					<a href="posts/coffe-cancer/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/" class="u-url">生命中最重要的事</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-08-08T17:39:03+08:00" itemprop="datePublished" title="2017-08-08 17:39">2017-08-08 17:39</time></a></p>
+							<p class="commentline">
         
     <a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/#disqus_thread" data-disqus-identifier="cache/posts/生命中最重要的事.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>
-來源：<a href="http://www.businessweekly.com.tw/article.aspx?id=20446&amp;type=Blog&amp;p=0">你這一生中，做過最重要的事情是什麼？這個 80 歲指揮家的回答驚醒了許多人 (重要的事,指揮,回答,…)</a>
-</p>
+				</header><div class="p-summary entry-summary">
+					
+					來源：你這一生中，做過最重要的事情是什麼？這個 80 歲指揮家的回答驚醒了許多人 (重要的事,指揮,回答,…)
 
-<blockquote>
-<p>
+
+
+
 我現在正在做的事，就是我生命中最重要的事 – 托斯卡尼尼
-</p>
-</blockquote>
 
-<p>
-托斯卡尼尼是舉世聞名的指揮家。人生的閱歷豐富，他到過很多地方，指揮過無數的樂團，也見過無數的達官顯要。
-</p>
 
-<p>
-當他八十歲時，他兒子有一天好奇地問他：「在您一生中，一定有過很多重大的事，您覺得您做過最重要的事是什麼？」
-</p>
 
-<p>
-托斯卡尼尼回答說：「我現在正在做的事，就是我一生中最重大的事，不管是在指揮一個交響樂團，或是在剝一顆橘子。」
-</p>
 
-<p>
-有人問梵谷：「你的畫裡面那一張最好？」
-</p>
-
-<p>
-他說：「就是我現正在畫的這一張。」
-</p>
-
-<p>
-把自己全然地融入你眼前，這個人、這件事，這個地方。去享受、去欣賞、去參與，這就對了！有什麼好比的。
-</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/" class="u-url">美國交易冠軍：教你如何找到下一家星巴克</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Mario Long
-            </span></p>
-            <p class="dateline">
-            <a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-08-08T17:14:43+08:00" itemprop="datePublished" title="2017-08-08 17:14">2017-08-08 17:14</time></a>
-            </p>
-                <p class="commentline">
+托斯卡尼尼是舉世聞名的指揮家。人生的閱歷豐富，他到過很多地方，指揮過無
+					<a href="posts/sheng-ming-zhong-zui-zhong-yao-de-shi/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/" class="u-url">美國交易冠軍：教你如何找到下一家星巴克</a></h1>
+					<div class="metadata">
+						<p class="byline author vcard">
+							<span class="byline-name fn" itemprop="author">
+								Mario Long
+							</span></p>
+						<p class="dateline">
+							<a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/" rel="bookmark">
+								<time class="published dt-published" datetime="2017-08-08T17:14:43+08:00" itemprop="datePublished" title="2017-08-08 17:14">2017-08-08 17:14</time></a></p>
+							<p class="commentline">
         
     <a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/#disqus_thread" data-disqus-identifier="cache/posts/美國交易冠軍：教你如何找到下一家星巴克.html">Comments</a>
 
 
-        </p>
+					</p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>
-來源：<a href="https://www.stockfeel.com.tw/%e7%be%8e%e5%9c%8b%e4%ba%a4%e6%98%93%e5%86%a0%e8%bb%8d%ef%bc%9a%e6%95%99%e4%bd%a0%e5%a6%82%e4%bd%95%e6%89%be%e5%88%b0%e4%b8%8b%e4%b8%80%e5%ae%b6%e6%98%9f%e5%b7%b4%e5%85%8b%e3%80%81%e5%a5%bd%e5%b8%82/">美國交易冠軍：教你如何找到下一家星巴克、好市多？ – StockFeel 股感知識庫</a>
-</p>
+				</header><div class="p-summary entry-summary">
+					
+					來源：美國交易冠軍：教你如何找到下一家星巴克、好市多？ – StockFeel 股感知識庫
 
-<p>
-建議持續關注同店銷售數字 (same-store sales 或稱 comparable sales)。同店銷售所比較的，是開業一年以上的店舖，與去年同期的業績比較。
-</p>
 
-<p>
-同店銷售要有成長，取決於兩大條件：
-</p>
-<ul class="org-ul">
-<li>價格上升；</li>
-<li>客人數量 (或購買量)上升。</li>
-</ul>
-<p>
-米氏歸納出同店銷售倒退的三大可能性：
-</p>
-<ul class="org-ul">
-<li>品牌失色，客量大減；</li>
-<li>經濟不景氣，大環境轉差，人們消費力下降；</li>
-<li>貨品價格，不升反降，又或經常折扣促銷。</li>
-</ul>
-<p>
-另一考慮要點，是企業用「餅乾模」，複製店面的速度，是否合理？據米氏所講，與直覺想像不同，進軍全球，並非越快越好，反可能是警訊。他有一個概略的指標：如一家公司，年開新店逾一百家，管理層縱能力非凡，也難以一一兼顧，每多欲速而不達。
-</p>
 
-<p>
-總括而言，長年累升的成長股，必具備制式化的經營模式、持續成長的同店銷售數字，以及穩健發展、年開不多於 100 家店。
-</p>
-    </div>
-    </article>
+建議持續關注同店銷售數字 (same-store sales 或稱 comparable sales)。同店銷售所比較的，是開業一年以上的店舖，與去年同期的業
+					<a href="posts/mei-guo-jiao-yi-guan-jun-jiao-ni-ru-he-zhao-dao-xia-yi-jia-xing-ba-ke/"><br>[ ... 繼續閱讀 ]</a>
+				</div>
+			</article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
@@ -2720,17 +398,19 @@ acid）、咖啡酸（caffeic acid）、咖啡醇（cafestol）、咖啡白脂�
         </ul></nav><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>

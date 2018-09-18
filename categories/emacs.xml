@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：emacs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 14:01:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：emacs)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 01:54:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Start emacs with systemd</title><link>https://mariolong.github.io/posts/start-emacs-with-systemd/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 emacs version 26.1 systemd support
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgaa39896" class="outline-2"&gt;
-&lt;h2 id="orgaa39896"&gt;設定&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgaa39896"&gt;
+&lt;div id="outline-container-org0dfef48" class="outline-2"&gt;
+&lt;h2 id="org0dfef48"&gt;設定&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0dfef48"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org4368044" class="outline-3"&gt;
-&lt;h3 id="org4368044"&gt;start emacs via systemd&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org4368044"&gt;
+&lt;div id="outline-container-orgbdca278" class="outline-3"&gt;
+&lt;h3 id="orgbdca278"&gt;start emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbdca278"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user start emacs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org13bfa4e" class="outline-3"&gt;
-&lt;h3 id="org13bfa4e"&gt;emacs.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org13bfa4e"&gt;
+&lt;div id="outline-container-org9f37ce8" class="outline-3"&gt;
+&lt;h3 id="org9f37ce8"&gt;emacs.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9f37ce8"&gt;
 &lt;p&gt;
 還是要設定一下 emacs.service.
 &lt;/p&gt;
@@ -30,9 +30,9 @@ emacs version 26.1 systemd support
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1bfe0a4" class="outline-4"&gt;
-&lt;h4 id="org1bfe0a4"&gt;中文輸入法&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org1bfe0a4"&gt;
+&lt;div id="outline-container-org278196a" class="outline-4"&gt;
+&lt;h4 id="org278196a"&gt;中文輸入法&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org278196a"&gt;
 &lt;p&gt;
 在 &lt;code&gt;emacs.service&lt;/code&gt; 中加上以下指令，才能在 emacs 中使用 fcitx.
 &lt;/p&gt;
@@ -44,9 +44,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org43fb085" class="outline-4"&gt;
-&lt;h4 id="org43fb085"&gt;shell term&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org43fb085"&gt;
+&lt;div id="outline-container-orge53a84e" class="outline-4"&gt;
+&lt;h4 id="orge53a84e"&gt;shell term&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge53a84e"&gt;
 &lt;p&gt;
 設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
 &lt;/p&gt;
@@ -56,9 +56,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org88cb215" class="outline-4"&gt;
-&lt;h4 id="org88cb215"&gt;final emacs.service&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org88cb215"&gt;
+&lt;div id="outline-container-orgcfe202a" class="outline-4"&gt;
+&lt;h4 id="orgcfe202a"&gt;final emacs.service&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgcfe202a"&gt;
 &lt;p&gt;
 最後 emacs.service 的設定。
 &lt;/p&gt;
@@ -86,9 +86,9 @@ WantedBy=default.target
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1055629" class="outline-3"&gt;
-&lt;h3 id="org1055629"&gt;修改 init.el&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1055629"&gt;
+&lt;div id="outline-container-org6e502fc" class="outline-3"&gt;
+&lt;h3 id="org6e502fc"&gt;修改 init.el&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6e502fc"&gt;
 &lt;p&gt;
 package server is unnecessary. 可以刪除。
 &lt;/p&gt;
@@ -102,9 +102,9 @@ package server is unnecessary. 可以刪除。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3753c4f" class="outline-3"&gt;
-&lt;h3 id="org3753c4f"&gt;restart emacs via systemd&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3753c4f"&gt;
+&lt;div id="outline-container-org67942aa" class="outline-3"&gt;
+&lt;h3 id="org67942aa"&gt;restart emacs via systemd&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org67942aa"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemdctl --user restart emacs
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -122,9 +122,9 @@ Restart=on-failure
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orge6a492e" class="outline-2"&gt;
-&lt;h2 id="orge6a492e"&gt;結語&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge6a492e"&gt;
+&lt;div id="outline-container-org47fbb54" class="outline-2"&gt;
+&lt;h2 id="org47fbb54"&gt;結語&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org47fbb54"&gt;
 &lt;p&gt;
 emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 &lt;/div&gt;
@@ -132,13 +132,13 @@ emacs 26.1 支援 systemd 真的不錯。&lt;/p&gt;
 dired 真是好用，記錄我的使用流程
 &lt;/p&gt;
 
-&lt;div id="outline-container-org9d44874" class="outline-2"&gt;
-&lt;h2 id="org9d44874"&gt;dired basic&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9d44874"&gt;
+&lt;div id="outline-container-org7f7b88a" class="outline-2"&gt;
+&lt;h2 id="org7f7b88a"&gt;dired basic&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7f7b88a"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org3905c3b" class="outline-3"&gt;
-&lt;h3 id="org3905c3b"&gt;enter dired&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3905c3b"&gt;
+&lt;div id="outline-container-org865d05a" class="outline-3"&gt;
+&lt;h3 id="org865d05a"&gt;enter dired&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org865d05a"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x d &amp;lt;enter&amp;gt;&lt;/kbd&gt;
 &lt;kbd&gt;C-x C-f &amp;lt;enter&amp;gt;&lt;/kbd&gt;
@@ -146,18 +146,18 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org57b59a0" class="outline-3"&gt;
-&lt;h3 id="org57b59a0"&gt;exit dired&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org57b59a0"&gt;
+&lt;div id="outline-container-orgde4ecc6" class="outline-3"&gt;
+&lt;h3 id="orgde4ecc6"&gt;exit dired&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgde4ecc6"&gt;
 &lt;p&gt;
 &lt;kbd&gt;q&lt;/kbd&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgab22dd9" class="outline-3"&gt;
-&lt;h3 id="orgab22dd9"&gt;操作檔案&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgab22dd9"&gt;
+&lt;div id="outline-container-org41c0ec3" class="outline-3"&gt;
+&lt;h3 id="org41c0ec3"&gt;操作檔案&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org41c0ec3"&gt;
 &lt;p&gt;
 &lt;kbd&gt;d&lt;/kbd&gt;
 &lt;kbd&gt;m&lt;/kbd&gt; mark
@@ -172,9 +172,9 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgea72cfd" class="outline-3"&gt;
-&lt;h3 id="orgea72cfd"&gt;edit file name/mode like edit text&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgea72cfd"&gt;
+&lt;div id="outline-container-orgc14043a" class="outline-3"&gt;
+&lt;h3 id="orgc14043a"&gt;edit file name/mode like edit text&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc14043a"&gt;
 &lt;p&gt;
 &lt;kbd&gt;C-x C-q&lt;/kbd&gt;
 &lt;/p&gt;
@@ -183,27 +183,27 @@ dired 真是好用，記錄我的使用流程
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-orged0f56b" class="outline-2"&gt;
-&lt;h2 id="orged0f56b"&gt;顯示&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orged0f56b"&gt;
+&lt;div id="outline-container-orgfbe17d8" class="outline-2"&gt;
+&lt;h2 id="orgfbe17d8"&gt;顯示&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfbe17d8"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd906a25" class="outline-3"&gt;
-&lt;h3 id="orgd906a25"&gt;&lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
+&lt;div id="outline-container-orgb9967dc" class="outline-3"&gt;
+&lt;h3 id="orgb9967dc"&gt;&lt;kbd&gt;(&lt;/kbd&gt; 切換 hide detail 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd0901f4" class="outline-3"&gt;
-&lt;h3 id="orgd0901f4"&gt;&lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
+&lt;div id="outline-container-org514f576" class="outline-3"&gt;
+&lt;h3 id="org514f576"&gt;&lt;kbd&gt;)&lt;/kbd&gt; 切換 omit 模式&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgf3ca56e" class="outline-3"&gt;
-&lt;h3 id="orgf3ca56e"&gt;auto revert&lt;/h3&gt;
+&lt;div id="outline-container-org750eb95" class="outline-3"&gt;
+&lt;h3 id="org750eb95"&gt;auto revert&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6380321" class="outline-2"&gt;
-&lt;h2 id="org6380321"&gt;進階使用&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6380321"&gt;
+&lt;div id="outline-container-org78673e7" class="outline-2"&gt;
+&lt;h2 id="org78673e7"&gt;進階使用&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org78673e7"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgae2859b" class="outline-3"&gt;
-&lt;h3 id="orgae2859b"&gt;像 Norton command/Midnight commander 一/copy/move files like NC/MC&lt;/h3&gt;
+&lt;div id="outline-container-org3d519e9" class="outline-3"&gt;
+&lt;h3 id="org3d519e9"&gt;像 Norton command/Midnight commander 一/copy/move files like NC/MC&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>dired</category><category>emacs</category><guid>https://mariolong.github.io/posts/using-dired/</guid><pubDate>Sun, 10 Jun 2018 10:18:52 GMT</pubDate></item><item><title>rectange edit</title><link>https://mariolong.github.io/posts/rectangle-edit/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;p&gt;emacs 中有個矩形編輯功能。&lt;/p&gt;
 &lt;p&gt;以前在 PE2 時代就常用，到了 windows 時代後，就沒有用過，是因為 windows 的編輯器沒有提供這樣的功能，剛開始時還真的不習慣。

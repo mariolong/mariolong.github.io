@@ -76,13 +76,14 @@ server 0.pool.">
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-					
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">ntp 網路對時</a></h1>
 
@@ -110,45 +111,45 @@ server 0.pool.">
 <p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon">https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon</a></p>
 <div class="section" id="id1">
 <h2>安裝</h2>
-<pre class="code text"><a name="rest_code_1509cf09801a49a9971598ffbdfa342b-1"></a>yaourt -S ntp
+<pre class="code text"><a name="rest_code_2845824ee95b4e8d9a7756e72ff98b2c-1"></a>yaourt -S ntp
 </pre>
 </div>
 <div class="section" id="id2">
 <h2>配置</h2>
-<pre class="code text"><a name="rest_code_42d42a5672e34b358483fa2f44389d30-1"></a>sudo nano /etc/ntp.conf
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-2"></a>
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-3"></a># Associate to public NTP pool servers; see http://www.pool.ntp.org/
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-4"></a>server 0.pool.ntp.org iburst
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-5"></a>server 1.pool.ntp.org iburst
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-6"></a>server 2.pool.ntp.org iburst
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-7"></a>server 3.pool.ntp.org iburst
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-8"></a>
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-9"></a># Only allow read-only access from localhost
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-10"></a>#restrict default noquery nopeer
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-11"></a>#restrict 127.0.0.1
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-12"></a>#restrict ::1
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-13"></a>
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-14"></a># Location of drift file
-<a name="rest_code_42d42a5672e34b358483fa2f44389d30-15"></a>driftfile /var/lib/ntp/ntp.drift
+<pre class="code text"><a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-1"></a>sudo nano /etc/ntp.conf
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-2"></a>
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-3"></a># Associate to public NTP pool servers; see http://www.pool.ntp.org/
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-4"></a>server 0.pool.ntp.org iburst
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-5"></a>server 1.pool.ntp.org iburst
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-6"></a>server 2.pool.ntp.org iburst
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-7"></a>server 3.pool.ntp.org iburst
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-8"></a>
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-9"></a># Only allow read-only access from localhost
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-10"></a>#restrict default noquery nopeer
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-11"></a>#restrict 127.0.0.1
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-12"></a>#restrict ::1
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-13"></a>
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-14"></a># Location of drift file
+<a name="rest_code_126cb00bb91b47349224c16faa8b7ff8-15"></a>driftfile /var/lib/ntp/ntp.drift
 </pre>
 <p>Write a oneshot systemd unit:</p>
-<pre class="code text"><a name="rest_code_6dc8eb08332a433199f963fac680895b-1"></a>sudo nano /etc/systemd/system/ntp-once.service
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-2"></a>
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-3"></a>[Unit]
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-4"></a>Description=Network Time Service (once)
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-5"></a>After=network.target nss-lookup.target
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-6"></a>
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-7"></a>[Service]
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-8"></a>Type=oneshot
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-9"></a>ExecStart=/usr/bin/ntpd -g -u ntp:ntp ; /usr/bin/hwclock -w
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-10"></a>
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-11"></a>[Install]
-<a name="rest_code_6dc8eb08332a433199f963fac680895b-12"></a>WantedBy=multi-user.target
+<pre class="code text"><a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-1"></a>sudo nano /etc/systemd/system/ntp-once.service
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-2"></a>
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-3"></a>[Unit]
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-4"></a>Description=Network Time Service (once)
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-5"></a>After=network.target nss-lookup.target
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-6"></a>
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-7"></a>[Service]
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-8"></a>Type=oneshot
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-9"></a>ExecStart=/usr/bin/ntpd -g -u ntp:ntp ; /usr/bin/hwclock -w
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-10"></a>
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-11"></a>[Install]
+<a name="rest_code_af9b0eda65a24cf88f32cbef4ca5afc9-12"></a>WantedBy=multi-user.target
 </pre>
 </div>
 <div class="section" id="id3">
 <h2>啟動</h2>
-<pre class="code text"><a name="rest_code_5ee2ef0b7d8749b6ac3aad74e728fd2e-1"></a>sudo systemctl enable ntp-once
+<pre class="code text"><a name="rest_code_15944a1d89c64f1496bf359af5908726-1"></a>sudo systemctl enable ntp-once
 </pre>
 </div>
 <div class="section" id="install">
@@ -218,17 +219,19 @@ unable to bind to wildcard address 0.0.0.0 - another process may be running - EX
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>

@@ -76,13 +76,14 @@ convert M2TS to avi for concat
 		</div>
 	</div>
 	<!-- End of Menubar -->
-	<div class="yue">
-		<div class="container-fluid" id="content" role="main">
+
+	<div class="container-fluid" id="content" role="main">
 		<!--Body content-->
-			<div class="row-fluid">
-				<div class="span2"></div>
-				<div class="span8">
-					
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span8">
+				
+				<div class="yue">
 					
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">M2TS to mp4 via ffmpeg</a></h1>
 
@@ -111,25 +112,25 @@ convert M2TS to avi for concat
 <div class="section" id="split">
 <h2>split</h2>
 <p>先將不要的片段切掉</p>
-<pre class="code text"><a name="rest_code_6477366f2a1e4d44aa8c1af3ccdfa5fa-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
-<a name="rest_code_6477366f2a1e4d44aa8c1af3ccdfa5fa-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
+<pre class="code text"><a name="rest_code_c2d59e090ec3411684e8131458b87ca6-1"></a>ffmpeg -i a.m2ts -c copy -ss 1 -t 10 at.m2ts
+<a name="rest_code_c2d59e090ec3411684e8131458b87ca6-2"></a>ffmpeg -i a.m2ts -c copy -ss 15 -t 20 bt.m2ts
 </pre>
 </div>
 <div class="section" id="convert-m2ts-to-avi-for-concat">
 <h2>convert M2TS to avi for concat</h2>
 <p>轉換成 avi 再 concat 的原因是，直接 concat M2TS 時，在交接的地方會很奇怪，
 有一個 frame 會交錯，影片會跳一下。</p>
-<pre class="code text"><a name="rest_code_0dcced0fd2d64424893de762c59a0317-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
-<a name="rest_code_0dcced0fd2d64424893de762c59a0317-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
+<pre class="code text"><a name="rest_code_f2c5bf1e557741abac6984099403b706-1"></a>ffmpeg -i at.m2ts -q 0 at.avi
+<a name="rest_code_f2c5bf1e557741abac6984099403b706-2"></a>ffmpeg -i bt.m2ts -q 0 bt.avi
 </pre>
 </div>
 <div class="section" id="id1">
 <h2>合併</h2>
 <p>將剛轉好的 avi 檔合併起來，至少有以下 2 種指令可用。</p>
-<pre class="code text"><a name="rest_code_e55f2bd24d1d4062b0fa1a665f2f37c6-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_2dc4b8978a4f4692b57dcf43572d2950-1"></a>ffmpeg -i "concat:at.avi|bt.avi" -vpre ipod ab.mp4
 </pre>
 <p>或</p>
-<pre class="code text"><a name="rest_code_9032b91abf984b44a659924e698f1b8c-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
+<pre class="code text"><a name="rest_code_aca4d36b0f464e3492fa8888383a97a1-1"></a>cat [ab]t.avi | ffmpeg -i - -vpre ipod ab.mp4
 </pre>
 </div>
 </div>
@@ -169,17 +170,19 @@ convert M2TS to avi for concat
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 			</div>
-			<!--End of body content-->
 		</div>
-		<div class="footerbox">
-			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-			
-		</div>
+		<!--End of body content-->
+	</div>
+
+	<div class="footerbox">
+		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
 		
+	</div>
+
+	
             <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-			moment.locale("zh-tw");
-			fancydates(0, "YYYY-MM-DD HH:mm");
-		</script><!-- end fancy dates -->
-</div>
+		moment.locale("zh-tw");
+		fancydates(0, "YYYY-MM-DD HH:mm");
+	</script><!-- end fancy dates -->
 </body>
 </html>
