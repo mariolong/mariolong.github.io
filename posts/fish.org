@@ -12,10 +12,11 @@
 #+OPTIONS: num:nil toc:nil ^:{}
 #+LANGUAGE: zh-TW
 
-* [[https://codeyarns.com/2015/05/29/directory-history-in-the-fish-shell/][Directory history in the Fish shell]]
+參考 [[https://codeyarns.com/2015/05/29/directory-history-in-the-fish-shell/][Directory history in the Fish shell]]
 
+按 =Alt-Left/Right= 直接到上／下目錄
+
+命令列輸入：
 - ~dirh~ : 目錄歷史
 - ~prevd~ : 到前一目錄
 - ~nextd~ : 到後一目錄
-
-按 =Alt-Left/Right= 直接到上／下目錄
