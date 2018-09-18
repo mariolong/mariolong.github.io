@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh_tw">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Install ghcjs for ghc 8.4.3 on archlinux | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/install-ghcjs-archlinux/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
@@ -37,63 +40,61 @@ add this step: git checkout ghc">
 <meta property="article:tag" content="linux">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
 
-	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://mariolong.github.io/">
 
-	<!-- Menubar -->
-
-	<div class="navbar navbar-static-top" id="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-
-				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-
-				<a class="brand" href="https://mariolong.github.io/">
-
-						<span id="blog-title">Simple Life</span>
-				</a>
-
-				<!-- Everything you want hidden at 940px or less, place within here -->
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-<li>
-<a href="../../categories/cat_computer/">電腦</a>
-                </li>
-<li>
-<a href="../../categories/cat_investment/">投資</a>
-                </li>
-<li>
-<a href="../../categories/cat_life/">生活</a>
-                </li>
-<li>
-<a href="../../archive.html">歸檔</a>
-                </li>
-<li>
-<a href="../../rss.xml">訂閱</a>
-
-						
-					</li>
-</ul>
-<ul class="nav pull-right"></ul>
+            <span id="blog-title">Simple Life</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
 </div>
-			</div>
-		</div>
-	</div>
-	<!-- End of Menubar -->
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../categories/cat_computer/" class="nav-link">電腦</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_investment/" class="nav-link">投資</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_life/" class="nav-link">生活</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">歸檔</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">訂閱</a>
 
-	<div class="container-fluid" id="content" role="main">
-		<!--Body content-->
-		<div class="row-fluid">
-			<div class="span2"></div>
-			<div class="span8">
-				
-				<div class="yue">
-					
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+
+        <!--Body content-->
+        
+		<div class="yue">
+			
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Install ghcjs for ghc 8.4.3 on archlinux</a></h1>
 
         <div class="metadata">
@@ -120,17 +121,17 @@ add this step: git checkout ghc">
 The Glorious Glasgow Haskell Compilation System, version <span class="m">8</span>.4.3
 </pre></div>
 
-<div id="outline-container-org6ffe2e8" class="outline-2">
-<h2 id="org6ffe2e8">Install</h2>
-<div class="outline-text-2" id="text-org6ffe2e8">
+<div id="outline-container-org3a5df51" class="outline-2">
+<h2 id="org3a5df51">Install</h2>
+<div class="outline-text-2" id="text-org3a5df51">
 <p>
 參考 <a href="https://github.com/ghcjs/ghcjs/tree/ghc-8.4">GitHub - ghcjs/ghcjs at ghc-8.4</a>
 </p>
 </div>
 
-<div id="outline-container-org0752ffd" class="outline-3">
-<h3 id="org0752ffd">getting and preparing the source tree</h3>
-<div class="outline-text-3" id="text-org0752ffd">
+<div id="outline-container-org36b84e1" class="outline-3">
+<h3 id="org36b84e1">getting and preparing the source tree</h3>
+<div class="outline-text-3" id="text-org36b84e1">
 <p>
 add this step: <code>git checkout ghc-8.4</code>
 </p>
@@ -144,17 +145,17 @@ git submodule update --init --recursive
 </div>
 </div>
 
-<div id="outline-container-org09ead21" class="outline-3">
-<h3 id="org09ead21">building the compiler</h3>
-<div class="outline-text-3" id="text-org09ead21">
+<div id="outline-container-org968f8e8" class="outline-3">
+<h3 id="org968f8e8">building the compiler</h3>
+<div class="outline-text-3" id="text-org968f8e8">
 <p>
 You can use <code>cabal-install</code> <b>and</b> <code>stack</code> to set up a build environment that contains these packages.
 </p>
 </div>
 
-<div id="outline-container-org7769215" class="outline-4">
-<h4 id="org7769215">install cabal</h4>
-<div class="outline-text-4" id="text-org7769215">
+<div id="outline-container-org3fcd368" class="outline-4">
+<h4 id="org3fcd368">install cabal</h4>
+<div class="outline-text-4" id="text-org3fcd368">
 <p>
 because GHCJS need cabal, so install it.
 </p>
@@ -165,19 +166,19 @@ cabal update
 </div>
 </div>
 
-<div id="outline-container-org3ccd344" class="outline-4">
-<h4 id="org3ccd344">Cabal new-build (x)</h4>
-<div class="outline-text-4" id="text-org3ccd344">
+<div id="outline-container-org71e8941" class="outline-4">
+<h4 id="org71e8941">Cabal new-build (x)</h4>
+<div class="outline-text-4" id="text-org71e8941">
 <div class="highlight"><pre><span></span>cabal new-configure
 cabal new-build
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orga3b902e" class="outline-4">
-<h4 id="orga3b902e">link to executables (x) <a id="org1f0eb0f"></a>
+<div id="outline-container-org1c8f25e" class="outline-4">
+<h4 id="org1c8f25e">link to executables (x) <a id="org25d540a"></a>
 </h4>
-<div class="outline-text-4" id="text-orga3b902e">
+<div class="outline-text-4" id="text-org1c8f25e">
 <p>
 <b>DON'T DO THIS, IT IS NOT NECESSARY</b>
 </p>
@@ -203,20 +204,20 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 </div>
 </div>
 
-<div id="outline-container-orgeffb65b" class="outline-4">
-<h4 id="orgeffb65b">stack</h4>
-<div class="outline-text-4" id="text-orgeffb65b">
+<div id="outline-container-orgedf975d" class="outline-4">
+<h4 id="orgedf975d">stack</h4>
+<div class="outline-text-4" id="text-orgedf975d">
 </div>
 <ul class="org-ul">
 <li>
-<a id="org3fe8088"></a>DO THIS<br><div class="outline-text-5" id="text-org3fe8088">
+<a id="orgb539980"></a>DO THIS<br><div class="outline-text-5" id="text-orgb539980">
 <div class="highlight"><pre><span></span>stack install
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="org287e93a"></a>DON'T DO THIS (x)<br><div class="outline-text-5" id="text-org287e93a">
+<a id="org7e20ea1"></a>DON'T DO THIS (x)<br><div class="outline-text-5" id="text-org7e20ea1">
 <div class="highlight"><pre><span></span>stack build
 </pre></div>
 </div>
@@ -224,9 +225,9 @@ ln -s ../utils/dist-newstyle-wrapper.sh ghcjs-run
 </ul>
 </div>
 
-<div id="outline-container-orge1c9d06" class="outline-4">
-<h4 id="orge1c9d06">install haddock (x)</h4>
-<div class="outline-text-4" id="text-orge1c9d06">
+<div id="outline-container-org00f2bdf" class="outline-4">
+<h4 id="org00f2bdf">install haddock (x)</h4>
+<div class="outline-text-4" id="text-org00f2bdf">
 <p>
 when run ghcjs-boot, it will display following error message:
 </p>
@@ -238,7 +239,7 @@ when run ghcjs-boot, it will display following error message:
 <p>
 I have no idea to solve this problem after execute following
 statements. My decision is ignoring above error message and don't execute
-section <a href="#org1f0eb0f">"link to executables"</a>. Re-install GHCJS again.
+section <a href="#org25d540a">"link to executables"</a>. Re-install GHCJS again.
 </p>
 
 <div class="highlight"><pre><span></span>cabal install haddock
@@ -249,9 +250,9 @@ stack haddock
 </div>
 </div>
 
-<div id="outline-container-org7ca63ed" class="outline-3">
-<h3 id="org7ca63ed">Booting GHCJS</h3>
-<div class="outline-text-3" id="text-org7ca63ed">
+<div id="outline-container-org5676f56" class="outline-3">
+<h3 id="org5676f56">Booting GHCJS</h3>
+<div class="outline-text-3" id="text-org5676f56">
 <div class="highlight"><pre><span></span>ghcjs-boot
 </pre></div>
 
@@ -264,9 +265,9 @@ the <code>makePackages.sh</code> script and included in a source distribution).
 </div>
 </div>
 
-<div id="outline-container-orgab902d8" class="outline-3">
-<h3 id="orgab902d8">Test</h3>
-<div class="outline-text-3" id="text-orgab902d8">
+<div id="outline-container-orgf94bbd2" class="outline-3">
+<h3 id="orgf94bbd2">Test</h3>
+<div class="outline-text-3" id="text-orgf94bbd2">
 <div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="s1">'main = putStrLn "Hello World!"'</span> &gt; helloWorld.hs
 $ stack <span class="nb">exec</span> -- ghcjs -o helloWorld helloWorld.hs
 $ node helloWorld.jsexe/all.js
@@ -285,9 +286,9 @@ But these steps are work for me to install ghcjs with ghc-8.4.3
 </div>
 </div>
 
-<div id="outline-container-orgfcbc4e0" class="outline-2">
-<h2 id="orgfcbc4e0">參考 <a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html">Peachful Space - ghcjs on Arch Linux</a> 和以下指令：(FAIL)</h2>
-<div class="outline-text-2" id="text-orgfcbc4e0">
+<div id="outline-container-orgc7cf9ee" class="outline-2">
+<h2 id="orgc7cf9ee">參考 <a href="http://www.peachful.space/posts/ghcjs-on-arch-linux.html">Peachful Space - ghcjs on Arch Linux</a> 和以下指令：(FAIL)</h2>
+<div class="outline-text-2" id="text-orgc7cf9ee">
 <p>
 this is not work.
 </p>
@@ -357,20 +358,26 @@ Hello world!
 
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
-			</div>
-		</div>
 		<!--End of body content-->
-	</div>
 
-	<div class="footerbox">
-		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-		
-	</div>
 
-	
-            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-		moment.locale("zh-tw");
-		fancydates(0, "YYYY-MM-DD HH:mm");
-	</script><!-- end fancy dates -->
+		<footer id="footer">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-tw");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 </body>
 </html>

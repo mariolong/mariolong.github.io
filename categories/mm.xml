@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mm)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mm.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:58:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>mm=mpv+feh</title><link>https://mariolong.github.io/posts/mm-mpv-feh/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：mm)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/mm.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 06:49:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>mm=mpv+feh</title><link>https://mariolong.github.io/posts/mm-mpv-feh/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 用全螢幕幻燈片模式播放照片：
 &lt;/p&gt;
 
@@ -10,13 +10,13 @@
 單純播放照片和影片記錄而已
 &lt;/p&gt;
 
-&lt;div id="outline-container-org01b2c1d" class="outline-2"&gt;
-&lt;h2 id="org01b2c1d"&gt;mpv&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org01b2c1d"&gt;
+&lt;div id="outline-container-org93a3fa9" class="outline-2"&gt;
+&lt;h2 id="org93a3fa9"&gt;mpv&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org93a3fa9"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org720d880" class="outline-3"&gt;
-&lt;h3 id="org720d880"&gt;keyboard control&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org720d880"&gt;
+&lt;div id="outline-container-org20fd196" class="outline-3"&gt;
+&lt;h3 id="org20fd196"&gt;keyboard control&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org20fd196"&gt;
 &lt;dl class="org-dl"&gt;
 &lt;dt&gt;LEFT and RIGHT&lt;/dt&gt;&lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;
@@ -279,21 +279,21 @@ If you miss some older key bindings, look at etc/restore-old-bindings.conf in th
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org0dcf192" class="outline-2"&gt;
-&lt;h2 id="org0dcf192"&gt;feh&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0dcf192"&gt;
+&lt;div id="outline-container-orgf029387" class="outline-2"&gt;
+&lt;h2 id="orgf029387"&gt;feh&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf029387"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org6d7839a" class="outline-3"&gt;
-&lt;h3 id="org6d7839a"&gt;install&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6d7839a"&gt;
+&lt;div id="outline-container-org7d037f4" class="outline-3"&gt;
+&lt;h3 id="org7d037f4"&gt;install&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7d037f4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S feh xorg-xev
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc8ccb72" class="outline-3"&gt;
-&lt;h3 id="orgc8ccb72"&gt;keyborad control&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc8ccb72"&gt;
+&lt;div id="outline-container-org69d9bde" class="outline-3"&gt;
+&lt;h3 id="org69d9bde"&gt;keyborad control&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org69d9bde"&gt;
 &lt;p&gt;
 配置檔位於 &lt;code&gt;~/.config/feh/keys&lt;/code&gt;
 &lt;/p&gt;

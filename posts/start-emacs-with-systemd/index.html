@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh_tw">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Start emacs with systemd | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/start-emacs-with-systemd/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
@@ -43,63 +46,61 @@ emacs.service
 <meta property="article:tag" content="systemd">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
 
-	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://mariolong.github.io/">
 
-	<!-- Menubar -->
-
-	<div class="navbar navbar-static-top" id="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-
-				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-
-				<a class="brand" href="https://mariolong.github.io/">
-
-						<span id="blog-title">Simple Life</span>
-				</a>
-
-				<!-- Everything you want hidden at 940px or less, place within here -->
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-<li>
-<a href="../../categories/cat_computer/">電腦</a>
-                </li>
-<li>
-<a href="../../categories/cat_investment/">投資</a>
-                </li>
-<li>
-<a href="../../categories/cat_life/">生活</a>
-                </li>
-<li>
-<a href="../../archive.html">歸檔</a>
-                </li>
-<li>
-<a href="../../rss.xml">訂閱</a>
-
-						
-					</li>
-</ul>
-<ul class="nav pull-right"></ul>
+            <span id="blog-title">Simple Life</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
 </div>
-			</div>
-		</div>
-	</div>
-	<!-- End of Menubar -->
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../categories/cat_computer/" class="nav-link">電腦</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_investment/" class="nav-link">投資</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_life/" class="nav-link">生活</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">歸檔</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">訂閱</a>
 
-	<div class="container-fluid" id="content" role="main">
-		<!--Body content-->
-		<div class="row-fluid">
-			<div class="span2"></div>
-			<div class="span8">
-				
-				<div class="yue">
-					
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+
+        <!--Body content-->
+        
+		<div class="yue">
+			
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Start emacs with systemd</a></h1>
 
         <div class="metadata">
@@ -126,21 +127,21 @@ emacs.service
 emacs version 26.1 systemd support
 </p>
 
-<div id="outline-container-orgae40f8b" class="outline-2">
-<h2 id="orgae40f8b">設定</h2>
-<div class="outline-text-2" id="text-orgae40f8b">
+<div id="outline-container-org94fdac0" class="outline-2">
+<h2 id="org94fdac0">設定</h2>
+<div class="outline-text-2" id="text-org94fdac0">
 </div>
-<div id="outline-container-orgb12957b" class="outline-3">
-<h3 id="orgb12957b">start emacs via systemd</h3>
-<div class="outline-text-3" id="text-orgb12957b">
+<div id="outline-container-org3d30991" class="outline-3">
+<h3 id="org3d30991">start emacs via systemd</h3>
+<div class="outline-text-3" id="text-org3d30991">
 <div class="highlight"><pre><span></span>systemdctl --user start emacs
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orgc462593" class="outline-3">
-<h3 id="orgc462593">emacs.service</h3>
-<div class="outline-text-3" id="text-orgc462593">
+<div id="outline-container-org0125f30" class="outline-3">
+<h3 id="org0125f30">emacs.service</h3>
+<div class="outline-text-3" id="text-org0125f30">
 <p>
 還是要設定一下 emacs.service.
 </p>
@@ -153,9 +154,9 @@ emacs version 26.1 systemd support
 </pre></div>
 </div>
 
-<div id="outline-container-org25abdac" class="outline-4">
-<h4 id="org25abdac">中文輸入法</h4>
-<div class="outline-text-4" id="text-org25abdac">
+<div id="outline-container-org0b635ef" class="outline-4">
+<h4 id="org0b635ef">中文輸入法</h4>
+<div class="outline-text-4" id="text-org0b635ef">
 <p>
 在 <code>emacs.service</code> 中加上以下指令，才能在 emacs 中使用 fcitx.
 </p>
@@ -167,9 +168,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 </div>
 </div>
 
-<div id="outline-container-org184e26f" class="outline-4">
-<h4 id="org184e26f">shell term</h4>
-<div class="outline-text-4" id="text-org184e26f">
+<div id="outline-container-org5e6a97f" class="outline-4">
+<h4 id="org5e6a97f">shell term</h4>
+<div class="outline-text-4" id="text-org5e6a97f">
 <p>
 設定 path, 否則從 emacs 呼叫 term 時，可能會無法執行其它程式。
 </p>
@@ -179,9 +180,9 @@ Environment=GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS="@im=fcitx"
 </div>
 </div>
 
-<div id="outline-container-org00b9054" class="outline-4">
-<h4 id="org00b9054">final emacs.service</h4>
-<div class="outline-text-4" id="text-org00b9054">
+<div id="outline-container-orgf3b3bd0" class="outline-4">
+<h4 id="orgf3b3bd0">final emacs.service</h4>
+<div class="outline-text-4" id="text-orgf3b3bd0">
 <p>
 最後 emacs.service 的設定。
 </p>
@@ -209,9 +210,9 @@ WantedBy=default.target
 </div>
 </div>
 
-<div id="outline-container-orga7763fb" class="outline-3">
-<h3 id="orga7763fb">修改 init.el</h3>
-<div class="outline-text-3" id="text-orga7763fb">
+<div id="outline-container-org36bf9b2" class="outline-3">
+<h3 id="org36bf9b2">修改 init.el</h3>
+<div class="outline-text-3" id="text-org36bf9b2">
 <p>
 package server is unnecessary. 可以刪除。
 </p>
@@ -225,9 +226,9 @@ package server is unnecessary. 可以刪除。
 </div>
 </div>
 
-<div id="outline-container-orgd69a886" class="outline-3">
-<h3 id="orgd69a886">restart emacs via systemd</h3>
-<div class="outline-text-3" id="text-orgd69a886">
+<div id="outline-container-org5ba2018" class="outline-3">
+<h3 id="org5ba2018">restart emacs via systemd</h3>
+<div class="outline-text-3" id="text-org5ba2018">
 <div class="highlight"><pre><span></span>systemdctl --user restart emacs
 </pre></div>
 
@@ -245,9 +246,9 @@ Restart=on-failure
 </div>
 </div>
 
-<div id="outline-container-org518ebee" class="outline-2">
-<h2 id="org518ebee">結語</h2>
-<div class="outline-text-2" id="text-org518ebee">
+<div id="outline-container-org04a9f7b" class="outline-2">
+<h2 id="org04a9f7b">結語</h2>
+<div class="outline-text-2" id="text-org04a9f7b">
 <p>
 emacs 26.1 支援 systemd 真的不錯。</p>
 </div>
@@ -288,20 +289,26 @@ emacs 26.1 支援 systemd 真的不錯。</p>
 
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
-			</div>
-		</div>
 		<!--End of body content-->
-	</div>
 
-	<div class="footerbox">
-		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-		
-	</div>
 
-	
-            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-		moment.locale("zh-tw");
-		fancydates(0, "YYYY-MM-DD HH:mm");
-	</script><!-- end fancy dates -->
+		<footer id="footer">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-tw");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 </body>
 </html>

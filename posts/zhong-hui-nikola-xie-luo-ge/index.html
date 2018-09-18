@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh_tw">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="writing blogger using by nikola again.">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>部落格，重回 nikola+org-mode | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="writing blogger using by nikola again.">
-<meta name="author" content="Mario Long">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
 <link rel="prev" href="../install-haskell-applications/" title="Install Haskell Applications" type="text/html">
 <link rel="next" href="../eat-fruit-as-empty-stomach/" title="【謠言】愛惜大腸，空腹吃水果" type="text/html">
 <meta property="og:site_name" content="Simple Life">
@@ -22,63 +24,61 @@
 <meta property="article:tag" content="nikola">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
 
-	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://mariolong.github.io/">
 
-	<!-- Menubar -->
-
-	<div class="navbar navbar-static-top" id="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-
-				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-
-				<a class="brand" href="https://mariolong.github.io/">
-
-						<span id="blog-title">Simple Life</span>
-				</a>
-
-				<!-- Everything you want hidden at 940px or less, place within here -->
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-<li>
-<a href="../../categories/cat_computer/">電腦</a>
-                </li>
-<li>
-<a href="../../categories/cat_investment/">投資</a>
-                </li>
-<li>
-<a href="../../categories/cat_life/">生活</a>
-                </li>
-<li>
-<a href="../../archive.html">歸檔</a>
-                </li>
-<li>
-<a href="../../rss.xml">訂閱</a>
-
-						
-					</li>
-</ul>
-<ul class="nav pull-right"></ul>
+            <span id="blog-title">Simple Life</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
 </div>
-			</div>
-		</div>
-	</div>
-	<!-- End of Menubar -->
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../categories/cat_computer/" class="nav-link">電腦</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_investment/" class="nav-link">投資</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_life/" class="nav-link">生活</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">歸檔</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">訂閱</a>
 
-	<div class="container-fluid" id="content" role="main">
-		<!--Body content-->
-		<div class="row-fluid">
-			<div class="span2"></div>
-			<div class="span8">
-				
-				<div class="yue">
-					
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+
+        <!--Body content-->
+        
+		<div class="yue">
+			
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">部落格，重回 nikola+org-mode</a></h1>
 
         <div class="metadata">
@@ -105,51 +105,51 @@
 <h2>目錄</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeef7a4a">1. 安裝</a></li>
+<li><a href="#org2c0650f">1. 安裝</a></li>
 <li>
-<a href="#org35ed4a2">2. 設定</a>
+<a href="#org7528742">2. 設定</a>
 <ul>
-<li><a href="#org4f14262">2.1. configuration file</a></li>
-<li><a href="#org780c890">2.2. theme</a></li>
+<li><a href="#org4179aca">2.1. configuration file</a></li>
+<li><a href="#orge6c0ff7">2.2. theme</a></li>
 <li>
-<a href="#orgf546821">2.3. 用 <code>nikola github_deploy</code> 快速發佈文章</a>
+<a href="#orgfe473b2">2.3. 用 <code>nikola github_deploy</code> 快速發佈文章</a>
 <ul>
-<li><a href="#org353bc99">2.3.1. 在 nikola github_deploy 之前</a></li>
+<li><a href="#org40e5cb2">2.3.1. 在 nikola github_deploy 之前</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#orgdf92f27">3. 用 org-mode 寫文章</a>
+<a href="#org8ec938c">3. 用 org-mode 寫文章</a>
 <ul>
 <li>
-<a href="#org20ec4fd">3.1. 修改 /orgmode/init.el</a>
+<a href="#org3003e56">3.1. 修改 /orgmode/init.el</a>
 <ul>
-<li><a href="#org6043fb3">3.1.1. 刪除不必要的空白</a></li>
-<li><a href="#orgef9590b">3.1.2. Convert inline verbatim to kbd when HTML export</a></li>
-<li><a href="#org8577773">3.1.3. 在 Inline verbatim and code 不要空白</a></li>
-<li><a href="#orged136c0">3.1.4. 用 pygment 幫程式碼著色</a></li>
+<li><a href="#orgcc916f3">3.1.1. 刪除不必要的空白</a></li>
+<li><a href="#org9559e5a">3.1.2. Convert inline verbatim to kbd when HTML export</a></li>
+<li><a href="#orgb74da2f">3.1.3. 在 Inline verbatim and code 不要空白</a></li>
+<li><a href="#org9b76652">3.1.4. 用 pygment 幫程式碼著色</a></li>
 </ul>
 </li>
 <li>
-<a href="#org3cc5973">3.2. 揷入圖片</a>
+<a href="#org26ce549">3.2. 揷入圖片</a>
 <ul>
-<li><a href="#org87e9a17">3.2.1. 利用 Google Drive 取得 Google Photos 的照片</a></li>
+<li><a href="#orgae8b859">3.2.1. 利用 Google Drive 取得 Google Photos 的照片</a></li>
 </ul>
 </li>
-<li><a href="#orgd282a0f">3.3. 圖片連結 (Image URLs)</a></li>
+<li><a href="#orgf98624c">3.3. 圖片連結 (Image URLs)</a></li>
 <li>
-<a href="#orgb9cce79">3.4. plain list</a>
+<a href="#orgad1b017">3.4. plain list</a>
 <ul>
-<li><a href="#org05ce954">3.4.1. Lord of the Rings</a></li>
+<li><a href="#org7736539">3.4.1. Lord of the Rings</a></li>
 </ul>
 </li>
-<li><a href="#org6c5480b">3.5. Subscripts and superscripts</a></li>
-<li><a href="#org9f6f498">3.6. Teasers</a></li>
-<li><a href="#org17f48be">3.7. text block</a></li>
+<li><a href="#org11433e6">3.5. Subscripts and superscripts</a></li>
+<li><a href="#orgf0aa967">3.6. Teasers</a></li>
+<li><a href="#org91dc26d">3.7. text block</a></li>
 </ul>
 </li>
-<li><a href="#org79dda35">4. 開始使用</a></li>
+<li><a href="#orgb9aa2e8">4. 開始使用</a></li>
 </ul>
 </div>
 </div>
@@ -157,8 +157,8 @@
 掙扎了許久，還是先用 <a href="https://getnikola.com/">nikola</a> 記錄一些事，畢竟比較熟悉，能快一點上手。
 </p>
 <!-- TEASER_END -->
-<div id="outline-container-orgeef7a4a" class="outline-2">
-<h2 id="orgeef7a4a">
+<div id="outline-container-org2c0650f" class="outline-2">
+<h2 id="org2c0650f">
 <span class="section-number-2">1</span> 安裝</h2>
 <div class="outline-text-2" id="text-1">
 <div class="highlight"><pre><span></span>sudo pip install nikola webassets ghp_import
@@ -170,8 +170,8 @@
 </div>
 </div>
 
-<div id="outline-container-org35ed4a2" class="outline-2">
-<h2 id="org35ed4a2">
+<div id="outline-container-org7528742" class="outline-2">
+<h2 id="org7528742">
 <span class="section-number-2">2</span> 設定</h2>
 <div class="outline-text-2" id="text-2">
 <p>
@@ -183,8 +183,8 @@
 </pre></div>
 </div>
 
-<div id="outline-container-org4f14262" class="outline-3">
-<h3 id="org4f14262">
+<div id="outline-container-org4179aca" class="outline-3">
+<h3 id="org4179aca">
 <span class="section-number-3">2.1</span> configuration file</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
@@ -193,8 +193,8 @@
 </div>
 </div>
 
-<div id="outline-container-org780c890" class="outline-3">
-<h3 id="org780c890">
+<div id="outline-container-orge6c0ff7" class="outline-3">
+<h3 id="orge6c0ff7">
 <span class="section-number-3">2.2</span> theme</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="highlight"><pre><span></span>nikola theme -l
@@ -203,8 +203,8 @@ nikola theme install &lt;theme-name&gt;
 </div>
 </div>
 
-<div id="outline-container-orgf546821" class="outline-3">
-<h3 id="orgf546821">
+<div id="outline-container-orgfe473b2" class="outline-3">
+<h3 id="orgfe473b2">
 <span class="section-number-3">2.3</span> 用 <code>nikola github_deploy</code> 快速發佈文章</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
@@ -278,8 +278,8 @@ within a few minutes.</li>
 </ol>
 </div>
 
-<div id="outline-container-org353bc99" class="outline-4">
-<h4 id="org353bc99">
+<div id="outline-container-org40e5cb2" class="outline-4">
+<h4 id="org40e5cb2">
 <span class="section-number-4">2.3.1</span> 在 nikola github_deploy 之前</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
@@ -289,14 +289,14 @@ within a few minutes.</li>
 
 <ol class="org-ol">
 <li>
-<a id="org03d12cf"></a>install ghp_import2<br><div class="outline-text-5" id="text-2-3-1-1">
+<a id="orgd877fe7"></a>install ghp_import2<br><div class="outline-text-5" id="text-2-3-1-1">
 <div class="highlight"><pre><span></span>sudo pip install ghp_import2
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="orgb42f0b7"></a>install and setup ssh<br><div class="outline-text-5" id="text-2-3-1-2">
+<a id="org064a367"></a>install and setup ssh<br><div class="outline-text-5" id="text-2-3-1-2">
 <p>
 為了不必一直重覆輸入 github 的帳密，可用 ssh 解決。
 </p>
@@ -304,14 +304,14 @@ within a few minutes.</li>
 
 <ol class="org-ol">
 <li>
-<a id="org5ee5905"></a>install openssh<br><div class="outline-text-6" id="text-2-3-1-2-1">
+<a id="orgfa79d3f"></a>install openssh<br><div class="outline-text-6" id="text-2-3-1-2-1">
 <div class="highlight"><pre><span></span>yaourt -S openssh
 </pre></div>
 </div>
 </li>
 
 <li>
-<a id="orga0fa37b"></a>follow github help page to add ssh connect to github<br><div class="outline-text-6" id="text-2-3-1-2-2">
+<a id="org36644eb"></a>follow github help page to add ssh connect to github<br><div class="outline-text-6" id="text-2-3-1-2-2">
 <p>
 參考了以下文章設定 SSH：
 </p>
@@ -346,7 +346,7 @@ b. 將 ssh key 加到 github 中依 <a href="https://help.github.com/articles/ad
 </li>
 
 <li>
-<a id="orgc2ec13e"></a>確定以 ssh 連上 github (不能是 https 型式)<br><div class="outline-text-5" id="text-2-3-1-3">
+<a id="org4b159db"></a>確定以 ssh 連上 github (不能是 https 型式)<br><div class="outline-text-5" id="text-2-3-1-3">
 <div class="highlight"><pre><span></span>$ git remote -v
 origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>fetch<span class="o">)</span>
 origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>push<span class="o">)</span>
@@ -365,8 +365,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </div>
 </div>
 
-<div id="outline-container-orgdf92f27" class="outline-2">
-<h2 id="orgdf92f27">
+<div id="outline-container-org8ec938c" class="outline-2">
+<h2 id="org8ec938c">
 <span class="section-number-2">3</span> 用 org-mode 寫文章</h2>
 <div class="outline-text-2" id="text-3">
 <p>
@@ -377,8 +377,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </pre></div>
 </div>
 
-<div id="outline-container-org20ec4fd" class="outline-3">
-<h3 id="org20ec4fd">
+<div id="outline-container-org3003e56" class="outline-3">
+<h3 id="org3003e56">
 <span class="section-number-3">3.1</span> 修改 /orgmode/init.el</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
@@ -386,8 +386,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </p>
 </div>
 
-<div id="outline-container-org6043fb3" class="outline-4">
-<h4 id="org6043fb3">
+<div id="outline-container-orgcc916f3" class="outline-4">
+<h4 id="orgcc916f3">
 <span class="section-number-4">3.1.1</span> 刪除不必要的空白</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <p>
@@ -411,8 +411,8 @@ origin  git@github.com:mariolong/mariolong.github.io <span class="o">(</span>pus
 </div>
 </div>
 
-<div id="outline-container-orgef9590b" class="outline-4">
-<h4 id="orgef9590b">
+<div id="outline-container-org9559e5a" class="outline-4">
+<h4 id="org9559e5a">
 <span class="section-number-4">3.1.2</span> Convert inline verbatim to kbd when HTML export</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <p>
@@ -438,8 +438,8 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </div>
 </div>
 
-<div id="outline-container-org8577773" class="outline-4">
-<h4 id="org8577773">
+<div id="outline-container-orgb74da2f" class="outline-4">
+<h4 id="orgb74da2f">
 <span class="section-number-4">3.1.3</span> 在 Inline verbatim and code 不要空白</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <p>
@@ -515,14 +515,14 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </div>
 </div>
 
-<div id="outline-container-orged136c0" class="outline-4">
-<h4 id="orged136c0">
+<div id="outline-container-org9b76652" class="outline-4">
+<h4 id="org9b76652">
 <span class="section-number-4">3.1.4</span> 用 pygment 幫程式碼著色</h4>
 <div class="outline-text-4" id="text-3-1-4">
 </div>
 <ol class="org-ol">
 <li>
-<a id="orgd3c89bc"></a>如果不想以 pygments 高亮程式碼<br><div class="outline-text-5" id="text-3-1-4-1">
+<a id="org5d64c48"></a>如果不想以 pygments 高亮程式碼<br><div class="outline-text-5" id="text-3-1-4-1">
 <p>
 在 <code>init.el</code> 設定 <code>nikola-use-pygments</code> 為 <code>nil</code>.
 </p>
@@ -532,7 +532,7 @@ change <kbd>verbatim</kbd> to <kbd>kbd</kbd>
 </li>
 
 <li>
-<a id="org5bce2ef"></a>產生 pygments.css<br><div class="outline-text-5" id="text-3-1-4-2">
+<a id="orge7c017f"></a>產生 pygments.css<br><div class="outline-text-5" id="text-3-1-4-2">
 <div class="highlight"><pre><span></span>$ <span class="nb">cd</span> themes/your-theme-name/assets/css
 $ pygmentize -S default -a .highlight -f html &gt; pygments.css
 </pre></div>
@@ -540,7 +540,7 @@ $ pygmentize -S default -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="orgcd8c274"></a>設定 pygments 可支援的語言<br><div class="outline-text-5" id="text-3-1-4-3">
+<a id="org3774007"></a>設定 pygments 可支援的語言<br><div class="outline-text-5" id="text-3-1-4-3">
 <p>
 我目前加上 ini, systemd, shell.
 可參考 <a href="http://orgmode.org/worg/org-contrib/babel/languages.html">Babel: Languages</a> 和 <a href="http://pygments.org/docs/lexers/">Available lexers — Pygments</a> 增減。
@@ -562,7 +562,7 @@ $ pygmentize -S default -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="org320aa13"></a>程式碼縮排<br><div class="outline-text-5" id="text-3-1-4-4">
+<a id="orgf2d4d03"></a>程式碼縮排<br><div class="outline-text-5" id="text-3-1-4-4">
 <p>
 如果要保留整體縮排，加上：
 </p>
@@ -577,7 +577,7 @@ $ pygmentize -S default -a .highlight -f html &gt; pygments.css
 </li>
 
 <li>
-<a id="orgacfd8b5"></a>如果不想用 pygments<br><div class="outline-text-5" id="text-3-1-4-5">
+<a id="orgcfbf759"></a>如果不想用 pygments<br><div class="outline-text-5" id="text-3-1-4-5">
 <p>
 其實我根本不想用 pygments，只想用內定的高亮型式。於是找到 <code>init.el</code> 把 <code>org-html-src-block</code> 函數刪掉。
 </p>
@@ -598,8 +598,8 @@ $ pygmentize -S default -a .highlight -f html &gt; pygments.css
 </div>
 </div>
 
-<div id="outline-container-org3cc5973" class="outline-3">
-<h3 id="org3cc5973">
+<div id="outline-container-org26ce549" class="outline-3">
+<h3 id="org26ce549">
 <span class="section-number-3">3.2</span> 揷入圖片</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
@@ -607,8 +607,8 @@ $ pygmentize -S default -a .highlight -f html &gt; pygments.css
 </p>
 </div>
 
-<div id="outline-container-org87e9a17" class="outline-4">
-<h4 id="org87e9a17">
+<div id="outline-container-orgae8b859" class="outline-4">
+<h4 id="orgae8b859">
 <span class="section-number-4">3.2.1</span> 利用 Google Drive 取得 Google Photos 的照片</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
@@ -664,8 +664,8 @@ https://drive.google.com/open?id=1Ni5UkMIN5AcTNYj10YS5OcK6UnMCFlHm
 </div>
 </div>
 
-<div id="outline-container-orgd282a0f" class="outline-3">
-<h3 id="orgd282a0f">
+<div id="outline-container-orgf98624c" class="outline-3">
+<h3 id="orgf98624c">
 <span class="section-number-3">3.3</span> 圖片連結 (Image URLs)</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
@@ -691,13 +691,13 @@ In order to correctly generate image urls, you may write
 </div>
 </div>
 
-<div id="outline-container-orgb9cce79" class="outline-3">
-<h3 id="orgb9cce79">
+<div id="outline-container-orgad1b017" class="outline-3">
+<h3 id="orgad1b017">
 <span class="section-number-3">3.4</span> plain list</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org05ce954" class="outline-4">
-<h4 id="org05ce954">
+<div id="outline-container-org7736539" class="outline-4">
+<h4 id="org7736539">
 <span class="section-number-4">3.4.1</span> Lord of the Rings</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
@@ -738,8 +738,8 @@ him very well from his role as Mikey Walsh in The Goonies.
 </div>
 </div>
 
-<div id="outline-container-org6c5480b" class="outline-3">
-<h3 id="org6c5480b">
+<div id="outline-container-org11433e6" class="outline-3">
+<h3 id="org11433e6">
 <span class="section-number-3">3.5</span> Subscripts and superscripts</h3>
 <div class="outline-text-3" id="text-3-5">
 <div class="highlight"><pre><span></span>#+OPTIONS: ^:{}
@@ -762,8 +762,8 @@ a_{sub}b^{sup}
 </div>
 </div>
 
-<div id="outline-container-org9f6f498" class="outline-3">
-<h3 id="org9f6f498">
+<div id="outline-container-orgf0aa967" class="outline-3">
+<h3 id="orgf0aa967">
 <span class="section-number-3">3.6</span> Teasers</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
@@ -773,8 +773,8 @@ and use #+HTML: &lt;!– TEASER_END –&gt; to generate &lt;!– TEASER_END –&
 </div>
 </div>
 
-<div id="outline-container-org17f48be" class="outline-3">
-<h3 id="org17f48be">
+<div id="outline-container-org91dc26d" class="outline-3">
+<h3 id="org91dc26d">
 <span class="section-number-3">3.7</span> text block</h3>
 <div class="outline-text-3" id="text-3-7">
 <div class="highlight"><pre><span></span>shell commands
@@ -810,8 +810,8 @@ but not any simpler
 </div>
 </div>
 </div>
-<div id="outline-container-org79dda35" class="outline-2">
-<h2 id="org79dda35">
+<div id="outline-container-orgb9aa2e8" class="outline-2">
+<h2 id="orgb9aa2e8">
 <span class="section-number-2">4</span> 開始使用</h2>
 <div class="outline-text-2" id="text-4">
 <p>
@@ -881,20 +881,26 @@ but not any simpler
 
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
-			</div>
-		</div>
 		<!--End of body content-->
-	</div>
 
-	<div class="footerbox">
-		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-		
-	</div>
 
-	
-            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-		moment.locale("zh-tw");
-		fancydates(0, "YYYY-MM-DD HH:mm");
-	</script><!-- end fancy dates -->
+		<footer id="footer">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-tw");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 </body>
 </html>

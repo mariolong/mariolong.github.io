@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh_tw">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>gnome 安裝記錄 | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/gnomean-zhuang-ji-lu/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
@@ -30,63 +33,61 @@ $ yaourt -S gnome gnome-extra ibus-rime ibus-chewing
 <meta property="article:published_time" content="2013-10-24T12:57:19+08:00">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
 
-	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://mariolong.github.io/">
 
-	<!-- Menubar -->
-
-	<div class="navbar navbar-static-top" id="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-
-				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-
-				<a class="brand" href="https://mariolong.github.io/">
-
-						<span id="blog-title">Simple Life</span>
-				</a>
-
-				<!-- Everything you want hidden at 940px or less, place within here -->
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-<li>
-<a href="../../categories/cat_computer/">電腦</a>
-                </li>
-<li>
-<a href="../../categories/cat_investment/">投資</a>
-                </li>
-<li>
-<a href="../../categories/cat_life/">生活</a>
-                </li>
-<li>
-<a href="../../archive.html">歸檔</a>
-                </li>
-<li>
-<a href="../../rss.xml">訂閱</a>
-
-						
-					</li>
-</ul>
-<ul class="nav pull-right"></ul>
+            <span id="blog-title">Simple Life</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
 </div>
-			</div>
-		</div>
-	</div>
-	<!-- End of Menubar -->
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../categories/cat_computer/" class="nav-link">電腦</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_investment/" class="nav-link">投資</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_life/" class="nav-link">生活</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">歸檔</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">訂閱</a>
 
-	<div class="container-fluid" id="content" role="main">
-		<!--Body content-->
-		<div class="row-fluid">
-			<div class="span2"></div>
-			<div class="span8">
-				
-				<div class="yue">
-					
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+
+        <!--Body content-->
+        
+		<div class="yue">
+			
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">gnome 安裝記錄</a></h1>
 
         <div class="metadata">
@@ -129,76 +130,76 @@ $ yaourt -S gnome gnome-extra ibus-rime ibus-chewing
 <p>我目前覺得 gnome 3.10 和 IBus 整合的不錯，使用上沒有什麼問題。
 但是，預設的字型實在是太小了，不改不行。
 目前只能直接改 gnome-shell 的 css 檔：</p>
-<pre class="code text"><a name="rest_code_af40f90b1eb743448c44f1fd79cd50fc-1"></a>$ sudo nano /usr/share/gnome-shell/theme/gnome-shell.css
+<pre class="code text"><a name="rest_code_1364b7a9ad0444e7ad309da61e8fbbbf-1"></a>$ sudo nano /usr/share/gnome-shell/theme/gnome-shell.css
 </pre>
 <p>找到</p>
-<pre class="code text"><a name="rest_code_b358c677a6644de49ef303e1f690fa09-1"></a>/* default text style */
-<a name="rest_code_b358c677a6644de49ef303e1f690fa09-2"></a>stage {
-<a name="rest_code_b358c677a6644de49ef303e1f690fa09-3"></a>font-family: sans-serif;
-<a name="rest_code_b358c677a6644de49ef303e1f690fa09-4"></a>font-size: 11pt;
-<a name="rest_code_b358c677a6644de49ef303e1f690fa09-5"></a>color: white;
-<a name="rest_code_b358c677a6644de49ef303e1f690fa09-6"></a>}
+<pre class="code text"><a name="rest_code_294e6f0d27bd42ce950be2e442b0ef74-1"></a>/* default text style */
+<a name="rest_code_294e6f0d27bd42ce950be2e442b0ef74-2"></a>stage {
+<a name="rest_code_294e6f0d27bd42ce950be2e442b0ef74-3"></a>font-family: sans-serif;
+<a name="rest_code_294e6f0d27bd42ce950be2e442b0ef74-4"></a>font-size: 11pt;
+<a name="rest_code_294e6f0d27bd42ce950be2e442b0ef74-5"></a>color: white;
+<a name="rest_code_294e6f0d27bd42ce950be2e442b0ef74-6"></a>}
 </pre>
 <p>和</p>
-<pre class="code text"><a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-1"></a>/* IBus Candidate Popup */
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-2"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-3"></a>.candidate-popup-content {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-4"></a>padding: 0.2em;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-5"></a>spacing: 0.2em;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-6"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-7"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-8"></a>.candidate-popup-text {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-9"></a>font-size: 18pt;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-10"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-11"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-12"></a>.candidate-index {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-13"></a>font-size: 14pt;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-14"></a>padding: 0 0.5em 0 0;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-15"></a>color: #cccccc;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-16"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-17"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-18"></a>.candidate-label {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-19"></a>font-size:22px;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-20"></a>letter-spacing: 1px;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-21"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-22"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-23"></a>.candidate-box {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-24"></a>padding: 0.2em 0.5em 0.2em 0.5em;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-25"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-26"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-27"></a>.candidate-box:selected {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-28"></a>border-radius: 4px;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-29"></a>background-color: rgba(255,255,255,0.2);
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-30"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-31"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-32"></a>.candidate-box:hover {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-33"></a>border-radius: 4px;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-34"></a>background-color: rgba(255,255,255,0.1);
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-35"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-36"></a>.candidate-page-button-box {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-37"></a>height: 2em;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-38"></a>width: 80px;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-39"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-40"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-41"></a>.vertical .candidate-page-button-box {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-42"></a>padding-top: 0.5em;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-43"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-44"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-45"></a>.horizontal .candidate-page-button-box {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-46"></a>padding-left: 0.5em;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-47"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-48"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-49"></a>.candidate-page-button-previous {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-50"></a>border-radius: 4px 0px 0px 4px;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-51"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-52"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-53"></a>.candidate-page-button-next {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-54"></a>border-radius: 0px 4px 4px 0px;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-55"></a>}
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-56"></a>
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-57"></a>.candidate-page-button-icon {
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-58"></a>icon-size: 1em;
-<a name="rest_code_44ea4ad9e45442ceb79f81ca01fc4cf4-59"></a>}
+<pre class="code text"><a name="rest_code_0156c9ce83914a109422f16f9d1019a0-1"></a>/* IBus Candidate Popup */
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-2"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-3"></a>.candidate-popup-content {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-4"></a>padding: 0.2em;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-5"></a>spacing: 0.2em;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-6"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-7"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-8"></a>.candidate-popup-text {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-9"></a>font-size: 18pt;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-10"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-11"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-12"></a>.candidate-index {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-13"></a>font-size: 14pt;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-14"></a>padding: 0 0.5em 0 0;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-15"></a>color: #cccccc;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-16"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-17"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-18"></a>.candidate-label {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-19"></a>font-size:22px;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-20"></a>letter-spacing: 1px;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-21"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-22"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-23"></a>.candidate-box {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-24"></a>padding: 0.2em 0.5em 0.2em 0.5em;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-25"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-26"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-27"></a>.candidate-box:selected {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-28"></a>border-radius: 4px;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-29"></a>background-color: rgba(255,255,255,0.2);
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-30"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-31"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-32"></a>.candidate-box:hover {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-33"></a>border-radius: 4px;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-34"></a>background-color: rgba(255,255,255,0.1);
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-35"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-36"></a>.candidate-page-button-box {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-37"></a>height: 2em;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-38"></a>width: 80px;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-39"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-40"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-41"></a>.vertical .candidate-page-button-box {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-42"></a>padding-top: 0.5em;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-43"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-44"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-45"></a>.horizontal .candidate-page-button-box {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-46"></a>padding-left: 0.5em;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-47"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-48"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-49"></a>.candidate-page-button-previous {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-50"></a>border-radius: 4px 0px 0px 4px;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-51"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-52"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-53"></a>.candidate-page-button-next {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-54"></a>border-radius: 0px 4px 4px 0px;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-55"></a>}
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-56"></a>
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-57"></a>.candidate-page-button-icon {
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-58"></a>icon-size: 1em;
+<a name="rest_code_0156c9ce83914a109422f16f9d1019a0-59"></a>}
 </pre>
 <p>重啟 gnome shell，OK。</p>
 </div>
@@ -248,20 +249,26 @@ $ sudo gedit /etc/pulse/default.pa
 
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
-			</div>
-		</div>
 		<!--End of body content-->
-	</div>
 
-	<div class="footerbox">
-		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-		
-	</div>
 
-	
-            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-		moment.locale("zh-tw");
-		fancydates(0, "YYYY-MM-DD HH:mm");
-	</script><!-- end fancy dates -->
+		<footer id="footer">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-tw");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 </body>
 </html>

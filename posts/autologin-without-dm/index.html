@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh_tw">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_tw">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Autologin without DM | Simple Life</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://mariolong.github.io/posts/autologin-without-dm/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
@@ -22,63 +25,61 @@ Here are the installation steps, including for a systemd managed u">
 <meta property="article:tag" content="login">
 </head>
 <body>
+<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
 
-	<a href="#content" class="sr-only sr-only-focusable">略過主內容</a>
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="https://mariolong.github.io/">
 
-	<!-- Menubar -->
-
-	<div class="navbar navbar-static-top" id="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-
-				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-
-				<a class="brand" href="https://mariolong.github.io/">
-
-						<span id="blog-title">Simple Life</span>
-				</a>
-
-				<!-- Everything you want hidden at 940px or less, place within here -->
-				<div class="nav-collapse collapse">
-					<ul class="nav pull-right">
-<li>
-<a href="../../categories/cat_computer/">電腦</a>
-                </li>
-<li>
-<a href="../../categories/cat_investment/">投資</a>
-                </li>
-<li>
-<a href="../../categories/cat_life/">生活</a>
-                </li>
-<li>
-<a href="../../archive.html">歸檔</a>
-                </li>
-<li>
-<a href="../../rss.xml">訂閱</a>
-
-						
-					</li>
-</ul>
-<ul class="nav pull-right"></ul>
+            <span id="blog-title">Simple Life</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav"></ul></nav>
 </div>
-			</div>
-		</div>
-	</div>
-	<!-- End of Menubar -->
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../categories/cat_computer/" class="nav-link">電腦</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_investment/" class="nav-link">投資</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/cat_life/" class="nav-link">生活</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">歸檔</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">訂閱</a>
 
-	<div class="container-fluid" id="content" role="main">
-		<!--Body content-->
-		<div class="row-fluid">
-			<div class="span2"></div>
-			<div class="span8">
-				
-				<div class="yue">
-					
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+
+        <!--Body content-->
+        
+		<div class="yue">
+			
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Autologin without DM</a></h1>
 
         <div class="metadata">
@@ -113,35 +114,35 @@ yaourt -S xlogin-git
 <li>Create the following two files. 準備 D-BUS。</li>
 </ol>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.socket</tt> containing:</p>
-<pre class="code text"><a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-1"></a>[Unit]
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-2"></a>Description=D-Bus Message Bus Socket
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-3"></a>Before=sockets.target
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-4"></a>
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-5"></a>[Socket]
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-7"></a>
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-8"></a>[Install]
-<a name="rest_code_18bfcb4c374f4b41b5ad2283f4e24c66-9"></a>WantedBy=default.target
+<pre class="code text"><a name="rest_code_23771c95360f48f7b3ce27172858c2e4-1"></a>[Unit]
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-2"></a>Description=D-Bus Message Bus Socket
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-3"></a>Before=sockets.target
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-4"></a>
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-5"></a>[Socket]
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-6"></a>ListenStream=/run/user/%U/dbus/user_bus_socket
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-7"></a>
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-8"></a>[Install]
+<a name="rest_code_23771c95360f48f7b3ce27172858c2e4-9"></a>WantedBy=default.target
 </pre>
 <p><tt class="docutils literal">/etc/systemd/user/dbus.service</tt> containing:</p>
-<pre class="code text"><a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-1"></a>[Unit]
-<a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-2"></a>Description=D-Bus Message Bus
-<a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-3"></a>Requires=dbus.socket
-<a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-4"></a>
-<a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-5"></a>[Service]
-<a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
-<a name="rest_code_c368f0ff1848415eafa5d42d8b6a8caa-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
+<pre class="code text"><a name="rest_code_27bc470471a9412faf22813d8f37fa19-1"></a>[Unit]
+<a name="rest_code_27bc470471a9412faf22813d8f37fa19-2"></a>Description=D-Bus Message Bus
+<a name="rest_code_27bc470471a9412faf22813d8f37fa19-3"></a>Requires=dbus.socket
+<a name="rest_code_27bc470471a9412faf22813d8f37fa19-4"></a>
+<a name="rest_code_27bc470471a9412faf22813d8f37fa19-5"></a>[Service]
+<a name="rest_code_27bc470471a9412faf22813d8f37fa19-6"></a>ExecStart=/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+<a name="rest_code_27bc470471a9412faf22813d8f37fa19-7"></a>ExecReload=/usr/bin/dbus-send --print-reply --session --type=method_call --dest=org.freedesktop.DBus / org.freedesktop.DBus.ReloadConfig
 </pre>
 <ol class="arabic simple" start="3">
 <li>Run (as root) <tt class="docutils literal">systemctl <span class="pre">--global</span> enable dbus.socket</tt> .</li>
 <li>Set up your .xinitrc and make sure it has the following near the top.</li>
 </ol>
-<pre class="code text"><a name="rest_code_29511d950b0d4298b8de9ed5e4019286-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
-<a name="rest_code_29511d950b0d4298b8de9ed5e4019286-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
-<a name="rest_code_29511d950b0d4298b8de9ed5e4019286-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
-<a name="rest_code_29511d950b0d4298b8de9ed5e4019286-4"></a>    done
-<a name="rest_code_29511d950b0d4298b8de9ed5e4019286-5"></a>    unset f
-<a name="rest_code_29511d950b0d4298b8de9ed5e4019286-6"></a>fi
+<pre class="code text"><a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-1"></a>if [ -d /etc/X11/xinit/xinitrc.d ]; then
+<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-2"></a>    for f in /etc/X11/xinit/xinitrc.d/*; do
+<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-3"></a>        [ -x "$f" ] &amp;&amp; . "$f"
+<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-4"></a>    done
+<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-5"></a>    unset f
+<a name="rest_code_1909451b57f44867ae707d19e5c4c8ab-6"></a>fi
 </pre>
 <p>Running your <tt class="docutils literal">.xinitrc</tt> should not return,
 so either have wait as the last command in your <tt class="docutils literal">.xinitrc</tt>,
@@ -150,9 +151,9 @@ or add <tt class="docutils literal">exec</tt> to the last command that will be c
 <ol class="arabic simple" start="5">
 <li>Include the following in your <tt class="docutils literal">.bashrc</tt> .</li>
 </ol>
-<pre class="code text"><a name="rest_code_af0a39189bf046478d07d2ab47dbed7b-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
-<a name="rest_code_af0a39189bf046478d07d2ab47dbed7b-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
-<a name="rest_code_af0a39189bf046478d07d2ab47dbed7b-3"></a>done
+<pre class="code text"><a name="rest_code_ca2fee109dc34d4e8c0c1e9dde4cc4aa-1"></a>for sd_cmd in systemctl systemd-analyze systemd-run; do
+<a name="rest_code_ca2fee109dc34d4e8c0c1e9dde4cc4aa-2"></a>    alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
+<a name="rest_code_ca2fee109dc34d4e8c0c1e9dde4cc4aa-3"></a>done
 </pre>
 <p>6. Run (as root) <tt class="docutils literal">systemctl enable <span class="pre">xlogin@&lt;username&gt;</span></tt> for automatic login at boot,
 or <tt class="docutils literal">systemctl start <span class="pre">xlogin@&lt;username&gt;</span></tt> for launching a graphical user session (on tty7).</p>
@@ -197,20 +198,26 @@ The <tt class="docutils literal"><span class="pre">xorg-xinit</span></tt> packag
 
         </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
-			</div>
-		</div>
 		<!--End of body content-->
-	</div>
 
-	<div class="footerbox">
-		Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-		
-	</div>
 
-	
-            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-		moment.locale("zh-tw");
-		fancydates(0, "YYYY-MM-DD HH:mm");
-	</script><!-- end fancy dates -->
+		<footer id="footer">
+			Contents © 2018         <a href="mailto:mariolong5782@gmail.com">Mario Long</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+			
+		</footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-tw");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 </body>
 </html>

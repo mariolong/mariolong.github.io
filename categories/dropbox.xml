@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：dropbox)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/dropbox.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 02:58:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orgdcebc23" class="outline-2"&gt;
-&lt;h2 id="orgdcebc23"&gt;install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdcebc23"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：dropbox)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/dropbox.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 06:49:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>install and use dropbox on archlinux</title><link>https://mariolong.github.io/posts/dropbox/</link><dc:creator>Mario Long</dc:creator><description>&lt;div id="outline-container-orga1695a8" class="outline-2"&gt;
+&lt;h2 id="orga1695a8"&gt;install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga1695a8"&gt;
 &lt;p&gt;
 因 archlinuxfr 中也有 dropbox，為了不和它衝突，特別加上 &lt;code&gt;aur/dropbox&lt;/code&gt;
 &lt;/p&gt;
@@ -11,13 +11,13 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org491286e" class="outline-2"&gt;
-&lt;h2 id="org491286e"&gt;config dropbox.service&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org491286e"&gt;
+&lt;div id="outline-container-orgb76f715" class="outline-2"&gt;
+&lt;h2 id="orgb76f715"&gt;config dropbox.service&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb76f715"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org23fba89" class="outline-3"&gt;
-&lt;h3 id="org23fba89"&gt;setup environment variables&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org23fba89"&gt;
+&lt;div id="outline-container-org7eef31b" class="outline-3"&gt;
+&lt;h3 id="org7eef31b"&gt;setup environment variables&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7eef31b"&gt;
 &lt;p&gt;
 為了正確顯示，要加上以下命令：
 &lt;/p&gt;
@@ -28,9 +28,9 @@ Environment=LC_ALL=zh_TW.UTF-8 LANG=zh_TW.UTF-8 QT_STYLE_OVERRIDE=GTK+
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgee464c4" class="outline-3"&gt;
-&lt;h3 id="orgee464c4"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgee464c4"&gt;
+&lt;div id="outline-container-org26868dd" class="outline-3"&gt;
+&lt;h3 id="org26868dd"&gt;set Restart=no in dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org26868dd"&gt;
 &lt;p&gt;
 根據 &lt;a href="https://gitlab.com/yan12125/aur/issues/21"&gt;Dropbox kill/restart loop when started at boot via systemd&lt;/a&gt;，在
 dropbox.service 中，特別加上
@@ -41,9 +41,9 @@ dropbox.service 中，特別加上
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd87d073" class="outline-3"&gt;
-&lt;h3 id="orgd87d073"&gt;final dropbox.service&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd87d073"&gt;
+&lt;div id="outline-container-org78fbcaa" class="outline-3"&gt;
+&lt;h3 id="org78fbcaa"&gt;final dropbox.service&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org78fbcaa"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[Unit]
 Description=Dropbox for systemd/user
 
@@ -63,9 +63,9 @@ WantedBy=default.target
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb53b094" class="outline-2"&gt;
-&lt;h2 id="orgb53b094"&gt;start dropbox&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb53b094"&gt;
+&lt;div id="outline-container-orgf4f182c" class="outline-2"&gt;
+&lt;h2 id="orgf4f182c"&gt;start dropbox&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf4f182c"&gt;
 &lt;p&gt;
 最後執行
 &lt;/p&gt;
