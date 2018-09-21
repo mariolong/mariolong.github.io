@@ -1,13 +1,15 @@
 #+BEGIN_COMMENT
-.. link:
 .. title: Install Arch linux (2017)
 .. slug: install-arch-linux-2017
+.. link:
 .. tags: linux
 .. category: computer
 .. date: 2017/11/20 17:00:00 UTC+08:00
 .. description:
 #+END_COMMENT
 #+OPTIONS: num:t
+#+TITLE: Install Arch linux (2017)
+#+AUTHOR: Mario
 
 原本的 Beginners' Guide 改成了 [[https://wiki.archlinux.org/index.php/installation_guide][Installation guide]] ，文件結構比較清楚，但是保證
 不適合初次安裝 archlinux 的人閱讀，也不適合一步步之執行。
@@ -152,13 +154,13 @@ pacman -Syy
 pacstrap -i /mnt base base-devel
 #+END_SRC
 
-if pacman complains that error: :
+if pacman complains that error:
 
 #+BEGIN_EXAMPLE
 failed to commit transaction (invalid or corrupted package)
 #+END_EXAMPLE
 
-run the following command: :
+run the following command:
 
 #+BEGIN_SRC sh
 pacman-key --init && pacman-key --populate archlinux
@@ -239,7 +241,7 @@ nano /etc/locale.conf
 
 修改 ~LANG~, 主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
 #+BEGIN_EXAMPLE
-LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 #+END_EXAMPLE
 
 ** 更改 console 字型
@@ -404,7 +406,7 @@ menuentry "Windows 10" --class windows --class os {
 #+END_SRC
 
 ** intel CPU 要安裝 microcode
-這步要在 grub-mkconfig 之前做：
+這步要在執行 grub-mkconfig 自動產生 grub.cfg 之前做：
 
 #+BEGIN_SRC sh
 pacman -S intel-ucode
@@ -539,13 +541,25 @@ pacman -S xf86-video-intel libav-intel-driver
 
 ** 安裝字體
 
-加上 ~ttf-liberation~ 修正部份 PDF 字型，此為 google-chrome 新的依賴。
-為了罕見字，加裝 ~ttf-hanazono~
+- ttf-liberation: 修正部份 PDF 字型，此為 google-chrome 新的依賴。
+- ttf-hanazono: 花園明朝體，罕見字
+- ttf-tw: 教育部標準楷宋體
 
 #+BEGIN_SRC sh
 yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono
 yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,serif}-{cn,jp,kr,otc,tw}-fonts
 #+END_SRC
+
+*** ttf-twcns-fonts: 中文全字庫
+
+參考 http://samwhelp.github.io/book-ubuntu-qna/read/howto/configure-font/font/cns11643/install
+
+#+BEGIN_SRC sh
+wget -c http://www.cns11643.gov.tw/AIDB/Open_Data.zip
+unzip Open_Data.zip
+#+END_SRC
+
+Copy all ~*.ttf~ files to ~~/.local/share/fonts~, and execute fc-cache. Run ~fc-list~ to check.
 
 ** 讓 X 可以顯示中文
 
@@ -573,29 +587,9 @@ numlockx &
 
 ** 安裝桌面
 
-目前使用 lxqt + xmonad。lxqt
+lxqt 不全裝，目前只用 ~lxqt-policykit-agent~ 和 ~lxappearance~.
 
-安裝 lxqt:
-
-#+BEGIN_SRC sh
-yaourt -S lxqt
-#+END_SRC
-
-先修改 ~/etc/pacman.conf~:
-
-然後在 ~[community]~ 之前加上:
-
-#+BEGIN_SRC conf
-[haskell-core]
-    Server = http://xsounds.org/~haskell/core/$arch
-#+END_SRC
-
-接著才可安裝 xmonad 和 taffybar:
-#+BEGIN_SRC sh
-yaourt -S haskell-xmonad haskell-xmonad-contrib haskell-taffybar
-#+END_SRC
-
-*UPDATE*: 要用 [[../install-haskell-applications][install haskell application]] 這篇安裝 xmonad 和 taffybar.
+用 [[../install-haskell-applications][install haskell application]] 這篇安裝 xmonad 和 taffybar.
 
 ** theme
 

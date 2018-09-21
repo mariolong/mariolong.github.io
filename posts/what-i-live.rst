@@ -1,6 +1,7 @@
 .. title: 我為何而生
 .. slug: what-i-live
 .. date: 2014/06/06 09:06:38
+.. status: private
 .. tags:
 .. link:
 .. description:

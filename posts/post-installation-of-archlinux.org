@@ -46,7 +46,6 @@ shutdown, suspend, hibernate, and lock the screen.
 
 #+BEGIN_SRC sh
 yaourt -S oblogout
-
 sudo nano /etc/oblogout.conf
 #+END_SRC
 
@@ -188,6 +187,7 @@ yaourt -S speedcrunch
 #+BEGIN_SRC sh
 yaourt -S calibre
 #+END_SRC
+
 ** nikola
 #+BEGIN_SRC sh
 pip install nikola Pygments
