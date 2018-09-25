@@ -1521,7 +1521,11 @@ article.h-entry header .post-date {
   margin-right: 0.5rem;
 }
 
-article.post-text header {
+.entry-content {
+  margin-bottom: 2em;
+}
+
+article.postpage header {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-bottom: #777777 1px solid;
