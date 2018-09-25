@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_investment.xml</loc>
-  <lastmod>2018-09-18T06:59:00Z</lastmod>
+  <lastmod>2018-09-25T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/categories/cat_life.xml</loc>
@@ -310,6 +310,10 @@
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://mariolong.github.io/categories/safety.xml</loc>
+  <lastmod>2018-09-25T05:18:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariolong.github.io/categories/sales.xml</loc>
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </sitemap>
@@ -382,6 +386,10 @@
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://mariolong.github.io/categories/value.xml</loc>
+  <lastmod>2018-09-25T05:18:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariolong.github.io/categories/vim.xml</loc>
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </sitemap>
@@ -423,10 +431,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/rss.xml</loc>
-  <lastmod>2018-09-21T05:23:00Z</lastmod>
+  <lastmod>2018-09-25T05:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariolong.github.io/sitemap.xml</loc>
-  <lastmod>2018-09-21T14:06:00Z</lastmod>
+  <lastmod>2018-09-25T05:18:00Z</lastmod>
  </sitemap>
 </sitemapindex>

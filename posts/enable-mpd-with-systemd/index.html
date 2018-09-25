@@ -84,7 +84,7 @@ fatal_error: Can't create db file in &quot;/var/lib/mpd&quot;:">
         
 		<div class="yue">
 			
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">enable mpd with systemd</a></h1>
+	<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">enable mpd with systemd</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -94,19 +94,27 @@ fatal_error: Can't create db file in &quot;/var/lib/mpd&quot;:">
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2013-11-26T14:17:33+08:00" itemprop="datePublished" title="2013-11-26 14:17">2013-11-26 14:17</time></a>
             </p>
+
+
+
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/enable-mpd-with-systemd.html">Comments</a>
 
 
-            
 
+			
         </p>
+<ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="../../categories/mpd/" rel="tag">mpd</a></li>
+            <li><a class="tag p-category" href="../../categories/music/" rel="tag">music</a></li>
+        </ul>
 </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+			<div>
 <p>error message:</p>
 <pre class="code text"><a name="rest_code_a6ead8bac7954ca0bcc72052528fd642-1"></a>$ systemctl --user status mpd.service
 <a name="rest_code_a6ead8bac7954ca0bcc72052528fd642-2"></a>Failed to issue method call: Process /bin/false exited with status 1
@@ -164,13 +172,14 @@ nano ~/.config/systemd/user/mpd.service
 <p>config cantata &gt; playback &gt; playback stop on exit 要取消掉，不然關了 cantata 就沒音樂了。</p>
 </div>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
-            <li><a class="tag p-category" href="../../categories/mpd/" rel="tag">mpd</a></li>
-            <li><a class="tag p-category" href="../../categories/music/" rel="tag">music</a></li>
+		</div>
+		<aside class="postpromonav"><nav><!-- 				
+        <ul itemprop="keywords" class="tags">
+            <li><a class="tag p-category" href="/categories/linux/" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="/categories/mpd/" rel="tag">mpd</a></li>
+            <li><a class="tag p-category" href="/categories/music/" rel="tag">music</a></li>
         </ul>
-<ul class="pager hidden-print">
+ --><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../using-lftp-upload-website/" rel="prev" title="Using lftp upload website">上一篇</a>
             </li>
@@ -178,7 +187,7 @@ nano ~/.config/systemd/user/mpd.service
                 <a href="../tiling-window-manager-xmonad-with-kde/" rel="next" title="Tiling window manager - Xmonad with KDE">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
-        
+			
         
         <div id="disqus_thread"></div>
         <script>
@@ -199,7 +208,7 @@ nano ~/.config/systemd/user/mpd.service
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+		</section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 		<!--End of body content-->
 

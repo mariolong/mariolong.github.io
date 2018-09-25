@@ -1521,6 +1521,19 @@ article.h-entry header .post-date {
   margin-right: 0.5rem;
 }
 
+article.post-text header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: #777777 1px solid;
+}
+
+ul.tags {
+  display: block;
+  text-align: left;
+  margin-left: unset;
+  padding-left: unset;
+}
+
 pre.literal-block,
 pre.code {
   font-size: 0.95em;

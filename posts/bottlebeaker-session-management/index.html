@@ -84,7 +84,7 @@ import bottle
         
 		<div class="yue">
 			
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">bottle+beaker session management</a></h1>
+	<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">bottle+beaker session management</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -94,19 +94,25 @@ import bottle
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2014-02-22T09:39:50+08:00" itemprop="datePublished" title="2014-02-22 09:39">2014-02-22 09:39</time></a>
             </p>
+
+
+
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/bottlebeaker-session-management.html">Comments</a>
 
 
-            
 
+			
         </p>
+<ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+        </ul>
 </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+			<div>
 <p>直接看程式碼：</p>
 <pre class="code python"><a name="rest_code_9a88306383ba4c0eb70d42d3ca28b5ca-1"></a><span class="kn">import</span> <span class="nn">beaker.middleware</span>
 <a name="rest_code_9a88306383ba4c0eb70d42d3ca28b5ca-2"></a><span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">mako_view</span> <span class="k">as</span> <span class="n">view</span><span class="p">,</span> <span class="n">mako_template</span> <span class="k">as</span> <span class="n">template</span>
@@ -159,11 +165,12 @@ import bottle
 </pre>
 <p>其中 <tt class="docutils literal">application</tt> 是 python 和 uwsgi 溝通的物件，和 beaker 沒有關係。</p>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+		</div>
+		<aside class="postpromonav"><nav><!-- 				
+        <ul itemprop="keywords" class="tags">
+            <li><a class="tag p-category" href="/categories/python/" rel="tag">python</a></li>
         </ul>
-<ul class="pager hidden-print">
+ --><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../bottlenginx-with-uwsgi/" rel="prev" title="bottle+nginx with uwsgi">上一篇</a>
             </li>
@@ -171,7 +178,7 @@ import bottle
                 <a href="../archlinux-enable-cron/" rel="next" title="archlinux enable cron">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
-        
+			
         
         <div id="disqus_thread"></div>
         <script>
@@ -192,7 +199,7 @@ import bottle
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+		</section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 		<!--End of body content-->
 

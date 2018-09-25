@@ -89,7 +89,7 @@ $ sudo pvdisplay
         
 		<div class="yue">
 			
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">LVM on Archlinux</a></h1>
+	<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">LVM on Archlinux</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -99,19 +99,26 @@ $ sudo pvdisplay
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2013-04-30T12:41:30+08:00" itemprop="datePublished" title="2013-04-30 12:41">2013-04-30 12:41</time></a>
             </p>
+
+
+
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/LVM on Archlinux.html">Comments</a>
 
 
-            
 
+			
         </p>
+<ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="../../categories/lvm/" rel="tag">lvm</a></li>
+        </ul>
 </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+			<div>
 <p>參考 <a class="reference external" href="https://wiki.archlinux.org/index.php/LVM">Archlinux wiki</a>，
 因爲這篇 wiki 中提到了 <a class="reference external" href="../btrfs/">btrfs</a> ，花了一些時間去研究它，結果不好用。</p>
 <p>還是回來用 LVM，我只是要他的可擴充性：硬碟不夠時，再加一顆就好。</p>
@@ -353,12 +360,13 @@ Consult your distribution for more information in this regard.</p>
 <p>For 64-bit CPUs on 2.6 kernels, the maximum LV size is 8EB. (Yes, that is a very large number.)</p>
 </div>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
-            <li><a class="tag p-category" href="../../categories/lvm/" rel="tag">lvm</a></li>
+		</div>
+		<aside class="postpromonav"><nav><!-- 				
+        <ul itemprop="keywords" class="tags">
+            <li><a class="tag p-category" href="/categories/linux/" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="/categories/lvm/" rel="tag">lvm</a></li>
         </ul>
-<ul class="pager hidden-print">
+ --><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../lxde-pei-zhi/" rel="prev" title="lxde 配置">上一篇</a>
             </li>
@@ -366,7 +374,7 @@ Consult your distribution for more information in this regard.</p>
                 <a href="../ffmpeg-xin-de/" rel="next" title="ffmpeg 使用心得與整理">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
-        
+			
         
         <div id="disqus_thread"></div>
         <script>
@@ -387,7 +395,7 @@ Consult your distribution for more information in this regard.</p>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+		</section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 		<!--End of body content-->
 

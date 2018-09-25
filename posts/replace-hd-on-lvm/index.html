@@ -89,7 +89,7 @@
         
 		<div class="yue">
 			
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">replace hd on LVM</a></h1>
+	<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">replace hd on LVM</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -99,19 +99,25 @@
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2015-06-11T23:52:30Z" itemprop="datePublished" title="2015-06-11 23:52">2015-06-11 23:52</time></a>
             </p>
+
+
+
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/replace-hd-on-lvm.html">Comments</a>
 
 
-            
 
+			
         </p>
+<ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+        </ul>
 </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+			<div>
 <p>lvm 上的一顆硬碟壞了，要換掉。</p>
 <p>整個過程並不像網上查到的那麼順利，所以，還是記錄下來，以備不時之需。</p>
 <p>參考 <a class="reference external" href="http://www.microhowto.info/howto/replace_one_of_the_physical_volumes_in_an_lvm_volume_group.html">Replace one of the physical volumes in an LVM volume group</a>
@@ -213,11 +219,12 @@ $ sudo lvresize -l -238466 /dev/VG01/LV00
 <p>真是慶幸。</p>
 </div>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+		</div>
+		<aside class="postpromonav"><nav><!-- 				
+        <ul itemprop="keywords" class="tags">
+            <li><a class="tag p-category" href="/categories/linux/" rel="tag">linux</a></li>
         </ul>
-<ul class="pager hidden-print">
+ --><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../from-git-to-github/" rel="prev" title="from git to github">上一篇</a>
             </li>
@@ -225,7 +232,7 @@ $ sudo lvresize -l -238466 /dev/VG01/LV00
                 <a href="../from-xbmc-to-kodi/" rel="next" title="From XBMC to Kodi">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
-        
+			
         
         <div id="disqus_thread"></div>
         <script>
@@ -246,7 +253,7 @@ $ sudo lvresize -l -238466 /dev/VG01/LV00
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+		</section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 		<!--End of body content-->
 

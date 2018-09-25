@@ -12,6 +12,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
 <link rel="prev" href="../zheng-manqing-as-i-know/" title="我所知道的鄭曼青先生" type="text/html">
+<link rel="next" href="../margin-of-safety/" title="安全邊際" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="Install stack, cabal and nix for writing miso project">
 <meta property="og:url" content="https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/">
@@ -83,7 +84,7 @@
         
 		<div class="yue">
 			
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Install stack, cabal and nix for writing miso project</a></h1>
+	<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Install stack, cabal and nix for writing miso project</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -93,19 +94,30 @@
             <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2018-09-14T12:07:35+08:00" itemprop="datePublished" title="2018-09-14 12:07">2018-09-14 12:07</time></a>
             </p>
+
+
+
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/install-stack-cabal-nix-for-miso.html">Comments</a>
 
 
-            
 
+			
         </p>
+<ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cabal/" rel="tag">cabal</a></li>
+            <li><a class="tag p-category" href="../../categories/haskell/" rel="tag">haskell</a></li>
+            <li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="../../categories/miso/" rel="tag">miso</a></li>
+            <li><a class="tag p-category" href="../../categories/nix/" rel="tag">nix</a></li>
+            <li><a class="tag p-category" href="../../categories/stack/" rel="tag">stack</a></li>
+        </ul>
 </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>
+			<p>
 在 <a href="../install-haskell-applications/">Install Haskell Applications</a> 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
 我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
 在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
@@ -178,21 +190,25 @@ Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。<de
 做 server 才是對的</del>。</p>
 </div>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/cabal/" rel="tag">cabal</a></li>
-            <li><a class="tag p-category" href="../../categories/haskell/" rel="tag">haskell</a></li>
-            <li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
-            <li><a class="tag p-category" href="../../categories/miso/" rel="tag">miso</a></li>
-            <li><a class="tag p-category" href="../../categories/nix/" rel="tag">nix</a></li>
-            <li><a class="tag p-category" href="../../categories/stack/" rel="tag">stack</a></li>
+		</div>
+		<aside class="postpromonav"><nav><!-- 				
+        <ul itemprop="keywords" class="tags">
+            <li><a class="tag p-category" href="/categories/cabal/" rel="tag">cabal</a></li>
+            <li><a class="tag p-category" href="/categories/haskell/" rel="tag">haskell</a></li>
+            <li><a class="tag p-category" href="/categories/linux/" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="/categories/miso/" rel="tag">miso</a></li>
+            <li><a class="tag p-category" href="/categories/nix/" rel="tag">nix</a></li>
+            <li><a class="tag p-category" href="/categories/stack/" rel="tag">stack</a></li>
         </ul>
-<ul class="pager hidden-print">
+ --><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../zheng-manqing-as-i-know/" rel="prev" title="我所知道的鄭曼青先生">上一篇</a>
             </li>
+            <li class="next">
+                <a href="../margin-of-safety/" rel="next" title="安全邊際">下一篇</a>
+            </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
-        
+			
         
         <div id="disqus_thread"></div>
         <script>
@@ -213,7 +229,7 @@ Haskell 真的難搞，不僅語言本身難搞，連開發環境都難搞。<de
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+		</section></article><script>var disqus_shortname="simple-life";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
 		<!--End of body content-->
 
