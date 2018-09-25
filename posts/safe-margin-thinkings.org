@@ -3,7 +3,7 @@
 .. slug: safe-margin-thinkings
 .. date: 2018-08-03 11:57:39 UTC+08:00
 .. status:
-.. tags: thinkings
+.. tags: safety, value
 .. category: investment
 .. link:
 .. description:
