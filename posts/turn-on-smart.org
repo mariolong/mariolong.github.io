@@ -45,3 +45,46 @@ DEVICESCAN -a
 #+BEGIN_SRC conf
 DEVICESCAN -m address@domain.com -M test
 #+END_SRC
+
+
+* test and view the result
+來源： [[https://www.techrepublic.com/article/how-to-check-ssd-health-in-linux/][How to check SSD health in Linux - TechRepublic]]
+
+#+BEGIN_SRC sh
+sudo smartctl -i /dev/sda
+sudo smartctl -t long -a /dev/sda
+#+END_SRC
+
+#+BEGIN_SRC sh
+sudo smartctl -a /dev/sda
+#+END_SRC
+
+The short test will examine the following:
+
+- Electrical Properties: The controller tests its own electronics,
+  which is different for each manufacturer.
+- Mechanical Properties: Servos and positioning mechanisms are tested
+  (also specific to each manufacturer).
+- Read/Verify : A certain area of the disk will be read to verify
+  certain data (the size and position of the region read is unique to
+  each manufacturer).
+
+The long test runs everything included with the short test, while adding:
+
+- No time restriction and in the Read/Verify segment.
+- The entire disk is checked (as opposed to just a section).
+
+#+BEGIN_SRC sh
+sudo smartctl -A /dev/sda
+#+END_SRC
+
+- Power_On_Hours :: how many hours the drive has been powered on. Each
+                    make/model of drive has a recommended "shelf life"
+                    of hours it can be used. Most modern SSDs have
+                    fairly incredible lifespans, so chances are you're
+                    not going to bump into the end of life. If you're
+                    using an older drive, this can be an issue.
+
+- Wear_Leveling_Count :: Stands for the remaining endurance of the
+     drive in percentage (starting from 100 and decreasing linearly as
+     the drive is written to).

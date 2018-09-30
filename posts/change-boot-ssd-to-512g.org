@@ -1,0 +1,136 @@
+#+TITLE: 將 windows 10 和 linux 移到新的 512G SSD
+#+AUTHOR: Mario
+#+BEGIN_COMMENT
+.. title: 將 windows 10 和 linux 移到新的 512G SSD
+.. slug: change-boot-ssd-to-512g
+.. date: 2018-09-27 20:55:57 UTC+08:00
+.. tags: linux, ssd, windows
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: num:nil toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+新的 windows 10 真吃硬碟，原本 128G 的 SSD 不夠用，一直要努力刪掉暫時
+用不到的軟體，也真夠心煩的。萬一不小心刪錯了，也是件麻煩事。狠下心來，
+上原價屋買了顆 Intel 512G 的 SSD，花了新台幣 3388 元。
+
+昨天早上買的，今天早上到貨，下午裝上，晚上就進 linux，動手記錄這次的過
+程。呃，windows 10 明天再說吧，晚上，不想動太多系統。
+
+* 系統移轉
+先上網查到 [[http://www.fox-saying.com/blog/post/43730227-%5B%E6%95%99%E5%AD%B8%5D-%E5%BF%AB%E9%80%9F%E6%AD%A3%E7%A2%BA%E8%BD%89%E7%A7%BB-ssd-%E4%B8%8A%E7%9A%84%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1-~-uefi][快速正確轉移 SSD 上的作業系統 ~ UEFI 介面 Windows10 OS 搬家]]
+
+看起來，現在的工具真不少，也挺方便的。只要下載下面兩個程式：
+- EaseUS Todo Backup Free 免費版
+- AOMEI Partition Assistant Standard Edition 免費版
+
+EaseUS Todo Backup Free 可將 partition 完整複製，含開機區，只是 4K 對齊可
+能做不好，這時就需要 AOMEI Partition Assistant Standard 的幫忙。
+
+因為我的系統原本就是在 SSD 上，上次安裝是 4K 對齊的，因此這次做系統複製後，
+也自然就對齊好了。所以，就不必派出 AOMEI Partition Assistant Standard
+上場救援。
+
+這步驟算是順利完成。
+
+* BIOS 中調整開機碟順序
+選擇要開機的磁碟，不該有問題。
+
+* 開機設定 grub
+原以為開機會有一番折騰，沒想到一開機就成功進入 Linux。用 ~lsblk -o
++uuid~ 指令找新 SSD 的 uuid，進 ~/etc/fstab~ 查看掛載磁碟的 uuid, 竟然
+和先前的相同，不知是幸運，還是 Linux 本來就是如此。windows 就沒有這麼
+幸運，uuid 不同。
+
+接下來改~/etc/grub.d/40_custom~ ，讓 grup menu 中 windows 10 的項目指
+到正確的磁碟。
+
+#+BEGIN_SRC conf
+menuentry "Windows 10" --class windows --class os {
+insmod ntfs
+search --no-floppy --set=root --fs-uuid $new-ssd-uuid$
+ntldr /bootmgr
+}
+#+END_SRC
+
+重建 grub menu
+
+#+BEGIN_SRC sh
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+#+END_SRC
+
+最後以 windows 10 重新開機，嗯，windows 偵測到 boot 區有問題，要求修復。
+不是很順利。
+
+接著，我做了許多嘗試，[[other][記錄於後]]，如：以正版 windows 10 開機，修復 MBR，
+失敗，不能開機；重灌 windows 10，裝上 EasyBCD，試圖由 linux 開機後再修
+grub，可惜 EasyBCD 不支援 ext4。
+
+最後，做了 Archlinux 開機片，進 linux，修復好 boot 和 grub.cfg，才得以正
+常地開機進入 windows 10 和 linux。記錄在[[solution][正解]]中。
+
+當作是一次經驗，下次不會再出錯。
+
+* <<solution>>正解
+進到了 linux 後，先裝上 ~os-prober~，讓 ~grub-mkconfig~ 可以自動找出
+widnows 10 並設定好 boot 指令。
+
+#+BEGIN_SRC sh
+yaourt -S os-prober
+#+END_SRC
+
+接著執行 ~grub-mkconfig~ 重建 ~grub.cfg~，重開機就會 OK。
+
+原因在於~/etc/grub.d/40_custom~中，最後一行的 ~ntldr /bootmgr~。
+windows 10 1803 版的 ~/bootmgr~ 找不到了，所以沿用先前舊的 ~grub.cfg~
+是錯的。不過，只要先裝上 ~os-prober~，就可解決這個錯誤。
+
+linux 中，已經把~/etc/grub.d/40_custom~拿掉了。
+
+最後一定可以解決問題，我還是很不喜歡 windows，改個版本也能搞到不能用，
+也不會顯示個正確的訊息，害我們浪費了許多時間。
+
+* <<other>>其他過程及記錄
+
+** fix windows boot
+
+拿出原版的 windows 10 安裝 USB 隨身碟，開機修復…，竟然無法進入安裝畫
+面，還一直要我放入安裝光碟。這是什麼情形？我可是用正版的 windows 10 啊！
+真是愈來愈討厭 microsoft 了。討厭歸討厭，問題還是得解決啊。
+
+*** 先開機進入 linux，在 linux 中，
+
+**** download windows 10 ISO
+
+從 ~https://www.microsoft.com/zh-tw/software-download/windows10ISO~ 下
+載 windows 10 ISO。
+
+**** 燒錄開機 DVD
+
+目前手邊沒有容量夠大的 USB 隨身碟，可是有 DVD-RW，反正也用不著 DVD，干
+脆拿來燒成 windows 10 的開機片。
+
+先安裝燒錄軟體 k3b：
+
+#+BEGIN_SRC sh
+yaourt -S k3b dvd+rw-tools cdrdao
+#+END_SRC
+
+執行 k3b，選擇「燒錄映像檔」，檢查，4 倍速慢慢燒，比較不會出錯。燒了 30 分鐘，終於
+完成。
+
+重開機，結果可以進入安裝畫面，那就進行修複吧。修復完了，重開機，可以進
+入 windows 中，開心啊。趕緊安裝 EasyBCD，要能進 linux。
+
+*** 在 windows 10 中，
+
+**** 安裝 EasyBCD
+可是 EasyBCD 不支援 ext4，所以裝了也不能進我的 linux 系統。晴天霹靂。
+因為要修復 grub.cfg，必須要在 Linux 中，看來只能乖乖做 linux 開機片。
+
+**** 用 USB 隨身碟做 Archlinux 安裝片
+下載 [[http://rufus.akeo.ie/][rufus]] 和 [[https://www.archlinux.org/download/][archiso]]，製作好 Archlinux 安裝片，重開機進入 linux，接著修
+複 boot 區和 grub.cfg。最後，終於了解到[[solution][正解如上]]。

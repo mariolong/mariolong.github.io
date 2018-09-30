@@ -1,0 +1,64 @@
+#+BEGIN_COMMENT
+.. title: 跟上當初 fork 專案的最新進度
+.. slug: github-forked-resp-pull-to-newest
+.. date: 2018-09-25 16:55:10 UTC+08:00
+.. status: draft
+.. tags: git, github, emacs, magit
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: num:nil toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+原 Taffybar 在 github 已 V3.0，我當初在 github 中 fork 的是 V2.0。為了讓 local 的
+taffybar 與原來的能一致，特別研究如何 pull 原來的 Taffybar 到 local，再 push 回
+github 中 fork 的庫，讓 github 上 fork 的庫和原始的庫能一致。
+
+參考：[[https://gitbook.tw/chapters/github/syncing-a-fork.html][【狀況題】怎麼跟上當初 fork 專案的進度？ - 為你自己學 Git | 高見龍]]
+後，記錄 Magit 中的做法。
+
+簡單的說，就是跟上游同步：把原作的專案設定成上游專案，Fetch 回來之後再自己手動合併。
+
+* 設定原作的遠端節點
+
+先加上一個遠端節點 taffy-src，指向原來的 Taffybar
+
+#+BEGIN_SRC sh
+git remote add taffy-src https://github.com/taffybar/taffybar
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+M -> add
+輸入 remote name: taffy-src
+和
+remote URL:  https://github.com/taffybar/taffybar
+#+END_EXAMPLE
+
+* 抓取原作專案的內容
+#+BEGIN_SRC sh
+checkout master
+git fetch taffy-src
+#+END_SRC
+
+b -> b -> origin/master
+f -> e -> taffy-scr/master
+
+* 合併到 origin/master
+#+BEGIN_SRC sh
+git merge origin/master
+#+END_SRC
+
+local 的 taffybar 進度就跟原作的是一樣了。
+
+* 推回自己的專案
+
+這個步驟要不要做就看你自己決定了，畢竟在你電腦上已經是最新版本了，如果你希望你在 GitHub 上那個 Fork 的專案也跟到最新版，只
+要推上去就行了：
+
+#+BEGIN_SRC sh
+git push origin master
+#+END_SRC
+
+p -> origin/master

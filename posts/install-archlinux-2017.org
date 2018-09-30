@@ -544,9 +544,10 @@ pacman -S xf86-video-intel libav-intel-driver
 - ttf-liberation: 修正部份 PDF 字型，此為 google-chrome 新的依賴。
 - ttf-hanazono: 花園明朝體，罕見字
 - ttf-tw: 教育部標準楷宋體
+- ttf-symbola: Font for unicode symbols.
 
 #+BEGIN_SRC sh
-yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono
+yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono ttf-symbola
 yaourt -S adobe-source-{code,sans,serif}-pro-fonts adobe-source-han-{sans,serif}-{cn,jp,kr,otc,tw}-fonts
 #+END_SRC
 
@@ -596,7 +597,7 @@ lxqt 不全裝，目前只用 ~lxqt-policykit-agent~ 和 ~lxappearance~.
 Using Breeze theme and Flat Remix icon theme:
 
 #+BEGIN_SRC sh
-yaourt -S breeze{,-kde4,-gtk} flat-remix-git lxappearance
+yaourt -S breeze{,-gtk} flat-remix-git lxappearance adwaita-icon-theme
 #+END_SRC
 
 進 ~lxappearance~ 設定 theme and icon theme
