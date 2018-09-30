@@ -138,17 +138,17 @@ To monitor for all possible SMART errors on all disk">
 ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - ArchWiki</a>
 </p>
 
-<div id="outline-container-org85017ed" class="outline-2">
-<h2 id="org85017ed">Install</h2>
-<div class="outline-text-2" id="text-org85017ed">
+<div id="outline-container-org3802224" class="outline-2">
+<h2 id="org3802224">Install</h2>
+<div class="outline-text-2" id="text-org3802224">
 <div class="highlight"><pre><span></span>yaourt -S smartmontools
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org5ccb1f2" class="outline-2">
-<h2 id="org5ccb1f2">start smartd</h2>
-<div class="outline-text-2" id="text-org5ccb1f2">
+<div id="outline-container-orgd9728a1" class="outline-2">
+<h2 id="orgd9728a1">start smartd</h2>
+<div class="outline-text-2" id="text-orgd9728a1">
 <div class="highlight"><pre><span></span>systemctl start smartd
 </pre></div>
 
@@ -158,9 +158,9 @@ ref: <a href="https://wiki.archlinux.org/index.php/S.M.A.R.T.">S.M.A.R.T. - Arch
 </div>
 </div>
 
-<div id="outline-container-orga364cd5" class="outline-2">
-<h2 id="orga364cd5">smartd.conf</h2>
-<div class="outline-text-2" id="text-orga364cd5">
+<div id="outline-container-org789c2ba" class="outline-2">
+<h2 id="org789c2ba">smartd.conf</h2>
+<div class="outline-text-2" id="text-org789c2ba">
 <p>
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -170,9 +170,9 @@ setting must be added in the configuration file.
 </pre></div>
 </div>
 
-<div id="outline-container-orga50f1ef" class="outline-3">
-<h3 id="orga50f1ef">auto mail</h3>
-<div class="outline-text-3" id="text-orga50f1ef">
+<div id="outline-container-org94c60c4" class="outline-3">
+<h3 id="org94c60c4">auto mail</h3>
+<div class="outline-text-3" id="text-org94c60c4">
 <p>
 先依 <a href="https://dominicm.com/configure-email-notifications-on-arch-linux/">Configure Email Notifications on Arch Linux | DominicM</a> 設定 s-nail,
 再於 <code>/etc/smartd.conf</code> 加上以下指令
@@ -181,6 +181,62 @@ setting must be added in the configuration file.
 <div class="highlight"><pre><span></span>DEVICESCAN -m address@domain.com -M test
 </pre></div>
 </div>
+</div>
+</div>
+
+
+<div id="outline-container-org8dadc8d" class="outline-2">
+<h2 id="org8dadc8d">test and view the result</h2>
+<div class="outline-text-2" id="text-org8dadc8d">
+<p>
+來源： <a href="https://www.techrepublic.com/article/how-to-check-ssd-health-in-linux/">How to check SSD health in Linux - TechRepublic</a>
+</p>
+
+<div class="highlight"><pre><span></span>sudo smartctl -i /dev/sda
+sudo smartctl -t long -a /dev/sda
+</pre></div>
+
+<div class="highlight"><pre><span></span>sudo smartctl -a /dev/sda
+</pre></div>
+
+<p>
+The short test will examine the following:
+</p>
+
+<ul class="org-ul">
+<li>Electrical Properties: The controller tests its own electronics,
+which is different for each manufacturer.</li>
+<li>Mechanical Properties: Servos and positioning mechanisms are tested
+(also specific to each manufacturer).</li>
+<li>Read/Verify : A certain area of the disk will be read to verify
+certain data (the size and position of the region read is unique to
+each manufacturer).</li>
+</ul>
+<p>
+The long test runs everything included with the short test, while adding:
+</p>
+
+<ul class="org-ul">
+<li>No time restriction and in the Read/Verify segment.</li>
+<li>The entire disk is checked (as opposed to just a section).</li>
+</ul>
+<div class="highlight"><pre><span></span>sudo smartctl -A /dev/sda
+</pre></div>
+
+<dl class="org-dl">
+<dt>Power_On_Hours</dt>
+<dd>how many hours the drive has been powered on. Each
+make/model of drive has a recommended "shelf life"
+of hours it can be used. Most modern SSDs have
+fairly incredible lifespans, so chances are you're
+not going to bump into the end of life. If you're
+using an older drive, this can be an issue.</dd>
+
+<dt>Wear_Leveling_Count</dt>
+<dd>Stands for the remaining endurance of the
+drive in percentage (starting from 100 and decreasing linearly as
+the drive is written to).</dd>
+</dl>
 </div>
 </div>
 		</div>

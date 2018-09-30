@@ -1,5 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 21 Sep 2018 05:23:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Sun, 30 Sep 2018 08:22:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>將 windows 10 和 linux 移到新的 512G SSD</title><link>https://mariolong.github.io/posts/change-boot-ssd-to-512g/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+新的 windows 10 真吃硬碟，原本 128G 的 SSD 不夠用，一直要努力刪掉暫時用不到的軟體，也真夠心煩的。萬一不小心刪錯了，也是件麻煩事。狠下心來，上原價屋買了顆 Intel 512G 的 SSD，花了新台幣 3388 元。
+&lt;/p&gt;
+
+&lt;p&gt;
+昨天早上買的，今天早上到貨，下午裝上，晚上就進 linux，動手記錄這次的過程。呃，windows 10 明天再說吧，晚上，不想動太多系統。
+&lt;/p&gt;
+
+&lt;div id="outline-container-orgfcb77ab" class="outline-2"&gt;
+&lt;h2 id="orgfcb77ab"&gt;系統移轉&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfcb77ab"&gt;
+&lt;p&gt;
+先上網查到 &lt;a href="http://www.fox-saying.com/blog/post/43730227-%5B%E6%95%99%E5%AD%B8%5D-%E5%BF%AB%E9%80%9F%E6%AD%A3%E7%A2%BA%E8%BD%89%E7%A7%BB-ssd-%E4%B8%8A%E7%9A%84%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1-~-uefi"&gt;快速正確轉移 SSD 上的作業系統 ~ UEFI 介面 Windows10 OS 搬家&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+看起來，現在的工具真不少，也挺方便的。只要下載下面兩個程式：
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;EaseUS Todo Backup Free 免費版&lt;/li&gt;
+&lt;li&gt;AOMEI Partition Assistant Standard Edition 免費版&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+EaseUS Todo Backup Free 可將 partition 完整複製，含開機區，只是 4K 對齊可能做不好，這時就需要 AOMEI Partition Assistant Standard 的幫忙。
+&lt;/p&gt;
+
+&lt;p&gt;
+因為我的系統原本就是在 SSD 上，上次安裝是 4K 對齊的，因此這次做系統複製後，也自然就對齊好了。所以，就不必派出 AOMEI Partition Assistant Standard
+上場救援。
+&lt;/p&gt;
+
+&lt;p&gt;
+這步驟算是順利完成。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5ec2849" class="outline-2"&gt;
+&lt;h2 id="org5ec2849"&gt;BIOS 中調整開機碟順序&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5ec2849"&gt;
+&lt;p&gt;
+選擇要開機的磁碟，不該有問題。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgd847cf3" class="outline-2"&gt;
+&lt;h2 id="orgd847cf3"&gt;開機設定 grub&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd847cf3"&gt;
+&lt;p&gt;
+原以為開機會有一番折騰，沒想到一開機就成功進入 Linux。用 &lt;code&gt;lsblk -o
++uuid&lt;/code&gt; 指令找新 SSD 的 uuid，進 &lt;code&gt;/etc/fstab&lt;/code&gt; 查看掛載磁碟的 uuid, 竟然和先前的相同，不知是幸運，還是 Linux 本來就是如此。windows 就沒有這麼幸運，uuid 不同。
+&lt;/p&gt;
+
+&lt;p&gt;
+接下來改&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt; ，讓 grup menu 中 windows 10 的項目指到正確的磁碟。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;menuentry "Windows 10" --class windows --class os {
+insmod ntfs
+search --no-floppy --set=root --fs-uuid $new-ssd-uuid$
+ntldr /bootmgr
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+重建 grub menu
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+最後以 windows 10 重新開機，嗯，windows 偵測到 boot 區有問題，要求修復。不是很順利。
+&lt;/p&gt;
+
+&lt;p&gt;
+接著，我做了許多嘗試，&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#orgf9fa3bd"&gt;記錄於後&lt;/a&gt;，如：以正版 windows 10 開機，修復 MBR，失敗，不能開機；重灌 windows 10，裝上 EasyBCD，試圖由 linux 開機後再修
+grub，可惜 EasyBCD 不支援 ext4。
+&lt;/p&gt;
+
+&lt;p&gt;
+最後，做了 Archlinux 開機片，進 linux，修復好 boot 和 grub.cfg，才得以正常地開機進入 windows 10 和 linux。記錄在&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#org0d8e8ed"&gt;正解&lt;/a&gt;中。
+&lt;/p&gt;
+
+&lt;p&gt;
+當作是一次經驗，下次不會再出錯。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org87b82a6" class="outline-2"&gt;
+&lt;h2 id="org87b82a6"&gt;&lt;a id="org0d8e8ed"&gt;&lt;/a&gt;正解&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org87b82a6"&gt;
+&lt;p&gt;
+進到了 linux 後，先裝上 &lt;code&gt;os-prober&lt;/code&gt;，讓 &lt;code&gt;grub-mkconfig&lt;/code&gt; 可以自動找出
+widnows 10 並設定好 boot 指令。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S os-prober
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+接著執行 &lt;code&gt;grub-mkconfig&lt;/code&gt; 重建 &lt;code&gt;grub.cfg&lt;/code&gt;，重開機就會 OK。
+&lt;/p&gt;
+
+&lt;p&gt;
+原因在於&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt;中，最後一行的 &lt;code&gt;ntldr /bootmgr&lt;/code&gt;。
+windows 10 1803 版的 &lt;code&gt;/bootmgr&lt;/code&gt; 找不到了，所以沿用先前舊的 &lt;code&gt;grub.cfg&lt;/code&gt;
+是錯的。不過，只要先裝上 &lt;code&gt;os-prober&lt;/code&gt;，就可解決這個錯誤。
+&lt;/p&gt;
+
+&lt;p&gt;
+linux 中，已經把&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt;拿掉了。
+&lt;/p&gt;
+
+&lt;p&gt;
+最後一定可以解決問題，我還是很不喜歡 windows，改個版本也能搞到不能用，也不會顯示個正確的訊息，害我們浪費了許多時間。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6053228" class="outline-2"&gt;
+&lt;h2 id="org6053228"&gt;&lt;a id="orgf9fa3bd"&gt;&lt;/a&gt;其他過程及記錄&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6053228"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgd9ce6e2" class="outline-3"&gt;
+&lt;h3 id="orgd9ce6e2"&gt;fix windows boot&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd9ce6e2"&gt;
+&lt;p&gt;
+拿出原版的 windows 10 安裝 USB 隨身碟，開機修復…，竟然無法進入安裝畫面，還一直要我放入安裝光碟。這是什麼情形？我可是用正版的 windows 10 啊！真是愈來愈討厭 microsoft 了。討厭歸討厭，問題還是得解決啊。
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7095a8d" class="outline-4"&gt;
+&lt;h4 id="org7095a8d"&gt;先開機進入 linux，在 linux 中，&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org7095a8d"&gt;
+&lt;/div&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="org3500b55"&gt;&lt;/a&gt;download windows 10 ISO&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org3500b55"&gt;
+&lt;p&gt;
+從 &lt;code&gt;https://www.microsoft.com/zh-tw/software-download/windows10ISO&lt;/code&gt; 下載 windows 10 ISO。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org5e380e0"&gt;&lt;/a&gt;燒錄開機 DVD&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org5e380e0"&gt;
+&lt;p&gt;
+目前手邊沒有容量夠大的 USB 隨身碟，可是有 DVD-RW，反正也用不著 DVD，干脆拿來燒成 windows 10 的開機片。
+&lt;/p&gt;
+
+&lt;p&gt;
+先安裝燒錄軟體 k3b：
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S k3b dvd+rw-tools cdrdao
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+執行 k3b，選擇「燒錄映像檔」，檢查，4 倍速慢慢燒，比較不會出錯。燒了 30 分鐘，終於完成。
+&lt;/p&gt;
+
+&lt;p&gt;
+重開機，結果可以進入安裝畫面，那就進行修複吧。修復完了，重開機，可以進入 windows 中，開心啊。趕緊安裝 EasyBCD，要能進 linux。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org1303d12" class="outline-4"&gt;
+&lt;h4 id="org1303d12"&gt;在 windows 10 中，&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org1303d12"&gt;
+&lt;/div&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="orgca46aca"&gt;&lt;/a&gt;安裝 EasyBCD&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orgca46aca"&gt;
+&lt;p&gt;
+可是 EasyBCD 不支援 ext4，所以裝了也不能進我的 linux 系統。晴天霹靂。因為要修復 grub.cfg，必須要在 Linux 中，看來只能乖乖做 linux 開機片。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org6654265"&gt;&lt;/a&gt;用 USB 隨身碟做 Archlinux 安裝片&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org6654265"&gt;
+&lt;p&gt;
+下載 &lt;a href="http://rufus.akeo.ie/"&gt;rufus&lt;/a&gt; 和 &lt;a href="https://www.archlinux.org/download/"&gt;archiso&lt;/a&gt;，製作好 Archlinux 安裝片，重開機進入 linux，接著修複 boot 區和 grub.cfg。最後，終於了解到&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#org0d8e8ed"&gt;正解如上&lt;/a&gt;。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>linux</category><category>ssd</category><category>windows</category><guid>https://mariolong.github.io/posts/change-boot-ssd-to-512g/</guid><pubDate>Thu, 27 Sep 2018 12:55:57 GMT</pubDate></item><item><title>Install stack, cabal and nix for writing miso project</title><link>https://mariolong.github.io/posts/install-stack-cabal-nix-for-miso/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 在 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications/"&gt;Install Haskell Applications&lt;/a&gt; 中，提到了 haskell 三個 package 管理程式：cabal, stack, nix.
 我會用到的 haskell 軟體有 xmonad/taffybar, pandoc 和自行撰寫的程式。xmonad/taffybar 用 stack 安裝比較方便，pandoc
 在 cabal 中的版本會比較新，miso/GHCJS 的程式，用 nix 管理是最合適且最強大。
@@ -376,17 +572,17 @@ Hello world!
 ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org85017ed" class="outline-2"&gt;
-&lt;h2 id="org85017ed"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org85017ed"&gt;
+&lt;div id="outline-container-org3802224" class="outline-2"&gt;
+&lt;h2 id="org3802224"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3802224"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S smartmontools
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5ccb1f2" class="outline-2"&gt;
-&lt;h2 id="org5ccb1f2"&gt;start smartd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5ccb1f2"&gt;
+&lt;div id="outline-container-orgd9728a1" class="outline-2"&gt;
+&lt;h2 id="orgd9728a1"&gt;start smartd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd9728a1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start smartd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -396,9 +592,9 @@ ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga364cd5" class="outline-2"&gt;
-&lt;h2 id="orga364cd5"&gt;smartd.conf&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga364cd5"&gt;
+&lt;div id="outline-container-org789c2ba" class="outline-2"&gt;
+&lt;h2 id="org789c2ba"&gt;smartd.conf&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org789c2ba"&gt;
 &lt;p&gt;
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -408,9 +604,9 @@ setting must be added in the configuration file.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga50f1ef" class="outline-3"&gt;
-&lt;h3 id="orga50f1ef"&gt;auto mail&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga50f1ef"&gt;
+&lt;div id="outline-container-org94c60c4" class="outline-3"&gt;
+&lt;h3 id="org94c60c4"&gt;auto mail&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org94c60c4"&gt;
 &lt;p&gt;
 先依 &lt;a href="https://dominicm.com/configure-email-notifications-on-arch-linux/"&gt;Configure Email Notifications on Arch Linux | DominicM&lt;/a&gt; 設定 s-nail,
 再於 &lt;code&gt;/etc/smartd.conf&lt;/code&gt; 加上以下指令
@@ -419,6 +615,62 @@ setting must be added in the configuration file.
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DEVICESCAN -m address@domain.com -M test
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org8dadc8d" class="outline-2"&gt;
+&lt;h2 id="org8dadc8d"&gt;test and view the result&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8dadc8d"&gt;
+&lt;p&gt;
+來源： &lt;a href="https://www.techrepublic.com/article/how-to-check-ssd-health-in-linux/"&gt;How to check SSD health in Linux - TechRepublic&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo smartctl -i /dev/sda
+sudo smartctl -t long -a /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo smartctl -a /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The short test will examine the following:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Electrical Properties: The controller tests its own electronics,
+which is different for each manufacturer.&lt;/li&gt;
+&lt;li&gt;Mechanical Properties: Servos and positioning mechanisms are tested
+(also specific to each manufacturer).&lt;/li&gt;
+&lt;li&gt;Read/Verify : A certain area of the disk will be read to verify
+certain data (the size and position of the region read is unique to
+each manufacturer).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+The long test runs everything included with the short test, while adding:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;No time restriction and in the Read/Verify segment.&lt;/li&gt;
+&lt;li&gt;The entire disk is checked (as opposed to just a section).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo smartctl -A /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;dl class="org-dl"&gt;
+&lt;dt&gt;Power_On_Hours&lt;/dt&gt;&lt;dd&gt;how many hours the drive has been powered on. Each
+make/model of drive has a recommended "shelf life"
+of hours it can be used. Most modern SSDs have
+fairly incredible lifespans, so chances are you're
+not going to bump into the end of life. If you're
+using an older drive, this can be an issue.&lt;/dd&gt;
+
+&lt;dt&gt;Wear_Leveling_Count&lt;/dt&gt;&lt;dd&gt;Stands for the remaining endurance of the
+drive in percentage (starting from 100 and decreasing linearly as
+the drive is written to).&lt;/dd&gt;
+&lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>linux</category><category>smart</category><guid>https://mariolong.github.io/posts/turn-on-smart/</guid><pubDate>Wed, 11 Jul 2018 13:40:06 GMT</pubDate></item><item><title>部落格，重回 nikola+org-mode</title><link>https://mariolong.github.io/posts/zhong-hui-nikola-xie-luo-ge/</link><dc:creator>Mario Long</dc:creator><description>&lt;div&gt;&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;目錄&lt;/h2&gt;
@@ -1009,907 +1261,4 @@ opencc: using s2twp.json
 &lt;div id="outline-container-orgc51800d" class="outline-3"&gt;
 &lt;h3 id="orgc51800d"&gt;systemd timers&lt;/h3&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>haskell</category><category>linux</category><category>taffybar</category><category>xmonad</category><guid>https://mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item><item><title>Install Arch linux (2017)</title><link>https://mariolong.github.io/posts/install-arch-linux-2017/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-原本的 Beginners' Guide 改成了 &lt;a href="https://wiki.archlinux.org/index.php/installation_guide"&gt;Installation guide&lt;/a&gt; ，文件結構比較清楚，但是保證不適合初次安裝 archlinux 的人閱讀，也不適合一步步之執行。
-&lt;/p&gt;
-
-&lt;p&gt;
-這次安裝，把目前系統應有的指令再記録下來，以備參閱。與上次安裝時所用的指令，差異不大。
-&lt;/p&gt;
-
-&lt;div id="outline-container-org79c16e7" class="outline-2"&gt;
-&lt;h2 id="org79c16e7"&gt;&lt;span class="section-number-2"&gt;1&lt;/span&gt; 製作開機片（CD、USB、硬碟）啓動&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;
-從 &lt;a href="https://www.archlinux.org/download/"&gt;Arch linux Downloads&lt;/a&gt; 下載 archlinux.iso，建議用 bt 方式下載比較快。
-&lt;/p&gt;
-
-&lt;p&gt;
-參考 &lt;a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media"&gt;USB flash installation media&lt;/a&gt; 製作開機片 :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4M &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/path/to/archlinux.iso &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdx &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sync
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org0f4b374" class="outline-2"&gt;
-&lt;h2 id="org0f4b374"&gt;&lt;span class="section-number-2"&gt;2&lt;/span&gt; 啟動 ArchLinux 安裝程序&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
-重新以 USB 開機，選擇從主選單中選擇 "Boot Arch linux" 並按
-&amp;lt;enter&amp;gt;，系統將加載並給出登錄提示，自動以 'root' 登錄。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org68939ab" class="outline-2"&gt;
-&lt;h2 id="org68939ab"&gt;&lt;span class="section-number-2"&gt;3&lt;/span&gt; 建立網絡連接&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;p&gt;
-&lt;code&gt;ping 8.8.8.8&lt;/code&gt; 看看有没有網路，没有網路就啓動 &lt;code&gt;dhcpcd&lt;/code&gt;:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start dhcpcd
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-若要用 wifi 則用:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wifi-menu -o profile-name
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-ping 一下看看網路連上了嗎？
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org51f2d35" class="outline-2"&gt;
-&lt;h2 id="org51f2d35"&gt;&lt;span class="section-number-2"&gt;4&lt;/span&gt; 準備磁碟機&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
-&lt;p&gt;
-因為先安裝 windows 10，已經將磁碟分割好了。
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org1f4b813" class="outline-3"&gt;
-&lt;h3 id="org1f4b813"&gt;&lt;span class="section-number-3"&gt;4.1&lt;/span&gt; 檢查分區狀況&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsblk -f
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orge5fc300" class="outline-3"&gt;
-&lt;h3 id="orge5fc300"&gt;&lt;span class="section-number-3"&gt;4.2&lt;/span&gt; 格式化&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-2"&gt;
-&lt;p&gt;
-格式化目標 partition，免得有不可預期的狀況
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkfs.ext4 -L LABLE /dev/sdax
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7f899fe" class="outline-3"&gt;
-&lt;h3 id="org7f899fe"&gt;&lt;span class="section-number-3"&gt;4.3&lt;/span&gt; 掛載分區&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-3"&gt;
-&lt;p&gt;
-先掛載 root 區 :
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount /dev/sdaX /mnt
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-再掛載其他分區，/home 最好獨立分區。 :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /mnt/home
-mount /dev/sda1 /mnt/home
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7d0d4ec" class="outline-3"&gt;
-&lt;h3 id="org7d0d4ec"&gt;&lt;span class="section-number-3"&gt;4.4&lt;/span&gt; 建立 swap&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-4"&gt;
-&lt;p&gt;
-現在的 RAM 都很大，這個可以不用裝了。目前安裝了 16G 的 RAM。
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org9b87f9c" class="outline-4"&gt;
-&lt;h4 id="org9b87f9c"&gt;&lt;span class="section-number-4"&gt;4.4.1&lt;/span&gt; 建立 swap file&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-4-4-1"&gt;
-&lt;p&gt;
-如果真的要裝 swap，可用檔案取代，方便好管理。 :
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fallocate -l 16G /swapfile
-sudo chmod &lt;span class="m"&gt;600&lt;/span&gt; /swapfile
-mkswap /swapfile
-sudo mkswap /swapfile
-swapon /swpfile
-sudo swapon /swapfile
-sudo nano /etc/fstab
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-在 fstab 中加入 :
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/swapfile none swap defaults 0 0
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgb70c904" class="outline-4"&gt;
-&lt;h4 id="orgb70c904"&gt;&lt;span class="section-number-4"&gt;4.4.2&lt;/span&gt; Remove swap file&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-4-4-2"&gt;
-&lt;p&gt;
-如果不用 swap，刪了就是。
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;b&gt;Warning:&lt;/b&gt; swap is managed by systemd and will be reenabled by it after
-some time. To remove a swap file, the current swap file must be turned
-off. :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;swapoff -a
-rm -f /swapfile
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6bdc90a" class="outline-2"&gt;
-&lt;h2 id="org6bdc90a"&gt;&lt;span class="section-number-2"&gt;5&lt;/span&gt; 配置安裝的環境&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-5"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orga31db43" class="outline-3"&gt;
-&lt;h3 id="orga31db43"&gt;&lt;span class="section-number-3"&gt;5.1&lt;/span&gt; DNS setup (可不做)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/resolv.conf
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nameserver 168.95.1.1
-nameserver 8.8.8.8
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgf5eeefc" class="outline-3"&gt;
-&lt;h3 id="orgf5eeefc"&gt;&lt;span class="section-number-3"&gt;5.2&lt;/span&gt; 選擇安裝鏡像&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-2"&gt;
-&lt;p&gt;
-安裝前需要編輯 &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt;, 將最想使用的鏡像放到前面：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/pacman.d/mirrorlist
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-nano 簡單指令 :
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-Alt-6: copy line
-C-u:   paste
-C-x:   exit
-&lt;/pre&gt;
-
-&lt;p&gt;
-原則上，改過 mirrorlist 就執行以下指令(可不做)： :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -Syy
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7df4e4c" class="outline-2"&gt;
-&lt;h2 id="org7df4e4c"&gt;&lt;span class="section-number-2"&gt;6&lt;/span&gt; 安裝基本系統&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-6"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacstrap -i /mnt base base-devel
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-if pacman complains that error:
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-failed to commit transaction (invalid or corrupted package)
-&lt;/pre&gt;
-
-&lt;p&gt;
-run the following command:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman-key --init &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; pacman-key --populate archlinux
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org2fd95e7" class="outline-3"&gt;
-&lt;h3 id="org2fd95e7"&gt;&lt;span class="section-number-3"&gt;6.1&lt;/span&gt; 生成 fstab&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-1"&gt;
-&lt;p&gt;
-這個一定要做，不然後頭會很麻煩。 :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;genfstab -U -p /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
-nano /mnt/etc/fstab   &lt;span class="c1"&gt;# 檢查一下 fstab&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3cbf4ab" class="outline-3"&gt;
-&lt;h3 id="org3cbf4ab"&gt;&lt;span class="section-number-3"&gt;6.2&lt;/span&gt; Chroot 到新系統，並作基本配置&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;arch-chroot /mnt /bin/bash
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org26eae6b" class="outline-3"&gt;
-&lt;h3 id="org26eae6b"&gt;&lt;span class="section-number-3"&gt;6.3&lt;/span&gt; 配置 pacman&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/pacman.conf
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-爲了安裝 yaourt，到最後空白處加上： :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[archlinuxfr]
-SigLevel = Never    # add: 2013/04/28
-Server = http://repo.archlinux.fr/$arch
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-一般使用者用 [core], [extra] 與 [community]。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3c98802" class="outline-3"&gt;
-&lt;h3 id="org3c98802"&gt;&lt;span class="section-number-3"&gt;6.4&lt;/span&gt; 更新系統，並安裝 yaourt&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-4"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -Syu
-pacman -S yaourt
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org18f484f" class="outline-3"&gt;
-&lt;h3 id="org18f484f"&gt;&lt;span class="section-number-3"&gt;6.5&lt;/span&gt; 配置系統 Locale&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-5"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/locale.gen
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgda832ee" class="outline-4"&gt;
-&lt;h4 id="orgda832ee"&gt;&lt;span class="section-number-4"&gt;6.5.1&lt;/span&gt; 找到&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-6-5-1"&gt;
-&lt;pre class="example"&gt;
-en_US.UTF-8 UTF-8
-zh_TW.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8
-&lt;/pre&gt;
-
-&lt;p&gt;
-把以上全部打開。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org96d04a6" class="outline-4"&gt;
-&lt;h4 id="org96d04a6"&gt;&lt;span class="section-number-4"&gt;6.5.2&lt;/span&gt; 使 locale 生效&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-6-5-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;locale-gen    &lt;span class="c1"&gt;#使更改生效運行&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org30dc27e" class="outline-4"&gt;
-&lt;h4 id="org30dc27e"&gt;&lt;span class="section-number-4"&gt;6.5.3&lt;/span&gt; 確認一下 locale&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-6-5-3"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;locale -a     &lt;span class="c1"&gt;#確認一下開啟的 locale&lt;/span&gt;
-locale        &lt;span class="c1"&gt;#目前的 locale&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org25e04b0" class="outline-4"&gt;
-&lt;h4 id="org25e04b0"&gt;&lt;span class="section-number-4"&gt;6.5.4&lt;/span&gt; 全域 locale 設定：對整個系統有效&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-6-5-4"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/locale.conf
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-修改 &lt;code&gt;LANG&lt;/code&gt;, 主控台用英文，否則出現方塊字，是看不懂它的意思。等進 X 後再改成中文。
-&lt;/p&gt;
-&lt;pre class="example"&gt;
-export LANG=en_US.UTF-8
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orga57537a" class="outline-3"&gt;
-&lt;h3 id="orga57537a"&gt;&lt;span class="section-number-3"&gt;6.6&lt;/span&gt; 更改 console 字型&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-6"&gt;
-&lt;p&gt;
-把字改大一點，眼睛比較不吃力。先安裝字型，再設定字型。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S terminus-font
-setconsolefont ter-128n
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The FONT variable in &lt;code&gt;/etc/vconsole.conf&lt;/code&gt; is used to set the font at boot, persistently for all consoles.&lt;sup&gt;&lt;a id="fnr.1" class="footref" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/vconsole.conf
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;
-加上
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;FONT=ter-128n
-FONT_MAP=8859-1
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-ISO 8859-1，正式編號為 ISO/IEC 8859-1:1998，又稱 Latin-1 或「西歐語言」&lt;sup&gt;&lt;a id="fnr.2" class="footref" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3f5d4e1" class="outline-3"&gt;
-&lt;h3 id="org3f5d4e1"&gt;&lt;span class="section-number-3"&gt;6.7&lt;/span&gt; 配置系統時區&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-7"&gt;
-&lt;p&gt;
-可用的時區位於目錄 &lt;code&gt;/usr/share/zoneinfo/&lt;/code&gt; 下，可以 &lt;code&gt;ls&lt;/code&gt; 一下。用以下指令配置系統時區：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org245578e" class="outline-3"&gt;
-&lt;h3 id="org245578e"&gt;&lt;span class="section-number-3"&gt;6.8&lt;/span&gt; 時間調整&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-8"&gt;
-&lt;p&gt;
-為了與 windows 雙重開機 (dual boot)，最好做以下動作：
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;&lt;p&gt;
-修改 windows 的登錄檔，用 regedit 加上一個 DWORD(32 bits) 的機碼
-RealTimeIsUniversal，將其值設為 1，位置如下:
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal
-&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;在 windows 中關掉「網路自動對時」的功能。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;
-當然，以上的動作要回到 windows 才能執行。
-&lt;/p&gt;
-
-&lt;p&gt;
-在 linux 中，只需執行：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;timedatectl set-local-rtc &lt;span class="nb"&gt;false&lt;/span&gt;
-timedatectl set-ntp &lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-並將 utc 時間寫入 BIOS 中即可。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hwclock --systohc --utc
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org778322c" class="outline-3"&gt;
-&lt;h3 id="org778322c"&gt;&lt;span class="section-number-3"&gt;6.9&lt;/span&gt; 設置主機名稱&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-9"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/hostname
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-加入
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hostname
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgf62153f" class="outline-2"&gt;
-&lt;h2 id="orgf62153f"&gt;&lt;span class="section-number-2"&gt;7&lt;/span&gt; 再一次設定網路&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-7"&gt;
-&lt;p&gt;
-簡單啓動 &lt;code&gt;dhcpcd&lt;/code&gt; :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; dhcpcd
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org18d57aa" class="outline-3"&gt;
-&lt;h3 id="org18d57aa"&gt;&lt;span class="section-number-3"&gt;7.1&lt;/span&gt; WIFI&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-1"&gt;
-&lt;p&gt;
-用 &lt;code&gt;netctl&lt;/code&gt; 啓動 wifi
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org830e804" class="outline-3"&gt;
-&lt;h3 id="org830e804"&gt;&lt;span class="section-number-3"&gt;7.2&lt;/span&gt; ADSL&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-2"&gt;
-&lt;p&gt;
-如果要用 ADSL，則這個很重要，不然重開機時，就會沒網路可用。
-&lt;/p&gt;
-
-&lt;p&gt;
-install the network card that is supposed to be connected to the
-DSL-Modem into your computer. After adding your newly installed
-network card to the modules.conf/modprobe.conf install therp-pppoe
-package :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S rp-pppoe
-pppoe-setup
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-run the &lt;code&gt;pppoe-setup&lt;/code&gt; script to configure your connection After you have
-entered all the data, you can connect and disconnect your line with :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start adsl
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-and:
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl stop adsl
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-respectively. The setup is usually easy and straightforward, but feel
-free to read the manpages for hints. If you want to automatically 'dial
-in' at boot, issue command :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; adsl
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;
-or
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl disable adsl
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;
-to remove auto 'dial in' at boot.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orge804397" class="outline-2"&gt;
-&lt;h2 id="orge804397"&gt;&lt;span class="section-number-2"&gt;8&lt;/span&gt; mkinitcpio&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-8"&gt;
-&lt;p&gt;
-增加 lvm2 到 hooks 後，執行 &lt;code&gt;mkinitcpio&lt;/code&gt; :
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/mkinitcpio.conf
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;
-修改
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;HOOKS=(... udev ... block lvm2 filesystems ...)
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;
-再執行
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkinitcpio -p linux
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org69ac8e6" class="outline-2"&gt;
-&lt;h2 id="org69ac8e6"&gt;&lt;span class="section-number-2"&gt;9&lt;/span&gt; Install and configure a bootloader&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-9"&gt;
-&lt;p&gt;
-Install the grub-bios package and then run grub-install:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S grub-bios  &lt;span class="c1"&gt;## 安裝 grub-bios&lt;/span&gt;
-grub-install --target&lt;span class="o"&gt;=&lt;/span&gt;i386-pc --recheck /dev/sda  &lt;span class="c1"&gt;## 安裝到 boot 區&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgd7ee311" class="outline-3"&gt;
-&lt;h3 id="orgd7ee311"&gt;&lt;span class="section-number-3"&gt;9.1&lt;/span&gt; 自動尋找其它的 OS&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-1"&gt;
-&lt;p&gt;
-如果有其他的 OS，這個就很重要。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S os-prober
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-或是直接在 /etc/grub.d/40\&lt;sub&gt;custom&lt;/sub&gt; 加上以下指令：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;menuentry "Windows 10" --class windows --class os {
-  insmod ntfs
-  search --no-floppy --set=root --fs-uuid $your_uuid_here$
-  ntldr /bootmgr
-}
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6a28173" class="outline-3"&gt;
-&lt;h3 id="org6a28173"&gt;&lt;span class="section-number-3"&gt;9.2&lt;/span&gt; intel CPU 要安裝 microcode&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-2"&gt;
-&lt;p&gt;
-這步要在執行 grub-mkconfig 自動產生 grub.cfg 之前做：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S intel-ucode
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org2841e69" class="outline-3"&gt;
-&lt;h3 id="org2841e69"&gt;&lt;span class="section-number-3"&gt;9.3&lt;/span&gt; 自動產生 grub.cfg&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-3"&gt;
-&lt;p&gt;
-這個一定要做，不然重開機時，就等著進 grub shell，很麻煩。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grub-mkconfig -o /boot/grub/grub.cfg
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org19e95d2" class="outline-2"&gt;
-&lt;h2 id="org19e95d2"&gt;&lt;span class="section-number-2"&gt;10&lt;/span&gt; 重啓&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-10"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
-umount /mnt
-reboot
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orga97c7f0" class="outline-3"&gt;
-&lt;h3 id="orga97c7f0"&gt;&lt;span class="section-number-3"&gt;10.1&lt;/span&gt; 確認網路連線&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-10-1"&gt;
-&lt;p&gt;
-root 重啓後，ping 一下看看網路連上了嗎？如果沒有，手動連線。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ping &lt;span class="m"&gt;8&lt;/span&gt;.8.8.8
-systemctl start dhcpcd
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;
-或
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;netctl start &amp;lt;wifi-profile-name&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org45b0610" class="outline-3"&gt;
-&lt;h3 id="org45b0610"&gt;&lt;span class="section-number-3"&gt;10.2&lt;/span&gt; update system（可不做）&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-10-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -Syu
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org4713882" class="outline-2"&gt;
-&lt;h2 id="org4713882"&gt;&lt;span class="section-number-2"&gt;11&lt;/span&gt; post-installation&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-11"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org1b80361" class="outline-3"&gt;
-&lt;h3 id="org1b80361"&gt;&lt;span class="section-number-3"&gt;11.1&lt;/span&gt; 設置 Root 密碼並創建一般用戶&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;passwd
-useradd -m -s /bin/bash  -g users -G video,storage,optical,lp,scanner,games,wheel username
-passwd username
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgc18d060" class="outline-3"&gt;
-&lt;h3 id="orgc18d060"&gt;&lt;span class="section-number-3"&gt;11.2&lt;/span&gt; 安裝 Sudo&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S sudo
-&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;nano visudo
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-允許 wheel 用戶組成員無密碼使用 sudo：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;visudo
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-輸入
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;%wheel ALL=(ALL) NOPASSWD:ALL
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-再來是設定 sudo，隨便找一個空白行加上：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;username ALL=(ALL) ALL
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org2cd718a" class="outline-3"&gt;
-&lt;h3 id="org2cd718a"&gt;&lt;span class="section-number-3"&gt;11.3&lt;/span&gt; 登出，並以新的用戶名稱登入&lt;/h3&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orga60d73f" class="outline-3"&gt;
-&lt;h3 id="orga60d73f"&gt;&lt;span class="section-number-3"&gt;11.4&lt;/span&gt; 設定聲音 alas&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-4"&gt;
-&lt;p&gt;
-安裝音效驅動，直接用 alas，不要考慮太多。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsa-utils
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-將帳號加入音效使用權：
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gpasswd -a username audio
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-alsa 預設是靜音，以 alsamixer 手動打開聲音：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;alsamixer
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-或者命令列直接開啓：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;amixer sset Master unmute
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-測試一下有沒有聲音：
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;speaker-test -c &lt;span class="m"&gt;2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org4371af5" class="outline-3"&gt;
-&lt;h3 id="org4371af5"&gt;&lt;span class="section-number-3"&gt;11.5&lt;/span&gt; 安裝 x11&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-5"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S xorg-&lt;span class="o"&gt;{&lt;/span&gt;server,apps&lt;span class="o"&gt;}&lt;/span&gt; mesa
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-因為要用 &lt;code&gt;xlogin&lt;/code&gt;，所以 &lt;code&gt;xorg-xinit&lt;/code&gt; 可以不用裝了。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org192330c" class="outline-3"&gt;
-&lt;h3 id="org192330c"&gt;&lt;span class="section-number-3"&gt;11.6&lt;/span&gt; 裝顯卡驅動&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-6"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgcaee22f" class="outline-4"&gt;
-&lt;h4 id="orgcaee22f"&gt;&lt;span class="section-number-4"&gt;11.6.1&lt;/span&gt; ATi 用戶：&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-11-6-1"&gt;
-&lt;p&gt;
-直接裝開源驅動
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S xf86-video-amdgpu
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-或是用舊的
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S xf86-video-ati
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org490dd7b" class="outline-4"&gt;
-&lt;h4 id="org490dd7b"&gt;&lt;span class="section-number-4"&gt;11.6.2&lt;/span&gt; intel 用戶：&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-11-6-2"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S xf86-video-intel libav-intel-driver
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org8b6e7e7" class="outline-3"&gt;
-&lt;h3 id="org8b6e7e7"&gt;&lt;span class="section-number-3"&gt;11.7&lt;/span&gt; 安裝字體&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-7"&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;ttf-liberation: 修正部份 PDF 字型，此為 google-chrome 新的依賴。&lt;/li&gt;
-&lt;li&gt;ttf-hanazono: 花園明朝體，罕見字&lt;/li&gt;
-&lt;li&gt;ttf-tw: 教育部標準楷宋體&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S ttf-tw ttf-dejavu ttf-liberation ttf-hanazono
-yaourt -S adobe-source-&lt;span class="o"&gt;{&lt;/span&gt;code,sans,serif&lt;span class="o"&gt;}&lt;/span&gt;-pro-fonts adobe-source-han-&lt;span class="o"&gt;{&lt;/span&gt;sans,serif&lt;span class="o"&gt;}&lt;/span&gt;-&lt;span class="o"&gt;{&lt;/span&gt;cn,jp,kr,otc,tw&lt;span class="o"&gt;}&lt;/span&gt;-fonts
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org4f1a2a4" class="outline-4"&gt;
-&lt;h4 id="org4f1a2a4"&gt;&lt;span class="section-number-4"&gt;11.7.1&lt;/span&gt; ttf-twcns-fonts: 中文全字庫&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-11-7-1"&gt;
-&lt;p&gt;
-參考 &lt;a href="http://samwhelp.github.io/book-ubuntu-qna/read/howto/configure-font/font/cns11643/install"&gt;http://samwhelp.github.io/book-ubuntu-qna/read/howto/configure-font/font/cns11643/install&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget -c http://www.cns11643.gov.tw/AIDB/Open_Data.zip
-unzip Open_Data.zip
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Copy all &lt;code&gt;*.ttf&lt;/code&gt; files to &lt;code&gt;~/.local/share/fonts&lt;/code&gt;, and execute fc-cache. Run &lt;code&gt;fc-list&lt;/code&gt; to check.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgae23988" class="outline-3"&gt;
-&lt;h3 id="orgae23988"&gt;&lt;span class="section-number-3"&gt;11.8&lt;/span&gt; 讓 X 可以顯示中文&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-8"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano ~/.xinitrc
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;export LANG=zh_TW.UTF-8
-export LC_ALL="zh_TW.UTF-8"
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org0296161" class="outline-3"&gt;
-&lt;h3 id="org0296161"&gt;&lt;span class="section-number-3"&gt;11.9&lt;/span&gt; 將右邊的數字鍵盤預設爲方向鍵&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-9"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S numlockx
-nano ~/.xinitrc
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-增加
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;numlockx &amp;amp;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org2b3b4a0" class="outline-3"&gt;
-&lt;h3 id="org2b3b4a0"&gt;&lt;span class="section-number-3"&gt;11.10&lt;/span&gt; 安裝桌面&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-10"&gt;
-&lt;p&gt;
-lxqt 不全裝，目前只用 &lt;code&gt;lxqt-policykit-agent&lt;/code&gt; 和 &lt;code&gt;lxappearance&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-用 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications"&gt;install haskell application&lt;/a&gt; 這篇安裝 xmonad 和 taffybar.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orga37fcdc" class="outline-3"&gt;
-&lt;h3 id="orga37fcdc"&gt;&lt;span class="section-number-3"&gt;11.11&lt;/span&gt; theme&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-11"&gt;
-&lt;p&gt;
-Using Breeze theme and Flat Remix icon theme:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S breeze&lt;span class="o"&gt;{&lt;/span&gt;,-kde4,-gtk&lt;span class="o"&gt;}&lt;/span&gt; flat-remix-git lxappearance
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-進 &lt;code&gt;lxappearance&lt;/code&gt; 設定 theme and icon theme
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org38ea3cd" class="outline-3"&gt;
-&lt;h3 id="org38ea3cd"&gt;&lt;span class="section-number-3"&gt;11.12&lt;/span&gt; 安裝中文輸入法&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-12"&gt;
-&lt;p&gt;
-沒有其它選擇，就用 fcitx。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S fcitx-im fcitx-configtool fcitx-chewing
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org112cebd" class="outline-3"&gt;
-&lt;h3 id="org112cebd"&gt;&lt;span class="section-number-3"&gt;11.13&lt;/span&gt; install google chrome&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-13"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S google-chrome
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgcfefc78" class="outline-3"&gt;
-&lt;h3 id="orgcfefc78"&gt;&lt;span class="section-number-3"&gt;11.14&lt;/span&gt; 安裝文字編輯器&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-14"&gt;
-&lt;p&gt;
-現在已經沒有別的選擇了，只能用 emacs
-這個神的編輯器，因為她實在是太強大了，讓我不忍放棄她。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S emacs
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-可用的系統成型了，但是還是要再參考 &lt;a href="https://mariolong.github.io/posts/post-installation-of-archlinux"&gt;Post-installation of Archlinux&lt;/a&gt; 有許多需要再調整的。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org472cbbf" class="outline-2"&gt;
-&lt;h2 id="org472cbbf"&gt;&lt;span class="section-number-2"&gt;12&lt;/span&gt; issues&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-12"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org98b0ce3" class="outline-3"&gt;
-&lt;h3 id="org98b0ce3"&gt;&lt;span class="section-number-3"&gt;12.1&lt;/span&gt; kvm:disable by bios&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-12-1"&gt;
-&lt;p&gt;
-iVT enable @ bios
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="footnotes"&gt;
-&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
-&lt;div id="text-footnotes"&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara"&gt;&lt;p class="footpara"&gt;
-&lt;a href="https://wiki.archlinux.org/index.php/Fonts#Console_fonts"&gt;https://wiki.archlinux.org/index.php/Fonts#Console_fonts&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" class="footnum" href="https://mariolong.github.io/posts/install-arch-linux-2017/#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara"&gt;&lt;p class="footpara"&gt;
-&lt;a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859-1"&gt;https://zh.wikipedia.org/wiki/ISO/IEC_8859-1&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/install-arch-linux-2017/</guid><pubDate>Mon, 20 Nov 2017 09:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>haskell</category><category>linux</category><category>taffybar</category><category>xmonad</category><guid>https://mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item></channel></rss>

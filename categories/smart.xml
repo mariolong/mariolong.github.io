@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：smart)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/smart.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Tue, 18 Sep 2018 06:49:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Turn on SMART to monitor HD</title><link>https://mariolong.github.io/posts/turn-on-smart/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：smart)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/smart.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 28 Sep 2018 03:27:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Turn on SMART to monitor HD</title><link>https://mariolong.github.io/posts/turn-on-smart/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. - ArchWiki&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;div id="outline-container-org85017ed" class="outline-2"&gt;
-&lt;h2 id="org85017ed"&gt;Install&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org85017ed"&gt;
+&lt;div id="outline-container-org3802224" class="outline-2"&gt;
+&lt;h2 id="org3802224"&gt;Install&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3802224"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S smartmontools
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5ccb1f2" class="outline-2"&gt;
-&lt;h2 id="org5ccb1f2"&gt;start smartd&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5ccb1f2"&gt;
+&lt;div id="outline-container-orgd9728a1" class="outline-2"&gt;
+&lt;h2 id="orgd9728a1"&gt;start smartd&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd9728a1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl start smartd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -23,9 +23,9 @@ ref: &lt;a href="https://wiki.archlinux.org/index.php/S.M.A.R.T."&gt;S.M.A.R.T. 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga364cd5" class="outline-2"&gt;
-&lt;h2 id="orga364cd5"&gt;smartd.conf&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga364cd5"&gt;
+&lt;div id="outline-container-org789c2ba" class="outline-2"&gt;
+&lt;h2 id="org789c2ba"&gt;smartd.conf&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org789c2ba"&gt;
 &lt;p&gt;
 To monitor for all possible SMART errors on all disks, the following
 setting must be added in the configuration file.
@@ -35,9 +35,9 @@ setting must be added in the configuration file.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga50f1ef" class="outline-3"&gt;
-&lt;h3 id="orga50f1ef"&gt;auto mail&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga50f1ef"&gt;
+&lt;div id="outline-container-org94c60c4" class="outline-3"&gt;
+&lt;h3 id="org94c60c4"&gt;auto mail&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org94c60c4"&gt;
 &lt;p&gt;
 先依 &lt;a href="https://dominicm.com/configure-email-notifications-on-arch-linux/"&gt;Configure Email Notifications on Arch Linux | DominicM&lt;/a&gt; 設定 s-nail,
 再於 &lt;code&gt;/etc/smartd.conf&lt;/code&gt; 加上以下指令
@@ -46,6 +46,62 @@ setting must be added in the configuration file.
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DEVICESCAN -m address@domain.com -M test
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org8dadc8d" class="outline-2"&gt;
+&lt;h2 id="org8dadc8d"&gt;test and view the result&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8dadc8d"&gt;
+&lt;p&gt;
+來源： &lt;a href="https://www.techrepublic.com/article/how-to-check-ssd-health-in-linux/"&gt;How to check SSD health in Linux - TechRepublic&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo smartctl -i /dev/sda
+sudo smartctl -t long -a /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo smartctl -a /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The short test will examine the following:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Electrical Properties: The controller tests its own electronics,
+which is different for each manufacturer.&lt;/li&gt;
+&lt;li&gt;Mechanical Properties: Servos and positioning mechanisms are tested
+(also specific to each manufacturer).&lt;/li&gt;
+&lt;li&gt;Read/Verify : A certain area of the disk will be read to verify
+certain data (the size and position of the region read is unique to
+each manufacturer).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+The long test runs everything included with the short test, while adding:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;No time restriction and in the Read/Verify segment.&lt;/li&gt;
+&lt;li&gt;The entire disk is checked (as opposed to just a section).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo smartctl -A /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;dl class="org-dl"&gt;
+&lt;dt&gt;Power_On_Hours&lt;/dt&gt;&lt;dd&gt;how many hours the drive has been powered on. Each
+make/model of drive has a recommended "shelf life"
+of hours it can be used. Most modern SSDs have
+fairly incredible lifespans, so chances are you're
+not going to bump into the end of life. If you're
+using an older drive, this can be an issue.&lt;/dd&gt;
+
+&lt;dt&gt;Wear_Leveling_Count&lt;/dt&gt;&lt;dd&gt;Stands for the remaining endurance of the
+drive in percentage (starting from 100 and decreasing linearly as
+the drive is written to).&lt;/dd&gt;
+&lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>linux</category><category>smart</category><guid>https://mariolong.github.io/posts/turn-on-smart/</guid><pubDate>Wed, 11 Jul 2018 13:40:06 GMT</pubDate></item><item><title>為 windows 10，換一顆硬碟</title><link>https://mariolong.github.io/posts/replace-new-hard-disk/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 昨晚，開啓 windows 10 時，速度變得很慢，等了好久，好不容易才進入
