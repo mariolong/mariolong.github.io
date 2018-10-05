@@ -35,11 +35,11 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/archive.html</loc>
-  <lastmod>2018-09-30T07:58:00Z</lastmod>
+  <lastmod>2018-10-05T06:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/</loc>
-  <lastmod>2018-09-30T07:58:00Z</lastmod>
+  <lastmod>2018-10-05T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/alsa/</loc>
@@ -102,6 +102,10 @@
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/console/</loc>
+  <lastmod>2018-10-05T06:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/costco/</loc>
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </url>
@@ -132,6 +136,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/emacs/</loc>
   <lastmod>2018-09-18T06:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/fast-boot/</loc>
+  <lastmod>2018-10-05T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/fcitx/</loc>
@@ -178,6 +186,10 @@
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </url>
  <url>
+  <loc>https://mariolong.github.io/categories/grub/</loc>
+  <lastmod>2018-10-05T06:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://mariolong.github.io/categories/happy/</loc>
   <lastmod>2018-09-18T06:49:00Z</lastmod>
  </url>
@@ -212,6 +224,10 @@
  <url>
   <loc>https://mariolong.github.io/categories/imagemagick/</loc>
   <lastmod>2018-09-18T06:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/categories/intel/</loc>
+  <lastmod>2018-10-05T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/categories/kde/</loc>
@@ -467,51 +483,51 @@
  </url>
  <url>
   <loc>https://mariolong.github.io/index-1.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-10.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-11.html</loc>
-  <lastmod>2018-09-28T03:27:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-12.html</loc>
-  <lastmod>2018-09-30T07:58:00Z</lastmod>
+  <lastmod>2018-10-05T06:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-2.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-3.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-4.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-5.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-6.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-7.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-8.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/index-9.html</loc>
-  <lastmod>2018-09-27T12:33:00Z</lastmod>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/24-years-old-3-suggestions/</loc>
@@ -800,6 +816,10 @@
  <url>
   <loc>https://mariolong.github.io/posts/m2ts-to-mp4/</loc>
   <lastmod>2018-09-18T06:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariolong.github.io/posts/make-grub-font-larger/</loc>
+  <lastmod>2018-10-05T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariolong.github.io/posts/margin-of-safety/</loc>

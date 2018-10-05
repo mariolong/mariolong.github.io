@@ -12,6 +12,7 @@
 <link rel="canonical" href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Mario Long">
 <link rel="prev" href="../margin-of-safety/" title="安全邊際" type="text/html">
+<link rel="next" href="../make-grub-font-larger/" title="放大 Grub menu 和 console 的字型" type="text/html">
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:title" content="將 windows 10 和 linux 移到新的 512G SSD">
 <meta property="og:url" content="https://mariolong.github.io/posts/change-boot-ssd-to-512g/">
@@ -124,9 +125,9 @@
 昨天早上買的，今天早上到貨，下午裝上，晚上就進 linux，動手記錄這次的過程。呃，windows 10 明天再說吧，晚上，不想動太多系統。
 </p>
 
-<div id="outline-container-orgfcb77ab" class="outline-2">
-<h2 id="orgfcb77ab">系統移轉</h2>
-<div class="outline-text-2" id="text-orgfcb77ab">
+<div id="outline-container-org954e52a" class="outline-2">
+<h2 id="org954e52a">系統移轉</h2>
+<div class="outline-text-2" id="text-org954e52a">
 <p>
 先上網查到 <a href="http://www.fox-saying.com/blog/post/43730227-%5B%E6%95%99%E5%AD%B8%5D-%E5%BF%AB%E9%80%9F%E6%AD%A3%E7%A2%BA%E8%BD%89%E7%A7%BB-ssd-%E4%B8%8A%E7%9A%84%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1-~-uefi">快速正確轉移 SSD 上的作業系統 ~ UEFI 介面 Windows10 OS 搬家</a>
 </p>
@@ -153,25 +154,25 @@ EaseUS Todo Backup Free 可將 partition 完整複製，含開機區，只是 4K
 </div>
 </div>
 
-<div id="outline-container-org5ec2849" class="outline-2">
-<h2 id="org5ec2849">BIOS 中調整開機碟順序</h2>
-<div class="outline-text-2" id="text-org5ec2849">
+<div id="outline-container-orgfd8b1b5" class="outline-2">
+<h2 id="orgfd8b1b5">BIOS 中調整開機碟順序</h2>
+<div class="outline-text-2" id="text-orgfd8b1b5">
 <p>
 選擇要開機的磁碟，不該有問題。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd847cf3" class="outline-2">
-<h2 id="orgd847cf3">開機設定 grub</h2>
-<div class="outline-text-2" id="text-orgd847cf3">
+<div id="outline-container-org4757792" class="outline-2">
+<h2 id="org4757792">開機設定 grub</h2>
+<div class="outline-text-2" id="text-org4757792">
 <p>
 原以為開機會有一番折騰，沒想到一開機就成功進入 Linux。用 <code>lsblk -o
 +uuid</code> 指令找新 SSD 的 uuid，進 <code>/etc/fstab</code> 查看掛載磁碟的 uuid, 竟然和先前的相同，不知是幸運，還是 Linux 本來就是如此。windows 就沒有這麼幸運，uuid 不同。
 </p>
 
 <p>
-接下來改<code>/etc/grub.d/40_custom</code> ，讓 grup menu 中 windows 10 的項目指到正確的磁碟。
+接下來改<code>/etc/grub.d/40_custom</code> ，讓 grub menu 中 windows 10 的項目指到正確的磁碟。
 </p>
 
 <div class="highlight"><pre><span></span>menuentry "Windows 10" --class windows --class os {
@@ -193,12 +194,12 @@ ntldr /bootmgr
 </p>
 
 <p>
-接著，我做了許多嘗試，<a href="#orgf9fa3bd">記錄於後</a>，如：以正版 windows 10 開機，修復 MBR，失敗，不能開機；重灌 windows 10，裝上 EasyBCD，試圖由 linux 開機後再修
+接著，我做了許多嘗試，<a href="#org45b4be4">記錄於後</a>，如：以正版 windows 10 開機，修復 MBR，失敗，不能開機；重灌 windows 10，裝上 EasyBCD，試圖由 linux 開機後再修
 grub，可惜 EasyBCD 不支援 ext4。
 </p>
 
 <p>
-最後，做了 Archlinux 開機片，進 linux，修復好 boot 和 grub.cfg，才得以正常地開機進入 windows 10 和 linux。記錄在<a href="#org0d8e8ed">正解</a>中。
+最後，做了 Archlinux 開機片，進 linux，修復好 boot 和 grub.cfg，才得以正常地開機進入 windows 10 和 linux。記錄在<a href="#org6519569">正解</a>中。
 </p>
 
 <p>
@@ -207,10 +208,10 @@ grub，可惜 EasyBCD 不支援 ext4。
 </div>
 </div>
 
-<div id="outline-container-org87b82a6" class="outline-2">
-<h2 id="org87b82a6">
-<a id="org0d8e8ed"></a>正解</h2>
-<div class="outline-text-2" id="text-org87b82a6">
+<div id="outline-container-orgbcf0d58" class="outline-2">
+<h2 id="orgbcf0d58">
+<a id="org6519569"></a>正解</h2>
+<div class="outline-text-2" id="text-orgbcf0d58">
 <p>
 進到了 linux 後，先裝上 <code>os-prober</code>，讓 <code>grub-mkconfig</code> 可以自動找出
 widnows 10 並設定好 boot 指令。
@@ -239,26 +240,26 @@ linux 中，已經把<code>/etc/grub.d/40_custom</code>拿掉了。
 </div>
 </div>
 
-<div id="outline-container-org6053228" class="outline-2">
-<h2 id="org6053228">
-<a id="orgf9fa3bd"></a>其他過程及記錄</h2>
-<div class="outline-text-2" id="text-org6053228">
+<div id="outline-container-org015105f" class="outline-2">
+<h2 id="org015105f">
+<a id="org45b4be4"></a>其他過程及記錄</h2>
+<div class="outline-text-2" id="text-org015105f">
 </div>
-<div id="outline-container-orgd9ce6e2" class="outline-3">
-<h3 id="orgd9ce6e2">fix windows boot</h3>
-<div class="outline-text-3" id="text-orgd9ce6e2">
+<div id="outline-container-orgea296ae" class="outline-3">
+<h3 id="orgea296ae">fix windows boot</h3>
+<div class="outline-text-3" id="text-orgea296ae">
 <p>
 拿出原版的 windows 10 安裝 USB 隨身碟，開機修復…，竟然無法進入安裝畫面，還一直要我放入安裝光碟。這是什麼情形？我可是用正版的 windows 10 啊！真是愈來愈討厭 microsoft 了。討厭歸討厭，問題還是得解決啊。
 </p>
 </div>
 
-<div id="outline-container-org7095a8d" class="outline-4">
-<h4 id="org7095a8d">先開機進入 linux，在 linux 中，</h4>
-<div class="outline-text-4" id="text-org7095a8d">
+<div id="outline-container-orgee75d33" class="outline-4">
+<h4 id="orgee75d33">先開機進入 linux，試圖做 widnows 10 的開機片。在 linux 中，</h4>
+<div class="outline-text-4" id="text-orgee75d33">
 </div>
 <ul class="org-ul">
 <li>
-<a id="org3500b55"></a>download windows 10 ISO<br><div class="outline-text-5" id="text-org3500b55">
+<a id="org72bf901"></a>download windows 10 ISO<br><div class="outline-text-5" id="text-org72bf901">
 <p>
 從 <code>https://www.microsoft.com/zh-tw/software-download/windows10ISO</code> 下載 windows 10 ISO。
 </p>
@@ -266,7 +267,7 @@ linux 中，已經把<code>/etc/grub.d/40_custom</code>拿掉了。
 </li>
 
 <li>
-<a id="org5e380e0"></a>燒錄開機 DVD<br><div class="outline-text-5" id="text-org5e380e0">
+<a id="org61aba70"></a>燒錄開機 DVD<br><div class="outline-text-5" id="text-org61aba70">
 <p>
 目前手邊沒有容量夠大的 USB 隨身碟，可是有 DVD-RW，反正也用不著 DVD，干脆拿來燒成 windows 10 的開機片。
 </p>
@@ -281,32 +282,57 @@ linux 中，已經把<code>/etc/grub.d/40_custom</code>拿掉了。
 <p>
 執行 k3b，選擇「燒錄映像檔」，檢查，4 倍速慢慢燒，比較不會出錯。燒了 30 分鐘，終於完成。
 </p>
-
-<p>
-重開機，結果可以進入安裝畫面，那就進行修複吧。修復完了，重開機，可以進入 windows 中，開心啊。趕緊安裝 EasyBCD，要能進 linux。
-</p>
 </div>
 </li>
 </ul>
 </div>
 
-<div id="outline-container-org1303d12" class="outline-4">
-<h4 id="org1303d12">在 windows 10 中，</h4>
-<div class="outline-text-4" id="text-org1303d12">
+<div id="outline-container-org38610b6" class="outline-4">
+<h4 id="org38610b6">用 windows 10 安裝片，修復 MBR</h4>
+<div class="outline-text-4" id="text-org38610b6">
+<p>
+重開機，正常進入安裝畫面，那就進行修復吧。
+</p>
+
+<p>
+進 repair command prompt, 下指令 <code>bootrec /fixmbr</code>，修復完了，重開機，可以進入 windows 10 中，開心啊。
+</p>
+
+<p>
+但 linux 還是進不去。
+</p>
 </div>
+</div>
+
+<div id="outline-container-org0c2af5e" class="outline-4">
+<h4 id="org0c2af5e">在 windows 10 中，</h4>
+<div class="outline-text-4" id="text-org0c2af5e">
+<p>
+企圖用 EasyBCD 或 bootice 修改 BCD 後能進 Linux，但是…
+</p>
+</div>
+
 <ul class="org-ul">
 <li>
-<a id="orgca46aca"></a>安裝 EasyBCD<br><div class="outline-text-5" id="text-orgca46aca">
+<a id="org3510a76"></a>安裝 EasyBCD<br><div class="outline-text-5" id="text-org3510a76">
 <p>
-可是 EasyBCD 不支援 ext4，所以裝了也不能進我的 linux 系統。晴天霹靂。因為要修復 grub.cfg，必須要在 Linux 中，看來只能乖乖做 linux 開機片。
+可是 EasyBCD 不支援 ext4，所以裝了也不能進我的 linux 系統。
 </p>
 </div>
 </li>
 
 <li>
-<a id="org6654265"></a>用 USB 隨身碟做 Archlinux 安裝片<br><div class="outline-text-5" id="text-org6654265">
+<a id="org4c64b34"></a>安裝 bootice<br><div class="outline-text-5" id="text-org4c64b34">
 <p>
-下載 <a href="http://rufus.akeo.ie/">rufus</a> 和 <a href="https://www.archlinux.org/download/">archiso</a>，製作好 Archlinux 安裝片，重開機進入 linux，接著修複 boot 區和 grub.cfg。最後，終於了解到<a href="#org0d8e8ed">正解如上</a>。
+也找不到可以支援 ext4 的方法。晴天霹靂。因為要修復 grub.cfg，必須要在 Linux 中，看來只能乖乖做 linux 開機片。
+</p>
+</div>
+</li>
+
+<li>
+<a id="org76520c7"></a>用 USB 隨身碟做 Archlinux 安裝片<br><div class="outline-text-5" id="text-org76520c7">
+<p>
+下載 <a href="http://rufus.akeo.ie/">rufus</a> 和 <a href="https://www.archlinux.org/download/">archiso</a>，製作好 Archlinux 安裝片，重開機進入 linux，接著修複 boot 區和 grub.cfg。最後，終於了解到<a href="#org6519569">正解如上</a>。
 </p>
 </div>
 </li>
@@ -324,6 +350,9 @@ linux 中，已經把<code>/etc/grub.d/40_custom</code>拿掉了。
  --><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../margin-of-safety/" rel="prev" title="安全邊際">上一篇</a>
+            </li>
+            <li class="next">
+                <a href="../make-grub-font-larger/" rel="next" title="放大 Grub menu 和 console 的字型">下一篇</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>迴響</h2>
 			

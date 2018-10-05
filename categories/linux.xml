@@ -1,5 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Sun, 30 Sep 2018 08:22:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>將 windows 10 和 linux 移到新的 512G SSD</title><link>https://mariolong.github.io/posts/change-boot-ssd-to-512g/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Life (文章分類：linux)</title><link>https://github.com/mariolong/mariolong.github.io/</link><description></description><atom:link href="https://mariolong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_tw</language><copyright>Contents © 2018 &lt;a href="mailto:mariolong5782@gmail.com"&gt;Mario Long&lt;/a&gt; </copyright><lastBuildDate>Fri, 05 Oct 2018 08:08:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>放大 Grub menu 和 console 的字型</title><link>https://mariolong.github.io/posts/make-grub-font-larger/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
+開機時，看著字體小小的開機選單，心裡真有說不出的難受。今天，花了些時間搞定它。不難，而且有額外的收穫：不再看到一堆一閃而逝的指令。
+&lt;/p&gt;
+
+&lt;p&gt;
+步驟如後：
+&lt;/p&gt;
+
+&lt;div id="outline-container-org98348f1" class="outline-2"&gt;
+&lt;h2 id="org98348f1"&gt;下載 GUN unicode font 字型&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org98348f1"&gt;
+&lt;p&gt;
+從 &lt;a href="http://www.unifoundry.com/unifont/index.html"&gt;http://www.unifoundry.com/unifont/index.html&lt;/a&gt;
+，下載 unicode.ttf。
+&lt;/p&gt;
+
+&lt;p&gt;
+這是我覺得比較符合需求的字型。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orge4ca09b" class="outline-2"&gt;
+&lt;h2 id="orge4ca09b"&gt;make a larger font, named &lt;code&gt;unicode32.pf2&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge4ca09b"&gt;
+&lt;p&gt;
+grub 的字型放在 &lt;code&gt;/boot/grub/fonts/&lt;/code&gt;下。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo grub-mkfont --output&lt;span class="o"&gt;=&lt;/span&gt;/boot/grub/fonts/unicode32.pf2 --size&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;32&lt;/span&gt; ~/Downloads/unifont-11.0.02.ttf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orged5d961" class="outline-2"&gt;
+&lt;h2 id="orged5d961"&gt;設定 grub 的字型&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orged5d961"&gt;
+&lt;p&gt;
+開啟 &lt;code&gt;/etc/default/grub&lt;/code&gt;，加上
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;GRUB_FONT=/boot/grub/fonts/unicode32.pf2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6cd9137" class="outline-2"&gt;
+&lt;h2 id="org6cd9137"&gt;重建 grub 選單&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6cd9137"&gt;
+&lt;p&gt;
+執行
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+如果只是要字體大一點的開機選單，以上就可以完工。但要把 console 的字體也變大，那就繼續作下去。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7943e4f" class="outline-2"&gt;
+&lt;h2 id="org7943e4f"&gt;設定大一點的 terminal 字型&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7943e4f"&gt;
+&lt;p&gt;
+先安裝字型，再設定字型。
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pacman -S terminus-font
+setconsolefont ter-128n
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The FONT variable in &lt;code&gt;/etc/vconsole.conf&lt;/code&gt; is used to set the font at
+boot, persistently for all consoles.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano /etc/vconsole.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+加上
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;FONT=ter-128n
+FONT_MAP=8859-1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orga828f55" class="outline-2"&gt;
+&lt;h2 id="orga828f55"&gt;在 mkinitcpio.conf 的 HOOKS 加上 consolefont&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga828f55"&gt;
+&lt;p&gt;
+參考：
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/danielcbaldwin/0eb3def2478150b32ad27280f8a937fb"&gt;https://gist.github.com/danielcbaldwin/0eb3def2478150b32ad27280f8a937fb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/index.php/mkinitcpio"&gt;https://wiki.archlinux.org/index.php/mkinitcpio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+開啟 &lt;code&gt;/etc/mkinitcpio.conf&lt;/code&gt;，並修改 HOOKS
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;HOOKS=(base systemd autodetect modconf block keyboard sd-vconsole sd-lvm2 fsck filesystems)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org91f97d9" class="outline-2"&gt;
+&lt;h2 id="org91f97d9"&gt;Intel Fastboot&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org91f97d9"&gt;
+&lt;p&gt;
+參考：
+&lt;a href="https://wiki.archlinux.org/index.php/intel_graphics#Module-based_options"&gt;https://wiki.archlinux.org/index.php/intel_graphics#Module-based_options&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The goal of Intel Fastboot is to preserve the frame-buffer as setup by
+the BIOS or bootloader to avoid any flickering until Xorg has started.
+&lt;/p&gt;
+
+&lt;p&gt;
+To enable fastboot, set i915.fastboot=1 as kernel parameter or set in
+&lt;code&gt;/etc/modprobe.d/i915.conf&lt;/code&gt;:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;options i915 fastboot=1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6bce912" class="outline-2"&gt;
+&lt;h2 id="org6bce912"&gt;最後製作 mkinitcpio&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6bce912"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkinitcpio -p linux
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+完工，重開機欣賞一下成果吧！&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>console</category><category>fast boot</category><category>font</category><category>grub</category><category>intel</category><category>linux</category><guid>https://mariolong.github.io/posts/make-grub-font-larger/</guid><pubDate>Fri, 05 Oct 2018 06:14:15 GMT</pubDate></item><item><title>將 windows 10 和 linux 移到新的 512G SSD</title><link>https://mariolong.github.io/posts/change-boot-ssd-to-512g/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
 新的 windows 10 真吃硬碟，原本 128G 的 SSD 不夠用，一直要努力刪掉暫時用不到的軟體，也真夠心煩的。萬一不小心刪錯了，也是件麻煩事。狠下心來，上原價屋買了顆 Intel 512G 的 SSD，花了新台幣 3388 元。
 &lt;/p&gt;
 
@@ -7,9 +146,9 @@
 昨天早上買的，今天早上到貨，下午裝上，晚上就進 linux，動手記錄這次的過程。呃，windows 10 明天再說吧，晚上，不想動太多系統。
 &lt;/p&gt;
 
-&lt;div id="outline-container-orgfcb77ab" class="outline-2"&gt;
-&lt;h2 id="orgfcb77ab"&gt;系統移轉&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfcb77ab"&gt;
+&lt;div id="outline-container-org954e52a" class="outline-2"&gt;
+&lt;h2 id="org954e52a"&gt;系統移轉&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org954e52a"&gt;
 &lt;p&gt;
 先上網查到 &lt;a href="http://www.fox-saying.com/blog/post/43730227-%5B%E6%95%99%E5%AD%B8%5D-%E5%BF%AB%E9%80%9F%E6%AD%A3%E7%A2%BA%E8%BD%89%E7%A7%BB-ssd-%E4%B8%8A%E7%9A%84%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1-~-uefi"&gt;快速正確轉移 SSD 上的作業系統 ~ UEFI 介面 Windows10 OS 搬家&lt;/a&gt;
 &lt;/p&gt;
@@ -37,25 +176,25 @@ EaseUS Todo Backup Free 可將 partition 完整複製，含開機區，只是 4K
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5ec2849" class="outline-2"&gt;
-&lt;h2 id="org5ec2849"&gt;BIOS 中調整開機碟順序&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5ec2849"&gt;
+&lt;div id="outline-container-orgfd8b1b5" class="outline-2"&gt;
+&lt;h2 id="orgfd8b1b5"&gt;BIOS 中調整開機碟順序&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfd8b1b5"&gt;
 &lt;p&gt;
 選擇要開機的磁碟，不該有問題。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd847cf3" class="outline-2"&gt;
-&lt;h2 id="orgd847cf3"&gt;開機設定 grub&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd847cf3"&gt;
+&lt;div id="outline-container-org4757792" class="outline-2"&gt;
+&lt;h2 id="org4757792"&gt;開機設定 grub&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4757792"&gt;
 &lt;p&gt;
 原以為開機會有一番折騰，沒想到一開機就成功進入 Linux。用 &lt;code&gt;lsblk -o
 +uuid&lt;/code&gt; 指令找新 SSD 的 uuid，進 &lt;code&gt;/etc/fstab&lt;/code&gt; 查看掛載磁碟的 uuid, 竟然和先前的相同，不知是幸運，還是 Linux 本來就是如此。windows 就沒有這麼幸運，uuid 不同。
 &lt;/p&gt;
 
 &lt;p&gt;
-接下來改&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt; ，讓 grup menu 中 windows 10 的項目指到正確的磁碟。
+接下來改&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt; ，讓 grub menu 中 windows 10 的項目指到正確的磁碟。
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;menuentry "Windows 10" --class windows --class os {
@@ -77,12 +216,12 @@ ntldr /bootmgr
 &lt;/p&gt;
 
 &lt;p&gt;
-接著，我做了許多嘗試，&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#orgf9fa3bd"&gt;記錄於後&lt;/a&gt;，如：以正版 windows 10 開機，修復 MBR，失敗，不能開機；重灌 windows 10，裝上 EasyBCD，試圖由 linux 開機後再修
+接著，我做了許多嘗試，&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#org45b4be4"&gt;記錄於後&lt;/a&gt;，如：以正版 windows 10 開機，修復 MBR，失敗，不能開機；重灌 windows 10，裝上 EasyBCD，試圖由 linux 開機後再修
 grub，可惜 EasyBCD 不支援 ext4。
 &lt;/p&gt;
 
 &lt;p&gt;
-最後，做了 Archlinux 開機片，進 linux，修復好 boot 和 grub.cfg，才得以正常地開機進入 windows 10 和 linux。記錄在&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#org0d8e8ed"&gt;正解&lt;/a&gt;中。
+最後，做了 Archlinux 開機片，進 linux，修復好 boot 和 grub.cfg，才得以正常地開機進入 windows 10 和 linux。記錄在&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#org6519569"&gt;正解&lt;/a&gt;中。
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -91,9 +230,9 @@ grub，可惜 EasyBCD 不支援 ext4。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org87b82a6" class="outline-2"&gt;
-&lt;h2 id="org87b82a6"&gt;&lt;a id="org0d8e8ed"&gt;&lt;/a&gt;正解&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org87b82a6"&gt;
+&lt;div id="outline-container-orgbcf0d58" class="outline-2"&gt;
+&lt;h2 id="orgbcf0d58"&gt;&lt;a id="org6519569"&gt;&lt;/a&gt;正解&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbcf0d58"&gt;
 &lt;p&gt;
 進到了 linux 後，先裝上 &lt;code&gt;os-prober&lt;/code&gt;，讓 &lt;code&gt;grub-mkconfig&lt;/code&gt; 可以自動找出
 widnows 10 並設定好 boot 指令。
@@ -122,33 +261,33 @@ linux 中，已經把&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt;拿掉了。
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6053228" class="outline-2"&gt;
-&lt;h2 id="org6053228"&gt;&lt;a id="orgf9fa3bd"&gt;&lt;/a&gt;其他過程及記錄&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6053228"&gt;
+&lt;div id="outline-container-org015105f" class="outline-2"&gt;
+&lt;h2 id="org015105f"&gt;&lt;a id="org45b4be4"&gt;&lt;/a&gt;其他過程及記錄&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org015105f"&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd9ce6e2" class="outline-3"&gt;
-&lt;h3 id="orgd9ce6e2"&gt;fix windows boot&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd9ce6e2"&gt;
+&lt;div id="outline-container-orgea296ae" class="outline-3"&gt;
+&lt;h3 id="orgea296ae"&gt;fix windows boot&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgea296ae"&gt;
 &lt;p&gt;
 拿出原版的 windows 10 安裝 USB 隨身碟，開機修復…，竟然無法進入安裝畫面，還一直要我放入安裝光碟。這是什麼情形？我可是用正版的 windows 10 啊！真是愈來愈討厭 microsoft 了。討厭歸討厭，問題還是得解決啊。
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7095a8d" class="outline-4"&gt;
-&lt;h4 id="org7095a8d"&gt;先開機進入 linux，在 linux 中，&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org7095a8d"&gt;
+&lt;div id="outline-container-orgee75d33" class="outline-4"&gt;
+&lt;h4 id="orgee75d33"&gt;先開機進入 linux，試圖做 widnows 10 的開機片。在 linux 中，&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgee75d33"&gt;
 &lt;/div&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a id="org3500b55"&gt;&lt;/a&gt;download windows 10 ISO&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org3500b55"&gt;
+&lt;li&gt;&lt;a id="org72bf901"&gt;&lt;/a&gt;download windows 10 ISO&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org72bf901"&gt;
 &lt;p&gt;
 從 &lt;code&gt;https://www.microsoft.com/zh-tw/software-download/windows10ISO&lt;/code&gt; 下載 windows 10 ISO。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="org5e380e0"&gt;&lt;/a&gt;燒錄開機 DVD&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org5e380e0"&gt;
+&lt;li&gt;&lt;a id="org61aba70"&gt;&lt;/a&gt;燒錄開機 DVD&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org61aba70"&gt;
 &lt;p&gt;
 目前手邊沒有容量夠大的 USB 隨身碟，可是有 DVD-RW，反正也用不著 DVD，干脆拿來燒成 windows 10 的開機片。
 &lt;/p&gt;
@@ -163,32 +302,57 @@ linux 中，已經把&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt;拿掉了。
 &lt;p&gt;
 執行 k3b，選擇「燒錄映像檔」，檢查，4 倍速慢慢燒，比較不會出錯。燒了 30 分鐘，終於完成。
 &lt;/p&gt;
-
-&lt;p&gt;
-重開機，結果可以進入安裝畫面，那就進行修複吧。修復完了，重開機，可以進入 windows 中，開心啊。趕緊安裝 EasyBCD，要能進 linux。
-&lt;/p&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1303d12" class="outline-4"&gt;
-&lt;h4 id="org1303d12"&gt;在 windows 10 中，&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org1303d12"&gt;
-&lt;/div&gt;
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a id="orgca46aca"&gt;&lt;/a&gt;安裝 EasyBCD&lt;br&gt;
-&lt;div class="outline-text-5" id="text-orgca46aca"&gt;
+&lt;div id="outline-container-org38610b6" class="outline-4"&gt;
+&lt;h4 id="org38610b6"&gt;用 windows 10 安裝片，修復 MBR&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org38610b6"&gt;
 &lt;p&gt;
-可是 EasyBCD 不支援 ext4，所以裝了也不能進我的 linux 系統。晴天霹靂。因為要修復 grub.cfg，必須要在 Linux 中，看來只能乖乖做 linux 開機片。
+重開機，正常進入安裝畫面，那就進行修復吧。
+&lt;/p&gt;
+
+&lt;p&gt;
+進 repair command prompt, 下指令 &lt;code&gt;bootrec /fixmbr&lt;/code&gt;，修復完了，重開機，可以進入 windows 10 中，開心啊。
+&lt;/p&gt;
+
+&lt;p&gt;
+但 linux 還是進不去。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org0c2af5e" class="outline-4"&gt;
+&lt;h4 id="org0c2af5e"&gt;在 windows 10 中，&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org0c2af5e"&gt;
+&lt;p&gt;
+企圖用 EasyBCD 或 bootice 修改 BCD 後能進 Linux，但是…
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="org3510a76"&gt;&lt;/a&gt;安裝 EasyBCD&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org3510a76"&gt;
+&lt;p&gt;
+可是 EasyBCD 不支援 ext4，所以裝了也不能進我的 linux 系統。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/li&gt;
 
-&lt;li&gt;&lt;a id="org6654265"&gt;&lt;/a&gt;用 USB 隨身碟做 Archlinux 安裝片&lt;br&gt;
-&lt;div class="outline-text-5" id="text-org6654265"&gt;
+&lt;li&gt;&lt;a id="org4c64b34"&gt;&lt;/a&gt;安裝 bootice&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org4c64b34"&gt;
 &lt;p&gt;
-下載 &lt;a href="http://rufus.akeo.ie/"&gt;rufus&lt;/a&gt; 和 &lt;a href="https://www.archlinux.org/download/"&gt;archiso&lt;/a&gt;，製作好 Archlinux 安裝片，重開機進入 linux，接著修複 boot 區和 grub.cfg。最後，終於了解到&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#org0d8e8ed"&gt;正解如上&lt;/a&gt;。
+也找不到可以支援 ext4 的方法。晴天霹靂。因為要修復 grub.cfg，必須要在 Linux 中，看來只能乖乖做 linux 開機片。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org76520c7"&gt;&lt;/a&gt;用 USB 隨身碟做 Archlinux 安裝片&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org76520c7"&gt;
+&lt;p&gt;
+下載 &lt;a href="http://rufus.akeo.ie/"&gt;rufus&lt;/a&gt; 和 &lt;a href="https://www.archlinux.org/download/"&gt;archiso&lt;/a&gt;，製作好 Archlinux 安裝片，重開機進入 linux，接著修複 boot 區和 grub.cfg。最後，終於了解到&lt;a href="https://mariolong.github.io/posts/change-boot-ssd-to-512g/#org6519569"&gt;正解如上&lt;/a&gt;。
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/li&gt;
@@ -902,363 +1066,4 @@ need_root_right = no
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/post-install-for-htpc/</guid><pubDate>Fri, 29 Dec 2017 09:14:13 GMT</pubDate></item><item><title>Post-installation of Archlinux</title><link>https://mariolong.github.io/posts/post-installation-of-archlinux/</link><dc:creator>Mario Long</dc:creator><description>&lt;p&gt;
-首先依 &lt;a href="https://mariolong.github.io/posts/install-arch-linux-2017"&gt;Install Arch linux (2017)&lt;/a&gt; 將基本系統裝好，接著參考 &lt;a href="https://wiki.archlinux.org/index.php/General_recommendations"&gt;General
-recommendations - ArchWiki&lt;/a&gt; 記錄下對我而言必要的軟體及簡單設定，讓日常進入可工作狀態。
-&lt;/p&gt;
-
-&lt;div id="outline-container-orgd77cbc6" class="outline-2"&gt;
-&lt;h2 id="orgd77cbc6"&gt;haskell&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd77cbc6"&gt;
-&lt;p&gt;
-安裝的方法參看 &lt;a href="https://mariolong.github.io/posts/install-haskell-applications"&gt;Install Haskell Applications&lt;/a&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org8ea7240" class="outline-2"&gt;
-&lt;h2 id="org8ea7240"&gt;桌面及外觀&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8ea7240"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org21b3936" class="outline-3"&gt;
-&lt;h3 id="org21b3936"&gt;theme&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org21b3936"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S breeze&lt;span class="o"&gt;{&lt;/span&gt;,-kde4,-gtk&lt;span class="o"&gt;}&lt;/span&gt; flat-remix-git lxappearance
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Using Breeze theme and Flat Remix icon theme
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7cfc021" class="outline-3"&gt;
-&lt;h3 id="org7cfc021"&gt;lxappearance&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7cfc021"&gt;
-&lt;p&gt;
-用 lxappearance 修改 gtk 程式的外觀。
-&lt;/p&gt;
-
-&lt;p&gt;
-尤其是 google chrome 書籤列的字體，可能太小。這時即可用 lxappearance 調整字型和大小。
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org31f0ef7" class="outline-3"&gt;
-&lt;h3 id="org31f0ef7"&gt;oblogout and screen lock&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org31f0ef7"&gt;
-&lt;p&gt;
-&lt;a href="https://wiki.archlinux.org/index.php/Oblogout"&gt;https://wiki.archlinux.org/index.php/Oblogout&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-oblogout is an optional, configurable logout script that presents a
-graphical interface (i.e. buttons) to cancel, logout, restart,
-shutdown, suspend, hibernate, and lock the screen.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S oblogout
-sudo nano /etc/oblogout.conf
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-修改 [looks] 中的 buttons，以顯示按鈕。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[looks]
-buttons = cancel, restart, shutdown, lock
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-修改 [shortcuts] 中不用的命令刪掉。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[shortcuts]
-cancel = Escape
-shutdown = S
-restart = R
-#suspend = U
-#logout = L
-lock = K
-#hibernate = H
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-修改 [commands] 中的命令。
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[commands]
-lock = slock
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org8568e45" class="outline-2"&gt;
-&lt;h2 id="org8568e45"&gt;system&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8568e45"&gt;
-&lt;p&gt;
-DPMS: display power manpage system
-slock: screen saver
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orge658707" class="outline-2"&gt;
-&lt;h2 id="orge658707"&gt;網路&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge658707"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org2498181" class="outline-3"&gt;
-&lt;h3 id="org2498181"&gt;dropbox&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2498181"&gt;
-&lt;p&gt;
-dropbox 在 archlinux.fr 中
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S dropbox perl-file-mimeinfo
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org5f9795c" class="outline-3"&gt;
-&lt;h3 id="org5f9795c"&gt;qbittorrent&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5f9795c"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S qbittorrent
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org89330a9" class="outline-2"&gt;
-&lt;h2 id="org89330a9"&gt;檔案管理&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org89330a9"&gt;
-&lt;p&gt;
-using mc and pcmanfm-qt
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S mc pcmanfm-qt gvfs-mtp
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6d34ebf" class="outline-3"&gt;
-&lt;h3 id="org6d34ebf"&gt;pcmanfm-qt&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6d34ebf"&gt;
-&lt;p&gt;
-使用 pcmanfm-qt, for mtp 傳送檔案 and dropbox
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org7902cc3" class="outline-4"&gt;
-&lt;h4 id="org7902cc3"&gt;issues&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-org7902cc3"&gt;
-&lt;p&gt;
-error message:
-&lt;/p&gt;
-
-&lt;pre class="example"&gt;
-/usr/bin/xdg-open: line 922: pcmanfm: command not found
-&lt;/pre&gt;
-
-&lt;p&gt;
-fix this problem:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo ln -s /usr/bin/pcmanfm-qt /usr/bin/pcmanfm
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3420cb5" class="outline-3"&gt;
-&lt;h3 id="org3420cb5"&gt;mc&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3420cb5"&gt;
-&lt;p&gt;
-midnight-commander like norton commander
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org764d90b" class="outline-2"&gt;
-&lt;h2 id="org764d90b"&gt;影音&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org764d90b"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S alsa-utils mpd mpc ncmpcpp mpv ffmpeg sox kodi kid3 aegisub
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org8729357" class="outline-3"&gt;
-&lt;h3 id="org8729357"&gt;alsa&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8729357"&gt;
-&lt;p&gt;
-聲音
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org51a0912" class="outline-3"&gt;
-&lt;h3 id="org51a0912"&gt;mpd, mpc, ncmpcpp&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org51a0912"&gt;
-&lt;p&gt;
-音樂背景播放
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgce67dbe" class="outline-3"&gt;
-&lt;h3 id="orgce67dbe"&gt;mpv&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgce67dbe"&gt;
-&lt;p&gt;
-影片播放
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mpv cdda://
-mpv dvd://
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org505482e" class="outline-3"&gt;
-&lt;h3 id="org505482e"&gt;kodi&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org505482e"&gt;
-&lt;p&gt;
-影片管理
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3e0c544" class="outline-3"&gt;
-&lt;h3 id="org3e0c544"&gt;aegisub&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3e0c544"&gt;
-&lt;p&gt;
-字幕處理
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgb73648f" class="outline-3"&gt;
-&lt;h3 id="orgb73648f"&gt;ffmpeg&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb73648f"&gt;
-&lt;p&gt;
-影片處理
-2-pass to control file size
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6e18782" class="outline-3"&gt;
-&lt;h3 id="org6e18782"&gt;dvdbackup&lt;/h3&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgc9ecabf" class="outline-3"&gt;
-&lt;h3 id="orgc9ecabf"&gt;sox&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc9ecabf"&gt;
-&lt;p&gt;
-wav 轉 aiff
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org6d9515b" class="outline-3"&gt;
-&lt;h3 id="org6d9515b"&gt;kid3&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6d9515b"&gt;
-&lt;p&gt;
-音檔加 tag
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org9b577de" class="outline-2"&gt;
-&lt;h2 id="org9b577de"&gt;其它工具&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9b577de"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org59f5693" class="outline-3"&gt;
-&lt;h3 id="org59f5693"&gt;emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org59f5693"&gt;
-&lt;p&gt;
-ripgrep
-opencc: using s2twp.json
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org0093cfb" class="outline-3"&gt;
-&lt;h3 id="org0093cfb"&gt;meld&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org0093cfb"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S meld
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org8c99d54" class="outline-3"&gt;
-&lt;h3 id="org8c99d54"&gt;albert&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8c99d54"&gt;
-&lt;p&gt;
-應用程式快速啓動器
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S albert qt5-graphicaleffects qt5-quickcontrols
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgb13410b" class="outline-3"&gt;
-&lt;h3 id="orgb13410b"&gt;speedcrunch (calculator)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb13410b"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S speedcrunch
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org212c1f2" class="outline-3"&gt;
-&lt;h3 id="org212c1f2"&gt;calibre&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org212c1f2"&gt;
-&lt;p&gt;
-管理電子書，我只用來管理我的 kindle
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S calibre
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org73c6a65" class="outline-3"&gt;
-&lt;h3 id="org73c6a65"&gt;nikola&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org73c6a65"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install nikola Pygments
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org1a2ed20" class="outline-3"&gt;
-&lt;h3 id="org1a2ed20"&gt;htop&lt;/h3&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org9c33b88" class="outline-3"&gt;
-&lt;h3 id="org9c33b88"&gt;gnash&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9c33b88"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S gnash-git
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-可讀 .swf 檔
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org3cac0c6" class="outline-2"&gt;
-&lt;h2 id="org3cac0c6"&gt;programming&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3cac0c6"&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org97b1233" class="outline-3"&gt;
-&lt;h3 id="org97b1233"&gt;python and depending modules&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org97b1233"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yaourt -S python python-pip
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orgc51800d" class="outline-3"&gt;
-&lt;h3 id="orgc51800d"&gt;systemd timers&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>haskell</category><category>linux</category><category>taffybar</category><category>xmonad</category><guid>https://mariolong.github.io/posts/post-installation-of-archlinux/</guid><pubDate>Mon, 27 Nov 2017 07:28:36 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>linux</category><guid>https://mariolong.github.io/posts/post-install-for-htpc/</guid><pubDate>Fri, 29 Dec 2017 09:14:13 GMT</pubDate></item></channel></rss>
