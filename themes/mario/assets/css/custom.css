@@ -155,8 +155,22 @@ article.h-entry {
   content: "";
 }
 
-.postlist .listdate::after {
+.postlist .listdate:after {
   content: "";
+}
+
+.footpara {
+  display: inline;
+  margin-left: 0.25em;
+}
+
+.footdef sup {
+  top: inherit;
+  font-size: inherit;
+}
+
+.footdef sup:after {
+  content: "."
 }
 
 #table-of-contents h2 {

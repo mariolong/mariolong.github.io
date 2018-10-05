@@ -5,6 +5,7 @@
 .. tags: linux
 .. category: computer
 .. date: 2017/11/20 17:00:00 UTC+08:00
+.. updated: 2018-10-01 12:17:43 UTC+08:00
 .. description:
 #+END_COMMENT
 #+OPTIONS: num:t
@@ -276,7 +277,7 @@ ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 #+END_SRC
 
 ** 時間調整
-為了與 windows 雙重開機 (dual boot)，最好做以下動作：
+<<set-time-on-windows>>為了與 windows 雙重開機 (dual boot)，最好做以下動作：
 
 1. 修改 windows 的登錄檔，用 regedit 加上一個 DWORD(32 bits) 的機碼
    RealTimeIsUniversal，將其值設為 1，位置如下:
@@ -446,7 +447,7 @@ pacman -Syu
 #+END_SRC
 
 * post-installation
-** 設置 Root 密碼並創建一般用戶
+** 設置 root 密碼並創建一般用戶
 
 #+BEGIN_SRC sh
 passwd
@@ -454,7 +455,7 @@ useradd -m -s /bin/bash  -g users -G video,storage,optical,lp,scanner,games,whee
 passwd username
 #+END_SRC
 
-** 安裝 Sudo
+** 安裝 sudo
 
 #+BEGIN_SRC sh
 pacman -S sudo
@@ -588,9 +589,16 @@ numlockx &
 
 ** 安裝桌面
 
-lxqt 不全裝，目前只用 ~lxqt-policykit-agent~ 和 ~lxappearance~.
-
+*** install xmonad, taffybar
 用 [[../install-haskell-applications][install haskell application]] 這篇安裝 xmonad 和 taffybar.
+
+*** install lxqt
+雖然目前只用 ~lxqt-policykit-agent~ 和 ~lxappearance~，還是 lxqt 全裝，
+省事。
+
+#+BEGIN_SRC sh
+yaourt -S lxqt
+#+END_SRC
 
 ** theme
 
@@ -627,9 +635,21 @@ yaourt -S emacs
 
 可用的系統成型了，但是還是要再參考 [[../post-installation-of-archlinux][Post-installation of Archlinux]] 有許多需要再調整的。
 
-* issues
+* Issues
 ** kvm:disable by bios
 iVT enable @ bios
+
+** 為了與 windows 能雙系統共存，有四件事要注意：
+*** 先裝 windows 再裝 Linux 比較省事
+*** disable UEFI Secure Boot on BIOS
+這個要在安裝 windows 前先做比較合理
+
+*** turn off Fast Start-up
+參考 [[https://www.tenforums.com/tutorials/4189-turn-off-fast-startup-windows-10-a.html][Turn On or Off Fast Startup in Windows 10 | Windows 10 Tutorials]]
+原則上就是找到「控制台」->「電源選項」->「其他電源設定」
+
+*** set systemc time
+[[set-time-on-windows][如上述]]
 
 * Footnotes
 [fn:1] https://wiki.archlinux.org/index.php/Fonts#Console_fonts

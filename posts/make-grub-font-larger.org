@@ -1,0 +1,104 @@
+#+BEGIN_COMMENT
+.. title: 放大 Grub menu 和 console 的字型
+.. slug: make-grub-font-larger
+.. date: 2018-10-05 14:14:15 UTC+08:00
+.. status:
+.. tags: grub, linux, font, console, intel, fast boot
+.. category: computer
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+#+OPTIONS: num:nil toc:nil ^:{}
+#+LANGUAGE: zh-TW
+
+開機時，看著字體小小的開機選單，心裡真有說不出的難受。今天，花了些時間
+搞定它。不難，而且有額外的收穫：不再看到一堆一閃而逝的指令。
+
+步驟如後：
+
+* 下載 GUN unicode font 字型
+從 http://www.unifoundry.com/unifont/index.html
+，下載 unicode.ttf。
+
+這是我覺得比較符合需求的字型。
+
+* make a larger font, named ~unicode32.pf2~
+
+grub 的字型放在 ~/boot/grub/fonts/~下。
+
+#+BEGIN_SRC sh
+sudo grub-mkfont --output=/boot/grub/fonts/unicode32.pf2 --size=32 ~/Downloads/unifont-11.0.02.ttf
+#+END_SRC
+
+* 設定 grub 的字型
+
+開啟 ~/etc/default/grub~，加上
+#+BEGIN_SRC conf
+GRUB_FONT=/boot/grub/fonts/unicode32.pf2
+#+END_SRC
+
+* 重建 grub 選單
+
+執行
+#+BEGIN_SRC sh
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+#+END_SRC
+
+如果只是要字體大一點的開機選單，以上就可以完工。但要把 console 的字體也
+變大，那就繼續作下去。
+
+* 設定大一點的 terminal 字型
+先安裝字型，再設定字型。
+
+#+BEGIN_SRC sh
+pacman -S terminus-font
+setconsolefont ter-128n
+#+END_SRC
+
+The FONT variable in ~/etc/vconsole.conf~ is used to set the font at
+boot, persistently for all consoles.
+
+#+BEGIN_SRC sh
+nano /etc/vconsole.conf
+#+END_SRC
+加上
+#+BEGIN_SRC conf
+FONT=ter-128n
+FONT_MAP=8859-1
+#+END_SRC
+
+* 在 mkinitcpio.conf 的 HOOKS 加上 consolefont
+
+參考：
+- https://gist.github.com/danielcbaldwin/0eb3def2478150b32ad27280f8a937fb
+- https://wiki.archlinux.org/index.php/mkinitcpio
+
+開啟 ~/etc/mkinitcpio.conf~，並修改 HOOKS
+
+#+BEGIN_SRC conf
+HOOKS=(base systemd autodetect modconf block keyboard sd-vconsole sd-lvm2 fsck filesystems)
+#+END_SRC
+
+* Intel Fastboot
+
+參考：
+https://wiki.archlinux.org/index.php/intel_graphics#Module-based_options
+
+The goal of Intel Fastboot is to preserve the frame-buffer as setup by
+the BIOS or bootloader to avoid any flickering until Xorg has started.
+
+To enable fastboot, set i915.fastboot=1 as kernel parameter or set in
+~/etc/modprobe.d/i915.conf~:
+
+#+BEGIN_SRC conf
+options i915 fastboot=1
+#+END_SRC
+
+* 最後製作 mkinitcpio
+
+#+BEGIN_SRC sh
+mkinitcpio -p linux
+#+END_SRC
+
+完工，重開機欣賞一下成果吧！
